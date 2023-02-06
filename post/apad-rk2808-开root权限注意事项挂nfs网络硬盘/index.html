@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>APAD RK2808 开ROOT权限注意事项,挂NFS网络硬盘 - 不成熟的理想主义者可以为了理想选择高尚的死，成熟的理想主义者则会选择卑下的活着!</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="gowinder" /><meta name="description" content="参见:RK2808 System磁盘映像拿到root权限, 其他自作自定义固件的资料 瑞芯微RK28XX_安卓(android)系统固件包修改基础" /><meta name="keywords" content="Hugo, chromium, nestjs" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.110.0 with theme even" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/apad-rk2808-%E5%BC%80root%E6%9D%83%E9%99%90%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E6%8C%82nfs%E7%BD%91%E7%BB%9C%E7%A1%AC%E7%9B%98/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="APAD RK2808 开ROOT权限注意事项,挂NFS网络硬盘" />
+<meta property="og:description" content="参见:RK2808 System磁盘映像拿到root权限, 其他自作自定义固件的资料 瑞芯微RK28XX_安卓(android)系统固件包修改基础" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/apad-rk2808-%E5%BC%80root%E6%9D%83%E9%99%90%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E6%8C%82nfs%E7%BD%91%E7%BB%9C%E7%A1%AC%E7%9B%98/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2010-10-26T09:41:37+00:00" />
+<meta property="article:modified_time" content="2010-10-26T09:41:37+00:00" />
+<meta itemprop="name" content="APAD RK2808 开ROOT权限注意事项,挂NFS网络硬盘">
+<meta itemprop="description" content="参见:RK2808 System磁盘映像拿到root权限, 其他自作自定义固件的资料 瑞芯微RK28XX_安卓(android)系统固件包修改基础"><meta itemprop="datePublished" content="2010-10-26T09:41:37+00:00" />
+<meta itemprop="dateModified" content="2010-10-26T09:41:37+00:00" />
+<meta itemprop="wordCount" content="2332">
+<meta itemprop="keywords" content="ANDROID,APAD RK2808 平板 ANDROID NFS ROOT权限," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="APAD RK2808 开ROOT权限注意事项,挂NFS网络硬盘"/>
+<meta name="twitter:description" content="参见:RK2808 System磁盘映像拿到root权限, 其他自作自定义固件的资料 瑞芯微RK28XX_安卓(android)系统固件包修改基础"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Gowinder</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Gowinder</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">APAD RK2808 开ROOT权限注意事项,挂NFS网络硬盘</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2010-10-26 </span>
+        
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents"></nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>参见:<a href="http://hiapad.com/bbs/forum.php?mod=viewthread&amp;tid=47&amp;extra=page%3D2">RK2808 System磁盘映像拿到root权限, 其他自作自定义固件的资料</a></p>
+<p><a href="http://lockeyue.spaces.live.com/blog/cns!B3988DF30734BED3!1553.entry">瑞芯微RK28XX_安卓(android)系统固件包修改基础教程</a></p>
+<p>很麻烦,搞了很多次,发现教程有,但是都不完全,差一步,就可能开不了ROOT.</p>
+<p>准备工作:</p>
+<p>刷机工具.下载地址:<a href="http://cid-b3988df30734bed3.office.live.com/self.aspx/.Public/%E7%BD%91%E7%BB%9C/%E7%91%9E%E8%8A%AF%E5%BE%AERK2808%5E_android%E7%B3%BB%E7%BB%9F%E5%9B%BA%E4%BB%B6%E4%BF%AE%E6%94%B9%E5%B7%A5%E5%85%B7%E5%8C%85%5E_Ver01.rar">刷机工具</a></p>
+<p>ROM,有很多版本,有原始的,有修改版的,我用的修改版的,从国外论坛上下载的<a href="http://www.slatedroid.com/apad-rogerbraun-firmware/566-%5B-piece-software-flashed-device-expand-its-functionality%5D-hybrid-custom-firmware-apad-5-1-batch-2-red-led-only-july-3rd.html">hybrid 5.1</a> 注意此ROM号称开了ROOT,实际上是没有的.可以加QQ群,里面的共享有:83895562</p>
+<p>LINUX系统,没有LINUX系统就装个虚拟机啦,推荐VirtualBox,然后安装一个Ubuntu,就很方便了.</p>
+<p>要安装cramfs工具,因为天杀的RK2808使用的就是这个系统,具体的请谷歌或者BING,简单的说就是一个压缩包,是只读的系统,因此必须要在刷机前对固件进行修改.</p>
+<p>装update.img解开后,拷贝到UBUNTU下面.这里假设拷贝到了/home/zzz/rom/ 下面(注:zzz是你的登录用户名)</p>
+<p>然后运行</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cd /home/zzz/rom    
+</span></span><span class="line"><span class="cl">mkdir system
+</span></span><span class="line"><span class="cl">sudo mount -t cramfs -o loop system.img  system
+</span></span><span class="line"><span class="cl">tar cvzf system.tgz system
+</span></span><span class="line"><span class="cl">sudo umount system
+</span></span><span class="line"><span class="cl">rm -r system
+</span></span><span class="line"><span class="cl">tar xzvf system.tgz
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">这一步就是将IMG解压到一个system目录中,如果你用的是5.1的那个固件,里面已经有SU了,只需要改一下权限就可以了,如果没有,就去下载一个:[XDA的SUPERUSER](http://forum.xda-developers.com/showthread.php?t=682828)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后将里面的system/bin/su 拷贝到刚才解开目录下面的system/bin/su, system/xbin/su 注意两个都要拷</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">system/app/Superuser.apk 也拷到对应目录下去,注意大小写.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后运行</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo chown root system/bin/su
+</span></span><span class="line"><span class="cl">sudo chown root system/xbin/su
+</span></span><span class="line"><span class="cl">sudo chmod 4577 system/bin/su
+</span></span><span class="line"><span class="cl">sudo chmod 4577 system/xbin/su
+</span></span><span class="line"><span class="cl">sudo chmod 644 system/app/Superuser.apk
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">```
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">这一步就是给权限,我以前搞了N次失败了,就是差前面两句,一定要将此文件的所有权分配给root用户才行.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">好了,上面完成后,就可以打包SYSTEM.IMG了
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">```
+</span></span><span class="line"><span class="cl">mkcramfs  system system.img 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">```
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">将这个system.img拷贝到原来解开的Image目录去,然后用工具重新打包成udpate.img,刷机
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">安装一个BetterTerminal,就是一个终端工具,装好后在终端输入su回车,会有一个提示,选yes,然后终端上的提示符由$变为#就表明成功了,如果显示Permission denied就是没成功.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">以下是开NFS网络硬盘所需要的工作,如果你不准备挂NFS,可以跳过
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">参见:[CIFS and NFS modules](http://www.slatedroid.com/nationite-midnite-firmware-development/8087-cifs-nfs-modules-3.html)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[windows NFS 配置](http://ygliang.blog.51cto.com/69909/52898)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">在共享的台式机上安装[Windows Services for UNIX Version 3.5](http://www.microsoft.com/downloads/en/details.aspx?FamilyID=896c9688-601b-44f1-81a4-02878ff11778),应该都是WINDOWS系统吧,只试过XP,WIN7没试过,应该差不多.如果是LINUX好像就可以直接开了
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">主要目的,就是因为1.5的ANDROID不支持CJFS格式,是内核不支持,咱又不会编内核(现在在学习中),不然就可以直接拷SMB共享(就是WINDOWS的共享啦)到本地目录,然后什么小说啊,电影啊,之类 的,就
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">不用从台式机上拷贝到平板,而可以直接通过共享,WIFI来随时访问了,直接播放电影什么的.可惜不支持CJFS格式,所以又有一种方式,搞了好半天才找到,就是用NFS格式,在国外的论坛上无意中看到的,
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">1.5的内核支持NFS
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">先下载[Windows Services for UNIX Version 3.5](http://www.microsoft.com/downloads/en/details.aspx?FamilyID=896c9688-601b-44f1-81a4-02878ff11778),然后按照上面的参考帖子配置共享,注意在本地安全策划中,有一项一定要打开,不然可以挂载,但是目录却是空的:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">网络访问: 将 Everyone 权限应用于匿名用户
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">具体方法,运行gpedit.msc,在&#34;计算机配置-WINDOWS设置-安全设置-本地策略-安全选项&#34;下面.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">然后在[CIFS and NFS modules](http://www.slatedroid.com/nationite-midnite-firmware-development/8087-cifs-nfs-modules-3.html)这个帖子中,有一个MountNfs.apk,下载安装,然后运行MOUNTNFS,在第一个对话框上填写地址,格式应该是: IP:/FOLDER\_NAME,IP就是你的WINDOWS的IP,FOLDER\_NAME就是在NFS共享上设置的名字(注意不是你硬盘上的目标名,而是属性里面NFS 共享的名字),注意不要掉了:号.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">下面填写平板上的目录,自己先建一个空目录,如sdcard/movie,然后点MOUNT,如果提示MOUNT成功,就OK了,用ES文件管理器查看此目录,就可以看到共享了(如果没有,使用终端,然后切换到su,使用ls命令查看:ls /sdcard/movie 看看有没有,如果 有,很可能是WINDOWS的策略没改,我之前就是这样,MOUNT成功了,但是用文件管理器看不到,用超级用户用LS命令可以看到)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">点击一个电影,就可以直接播放了,不用拷过来,注意WIFI要信号好才行,不然就会卡.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">有一个问题还没解决,就是NFS不支持UTF8,所以中文是乱码,最好手动把文件名改成英文,哈哈
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">有什么问题可以到QQ群交流.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">还有我的GOOGLE MAP无法定位自己的位置,在设置里面开了&#34;我的位置&#34;也没用,哪位知道?
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">gowinder</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2010-10-26
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/android/">ANDROID</a>
+          <a href="/tags/apad-rk2808-%E5%B9%B3%E6%9D%BF-android-nfs-root%E6%9D%83%E9%99%90/">APAD RK2808 平板 ANDROID NFS ROOT权限</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8cifs-ko%E6%8C%82%E8%BD%BDwindows-%E5%85%B1%E4%BA%AB/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">直接使用cifs.ko挂载WINDOWS 共享</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/%E4%BB%8A%E5%B9%B4%E4%B8%8B%E5%8D%8A%E5%B9%B4%E7%AC%AC%E9%87%87%E8%B4%AD%E7%9A%84%E7%AC%AC%E4%B8%80%E6%B3%A2%E7%A7%91%E5%B9%BB%E4%B9%A6%E5%88%B0%E8%B4%A7/">
+            <span class="next-text nav-default">今年下半年第采购的第一波科幻书到货</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:gowinder@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/gowinder" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.douban.com/people/gowinder/" class="iconfont icon-douban" title="douban"></a>
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2023<span class="heart"><i class="iconfont icon-heart"></i></span><span>gowinder</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

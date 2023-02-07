@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>node on 不成熟的理想主义者可以为了理想选择高尚的死，成熟的理想主义者则会选择卑下的活着!</title>
+    <link>https://gowinder.work/tags/node/</link>
+    <description>Recent content in node on 不成熟的理想主义者可以为了理想选择高尚的死，成熟的理想主义者则会选择卑下的活着!</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 31 Jan 2023 14:01:39 +0800</lastBuildDate><atom:link href="https://gowinder.work/tags/node/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nestjs, typeorm中的entity中的互相引用问题</title>
+      <link>https://gowinder.work/post/nestjs-typeorm-entity-%E4%BA%92%E7%9B%B8%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Tue, 31 Jan 2023 14:01:39 +0800</pubDate>
+      
+      <guid>https://gowinder.work/post/nestjs-typeorm-entity-%E4%BA%92%E7%9B%B8%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/</guid>
+      <description>Nestjs, typeorm中的entity中的互相引用问题 20230131-152600 使用nestjs时,用到typeorm,有互相引用关系的entity,老是报错,按照官方文</description>
+    </item>
+    
+  </channel>
+</rss>

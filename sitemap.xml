@@ -30,7 +30,42 @@
   </url>
   
   <url>
+    <loc>https://gowinder.work/tags/nestjs/</loc>
+    <lastmod>2023-01-31T14:01:39+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://gowinder.work/post/nestjs-typeorm-entity-%E4%BA%92%E7%9B%B8%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2023-01-31T14:01:39+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gowinder.work/tags/node/</loc>
+    <lastmod>2023-01-31T14:01:39+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gowinder.work/tags/</loc>
+    <lastmod>2023-01-31T14:01:39+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gowinder.work/tags/typescript/</loc>
+    <lastmod>2023-01-31T14:01:39+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gowinder.work/tags/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2023-01-31T14:01:39+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -45,13 +80,6 @@
   
   <url>
     <loc>https://gowinder.work/post/recttransform%E4%B8%AD%E7%9A%84%E5%9D%90%E6%A0%87/</loc>
-    <lastmod>2016-07-26T03:07:22+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://gowinder.work/tags/</loc>
     <lastmod>2016-07-26T03:07:22+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

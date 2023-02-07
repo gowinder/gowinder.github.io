@@ -160,14 +160,14 @@
 <pre><code># Copyright 2018 The Chromium Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
- 
+
 import(&quot;//third_party/closure_compiler/compile_js.gni&quot;)
- 
+
 js_type_check(&quot;closure_compile&quot;) {
   deps = [
   ]
 }
- 
+
 js_library(&quot;new_setting_page&quot;) {
   deps = [
     &quot;:new_setting_section&quot;,
@@ -183,7 +183,7 @@ js_library(&quot;new_setting_page&quot;) {
     &quot;$externs_path/settings_private.js&quot;,
   ]
 }
- 
+
 js_library(&quot;new_setting_section&quot;) {
   deps = [
     &quot;:address_edit_dialog&quot;,
@@ -197,7 +197,7 @@ js_library(&quot;new_setting_section&quot;) {
 </code></pre>
 <p><code>../basic_page/basic_page.html</code>增加</p>
 <pre><code>&lt;link rel=&quot;import&quot; href=&quot;../new_setting_page/new_setting_page.html&quot;&gt;
- 
+
 &lt;template is=&quot;dom-if&quot; if=&quot;[[showPage_(pageVisibility.new_setting)]]&quot;
                       restamp&gt;
                 &lt;settings-section page-title=&quot;$i18n{newSettingTitle}&quot;
@@ -250,9 +250,9 @@ js_library(&quot;new_setting_section&quot;) {
 
 
 if (pageVisibility.new_setting != false) {
- 
+
 r.NEW_SETTING = r.BASIC.createSection('/new_setting', 'new_setting');
- 
+
 }
 </code></pre>
 <p><code>chrome/browser/resources/settings/BUILD.gn</code> 增加一行</p>

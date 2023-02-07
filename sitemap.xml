@@ -2,21 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://gowinder.work/post/nestjsx-crud-xxxrepository-not-found%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</loc>
-    <lastmod>2023-02-06T00:00:00+00:00</lastmod>
+    <loc>https://gowinder.work/post/nestjs%E4%B8%ADauthguard%E7%B1%BB%E5%9C%A8canactive%E5%87%BD%E6%95%B0%E4%B8%AD%E6%97%A0%E6%B3%95%E8%B0%83%E7%94%A8inject-/</loc>
+    <lastmod>2023-02-06T17:24:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://gowinder.work/post/</loc>
-    <lastmod>2023-02-06T00:00:00+00:00</lastmod>
+    <lastmod>2023-02-06T17:24:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://gowinder.work/</loc>
+    <lastmod>2023-02-06T17:24:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gowinder.work/post/nestjsx-crud-xxxrepository-not-found%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</loc>
     <lastmod>2023-02-06T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

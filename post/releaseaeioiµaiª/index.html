@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>RELEASEÄ£Ê½¶¨Î»Òì³£µÄ°ì·¨£¨×ª£© - 不成熟的理想主义者可以为了理想选择高尚的死，成熟的理想主义者则会选择卑下的活着!</title>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5259365864322361"
+     crossorigin="anonymous"></script>
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="gowinder" /><meta name="description" content="¼ò½é
+µ±release°æ±¾µÄ³ÌÐò½»¸¶¸øÓÃ»§Ê¹ÓÃºó£¬Èç¹ûÓ¦ÓÃ³ÌÐò±ÀÀ£ÁË£¬ÔõÃ´ÑùÍ¨¹ýwindowsÌáÊ¾µÄoffsetµØÖ·À´¶¨Î»Ô´³ÌÐòÖÐ¶ÔÓ¦µÄ³ö´í´úÂëÄØ£¿ÕâÆªÎÄÕÂ¾ÍÀ´ÌÖÂÛÕâ¸öÎÊÌâ¡£
+½¨Á¢µ÷ÊÔ»·¾³
+1£®£¨VC 6£©ÒÀ´ÎÑ¡ÔñFile¨¤New¨¤Projects£¬ÔÚÁÐ±íÖÐÑ¡Ôñ¡°MFC AppWizard£¨EXE£©¡±ÔÚ¡°Project Name¡±ÖÐÊäÈë¡°Crash_Test¡±×÷ÎªÏîÄ¿Ãû£¬¡°OK¡±½øÈëÏÂÒ»²½¡£ÔÚ¡°MFC Appwizard ¨C Step 1¡±¶Ô»°¿òÖÐÑ¡Ôñ¡°Dialog Based¡±µ¥Ñ¡¿ò¡£¡°Finish¡±Íê³É¹¤³ÌµÄ½¨Á¢£¬F7±àÒëÎÞÎó¡£
+2£®£¨VC 6£©Ë«»÷È·¶¨°´Å¥£¬ÌáÊ¾¼ÓÈë£¨ÖØÐ´£©¡°OnOK¡±º¯Êý£¬OK£¬½øÈë¡°CCrash_TestDlg::OnOK()¡±º¯Êý¡£
+3£®ÎÒÃÇ½«ÔÚOnOKº¯ÊýÖÐ¹¹ÔìÒ»Ð©ÄÜ¹»ÒýÆð³ÌÐò±ÀÀ£µÄ´íÎó´úÂë£º
+void CCrash_TestDlg::OnOK()
+{
+AfxGetApp()-&amp;gt;GetMainWnd()-&amp;gt;SetWindowText(_T(&amp;ldquo;Crash&amp;rdquo;));
+int* pTest = NULL;
+*pTest = 0; // Îª¿ÕÖ¸Õë¸³Öµ£¬³ÌÐò½«±ÀÀ£
+CDialog::OnOK();
+}
+¼ÓÈë¡°AfxGetApp()-&amp;gt;GetMainWnd()-&amp;gt;SetWindowText(_T(&amp;ldquo;Crash&amp;rdquo;));¡±µÄÄ¿µÄÊÇÊ¹±ÀÀ£µØÖ·ºÍ¡°OnOK¡±µÄµØÖ·ÓÐÒ»¶¨Æ«ÒÆ£¬Ê¹ÑÝÊ¾¸ü¾ßÒ»°ãÐÔ¡£
+4£®£¨VC 6£©Ê×ÏÈÉèÖÃRelease±àÒë£¨ÔÚBuild¨¤Set as configurationÖÐÑ¡ÔñWin32 Release£©¡£ÒÀ´ÎÑ¡ÔñProject¨¤Settings£¬Ñ¡Ôñ¡°C/C&#43;&#43;¡±tabÒ³£¬CategoryÖÐÑ¡Ôñ¡°Listing Files¡±£¬È»ºóÔÚ¡°Listing file type¡±ÖÐÑ¡Ôñ¡°Assembly, Machine Code, and Source¡±£¬OK¡£Õâ¸öÑ¡Ïî½«ÎªÃ¿¸öÔ´ÎÄ¼þ£¨*.cpp£©Éú³É»úÆ÷Âë¡¢»ã±àÂëºÍÔ´´úÂëµÄ¶ÔÓ¦±í£¬¿ÉÒÔÔÚ¡°Release¡±Ä¿Â¼ÏÂÕÒµ½ºÍ²é¿´ÕâÐ©ÎÄ¼þ¡£
+5£®£¨VC 6£©ÒÀ´ÎÑ¡ÔñProject¨¤Settings£¬Ñ¡Ôñ¡°Link¡±tabÒ³£¬CategoryÖÐÑ¡Ôñ¡°Debug¡±£¬
+¹³Ñ¡¡°Generate map file¡±£¬OK¡£Õâ¸öÑ¡Ïî½«Éú³É±àÒëºóµÄº¯ÊýµØÖ·ºÍº¯ÊýÃûµÄ¶ÔÓ¦±í¡£
+¶¨Î»´íÎó´úÂë
+1£®ÏÖÔÚÔËÐÐ¡°Release¡±Ä¿Â¼ÏÂµÄ²âÊÔ³ÌÐò£¬µ±µã»÷¡°È·¶¨¡±°´Å¥Ê±£¬³ÌÐò½«±ÀÀ£¡£
+Windows XP »á³öÏÖ¡°Crash_Test.exe Óöµ½ÎÊÌâÐèÒª¹Ø±Õ¡£ÎÒÃÇ¶Ô´ËÒýÆðµÄ²»±ã±íÊ¾±§Ç¸¡£¡±¡­¡­¡­¡­
+ÔÆÔÆµÄ¶Ô»°¿ò£¬ÔÚ¶Ô»°¿òµÄÏÂ·½£¬µ¥»÷¡°Çëµ¥»÷´Ë´¦¡±µÄ³¬Á¬½Ó£¬ÔÚ¡°´íÎóÇ©Ãû¡±ÖÐ£¬ÎÒÃÇ»áµÃµ½ÈçÏÂÐÅÏ¢£º
+AppName: crash_test.exeAppVer: 1.0.0.1ModName: crash_test.exe
+ModVer: 1.0.0.1Offset: 000014a0
+ÆäÖÐµÄOffsetÖµ¾ÍÊÇ±ÀÀ£µÄµØÖ·À²£¬ÏÖÔÚÎÒÃÇ¸ù¾ÝÕâ¸öµØÖ·À´¶¨Î»Ô´³ÌÐòÖÐ³ö´íµÄ´úÂëÐÐ¡£
+2£®ÓÃ¼ÇÊÂ±¾´ò¿ª¡°Release¡±Ä¿Â¼ÏÂµÄ£¬¡°Crash_Test.map¡±ÎÄ¼þ£¬ÔÚÎÄ¼þÖÐ»á¿´µ½ÀàËÆÏÂÃæµÄÄÚÈÝ£º
+0001:00000470?OnQueryDragIcon@CCrash_TestDlg@@IAEPAUHICON__@@XZ 00401470 fCrash_TestDlg.obj
+0001:00000480?OnOK@CCrash_TestDlg@@MAEXXZ 00401480 fCrash_TestDlg.obj" /><meta name="keywords" content="Hugo, chromium, nestjs" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.110.0 with theme even" />
+
+
+<link rel="canonical" href="https://gowinder.work/post/releaseaeioi%C2%B5ai%C2%AA/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="RELEASEÄ£Ê½¶¨Î»Òì³£µÄ°ì·¨£¨×ª£©" />
+<meta property="og:description" content="¼ò½é
+µ±release°æ±¾µÄ³ÌÐò½»¸¶¸øÓÃ»§Ê¹ÓÃºó£¬Èç¹ûÓ¦ÓÃ³ÌÐò±ÀÀ£ÁË£¬ÔõÃ´ÑùÍ¨¹ýwindowsÌáÊ¾µÄoffsetµØÖ·À´¶¨Î»Ô´³ÌÐòÖÐ¶ÔÓ¦µÄ³ö´í´úÂëÄØ£¿ÕâÆªÎÄÕÂ¾ÍÀ´ÌÖÂÛÕâ¸öÎÊÌâ¡£
+½¨Á¢µ÷ÊÔ»·¾³
+1£®£¨VC 6£©ÒÀ´ÎÑ¡ÔñFile¨¤New¨¤Projects£¬ÔÚÁÐ±íÖÐÑ¡Ôñ¡°MFC AppWizard£¨EXE£©¡±ÔÚ¡°Project Name¡±ÖÐÊäÈë¡°Crash_Test¡±×÷ÎªÏîÄ¿Ãû£¬¡°OK¡±½øÈëÏÂÒ»²½¡£ÔÚ¡°MFC Appwizard ¨C Step 1¡±¶Ô»°¿òÖÐÑ¡Ôñ¡°Dialog Based¡±µ¥Ñ¡¿ò¡£¡°Finish¡±Íê³É¹¤³ÌµÄ½¨Á¢£¬F7±àÒëÎÞÎó¡£
+2£®£¨VC 6£©Ë«»÷È·¶¨°´Å¥£¬ÌáÊ¾¼ÓÈë£¨ÖØÐ´£©¡°OnOK¡±º¯Êý£¬OK£¬½øÈë¡°CCrash_TestDlg::OnOK()¡±º¯Êý¡£
+3£®ÎÒÃÇ½«ÔÚOnOKº¯ÊýÖÐ¹¹ÔìÒ»Ð©ÄÜ¹»ÒýÆð³ÌÐò±ÀÀ£µÄ´íÎó´úÂë£º
+void CCrash_TestDlg::OnOK()
+{
+AfxGetApp()-&gt;GetMainWnd()-&gt;SetWindowText(_T(&ldquo;Crash&rdquo;));
+int* pTest = NULL;
+*pTest = 0; // Îª¿ÕÖ¸Õë¸³Öµ£¬³ÌÐò½«±ÀÀ£
+CDialog::OnOK();
+}
+¼ÓÈë¡°AfxGetApp()-&gt;GetMainWnd()-&gt;SetWindowText(_T(&ldquo;Crash&rdquo;));¡±µÄÄ¿µÄÊÇÊ¹±ÀÀ£µØÖ·ºÍ¡°OnOK¡±µÄµØÖ·ÓÐÒ»¶¨Æ«ÒÆ£¬Ê¹ÑÝÊ¾¸ü¾ßÒ»°ãÐÔ¡£
+4£®£¨VC 6£©Ê×ÏÈÉèÖÃRelease±àÒë£¨ÔÚBuild¨¤Set as configurationÖÐÑ¡ÔñWin32 Release£©¡£ÒÀ´ÎÑ¡ÔñProject¨¤Settings£¬Ñ¡Ôñ¡°C/C&#43;&#43;¡±tabÒ³£¬CategoryÖÐÑ¡Ôñ¡°Listing Files¡±£¬È»ºóÔÚ¡°Listing file type¡±ÖÐÑ¡Ôñ¡°Assembly, Machine Code, and Source¡±£¬OK¡£Õâ¸öÑ¡Ïî½«ÎªÃ¿¸öÔ´ÎÄ¼þ£¨*.cpp£©Éú³É»úÆ÷Âë¡¢»ã±àÂëºÍÔ´´úÂëµÄ¶ÔÓ¦±í£¬¿ÉÒÔÔÚ¡°Release¡±Ä¿Â¼ÏÂÕÒµ½ºÍ²é¿´ÕâÐ©ÎÄ¼þ¡£
+5£®£¨VC 6£©ÒÀ´ÎÑ¡ÔñProject¨¤Settings£¬Ñ¡Ôñ¡°Link¡±tabÒ³£¬CategoryÖÐÑ¡Ôñ¡°Debug¡±£¬
+¹³Ñ¡¡°Generate map file¡±£¬OK¡£Õâ¸öÑ¡Ïî½«Éú³É±àÒëºóµÄº¯ÊýµØÖ·ºÍº¯ÊýÃûµÄ¶ÔÓ¦±í¡£
+¶¨Î»´íÎó´úÂë
+1£®ÏÖÔÚÔËÐÐ¡°Release¡±Ä¿Â¼ÏÂµÄ²âÊÔ³ÌÐò£¬µ±µã»÷¡°È·¶¨¡±°´Å¥Ê±£¬³ÌÐò½«±ÀÀ£¡£
+Windows XP »á³öÏÖ¡°Crash_Test.exe Óöµ½ÎÊÌâÐèÒª¹Ø±Õ¡£ÎÒÃÇ¶Ô´ËÒýÆðµÄ²»±ã±íÊ¾±§Ç¸¡£¡±¡­¡­¡­¡­
+ÔÆÔÆµÄ¶Ô»°¿ò£¬ÔÚ¶Ô»°¿òµÄÏÂ·½£¬µ¥»÷¡°Çëµ¥»÷´Ë´¦¡±µÄ³¬Á¬½Ó£¬ÔÚ¡°´íÎóÇ©Ãû¡±ÖÐ£¬ÎÒÃÇ»áµÃµ½ÈçÏÂÐÅÏ¢£º
+AppName: crash_test.exeAppVer: 1.0.0.1ModName: crash_test.exe
+ModVer: 1.0.0.1Offset: 000014a0
+ÆäÖÐµÄOffsetÖµ¾ÍÊÇ±ÀÀ£µÄµØÖ·À²£¬ÏÖÔÚÎÒÃÇ¸ù¾ÝÕâ¸öµØÖ·À´¶¨Î»Ô´³ÌÐòÖÐ³ö´íµÄ´úÂëÐÐ¡£
+2£®ÓÃ¼ÇÊÂ±¾´ò¿ª¡°Release¡±Ä¿Â¼ÏÂµÄ£¬¡°Crash_Test.map¡±ÎÄ¼þ£¬ÔÚÎÄ¼þÖÐ»á¿´µ½ÀàËÆÏÂÃæµÄÄÚÈÝ£º
+0001:00000470?OnQueryDragIcon@CCrash_TestDlg@@IAEPAUHICON__@@XZ 00401470 fCrash_TestDlg.obj
+0001:00000480?OnOK@CCrash_TestDlg@@MAEXXZ 00401480 fCrash_TestDlg.obj" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gowinder.work/post/releaseaeioi%C2%B5ai%C2%AA/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="1999-11-30T00:00:00+00:00" />
+<meta property="article:modified_time" content="1999-11-30T00:00:00+00:00" />
+<meta itemprop="name" content="RELEASEÄ£Ê½¶¨Î»Òì³£µÄ°ì·¨£¨×ª£©">
+<meta itemprop="description" content="¼ò½é
+µ±release°æ±¾µÄ³ÌÐò½»¸¶¸øÓÃ»§Ê¹ÓÃºó£¬Èç¹ûÓ¦ÓÃ³ÌÐò±ÀÀ£ÁË£¬ÔõÃ´ÑùÍ¨¹ýwindowsÌáÊ¾µÄoffsetµØÖ·À´¶¨Î»Ô´³ÌÐòÖÐ¶ÔÓ¦µÄ³ö´í´úÂëÄØ£¿ÕâÆªÎÄÕÂ¾ÍÀ´ÌÖÂÛÕâ¸öÎÊÌâ¡£
+½¨Á¢µ÷ÊÔ»·¾³
+1£®£¨VC 6£©ÒÀ´ÎÑ¡ÔñFile¨¤New¨¤Projects£¬ÔÚÁÐ±íÖÐÑ¡Ôñ¡°MFC AppWizard£¨EXE£©¡±ÔÚ¡°Project Name¡±ÖÐÊäÈë¡°Crash_Test¡±×÷ÎªÏîÄ¿Ãû£¬¡°OK¡±½øÈëÏÂÒ»²½¡£ÔÚ¡°MFC Appwizard ¨C Step 1¡±¶Ô»°¿òÖÐÑ¡Ôñ¡°Dialog Based¡±µ¥Ñ¡¿ò¡£¡°Finish¡±Íê³É¹¤³ÌµÄ½¨Á¢£¬F7±àÒëÎÞÎó¡£
+2£®£¨VC 6£©Ë«»÷È·¶¨°´Å¥£¬ÌáÊ¾¼ÓÈë£¨ÖØÐ´£©¡°OnOK¡±º¯Êý£¬OK£¬½øÈë¡°CCrash_TestDlg::OnOK()¡±º¯Êý¡£
+3£®ÎÒÃÇ½«ÔÚOnOKº¯ÊýÖÐ¹¹ÔìÒ»Ð©ÄÜ¹»ÒýÆð³ÌÐò±ÀÀ£µÄ´íÎó´úÂë£º
+void CCrash_TestDlg::OnOK()
+{
+AfxGetApp()-&gt;GetMainWnd()-&gt;SetWindowText(_T(&ldquo;Crash&rdquo;));
+int* pTest = NULL;
+*pTest = 0; // Îª¿ÕÖ¸Õë¸³Öµ£¬³ÌÐò½«±ÀÀ£
+CDialog::OnOK();
+}
+¼ÓÈë¡°AfxGetApp()-&gt;GetMainWnd()-&gt;SetWindowText(_T(&ldquo;Crash&rdquo;));¡±µÄÄ¿µÄÊÇÊ¹±ÀÀ£µØÖ·ºÍ¡°OnOK¡±µÄµØÖ·ÓÐÒ»¶¨Æ«ÒÆ£¬Ê¹ÑÝÊ¾¸ü¾ßÒ»°ãÐÔ¡£
+4£®£¨VC 6£©Ê×ÏÈÉèÖÃRelease±àÒë£¨ÔÚBuild¨¤Set as configurationÖÐÑ¡ÔñWin32 Release£©¡£ÒÀ´ÎÑ¡ÔñProject¨¤Settings£¬Ñ¡Ôñ¡°C/C&#43;&#43;¡±tabÒ³£¬CategoryÖÐÑ¡Ôñ¡°Listing Files¡±£¬È»ºóÔÚ¡°Listing file type¡±ÖÐÑ¡Ôñ¡°Assembly, Machine Code, and Source¡±£¬OK¡£Õâ¸öÑ¡Ïî½«ÎªÃ¿¸öÔ´ÎÄ¼þ£¨*.cpp£©Éú³É»úÆ÷Âë¡¢»ã±àÂëºÍÔ´´úÂëµÄ¶ÔÓ¦±í£¬¿ÉÒÔÔÚ¡°Release¡±Ä¿Â¼ÏÂÕÒµ½ºÍ²é¿´ÕâÐ©ÎÄ¼þ¡£
+5£®£¨VC 6£©ÒÀ´ÎÑ¡ÔñProject¨¤Settings£¬Ñ¡Ôñ¡°Link¡±tabÒ³£¬CategoryÖÐÑ¡Ôñ¡°Debug¡±£¬
+¹³Ñ¡¡°Generate map file¡±£¬OK¡£Õâ¸öÑ¡Ïî½«Éú³É±àÒëºóµÄº¯ÊýµØÖ·ºÍº¯ÊýÃûµÄ¶ÔÓ¦±í¡£
+¶¨Î»´íÎó´úÂë
+1£®ÏÖÔÚÔËÐÐ¡°Release¡±Ä¿Â¼ÏÂµÄ²âÊÔ³ÌÐò£¬µ±µã»÷¡°È·¶¨¡±°´Å¥Ê±£¬³ÌÐò½«±ÀÀ£¡£
+Windows XP »á³öÏÖ¡°Crash_Test.exe Óöµ½ÎÊÌâÐèÒª¹Ø±Õ¡£ÎÒÃÇ¶Ô´ËÒýÆðµÄ²»±ã±íÊ¾±§Ç¸¡£¡±¡­¡­¡­¡­
+ÔÆÔÆµÄ¶Ô»°¿ò£¬ÔÚ¶Ô»°¿òµÄÏÂ·½£¬µ¥»÷¡°Çëµ¥»÷´Ë´¦¡±µÄ³¬Á¬½Ó£¬ÔÚ¡°´íÎóÇ©Ãû¡±ÖÐ£¬ÎÒÃÇ»áµÃµ½ÈçÏÂÐÅÏ¢£º
+AppName: crash_test.exeAppVer: 1.0.0.1ModName: crash_test.exe
+ModVer: 1.0.0.1Offset: 000014a0
+ÆäÖÐµÄOffsetÖµ¾ÍÊÇ±ÀÀ£µÄµØÖ·À²£¬ÏÖÔÚÎÒÃÇ¸ù¾ÝÕâ¸öµØÖ·À´¶¨Î»Ô´³ÌÐòÖÐ³ö´íµÄ´úÂëÐÐ¡£
+2£®ÓÃ¼ÇÊÂ±¾´ò¿ª¡°Release¡±Ä¿Â¼ÏÂµÄ£¬¡°Crash_Test.map¡±ÎÄ¼þ£¬ÔÚÎÄ¼þÖÐ»á¿´µ½ÀàËÆÏÂÃæµÄÄÚÈÝ£º
+0001:00000470?OnQueryDragIcon@CCrash_TestDlg@@IAEPAUHICON__@@XZ 00401470 fCrash_TestDlg.obj
+0001:00000480?OnOK@CCrash_TestDlg@@MAEXXZ 00401480 fCrash_TestDlg.obj"><meta itemprop="datePublished" content="1999-11-30T00:00:00+00:00" />
+<meta itemprop="dateModified" content="1999-11-30T00:00:00+00:00" />
+<meta itemprop="wordCount" content="163">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="RELEASEÄ£Ê½¶¨Î»Òì³£µÄ°ì·¨£¨×ª£©"/>
+<meta name="twitter:description" content="¼ò½é
+µ±release°æ±¾µÄ³ÌÐò½»¸¶¸øÓÃ»§Ê¹ÓÃºó£¬Èç¹ûÓ¦ÓÃ³ÌÐò±ÀÀ£ÁË£¬ÔõÃ´ÑùÍ¨¹ýwindowsÌáÊ¾µÄoffsetµØÖ·À´¶¨Î»Ô´³ÌÐòÖÐ¶ÔÓ¦µÄ³ö´í´úÂëÄØ£¿ÕâÆªÎÄÕÂ¾ÍÀ´ÌÖÂÛÕâ¸öÎÊÌâ¡£
+½¨Á¢µ÷ÊÔ»·¾³
+1£®£¨VC 6£©ÒÀ´ÎÑ¡ÔñFile¨¤New¨¤Projects£¬ÔÚÁÐ±íÖÐÑ¡Ôñ¡°MFC AppWizard£¨EXE£©¡±ÔÚ¡°Project Name¡±ÖÐÊäÈë¡°Crash_Test¡±×÷ÎªÏîÄ¿Ãû£¬¡°OK¡±½øÈëÏÂÒ»²½¡£ÔÚ¡°MFC Appwizard ¨C Step 1¡±¶Ô»°¿òÖÐÑ¡Ôñ¡°Dialog Based¡±µ¥Ñ¡¿ò¡£¡°Finish¡±Íê³É¹¤³ÌµÄ½¨Á¢£¬F7±àÒëÎÞÎó¡£
+2£®£¨VC 6£©Ë«»÷È·¶¨°´Å¥£¬ÌáÊ¾¼ÓÈë£¨ÖØÐ´£©¡°OnOK¡±º¯Êý£¬OK£¬½øÈë¡°CCrash_TestDlg::OnOK()¡±º¯Êý¡£
+3£®ÎÒÃÇ½«ÔÚOnOKº¯ÊýÖÐ¹¹ÔìÒ»Ð©ÄÜ¹»ÒýÆð³ÌÐò±ÀÀ£µÄ´íÎó´úÂë£º
+void CCrash_TestDlg::OnOK()
+{
+AfxGetApp()-&gt;GetMainWnd()-&gt;SetWindowText(_T(&ldquo;Crash&rdquo;));
+int* pTest = NULL;
+*pTest = 0; // Îª¿ÕÖ¸Õë¸³Öµ£¬³ÌÐò½«±ÀÀ£
+CDialog::OnOK();
+}
+¼ÓÈë¡°AfxGetApp()-&gt;GetMainWnd()-&gt;SetWindowText(_T(&ldquo;Crash&rdquo;));¡±µÄÄ¿µÄÊÇÊ¹±ÀÀ£µØÖ·ºÍ¡°OnOK¡±µÄµØÖ·ÓÐÒ»¶¨Æ«ÒÆ£¬Ê¹ÑÝÊ¾¸ü¾ßÒ»°ãÐÔ¡£
+4£®£¨VC 6£©Ê×ÏÈÉèÖÃRelease±àÒë£¨ÔÚBuild¨¤Set as configurationÖÐÑ¡ÔñWin32 Release£©¡£ÒÀ´ÎÑ¡ÔñProject¨¤Settings£¬Ñ¡Ôñ¡°C/C&#43;&#43;¡±tabÒ³£¬CategoryÖÐÑ¡Ôñ¡°Listing Files¡±£¬È»ºóÔÚ¡°Listing file type¡±ÖÐÑ¡Ôñ¡°Assembly, Machine Code, and Source¡±£¬OK¡£Õâ¸öÑ¡Ïî½«ÎªÃ¿¸öÔ´ÎÄ¼þ£¨*.cpp£©Éú³É»úÆ÷Âë¡¢»ã±àÂëºÍÔ´´úÂëµÄ¶ÔÓ¦±í£¬¿ÉÒÔÔÚ¡°Release¡±Ä¿Â¼ÏÂÕÒµ½ºÍ²é¿´ÕâÐ©ÎÄ¼þ¡£
+5£®£¨VC 6£©ÒÀ´ÎÑ¡ÔñProject¨¤Settings£¬Ñ¡Ôñ¡°Link¡±tabÒ³£¬CategoryÖÐÑ¡Ôñ¡°Debug¡±£¬
+¹³Ñ¡¡°Generate map file¡±£¬OK¡£Õâ¸öÑ¡Ïî½«Éú³É±àÒëºóµÄº¯ÊýµØÖ·ºÍº¯ÊýÃûµÄ¶ÔÓ¦±í¡£
+¶¨Î»´íÎó´úÂë
+1£®ÏÖÔÚÔËÐÐ¡°Release¡±Ä¿Â¼ÏÂµÄ²âÊÔ³ÌÐò£¬µ±µã»÷¡°È·¶¨¡±°´Å¥Ê±£¬³ÌÐò½«±ÀÀ£¡£
+Windows XP »á³öÏÖ¡°Crash_Test.exe Óöµ½ÎÊÌâÐèÒª¹Ø±Õ¡£ÎÒÃÇ¶Ô´ËÒýÆðµÄ²»±ã±íÊ¾±§Ç¸¡£¡±¡­¡­¡­¡­
+ÔÆÔÆµÄ¶Ô»°¿ò£¬ÔÚ¶Ô»°¿òµÄÏÂ·½£¬µ¥»÷¡°Çëµ¥»÷´Ë´¦¡±µÄ³¬Á¬½Ó£¬ÔÚ¡°´íÎóÇ©Ãû¡±ÖÐ£¬ÎÒÃÇ»áµÃµ½ÈçÏÂÐÅÏ¢£º
+AppName: crash_test.exeAppVer: 1.0.0.1ModName: crash_test.exe
+ModVer: 1.0.0.1Offset: 000014a0
+ÆäÖÐµÄOffsetÖµ¾ÍÊÇ±ÀÀ£µÄµØÖ·À²£¬ÏÖÔÚÎÒÃÇ¸ù¾ÝÕâ¸öµØÖ·À´¶¨Î»Ô´³ÌÐòÖÐ³ö´íµÄ´úÂëÐÐ¡£
+2£®ÓÃ¼ÇÊÂ±¾´ò¿ª¡°Release¡±Ä¿Â¼ÏÂµÄ£¬¡°Crash_Test.map¡±ÎÄ¼þ£¬ÔÚÎÄ¼þÖÐ»á¿´µ½ÀàËÆÏÂÃæµÄÄÚÈÝ£º
+0001:00000470?OnQueryDragIcon@CCrash_TestDlg@@IAEPAUHICON__@@XZ 00401470 fCrash_TestDlg.obj
+0001:00000480?OnOK@CCrash_TestDlg@@MAEXXZ 00401480 fCrash_TestDlg.obj"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Gowinder</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Gowinder</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">RELEASEÄ£Ê½¶¨Î»Òì³£µÄ°ì·¨£¨×ª£©</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 1999-11-30 </span>
+        
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents"></nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>¼ò½é<br>
+µ±release°æ±¾µÄ³ÌÐò½»¸¶¸øÓÃ»§Ê¹ÓÃºó£¬Èç¹ûÓ¦ÓÃ³ÌÐò±ÀÀ£ÁË£¬ÔõÃ´ÑùÍ¨¹ýwindowsÌáÊ¾µÄoffsetµØÖ·À´¶¨Î»Ô´³ÌÐòÖÐ¶ÔÓ¦µÄ³ö´í´úÂëÄØ£¿ÕâÆªÎÄÕÂ¾ÍÀ´ÌÖÂÛÕâ¸öÎÊÌâ¡£</p>
+<p>½¨Á¢µ÷ÊÔ»·¾³<br>
+1£®£¨VC 6£©ÒÀ´ÎÑ¡ÔñFile¨¤New¨¤Projects£¬ÔÚÁÐ±íÖÐÑ¡Ôñ¡°MFC AppWizard£¨EXE£©¡±ÔÚ¡°Project  Name¡±ÖÐÊäÈë¡°Crash_Test¡±×÷ÎªÏîÄ¿Ãû£¬¡°OK¡±½øÈëÏÂÒ»²½¡£ÔÚ¡°MFC Appwizard  ¨C  Step  1¡±¶Ô»°¿òÖÐÑ¡Ôñ¡°Dialog  Based¡±µ¥Ñ¡¿ò¡£¡°Finish¡±Íê³É¹¤³ÌµÄ½¨Á¢£¬F7±àÒëÎÞÎó¡£<br>
+2£®£¨VC 6£©Ë«»÷È·¶¨°´Å¥£¬ÌáÊ¾¼ÓÈë£¨ÖØÐ´£©¡°OnOK¡±º¯Êý£¬OK£¬½øÈë¡°CCrash_TestDlg::OnOK()¡±º¯Êý¡£<br>
+3£®ÎÒÃÇ½«ÔÚOnOKº¯ÊýÖÐ¹¹ÔìÒ»Ð©ÄÜ¹»ÒýÆð³ÌÐò±ÀÀ£µÄ´íÎó´úÂë£º<br>
+void  CCrash_TestDlg::OnOK()<br>
+{<br>
+AfxGetApp()-&gt;GetMainWnd()-&gt;SetWindowText(_T(&ldquo;Crash&rdquo;));<br>
+int* pTest = NULL;<br>
+*pTest =  0;  // Îª¿ÕÖ¸Õë¸³Öµ£¬³ÌÐò½«±ÀÀ£<br>
+CDialog::OnOK();<br>
+}<br>
+¼ÓÈë¡°AfxGetApp()-&gt;GetMainWnd()-&gt;SetWindowText(_T(&ldquo;Crash&rdquo;));¡±µÄÄ¿µÄÊÇÊ¹±ÀÀ£µØÖ·ºÍ¡°OnOK¡±µÄµØÖ·ÓÐÒ»¶¨Æ«ÒÆ£¬Ê¹ÑÝÊ¾¸ü¾ßÒ»°ãÐÔ¡£<br>
+4£®£¨VC 6£©Ê×ÏÈÉèÖÃRelease±àÒë£¨ÔÚBuild¨¤Set as configurationÖÐÑ¡ÔñWin32  Release£©¡£ÒÀ´ÎÑ¡ÔñProject¨¤Settings£¬Ñ¡Ôñ¡°C/C++¡±tabÒ³£¬CategoryÖÐÑ¡Ôñ¡°Listing  Files¡±£¬È»ºóÔÚ¡°Listing file type¡±ÖÐÑ¡Ôñ¡°Assembly,  Machine  Code,  and  Source¡±£¬OK¡£Õâ¸öÑ¡Ïî½«ÎªÃ¿¸öÔ´ÎÄ¼þ£¨*.cpp£©Éú³É»úÆ÷Âë¡¢»ã±àÂëºÍÔ´´úÂëµÄ¶ÔÓ¦±í£¬¿ÉÒÔÔÚ¡°Release¡±Ä¿Â¼ÏÂÕÒµ½ºÍ²é¿´ÕâÐ©ÎÄ¼þ¡£<br>
+5£®£¨VC 6£©ÒÀ´ÎÑ¡ÔñProject¨¤Settings£¬Ñ¡Ôñ¡°Link¡±tabÒ³£¬CategoryÖÐÑ¡Ôñ¡°Debug¡±£¬<br>
+¹³Ñ¡¡°Generate map file¡±£¬OK¡£Õâ¸öÑ¡Ïî½«Éú³É±àÒëºóµÄº¯ÊýµØÖ·ºÍº¯ÊýÃûµÄ¶ÔÓ¦±í¡£</p>
+<p>¶¨Î»´íÎó´úÂë</p>
+<p>1£®ÏÖÔÚÔËÐÐ¡°Release¡±Ä¿Â¼ÏÂµÄ²âÊÔ³ÌÐò£¬µ±µã»÷¡°È·¶¨¡±°´Å¥Ê±£¬³ÌÐò½«±ÀÀ£¡£<br>
+Windows XP »á³öÏÖ¡°Crash_Test.exe Óöµ½ÎÊÌâÐèÒª¹Ø±Õ¡£ÎÒÃÇ¶Ô´ËÒýÆðµÄ²»±ã±íÊ¾±§Ç¸¡£¡±¡­¡­¡­¡­<br>
+ÔÆÔÆµÄ¶Ô»°¿ò£¬ÔÚ¶Ô»°¿òµÄÏÂ·½£¬µ¥»÷¡°Çëµ¥»÷´Ë´¦¡±µÄ³¬Á¬½Ó£¬ÔÚ¡°´íÎóÇ©Ãû¡±ÖÐ£¬ÎÒÃÇ»áµÃµ½ÈçÏÂÐÅÏ¢£º<br>
+AppName: crash_test.exeAppVer:  1.0.0.1ModName: crash_test.exe<br>
+ModVer:  1.0.0.1Offset:  000014a0<br>
+ÆäÖÐµÄOffsetÖµ¾ÍÊÇ±ÀÀ£µÄµØÖ·À²£¬ÏÖÔÚÎÒÃÇ¸ù¾ÝÕâ¸öµØÖ·À´¶¨Î»Ô´³ÌÐòÖÐ³ö´íµÄ´úÂëÐÐ¡£<br>
+2£®ÓÃ¼ÇÊÂ±¾´ò¿ª¡°Release¡±Ä¿Â¼ÏÂµÄ£¬¡°Crash_Test.map¡±ÎÄ¼þ£¬ÔÚÎÄ¼þÖÐ»á¿´µ½ÀàËÆÏÂÃæµÄÄÚÈÝ£º<br>
+0001:00000470?OnQueryDragIcon@CCrash_TestDlg@@IAEPAUHICON__@@XZ  00401470 fCrash_TestDlg.obj<br>
+0001:00000480?OnOK@CCrash_TestDlg@@MAEXXZ  00401480 fCrash_TestDlg.obj<br>
+0001:000004c0?BeginModalState@CWnd@@UAEXXZ  004014c0 f i Crash_TestDlg.obj<br>
+0001:000004d0?EndModalState@CWnd@@UAEXXZ  004014d0 f i Crash_TestDlg.obj<br>
+»­ÏßµÄ²¿·Ö¾ÍÊÇ¸÷¸öº¯Êý±àÒëÔËÐÐºóÔÚÄÚ´æÖÐµÄÏà¶ÔµØÖ·  (¸ßÎ»²¿·ÖÊÇ»ùµØÖ·£¬¾Í²»²ÎÓë¼ÆËãÀ²£¬»ùµØÖ·¿ÉÄÜÒò»úÆ÷²»Í¬¶øÒì£¬µ«Ïà¶ÔµØÖ·¶¼ÊÇÒ»ÑùµÄ¡£)  £¬ÒòÎª¡°Offset¡±Ö¸Ê¾µÄ±ÀÀ£µØÖ·Îª¡°14a0¡±£¬<br>
+1480(OnOKµØÖ·)  &lt;  14a0(³ö´íµØÖ·)  &lt;  14c0(BeginModalStateµØÖ·)£¬ºÜÏÔÈ»£¬14a0µÄµØÖ·ÊÇÔÚOnOKº¯ÊýµÄµØÖ··¶Î§ÄÚµÄ£¬Ò²¾ÍÊÇËµOnOK¾ÍÊÇÒýÆð±ÀÀ£µÄº¯Êý¡£½ÓÏÂÀ´ÔÙÀ´È·¶¨³ö´íµÄ¾ßÌå´úÂëÐÐ¡£<br>
+3£®ÒòÎªOnOKÊÇÔÚ¡°Crash_TestDlg.cpp¡±ÖÐÊµÏÖµÄ£¬Òò´Ë£¬ÎÒÃÇ´ò¿ª¶ÔÓ¦µÄ¡°Crash_TestDlg.cod¡±ÎÄ¼þ£¬ÆäÖÐÓÐÈçÏÂ´úÂë£º<br>
+?OnOK@CCrash_TestDlg@@MAEXXZ PROC NEAR;  CCrash_TestDlg::OnOK, COMDAT;  173:  {<br>
+0000056pushesi<br>
+000018b f1movesi, ecx¡­  ¡­<br>
+;  175:  int* pTest = NULL;<br>
+;  176:  *pTest =  0;<br>
+;  177:  CDialog::OnOK();<br>
+0001e8b cemovecx, esi00020c7  05  00  00  00<br>
+00  00  00  00  00movDWORD PTR ds:0,  0<br>
+0002ae8  00  00  00  00call?OnOK@CDialog@@MAEXXZ;  CDialog::OnOK<br>
+0002f5epopesi<br>
+;  178:  }<br>
+¡­  ¡­<br>
+ºÜÃ÷ÏÔ£¬ÕâÐ©¾ÍÊÇOnOKº¯ÊýµÄ»ã±à±íÊ¾ºÍ»úÆ÷Âë±íÊ¾£¬»­ÏßµÄµØÖ·¾ÍÊÇº¯ÊýÖÐ¸÷¸öÓï¾äµÄÏà¶Ô£¨Ïà¶ÔÓÚº¯ÊýÊ×µØÖ·£©µØÖ·¡£<br>
+ÔÚ²½Öè1ÖÐ£¬ÎÒÃÇÒÑ¾­µÃµ½£¬OffsetÎª14a0£¬OnOKµÄº¯ÊýÊ×µØÖ·Îª0480£¬ÏÖÔÚ£¬ÎÒÃÇÓÃ14a0-1480¾ÍµÃµ½20(×¢Òâ£¬ÕâÀï¶¼ÊÇ16½øÖÆÔËËã)£¬¿É¼û£¬³ö´íµÄ´úÂëÐÐÎª£º<br>
+00020c7  05  00  00  00  00  00  00  00  00movDWORD PTR ds:0,  0<br>
+¶ÔÓ¦ÉÏÃæ×¢ÊÍµÄ£º<br>
+;  176:  *pTest =  0;</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">gowinder</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        1999-11-30
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/d3d8-%E7%AA%97%E5%8F%A3%E6%A8%A1%E5%BC%8F%E5%9E%82%E7%9B%B4%E5%90%8C%E6%AD%A5-fighting-tearing/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">D3D8 窗口模式垂直同步! Fighting Tearing!</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0-1/">
+            <span class="next-text nav-default">压力测试笔记 1</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:gowinder@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/gowinder" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.douban.com/people/gowinder/" class="iconfont icon-douban" title="douban"></a>
+  <a href="https://gowinder.work/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2023<span class="heart"><i class="iconfont icon-heart"></i></span><span>gowinder</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

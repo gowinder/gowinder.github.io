@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>开发笔记 on 不成熟的理想主义者可以为了理想选择高尚的死，成熟的理想主义者则会选择卑下的活着!</title>
+    <link>https://gowinder.work/tags/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/</link>
+    <description>Recent content in 开发笔记 on 不成熟的理想主义者可以为了理想选择高尚的死，成熟的理想主义者则会选择卑下的活着!</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 06 Feb 2023 17:24:00 +0000</lastBuildDate><atom:link href="https://gowinder.work/tags/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>nestjs中,AuthGuard类,在CanActive函数中无法调用Inject .md</title>
+      <link>https://gowinder.work/post/nestjs%E4%B8%ADauthguard%E7%B1%BB%E5%9C%A8canactive%E5%87%BD%E6%95%B0%E4%B8%AD%E6%97%A0%E6%B3%95%E8%B0%83%E7%94%A8inject-/</link>
+      <pubDate>Mon, 06 Feb 2023 17:24:00 +0000</pubDate>
+      
+      <guid>https://gowinder.work/post/nestjs%E4%B8%ADauthguard%E7%B1%BB%E5%9C%A8canactive%E5%87%BD%E6%95%B0%E4%B8%AD%E6%97%A0%E6%B3%95%E8%B0%83%E7%94%A8inject-/</guid>
+      <description>nestjs中,AuthGuard类,在CanActive函数中无法调用Inject 启因 最近写nestjs项目,他的UserGuard很方便</description>
+    </item>
+    
+    <item>
+      <title>nestjsx/crud xxxRepository not found问题解决</title>
+      <link>https://gowinder.work/post/nestjsx-crud-xxxrepository-not-found%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</link>
+      <pubDate>Mon, 06 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://gowinder.work/post/nestjsx-crud-xxxrepository-not-found%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</guid>
+      <description>nestjsx/crud xxxRepository not found问题解决 nestjsx/crud可以快速帮我生成 使用@Entity 定义好typeorm对象的对应service,contro</description>
+    </item>
+    
+    <item>
+      <title>Nestjs, typeorm中的entity中的互相引用问题</title>
+      <link>https://gowinder.work/post/nestjs-typeorm-entity-%E4%BA%92%E7%9B%B8%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Tue, 31 Jan 2023 14:01:39 +0800</pubDate>
+      
+      <guid>https://gowinder.work/post/nestjs-typeorm-entity-%E4%BA%92%E7%9B%B8%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/</guid>
+      <description>Nestjs, typeorm中的entity中的互相引用问题 20230131-152600 使用nestjs时,用到typeorm,有互相引用关系的entity,老是报错,按照官方文</description>
+    </item>
+    
+  </channel>
+</rss>

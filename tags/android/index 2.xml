@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ANDROID on 不成熟的理想主义者可以为了理想选择高尚的死，成熟的理想主义者则会选择卑下的活着!</title>
+    <link>https://gowinder.work/tags/android/</link>
+    <description>Recent content in ANDROID on 不成熟的理想主义者可以为了理想选择高尚的死，成熟的理想主义者则会选择卑下的活着!</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 27 Oct 2010 03:22:56 +0000</lastBuildDate><atom:link href="https://gowinder.work/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>直接使用cifs.ko挂载WINDOWS 共享</title>
+      <link>https://gowinder.work/post/%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8cifs-ko%E6%8C%82%E8%BD%BDwindows-%E5%85%B1%E4%BA%AB/</link>
+      <pubDate>Wed, 27 Oct 2010 03:22:56 +0000</pubDate>
+      
+      <guid>https://gowinder.work/post/%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8cifs-ko%E6%8C%82%E8%BD%BDwindows-%E5%85%B1%E4%BA%AB/</guid>
+      <description>在网上找到的,http://myapad.wordpress.com/author/xaueious/ 这个家伙,用爱可视的内核源代码编了一个</description>
+    </item>
+    
+    <item>
+      <title>APAD RK2808 开ROOT权限注意事项,挂NFS网络硬盘</title>
+      <link>https://gowinder.work/post/apad-rk2808-%E5%BC%80root%E6%9D%83%E9%99%90%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E6%8C%82nfs%E7%BD%91%E7%BB%9C%E7%A1%AC%E7%9B%98/</link>
+      <pubDate>Tue, 26 Oct 2010 09:41:37 +0000</pubDate>
+      
+      <guid>https://gowinder.work/post/apad-rk2808-%E5%BC%80root%E6%9D%83%E9%99%90%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E6%8C%82nfs%E7%BD%91%E7%BB%9C%E7%A1%AC%E7%9B%98/</guid>
+      <description>参见:RK2808 System磁盘映像拿到root权限, 其他自作自定义固件的资料 瑞芯微RK28XX_安卓(android)系统固件包修改基础</description>
+    </item>
+    
+  </channel>
+</rss>

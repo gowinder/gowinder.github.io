@@ -123,6 +123,25 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/chromium-zai-chromesettings-zeng-jia-xin-de-she-zhi-fang-fa/">chromium 在chrome://settings增加新的设置方法</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2020-08-14 </span>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      设置左边栏目菜单修改位置在 chrome/browser/resources/settings/settings_menu/settings_menu.html 如果需要增加或者去掉设置就在里面改 增加的话，加一段： &lt;a id=&quot;new_setting&quot; href=&quot;/new_setting&quot; hidden=&quot;[[!pageVisibility.new_setting]]&quot;&gt; &lt;iron-icon icon=&quot;settings:assignment&quot;&gt;&lt;/iron-icon&gt; $i18n{newSettingTitle} &lt;/a&gt; 然后增加 一个目录 chrome/browser/resources/settings/new_setting 在里面放设置的页面 新建 new_setting_page.html 和
+    </div>
+    <div class="read-more">
+      <a href="/post/chromium-zai-chromesettings-zeng-jia-xin-de-she-zhi-fang-fa/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/recttransform%E4%B8%AD%E7%9A%84%E5%9D%90%E6%A0%87/">RectTransform中的坐标</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2016-07-26 </span>
@@ -193,25 +212,6 @@
     </div>
     <div class="read-more">
       <a href="/post/apad-rk2808-%E5%BC%80root%E6%9D%83%E9%99%90%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E6%8C%82nfs%E7%BD%91%E7%BB%9C%E7%A1%AC%E7%9B%98/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/%E4%BB%8A%E5%B9%B4%E4%B8%8B%E5%8D%8A%E5%B9%B4%E7%AC%AC%E9%87%87%E8%B4%AD%E7%9A%84%E7%AC%AC%E4%B8%80%E6%B3%A2%E7%A7%91%E5%B9%BB%E4%B9%A6%E5%88%B0%E8%B4%A7/">今年下半年第采购的第一波科幻书到货</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2010-10-14 </span>
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      分区是重力使命，火星编年史，真名实姓。重力使用这本的书的封面，可是好早以前，科幻世界上某期的插图啊，当时就在想这样的飞机怎么飞，没引擎，难道
-    </div>
-    <div class="read-more">
-      <a href="/post/%E4%BB%8A%E5%B9%B4%E4%B8%8B%E5%8D%8A%E5%B9%B4%E7%AC%AC%E9%87%87%E8%B4%AD%E7%9A%84%E7%AC%AC%E4%B8%80%E6%B3%A2%E7%A7%91%E5%B9%BB%E4%B9%A6%E5%88%B0%E8%B4%A7/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>

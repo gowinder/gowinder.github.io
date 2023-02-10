@@ -123,6 +123,51 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/releaseaeioi%C2%B5ai%C2%AA/">RELEASEÄ£Ê½¶¨Î»Òì³£µÄ°ì·¨£¨×ª£©</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 1999-11-30 </span>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      ¼ò½é
+µ±release°æ±¾µÄ³ÌÐò½»¸¶¸øÓÃ»§Ê¹ÓÃºó£¬Èç¹ûÓ¦ÓÃ³ÌÐò±ÀÀ£ÁË£¬ÔõÃ´ÑùÍ¨¹ýwindowsÌáÊ¾µÄoffsetµØÖ·À´¶¨Î»Ô´³ÌÐòÖÐ¶ÔÓ¦µÄ³ö´í´úÂëÄØ£¿ÕâÆªÎÄÕÂ¾ÍÀ´ÌÖÂÛÕâ¸öÎÊÌâ¡£
+½¨Á¢µ÷ÊÔ»·¾³
+1£®£¨VC 6£©ÒÀ´ÎÑ¡ÔñFile¨¤New¨¤Projects£¬ÔÚÁÐ±íÖÐÑ¡Ôñ¡°MFC AppWizard£¨EXE£©¡±ÔÚ¡°Project Name¡±ÖÐÊäÈë¡°Crash_Test¡±×÷ÎªÏîÄ¿Ãû£¬¡°OK¡±½øÈëÏÂÒ»²½¡£ÔÚ¡°MFC Appwizard ¨C Step 1¡±¶Ô»°¿òÖÐÑ¡Ôñ¡°Dialog Based¡±µ¥Ñ¡¿ò¡£¡°Finish¡±Íê³É¹¤³ÌµÄ½¨Á¢£¬F7±àÒëÎÞÎó¡£
+2£®£¨VC 6£©Ë«»÷È·¶¨°´Å¥£¬ÌáÊ¾¼ÓÈë£¨ÖØÐ´£©¡°OnOK¡±º¯Êý£¬OK£¬½øÈë¡°CCrash_TestDlg::OnOK()¡±º¯Êý¡£
+3£®ÎÒÃÇ½«ÔÚOnOKº¯ÊýÖÐ¹¹ÔìÒ»Ð©ÄÜ¹»ÒýÆð³ÌÐò±ÀÀ£µÄ´íÎó´úÂë£º
+void CCrash_TestDlg::OnOK()
+{
+AfxGetApp()-&gt;GetMainWnd()-&gt;SetWindowText(_T(&ldquo;Crash&rdquo;));
+int* pTest = NULL;
+*pTest = 0; // Îª¿ÕÖ¸Õë¸³Öµ£¬³ÌÐò½«±ÀÀ£
+CDialog::OnOK();
+}
+¼ÓÈë¡°AfxGetApp()-&gt;GetMainWnd()-&gt;SetWindowText(_T(&ldquo;Crash&rdquo;));¡±µÄÄ¿µÄÊÇÊ¹±ÀÀ£µØÖ·ºÍ¡°OnOK¡±µÄµØÖ·ÓÐÒ»¶¨Æ«ÒÆ£¬Ê¹ÑÝÊ¾¸ü¾ßÒ»°ãÐÔ¡£
+4£®£¨VC 6£©Ê×ÏÈÉèÖÃRelease±àÒë£¨ÔÚBuild¨¤Set as configurationÖÐÑ¡ÔñWin32 Release£©¡£ÒÀ´ÎÑ¡ÔñProject¨¤Settings£¬Ñ¡Ôñ¡°C/C++¡±tabÒ³£¬CategoryÖÐÑ¡Ôñ¡°Listing Files¡±£¬È»ºóÔÚ¡°Listing file type¡±ÖÐÑ¡Ôñ¡°Assembly, Machine Code, and Source¡±£¬OK¡£Õâ¸öÑ¡Ïî½«ÎªÃ¿¸öÔ´ÎÄ¼þ£¨*.cpp£©Éú³É»úÆ÷Âë¡¢»ã±àÂëºÍÔ´´úÂëµÄ¶ÔÓ¦±í£¬¿ÉÒÔÔÚ¡°Release¡±Ä¿Â¼ÏÂÕÒµ½ºÍ²é¿´ÕâÐ©ÎÄ¼þ¡£
+5£®£¨VC 6£©ÒÀ´ÎÑ¡ÔñProject¨¤Settings£¬Ñ¡Ôñ¡°Link¡±tabÒ³£¬CategoryÖÐÑ¡Ôñ¡°Debug¡±£¬
+¹³Ñ¡¡°Generate map file¡±£¬OK¡£Õâ¸öÑ¡Ïî½«Éú³É±àÒëºóµÄº¯ÊýµØÖ·ºÍº¯ÊýÃûµÄ¶ÔÓ¦±í¡£
+¶¨Î»´íÎó´úÂë
+1£®ÏÖÔÚÔËÐÐ¡°Release¡±Ä¿Â¼ÏÂµÄ²âÊÔ³ÌÐò£¬µ±µã»÷¡°È·¶¨¡±°´Å¥Ê±£¬³ÌÐò½«±ÀÀ£¡£
+Windows XP »á³öÏÖ¡°Crash_Test.exe Óöµ½ÎÊÌâÐèÒª¹Ø±Õ¡£ÎÒÃÇ¶Ô´ËÒýÆðµÄ²»±ã±íÊ¾±§Ç¸¡£¡±¡­¡­¡­¡­
+ÔÆÔÆµÄ¶Ô»°¿ò£¬ÔÚ¶Ô»°¿òµÄÏÂ·½£¬µ¥»÷¡°Çëµ¥»÷´Ë´¦¡±µÄ³¬Á¬½Ó£¬ÔÚ¡°´íÎóÇ©Ãû¡±ÖÐ£¬ÎÒÃÇ»áµÃµ½ÈçÏÂÐÅÏ¢£º
+AppName: crash_test.exeAppVer: 1.0.0.1ModName: crash_test.exe
+ModVer: 1.0.0.1Offset: 000014a0
+ÆäÖÐµÄOffsetÖµ¾ÍÊÇ±ÀÀ£µÄµØÖ·À²£¬ÏÖÔÚÎÒÃÇ¸ù¾ÝÕâ¸öµØÖ·À´¶¨Î»Ô´³ÌÐòÖÐ³ö´íµÄ´úÂëÐÐ¡£
+2£®ÓÃ¼ÇÊÂ±¾´ò¿ª¡°Release¡±Ä¿Â¼ÏÂµÄ£¬¡°Crash_Test.map¡±ÎÄ¼þ£¬ÔÚÎÄ¼þÖÐ»á¿´µ½ÀàËÆÏÂÃæµÄÄÚÈÝ£º
+0001:00000470?OnQueryDragIcon@CCrash_TestDlg@@IAEPAUHICON__@@XZ 00401470 fCrash_TestDlg.obj
+0001:00000480?OnOK@CCrash_TestDlg@@MAEXXZ 00401480 fCrash_TestDlg.obj
+    </div>
+    <div class="read-more">
+      <a href="/post/releaseaeioi%C2%B5ai%C2%AA/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0-1/">压力测试笔记 1</a></h1>
     <div class="post-meta">
       <span class="post-time"> 0001-01-01 </span>

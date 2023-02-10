@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>proxmox ve 部署双节点HA集群及glusterfs分布式文件系统笔记 - 不成熟的理想主义者可以为了理想选择高尚的死，成熟的理想主义者则会选择卑下的活着!</title>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5259365864322361"
+     crossorigin="anonymous"></script>
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="gowinder" /><meta name="description" content="proxmox ve 部署双节点HA集群及glusterfs分布式文件系统 需要保存两个pve节点的版本一样 两个proxmox ve节点,实现高可用vm,lxc自" /><meta name="keywords" content="proxmox ve, pve, linux, 分布式, glusterfs, debian, HA, 高可用" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.110.0 with theme even" />
+
+
+<link rel="canonical" href="https://gowinder.work/post/proxmox-ve-%E9%83%A8%E7%BD%B2%E5%8F%8C%E8%8A%82%E7%82%B9%E9%9B%86%E7%BE%A4%E5%8F%8Aglusterfs%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="proxmox ve 部署双节点HA集群及glusterfs分布式文件系统笔记" />
+<meta property="og:description" content="proxmox ve 部署双节点HA集群及glusterfs分布式文件系统 需要保存两个pve节点的版本一样 两个proxmox ve节点,实现高可用vm,lxc自" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gowinder.work/post/proxmox-ve-%E9%83%A8%E7%BD%B2%E5%8F%8C%E8%8A%82%E7%82%B9%E9%9B%86%E7%BE%A4%E5%8F%8Aglusterfs%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-02-09T14:14:05+08:00" />
+<meta property="article:modified_time" content="2023-02-09T14:14:05+08:00" />
+<meta itemprop="name" content="proxmox ve 部署双节点HA集群及glusterfs分布式文件系统笔记">
+<meta itemprop="description" content="proxmox ve 部署双节点HA集群及glusterfs分布式文件系统 需要保存两个pve节点的版本一样 两个proxmox ve节点,实现高可用vm,lxc自"><meta itemprop="datePublished" content="2023-02-09T14:14:05+08:00" />
+<meta itemprop="dateModified" content="2023-02-09T14:14:05+08:00" />
+<meta itemprop="wordCount" content="994">
+<meta itemprop="keywords" content="proxmox ve,linux,分布式,开发笔记,部署," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="proxmox ve 部署双节点HA集群及glusterfs分布式文件系统笔记"/>
+<meta name="twitter:description" content="proxmox ve 部署双节点HA集群及glusterfs分布式文件系统 需要保存两个pve节点的版本一样 两个proxmox ve节点,实现高可用vm,lxc自"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Gowinder</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Gowinder</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">proxmox ve 部署双节点HA集群及glusterfs分布式文件系统笔记</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2023-02-09 </span>
+        
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#proxmox-ve-部署双节点ha集群及glusterfs分布式文件系统">proxmox ve 部署双节点HA集群及glusterfs分布式文件系统</a>
+      <ul>
+        <li><a href="#修改hosts文件">修改<code>hosts</code>文件</a></li>
+        <li><a href="#安装glusterfs">安装<code>glusterfs</code></a>
+          <ul>
+            <li><a href="#开启服务">开启服务</a></li>
+            <li><a href="#增加volume">增加<code>volume</code></a></li>
+            <li><a href="#检查状态">检查状态</a></li>
+            <li><a href="#增加挂载">增加挂载</a></li>
+          </ul>
+        </li>
+        <li><a href="#解决split-brain问题">解决<code>split-brain</code>问题</a></li>
+        <li><a href="#pve双节点集群设置"><code>pve</code>双节点集群设置</a>
+          <ul>
+            <li><a href="#创建共享目录">创建共享目录</a></li>
+            <li><a href="#ha设置">HA设置</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="proxmox-ve-部署双节点ha集群及glusterfs分布式文件系统">proxmox ve 部署双节点HA集群及glusterfs分布式文件系统</h1>
+<p><strong>需要保存两个pve节点的版本一样</strong></p>
+<p>两个<code>proxmox ve</code>节点,实现高可用<code>vm</code>,<code>lxc</code>自动迁移</p>
+<h2 id="修改hosts文件">修改<code>hosts</code>文件</h2>
+<p>在两台<code>pve</code>的<code>/etc/hosts</code>中,增加如下<code>host</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">192.168.1.229 pve1.local pve1
+</span></span><span class="line"><span class="cl">192.168.1.230 pve2.local pve2
+</span></span><span class="line"><span class="cl">192.168.1.229 gluster1
+</span></span><span class="line"><span class="cl">192.168.1.230 gluster2
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="安装glusterfs">安装<code>glusterfs</code></h2>
+<p>以下操作都在两台机器上做, 这里分别为<code>pve1</code>, <code>pve2</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">wget -O - https://download.gluster.org/pub/gluster/glusterfs/9/rsa.pub <span class="p">|</span> apt-key add -
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">DEBID</span><span class="o">=</span><span class="k">$(</span>grep <span class="s1">&#39;VERSION_ID=&#39;</span> /etc/os-release <span class="p">|</span> cut -d <span class="s1">&#39;=&#39;</span> -f <span class="m">2</span> <span class="p">|</span> tr -d <span class="s1">&#39;&#34;&#39;</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">DEBVER</span><span class="o">=</span><span class="k">$(</span>grep <span class="s1">&#39;VERSION=&#39;</span> /etc/os-release <span class="p">|</span> grep -Eo <span class="s1">&#39;[a-z]+&#39;</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">DEBARCH</span><span class="o">=</span><span class="k">$(</span>dpkg --print-architecture<span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> deb https://download.gluster.org/pub/gluster/glusterfs/LATEST/Debian/<span class="si">${</span><span class="nv">DEBID</span><span class="si">}</span>/<span class="si">${</span><span class="nv">DEBARCH</span><span class="si">}</span>/apt <span class="si">${</span><span class="nv">DEBVER</span><span class="si">}</span> main &gt; /etc/apt/sources.list.d/gluster.list
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">apt update <span class="o">&amp;&amp;</span> apt install -y glusterfs-server
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>需要保存gluster的版本一样</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">gluster --version
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果一样,请升级,我有一台是<code>9.2</code>,加了源也没不会直接升级到<code>10.3</code>,需要这样做:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">apt-get list -a glusterfs-server
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>会出现全部的版本,然后安装对应的</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">apt-get install glusterfs-server<span class="o">=</span><span class="s2">&#34;10.3-1&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在<code>pve1</code>上编辑: <code>nano /etc/glusterfs/glusterd.vol</code>, 在 <code>option transport.socket.listen-port 24007</code> 增加:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">    option transport.rdma.bind-address gluster1
+</span></span><span class="line"><span class="cl">    option transport.socket.bind-address gluster1
+</span></span><span class="line"><span class="cl">    option transport.tcp.bind-address gluster1
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在<code>pve2</code>上编辑: <code>nano /etc/glusterfs/glusterd.vol</code>, 在 <code>option transport.socket.listen-port 24007</code> 增加:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">    option transport.rdma.bind-address gluster2
+</span></span><span class="line"><span class="cl">    option transport.socket.bind-address gluster2
+</span></span><span class="line"><span class="cl">    option transport.tcp.bind-address gluster2
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="开启服务">开启服务</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">systemctl <span class="nb">enable</span> glusterd.service
+</span></span><span class="line"><span class="cl">systemctl start glusterd.service
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>重要,在<code>pve2</code>上需要执行命令以加入集群</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">gluster peer probe gluster1
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>显示: <code>peer probe: success</code> 就OK</p>
+<h3 id="增加volume">增加<code>volume</code></h3>
+<p>这里直接建立在<code>zfs</code>上,保证两台<code>pve</code>都使用一样的路径建立<code>volume</code>,这里的路径是<code>/tank/gfs</code>
+<strong>注意如果是zfs的话,不要能使用挂载根目前,而要使用目录</strong>, 下面例子中,<code>/tank/gfs</code>就是一个<code>zfs</code>的挂载,在下面建立了一个子目录<code>s</code>来用作<code>volume</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">gluster volume create VMS replica <span class="m">2</span> gluster1:/tank/gfs/s gluster2:/tank/gfs/s
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">gluster vol start VMS
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="检查状态">检查状态</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">gluster vol info VMS
+</span></span><span class="line"><span class="cl">gluster vol status VMS
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="增加挂载">增加挂载</h3>
+<p>在两台<code>pve</code>上都要做</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">mkdir /vms
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>修改<code>pve1</code>的<code>/etc/fstab</code>,增加</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">gluster1:VMS /vms glusterfs defaults,_netdev,x-systemd.automount,backupvolfile-server=gluster2 0 0
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>修改<code>pve2</code>的<code>/etc/fstab</code>,增加</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">gluster2:VMS /vms glusterfs defaults,_netdev,x-systemd.automount,backupvolfile-server=gluster1 0 0
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>重启两台<code>pve</code>,让<code>/mnt</code>挂载</p>
+<h4 id="两台pve不重启挂载">两台<code>pve</code>不重启挂载</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">mount /vms
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="解决split-brain问题">解决<code>split-brain</code>问题</h2>
+<p>两个节点的<code>gluster</code>会出现<code>split-brain</code>问题,就是两节点票数一样,谁也不听谁的,解决办法如下:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">gluster vol <span class="nb">set</span> VMS cluster.heal-timeout <span class="m">5</span>
+</span></span><span class="line"><span class="cl">gluster volume heal VMS <span class="nb">enable</span>
+</span></span><span class="line"><span class="cl">gluster vol <span class="nb">set</span> VMS cluster.quorum-reads <span class="nb">false</span>
+</span></span><span class="line"><span class="cl">gluster vol <span class="nb">set</span> VMS cluster.quorum-count <span class="m">1</span>
+</span></span><span class="line"><span class="cl">gluster vol <span class="nb">set</span> VMS network.ping-timeout <span class="m">2</span>
+</span></span><span class="line"><span class="cl">gluster volume <span class="nb">set</span> VMS cluster.favorite-child-policy mtime
+</span></span><span class="line"><span class="cl">gluster volume heal VMS granular-entry-heal <span class="nb">enable</span>
+</span></span><span class="line"><span class="cl">gluster volume <span class="nb">set</span> VMS cluster.data-self-heal-algorithm full
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="pve双节点集群设置"><code>pve</code>双节点集群设置</h2>
+<p>第一个创建,第二个加入,没什么好说的</p>
+<h3 id="创建共享目录">创建共享目录</h3>
+<p>在<code>DataCenter</code>中的<code>Storage</code>中,点<code>Add</code>,<code>Directory</code>填<code>/vms</code>, <strong>钩选 share</strong></p>
+<h3 id="ha设置">HA设置</h3>
+<p>修改 <code>/etc/pve/corosync.conf</code></p>
+<p>在<code>quorum</code>中增加,变成这样:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="err">quorum</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="err">provider:</span> <span class="err">corosync_votequorum</span>
+</span></span><span class="line"><span class="cl">    <span class="err">expected_votes:</span> <span class="err">1</span>
+</span></span><span class="line"><span class="cl">    <span class="err">two_node:</span> <span class="err">1</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>其中, <code>expected_votes</code>表示希望的节点数量, <code>two_node: 1</code>表示,只有两个节点,还有一个<code>wait_for_all: 0</code>, <a href="https://www.systutorials.com/docs/linux/man/5-votequorum/">NOTES: enabling two_node: 1 automatically enables wait_for_all. It is still possible to override wait_for_all by explicitly setting it to 0. If more than 2 nodes join the cluster, the two_node option is automatically disabled.</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">gowinder</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2023-02-09
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/proxmox-ve/">proxmox ve</a>
+          <a href="/tags/linux/">linux</a>
+          <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F/">分布式</a>
+          <a href="/tags/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/">开发笔记</a>
+          <a href="/tags/%E9%83%A8%E7%BD%B2/">部署</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/nestjs-jwtservice-seccret-or-public-key-must-be-provied/">
+            <span class="next-text nav-default">nestjs中,JwtService报错,没有SECRET</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:gowinder@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/gowinder" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.douban.com/people/gowinder/" class="iconfont icon-douban" title="douban"></a>
+  <a href="https://gowinder.work/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2023<span class="heart"><i class="iconfont icon-heart"></i></span><span>gowinder</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

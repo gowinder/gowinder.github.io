@@ -6,11 +6,11 @@
     <description>Recent content in Tags on 不成熟的理想主义者可以为了理想选择高尚的死，成熟的理想主义者则会选择卑下的活着!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 09 Feb 2023 14:14:05 +0800</lastBuildDate><atom:link href="https://gowinder.work/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 14 Feb 2023 09:39:05 +0800</lastBuildDate><atom:link href="https://gowinder.work/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>linux</title>
       <link>https://gowinder.work/tags/linux/</link>
-      <pubDate>Thu, 09 Feb 2023 14:14:05 +0800</pubDate>
+      <pubDate>Tue, 14 Feb 2023 09:39:05 +0800</pubDate>
       
       <guid>https://gowinder.work/tags/linux/</guid>
       <description></description>
@@ -19,9 +19,54 @@
     <item>
       <title>proxmox ve</title>
       <link>https://gowinder.work/tags/proxmox-ve/</link>
-      <pubDate>Thu, 09 Feb 2023 14:14:05 +0800</pubDate>
+      <pubDate>Tue, 14 Feb 2023 09:39:05 +0800</pubDate>
       
       <guid>https://gowinder.work/tags/proxmox-ve/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>磁盘</title>
+      <link>https://gowinder.work/tags/%E7%A3%81%E7%9B%98/</link>
+      <pubDate>Tue, 14 Feb 2023 09:39:05 +0800</pubDate>
+      
+      <guid>https://gowinder.work/tags/%E7%A3%81%E7%9B%98/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>虚拟机</title>
+      <link>https://gowinder.work/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/</link>
+      <pubDate>Tue, 14 Feb 2023 09:39:05 +0800</pubDate>
+      
+      <guid>https://gowinder.work/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gluster</title>
+      <link>https://gowinder.work/tags/gluster/</link>
+      <pubDate>Sat, 11 Feb 2023 21:13:05 +0800</pubDate>
+      
+      <guid>https://gowinder.work/tags/gluster/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gstatus</title>
+      <link>https://gowinder.work/tags/gstatus/</link>
+      <pubDate>Sat, 11 Feb 2023 21:13:05 +0800</pubDate>
+      
+      <guid>https://gowinder.work/tags/gstatus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>分布式</title>
+      <link>https://gowinder.work/tags/%E5%88%86%E5%B8%83%E5%BC%8F/</link>
+      <pubDate>Sat, 11 Feb 2023 21:13:05 +0800</pubDate>
+      
+      <guid>https://gowinder.work/tags/%E5%88%86%E5%B8%83%E5%BC%8F/</guid>
       <description></description>
     </item>
     
@@ -31,15 +76,6 @@
       <pubDate>Thu, 09 Feb 2023 14:14:05 +0800</pubDate>
       
       <guid>https://gowinder.work/tags/%E9%83%A8%E7%BD%B2/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>分布式</title>
-      <link>https://gowinder.work/tags/%E5%88%86%E5%B8%83%E5%BC%8F/</link>
-      <pubDate>Thu, 09 Feb 2023 14:14:05 +0800</pubDate>
-      
-      <guid>https://gowinder.work/tags/%E5%88%86%E5%B8%83%E5%BC%8F/</guid>
       <description></description>
     </item>
     

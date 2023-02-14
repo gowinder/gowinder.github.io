@@ -6,7 +6,25 @@
     <description>Recent content in Posts on 不成熟的理想主义者可以为了理想选择高尚的死，成熟的理想主义者则会选择卑下的活着!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 09 Feb 2023 14:14:05 +0800</lastBuildDate><atom:link href="https://gowinder.work/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 14 Feb 2023 09:39:05 +0800</lastBuildDate><atom:link href="https://gowinder.work/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>proxmox ve VM挂载物理硬盘</title>
+      <link>https://gowinder.work/post/proxmox-ve-vm%E6%8C%82%E8%BD%BD%E7%89%A9%E7%90%86%E7%A1%AC%E7%9B%98/</link>
+      <pubDate>Tue, 14 Feb 2023 09:39:05 +0800</pubDate>
+      
+      <guid>https://gowinder.work/post/proxmox-ve-vm%E6%8C%82%E8%BD%BD%E7%89%A9%E7%90%86%E7%A1%AC%E7%9B%98/</guid>
+      <description>proxmox ve VM挂载物理硬盘 先找到要挂载的硬盘的id: 1 lsblk |awk &amp;#39;NR==1{print $0&amp;#34; DEVICE-ID(S)&amp;#34;}NR&amp;gt;1{dev=$1;printf $0&amp;#34; &amp;#34;;system(&amp;#34;find /dev/disk/by-id -lname \&amp;#34;*&amp;#34;dev&amp;#34;\&amp;#34; -printf \&amp;#34; %p\&amp;#34;&amp;#34;);print &amp;#34;&amp;#34;;}&amp;#39;|grep -v -E &amp;#39;part|lvm&amp;#39; 结果类似: 1 2 3 4 5 NAME MAJ:MIN RM SIZE RO TYPE MOUNTPOINT DEVICE-ID(S) loop0 7:0 0 20G 0 loop loop1 7:1 0 80G 0</description>
+    </item>
+    
+    <item>
+      <title>gluster brick下线问题解决</title>
+      <link>https://gowinder.work/post/gluster-brick%E4%B8%8B%E7%BA%BF%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</link>
+      <pubDate>Sat, 11 Feb 2023 21:13:05 +0800</pubDate>
+      
+      <guid>https://gowinder.work/post/gluster-brick%E4%B8%8B%E7%BA%BF%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</guid>
+      <description>gluster brick下线问题解决 下线问题 刚装好gluster,在上面存放了linux container的rootfs,这样linux containe</description>
+    </item>
+    
     <item>
       <title>proxmox ve 部署双节点HA集群及glusterfs分布式文件系统笔记</title>
       <link>https://gowinder.work/post/proxmox-ve-%E9%83%A8%E7%BD%B2%E5%8F%8C%E8%8A%82%E7%82%B9%E9%9B%86%E7%BE%A4%E5%8F%8Aglusterfs%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/</link>
@@ -320,41 +338,6 @@
       
       <guid>https://gowinder.work/post/d3d8-%E7%AA%97%E5%8F%A3%E6%A8%A1%E5%BC%8F%E5%9E%82%E7%9B%B4%E5%90%8C%E6%AD%A5-fighting-tearing/</guid>
       <description>今天BOSS说DEMO有点卡,一看发现是垂直同步的问题!于是乎在HGE的参数上加上了垂直同步的属性,谁知不行,一查资料,发现D3D8 只有在全</description>
-    </item>
-    
-    <item>
-      <title>RELEASEÄ£Ê½¶¨Î»Òì³£µÄ°ì·¨£¨×ª£©</title>
-      <link>https://gowinder.work/post/releaseaeioi%C2%B5ai%C2%AA/</link>
-      <pubDate>Tue, 30 Nov 1999 00:00:00 +0000</pubDate>
-      
-      <guid>https://gowinder.work/post/releaseaeioi%C2%B5ai%C2%AA/</guid>
-      <description>¼ò½é
-µ±release°æ±¾µÄ³ÌÐò½»¸¶¸øÓÃ»§Ê¹ÓÃºó£¬Èç¹ûÓ¦ÓÃ³ÌÐò±ÀÀ£ÁË£¬ÔõÃ´ÑùÍ¨¹ýwindowsÌáÊ¾µÄoffsetµØÖ·À´¶¨Î»Ô´³ÌÐòÖÐ¶ÔÓ¦µÄ³ö´í´úÂëÄØ£¿ÕâÆªÎÄÕÂ¾ÍÀ´ÌÖÂÛÕâ¸öÎÊÌâ¡£
-½¨Á¢µ÷ÊÔ»·¾³
-1£®£¨VC 6£©ÒÀ´ÎÑ¡ÔñFile¨¤New¨¤Projects£¬ÔÚÁÐ±íÖÐÑ¡Ôñ¡°MFC AppWizard£¨EXE£©¡±ÔÚ¡°Project Name¡±ÖÐÊäÈë¡°Crash_Test¡±×÷ÎªÏîÄ¿Ãû£¬¡°OK¡±½øÈëÏÂÒ»²½¡£ÔÚ¡°MFC Appwizard ¨C Step 1¡±¶Ô»°¿òÖÐÑ¡Ôñ¡°Dialog Based¡±µ¥Ñ¡¿ò¡£¡°Finish¡±Íê³É¹¤³ÌµÄ½¨Á¢£¬F7±àÒëÎÞÎó¡£
-2£®£¨VC 6£©Ë«»÷È·¶¨°´Å¥£¬ÌáÊ¾¼ÓÈë£¨ÖØÐ´£©¡°OnOK¡±º¯Êý£¬OK£¬½øÈë¡°CCrash_TestDlg::OnOK()¡±º¯Êý¡£
-3£®ÎÒÃÇ½«ÔÚOnOKº¯ÊýÖÐ¹¹ÔìÒ»Ð©ÄÜ¹»ÒýÆð³ÌÐò±ÀÀ£µÄ´íÎó´úÂë£º
-void CCrash_TestDlg::OnOK()
-{
-AfxGetApp()-&amp;gt;GetMainWnd()-&amp;gt;SetWindowText(_T(&amp;ldquo;Crash&amp;rdquo;));
-int* pTest = NULL;
-*pTest = 0; // Îª¿ÕÖ¸Õë¸³Öµ£¬³ÌÐò½«±ÀÀ£
-CDialog::OnOK();
-}
-¼ÓÈë¡°AfxGetApp()-&amp;gt;GetMainWnd()-&amp;gt;SetWindowText(_T(&amp;ldquo;Crash&amp;rdquo;));¡±µÄÄ¿µÄÊÇÊ¹±ÀÀ£µØÖ·ºÍ¡°OnOK¡±µÄµØÖ·ÓÐÒ»¶¨Æ«ÒÆ£¬Ê¹ÑÝÊ¾¸ü¾ßÒ»°ãÐÔ¡£
-4£®£¨VC 6£©Ê×ÏÈÉèÖÃRelease±àÒë£¨ÔÚBuild¨¤Set as configurationÖÐÑ¡ÔñWin32 Release£©¡£ÒÀ´ÎÑ¡ÔñProject¨¤Settings£¬Ñ¡Ôñ¡°C/C++¡±tabÒ³£¬CategoryÖÐÑ¡Ôñ¡°Listing Files¡±£¬È»ºóÔÚ¡°Listing file type¡±ÖÐÑ¡Ôñ¡°Assembly, Machine Code, and Source¡±£¬OK¡£Õâ¸öÑ¡Ïî½«ÎªÃ¿¸öÔ´ÎÄ¼þ£¨*.cpp£©Éú³É»úÆ÷Âë¡¢»ã±àÂëºÍÔ´´úÂëµÄ¶ÔÓ¦±í£¬¿ÉÒÔÔÚ¡°Release¡±Ä¿Â¼ÏÂÕÒµ½ºÍ²é¿´ÕâÐ©ÎÄ¼þ¡£
-5£®£¨VC 6£©ÒÀ´ÎÑ¡ÔñProject¨¤Settings£¬Ñ¡Ôñ¡°Link¡±tabÒ³£¬CategoryÖÐÑ¡Ôñ¡°Debug¡±£¬
-¹³Ñ¡¡°Generate map file¡±£¬OK¡£Õâ¸öÑ¡Ïî½«Éú³É±àÒëºóµÄº¯ÊýµØÖ·ºÍº¯ÊýÃûµÄ¶ÔÓ¦±í¡£
-¶¨Î»´íÎó´úÂë
-1£®ÏÖÔÚÔËÐÐ¡°Release¡±Ä¿Â¼ÏÂµÄ²âÊÔ³ÌÐò£¬µ±µã»÷¡°È·¶¨¡±°´Å¥Ê±£¬³ÌÐò½«±ÀÀ£¡£
-Windows XP »á³öÏÖ¡°Crash_Test.exe Óöµ½ÎÊÌâÐèÒª¹Ø±Õ¡£ÎÒÃÇ¶Ô´ËÒýÆðµÄ²»±ã±íÊ¾±§Ç¸¡£¡±¡­¡­¡­¡­
-ÔÆÔÆµÄ¶Ô»°¿ò£¬ÔÚ¶Ô»°¿òµÄÏÂ·½£¬µ¥»÷¡°Çëµ¥»÷´Ë´¦¡±µÄ³¬Á¬½Ó£¬ÔÚ¡°´íÎóÇ©Ãû¡±ÖÐ£¬ÎÒÃÇ»áµÃµ½ÈçÏÂÐÅÏ¢£º
-AppName: crash_test.exeAppVer: 1.0.0.1ModName: crash_test.exe
-ModVer: 1.0.0.1Offset: 000014a0
-ÆäÖÐµÄOffsetÖµ¾ÍÊÇ±ÀÀ£µÄµØÖ·À²£¬ÏÖÔÚÎÒÃÇ¸ù¾ÝÕâ¸öµØÖ·À´¶¨Î»Ô´³ÌÐòÖÐ³ö´íµÄ´úÂëÐÐ¡£
-2£®ÓÃ¼ÇÊÂ±¾´ò¿ª¡°Release¡±Ä¿Â¼ÏÂµÄ£¬¡°Crash_Test.map¡±ÎÄ¼þ£¬ÔÚÎÄ¼þÖÐ»á¿´µ½ÀàËÆÏÂÃæµÄÄÚÈÝ£º
-0001:00000470?OnQueryDragIcon@CCrash_TestDlg@@IAEPAUHICON__@@XZ 00401470 fCrash_TestDlg.obj
-0001:00000480?OnOK@CCrash_TestDlg@@MAEXXZ 00401480 fCrash_TestDlg.obj</description>
     </item>
     
     <item>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gstatus on 不成熟的理想主义者可以为了理想选择高尚的死，成熟的理想主义者则会选择卑下的活着!</title>
+    <link>https://gowinder.work/tags/gstatus/</link>
+    <description>Recent content in gstatus on 不成熟的理想主义者可以为了理想选择高尚的死，成熟的理想主义者则会选择卑下的活着!</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 11 Feb 2023 21:13:05 +0800</lastBuildDate><atom:link href="https://gowinder.work/tags/gstatus/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>gluster brick下线问题解决</title>
+      <link>https://gowinder.work/post/gluster-brick%E4%B8%8B%E7%BA%BF%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</link>
+      <pubDate>Sat, 11 Feb 2023 21:13:05 +0800</pubDate>
+      
+      <guid>https://gowinder.work/post/gluster-brick%E4%B8%8B%E7%BA%BF%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</guid>
+      <description>gluster brick下线问题解决 下线问题 刚装好gluster,在上面存放了linux container的rootfs,这样linux containe</description>
+    </item>
+    
+  </channel>
+</rss>

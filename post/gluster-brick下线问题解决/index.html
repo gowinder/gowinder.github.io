@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>压力测试笔记 1 - 不成熟的理想主义者可以为了理想选择高尚的死，成熟的理想主义者则会选择卑下的活着!</title>
+  <title>gluster brick下线问题解决 - 不成熟的理想主义者可以为了理想选择高尚的死，成熟的理想主义者则会选择卑下的活着!</title>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5259365864322361"
      crossorigin="anonymous"></script>
 <meta name="renderer" content="webkit" />
@@ -18,7 +18,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="gowinder" /><meta name="description" content="马上要封测了,现在开始压力测试. 1000个连接上,没有问题,但是登录后问题来了,处理一个登录要1秒钟时间,可想而知1000个需要多长时间. 这" /><meta name="keywords" content="Hugo, chromium, nestjs" />
+<meta name="author" content="gowinder" /><meta name="description" content="gluster brick下线问题解决 下线问题 刚装好gluster,在上面存放了linux container的rootfs,这样linux containe" /><meta name="keywords" content="proxmox ve, pve, linux, 分布式, glusterfs, debian, HA, 高可用" />
 
 
 
@@ -28,7 +28,7 @@
 <meta name="generator" content="Hugo 0.110.0 with theme even" />
 
 
-<link rel="canonical" href="https://gowinder.work/post/%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0-1/" />
+<link rel="canonical" href="https://gowinder.work/post/gluster-brick%E4%B8%8B%E7%BA%BF%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -41,19 +41,19 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="压力测试笔记 1" />
-<meta property="og:description" content="马上要封测了,现在开始压力测试. 1000个连接上,没有问题,但是登录后问题来了,处理一个登录要1秒钟时间,可想而知1000个需要多长时间. 这" />
+<meta property="og:title" content="gluster brick下线问题解决" />
+<meta property="og:description" content="gluster brick下线问题解决 下线问题 刚装好gluster,在上面存放了linux container的rootfs,这样linux containe" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://gowinder.work/post/%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0-1/" /><meta property="article:section" content="post" />
-
-
-<meta itemprop="name" content="压力测试笔记 1">
-<meta itemprop="description" content="马上要封测了,现在开始压力测试. 1000个连接上,没有问题,但是登录后问题来了,处理一个登录要1秒钟时间,可想而知1000个需要多长时间. 这">
-
-<meta itemprop="wordCount" content="357">
-<meta itemprop="keywords" content="游戏开发," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="压力测试笔记 1"/>
-<meta name="twitter:description" content="马上要封测了,现在开始压力测试. 1000个连接上,没有问题,但是登录后问题来了,处理一个登录要1秒钟时间,可想而知1000个需要多长时间. 这"/>
+<meta property="og:url" content="https://gowinder.work/post/gluster-brick%E4%B8%8B%E7%BA%BF%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-02-11T21:13:05+08:00" />
+<meta property="article:modified_time" content="2023-02-11T21:13:05+08:00" />
+<meta itemprop="name" content="gluster brick下线问题解决">
+<meta itemprop="description" content="gluster brick下线问题解决 下线问题 刚装好gluster,在上面存放了linux container的rootfs,这样linux containe"><meta itemprop="datePublished" content="2023-02-11T21:13:05+08:00" />
+<meta itemprop="dateModified" content="2023-02-11T21:13:05+08:00" />
+<meta itemprop="wordCount" content="316">
+<meta itemprop="keywords" content="proxmox ve,gluster,分布式,gstatus," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="gluster brick下线问题解决"/>
+<meta name="twitter:description" content="gluster brick下线问题解决 下线问题 刚装好gluster,在上面存放了linux container的rootfs,这样linux containe"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -126,10 +126,10 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">压力测试笔记 1</h1>
+      <h1 class="post-title">gluster brick下线问题解决</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 0001-01-01 </span>
+        <span class="post-time"> 2023-02-11 </span>
         
         
       </div>
@@ -138,16 +138,52 @@
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content always-active">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#gluster-brick下线问题解决">gluster brick下线问题解决</a>
+      <ul>
+        <li><a href="#下线问题">下线问题</a></li>
+        <li><a href="#heal问题">heal问题</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
   </div>
 </div>
     <div class="post-content">
-      <p>马上要封测了,现在开始压力测试.<br>
-1000个连接上,没有问题,但是登录后问题来了,处理一个登录要1秒钟时间,可想而知1000个需要多长时间.<br>
-这是肯定不行.<br>
-于是加入测试语句,查找是谁在拖时间.<br>
-最后找到是登录时初始化玩家的任务,才发现有900多个任务,每个任务又有小任务,而且小任务不管数据库有没有记录,都要去数据库中SELECT 一次.难怪,明天找人改过来,已经完成和还没有开始的任务就不需要读了.应该会快很多.<br>
-又发现写日志问题,在每次TICK调用的函数中,如果有CHECK之类的日志出错,会不停的写,导致服务器没有响应,除了关掉日志写硬盘外,几乎没有别的办法.在介面线程显示时,取日志消息时,每取一个,要加一个判断,看是否超出此次TICK可能使用的时间,如果超出,还未处理的TICK就下次再处理,这样介面就不会死掉了.</p>
+      <h1 id="gluster-brick下线问题解决">gluster brick下线问题解决</h1>
+<h2 id="下线问题">下线问题</h2>
+<p>刚装好<code>gluster</code>,在上面存放了<code>linux container</code>的<code>rootfs</code>,这样<code>linux container</code>就可以在两台<code>pve</code>的群集中做高可用了.</p>
+<p>空闲的时候,用命令:<code>sudo gluster vol status VMS</code>查看了下,发现有一个<code>brick</code>是<code>offline</code>的状态.</p>
+<p>网上查了下,安装<code>gstatus</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">curl -fsSL https://github.com/gluster/gstatus/releases/latest/download/install.sh <span class="p">|</span> sudo bash -x
+</span></span><span class="line"><span class="cl">gstatus --version
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>安装完成后, 运行: <code>sudo gstatus -a -b</code>, 发现: <code>gluster1</code>是<code>offline</code>状态, 查了下,找到一个解决办法: <a href="https://github.com/gluster/glusterfs/issues/2742#issuecomment-908361146">强制启动</a>, 照着来:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo gluster vol start VMS force
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>运行后不一会儿就正常了.</p>
+<h2 id="heal问题">heal问题</h2>
+<p>查看<code>gluster</code>的时候,发现需要<code>heal</code>,</p>
+<ul>
+<li>查看: <code>sudo gluster heal VMS info</code> 查看是否有需要<code>heal</code>的</li>
+<li><code>heal</code>: <code>sudo gluster heal VMS</code>,</li>
+<li>查看汇总: <code>sudo gluster vol heal VMS summary</code></li>
+<li>查看统计: <code>sudo gluster vol heal VMS statistics heal-count</code></li>
+</ul>
 
     </div>
 
@@ -159,7 +195,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        0001-01-01
+        2023-02-11
         
     </span>
   </p>
@@ -168,15 +204,22 @@
 </div>
 <footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/">游戏开发</a>
+          <a href="/tags/proxmox-ve/">proxmox ve</a>
+          <a href="/tags/gluster/">gluster</a>
+          <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F/">分布式</a>
+          <a href="/tags/gstatus/">gstatus</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/d3d8-%E7%AA%97%E5%8F%A3%E6%A8%A1%E5%BC%8F%E5%9E%82%E7%9B%B4%E5%90%8C%E6%AD%A5-fighting-tearing/">
+        <a class="prev" href="/post/proxmox-ve-vm%E6%8C%82%E8%BD%BD%E7%89%A9%E7%90%86%E7%A1%AC%E7%9B%98/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">D3D8 窗口模式垂直同步! Fighting Tearing!</span>
+            <span class="prev-text nav-default">proxmox ve VM挂载物理硬盘</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
-        
+        <a class="next" href="/post/proxmox-ve-%E9%83%A8%E7%BD%B2%E5%8F%8C%E8%8A%82%E7%82%B9%E9%9B%86%E7%BE%A4%E5%8F%8Aglusterfs%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/">
+            <span class="next-text nav-default">proxmox ve 部署双节点HA集群及glusterfs分布式文件系统笔记</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
       </nav>
     </footer>
   </article>

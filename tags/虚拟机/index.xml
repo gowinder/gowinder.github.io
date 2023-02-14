@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>虚拟机 on 不成熟的理想主义者可以为了理想选择高尚的死，成熟的理想主义者则会选择卑下的活着!</title>
+    <link>https://gowinder.work/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/</link>
+    <description>Recent content in 虚拟机 on 不成熟的理想主义者可以为了理想选择高尚的死，成熟的理想主义者则会选择卑下的活着!</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 14 Feb 2023 09:39:05 +0800</lastBuildDate><atom:link href="https://gowinder.work/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>proxmox ve VM挂载物理硬盘</title>
+      <link>https://gowinder.work/post/proxmox-ve-vm%E6%8C%82%E8%BD%BD%E7%89%A9%E7%90%86%E7%A1%AC%E7%9B%98/</link>
+      <pubDate>Tue, 14 Feb 2023 09:39:05 +0800</pubDate>
+      
+      <guid>https://gowinder.work/post/proxmox-ve-vm%E6%8C%82%E8%BD%BD%E7%89%A9%E7%90%86%E7%A1%AC%E7%9B%98/</guid>
+      <description>proxmox ve VM挂载物理硬盘 先找到要挂载的硬盘的id: 1 lsblk |awk &amp;#39;NR==1{print $0&amp;#34; DEVICE-ID(S)&amp;#34;}NR&amp;gt;1{dev=$1;printf $0&amp;#34; &amp;#34;;system(&amp;#34;find /dev/disk/by-id -lname \&amp;#34;*&amp;#34;dev&amp;#34;\&amp;#34; -printf \&amp;#34; %p\&amp;#34;&amp;#34;);print &amp;#34;&amp;#34;;}&amp;#39;|grep -v -E &amp;#39;part|lvm&amp;#39; 结果类似: 1 2 3 4 5 NAME MAJ:MIN RM SIZE RO TYPE MOUNTPOINT DEVICE-ID(S) loop0 7:0 0 20G 0 loop loop1 7:1 0 80G 0</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -17,11 +17,11 @@
     </item>
     
     <item>
-      <title>nestjs中,AuthGuard类,在CanActive函数中无法调用Inject .md</title>
-      <link>https://gowinder.work/post/nestjs%E4%B8%ADauthguard%E7%B1%BB%E5%9C%A8canactive%E5%87%BD%E6%95%B0%E4%B8%AD%E6%97%A0%E6%B3%95%E8%B0%83%E7%94%A8inject-/</link>
+      <title>nestjs中,AuthGuard类,在CanActive函数中无法调用Inject.md</title>
+      <link>https://gowinder.work/post/nestjs%E4%B8%ADauthguard%E7%B1%BB%E5%9C%A8canactive%E5%87%BD%E6%95%B0%E4%B8%AD%E6%97%A0%E6%B3%95%E8%B0%83%E7%94%A8inject/</link>
       <pubDate>Mon, 06 Feb 2023 17:24:00 +0000</pubDate>
       
-      <guid>https://gowinder.work/post/nestjs%E4%B8%ADauthguard%E7%B1%BB%E5%9C%A8canactive%E5%87%BD%E6%95%B0%E4%B8%AD%E6%97%A0%E6%B3%95%E8%B0%83%E7%94%A8inject-/</guid>
+      <guid>https://gowinder.work/post/nestjs%E4%B8%ADauthguard%E7%B1%BB%E5%9C%A8canactive%E5%87%BD%E6%95%B0%E4%B8%AD%E6%97%A0%E6%B3%95%E8%B0%83%E7%94%A8inject/</guid>
       <description>nestjs中,AuthGuard类,在CanActive函数中无法调用Inject 启因 最近写nestjs项目,他的UserGuard很方便</description>
     </item>
     

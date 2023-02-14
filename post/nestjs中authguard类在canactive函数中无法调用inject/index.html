@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>nestjs中,AuthGuard类,在CanActive函数中无法调用Inject.md - 不成熟的理想主义者可以为了理想选择高尚的死，成熟的理想主义者则会选择卑下的活着!</title>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5259365864322361"
+     crossorigin="anonymous"></script>
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="gowinder" /><meta name="description" content="nestjs中,AuthGuard类,在CanActive函数中无法调用Inject 启因 最近写nestjs项目,他的UserGuard很方便" /><meta name="keywords" content="nestjs, typeorm, typescript, node, inject, authguard" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.110.0 with theme even" />
+
+
+<link rel="canonical" href="https://gowinder.work/post/nestjs%E4%B8%ADauthguard%E7%B1%BB%E5%9C%A8canactive%E5%87%BD%E6%95%B0%E4%B8%AD%E6%97%A0%E6%B3%95%E8%B0%83%E7%94%A8inject/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="nestjs中,AuthGuard类,在CanActive函数中无法调用Inject.md" />
+<meta property="og:description" content="nestjs中,AuthGuard类,在CanActive函数中无法调用Inject 启因 最近写nestjs项目,他的UserGuard很方便" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gowinder.work/post/nestjs%E4%B8%ADauthguard%E7%B1%BB%E5%9C%A8canactive%E5%87%BD%E6%95%B0%E4%B8%AD%E6%97%A0%E6%B3%95%E8%B0%83%E7%94%A8inject/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-02-06T17:24:00+00:00" />
+<meta property="article:modified_time" content="2023-02-06T17:24:00+00:00" />
+<meta itemprop="name" content="nestjs中,AuthGuard类,在CanActive函数中无法调用Inject.md">
+<meta itemprop="description" content="nestjs中,AuthGuard类,在CanActive函数中无法调用Inject 启因 最近写nestjs项目,他的UserGuard很方便"><meta itemprop="datePublished" content="2023-02-06T17:24:00+00:00" />
+<meta itemprop="dateModified" content="2023-02-06T17:24:00+00:00" />
+<meta itemprop="wordCount" content="1727">
+<meta itemprop="keywords" content="nestjs,typescript,node,开发笔记," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="nestjs中,AuthGuard类,在CanActive函数中无法调用Inject.md"/>
+<meta name="twitter:description" content="nestjs中,AuthGuard类,在CanActive函数中无法调用Inject 启因 最近写nestjs项目,他的UserGuard很方便"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Gowinder</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Gowinder</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">nestjs中,AuthGuard类,在CanActive函数中无法调用Inject.md</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2023-02-06 </span>
+        
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#nestjs中authguard类在canactive函数中无法调用inject">nestjs中,AuthGuard类,在CanActive函数中无法调用Inject</a>
+      <ul>
+        <li><a href="#启因">启因</a></li>
+        <li><a href="#解决过程">解决过程</a></li>
+        <li><a href="#思考">思考</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="nestjs中authguard类在canactive函数中无法调用inject">nestjs中,AuthGuard类,在CanActive函数中无法调用Inject</h1>
+<h2 id="启因">启因</h2>
+<p>最近写<code>nestjs</code>项目,他的<code>UserGuard</code>很方便,相当于在<code>route</code>处理<code>request</code>时,可以经由<code>AuthGuard</code>来处理验证代码.</p>
+<p>但是,我在写的过程中,出了一个问题,花了很长时间来解决,比如如下 <code>StaffAuthGuard.ts</code>代码:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">ExecutionContext</span><span class="p">,</span> <span class="nx">Inject</span><span class="p">,</span> <span class="nx">Injectable</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@nestjs/common&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">StaffAuthService</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;./staff-auth.service&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="k">of</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;rxjs&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">AuthGuard</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@nestjs/passport&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">@Injectable</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">class</span> <span class="nx">StaffJwtAuthGuard</span> <span class="kr">extends</span> <span class="nx">AuthGuard</span><span class="p">(</span><span class="s1">&#39;jwt&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">authService</span>: <span class="kt">StaffAuthService</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">super</span><span class="p">(</span><span class="nx">authService</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">authService</span> <span class="o">=</span> <span class="nx">authService</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">      <span class="s1">&#39;🚀 ~ file: staff-auth.guard.ts:11 ~ StaffJwtAuthGuard ~ constructor ~ authService&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">authService</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="s1">&#39;, this.authService: &#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="k">this</span><span class="p">.</span><span class="nx">authService</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">canActivate</span><span class="p">(</span><span class="nx">context</span>: <span class="kt">ExecutionContext</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">getType</span><span class="p">()</span> <span class="o">!=</span> <span class="s1">&#39;http&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">authHeader</span> <span class="o">=</span> <span class="nx">context</span><span class="p">.</span><span class="nx">switchToHttp</span><span class="p">().</span><span class="nx">getRequest</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">authorization</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">authHeader</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">authHeaderParts</span> <span class="o">=</span> <span class="nx">authHeader</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">authHeaderParts</span><span class="p">.</span><span class="nx">length</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="p">[,</span> <span class="nx">jwt</span><span class="p">]</span> <span class="o">=</span> <span class="nx">authHeaderParts</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">authService</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">verifyJwt</span><span class="p">(</span><span class="nx">jwt</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">const</span> <span class="nx">exp</span> <span class="o">=</span> <span class="nx">res</span><span class="p">.</span><span class="nx">exp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">exp</span><span class="p">)</span> <span class="k">return</span> <span class="k">of</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">const</span> <span class="nx">TOKEN_EXP_MS</span> <span class="o">=</span> <span class="nx">exp</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">const</span> <span class="nx">isJwtValid</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span> <span class="o">&lt;</span> <span class="nx">TOKEN_EXP_MS</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// return of(isJwtValid);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">return</span> <span class="nx">isJwtValid</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">})</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">          <span class="s1">&#39;🚀 ~ file: staff-auth.guard.ts:35 ~ StaffJwtAuthGuard ~ canActivate ~ err&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">err</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// return of(false);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">});</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kr">super</span><span class="p">.</span><span class="nx">canActivate</span><span class="p">(</span><span class="nx">context</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在调用api时,经由<code>StaffAuthGuard.canActivate</code>时,就会报<code>undefined</code>,加了日志后,发现是这行:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"> <span class="k">this</span><span class="p">.</span><span class="nx">authService</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">verifyJwt</span><span class="p">(</span><span class="nx">jwt</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>出错,此处就是<code>this.authService</code>未定义,但是编译可以通过,于是我在<code>constructor</code>函数中加上了日志,<code>this.authService</code>明明是有值的,为什么到调用的时候就没有了?</p>
+<h2 id="解决过程">解决过程</h2>
+<p>百思不得其解,搞了几天,我都要放弃了,其间我还用了<code>ChatGPT</code>来帮我解决问题,他给了我的问题:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">It&#39;s difficult to determine what could be causing this.authService to be undefined without seeing the entire code. However, here are a few common issues that could be causing the problem:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    The AuthService has not been imported correctly: Make sure that you have imported the AuthService using the correct import statement and path.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    The AuthService has not been added to the providers array in the module: If the AuthService is not part of the module&#39;s providers array, it won&#39;t be available for injection.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    The AuthService has not been injected into the constructor of the StaffJwtAuthGuard: If you are not injecting the AuthService into the constructor of the StaffJwtAuthGuard, then it won&#39;t be available as a property on the class.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Here&#39;s an example of how to correctly inject the AuthService into the StaffJwtAuthGuard:
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>照着对比了下,基本是这样做的,但是还是解决不了问题.</p>
+<p>过了几天,中间我搞了点别的事情,换换心情,然后又回来解决这个,继续<code>google</code>,在<code>nestjs</code>的官方<code>issue</code>中找到一条: [# Nest can&rsquo;t resolve dependencies of the AuthGuard (Guard decorator) #893](<a href="https://github.com/nestjs/nest/issues/893">Nest can't resolve dependencies of the AuthGuard (Guard decorator) · Issue #893 · nestjs/nest · GitHub</a>) 跟我的问题一样,也是在<code>AuthGuard</code>中无法引用<code>inject</code>后的服务,有一个回答: [Also ensure that you aren&rsquo;t providing AuthService twice](<a href="https://github.com/nestjs/nest/issues/893#issuecomment-406471157">Nest can't resolve dependencies of the AuthGuard (Guard decorator) · Issue #893 · nestjs/nest · GitHub</a>) 引起了我的注意,</p>
+<p>仔细观察日志,我发现<code>StaffAuthGuard</code>被初始化了两次,第一次日志里面有<code>authSerivce</code>,是正常有值的,第二次是<code>undefined</code>.顺着这个思路,把所有的<code>StaffAuthGuard</code>的地方都找出来,</p>
+<p>使用<code>//</code>大法,一个个屏蔽测试,发现原因:</p>
+<p>我的<code>StaffJwtAuth</code>是定义在<code>app</code>中,而需要用到此模块的<code>controller</code>在其引用的<code>shared</code>库中,按照官方文档(忘了具体位置了),如果在库中这样就需要在<code>app</code>中将<code>guard</code>定义为全局,如:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"> <span class="nx">providers</span><span class="o">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">provide</span>: <span class="kt">APP_GUARD</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">useClass</span>: <span class="kt">StaffJwtAuthGuard</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="p">],</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>我就是这样定义了全局了,但是,在我调用的api的<code>controller</code>位置,也加上了<code>@UseGuard(StaffJwtAuthGuard)</code>,就导致初始化了两次,并且第二次参数为<code>undefined</code>,将<code>controller</code>上的<code>@UseGuard</code>去掉后,就正常了.</p>
+<hr>
+<h2 id="思考">思考</h2>
+<p>之后做了几个测试,把<code>StaffAuthModule</code>也放到库里面,屏掉全局<code>APP_GUARD</code>代码,在<code>controller</code>中加上代码,结果只有一个初始<code>constructor</code>调用,而且里面的<code>authService</code>是<code>undefined</code>
+之后我又继续<code>google</code>, 在官方<code>issue</code>里面又找到一个: <a href="https://github.com/nestjs/nest/issues/244#issuecomment-346996421">middlewares are loosely coupled from modules, thus it may be better to
+use them instead. If you prefer to use guards, you need to guarantee an
+access to the <code>AuthService</code>. You can export this service from the <code>AuthModule</code>, and then import this module wherever you want to use your guard.</a> ,意思就是说,在我这个场景中,在使用<code>StaffAuthGuard.StaffAuthService</code>的模块中,需要保证能访问到<code>StaffAuthService</code>, 于是,我在<code>controller</code>所在的模块的<code>imports</code>中增加了导入<code>StaffAuthModule</code>,结果,OK了,结论就是在使用<code>AuthGurad</code>的模块中,<strong>因为<code>AuthGuard</code>是松散的,所有需要在调用他的模块中,保证他所有的依赖都会被import</strong></p>
+<p>终于解决了,花了几天时间,不解决不舒服,现在舒服了,可以继续折腾了.</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">gowinder</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2023-02-06
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/nestjs/">nestjs</a>
+          <a href="/tags/typescript/">typescript</a>
+          <a href="/tags/node/">node</a>
+          <a href="/tags/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/">开发笔记</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/nestjs-jwtservice-seccret-or-public-key-must-be-provied/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">nestjs中,JwtService报错,没有SECRET</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/nestjsx-crud-xxxrepository-not-found%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/">
+            <span class="next-text nav-default">nestjsx/crud xxxRepository not found问题解决</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="gowinder/hugo-comment"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:gowinder@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/gowinder" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.douban.com/people/gowinder/" class="iconfont icon-douban" title="douban"></a>
+  <a href="https://gowinder.work/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2023<span class="heart"><i class="iconfont icon-heart"></i></span><span>gowinder</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -6,7 +6,16 @@
     <description>Recent content in 分布式 on 不成熟的理想主义者可以为了理想选择高尚的死，成熟的理想主义者则会选择卑下的活着!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 11 Feb 2023 21:13:05 +0800</lastBuildDate><atom:link href="https://gowinder.work/tags/%E5%88%86%E5%B8%83%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Feb 2023 10:53:05 +0800</lastBuildDate><atom:link href="https://gowinder.work/tags/%E5%88%86%E5%B8%83%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>glusterfs重建volume</title>
+      <link>https://gowinder.work/post/glusterfs%E9%87%8D%E5%BB%BAvolume/</link>
+      <pubDate>Thu, 16 Feb 2023 10:53:05 +0800</pubDate>
+      
+      <guid>https://gowinder.work/post/glusterfs%E9%87%8D%E5%BB%BAvolume/</guid>
+      <description>glusterfs重建volume 启因 因为之前做glusterfs集群时,比较急,直接用的pve主机的网络地址,运行了几天,发现volume</description>
+    </item>
+    
     <item>
       <title>gluster brick下线问题解决</title>
       <link>https://gowinder.work/post/gluster-brick%E4%B8%8B%E7%BA%BF%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</link>

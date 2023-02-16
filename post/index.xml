@@ -6,7 +6,25 @@
     <description>Recent content in Posts on 不成熟的理想主义者可以为了理想选择高尚的死，成熟的理想主义者则会选择卑下的活着!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 14 Feb 2023 09:39:05 +0800</lastBuildDate><atom:link href="https://gowinder.work/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Feb 2023 10:53:05 +0800</lastBuildDate><atom:link href="https://gowinder.work/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>glusterfs重建volume</title>
+      <link>https://gowinder.work/post/glusterfs%E9%87%8D%E5%BB%BAvolume/</link>
+      <pubDate>Thu, 16 Feb 2023 10:53:05 +0800</pubDate>
+      
+      <guid>https://gowinder.work/post/glusterfs%E9%87%8D%E5%BB%BAvolume/</guid>
+      <description>glusterfs重建volume 启因 因为之前做glusterfs集群时,比较急,直接用的pve主机的网络地址,运行了几天,发现volume</description>
+    </item>
+    
+    <item>
+      <title>nestjs中,Service无法找到Repository依赖.md</title>
+      <link>https://gowinder.work/post/nestjs%E4%B8%ADservice%E6%97%A0%E6%B3%95%E6%89%BE%E5%88%B0repository%E4%BE%9D%E8%B5%96/</link>
+      <pubDate>Tue, 14 Feb 2023 10:56:00 +0000</pubDate>
+      
+      <guid>https://gowinder.work/post/nestjs%E4%B8%ADservice%E6%97%A0%E6%B3%95%E6%89%BE%E5%88%B0repository%E4%BE%9D%E8%B5%96/</guid>
+      <description>nestjs中,Service无法找到Repository依赖 启因 如下代码: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 @Injectable() export class SiteRbacService {</description>
+    </item>
+    
     <item>
       <title>proxmox ve VM挂载物理硬盘</title>
       <link>https://gowinder.work/post/proxmox-ve-vm%E6%8C%82%E8%BD%BD%E7%89%A9%E7%90%86%E7%A1%AC%E7%9B%98/</link>

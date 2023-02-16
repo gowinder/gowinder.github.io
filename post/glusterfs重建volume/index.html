@@ -50,7 +50,7 @@
 <meta itemprop="name" content="glusterfs重建volume">
 <meta itemprop="description" content="glusterfs重建volume 启因 因为之前做glusterfs集群时,比较急,直接用的pve主机的网络地址,运行了几天,发现volume"><meta itemprop="datePublished" content="2023-02-16T10:53:05+08:00" />
 <meta itemprop="dateModified" content="2023-02-16T10:53:05+08:00" />
-<meta itemprop="wordCount" content="599">
+<meta itemprop="wordCount" content="896">
 <meta itemprop="keywords" content="proxmox ve,linux,分布式,开发笔记,部署," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="glusterfs重建volume"/>
 <meta name="twitter:description" content="glusterfs重建volume 启因 因为之前做glusterfs集群时,比较急,直接用的pve主机的网络地址,运行了几天,发现volume"/>
@@ -143,7 +143,11 @@
     <li><a href="#glusterfs重建volume">glusterfs重建volume</a>
       <ul>
         <li><a href="#启因">启因</a></li>
-        <li><a href="#过程">过程</a></li>
+        <li><a href="#过程">过程</a>
+          <ul>
+            <li><a href="#重新加入时如果报错">重新加入时,如果报错</a></li>
+          </ul>
+        </li>
         <li><a href="#总结">总结</a>
           <ul>
             <li><a href="#正确的做法-未试过">正确的做法 (未试过)</a></li>
@@ -165,14 +169,29 @@
 <ul>
 <li>两边都执行:停止<code>volume</code>: <code>sudo gluster vol stop VMS</code></li>
 <li>两边都执行:<code>sudo umount gluster1:/tank/gfs/s</code></li>
-<li>删除<code>brick</code>: <code>sudo gluster vol remove-brick VMS replica 1 gluster2:/tank/gfs/s force</code></li>
+<li>两边都删除<code>brick</code>: <code>sudo gluster vol remove-brick VMS replica 1 gluster2:/tank/gfs/s force</code>, 注意,<code>gluster2</code>删除<code>gluster1</code>,<code>gluster1</code>删除<code>gluster2</code></li>
 <li><code>sudo gluster vol delete VMS start</code></li>
 <li>这一步会报错,说有<code>peer</code>还在,因为我在<code>gluster1</code>上显示<code>gluster2</code>一直是<code>disconnect</code>,因此要删除<code>peer</code></li>
 <li>查看<code>peer</code>: <code>sudo gluster peer statue</code>, 会显示是<code>disconnected</code></li>
-<li>删除<code>peer</code>: <code>sudo gluster peer detach gluster2</code></li>
+<li>两边都删除<code>peer</code>: <code>sudo gluster peer detach gluster2</code></li>
 <li>再次<code>sudo gluster peer status</code>显示已经没有<code>peer</code>了</li>
 <li>删除<code>volume</code>: <code>sudo gluster volume delete VMS</code> 显示删除成功</li>
 </ul>
+<h3 id="重新加入时如果报错">重新加入时,如果报错</h3>
+<p>两边节点都要做:</p>
+<ul>
+<li>
+<p><code>sudo systemctl stop glusterd</code></p>
+</li>
+<li>
+<p><code>peer probe: failed: g1 is either already part of another cluster or having volumes configured</code>, 就需要在<code>g1</code>的主机上,将<code>/var/lib/glusterd</code>目录下面除<code>glusterd.info</code>文件的其它全部删除掉,再去<code>sudo glusterd peer probe g1</code></p>
+</li>
+<li>
+<p>删除<code>/tank/gfs/s/.glusterfs</code></p>
+</li>
+</ul>
+<p>但是还是会报错<code>/tanks/gfs/s</code>已经在一个<code>volume</code>中了,没办法我又重新建了一个目录</p>
+<p><strong>重要</strong>, 新建的目录,一定要<code>mount</code>之后,再向<code>mount</code>之后的目录里面拷贝,如:<code>sudo mount g1:vms</code>, 挂载到<code>/vms</code>之后,向<code>/vms</code>里面拷贝,不然无法同步,参见: <a href="https://stackoverflow.com/a/29301051">stackoverfow</a></p>
 <h2 id="总结">总结</h2>
 <p><code>gluster</code>节点的地址不能随便改,需要用命令去设置</p>
 <h3 id="正确的做法-未试过">正确的做法 (未试过)</h3>

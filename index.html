@@ -123,6 +123,25 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/proxmox-ve-%E5%A2%9E%E5%8A%A0%E8%87%AA%E5%8A%A8trim%E7%9A%84cron-job/">proxmox ve 增加自动trim的cron job</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2023-02-17 </span>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      proxmox ve 增加自动trim的cron job 检查状态 1 2 3 4 5 6 7 8 sudo systemctl status fstrim.timer # output: ● fstrim.timer - Discard unused blocks once a week Loaded: loaded (/lib/systemd/system/fstrim.timer; disabled; vendor preset: enabled) Active: inactive (dead) Trigger: n/a Triggers: ● fstrim.service Docs: man:fstrim 开启服务 1 sudo systemctl start fstrim.timer 检
+    </div>
+    <div class="read-more">
+      <a href="/post/proxmox-ve-%E5%A2%9E%E5%8A%A0%E8%87%AA%E5%8A%A8trim%E7%9A%84cron-job/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/proxmox-ve-%E4%B8%AD%E6%89%A9%E5%B1%95pvm-local%E7%A9%BA%E9%97%B4/">proxmox ve 中扩展pvm-local空间</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2023-02-17 </span>
@@ -193,25 +212,6 @@
     </div>
     <div class="read-more">
       <a href="/post/nestjs%E4%B8%ADservice%E6%97%A0%E6%B3%95%E6%89%BE%E5%88%B0repository%E4%BE%9D%E8%B5%96/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/proxmox-ve-vm%E6%8C%82%E8%BD%BD%E7%89%A9%E7%90%86%E7%A1%AC%E7%9B%98/">proxmox ve VM挂载物理硬盘</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2023-02-14 </span>
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      proxmox ve VM挂载物理硬盘 先找到要挂载的硬盘的id: 1 lsblk |awk &#39;NR==1{print $0&#34; DEVICE-ID(S)&#34;}NR&gt;1{dev=$1;printf $0&#34; &#34;;system(&#34;find /dev/disk/by-id -lname \&#34;*&#34;dev&#34;\&#34; -printf \&#34; %p\&#34;&#34;);print &#34;&#34;;}&#39;|grep -v -E &#39;part|lvm&#39; 结果类似: 1 2 3 4 5 NAME MAJ:MIN RM SIZE RO TYPE MOUNTPOINT DEVICE-ID(S) loop0 7:0 0 20G 0 loop loop1 7:1 0 80G 0
-    </div>
-    <div class="read-more">
-      <a href="/post/proxmox-ve-vm%E6%8C%82%E8%BD%BD%E7%89%A9%E7%90%86%E7%A1%AC%E7%9B%98/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>

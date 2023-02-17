@@ -6,7 +6,16 @@
     <description>Recent content in proxmox ve on 不成熟的理想主义者可以为了理想选择高尚的死，成熟的理想主义者则会选择卑下的活着!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 16 Feb 2023 10:53:05 +0800</lastBuildDate><atom:link href="https://gowinder.work/tags/proxmox-ve/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 17 Feb 2023 10:25:05 +0800</lastBuildDate><atom:link href="https://gowinder.work/tags/proxmox-ve/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>proxmox ve 中nvme电源管理问题导致的磁盘性能急剧下降问题</title>
+      <link>https://gowinder.work/post/proxmox-ve-%E4%B8%ADnvme%E7%94%B5%E6%BA%90%E7%AE%A1%E7%90%86%E9%97%AE%E9%A2%98%E5%AF%BC%E8%87%B4%E7%9A%84%E7%A3%81%E7%9B%98%E6%80%A7%E8%83%BD%E6%80%A5%E5%89%A7%E4%B8%8B%E9%99%8D%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Fri, 17 Feb 2023 10:25:05 +0800</pubDate>
+      
+      <guid>https://gowinder.work/post/proxmox-ve-%E4%B8%ADnvme%E7%94%B5%E6%BA%90%E7%AE%A1%E7%90%86%E9%97%AE%E9%A2%98%E5%AF%BC%E8%87%B4%E7%9A%84%E7%A3%81%E7%9B%98%E6%80%A7%E8%83%BD%E6%80%A5%E5%89%A7%E4%B8%8B%E9%99%8D%E9%97%AE%E9%A2%98/</guid>
+      <description>proxmox ve 中nvme电源管理问题导致的磁盘性能急剧下降问题 这几天部署了proxmox ve双节点集群,正常用没什么问题,但是过了一天,dell r72</description>
+    </item>
+    
     <item>
       <title>glusterfs重建volume</title>
       <link>https://gowinder.work/post/glusterfs%E9%87%8D%E5%BB%BAvolume/</link>
@@ -14,15 +23,6 @@
       
       <guid>https://gowinder.work/post/glusterfs%E9%87%8D%E5%BB%BAvolume/</guid>
       <description>glusterfs重建volume 启因 因为之前做glusterfs集群时,比较急,直接用的pve主机的网络地址,运行了几天,发现volume</description>
-    </item>
-    
-    <item>
-      <title>proxmox ve 中nvme电源管理问题导致的磁盘性能急剧下降问题</title>
-      <link>https://gowinder.work/post/proxmox-ve-%E4%B8%ADnvme%E7%94%B5%E6%BA%90%E7%AE%A1%E7%90%86%E9%97%AE%E9%A2%98%E5%AF%BC%E8%87%B4%E7%9A%84%E7%A3%81%E7%9B%98%E6%80%A7%E8%83%BD%E6%80%A5%E5%89%A7%E4%B8%8B%E9%99%8D%E9%97%AE%E9%A2%98/</link>
-      <pubDate>Thu, 16 Feb 2023 10:53:05 +0800</pubDate>
-      
-      <guid>https://gowinder.work/post/proxmox-ve-%E4%B8%ADnvme%E7%94%B5%E6%BA%90%E7%AE%A1%E7%90%86%E9%97%AE%E9%A2%98%E5%AF%BC%E8%87%B4%E7%9A%84%E7%A3%81%E7%9B%98%E6%80%A7%E8%83%BD%E6%80%A5%E5%89%A7%E4%B8%8B%E9%99%8D%E9%97%AE%E9%A2%98/</guid>
-      <description>proxmox ve 中nvme电源管理问题导致的磁盘性能急剧下降问题 这几天部署了proxmox ve双节点集群,正常用没什么问题,但是过了一天,dell r72</description>
     </item>
     
     <item>

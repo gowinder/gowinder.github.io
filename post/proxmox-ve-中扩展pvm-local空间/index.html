@@ -50,7 +50,7 @@
 <meta itemprop="name" content="proxmox ve 中扩展pvm-local空间">
 <meta itemprop="description" content="proxmox ve 中扩展pvm-local空间 原因 之前在DIY E3服务器上安装的proxmox ve,用的一张120G的SSD,当时年纪轻,把pve的逻辑分"><meta itemprop="datePublished" content="2023-02-17T14:16:05+08:00" />
 <meta itemprop="dateModified" content="2023-02-17T14:16:05+08:00" />
-<meta itemprop="wordCount" content="658">
+<meta itemprop="wordCount" content="1053">
 <meta itemprop="keywords" content="proxmox ve,linux,部署,lvm,扩展," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="proxmox ve 中扩展pvm-local空间"/>
 <meta name="twitter:description" content="proxmox ve 中扩展pvm-local空间 原因 之前在DIY E3服务器上安装的proxmox ve,用的一张120G的SSD,当时年纪轻,把pve的逻辑分"/>
@@ -146,6 +146,12 @@
         <li><a href="#步骤">步骤</a>
           <ul>
             <li><a href="#先拷出data分区里面的东西">先拷出<code>data</code>分区里面的东西</a></li>
+          </ul>
+        </li>
+        <li><a href="#补充将另一块硬盘加入到pve的volume-group中去">(补充)将另一块硬盘加入到<code>pve</code>的<code>volume group</code>中去</a>
+          <ul>
+            <li><a href="#加入vg">加入<code>vg</code></a></li>
+            <li><a href="#扩展lv">扩展<code>lv</code></a></li>
           </ul>
         </li>
         <li><a href="#总结">总结</a></li>
@@ -291,7 +297,8 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
-<li>可以看到有<code>30.39 Gib</code>的空间,现在把他合并到<code>pve-root</code>, <code>sudo lvresize -l +100%FREE /dev/pve/root</code>:</li>
+<li>可以看到有<code>30.39 Gib</code>的空间,现在把他合并到<code>pve-root</code>:</li>
+<li><code>sudo lvresize -l +100%FREE /dev/pve/root</code>:</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -348,6 +355,153 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>成功了</p>
+<h2 id="补充将另一块硬盘加入到pve的volume-group中去">(补充)将另一块硬盘加入到<code>pve</code>的<code>volume group</code>中去</h2>
+<p>之前还有一块<code>120G</code>的<code>SSD</code>,想把他也装进去,这块硬盘已经加到<code>vg</code>里面了,<code>sudo pvdisplay</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">  --- Physical volume ---
+</span></span><span class="line"><span class="cl">  PV Name               /dev/sdh3
+</span></span><span class="line"><span class="cl">  VG Name               pve
+</span></span><span class="line"><span class="cl">  PV Size               106.60 GiB / not usable &lt;2.55 MiB
+</span></span><span class="line"><span class="cl">  Allocatable           yes <span class="o">(</span>but full<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  PE Size               4.00 MiB
+</span></span><span class="line"><span class="cl">  Total PE              <span class="m">27289</span>
+</span></span><span class="line"><span class="cl">  Free PE               <span class="m">0</span>
+</span></span><span class="line"><span class="cl">  Allocated PE          <span class="m">27289</span>
+</span></span><span class="line"><span class="cl">  PV UUID               xxxx
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;/dev/sdf1&#34;</span> is a new physical volume of <span class="s2">&#34;119.24 GiB&#34;</span>
+</span></span><span class="line"><span class="cl">  --- NEW Physical volume ---
+</span></span><span class="line"><span class="cl">  PV Name               /dev/sdf1
+</span></span><span class="line"><span class="cl">  VG Name
+</span></span><span class="line"><span class="cl">  PV Size               119.24 GiB
+</span></span><span class="line"><span class="cl">  Allocatable           NO
+</span></span><span class="line"><span class="cl">  PE Size               <span class="m">0</span>
+</span></span><span class="line"><span class="cl">  Total PE              <span class="m">0</span>
+</span></span><span class="line"><span class="cl">  Free PE               <span class="m">0</span>
+</span></span><span class="line"><span class="cl">  Allocated PE          <span class="m">0</span>
+</span></span><span class="line"><span class="cl">  PV UUID               xxxx
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="加入vg">加入<code>vg</code></h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo vgextend pve /dev/sdf1<span class="sb">`</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#  Volume group &#34;pve&#34; successfully extended`</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sudo vgdisplay
+</span></span><span class="line"><span class="cl"><span class="c1">#  output:</span>
+</span></span><span class="line"><span class="cl">  --- Volume group ---
+</span></span><span class="line"><span class="cl">  VG Name               pve
+</span></span><span class="line"><span class="cl">  System ID
+</span></span><span class="line"><span class="cl">  Format                lvm2
+</span></span><span class="line"><span class="cl">  Metadata Areas        <span class="m">2</span>
+</span></span><span class="line"><span class="cl">  Metadata Sequence No  <span class="m">75</span>
+</span></span><span class="line"><span class="cl">  VG Access             read/write
+</span></span><span class="line"><span class="cl">  VG Status             resizable
+</span></span><span class="line"><span class="cl">  MAX LV                <span class="m">0</span>
+</span></span><span class="line"><span class="cl">  Cur LV                <span class="m">2</span>
+</span></span><span class="line"><span class="cl">  Open LV               <span class="m">2</span>
+</span></span><span class="line"><span class="cl">  Max PV                <span class="m">0</span>
+</span></span><span class="line"><span class="cl">  Cur PV                <span class="m">2</span>
+</span></span><span class="line"><span class="cl">  Act PV                <span class="m">2</span>
+</span></span><span class="line"><span class="cl">  VG Size               &lt;225.84 GiB
+</span></span><span class="line"><span class="cl">  PE Size               4.00 MiB
+</span></span><span class="line"><span class="cl">  Total PE              <span class="m">57814</span>
+</span></span><span class="line"><span class="cl">  Alloc PE / Size       <span class="m">27289</span> / &lt;106.60 GiB
+</span></span><span class="line"><span class="cl">  Free  PE / Size       <span class="m">30525</span> / &lt;119.24 GiB
+</span></span><span class="line"><span class="cl">  VG UUID               qTOzVc-TkpO-iokP-8JGO-3MNo-4Id0-TAsIYi
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>可以看到已经有<code>119.24G</code>空闲空间了</p>
+<h3 id="扩展lv">扩展<code>lv</code></h3>
+<ul>
+<li>lvresize</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo lvresize -l +100%FREE /dev/pve/root<span class="sb">`</span>
+</span></span><span class="line"><span class="cl"><span class="c1">### output:</span>
+</span></span><span class="line"><span class="cl">  Size of logical volume pve/root changed from &lt;119.24 GiB <span class="o">(</span><span class="m">30525</span> extents<span class="o">)</span> to &lt;222.34 GiB <span class="o">(</span><span class="m">56918</span> extents<span class="o">)</span>.
+</span></span><span class="line"><span class="cl">  Logical volume pve/root successfully resized.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>扩展文件系统空间: <code>sudo resize2fs -p /dev/mapper/pve-root</code></li>
+<li>结果:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">resize2fs 1.46.5 <span class="o">(</span>30-Dec-2021<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Filesystem at /dev/mapper/pve-root is mounted on /<span class="p">;</span> on-line resizing required
+</span></span><span class="line"><span class="cl"><span class="nv">old_desc_blocks</span> <span class="o">=</span> 13, <span class="nv">new_desc_blocks</span> <span class="o">=</span> <span class="m">28</span>
+</span></span><span class="line"><span class="cl">The filesystem on /dev/mapper/pve-root is now <span class="m">58284032</span> <span class="o">(</span>4k<span class="o">)</span> blocks long.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>完成</p>
 <h2 id="总结">总结</h2>
 <p>感觉 <code>lvm</code>在空间管理这块还是蛮方便的,只是,他的<code>pv</code>, <code>vg</code>, <code>lv</code>,一开始太绕,入门有点门槛,不像直接<code>fdisk</code>后格式化挂载那么方便.</p>
 

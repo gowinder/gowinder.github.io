@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>proxmox ve 中nvme电源管理问题导致的磁盘性能急剧下降问题 - 不成熟的理想主义者可以为了理想选择高尚的死，成熟的理想主义者则会选择卑下的活着!</title>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5259365864322361"
+     crossorigin="anonymous"></script>
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="gowinder" /><meta name="description" content="proxmox ve 中nvme电源管理问题导致的磁盘性能急剧下降问题 这几天部署了proxmox ve双节点集群,正常用没什么问题,但是过了一天,dell r72" /><meta name="keywords" content="proxmox ve, pve, linux, 部署, nvme, APM, 电源管理, 性能" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.110.0 with theme even" />
+
+
+<link rel="canonical" href="https://gowinder.work/post/proxmox-ve-%E4%B8%ADnvme%E7%94%B5%E6%BA%90%E7%AE%A1%E7%90%86%E9%97%AE%E9%A2%98%E5%AF%BC%E8%87%B4%E7%9A%84%E7%A3%81%E7%9B%98%E6%80%A7%E8%83%BD%E6%80%A5%E5%89%A7%E4%B8%8B%E9%99%8D%E9%97%AE%E9%A2%98/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="proxmox ve 中nvme电源管理问题导致的磁盘性能急剧下降问题" />
+<meta property="og:description" content="proxmox ve 中nvme电源管理问题导致的磁盘性能急剧下降问题 这几天部署了proxmox ve双节点集群,正常用没什么问题,但是过了一天,dell r72" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gowinder.work/post/proxmox-ve-%E4%B8%ADnvme%E7%94%B5%E6%BA%90%E7%AE%A1%E7%90%86%E9%97%AE%E9%A2%98%E5%AF%BC%E8%87%B4%E7%9A%84%E7%A3%81%E7%9B%98%E6%80%A7%E8%83%BD%E6%80%A5%E5%89%A7%E4%B8%8B%E9%99%8D%E9%97%AE%E9%A2%98/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-02-16T10:53:05+08:00" />
+<meta property="article:modified_time" content="2023-02-16T10:53:05+08:00" />
+<meta itemprop="name" content="proxmox ve 中nvme电源管理问题导致的磁盘性能急剧下降问题">
+<meta itemprop="description" content="proxmox ve 中nvme电源管理问题导致的磁盘性能急剧下降问题 这几天部署了proxmox ve双节点集群,正常用没什么问题,但是过了一天,dell r72"><meta itemprop="datePublished" content="2023-02-16T10:53:05+08:00" />
+<meta itemprop="dateModified" content="2023-02-16T10:53:05+08:00" />
+<meta itemprop="wordCount" content="1029">
+<meta itemprop="keywords" content="proxmox ve,linux,部署,nvme,APM,电源管理,性能," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="proxmox ve 中nvme电源管理问题导致的磁盘性能急剧下降问题"/>
+<meta name="twitter:description" content="proxmox ve 中nvme电源管理问题导致的磁盘性能急剧下降问题 这几天部署了proxmox ve双节点集群,正常用没什么问题,但是过了一天,dell r72"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Gowinder</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Gowinder</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">proxmox ve 中nvme电源管理问题导致的磁盘性能急剧下降问题</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2023-02-16 </span>
+        
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#proxmox-ve-中nvme电源管理问题导致的磁盘性能急剧下降问题">proxmox ve 中nvme电源管理问题导致的磁盘性能急剧下降问题</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="proxmox-ve-中nvme电源管理问题导致的磁盘性能急剧下降问题">proxmox ve 中nvme电源管理问题导致的磁盘性能急剧下降问题</h1>
+<p>这几天部署了<code>proxmox ve</code>双节点集群,正常用没什么问题,但是过了一天,<code>dell r720</code>这台主机,<code>ssh</code>上去发现<code>shell</code>的反应好慢,然后进去里面的<code>linux container</code>,也是反应慢得狠,每打一个命令,<code>zsh</code>都要卡半天.</p>
+<p>以为是<code>zsh</code>的问题,换了<code>bash</code>, <code>fish</code>只是强一点点,用<code>vim</code>打开本地文件也是很慢,是不是硬盘出了问题? 这台<code>dell</code>主机上的系统盘是<code>West Digital</code>的<code>SN750 1T</code>,照说应该不慢,于是我测了一下:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">time</span> dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>tst.out <span class="nv">bs</span><span class="o">=</span>4M <span class="nv">count</span><span class="o">=</span><span class="m">256</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>不测不知道,一测吓一跳:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">256+0 records in
+</span></span><span class="line"><span class="cl">256+0 records out
+</span></span><span class="line"><span class="cl"><span class="m">1073741824</span> bytes <span class="o">(</span>1.1 GB, 1.0 GiB<span class="o">)</span> copied, 42.666 s, <span class="m">24</span> MB/s
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>慢得不正常, <code>sudo dmesg | grep -i error</code>, <code>sudo grep -i 'error' /var/log/syslog</code> 都没发现有什么问题,是系统磁盘,装好后就没动过.</p>
+<p>重启大法试一下,发现进系统需要好长时间,用<code>smarttools</code>,查看,也没有坏道,没任何错误,郁闷了,<code>google</code>,<code>bing</code>搜索了半天,没有太大收获,有一个回答里面带过可能是<code>apm</code>电源管理的问题,要使用<code>hdparm</code>来查看设置,找了半天,对我的硬盘没效果,会报错.</p>
+<p>想了半天,发现我搜索的是<code>ssd</code>,我换了个关键字<code>nvme</code>去搜索.</p>
+<p>发现了一个新工具: <code>nvme-ctl</code>, 有人说用这个来检查<code>nvme</code>的电源管理配置,查了下<code>manpage</code>,要用<code>nvme get-feature</code>来查看电源管理,但是里面的参数<code>--feature-id</code>是什么没说,又继续找.</p>
+<p>在<code>nvme</code>的<a href="https://nvmexpress.org/resource/technology-power-features/">官网</a>找到一个,<code>feature-id</code>=<code>0x02</code>是指电源管理,试着运行了一下:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo nvme get-feature -f 0x02  /dev/nvme0 -H
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>得到结果:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">get-feature:0x2 <span class="o">(</span>Power Management<span class="o">)</span>, Current value:0x000003
+</span></span><span class="line"><span class="cl">        Workload Hint <span class="o">(</span>WH<span class="o">)</span>: <span class="m">0</span> - No Workload
+</span></span><span class="line"><span class="cl">        Power State   <span class="o">(</span>PS<span class="o">)</span>: <span class="m">3</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>有结果了,可是<code>0x03</code>具体是多少呢?我想起来之前用<code>smarttools</code>查看的时候好像有电源配置列表,试了一下,真有:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">Supported Power States
+</span></span><span class="line"><span class="cl">St Op     Max   Active     Idle   RL RT WL WT  Ent_Lat  Ex_Lat
+</span></span><span class="line"><span class="cl"> <span class="m">0</span> +     3.50W    2.90W       -    <span class="m">0</span>  <span class="m">0</span>  <span class="m">0</span>  <span class="m">0</span>        <span class="m">0</span>       <span class="m">0</span>
+</span></span><span class="line"><span class="cl"> <span class="m">1</span> +     2.70W    1.80W       -    <span class="m">0</span>  <span class="m">0</span>  <span class="m">0</span>  <span class="m">0</span>        <span class="m">0</span>       <span class="m">0</span>
+</span></span><span class="line"><span class="cl"> <span class="m">2</span> +     1.90W    1.50W       -    <span class="m">0</span>  <span class="m">0</span>  <span class="m">0</span>  <span class="m">0</span>        <span class="m">0</span>       <span class="m">0</span>
+</span></span><span class="line"><span class="cl"> <span class="m">3</span> -   0.0200W       -        -    <span class="m">3</span>  <span class="m">3</span>  <span class="m">3</span>  <span class="m">3</span>     <span class="m">3900</span>   <span class="m">11000</span>
+</span></span><span class="line"><span class="cl"> <span class="m">4</span> -   0.0050W       -        -    <span class="m">4</span>  <span class="m">4</span>  <span class="m">4</span>  <span class="m">4</span>     <span class="m">5000</span>   <span class="m">39000</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>可以看到<code>0x03</code>和前面的差距好大,基本就是休眠了,把他调到<code>0x02</code>试试:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo nvme set-feature /dev/nvme0 -f 0x02 --value<span class="o">=</span><span class="m">2</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>结果舒服了:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">4096+0 records in
+</span></span><span class="line"><span class="cl">4096+0 records out
+</span></span><span class="line"><span class="cl"><span class="m">16777216</span> bytes <span class="o">(</span><span class="m">17</span> MB, <span class="m">16</span> MiB<span class="o">)</span> copied, 0.0757074 s, <span class="m">222</span> MB/s
+</span></span><span class="line"><span class="cl">dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>tst.out <span class="nv">bs</span><span class="o">=</span>4k <span class="nv">count</span><span class="o">=</span><span class="m">4096</span>  0.00s user 0.03s system 39% cpu 0.080 total
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>222 MB/s</code>读写终于感觉了,给他改到<code>0x01</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo nvme set-feature /dev/nvme0 -f 0x02 --value<span class="o">=</span>0x01
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>结果:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">256+0 records in
+</span></span><span class="line"><span class="cl">256+0 records out
+</span></span><span class="line"><span class="cl"><span class="m">1073741824</span> bytes <span class="o">(</span>1.1 GB, 1.0 GiB<span class="o">)</span> copied, 2.3109 s, <span class="m">465</span> MB/s
+</span></span><span class="line"><span class="cl">dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>tst.out <span class="nv">bs</span><span class="o">=</span>4M <span class="nv">count</span><span class="o">=</span><span class="m">256</span>  0.00s user 1.43s system 57% cpu 2.495 total
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>折腾了一晚上,准备重装系统了,用<code>new bing</code>的<code>chat gpt</code>一步步对话找到了答案,<code>chat gpt</code>虽然厉害,但是提问也很重要,他可没有人类那么强的猜测能力.</p>
+<p>终于实现<code>速度自由</code>了.</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">gowinder</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2023-02-16
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/proxmox-ve/">proxmox ve</a>
+          <a href="/tags/linux/">linux</a>
+          <a href="/tags/%E9%83%A8%E7%BD%B2/">部署</a>
+          <a href="/tags/nvme/">nvme</a>
+          <a href="/tags/apm/">APM</a>
+          <a href="/tags/%E7%94%B5%E6%BA%90%E7%AE%A1%E7%90%86/">电源管理</a>
+          <a href="/tags/%E6%80%A7%E8%83%BD/">性能</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/glusterfs%E9%87%8D%E5%BB%BAvolume/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">glusterfs重建volume</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/nestjs%E4%B8%ADservice%E6%97%A0%E6%B3%95%E6%89%BE%E5%88%B0repository%E4%BE%9D%E8%B5%96/">
+            <span class="next-text nav-default">nestjs中,Service无法找到Repository依赖.md</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="gowinder/hugo-comment"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:gowinder@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/gowinder" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.douban.com/people/gowinder/" class="iconfont icon-douban" title="douban"></a>
+  <a href="https://gowinder.work/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2023<span class="heart"><i class="iconfont icon-heart"></i></span><span>gowinder</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

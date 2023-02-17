@@ -123,95 +123,19 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/chromium-zai-chromesettings-zeng-jia-xin-de-she-zhi-fang-fa/">chromium 在chrome://settings增加新的设置方法</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0-1/">压力测试笔记 1</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2020-08-14 </span>
+      <span class="post-time"> 0001-01-01 </span>
       
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      设置左边栏目菜单修改位置在 chrome/browser/resources/settings/settings_menu/settings_menu.html 如果需要增加或者去掉设置就在里面改 增加的话，加一段： &lt;a id=&quot;new_setting&quot; href=&quot;/new_setting&quot; hidden=&quot;[[!pageVisibility.new_setting]]&quot;&gt; &lt;iron-icon icon=&quot;settings:assignment&quot;&gt;&lt;/iron-icon&gt; $i18n{newSettingTitle} &lt;/a&gt; 然后增加 一个目录 chrome/browser/resources/settings/new_setting 在里面放设置的页面 新建 new_setting_page.html 和
+      马上要封测了,现在开始压力测试. 1000个连接上,没有问题,但是登录后问题来了,处理一个登录要1秒钟时间,可想而知1000个需要多长时间. 这
     </div>
     <div class="read-more">
-      <a href="/post/chromium-zai-chromesettings-zeng-jia-xin-de-she-zhi-fang-fa/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/recttransform%E4%B8%AD%E7%9A%84%E5%9D%90%E6%A0%87/">RectTransform中的坐标</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2016-07-26 </span>
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      一直用position去得，后来发现代码输出跟属性上显示不一样，后来把ugui的源代码拿下来看了，才知道，要用anchoredPositio
-    </div>
-    <div class="read-more">
-      <a href="/post/recttransform%E4%B8%AD%E7%9A%84%E5%9D%90%E6%A0%87/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/listbox%E6%8E%A7%E5%88%B6%E6%A0%B7%E5%BC%8F%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%8E%E7%BB%91%E5%AE%9A%E5%B0%8F%E8%AE%B0/">ListBox控制样式自定义与绑定小记</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2010-11-07 </span>
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      Silverlight中绑定自定义样式的ListBox,要注意以下几点 ItemTemplate 指定的属性可以单独放在一个资源文件中. 要绑定的对象,如一个ItemT
-    </div>
-    <div class="read-more">
-      <a href="/post/listbox%E6%8E%A7%E5%88%B6%E6%A0%B7%E5%BC%8F%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%8E%E7%BB%91%E5%AE%9A%E5%B0%8F%E8%AE%B0/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8cifs-ko%E6%8C%82%E8%BD%BDwindows-%E5%85%B1%E4%BA%AB/">直接使用cifs.ko挂载WINDOWS 共享</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2010-10-27 </span>
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      在网上找到的,http://myapad.wordpress.com/author/xaueious/ 这个家伙,用爱可视的内核源代码编了一个
-    </div>
-    <div class="read-more">
-      <a href="/post/%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8cifs-ko%E6%8C%82%E8%BD%BDwindows-%E5%85%B1%E4%BA%AB/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/apad-rk2808-%E5%BC%80root%E6%9D%83%E9%99%90%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E6%8C%82nfs%E7%BD%91%E7%BB%9C%E7%A1%AC%E7%9B%98/">APAD RK2808 开ROOT权限注意事项,挂NFS网络硬盘</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2010-10-26 </span>
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      参见:RK2808 System磁盘映像拿到root权限, 其他自作自定义固件的资料 瑞芯微RK28XX_安卓(android)系统固件包修改基础
-    </div>
-    <div class="read-more">
-      <a href="/post/apad-rk2808-%E5%BC%80root%E6%9D%83%E9%99%90%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E6%8C%82nfs%E7%BD%91%E7%BB%9C%E7%A1%AC%E7%9B%98/" class="read-more-link">阅读更多</a>
+      <a href="/post/%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0-1/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
@@ -219,14 +143,11 @@
     </section>
   
   <nav class="pagination">
-    <a class="prev" href="/page/2/">
+    <a class="prev" href="/page/8/">
         <i class="iconfont icon-left"></i>
         <span class="prev-text">上一页</span>
       </a>
-    <a class="next" href="/page/4/">
-        <span class="next-text">下一页</span>
-        <i class="iconfont icon-right"></i>
-      </a>
+    
   </nav>
         </div>
         

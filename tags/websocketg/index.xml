@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>websocketg on 不成熟的理想主义者可以为了理想选择高尚的死，成熟的理想主义者则会选择卑下的活着!</title>
+    <link>https://gowinder.work/tags/websocketg/</link>
+    <description>Recent content in websocketg on 不成熟的理想主义者可以为了理想选择高尚的死，成熟的理想主义者则会选择卑下的活着!</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 23 Feb 2023 16:09:08 +0800</lastBuildDate><atom:link href="https://gowinder.work/tags/websocketg/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>nestjs整合websocketgateway和microservice</title>
+      <link>https://gowinder.work/post/use-microservce-in-websocketgateway-in-nestjs/</link>
+      <pubDate>Thu, 23 Feb 2023 16:09:08 +0800</pubDate>
+      
+      <guid>https://gowinder.work/post/use-microservce-in-websocketgateway-in-nestjs/</guid>
+      <description>nestjs整合websocketgateway和microservice 启因 使用WebsocketGateway做网关,接收客户端长连接后</description>
+    </item>
+    
+  </channel>
+</rss>

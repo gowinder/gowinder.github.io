@@ -6,7 +6,16 @@
     <description>Recent content in Posts on 不成熟的理想主义者可以为了理想选择高尚的死，成熟的理想主义者则会选择卑下的活着!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 17 Feb 2023 15:12:05 +0800</lastBuildDate><atom:link href="https://gowinder.work/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Feb 2023 16:09:08 +0800</lastBuildDate><atom:link href="https://gowinder.work/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>nestjs整合websocketgateway和microservice</title>
+      <link>https://gowinder.work/post/use-microservce-in-websocketgateway-in-nestjs/</link>
+      <pubDate>Thu, 23 Feb 2023 16:09:08 +0800</pubDate>
+      
+      <guid>https://gowinder.work/post/use-microservce-in-websocketgateway-in-nestjs/</guid>
+      <description>nestjs整合websocketgateway和microservice 启因 使用WebsocketGateway做网关,接收客户端长连接后</description>
+    </item>
+    
     <item>
       <title>proxmox ve 增加自动trim的cron job</title>
       <link>https://gowinder.work/post/proxmox-ve-%E5%A2%9E%E5%8A%A0%E8%87%AA%E5%8A%A8trim%E7%9A%84cron-job/</link>
@@ -185,15 +194,6 @@
       
       <guid>https://gowinder.work/post/%E4%B9%A6%E8%AF%84%E5%AE%9E%E6%97%B6%E6%94%BE%E9%80%90/</guid>
       <description>http://book.douban.com/review/3801851/ “实时放逐”明显是“为和平而战”的继集啦。 虽然方式不一样，实时很像是侦破小说，不过我觉得描述方式没有太大的区别。 文奇的小说，总是在前期要花</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://gowinder.work/post/10004/</link>
-      <pubDate>Sun, 03 Oct 2010 10:17:45 +0000</pubDate>
-      
-      <guid>https://gowinder.work/post/10004/</guid>
-      <description></description>
     </item>
     
     <item>

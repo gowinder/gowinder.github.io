@@ -61,5 +61,14 @@
       <description>proxmox ve 部署双节点HA集群及glusterfs分布式文件系统 需要保存两个pve节点的版本一样 两个proxmox ve节点,实现高可用vm,lxc自</description>
     </item>
     
+    <item>
+      <title>在Orange Pi Zero上安装pihole后,webui无法启动问题</title>
+      <link>https://gowinder.work/post/pihile-lighttp-cannot-start-in-orange-pi-zero/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gowinder.work/post/pihile-lighttp-cannot-start-in-orange-pi-zero/</guid>
+      <description>在Orange Pi Zero上安装pihole后,webui无法启动问题 启因 最新在空闲Orange Pi Zero上安装了Pihole用来做家庭主DN</description>
+    </item>
+    
   </channel>
 </rss>

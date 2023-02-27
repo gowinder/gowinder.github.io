@@ -6,7 +6,16 @@
     <description>Recent content on 不成熟的理想主义者可以为了理想选择高尚的死，成熟的理想主义者则会选择卑下的活着!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 23 Feb 2023 16:09:08 +0800</lastBuildDate><atom:link href="https://gowinder.work/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 27 Feb 2023 14:05:41 +0800</lastBuildDate><atom:link href="https://gowinder.work/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>在Orange Pi Zero上安装pihole后,webui无法启动问题</title>
+      <link>https://gowinder.work/post/pihile-lighttp-cannot-start-in-orange-pi-zero/</link>
+      <pubDate>Mon, 27 Feb 2023 14:05:41 +0800</pubDate>
+      
+      <guid>https://gowinder.work/post/pihile-lighttp-cannot-start-in-orange-pi-zero/</guid>
+      <description>在Orange Pi Zero上安装pihole后,webui无法启动问题 启因 最新在空闲Orange Pi Zero上安装了Pihole用来做家庭主DN</description>
+    </item>
+    
     <item>
       <title>nestjs整合websocketgateway和microservice</title>
       <link>https://gowinder.work/post/use-microservce-in-websocketgateway-in-nestjs/</link>
@@ -392,15 +401,6 @@
       
       <guid>https://gowinder.work/post/%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0-1/</guid>
       <description>马上要封测了,现在开始压力测试. 1000个连接上,没有问题,但是登录后问题来了,处理一个登录要1秒钟时间,可想而知1000个需要多长时间. 这</description>
-    </item>
-    
-    <item>
-      <title>在Orange Pi Zero上安装pihole后,webui无法启动问题</title>
-      <link>https://gowinder.work/post/pihile-lighttp-cannot-start-in-orange-pi-zero/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://gowinder.work/post/pihile-lighttp-cannot-start-in-orange-pi-zero/</guid>
-      <description>在Orange Pi Zero上安装pihole后,webui无法启动问题 启因 最新在空闲Orange Pi Zero上安装了Pihole用来做家庭主DN</description>
     </item>
     
   </channel>

@@ -6,7 +6,79 @@
     <description>Recent content in Tags on 不成熟的理想主义者可以为了理想选择高尚的死，成熟的理想主义者则会选择卑下的活着!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 27 Feb 2023 14:05:41 +0800</lastBuildDate><atom:link href="https://gowinder.work/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Feb 2023 11:08:03 +0800</lastBuildDate><atom:link href="https://gowinder.work/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>chatgpt</title>
+      <link>https://gowinder.work/tags/chatgpt/</link>
+      <pubDate>Tue, 28 Feb 2023 11:08:03 +0800</pubDate>
+      
+      <guid>https://gowinder.work/tags/chatgpt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>es2017</title>
+      <link>https://gowinder.work/tags/es2017/</link>
+      <pubDate>Tue, 28 Feb 2023 11:08:03 +0800</pubDate>
+      
+      <guid>https://gowinder.work/tags/es2017/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>es5</title>
+      <link>https://gowinder.work/tags/es5/</link>
+      <pubDate>Tue, 28 Feb 2023 11:08:03 +0800</pubDate>
+      
+      <guid>https://gowinder.work/tags/es5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nestjs</title>
+      <link>https://gowinder.work/tags/nestjs/</link>
+      <pubDate>Tue, 28 Feb 2023 11:08:03 +0800</pubDate>
+      
+      <guid>https://gowinder.work/tags/nestjs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>node</title>
+      <link>https://gowinder.work/tags/node/</link>
+      <pubDate>Tue, 28 Feb 2023 11:08:03 +0800</pubDate>
+      
+      <guid>https://gowinder.work/tags/node/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>typeorm</title>
+      <link>https://gowinder.work/tags/typeorm/</link>
+      <pubDate>Tue, 28 Feb 2023 11:08:03 +0800</pubDate>
+      
+      <guid>https://gowinder.work/tags/typeorm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>typescript</title>
+      <link>https://gowinder.work/tags/typescript/</link>
+      <pubDate>Tue, 28 Feb 2023 11:08:03 +0800</pubDate>
+      
+      <guid>https://gowinder.work/tags/typescript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>开发笔记</title>
+      <link>https://gowinder.work/tags/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Tue, 28 Feb 2023 11:08:03 +0800</pubDate>
+      
+      <guid>https://gowinder.work/tags/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>lighttp</title>
       <link>https://gowinder.work/tags/lighttp/</link>
@@ -44,33 +116,6 @@
     </item>
     
     <item>
-      <title>nestjs</title>
-      <link>https://gowinder.work/tags/nestjs/</link>
-      <pubDate>Thu, 23 Feb 2023 16:09:08 +0800</pubDate>
-      
-      <guid>https://gowinder.work/tags/nestjs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>node</title>
-      <link>https://gowinder.work/tags/node/</link>
-      <pubDate>Thu, 23 Feb 2023 16:09:08 +0800</pubDate>
-      
-      <guid>https://gowinder.work/tags/node/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>typescript</title>
-      <link>https://gowinder.work/tags/typescript/</link>
-      <pubDate>Thu, 23 Feb 2023 16:09:08 +0800</pubDate>
-      
-      <guid>https://gowinder.work/tags/typescript/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>websocketg</title>
       <link>https://gowinder.work/tags/websocketg/</link>
       <pubDate>Thu, 23 Feb 2023 16:09:08 +0800</pubDate>
@@ -85,15 +130,6 @@
       <pubDate>Thu, 23 Feb 2023 16:09:08 +0800</pubDate>
       
       <guid>https://gowinder.work/tags/websocketgateway/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>开发笔记</title>
-      <link>https://gowinder.work/tags/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/</link>
-      <pubDate>Thu, 23 Feb 2023 16:09:08 +0800</pubDate>
-      
-      <guid>https://gowinder.work/tags/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/</guid>
       <description></description>
     </item>
     
@@ -400,6 +436,15 @@
       <pubDate>Fri, 18 Jul 2008 13:34:00 +0000</pubDate>
       
       <guid>https://gowinder.work/tags/%E9%BB%98%E8%AE%A4%E5%88%86%E7%B1%BB/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>@nestjsx/crud-typeorm</title>
+      <link>https://gowinder.work/tags/@nestjsx/crud-typeorm/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gowinder.work/tags/@nestjsx/crud-typeorm/</guid>
       <description></description>
     </item>
     

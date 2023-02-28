@@ -6,7 +6,16 @@
     <description>Recent content in nestjs on 不成熟的理想主义者可以为了理想选择高尚的死，成熟的理想主义者则会选择卑下的活着!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 23 Feb 2023 16:09:08 +0800</lastBuildDate><atom:link href="https://gowinder.work/tags/nestjs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Feb 2023 11:08:03 +0800</lastBuildDate><atom:link href="https://gowinder.work/tags/nestjs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Class Constructor TypeOrmCrudService Cannot Be Invoked Without &#39;New&#39;</title>
+      <link>https://gowinder.work/post/class-constructor-typeormcrudservice-cannot-be-invoked-without-new/</link>
+      <pubDate>Tue, 28 Feb 2023 11:08:03 +0800</pubDate>
+      
+      <guid>https://gowinder.work/post/class-constructor-typeormcrudservice-cannot-be-invoked-without-new/</guid>
+      <description>Class Constructor TypeOrmCrudService Cannot Be Invoked Without &amp;lsquo;New&amp;rsquo; 错误 启因 最近开发一个chatgpt网关项目,使用nestjs,其中用nestjsx-crud来提高curd开发效率,有以下代</description>
+    </item>
+    
     <item>
       <title>nestjs整合websocketgateway和microservice</title>
       <link>https://gowinder.work/post/use-microservce-in-websocketgateway-in-nestjs/</link>

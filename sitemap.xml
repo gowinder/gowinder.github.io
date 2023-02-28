@@ -2,6 +2,90 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://gowinder.work/tags/chatgpt/</loc>
+    <lastmod>2023-02-28T11:08:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gowinder.work/post/class-constructor-typeormcrudservice-cannot-be-invoked-without-new/</loc>
+    <lastmod>2023-02-28T11:08:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gowinder.work/tags/es2017/</loc>
+    <lastmod>2023-02-28T11:08:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gowinder.work/tags/es5/</loc>
+    <lastmod>2023-02-28T11:08:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gowinder.work/tags/nestjs/</loc>
+    <lastmod>2023-02-28T11:08:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gowinder.work/tags/node/</loc>
+    <lastmod>2023-02-28T11:08:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gowinder.work/post/</loc>
+    <lastmod>2023-02-28T11:08:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gowinder.work/tags/</loc>
+    <lastmod>2023-02-28T11:08:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gowinder.work/tags/typeorm/</loc>
+    <lastmod>2023-02-28T11:08:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gowinder.work/tags/typescript/</loc>
+    <lastmod>2023-02-28T11:08:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gowinder.work/</loc>
+    <lastmod>2023-02-28T11:08:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gowinder.work/tags/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2023-02-28T11:08:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://gowinder.work/tags/lighttp/</loc>
     <lastmod>2023-02-27T14:05:41+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -23,27 +107,6 @@
   </url>
   
   <url>
-    <loc>https://gowinder.work/post/</loc>
-    <lastmod>2023-02-27T14:05:41+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://gowinder.work/tags/</loc>
-    <lastmod>2023-02-27T14:05:41+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://gowinder.work/</loc>
-    <lastmod>2023-02-27T14:05:41+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://gowinder.work/post/pihile-lighttp-cannot-start-in-orange-pi-zero/</loc>
     <lastmod>2023-02-27T14:05:41+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -58,28 +121,7 @@
   </url>
   
   <url>
-    <loc>https://gowinder.work/tags/nestjs/</loc>
-    <lastmod>2023-02-23T16:09:08+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://gowinder.work/post/use-microservce-in-websocketgateway-in-nestjs/</loc>
-    <lastmod>2023-02-23T16:09:08+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://gowinder.work/tags/node/</loc>
-    <lastmod>2023-02-23T16:09:08+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://gowinder.work/tags/typescript/</loc>
     <lastmod>2023-02-23T16:09:08+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -94,13 +136,6 @@
   
   <url>
     <loc>https://gowinder.work/tags/websocketgateway/</loc>
-    <lastmod>2023-02-23T16:09:08+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://gowinder.work/tags/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2023-02-23T16:09:08+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -627,6 +662,12 @@
   <url>
     <loc>https://gowinder.work/post/d3d8-%E7%AA%97%E5%8F%A3%E6%A8%A1%E5%BC%8F%E5%9E%82%E7%9B%B4%E5%90%8C%E6%AD%A5-fighting-tearing/</loc>
     <lastmod>2008-07-18T11:16:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gowinder.work/tags/@nestjsx/crud-typeorm/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

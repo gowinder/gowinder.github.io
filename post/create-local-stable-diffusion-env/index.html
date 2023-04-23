@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>部署本地 Stable Diffusion运行环境 - 不成熟的理想主义者可以为了理想选择高尚的死，成熟的理想主义者则会选择卑下的活着!</title>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5259365864322361"
+     crossorigin="anonymous"></script>
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="gowinder" /><meta name="description" content="部署本地 Stable Diffusion运行环境 最近 midjourney 比较火，不过开始收费了，10刀一个月，消费不起，换成开源的Stable Diffusion来往，可以" /><meta name="keywords" content="stable diffusion, webui, ai, machine learning, deployment" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.110.0 with theme even" />
+
+
+<link rel="canonical" href="https://gowinder.work/post/create-local-stable-diffusion-env/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="部署本地 Stable Diffusion运行环境" />
+<meta property="og:description" content="部署本地 Stable Diffusion运行环境 最近 midjourney 比较火，不过开始收费了，10刀一个月，消费不起，换成开源的Stable Diffusion来往，可以" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gowinder.work/post/create-local-stable-diffusion-env/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-04-23T14:13:38+08:00" />
+<meta property="article:modified_time" content="2023-04-23T14:13:38+08:00" />
+<meta itemprop="name" content="部署本地 Stable Diffusion运行环境">
+<meta itemprop="description" content="部署本地 Stable Diffusion运行环境 最近 midjourney 比较火，不过开始收费了，10刀一个月，消费不起，换成开源的Stable Diffusion来往，可以"><meta itemprop="datePublished" content="2023-04-23T14:13:38+08:00" />
+<meta itemprop="dateModified" content="2023-04-23T14:13:38+08:00" />
+<meta itemprop="wordCount" content="1950">
+<meta itemprop="keywords" content="ai,stable diffusion,machine learning," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="部署本地 Stable Diffusion运行环境"/>
+<meta name="twitter:description" content="部署本地 Stable Diffusion运行环境 最近 midjourney 比较火，不过开始收费了，10刀一个月，消费不起，换成开源的Stable Diffusion来往，可以"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Gowinder</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Gowinder</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">部署本地 Stable Diffusion运行环境</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2023-04-23 </span>
+        
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#部署本地-stable-diffusion运行环境">部署本地 Stable Diffusion运行环境</a>
+      <ul>
+        <li><a href="#硬件环境">硬件环境</a></li>
+        <li><a href="#设置根文件夹">设置根文件夹</a></li>
+        <li><a href="#安装库">安装库</a></li>
+        <li><a href="#安装conda">安装<code>conda</code></a></li>
+        <li><a href="#基本安装">基本安装</a></li>
+        <li><a href="#stable-diffusion-15">stable-diffusion 1.5</a></li>
+        <li><a href="#download-abyssorangemix2-nsfw">download AbyssOrangeMix2 NSFW</a></li>
+        <li><a href="#download-inkpunk">download inkpunk</a></li>
+        <li><a href="#download-mo-di-diffusion">download Mo Di diffusion</a></li>
+        <li><a href="#abyssorangemix3">AbyssOrangeMix3</a></li>
+        <li><a href="#scifi">SCIFI</a></li>
+      </ul>
+    </li>
+    <li><a href="#hentai-model">hentai model</a>
+      <ul>
+        <li><a href="#complexla-style">complexla style</a></li>
+        <li><a href="#f222">f222</a></li>
+        <li><a href="#chillout-mix">Chillout Mix</a></li>
+        <li><a href="#urpm">URPM</a></li>
+        <li><a href="#openjourney">OpenJourney</a></li>
+        <li><a href="#anythings-v5">Anythings V5</a></li>
+        <li><a href="#dreamshaper">DreamShaper</a></li>
+        <li><a href="#运行webui">运行<code>webui</code></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="部署本地-stable-diffusion运行环境">部署本地 Stable Diffusion运行环境</h1>
+<p>最近 <code>midjourney</code> 比较火，不过开始收费了，10刀一个月，消费不起，换成开源的<code>Stable Diffusion</code>来往，可以在<code>Google Colab</code>上一件部署：
+<code>https://github.com/camenduru/stable-diffusion-webui-colab</code>，不过<code>Google Colab</code>免费的<code>gpu</code>一下就没有了，付费的虽然便宜，还是得省着用，如果本地有<code>gpu</code>，而且有<code>8G</code>以上显存可以用自己的电脑来跑，节约成本，<code>6G</code>显存应该也可以，降低分辨率和关键字试试。</p>
+<p>本文档参考<code>https://github.com/camenduru/stable-diffusion-webui-colab</code>，然后自己加了常用的一些模型
+<code>Stable Diffusion</code>和<code>midjourney</code>的一个区别就是模型非常多，选好自己想要的风格的模型会更好的生成自己想要的效果，可玩性也更高。
+选模型在几个常用的网站：</p>
+<ul>
+<li><code>https://huggingface.co/</code> 有很多开源的模型，搜索 <code>stable diffusion</code>就可以了,里面的用户分享类似<code>github</code>仓库，大文件可以直接下载也可以用<code>git lfs</code></li>
+<li><code>https://civitai.com/</code> 也有用户分享模型，而且比较直观，有效果图，就像<code>instagram</code>一样，很方便，同样搜索<code>stable diffusion</code>就可以了</li>
+</ul>
+<p>一些常用<code>stable diffusion</code> 网站：</p>
+<ul>
+<li><code>https://www.reddit.com/r/StableDiffusion/</code> <code>reddit</code>上的<code>stable diffusion</code>分区，他的 <a href="https://www.reddit.com/r/stablediffusion/wiki/tutorials/">tutorials</a> 非常好</li>
+<li><code>https://stable-diffusion-art.com</code> 有很多基础教程</li>
+</ul>
+<p>下面开始记录部署</p>
+<h2 id="硬件环境">硬件环境</h2>
+<p>在<code>proxvox ev 7.3</code>及<code>ubuntu 20.04</code>上部署成功过，显卡使用<code>telsa P4 8G</code>，<code>3070 8G</code></p>
+<h2 id="设置根文件夹">设置根文件夹</h2>
+<p><code>google colab</code>使用的及<code>/content/stable-diffusion-webui</code>，但我本地放在了<code>zfs</code>上，以为模型比较大，我可不想老是重复下载</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PROJ_DIR</span><span class="o">=</span>/tank/download/ai-relate/stable-diffusion-webui
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>设置好<code>$PROJ_DIR</code>环境变量后，所有的下载都会以这个环境变量为基础。</p>
+<h2 id="安装库">安装库</h2>
+<p>这一步好像不是必须的</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo apt -y update -qq
+</span></span><span class="line"><span class="cl">wget http://launchpadlibrarian.net/367274644/libgoogle-perftools-dev_2.5-2.2ubuntu3_amd64.deb
+</span></span><span class="line"><span class="cl">wget https://launchpad.net/ubuntu/+source/google-perftools/2.5-2.2ubuntu3/+build/14795286/+files/google-perftools_2.5-2.2ubuntu3_all.deb
+</span></span><span class="line"><span class="cl">wget https://launchpad.net/ubuntu/+source/google-perftools/2.5-2.2ubuntu3/+build/14795286/+files/libtcmalloc-minimal4_2.5-2.2ubuntu3_amd64.deb
+</span></span><span class="line"><span class="cl">wget https://launchpad.net/ubuntu/+source/google-perftools/2.5-2.2ubuntu3/+build/14795286/+files/libgoogle-perftools4_2.5-2.2ubuntu3_amd64.deb
+</span></span><span class="line"><span class="cl">sudo apt install -qq -y libunwind8-dev
+</span></span><span class="line"><span class="cl">sudo dpkg -i *.deb
+</span></span><span class="line"><span class="cl">env <span class="nv">LD_PRELOAD</span><span class="o">=</span>libtcmalloc.so
+</span></span><span class="line"><span class="cl">rm *.deb
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sudo apt install libnvinfer8 python3-libnvinfer
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="安装conda">安装<code>conda</code></h2>
+<p>对于普通<code>python</code>项目我喜欢用<code>poetry</code>来管理包，但对于机器学习类项目，我一般用<code>miniconda</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+</span></span><span class="line"><span class="cl">bash Miniconda3-latest-Linux-x86_64.sh
+</span></span><span class="line"><span class="cl"><span class="c1"># agreements 。。。</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>创建<code>conda</code>环境： <code>conda create -n py310sd python=3.10</code></p>
+<h2 id="基本安装">基本安装</h2>
+<p>安装 <code>aria2</code>,用这个可以多线程下载,比<code>wget</code>要快: <code>sudo apt -y install aria2</code>.
+然后安装<code>python</code>库</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">pip install <span class="nv">torch</span><span class="o">==</span>1.13.1+cu116 <span class="nv">torchvision</span><span class="o">==</span>0.14.1+cu116 <span class="nv">torchaudio</span><span class="o">==</span>0.13.1 <span class="nv">torchtext</span><span class="o">==</span>0.14.1 <span class="nv">torchdata</span><span class="o">==</span>0.5.1 --extra-index-url https://download.pytorch.org/whl/cu116 -U
+</span></span><span class="line"><span class="cl">pip install <span class="nv">xformers</span><span class="o">==</span>0.0.16 <span class="nv">triton</span><span class="o">==</span>2.0.0 -U
+</span></span><span class="line"><span class="cl">pip install tensorrt
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>克隆<code>stable-diffusion-webui</code>及常用插件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#ln -s /opt/conda/lib/python3.10/site-packages/libnvinfer.so.8 /opt/conda/lib/python3.10/site-packages/libnvinfer.so.7</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#ln -s /opt/conda/lib/python3.10/site-packages/libnvinfer_plugin.so.8 /opt/conda/lib/python3.10/site-packages/libnvinfer_plugin.so.7</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#set -x LD_LIBRARY_PAH $LD_LIBRARY_PATH:/opt/conda/lib:/opt/conda/lib/python3.10/site-packages</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">git clone -b v2.1 https://github.com/camenduru/stable-diffusion-webui
+</span></span><span class="line"><span class="cl">git clone https://huggingface.co/embed/negative <span class="nv">$PROJ_DIR</span>/embeddings/negative
+</span></span><span class="line"><span class="cl">git clone https://huggingface.co/embed/lora <span class="nv">$PROJ_DIR</span>/models/Lora/positive
+</span></span><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/embed/upscale/resolve/main/4x-UltraSharp.pth -d <span class="nv">$PROJ_DIR</span>/models/ESRGAN -o 4x-UltraSharp.pth
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">wget https://raw.githubusercontent.com/camenduru/stable-diffusion-webui-scripts/main/run_n_times.py -O <span class="nv">$PROJ_DIR</span>/scripts/run_n_times.py
+</span></span><span class="line"><span class="cl">git clone https://github.com/deforum-art/deforum-for-automatic1111-webui <span class="nv">$PROJ_DIR</span>/extensions/deforum-for-automatic1111-webui
+</span></span><span class="line"><span class="cl">git clone https://github.com/camenduru/stable-diffusion-webui-images-browser <span class="nv">$PROJ_DIR</span>/extensions/stable-diffusion-webui-images-browser
+</span></span><span class="line"><span class="cl">git clone https://github.com/camenduru/stable-diffusion-webui-huggingface <span class="nv">$PROJ_DIR</span>/extensions/stable-diffusion-webui-huggingface
+</span></span><span class="line"><span class="cl">git clone https://github.com/camenduru/sd-civitai-browser <span class="nv">$PROJ_DIR</span>/extensions/sd-civitai-browser
+</span></span><span class="line"><span class="cl">git clone https://github.com/kohya-ss/sd-webui-additional-networks <span class="nv">$PROJ_DIR</span>/extensions/sd-webui-additional-networks
+</span></span><span class="line"><span class="cl">git clone https://github.com/Mikubill/sd-webui-controlnet <span class="nv">$PROJ_DIR</span>/extensions/sd-webui-controlnet
+</span></span><span class="line"><span class="cl">git clone https://github.com/camenduru/openpose-editor <span class="nv">$PROJ_DIR</span>/extensions/openpose-editor
+</span></span><span class="line"><span class="cl">git clone https://github.com/jexom/sd-webui-depth-lib <span class="nv">$PROJ_DIR</span>/extensions/sd-webui-depth-lib
+</span></span><span class="line"><span class="cl">git clone https://github.com/hnmr293/posex <span class="nv">$PROJ_DIR</span>/extensions/posex
+</span></span><span class="line"><span class="cl">git clone https://github.com/camenduru/sd-webui-tunnels <span class="nv">$PROJ_DIR</span>/extensions/sd-webui-tunnels
+</span></span><span class="line"><span class="cl">git clone https://github.com/etherealxx/batchlinks-webui <span class="nv">$PROJ_DIR</span>/extensions/batchlinks-webui
+</span></span><span class="line"><span class="cl">git clone https://github.com/camenduru/stable-diffusion-webui-catppuccin <span class="nv">$PROJ_DIR</span>/extensions/stable-diffusion-webui-catppuccin
+</span></span><span class="line"><span class="cl">git clone https://github.com/KohakuBlueleaf/a1111-sd-webui-locon <span class="nv">$PROJ_DIR</span>/extensions/a1111-sd-webui-locon
+</span></span><span class="line"><span class="cl">git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui-rembg <span class="nv">$PROJ_DIR</span>/extensions/stable-diffusion-webui-rembg
+</span></span><span class="line"><span class="cl">git clone https://github.com/ashen-sensored/stable-diffusion-webui-two-shot <span class="nv">$PROJ_DIR</span>/extensions/stable-diffusion-webui-two-shot
+</span></span><span class="line"><span class="cl">git clone https://github.com/camenduru/sd_webui_stealth_pnginfo <span class="nv">$PROJ_DIR</span>/extensions/sd_webui_stealth_pnginfo
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> <span class="nv">$PROJ_DIR</span>
+</span></span><span class="line"><span class="cl">git reset --hard
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/ckpt/ControlNet/resolve/main/control_canny-fp16.safetensors -d <span class="nv">$PROJ_DIR</span>/extensions/sd-webui-controlnet/models -o control_canny-fp16.safetensors
+</span></span><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/ckpt/ControlNet/resolve/main/control_depth-fp16.safetensors -d <span class="nv">$PROJ_DIR</span>/extensions/sd-webui-controlnet/models -o control_depth-fp16.safetensors
+</span></span><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/ckpt/ControlNet/resolve/main/control_hed-fp16.safetensors -d <span class="nv">$PROJ_DIR</span>/extensions/sd-webui-controlnet/models -o control_hed-fp16.safetensors
+</span></span><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/ckpt/ControlNet/resolve/main/control_mlsd-fp16.safetensors -d <span class="nv">$PROJ_DIR</span>/extensions/sd-webui-controlnet/models -o control_mlsd-fp16.safetensors
+</span></span><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/ckpt/ControlNet/resolve/main/control_normal-fp16.safetensors -d <span class="nv">$PROJ_DIR</span>/extensions/sd-webui-controlnet/models -o control_normal-fp16.safetensors
+</span></span><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/ckpt/ControlNet/resolve/main/control_openpose-fp16.safetensors -d <span class="nv">$PROJ_DIR</span>/extensions/sd-webui-controlnet/models -o control_openpose-fp16.safetensors
+</span></span><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/ckpt/ControlNet/resolve/main/control_scribble-fp16.safetensors -d <span class="nv">$PROJ_DIR</span>/extensions/sd-webui-controlnet/models -o control_scribble-fp16.safetensors
+</span></span><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/ckpt/ControlNet/resolve/main/control_seg-fp16.safetensors -d <span class="nv">$PROJ_DIR</span>/extensions/sd-webui-controlnet/models -o control_seg-fp16.safetensors
+</span></span><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/ckpt/ControlNet/resolve/main/hand_pose_model.pth -d <span class="nv">$PROJ_DIR</span>/extensions/sd-webui-controlnet/annotator/openpose -o hand_pose_model.pth
+</span></span><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/ckpt/ControlNet/resolve/main/body_pose_model.pth -d <span class="nv">$PROJ_DIR</span>/extensions/sd-webui-controlnet/annotator/openpose -o body_pose_model.pth
+</span></span><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/ckpt/ControlNet/resolve/main/dpt_hybrid-midas-501f0c75.pt -d <span class="nv">$PROJ_DIR</span>/extensions/sd-webui-controlnet/annotator/midas -o dpt_hybrid-midas-501f0c75.pt
+</span></span><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/ckpt/ControlNet/resolve/main/mlsd_large_512_fp32.pth -d <span class="nv">$PROJ_DIR</span>/extensions/sd-webui-controlnet/annotator/mlsd -o mlsd_large_512_fp32.pth
+</span></span><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/ckpt/ControlNet/resolve/main/mlsd_tiny_512_fp32.pth -d <span class="nv">$PROJ_DIR</span>/extensions/sd-webui-controlnet/annotator/mlsd -o mlsd_tiny_512_fp32.pth
+</span></span><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/ckpt/ControlNet/resolve/main/network-bsds500.pth -d <span class="nv">$PROJ_DIR</span>/extensions/sd-webui-controlnet/annotator/hed -o network-bsds500.pth
+</span></span><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/ckpt/ControlNet/resolve/main/upernet_global_small.pth -d <span class="nv">$PROJ_DIR</span>/extensions/sd-webui-controlnet/annotator/uniformer -o upernet_global_small.pth
+</span></span><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/ckpt/ControlNet/resolve/main/t2iadapter_style_sd14v1.pth -d <span class="nv">$PROJ_DIR</span>/extensions/sd-webui-controlnet/models -o t2iadapter_style_sd14v1.pth
+</span></span><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/ckpt/ControlNet/resolve/main/t2iadapter_sketch_sd14v1.pth -d <span class="nv">$PROJ_DIR</span>/extensions/sd-webui-controlnet/models -o t2iadapter_sketch_sd14v1.pth
+</span></span><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/ckpt/ControlNet/resolve/main/t2iadapter_seg_sd14v1.pth -d <span class="nv">$PROJ_DIR</span>/extensions/sd-webui-controlnet/models -o t2iadapter_seg_sd14v1.pth
+</span></span><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/ckpt/ControlNet/resolve/main/t2iadapter_openpose_sd14v1.pth -d <span class="nv">$PROJ_DIR</span>/extensions/sd-webui-controlnet/models -o t2iadapter_openpose_sd14v1.pth
+</span></span><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/ckpt/ControlNet/resolve/main/t2iadapter_keypose_sd14v1.pth -d <span class="nv">$PROJ_DIR</span>/extensions/sd-webui-controlnet/models -o t2iadapter_keypose_sd14v1.pth
+</span></span><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/ckpt/ControlNet/resolve/main/t2iadapter_depth_sd14v1.pth -d <span class="nv">$PROJ_DIR</span>/extensions/sd-webui-controlnet/models -o t2iadapter_depth_sd14v1.pth
+</span></span><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/ckpt/ControlNet/resolve/main/t2iadapter_color_sd14v1.pth -d <span class="nv">$PROJ_DIR</span>/extensions/sd-webui-controlnet/models -o t2iadapter_color_sd14v1.pth
+</span></span><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/ckpt/ControlNet/resolve/main/t2iadapter_canny_sd14v1.pth -d <span class="nv">$PROJ_DIR</span>/extensions/sd-webui-controlnet/models -o t2iadapter_canny_sd14v1.pth
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sed -i -e <span class="s1">&#39;&#39;&#39;/    prepare_environment()/a\    os.system\(f\&#34;&#34;&#34;sed -i -e &#39;&#39;\&#34;s/dict()))/dict())).cuda()/g\&#34;&#39;&#39; $PROJ_DIR/repositories/stable-diffusion-stability-ai/ldm/util.py&#34;&#34;&#34;)&#39;&#39;&#39;</span> <span class="nv">$PROJ_DIR</span>/launch.py
+</span></span><span class="line"><span class="cl">sed -i -e <span class="s1">&#39;s/fastapi==0.90.1/fastapi==0.89.1/g&#39;</span> <span class="nv">$PROJ_DIR</span>/requirements_versions.txt
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">mkdir <span class="nv">$PROJ_DIR</span>/extensions/deforum-for-automatic1111-webui/models
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sed -i -e <span class="s1">&#39;s/\&#34;sd_model_checkpoint\&#34;\,/\&#34;sd_model_checkpoint\,sd_vae\,CLIP_stop_at_last_layers\&#34;\,/g&#39;</span> <span class="nv">$PROJ_DIR</span>/modules/shared.py
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>最基本的完成了,下面是一些热门的<code>models</code></p>
+<h2 id="stable-diffusion-15">stable-diffusion 1.5</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/runwayml/stable-diffusion-v1-5/resolve/main/v1-5-pruned.ckpt -d <span class="nv">$PROJ_DIR</span>/models/Stable-diffusion -o v1-5-pruned.ckpt
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="download-abyssorangemix2-nsfw">download AbyssOrangeMix2 NSFW</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/ckpt/OrangeMixs/resolve/main/AbyssOrangeMix2_nsfw.safetensors -d <span class="nv">$PROJ_DIR</span>/models/Stable-diffusion -o AbyssOrangeMix2_nsfw.safetensors
+</span></span><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/ckpt/OrangeMixs/resolve/main/AbyssOrangeMix2_hard.safetensors -d <span class="nv">$PROJ_DIR</span>/models/Stable-diffusion -o AbyssOrangeMix2_hard.safetensors
+</span></span><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/ckpt/OrangeCocoaMix/resolve/main/OrangeCocoaMix2_hard.safetensors -d <span class="nv">$PROJ_DIR</span>/models/Stable-diffusion -o OrangeCocoaMix2_hard.safetensors
+</span></span><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/ckpt/sd-vae-ft-mse-original/resolve/main/vae-ft-mse-840000-ema-pruned.ckpt -d <span class="nv">$PROJ_DIR</span>/models/Stable-diffusion -o AbyssOrangeMix2_nsfw.vae.pt
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="download-inkpunk">download inkpunk</h2>
+<p><code>https://huggingface.co/Envvi/Inkpunk-Diffusion</code></p>
+<p><img src="https://huggingface.co/Envvi/Inkpunk-Diffusion/resolve/main/inkpunk-v2-samples-2.png" alt="Inkpunk"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/Envvi/Inkpunk-Diffusion/resolve/main/Inkpunk-Diffusion-v2.ckpt -d <span class="nv">$PROJ_DIR</span>/models/Stable-diffusion -o Inkpunk-Diffusion-v2.ckpt
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="download-mo-di-diffusion">download Mo Di diffusion</h2>
+<p><code>https://huggingface.co/nitrosocke/mo-di-diffusion</code></p>
+<p><img src="https://huggingface.co/nitrosocke/mo-di-diffusion/resolve/main/modi-samples-03s.jpg" alt="MoDi"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/nitrosocke/mo-di-diffusion/blob/main/moDi-v1-pruned.ckpt -d <span class="nv">$PROJ_DIR</span>/models/Stable-diffusion -o moDi-v1-pruned.ckpt
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="abyssorangemix3">AbyssOrangeMix3</h2>
+<p><code>https://huggingface.co/WarriorMama777/OrangeMixs</code></p>
+<p><img src="https://github.com/WarriorMama777/imgup/raw/3e060893c0fb2c80c6f3aedf63bf8d576c9a37fc/img/AOM3/img_samples_AOM3A1B_01_comp001.webp" alt="AOM3A1B"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/WarriorMama777/OrangeMixs/resolve/main/Models/AbyssOrangeMix3/AOM3A1B_orangemixs.safetensors -d <span class="nv">$PROJ_DIR</span>/models/Stable-diffusion -o AOM3A1B_orangemixs.safetensors
+</span></span><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/WarriorMama777/OrangeMixs/resolve/main/Models/AbyssOrangeMix3/AOM3A1_orangemixs.safetensors -d <span class="nv">$PROJ_DIR</span>/models/Stable-diffusion -o AOM3A1_orangemixs.safetensors
+</span></span><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/WarriorMama777/OrangeMixs/resolve/main/Models/AbyssOrangeMix3/AOM3A3_orangemixs.safetensors -d <span class="nv">$PROJ_DIR</span>/models/Stable-diffusion -o AOM3A3_orangemixs.safetensors
+</span></span><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/WarriorMama777/OrangeMixs/resolve/main/Models/AbyssOrangeMix3/AOM3A2_orangemixs.safetensors -d <span class="nv">$PROJ_DIR</span>/models/Stable-diffusion -o AOM3A2_orangemixs.safetensors
+</span></span><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/WarriorMama777/OrangeMixs/resolve/main/Models/AbyssOrangeMix3/AOM3_orangemixs.safetensors -d <span class="nv">$PROJ_DIR</span>/models/Stable-diffusion -o AOM3_orangemixs.safetensors
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="scifi">SCIFI</h2>
+<p><code>https://huggingface.co/Corruptlake/Sci-Fi-Diffusion/tree/main</code></p>
+<p><img src="https://i.ibb.co/vw44xpj/sdvssf.png" alt="SCIFI"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/Corruptlake/Sci-Fi-Diffusion/resolve/main/Sci-Fi_Diffusion_1.0.safetensors -d <span class="nv">$PROJ_DIR</span>/models/Stable-diffusion -o Sci-Fi_Diffusion_1.0.safetensors
+</span></span><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/Corruptlake/Sci-Fi-Diffusion/resolve/main/Sci-Fi_Diffusion_1.0.ckpt -d <span class="nv">$PROJ_DIR</span>/models/Stable-diffusion -o Sci-Fi_Diffusion_1.0.ckpt
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="hentai-model">hentai model</h1>
+<p>图就不放了，地址在</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/Deltaadams/HD-22/resolve/main/HD22%20S.zip -d <span class="nv">$PROJ_DIR</span>/models/Stable-diffusion -o hd22.zip
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> <span class="nv">$PROJ_DIR</span>/models/Stable-diffusion
+</span></span><span class="line"><span class="cl">unzip hd22.zip
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="complexla-style">complexla style</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">aria2c -x <span class="m">15</span> -s <span class="m">10</span> -c -k 1M https://huggingface.co/Conflictx/Complex-Lineart/resolve/main/ComplexLA%20Style.ckpt -d <span class="nv">$PROJ_DIR</span>/models/Stable-diffusion -o ComplexLA-Style.ckpt
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="f222">f222</h2>
+<p><code>https://huggingface.co/acheong08/f222</code></p>
+<p><img src="https://i0.wp.com/stable-diffusion-art.com/wp-content/uploads/2023/01/image-47.png?w=786&amp;ssl=1" alt="f222"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">aria2c -x <span class="m">15</span> -s <span class="m">10</span> -c -k 1M https://huggingface.co/acheong08/f222/resolve/main/f222.ckpt -d <span class="nv">$PROJ_DIR</span>/models/Stable-diffusion -o f222.ckpt
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="chillout-mix">Chillout Mix</h2>
+<p><code>https://civitai.com/models/6424/chilloutmix</code></p>
+<p><img src="https://i0.wp.com/stable-diffusion-art.com/wp-content/uploads/2023/03/Untitled.png?w=832&amp;ssl=1" alt="ChilloutMix"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">aria2c -x <span class="m">15</span> -s <span class="m">10</span> -c -k 1M https://civitai.com/api/download/models/11745 -d <span class="nv">$PROJ_DIR</span>/models/Stable-diffusion -o ChilloutMix.safetensors
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="urpm">URPM</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">aria2c -x <span class="m">15</span> -s <span class="m">10</span> -c -k 1M https://civitai.com/api/download/models/15640 -d <span class="nv">$PROJ_DIR</span>/models/Stable-diffusion -o URPM.safetensors
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="openjourney">OpenJourney</h2>
+<p><code>https://huggingface.co/prompthero/openjourney</code></p>
+<p><img src="https://s3.amazonaws.com/moonup/production/uploads/1667904587642-63265d019f9d19bfd4f45031.png" alt="Open Journey"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">aria2c -x <span class="m">15</span> -s <span class="m">10</span> -c -k 1M https://huggingface.co/prompthero/openjourney/resolve/main/mdjrny-v4.ckpt -d <span class="nv">$PROJ_DIR</span>/models/Stable-diffusion -o mdjrny-v4.ckpt
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="anythings-v5">Anythings V5</h2>
+<p><code>https://civitai.com/models/9409/or-anything-v5</code></p>
+<p><img src="https://imagecache.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/aeda34a6-4db8-4f7e-23fd-c7bac4bcae00/width=450/342218.jpeg" alt="Anythings V5"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">aria2c -x <span class="m">15</span> -s <span class="m">10</span> -c -k 1M https://civitai.com/api/download/models/30163 -d <span class="nv">$PROJ_DIR</span>/models/Stable-diffusion -o AnyThingsV5.ckpt
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="dreamshaper">DreamShaper</h2>
+<p><code>https://huggingface.co/Lykon/DreamShaper</code></p>
+<p><img src="https://huggingface.co/Lykon/DreamShaper/resolve/main/1.png" alt="DreamShaper"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#  DreamShaper_5_beta2_BakedVae_fp16.ckpt</span>
+</span></span><span class="line"><span class="cl">aria2c -x <span class="m">15</span> -s <span class="m">10</span> -c -k 1M https://huggingface.co/Lykon/DreamShaper/resolve/main/DreamShaper_5_beta2_BakedVae_fp16.ckpt -d <span class="nv">$PROJ_DIR</span>/models/Stable-diffusion -o  DreamShaper_5_beta2_BakedVae_fp16.ckpt
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="运行webui">运行<code>webui</code></h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> <span class="nv">$PROJ_DIR</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">python launch.py --listen --xformers --enable-insecure-extension-access --theme dark --gradio-queue --multiple
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果需要外网访问，加上<code>--share</code>参数</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">gowinder</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2023-04-23
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/ai/">ai</a>
+          <a href="/tags/stable-diffusion/">stable diffusion</a>
+          <a href="/tags/machine-learning/">machine learning</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/react-scripts-cors/">
+            <span class="next-text nav-default">解决React开发模式服务端Cors问题</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="gowinder/hugo-comment"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:gowinder@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/gowinder" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.douban.com/people/gowinder/" class="iconfont icon-douban" title="douban"></a>
+  <a href="https://gowinder.work/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2023<span class="heart"><i class="iconfont icon-heart"></i></span><span>gowinder</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script><script></script><script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script></script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

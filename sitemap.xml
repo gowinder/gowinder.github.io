@@ -2,6 +2,76 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://gowinder.work/tags/ai/</loc>
+    <lastmod>2023-04-23T14:13:38+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gowinder.work/tags/machine-learning/</loc>
+    <lastmod>2023-04-23T14:13:38+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gowinder.work/post/</loc>
+    <lastmod>2023-04-23T14:13:38+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gowinder.work/tags/stable-diffusion/</loc>
+    <lastmod>2023-04-23T14:13:38+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gowinder.work/tags/</loc>
+    <lastmod>2023-04-23T14:13:38+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gowinder.work/</loc>
+    <lastmod>2023-04-23T14:13:38+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gowinder.work/post/create-local-stable-diffusion-env/</loc>
+    <lastmod>2023-04-23T14:13:38+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gowinder.work/tags/cors/</loc>
+    <lastmod>2023-03-28T11:01:11+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gowinder.work/tags/react/</loc>
+    <lastmod>2023-03-28T11:01:11+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gowinder.work/post/react-scripts-cors/</loc>
+    <lastmod>2023-03-28T11:01:11+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://gowinder.work/tags/chatgpt/</loc>
     <lastmod>2023-02-28T11:08:03+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -44,20 +114,6 @@
   </url>
   
   <url>
-    <loc>https://gowinder.work/post/</loc>
-    <lastmod>2023-02-28T11:08:03+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://gowinder.work/tags/</loc>
-    <lastmod>2023-02-28T11:08:03+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://gowinder.work/tags/typeorm/</loc>
     <lastmod>2023-02-28T11:08:03+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -66,13 +122,6 @@
   
   <url>
     <loc>https://gowinder.work/tags/typescript/</loc>
-    <lastmod>2023-02-28T11:08:03+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://gowinder.work/</loc>
     <lastmod>2023-02-28T11:08:03+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

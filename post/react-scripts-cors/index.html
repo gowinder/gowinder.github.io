@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>解决React开发模式服务端Cors问题 - 不成熟的理想主义者可以为了理想选择高尚的死，成熟的理想主义者则会选择卑下的活着!</title>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5259365864322361"
+     crossorigin="anonymous"></script>
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="gowinder" /><meta name="description" content="&amp;ldquo;解决React开发模式服务端Cors问题 启因 最近在做openai的后端代理服务,一个后台池账号池,缓冲前端过来的openai的" /><meta name="keywords" content="react, CORS" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.110.0 with theme even" />
+
+
+<link rel="canonical" href="https://gowinder.work/post/react-scripts-cors/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="解决React开发模式服务端Cors问题" />
+<meta property="og:description" content="&ldquo;解决React开发模式服务端Cors问题 启因 最近在做openai的后端代理服务,一个后台池账号池,缓冲前端过来的openai的" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gowinder.work/post/react-scripts-cors/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-03-28T11:01:11+08:00" />
+<meta property="article:modified_time" content="2023-03-28T11:01:11+08:00" />
+<meta itemprop="name" content="解决React开发模式服务端Cors问题">
+<meta itemprop="description" content="&ldquo;解决React开发模式服务端Cors问题 启因 最近在做openai的后端代理服务,一个后台池账号池,缓冲前端过来的openai的"><meta itemprop="datePublished" content="2023-03-28T11:01:11+08:00" />
+<meta itemprop="dateModified" content="2023-03-28T11:01:11+08:00" />
+<meta itemprop="wordCount" content="641">
+<meta itemprop="keywords" content="react,CORS," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="解决React开发模式服务端Cors问题"/>
+<meta name="twitter:description" content="&ldquo;解决React开发模式服务端Cors问题 启因 最近在做openai的后端代理服务,一个后台池账号池,缓冲前端过来的openai的"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Gowinder</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Gowinder</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">解决React开发模式服务端Cors问题</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2023-03-28 </span>
+        
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#解决react开发模式服务端cors问题">&ldquo;解决React开发模式服务端Cors问题</a>
+      <ul>
+        <li><a href="#启因">启因</a></li>
+        <li><a href="#解决">解决</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="解决react开发模式服务端cors问题">&ldquo;解决React开发模式服务端Cors问题</h1>
+<h2 id="启因">启因</h2>
+<p>最近在做<code>openai</code>的后端代理服务,一个后台池账号池,缓冲前端过来的<code>openai</code>的<code>completion</code>请求.</p>
+<p>后端基本开发完成了,所以需要一个demo前端做测试及演示用,就用<code>react</code>做了一个简单的前端聊天程序,代码基本由<code>GPT-4</code>来生成,生成了多次,拼接了一下,由于我也没有写过<code>react</code>,所以还花了点时间选择拼接,因为<code>CHATGPT</code>也经常出些错误,懂的人一看就知道,不懂的人就要上当.</p>
+<p>程序运行起来后,因为后端给前端的接口是一个<code>websocket</code>,启动后就报错: <code>Access to XMLHttpRequest at 'http://localhost:3014/socket.io/?EIO=4&amp;transport=polling&amp;t=OSYSDmI' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.</code></p>
+<h2 id="解决">解决</h2>
+<p>查了一些资料,<code>CORS</code>问题其实需要在<code>SERVER</code>端解决,首先我的<code>SERVER</code>端用的是<code>Nestjs</code>,<code>websocket</code>用的是<code>WebSocketGateway</code>,定义如下:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kd">@WebSocketGateway</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">cors</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">origin</span><span class="o">:</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">namespace</span><span class="o">:</span> <span class="s1">&#39;main&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">class</span> <span class="nx">WSGateway</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">implements</span> <span class="nx">OnGatewayInit</span><span class="p">,</span> <span class="nx">OnGatewayConnection</span><span class="p">,</span> <span class="nx">OnGatewayDisconnect</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  	<span class="p">...</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>websockeet</code>已经加了<code>CORS</code>了,应该不是这个问题,问题出在<code>localhost:3000</code>,这个是前端<code>react</code>用的<code>web</code>服务,报错也是这个<code>3000</code>,经过查询,开发模式启动<code>react-scripts</code>用的是<code>webpack</code>的开发服,根据<a href="https://create-react-app.dev/docs/proxying-api-requests-in-development/">官方文档</a>:</p>
+<p>新建一个<code>scr/setupProxy.js</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="p">{</span> <span class="nx">createProxyMiddleware</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&#34;http-proxy-middleware&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">app</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;/&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">createProxyMiddleware</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">target</span><span class="o">:</span> <span class="s2">&#34;http://localhost:3014&#34;</span><span class="p">,</span> <span class="c1">// Replace with the API server URL
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="c1">//   changeOrigin: true,
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="nx">ws</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">logger</span><span class="o">:</span> <span class="nx">console</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">//   pathRewrite: {
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="c1">//     &#34;^/api&#34;: &#34;&#34;, // Remove the &#39;/api&#39; prefix from the request URL
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="c1">//   },
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">})</span>
+</span></span><span class="line"><span class="cl">  <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>target</code>填入<code>react</code>要连接的目标服务器地址, <code>ws</code>设置成<code>true</code></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">gowinder</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2023-03-28
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/react/">react</a>
+          <a href="/tags/cors/">CORS</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/create-local-stable-diffusion-env/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">部署本地 Stable Diffusion运行环境</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/class-constructor-typeormcrudservice-cannot-be-invoked-without-new/">
+            <span class="next-text nav-default">Class Constructor TypeOrmCrudService Cannot Be Invoked Without &#39;New&#39;</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="gowinder/hugo-comment"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:gowinder@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/gowinder" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.douban.com/people/gowinder/" class="iconfont icon-douban" title="douban"></a>
+  <a href="https://gowinder.work/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2023<span class="heart"><i class="iconfont icon-heart"></i></span><span>gowinder</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script><script></script><script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script></script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

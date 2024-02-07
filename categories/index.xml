@@ -5,6 +5,7 @@
     <link>https://gowinder.work/categories/</link>
     <description>Recent content in Categories on 不成熟的理想主义者可以为了理想选择高尚的死，成熟的理想主义者则会选择卑下的活着!</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language><atom:link href="https://gowinder.work/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-cn</language>
+    <atom:link href="https://gowinder.work/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

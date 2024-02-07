@@ -6,492 +6,385 @@
     <description>Recent content in Tags on 不成熟的理想主义者可以为了理想选择高尚的死，成熟的理想主义者则会选择卑下的活着!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 23 Apr 2023 14:13:38 +0800</lastBuildDate><atom:link href="https://gowinder.work/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 Apr 2023 14:13:38 +0800</lastBuildDate>
+    <atom:link href="https://gowinder.work/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ai</title>
       <link>https://gowinder.work/tags/ai/</link>
       <pubDate>Sun, 23 Apr 2023 14:13:38 +0800</pubDate>
-      
       <guid>https://gowinder.work/tags/ai/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>machine learning</title>
       <link>https://gowinder.work/tags/machine-learning/</link>
       <pubDate>Sun, 23 Apr 2023 14:13:38 +0800</pubDate>
-      
       <guid>https://gowinder.work/tags/machine-learning/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>stable diffusion</title>
       <link>https://gowinder.work/tags/stable-diffusion/</link>
       <pubDate>Sun, 23 Apr 2023 14:13:38 +0800</pubDate>
-      
       <guid>https://gowinder.work/tags/stable-diffusion/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>CORS</title>
       <link>https://gowinder.work/tags/cors/</link>
       <pubDate>Tue, 28 Mar 2023 11:01:11 +0800</pubDate>
-      
       <guid>https://gowinder.work/tags/cors/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>react</title>
       <link>https://gowinder.work/tags/react/</link>
       <pubDate>Tue, 28 Mar 2023 11:01:11 +0800</pubDate>
-      
       <guid>https://gowinder.work/tags/react/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>chatgpt</title>
       <link>https://gowinder.work/tags/chatgpt/</link>
       <pubDate>Tue, 28 Feb 2023 11:08:03 +0800</pubDate>
-      
       <guid>https://gowinder.work/tags/chatgpt/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>es2017</title>
       <link>https://gowinder.work/tags/es2017/</link>
       <pubDate>Tue, 28 Feb 2023 11:08:03 +0800</pubDate>
-      
       <guid>https://gowinder.work/tags/es2017/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>es5</title>
       <link>https://gowinder.work/tags/es5/</link>
       <pubDate>Tue, 28 Feb 2023 11:08:03 +0800</pubDate>
-      
       <guid>https://gowinder.work/tags/es5/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>nestjs</title>
       <link>https://gowinder.work/tags/nestjs/</link>
       <pubDate>Tue, 28 Feb 2023 11:08:03 +0800</pubDate>
-      
       <guid>https://gowinder.work/tags/nestjs/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>node</title>
       <link>https://gowinder.work/tags/node/</link>
       <pubDate>Tue, 28 Feb 2023 11:08:03 +0800</pubDate>
-      
       <guid>https://gowinder.work/tags/node/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>typeorm</title>
       <link>https://gowinder.work/tags/typeorm/</link>
       <pubDate>Tue, 28 Feb 2023 11:08:03 +0800</pubDate>
-      
       <guid>https://gowinder.work/tags/typeorm/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>typescript</title>
       <link>https://gowinder.work/tags/typescript/</link>
       <pubDate>Tue, 28 Feb 2023 11:08:03 +0800</pubDate>
-      
       <guid>https://gowinder.work/tags/typescript/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>开发笔记</title>
       <link>https://gowinder.work/tags/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Tue, 28 Feb 2023 11:08:03 +0800</pubDate>
-      
       <guid>https://gowinder.work/tags/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>lighttp</title>
       <link>https://gowinder.work/tags/lighttp/</link>
       <pubDate>Mon, 27 Feb 2023 14:05:41 +0800</pubDate>
-      
       <guid>https://gowinder.work/tags/lighttp/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>linux</title>
       <link>https://gowinder.work/tags/linux/</link>
       <pubDate>Mon, 27 Feb 2023 14:05:41 +0800</pubDate>
-      
       <guid>https://gowinder.work/tags/linux/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>pihole</title>
       <link>https://gowinder.work/tags/pihole/</link>
       <pubDate>Mon, 27 Feb 2023 14:05:41 +0800</pubDate>
-      
       <guid>https://gowinder.work/tags/pihole/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>microservice</title>
       <link>https://gowinder.work/tags/microservice/</link>
       <pubDate>Thu, 23 Feb 2023 16:09:08 +0800</pubDate>
-      
       <guid>https://gowinder.work/tags/microservice/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>websocketg</title>
       <link>https://gowinder.work/tags/websocketg/</link>
       <pubDate>Thu, 23 Feb 2023 16:09:08 +0800</pubDate>
-      
       <guid>https://gowinder.work/tags/websocketg/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>websocketgateway</title>
       <link>https://gowinder.work/tags/websocketgateway/</link>
       <pubDate>Thu, 23 Feb 2023 16:09:08 +0800</pubDate>
-      
       <guid>https://gowinder.work/tags/websocketgateway/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>cron</title>
       <link>https://gowinder.work/tags/cron/</link>
       <pubDate>Fri, 17 Feb 2023 15:12:05 +0800</pubDate>
-      
       <guid>https://gowinder.work/tags/cron/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>proxmox ve</title>
       <link>https://gowinder.work/tags/proxmox-ve/</link>
       <pubDate>Fri, 17 Feb 2023 15:12:05 +0800</pubDate>
-      
       <guid>https://gowinder.work/tags/proxmox-ve/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>ssd</title>
       <link>https://gowinder.work/tags/ssd/</link>
       <pubDate>Fri, 17 Feb 2023 15:12:05 +0800</pubDate>
-      
       <guid>https://gowinder.work/tags/ssd/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>trim</title>
       <link>https://gowinder.work/tags/trim/</link>
       <pubDate>Fri, 17 Feb 2023 15:12:05 +0800</pubDate>
-      
       <guid>https://gowinder.work/tags/trim/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>部署</title>
       <link>https://gowinder.work/tags/%E9%83%A8%E7%BD%B2/</link>
       <pubDate>Fri, 17 Feb 2023 15:12:05 +0800</pubDate>
-      
       <guid>https://gowinder.work/tags/%E9%83%A8%E7%BD%B2/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>分布式</title>
       <link>https://gowinder.work/tags/%E5%88%86%E5%B8%83%E5%BC%8F/</link>
       <pubDate>Fri, 17 Feb 2023 15:12:05 +0800</pubDate>
-      
       <guid>https://gowinder.work/tags/%E5%88%86%E5%B8%83%E5%BC%8F/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>lvm</title>
       <link>https://gowinder.work/tags/lvm/</link>
       <pubDate>Fri, 17 Feb 2023 14:16:05 +0800</pubDate>
-      
       <guid>https://gowinder.work/tags/lvm/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>扩展</title>
       <link>https://gowinder.work/tags/%E6%89%A9%E5%B1%95/</link>
       <pubDate>Fri, 17 Feb 2023 14:16:05 +0800</pubDate>
-      
       <guid>https://gowinder.work/tags/%E6%89%A9%E5%B1%95/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>APM</title>
       <link>https://gowinder.work/tags/apm/</link>
       <pubDate>Fri, 17 Feb 2023 10:25:05 +0800</pubDate>
-      
       <guid>https://gowinder.work/tags/apm/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>nvme</title>
       <link>https://gowinder.work/tags/nvme/</link>
       <pubDate>Fri, 17 Feb 2023 10:25:05 +0800</pubDate>
-      
       <guid>https://gowinder.work/tags/nvme/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>电源管理</title>
       <link>https://gowinder.work/tags/%E7%94%B5%E6%BA%90%E7%AE%A1%E7%90%86/</link>
       <pubDate>Fri, 17 Feb 2023 10:25:05 +0800</pubDate>
-      
       <guid>https://gowinder.work/tags/%E7%94%B5%E6%BA%90%E7%AE%A1%E7%90%86/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>性能</title>
       <link>https://gowinder.work/tags/%E6%80%A7%E8%83%BD/</link>
       <pubDate>Fri, 17 Feb 2023 10:25:05 +0800</pubDate>
-      
       <guid>https://gowinder.work/tags/%E6%80%A7%E8%83%BD/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>磁盘</title>
       <link>https://gowinder.work/tags/%E7%A3%81%E7%9B%98/</link>
       <pubDate>Tue, 14 Feb 2023 09:39:05 +0800</pubDate>
-      
       <guid>https://gowinder.work/tags/%E7%A3%81%E7%9B%98/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>虚拟机</title>
       <link>https://gowinder.work/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/</link>
       <pubDate>Tue, 14 Feb 2023 09:39:05 +0800</pubDate>
-      
       <guid>https://gowinder.work/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>gluster</title>
       <link>https://gowinder.work/tags/gluster/</link>
       <pubDate>Sat, 11 Feb 2023 21:13:05 +0800</pubDate>
-      
       <guid>https://gowinder.work/tags/gluster/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>gstatus</title>
       <link>https://gowinder.work/tags/gstatus/</link>
       <pubDate>Sat, 11 Feb 2023 21:13:05 +0800</pubDate>
-      
       <guid>https://gowinder.work/tags/gstatus/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>unity3d</title>
       <link>https://gowinder.work/tags/unity3d/</link>
       <pubDate>Tue, 26 Jul 2016 03:07:22 +0000</pubDate>
-      
       <guid>https://gowinder.work/tags/unity3d/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>游戏开发</title>
       <link>https://gowinder.work/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/</link>
       <pubDate>Tue, 26 Jul 2016 03:07:22 +0000</pubDate>
-      
       <guid>https://gowinder.work/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>.NET</title>
       <link>https://gowinder.work/tags/.net/</link>
       <pubDate>Sun, 07 Nov 2010 12:26:13 +0000</pubDate>
-      
       <guid>https://gowinder.work/tags/.net/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>C#</title>
       <link>https://gowinder.work/tags/c#/</link>
       <pubDate>Sun, 07 Nov 2010 12:26:13 +0000</pubDate>
-      
       <guid>https://gowinder.work/tags/c#/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>ListBox</title>
       <link>https://gowinder.work/tags/listbox/</link>
       <pubDate>Sun, 07 Nov 2010 12:26:13 +0000</pubDate>
-      
       <guid>https://gowinder.work/tags/listbox/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Silverlight</title>
       <link>https://gowinder.work/tags/silverlight/</link>
       <pubDate>Sun, 07 Nov 2010 12:26:13 +0000</pubDate>
-      
       <guid>https://gowinder.work/tags/silverlight/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>绑定</title>
       <link>https://gowinder.work/tags/%E7%BB%91%E5%AE%9A/</link>
       <pubDate>Sun, 07 Nov 2010 12:26:13 +0000</pubDate>
-      
       <guid>https://gowinder.work/tags/%E7%BB%91%E5%AE%9A/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>控件自定义</title>
       <link>https://gowinder.work/tags/%E6%8E%A7%E4%BB%B6%E8%87%AA%E5%AE%9A%E4%B9%89/</link>
       <pubDate>Sun, 07 Nov 2010 12:26:13 +0000</pubDate>
-      
       <guid>https://gowinder.work/tags/%E6%8E%A7%E4%BB%B6%E8%87%AA%E5%AE%9A%E4%B9%89/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>ANDROID</title>
       <link>https://gowinder.work/tags/android/</link>
       <pubDate>Wed, 27 Oct 2010 03:22:56 +0000</pubDate>
-      
       <guid>https://gowinder.work/tags/android/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>android 1.5 cifs smb WIDNOWS共享</title>
       <link>https://gowinder.work/tags/android-1.5-cifs-smb-widnows%E5%85%B1%E4%BA%AB/</link>
       <pubDate>Wed, 27 Oct 2010 03:22:56 +0000</pubDate>
-      
       <guid>https://gowinder.work/tags/android-1.5-cifs-smb-widnows%E5%85%B1%E4%BA%AB/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>APAD RK2808 平板 ANDROID NFS ROOT权限</title>
       <link>https://gowinder.work/tags/apad-rk2808-%E5%B9%B3%E6%9D%BF-android-nfs-root%E6%9D%83%E9%99%90/</link>
       <pubDate>Tue, 26 Oct 2010 09:41:37 +0000</pubDate>
-      
       <guid>https://gowinder.work/tags/apad-rk2808-%E5%B9%B3%E6%9D%BF-android-nfs-root%E6%9D%83%E9%99%90/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>读书</title>
       <link>https://gowinder.work/tags/%E8%AF%BB%E4%B9%A6/</link>
       <pubDate>Thu, 14 Oct 2010 04:03:30 +0000</pubDate>
-      
       <guid>https://gowinder.work/tags/%E8%AF%BB%E4%B9%A6/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>科幻，弗诺文奇，终极人类，未来战争</title>
       <link>https://gowinder.work/tags/%E7%A7%91%E5%B9%BB%E5%BC%97%E8%AF%BA%E6%96%87%E5%A5%87%E7%BB%88%E6%9E%81%E4%BA%BA%E7%B1%BB%E6%9C%AA%E6%9D%A5%E6%88%98%E4%BA%89/</link>
       <pubDate>Sun, 03 Oct 2010 12:12:51 +0000</pubDate>
-      
       <guid>https://gowinder.work/tags/%E7%A7%91%E5%B9%BB%E5%BC%97%E8%AF%BA%E6%96%87%E5%A5%87%E7%BB%88%E6%9E%81%E4%BA%BA%E7%B1%BB%E6%9C%AA%E6%9D%A5%E6%88%98%E4%BA%89/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>电影</title>
       <link>https://gowinder.work/tags/%E7%94%B5%E5%BD%B1/</link>
       <pubDate>Sun, 16 May 2010 12:42:00 +0000</pubDate>
-      
       <guid>https://gowinder.work/tags/%E7%94%B5%E5%BD%B1/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>瞎想</title>
       <link>https://gowinder.work/tags/%E7%9E%8E%E6%83%B3/</link>
       <pubDate>Sun, 09 May 2010 09:01:00 +0000</pubDate>
-      
       <guid>https://gowinder.work/tags/%E7%9E%8E%E6%83%B3/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>唱片</title>
       <link>https://gowinder.work/tags/%E5%94%B1%E7%89%87/</link>
       <pubDate>Sat, 18 Oct 2008 14:31:00 +0000</pubDate>
-      
       <guid>https://gowinder.work/tags/%E5%94%B1%E7%89%87/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>生活在武汉</title>
       <link>https://gowinder.work/tags/%E7%94%9F%E6%B4%BB%E5%9C%A8%E6%AD%A6%E6%B1%89/</link>
       <pubDate>Wed, 03 Sep 2008 10:30:00 +0000</pubDate>
-      
       <guid>https://gowinder.work/tags/%E7%94%9F%E6%B4%BB%E5%9C%A8%E6%AD%A6%E6%B1%89/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>默认分类</title>
       <link>https://gowinder.work/tags/%E9%BB%98%E8%AE%A4%E5%88%86%E7%B1%BB/</link>
       <pubDate>Fri, 18 Jul 2008 13:34:00 +0000</pubDate>
-      
       <guid>https://gowinder.work/tags/%E9%BB%98%E8%AE%A4%E5%88%86%E7%B1%BB/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>@nestjsx/crud-typeorm</title>
       <link>https://gowinder.work/tags/@nestjsx/crud-typeorm/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://gowinder.work/tags/@nestjsx/crud-typeorm/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

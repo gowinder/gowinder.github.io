@@ -25,7 +25,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.110.0 with theme even" />
+<meta name="generator" content="Hugo 0.120.4 with theme even" />
 
 
 <link rel="canonical" href="https://gowinder.work/post/nestjs%E4%B8%ADauthguard%E7%B1%BB%E5%9C%A8canactive%E5%87%BD%E6%95%B0%E4%B8%AD%E6%97%A0%E6%B3%95%E8%B0%83%E7%94%A8inject/" />
@@ -47,6 +47,7 @@
 <meta property="og:url" content="https://gowinder.work/post/nestjs%E4%B8%ADauthguard%E7%B1%BB%E5%9C%A8canactive%E5%87%BD%E6%95%B0%E4%B8%AD%E6%97%A0%E6%B3%95%E8%B0%83%E7%94%A8inject/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2023-02-06T17:24:00+00:00" />
 <meta property="article:modified_time" content="2023-02-06T17:24:00+00:00" />
+
 <meta itemprop="name" content="nestjs中,AuthGuard类,在CanActive函数中无法调用Inject.md">
 <meta itemprop="description" content="nestjs中,AuthGuard类,在CanActive函数中无法调用Inject 启因 最近写nestjs项目,他的UserGuard很方便"><meta itemprop="datePublished" content="2023-02-06T17:24:00+00:00" />
 <meta itemprop="dateModified" content="2023-02-06T17:24:00+00:00" />
@@ -295,15 +296,15 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">It&#39;s difficult to determine what could be causing this.authService to be undefined without seeing the entire code. However, here are a few common issues that could be causing the problem:
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">It</span><span class="s1">&#39;s difficult to determine what could be causing this.authService to be undefined without seeing the entire code. However, here are a few common issues that could be causing the problem:</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    The AuthService has not been imported correctly: Make sure that you have imported the AuthService using the correct import statement and path.
+</span></span><span class="line"><span class="cl">    <span class="n">The</span> <span class="n">AuthService</span> <span class="n">has</span> <span class="ow">not</span> <span class="n">been</span> <span class="n">imported</span> <span class="n">correctly</span><span class="p">:</span> <span class="n">Make</span> <span class="n">sure</span> <span class="n">that</span> <span class="n">you</span> <span class="n">have</span> <span class="n">imported</span> <span class="n">the</span> <span class="n">AuthService</span> <span class="n">using</span> <span class="n">the</span> <span class="n">correct</span> <span class="n">import</span> <span class="n">statement</span> <span class="ow">and</span> <span class="n">path</span><span class="o">.</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    The AuthService has not been added to the providers array in the module: If the AuthService is not part of the module&#39;s providers array, it won&#39;t be available for injection.
+</span></span><span class="line"><span class="cl">    <span class="n">The</span> <span class="n">AuthService</span> <span class="n">has</span> <span class="ow">not</span> <span class="n">been</span> <span class="n">added</span> <span class="n">to</span> <span class="n">the</span> <span class="n">providers</span> <span class="n">array</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">module</span><span class="p">:</span> <span class="n">If</span> <span class="n">the</span> <span class="n">AuthService</span> <span class="n">is</span> <span class="ow">not</span> <span class="n">part</span> <span class="n">of</span> <span class="n">the</span> <span class="n">module</span><span class="s1">&#39;s providers array, it won&#39;</span><span class="n">t</span> <span class="n">be</span> <span class="n">available</span> <span class="k">for</span> <span class="n">injection</span><span class="o">.</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    The AuthService has not been injected into the constructor of the StaffJwtAuthGuard: If you are not injecting the AuthService into the constructor of the StaffJwtAuthGuard, then it won&#39;t be available as a property on the class.
+</span></span><span class="line"><span class="cl">    <span class="n">The</span> <span class="n">AuthService</span> <span class="n">has</span> <span class="ow">not</span> <span class="n">been</span> <span class="n">injected</span> <span class="n">into</span> <span class="n">the</span> <span class="n">constructor</span> <span class="n">of</span> <span class="n">the</span> <span class="n">StaffJwtAuthGuard</span><span class="p">:</span> <span class="n">If</span> <span class="n">you</span> <span class="n">are</span> <span class="ow">not</span> <span class="n">injecting</span> <span class="n">the</span> <span class="n">AuthService</span> <span class="n">into</span> <span class="n">the</span> <span class="n">constructor</span> <span class="n">of</span> <span class="n">the</span> <span class="n">StaffJwtAuthGuard</span><span class="p">,</span> <span class="n">then</span> <span class="n">it</span> <span class="n">won</span><span class="s1">&#39;t be available as a property on the class.</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">Here&#39;s an example of how to correctly inject the AuthService into the StaffJwtAuthGuard:
+</span></span><span class="line"><span class="cl"><span class="n">Here</span><span class="s1">&#39;s an example of how to correctly inject the AuthService into the StaffJwtAuthGuard:</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>照着对比了下,基本是这样做的,但是还是解决不了问题.</p>
@@ -396,7 +397,7 @@ access to the <code>AuthService</code>. You can export this service from the <co
 
     <footer id="footer" class="footer">
       <div class="social-links">
-      <a href="mailto:gowinder@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="mailto:gowinder@gmail.com" class="iconfont icon-email" title="email"></a>
       <a href="https://github.com/gowinder" class="iconfont icon-github" title="github"></a>
       <a href="https://www.douban.com/people/gowinder/" class="iconfont icon-douban" title="douban"></a>
   <a href="https://gowinder.work/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
@@ -421,7 +422,7 @@ access to the <code>AuthService</code>. You can export this service from the <co
   <span class="copyright-year">
     &copy; 
     2017 - 
-    2023<span class="heart"><i class="iconfont icon-heart"></i></span><span>gowinder</span>
+    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span>gowinder</span>
   </span>
 </div>
 

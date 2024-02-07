@@ -6,429 +6,336 @@
     <description>Recent content in Posts on 不成熟的理想主义者可以为了理想选择高尚的死，成熟的理想主义者则会选择卑下的活着!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 23 Apr 2023 14:13:38 +0800</lastBuildDate><atom:link href="https://gowinder.work/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 Apr 2023 14:13:38 +0800</lastBuildDate>
+    <atom:link href="https://gowinder.work/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>部署本地 Stable Diffusion运行环境</title>
       <link>https://gowinder.work/post/create-local-stable-diffusion-env/</link>
       <pubDate>Sun, 23 Apr 2023 14:13:38 +0800</pubDate>
-      
       <guid>https://gowinder.work/post/create-local-stable-diffusion-env/</guid>
       <description>部署本地 Stable Diffusion运行环境 最近 midjourney 比较火，不过开始收费了，10刀一个月，消费不起，换成开源的Stable Diffusion来往，可以</description>
     </item>
-    
     <item>
       <title>解决React开发模式服务端Cors问题</title>
       <link>https://gowinder.work/post/react-scripts-cors/</link>
       <pubDate>Tue, 28 Mar 2023 11:01:11 +0800</pubDate>
-      
       <guid>https://gowinder.work/post/react-scripts-cors/</guid>
       <description>&amp;ldquo;解决React开发模式服务端Cors问题 启因 最近在做openai的后端代理服务,一个后台池账号池,缓冲前端过来的openai的</description>
     </item>
-    
     <item>
       <title>Class Constructor TypeOrmCrudService Cannot Be Invoked Without &#39;New&#39;</title>
       <link>https://gowinder.work/post/class-constructor-typeormcrudservice-cannot-be-invoked-without-new/</link>
       <pubDate>Tue, 28 Feb 2023 11:08:03 +0800</pubDate>
-      
       <guid>https://gowinder.work/post/class-constructor-typeormcrudservice-cannot-be-invoked-without-new/</guid>
       <description>Class Constructor TypeOrmCrudService Cannot Be Invoked Without &amp;lsquo;New&amp;rsquo; 错误 启因 最近开发一个chatgpt网关项目,使用nestjs,其中用nestjsx-crud来提高curd开发效率,有以下代</description>
     </item>
-    
     <item>
       <title>在Orange Pi Zero上安装pihole后,webui无法启动问题</title>
       <link>https://gowinder.work/post/pihile-lighttp-cannot-start-in-orange-pi-zero/</link>
       <pubDate>Mon, 27 Feb 2023 14:05:41 +0800</pubDate>
-      
       <guid>https://gowinder.work/post/pihile-lighttp-cannot-start-in-orange-pi-zero/</guid>
       <description>在Orange Pi Zero上安装pihole后,webui无法启动问题 启因 最新在空闲Orange Pi Zero上安装了Pihole用来做家庭主DN</description>
     </item>
-    
     <item>
       <title>nestjs整合websocketgateway和microservice</title>
       <link>https://gowinder.work/post/use-microservce-in-websocketgateway-in-nestjs/</link>
       <pubDate>Thu, 23 Feb 2023 16:09:08 +0800</pubDate>
-      
       <guid>https://gowinder.work/post/use-microservce-in-websocketgateway-in-nestjs/</guid>
       <description>nestjs整合websocketgateway和microservice 启因 使用WebsocketGateway做网关,接收客户端长连接后</description>
     </item>
-    
     <item>
       <title>proxmox ve 增加自动trim的cron job</title>
       <link>https://gowinder.work/post/proxmox-ve-%E5%A2%9E%E5%8A%A0%E8%87%AA%E5%8A%A8trim%E7%9A%84cron-job/</link>
       <pubDate>Fri, 17 Feb 2023 15:12:05 +0800</pubDate>
-      
       <guid>https://gowinder.work/post/proxmox-ve-%E5%A2%9E%E5%8A%A0%E8%87%AA%E5%8A%A8trim%E7%9A%84cron-job/</guid>
       <description>proxmox ve 增加自动trim的cron job 检查状态 1 2 3 4 5 6 7 8 sudo systemctl status fstrim.timer # output: ● fstrim.timer - Discard unused blocks once a week Loaded: loaded (/lib/systemd/system/fstrim.timer; disabled; vendor preset: enabled) Active: inactive (dead) Trigger: n/a Triggers: ● fstrim.service Docs: man:fstrim 开启服务 1 sudo systemctl start fstrim.timer 检</description>
     </item>
-    
     <item>
       <title>proxmox ve 中扩展pvm-local空间</title>
       <link>https://gowinder.work/post/proxmox-ve-%E4%B8%AD%E6%89%A9%E5%B1%95pvm-local%E7%A9%BA%E9%97%B4/</link>
       <pubDate>Fri, 17 Feb 2023 14:16:05 +0800</pubDate>
-      
       <guid>https://gowinder.work/post/proxmox-ve-%E4%B8%AD%E6%89%A9%E5%B1%95pvm-local%E7%A9%BA%E9%97%B4/</guid>
       <description>proxmox ve 中扩展pvm-local空间 原因 之前在DIY E3服务器上安装的proxmox ve,用的一张120G的SSD,当时年纪轻,把pve的逻辑分</description>
     </item>
-    
     <item>
       <title>proxmox ve 中nvme电源管理问题导致的磁盘性能急剧下降问题</title>
       <link>https://gowinder.work/post/proxmox-ve-%E4%B8%ADnvme%E7%94%B5%E6%BA%90%E7%AE%A1%E7%90%86%E9%97%AE%E9%A2%98%E5%AF%BC%E8%87%B4%E7%9A%84%E7%A3%81%E7%9B%98%E6%80%A7%E8%83%BD%E6%80%A5%E5%89%A7%E4%B8%8B%E9%99%8D%E9%97%AE%E9%A2%98/</link>
       <pubDate>Fri, 17 Feb 2023 10:25:05 +0800</pubDate>
-      
       <guid>https://gowinder.work/post/proxmox-ve-%E4%B8%ADnvme%E7%94%B5%E6%BA%90%E7%AE%A1%E7%90%86%E9%97%AE%E9%A2%98%E5%AF%BC%E8%87%B4%E7%9A%84%E7%A3%81%E7%9B%98%E6%80%A7%E8%83%BD%E6%80%A5%E5%89%A7%E4%B8%8B%E9%99%8D%E9%97%AE%E9%A2%98/</guid>
       <description>proxmox ve 中nvme电源管理问题导致的磁盘性能急剧下降问题 这几天部署了proxmox ve双节点集群,正常用没什么问题,但是过了一天,dell r72</description>
     </item>
-    
     <item>
       <title>glusterfs重建volume</title>
       <link>https://gowinder.work/post/glusterfs%E9%87%8D%E5%BB%BAvolume/</link>
       <pubDate>Thu, 16 Feb 2023 10:53:05 +0800</pubDate>
-      
       <guid>https://gowinder.work/post/glusterfs%E9%87%8D%E5%BB%BAvolume/</guid>
       <description>glusterfs重建volume 启因 因为之前做glusterfs集群时,比较急,直接用的pve主机的网络地址,运行了几天,发现volume</description>
     </item>
-    
     <item>
       <title>nestjs中,Service无法找到Repository依赖.md</title>
       <link>https://gowinder.work/post/nestjs%E4%B8%ADservice%E6%97%A0%E6%B3%95%E6%89%BE%E5%88%B0repository%E4%BE%9D%E8%B5%96/</link>
       <pubDate>Tue, 14 Feb 2023 10:56:00 +0000</pubDate>
-      
       <guid>https://gowinder.work/post/nestjs%E4%B8%ADservice%E6%97%A0%E6%B3%95%E6%89%BE%E5%88%B0repository%E4%BE%9D%E8%B5%96/</guid>
       <description>nestjs中,Service无法找到Repository依赖 启因 如下代码: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 @Injectable() export class SiteRbacService {</description>
     </item>
-    
     <item>
       <title>proxmox ve VM挂载物理硬盘</title>
       <link>https://gowinder.work/post/proxmox-ve-vm%E6%8C%82%E8%BD%BD%E7%89%A9%E7%90%86%E7%A1%AC%E7%9B%98/</link>
       <pubDate>Tue, 14 Feb 2023 09:39:05 +0800</pubDate>
-      
       <guid>https://gowinder.work/post/proxmox-ve-vm%E6%8C%82%E8%BD%BD%E7%89%A9%E7%90%86%E7%A1%AC%E7%9B%98/</guid>
       <description>proxmox ve VM挂载物理硬盘 先找到要挂载的硬盘的id: 1 lsblk |awk &amp;#39;NR==1{print $0&amp;#34; DEVICE-ID(S)&amp;#34;}NR&amp;gt;1{dev=$1;printf $0&amp;#34; &amp;#34;;system(&amp;#34;find /dev/disk/by-id -lname \&amp;#34;*&amp;#34;dev&amp;#34;\&amp;#34; -printf \&amp;#34; %p\&amp;#34;&amp;#34;);print &amp;#34;&amp;#34;;}&amp;#39;|grep -v -E &amp;#39;part|lvm&amp;#39; 结果类似: 1 2 3 4 5 NAME MAJ:MIN RM SIZE RO TYPE MOUNTPOINT DEVICE-ID(S) loop0 7:0 0 20G 0 loop loop1 7:1 0 80G 0</description>
     </item>
-    
     <item>
       <title>gluster brick下线问题解决</title>
       <link>https://gowinder.work/post/gluster-brick%E4%B8%8B%E7%BA%BF%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</link>
       <pubDate>Sat, 11 Feb 2023 21:13:05 +0800</pubDate>
-      
       <guid>https://gowinder.work/post/gluster-brick%E4%B8%8B%E7%BA%BF%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</guid>
       <description>gluster brick下线问题解决 下线问题 刚装好gluster,在上面存放了linux container的rootfs,这样linux containe</description>
     </item>
-    
     <item>
       <title>proxmox ve 部署双节点HA集群及glusterfs分布式文件系统笔记</title>
       <link>https://gowinder.work/post/proxmox-ve-%E9%83%A8%E7%BD%B2%E5%8F%8C%E8%8A%82%E7%82%B9%E9%9B%86%E7%BE%A4%E5%8F%8Aglusterfs%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/</link>
       <pubDate>Thu, 09 Feb 2023 14:14:05 +0800</pubDate>
-      
       <guid>https://gowinder.work/post/proxmox-ve-%E9%83%A8%E7%BD%B2%E5%8F%8C%E8%8A%82%E7%82%B9%E9%9B%86%E7%BE%A4%E5%8F%8Aglusterfs%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/</guid>
       <description>proxmox ve 部署双节点HA集群及glusterfs分布式文件系统 需要保存两个pve节点的版本一样 两个proxmox ve节点,实现高可用vm,lxc自</description>
     </item>
-    
     <item>
       <title>nestjs中,JwtService报错,没有SECRET</title>
       <link>https://gowinder.work/post/nestjs-jwtservice-seccret-or-public-key-must-be-provied/</link>
       <pubDate>Tue, 07 Feb 2023 14:40:00 +0000</pubDate>
-      
       <guid>https://gowinder.work/post/nestjs-jwtservice-seccret-or-public-key-must-be-provied/</guid>
       <description>nestjs中,JwtService报错: &amp;ldquo;JsonWebTokenError: secret or public key must be provided&amp;rdquo; 原因 最近老是出现这个错误: JsonWebTokenError: secret or public key must be provided, 我已经在环境变量中增加imports: [JwtService],</description>
     </item>
-    
     <item>
       <title>nestjs中,AuthGuard类,在CanActive函数中无法调用Inject.md</title>
       <link>https://gowinder.work/post/nestjs%E4%B8%ADauthguard%E7%B1%BB%E5%9C%A8canactive%E5%87%BD%E6%95%B0%E4%B8%AD%E6%97%A0%E6%B3%95%E8%B0%83%E7%94%A8inject/</link>
       <pubDate>Mon, 06 Feb 2023 17:24:00 +0000</pubDate>
-      
       <guid>https://gowinder.work/post/nestjs%E4%B8%ADauthguard%E7%B1%BB%E5%9C%A8canactive%E5%87%BD%E6%95%B0%E4%B8%AD%E6%97%A0%E6%B3%95%E8%B0%83%E7%94%A8inject/</guid>
       <description>nestjs中,AuthGuard类,在CanActive函数中无法调用Inject 启因 最近写nestjs项目,他的UserGuard很方便</description>
     </item>
-    
     <item>
       <title>nestjsx/crud xxxRepository not found问题解决</title>
       <link>https://gowinder.work/post/nestjsx-crud-xxxrepository-not-found%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</link>
       <pubDate>Mon, 06 Feb 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://gowinder.work/post/nestjsx-crud-xxxrepository-not-found%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</guid>
       <description>nestjsx/crud xxxRepository not found问题解决 nestjsx/crud可以快速帮我生成 使用@Entity 定义好typeorm对象的对应service,contro</description>
     </item>
-    
     <item>
       <title>Nestjs, typeorm中的entity中的互相引用问题</title>
       <link>https://gowinder.work/post/nestjs-typeorm-entity-%E4%BA%92%E7%9B%B8%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/</link>
       <pubDate>Tue, 31 Jan 2023 14:01:39 +0800</pubDate>
-      
       <guid>https://gowinder.work/post/nestjs-typeorm-entity-%E4%BA%92%E7%9B%B8%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/</guid>
       <description>Nestjs, typeorm中的entity中的互相引用问题 20230131-152600 使用nestjs时,用到typeorm,有互相引用关系的entity,老是报错,按照官方文</description>
     </item>
-    
     <item>
       <title>chromium 在chrome://settings增加新的设置方法</title>
       <link>https://gowinder.work/post/chromium-zai-chromesettings-zeng-jia-xin-de-she-zhi-fang-fa/</link>
       <pubDate>Fri, 14 Aug 2020 14:01:39 +0800</pubDate>
-      
       <guid>https://gowinder.work/post/chromium-zai-chromesettings-zeng-jia-xin-de-she-zhi-fang-fa/</guid>
       <description>设置左边栏目菜单修改位置在 chrome/browser/resources/settings/settings_menu/settings_menu.html 如果需要增加或者去掉设置就在里面改 增加的话，加一段： &amp;lt;a id=&amp;quot;new_setting&amp;quot; href=&amp;quot;/new_setting&amp;quot; hidden=&amp;quot;[[!pageVisibility.new_setting]]&amp;quot;&amp;gt; &amp;lt;iron-icon icon=&amp;quot;settings:assignment&amp;quot;&amp;gt;&amp;lt;/iron-icon&amp;gt; $i18n{newSettingTitle} &amp;lt;/a&amp;gt; 然后增加 一个目录 chrome/browser/resources/settings/new_setting 在里面放设置的页面 新建 new_setting_page.html 和</description>
     </item>
-    
     <item>
       <title>RectTransform中的坐标</title>
       <link>https://gowinder.work/post/recttransform%E4%B8%AD%E7%9A%84%E5%9D%90%E6%A0%87/</link>
       <pubDate>Tue, 26 Jul 2016 03:07:22 +0000</pubDate>
-      
       <guid>https://gowinder.work/post/recttransform%E4%B8%AD%E7%9A%84%E5%9D%90%E6%A0%87/</guid>
       <description>一直用position去得，后来发现代码输出跟属性上显示不一样，后来把ugui的源代码拿下来看了，才知道，要用anchoredPositio</description>
     </item>
-    
     <item>
       <title>ListBox控制样式自定义与绑定小记</title>
       <link>https://gowinder.work/post/listbox%E6%8E%A7%E5%88%B6%E6%A0%B7%E5%BC%8F%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%8E%E7%BB%91%E5%AE%9A%E5%B0%8F%E8%AE%B0/</link>
       <pubDate>Sun, 07 Nov 2010 12:26:13 +0000</pubDate>
-      
       <guid>https://gowinder.work/post/listbox%E6%8E%A7%E5%88%B6%E6%A0%B7%E5%BC%8F%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%8E%E7%BB%91%E5%AE%9A%E5%B0%8F%E8%AE%B0/</guid>
       <description>Silverlight中绑定自定义样式的ListBox,要注意以下几点 ItemTemplate 指定的属性可以单独放在一个资源文件中. 要绑定的对象,如一个ItemT</description>
     </item>
-    
     <item>
       <title>直接使用cifs.ko挂载WINDOWS 共享</title>
       <link>https://gowinder.work/post/%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8cifs-ko%E6%8C%82%E8%BD%BDwindows-%E5%85%B1%E4%BA%AB/</link>
       <pubDate>Wed, 27 Oct 2010 03:22:56 +0000</pubDate>
-      
       <guid>https://gowinder.work/post/%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8cifs-ko%E6%8C%82%E8%BD%BDwindows-%E5%85%B1%E4%BA%AB/</guid>
       <description>在网上找到的,http://myapad.wordpress.com/author/xaueious/ 这个家伙,用爱可视的内核源代码编了一个</description>
     </item>
-    
     <item>
       <title>APAD RK2808 开ROOT权限注意事项,挂NFS网络硬盘</title>
       <link>https://gowinder.work/post/apad-rk2808-%E5%BC%80root%E6%9D%83%E9%99%90%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E6%8C%82nfs%E7%BD%91%E7%BB%9C%E7%A1%AC%E7%9B%98/</link>
       <pubDate>Tue, 26 Oct 2010 09:41:37 +0000</pubDate>
-      
       <guid>https://gowinder.work/post/apad-rk2808-%E5%BC%80root%E6%9D%83%E9%99%90%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E6%8C%82nfs%E7%BD%91%E7%BB%9C%E7%A1%AC%E7%9B%98/</guid>
       <description>参见:RK2808 System磁盘映像拿到root权限, 其他自作自定义固件的资料 瑞芯微RK28XX_安卓(android)系统固件包修改基础</description>
     </item>
-    
     <item>
       <title>今年下半年第采购的第一波科幻书到货</title>
       <link>https://gowinder.work/post/%E4%BB%8A%E5%B9%B4%E4%B8%8B%E5%8D%8A%E5%B9%B4%E7%AC%AC%E9%87%87%E8%B4%AD%E7%9A%84%E7%AC%AC%E4%B8%80%E6%B3%A2%E7%A7%91%E5%B9%BB%E4%B9%A6%E5%88%B0%E8%B4%A7/</link>
       <pubDate>Thu, 14 Oct 2010 04:03:30 +0000</pubDate>
-      
       <guid>https://gowinder.work/post/%E4%BB%8A%E5%B9%B4%E4%B8%8B%E5%8D%8A%E5%B9%B4%E7%AC%AC%E9%87%87%E8%B4%AD%E7%9A%84%E7%AC%AC%E4%B8%80%E6%B3%A2%E7%A7%91%E5%B9%BB%E4%B9%A6%E5%88%B0%E8%B4%A7/</guid>
       <description>分区是重力使命，火星编年史，真名实姓。重力使用这本的书的封面，可是好早以前，科幻世界上某期的插图啊，当时就在想这样的飞机怎么飞，没引擎，难道</description>
     </item>
-    
     <item>
       <title>自动生成代码的好处-纪念第一个集成代码生成工作DBCodeGen</title>
       <link>https://gowinder.work/post/%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81%E7%9A%84%E5%A5%BD%E5%A4%84-%E7%BA%AA%E5%BF%B5%E7%AC%AC%E4%B8%80%E4%B8%AA%E9%9B%86%E6%88%90%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%B7%A5%E4%BD%9Cd/</link>
       <pubDate>Wed, 06 Oct 2010 13:09:52 +0000</pubDate>
-      
       <guid>https://gowinder.work/post/%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81%E7%9A%84%E5%A5%BD%E5%A4%84-%E7%BA%AA%E5%BF%B5%E7%AC%AC%E4%B8%80%E4%B8%AA%E9%9B%86%E6%88%90%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%B7%A5%E4%BD%9Cd/</guid>
       <description>突然觉得,一个支持快速开发的引擎,除了有好的底层,方便的模板,还应该具体一套完善的开发工具, 这套工具中,包括了一些自动化生成代码的处理,就是</description>
     </item>
-    
     <item>
       <title>书评：实时放逐</title>
       <link>https://gowinder.work/post/%E4%B9%A6%E8%AF%84%E5%AE%9E%E6%97%B6%E6%94%BE%E9%80%90/</link>
       <pubDate>Sun, 03 Oct 2010 12:12:51 +0000</pubDate>
-      
       <guid>https://gowinder.work/post/%E4%B9%A6%E8%AF%84%E5%AE%9E%E6%97%B6%E6%94%BE%E9%80%90/</guid>
       <description>http://book.douban.com/review/3801851/ “实时放逐”明显是“为和平而战”的继集啦。 虽然方式不一样，实时很像是侦破小说，不过我觉得描述方式没有太大的区别。 文奇的小说，总是在前期要花</description>
     </item>
-    
     <item>
       <title>几个创建模式的理解</title>
       <link>https://gowinder.work/post/%E5%87%A0%E4%B8%AA%E5%88%9B%E5%BB%BA%E6%A8%A1%E5%BC%8F%E7%9A%84%E7%90%86%E8%A7%A3/</link>
       <pubDate>Wed, 23 Jun 2010 15:14:00 +0000</pubDate>
-      
       <guid>https://gowinder.work/post/%E5%87%A0%E4%B8%AA%E5%88%9B%E5%BB%BA%E6%A8%A1%E5%BC%8F%E7%9A%84%E7%90%86%E8%A7%A3/</guid>
       <description>Abstract Factory 对一整套产品的统一创建。 也就是说，相当于一个模板，一个具体的工厂，创建一个系列的产品，这一系列的产品可能有着同一个风格，因此，将不同系列</description>
     </item>
-    
     <item>
       <title>晕头了，做了次重复工作</title>
       <link>https://gowinder.work/post/%E6%99%95%E5%A4%B4%E4%BA%86%E5%81%9A%E4%BA%86%E6%AC%A1%E9%87%8D%E5%A4%8D%E5%B7%A5%E4%BD%9C/</link>
       <pubDate>Tue, 18 May 2010 15:32:00 +0000</pubDate>
-      
       <guid>https://gowinder.work/post/%E6%99%95%E5%A4%B4%E4%BA%86%E5%81%9A%E4%BA%86%E6%AC%A1%E9%87%8D%E5%A4%8D%E5%B7%A5%E4%BD%9C/</guid>
       <description>今天晕头了，居然把昨天做完的工作今天 又做了一次。 一个将领管理类，昨天写了个CHeroCenter,基本已经写完了，今天又写了个一个，叫CHe</description>
     </item>
-    
     <item>
       <title>开始拜读科幻大作“海伯利安”    的继集“Endymion&#34;</title>
       <link>https://gowinder.work/post/%E5%BC%80%E5%A7%8B%E6%8B%9C%E8%AF%BB%E7%A7%91%E5%B9%BB%E5%A4%A7%E4%BD%9C%E6%B5%B7%E4%BC%AF%E5%88%A9%E5%AE%89-%E7%9A%84%E7%BB%A7%E9%9B%86endymion/</link>
       <pubDate>Mon, 17 May 2010 08:58:00 +0000</pubDate>
-      
       <guid>https://gowinder.work/post/%E5%BC%80%E5%A7%8B%E6%8B%9C%E8%AF%BB%E7%A7%91%E5%B9%BB%E5%A4%A7%E4%BD%9C%E6%B5%B7%E4%BC%AF%E5%88%A9%E5%AE%89-%E7%9A%84%E7%BB%A7%E9%9B%86endymion/</guid>
       <description>年后就收到全套原版书了，一直没机会看，本来想从第一部开始看起的，发现没有剧情的新鲜感，看英文的很难继续，所以决定直接从继集开始看了。 看了两天</description>
     </item>
-    
     <item>
       <title>和莎莫的500天 (500) Days of Summer</title>
       <link>https://gowinder.work/post/%E5%92%8C%E8%8E%8E%E8%8E%AB%E7%9A%84500%E5%A4%A9-500-days-of-summer/</link>
       <pubDate>Sun, 16 May 2010 12:42:00 +0000</pubDate>
-      
       <guid>https://gowinder.work/post/%E5%92%8C%E8%8E%8E%E8%8E%AB%E7%9A%84500%E5%A4%A9-500-days-of-summer/</guid>
       <description>今天陪老婆看了一部电影，名叫“(500) Days of Summer”，男主角没见过，女主角是Yes Man中的女主角，佐伊・丹斯切尔，很有点当年美国甜心</description>
     </item>
-    
     <item>
       <title>由谷歌WAVE联想到的IT企业竞争</title>
       <link>https://gowinder.work/post/%E7%94%B1%E8%B0%B7%E6%AD%8Cwave%E8%81%94%E6%83%B3%E5%88%B0%E7%9A%84it%E4%BC%81%E4%B8%9A%E7%AB%9E%E4%BA%89/</link>
       <pubDate>Sun, 09 May 2010 09:01:00 +0000</pubDate>
-      
       <guid>https://gowinder.work/post/%E7%94%B1%E8%B0%B7%E6%AD%8Cwave%E8%81%94%E6%83%B3%E5%88%B0%E7%9A%84it%E4%BC%81%E4%B8%9A%E7%AB%9E%E4%BA%89/</guid>
       <description>今天陪老婆去吃了DQ，然后去陪吃味千拉面的时候喝了点冰柠檬水，结果回来就直冲去蹲点，当然没有忘记拿本杂志，家里一堆过刊，随手拿了本“第一财经</description>
     </item>
-    
     <item>
       <title>格式化日志输出具体方式</title>
       <link>https://gowinder.work/post/%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%97%A5%E5%BF%97%E8%BE%93%E5%87%BA%E5%85%B7%E4%BD%93%E6%96%B9%E5%BC%8F/</link>
       <pubDate>Mon, 15 Mar 2010 14:05:00 +0000</pubDate>
-      
       <guid>https://gowinder.work/post/%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%97%A5%E5%BF%97%E8%BE%93%E5%87%BA%E5%85%B7%E4%BD%93%E6%96%B9%E5%BC%8F/</guid>
       <description>底层函数可以继续使用原来的方式，就是直接写字符串。由其它输出日志函数调用。 再写一个参数为XMLNODE的代理函数，此函数接受其它全部上层写日</description>
     </item>
-    
     <item>
       <title>新日志函数:格式化可控级别日志输出</title>
       <link>https://gowinder.work/post/%E6%96%B0%E6%97%A5%E5%BF%97%E5%87%BD%E6%95%B0%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%8F%AF%E6%8E%A7%E7%BA%A7%E5%88%AB%E6%97%A5%E5%BF%97%E8%BE%93%E5%87%BA/</link>
       <pubDate>Fri, 12 Mar 2010 15:32:00 +0000</pubDate>
-      
       <guid>https://gowinder.work/post/%E6%96%B0%E6%97%A5%E5%BF%97%E5%87%BD%E6%95%B0%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%8F%AF%E6%8E%A7%E7%BA%A7%E5%88%AB%E6%97%A5%E5%BF%97%E8%BE%93%E5%87%BA/</guid>
       <description>以往的几个系统都是使用一种比较随意的日志输出方式，就是有什么问题就输出，超时日志，错误日志，ASSERT，异常等全部在一个文件中，这样不方便</description>
     </item>
-    
     <item>
       <title>关于服务器自动同步时间服务引起的问题</title>
       <link>https://gowinder.work/post/%E5%85%B3%E4%BA%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%87%AA%E5%8A%A8%E5%90%8C%E6%AD%A5%E6%97%B6%E9%97%B4%E6%9C%8D%E5%8A%A1%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98/</link>
       <pubDate>Fri, 12 Mar 2010 12:34:00 +0000</pubDate>
-      
       <guid>https://gowinder.work/post/%E5%85%B3%E4%BA%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%87%AA%E5%8A%A8%E5%90%8C%E6%AD%A5%E6%97%B6%E9%97%B4%E6%9C%8D%E5%8A%A1%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
       <description>士兵突击有一次出现故障，就是因为同步服务把时间同步回去了，这样就造成当前时间可能会比内存中已经发现的事件的时间更早，一相减，是一个负数，因为</description>
     </item>
-    
     <item>
       <title>关于优先队列容器中元素为指针的情况</title>
       <link>https://gowinder.work/post/%E5%85%B3%E4%BA%8E%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B8%AD%E5%85%83%E7%B4%A0%E4%B8%BA%E6%8C%87%E9%92%88%E7%9A%84%E6%83%85%E5%86%B5/</link>
       <pubDate>Fri, 12 Mar 2010 12:19:00 +0000</pubDate>
-      
       <guid>https://gowinder.work/post/%E5%85%B3%E4%BA%8E%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B8%AD%E5%85%83%E7%B4%A0%E4%B8%BA%E6%8C%87%E9%92%88%E7%9A%84%E6%83%85%E5%86%B5/</guid>
       <description>使用优先队列，元素为指针，如： typedef priority_queue&amp;lt;TimeEvent*, deque &amp;lt;TimeEvent*&amp;gt;, less&amp;lt;deque&amp;lt;TimeEvent*&amp;gt;::value_type&amp;gt; TIME_EVENT_QUEUE; 这样比较的话，其结果是比较指针值，如果我要比较TimeEvent中的某个成员，就不行了，经过谷歌，</description>
     </item>
-    
     <item>
       <title>关于时间服务的测试结果</title>
       <link>https://gowinder.work/post/%E5%85%B3%E4%BA%8E%E6%97%B6%E9%97%B4%E6%9C%8D%E5%8A%A1%E7%9A%84%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C/</link>
       <pubDate>Fri, 12 Mar 2010 12:08:00 +0000</pubDate>
-      
       <guid>https://gowinder.work/post/%E5%85%B3%E4%BA%8E%E6%97%B6%E9%97%B4%E6%9C%8D%E5%8A%A1%E7%9A%84%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C/</guid>
       <description>经过简单测试，生成500000个计时器，将指针分别插入list和priority_queue，其中priority_queue使用vecto</description>
     </item>
-    
     <item>
       <title>时间服务实现方式</title>
       <link>https://gowinder.work/post/%E6%97%B6%E9%97%B4%E6%9C%8D%E5%8A%A1%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/</link>
       <pubDate>Thu, 11 Mar 2010 11:30:00 +0000</pubDate>
-      
       <guid>https://gowinder.work/post/%E6%97%B6%E9%97%B4%E6%9C%8D%E5%8A%A1%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/</guid>
       <description>使用一个单向或者双向链表，或者使用一个优先队列（priority_queue）. 队列中的元素为一个计时器对象。计时器对象包括，从标准时间（程</description>
     </item>
-    
     <item>
       <title>压力测试笔记 2</title>
       <link>https://gowinder.work/post/%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0-2/</link>
       <pubDate>Wed, 15 Jul 2009 09:21:00 +0000</pubDate>
-      
       <guid>https://gowinder.work/post/%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0-2/</guid>
       <description>昨天发现登录时,任务初始化读取数据库操作频繁问题，今天为了找出其它数据库操作频繁问题，加入数据库操作计数变量，如果在登录或者运行某些计算时操</description>
     </item>
-    
     <item>
       <title>windows socket 笔记</title>
       <link>https://gowinder.work/post/windows-socket-%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Tue, 14 Jul 2009 15:32:00 +0000</pubDate>
-      
       <guid>https://gowinder.work/post/windows-socket-%E7%AC%94%E8%AE%B0/</guid>
       <description>10055错误,压力测试客户端开了1000个连接,就报10055错误,查了发现是资源不足,后来想想,应该是连得太快了,服务器响应不过来,所以</description>
     </item>
-    
     <item>
       <title>尼古拉斯凯奇 居家男人 The Family Man</title>
       <link>https://gowinder.work/post/%E5%B0%BC%E5%8F%A4%E6%8B%89%E6%96%AF%E5%87%AF%E5%A5%87-%E5%B1%85%E5%AE%B6%E7%94%B7%E4%BA%BA-the-family-man/</link>
       <pubDate>Sat, 25 Oct 2008 10:52:00 +0000</pubDate>
-      
       <guid>https://gowinder.work/post/%E5%B0%BC%E5%8F%A4%E6%8B%89%E6%96%AF%E5%87%AF%E5%A5%87-%E5%B1%85%E5%AE%B6%E7%94%B7%E4%BA%BA-the-family-man/</guid>
       <description>当时看这部片子的时候,本人正在外地出长差,虽然不说事业正劲,但是至少也没想过要回武汉。 片子是在一个普通的工作日，下班之后，没地方去，一个人在</description>
     </item>
-    
     <item>
       <title>CD 肥妈正传</title>
       <link>https://gowinder.work/post/cd-%E8%82%A5%E5%A6%88%E6%AD%A3%E4%BC%A0/</link>
       <pubDate>Sat, 18 Oct 2008 14:31:00 +0000</pubDate>
-      
       <guid>https://gowinder.work/post/cd-%E8%82%A5%E5%A6%88%E6%AD%A3%E4%BC%A0/</guid>
       <description>以前总是下载APE,自己克碟子,这次不同了,偶然的机会听到了一首&amp;quot;海上花&amp;quot;,于是毫不犹豫的买了一张! 歌手玛丽亚,说实话,</description>
     </item>
-    
     <item>
       <title>文摘:骨骼动画中的坐标插值</title>
       <link>https://gowinder.work/post/%E6%96%87%E6%91%98%E9%AA%A8%E9%AA%BC%E5%8A%A8%E7%94%BB%E4%B8%AD%E7%9A%84%E5%9D%90%E6%A0%87%E6%8F%92%E5%80%BC/</link>
       <pubDate>Thu, 09 Oct 2008 10:43:00 +0000</pubDate>
-      
       <guid>https://gowinder.work/post/%E6%96%87%E6%91%98%E9%AA%A8%E9%AA%BC%E5%8A%A8%E7%94%BB%E4%B8%AD%E7%9A%84%E5%9D%90%E6%A0%87%E6%8F%92%E5%80%BC/</guid>
       <description>摘之:Advanced.Animation.with.DirectX Here&amp;rsquo;s where using key frames comes in handy. Suppose you want to calculate the orientation of the bones at a specific timesay, at 648 milliseconds. That time just so happens to fall between the second and</description>
     </item>
-    
     <item>
       <title>我的多普达手机被偷了,郁闷~!</title>
       <link>https://gowinder.work/post/%E6%88%91%E7%9A%84%E5%A4%9A%E6%99%AE%E8%BE%BE%E6%89%8B%E6%9C%BA%E8%A2%AB%E5%81%B7%E4%BA%86%E9%83%81%E9%97%B7/</link>
       <pubDate>Wed, 03 Sep 2008 10:30:00 +0000</pubDate>
-      
       <guid>https://gowinder.work/post/%E6%88%91%E7%9A%84%E5%A4%9A%E6%99%AE%E8%BE%BE%E6%89%8B%E6%9C%BA%E8%A2%AB%E5%81%B7%E4%BA%86%E9%83%81%E9%97%B7/</guid>
       <description>昨天在新华路换527时被偷了,哎,分期才付了1期,还有23期,哎! 都怪太困了,一心想到上车抢位置,前面那个人那明显是为后面的人挡着的,我还一</description>
     </item>
-    
     <item>
       <title>武汉的交通,已经成为城市发展的瓶颈!</title>
       <link>https://gowinder.work/post/%E6%AD%A6%E6%B1%89%E7%9A%84%E4%BA%A4%E9%80%9A%E5%B7%B2%E7%BB%8F%E6%88%90%E4%B8%BA%E5%9F%8E%E5%B8%82%E5%8F%91%E5%B1%95%E7%9A%84%E7%93%B6%E9%A2%88/</link>
       <pubDate>Wed, 06 Aug 2008 11:02:00 +0000</pubDate>
-      
       <guid>https://gowinder.work/post/%E6%AD%A6%E6%B1%89%E7%9A%84%E4%BA%A4%E9%80%9A%E5%B7%B2%E7%BB%8F%E6%88%90%E4%B8%BA%E5%9F%8E%E5%B8%82%E5%8F%91%E5%B1%95%E7%9A%84%E7%93%B6%E9%A2%88/</guid>
       <description>昨天同事告诉我一个不幸的消息,常青路要封路啦,一封就是52天,那边80W人,全部会从我每天经过的姑嫂树路经过. 晕死哦,本来每天从汉口到武昌上</description>
     </item>
-    
     <item>
       <title>TinyXml的保存编码问题</title>
       <link>https://gowinder.work/post/tinyxml%E7%9A%84%E4%BF%9D%E5%AD%98%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98/</link>
       <pubDate>Tue, 22 Jul 2008 17:23:00 +0000</pubDate>
-      
       <guid>https://gowinder.work/post/tinyxml%E7%9A%84%E4%BF%9D%E5%AD%98%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98/</guid>
       <description>每天怪事不断,编辑器快做完了,发现TinyXml的保存居然没有可以选择编码格式的!搞得我们读的时候用的UTF8,结果保存就用了ANSI,现在</description>
     </item>
-    
     <item>
       <title>开天第一篇!</title>
       <link>https://gowinder.work/post/%E5%BC%80%E5%A4%A9%E7%AC%AC%E4%B8%80%E7%AF%87/</link>
       <pubDate>Fri, 18 Jul 2008 13:34:00 +0000</pubDate>
-      
       <guid>https://gowinder.work/post/%E5%BC%80%E5%A4%A9%E7%AC%AC%E4%B8%80%E7%AF%87/</guid>
       <description>时代的步伐越来越快,如果不在而立之前赶上这股快车,恐怕以后就更没有机会了! 我宣布正式开篇!</description>
     </item>
-    
     <item>
       <title>D3D8 窗口模式垂直同步! Fighting Tearing!</title>
       <link>https://gowinder.work/post/d3d8-%E7%AA%97%E5%8F%A3%E6%A8%A1%E5%BC%8F%E5%9E%82%E7%9B%B4%E5%90%8C%E6%AD%A5-fighting-tearing/</link>
       <pubDate>Fri, 18 Jul 2008 11:16:00 +0000</pubDate>
-      
       <guid>https://gowinder.work/post/d3d8-%E7%AA%97%E5%8F%A3%E6%A8%A1%E5%BC%8F%E5%9E%82%E7%9B%B4%E5%90%8C%E6%AD%A5-fighting-tearing/</guid>
       <description>今天BOSS说DEMO有点卡,一看发现是垂直同步的问题!于是乎在HGE的参数上加上了垂直同步的属性,谁知不行,一查资料,发现D3D8 只有在全</description>
     </item>
-    
     <item>
       <title>压力测试笔记 1</title>
       <link>https://gowinder.work/post/%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0-1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://gowinder.work/post/%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0-1/</guid>
       <description>马上要封测了,现在开始压力测试. 1000个连接上,没有问题,但是登录后问题来了,处理一个登录要1秒钟时间,可想而知1000个需要多长时间. 这</description>
     </item>
-    
   </channel>
 </rss>

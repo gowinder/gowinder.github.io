@@ -6,15 +6,14 @@
     <description>Recent content in pihole on 不成熟的理想主义者可以为了理想选择高尚的死，成熟的理想主义者则会选择卑下的活着!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 27 Feb 2023 14:05:41 +0800</lastBuildDate><atom:link href="https://gowinder.work/tags/pihole/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 27 Feb 2023 14:05:41 +0800</lastBuildDate>
+    <atom:link href="https://gowinder.work/tags/pihole/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>在Orange Pi Zero上安装pihole后,webui无法启动问题</title>
       <link>https://gowinder.work/post/pihile-lighttp-cannot-start-in-orange-pi-zero/</link>
       <pubDate>Mon, 27 Feb 2023 14:05:41 +0800</pubDate>
-      
       <guid>https://gowinder.work/post/pihile-lighttp-cannot-start-in-orange-pi-zero/</guid>
       <description>在Orange Pi Zero上安装pihole后,webui无法启动问题 启因 最新在空闲Orange Pi Zero上安装了Pihole用来做家庭主DN</description>
     </item>
-    
   </channel>
 </rss>

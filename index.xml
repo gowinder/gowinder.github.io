@@ -7,14 +7,6 @@
             <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 06 Mar 2024 14:40:28 &#43;0800</lastBuildDate>
             <atom:link href="https://gowinder.work/index.xml" rel="self" type="application/rss+xml" />
         <item>
-    <title>Markdown 基本语法</title>
-    <link>https://gowinder.work/basic-markdown-syntax/</link>
-    <pubDate>Sun, 01 Dec 2019 21:57:40 &#43;0800</pubDate>
-    <author>Dillon</author>
-    <guid>https://gowinder.work/basic-markdown-syntax/</guid>
-    <description><![CDATA[<p>这篇文章提供了可以在 Hugo 的文章中使用的基本 Markdown 语法示例.</p>]]></description>
-</item>
-<item>
     <title>使用chatgpt帮我编写一个给视频文件生成中文字幕的脚本</title>
     <link>https://gowinder.work/use-chatgpt-to-make-a-sub-generator-script/</link>
     <pubDate>Wed, 06 Mar 2024 14:40:28 &#43;0800</pubDate>
@@ -85,6 +77,14 @@
     <author>gowinder</author>
     <guid>https://gowinder.work/proxmox-ve-%E4%B8%ADnvme%E7%94%B5%E6%BA%90%E7%AE%A1%E7%90%86%E9%97%AE%E9%A2%98%E5%AF%BC%E8%87%B4%E7%9A%84%E7%A3%81%E7%9B%98%E6%80%A7%E8%83%BD%E6%80%A5%E5%89%A7%E4%B8%8B%E9%99%8D%E9%97%AE%E9%A2%98/</guid>
     <description><![CDATA[proxmox ve 中nvme电源管理问题导致的磁盘性能急剧下降问题 这几天部署了proxmox ve双节点集群,正常用没什么问题,但是过了一天,dell r72]]></description>
+</item>
+<item>
+    <title>glusterfs重建volume</title>
+    <link>https://gowinder.work/glusterfs%E9%87%8D%E5%BB%BAvolume/</link>
+    <pubDate>Thu, 16 Feb 2023 10:53:05 &#43;0800</pubDate>
+    <author>gowinder</author>
+    <guid>https://gowinder.work/glusterfs%E9%87%8D%E5%BB%BAvolume/</guid>
+    <description><![CDATA[glusterfs重建volume 启因 因为之前做glusterfs集群时,比较急,直接用的pve主机的网络地址,运行了几天,发现volume]]></description>
 </item>
 </channel>
 </rss>

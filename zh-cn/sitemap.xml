@@ -2,15 +2,6 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://gowinder.work/basic-markdown-syntax/</loc><lastmod>2020-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://gowinder.work/en/basic-markdown-syntax/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="zh-cn"
-                    href="https://gowinder.work/basic-markdown-syntax/"
-                    /></url><url>
             <loc>https://gowinder.work/tags/chatgpt/</loc><lastmod>2024-03-06T14:40:28&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://gowinder.work/tags/chatgpt-subtitle-translator/</loc><lastmod>2024-03-06T14:40:28&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://gowinder.work/tags/ffmpeg/</loc><lastmod>2024-03-06T14:40:28&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
@@ -24,15 +15,7 @@
                     href="https://gowinder.work/"
                     /></url><url>
             <loc>https://gowinder.work/tags/openai/</loc><lastmod>2024-03-06T14:40:28&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://gowinder.work/posts/</loc><lastmod>2024-03-06T14:40:28&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://gowinder.work/en/posts/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="zh-cn"
-                    href="https://gowinder.work/posts/"
-                    /></url><url>
+            <loc>https://gowinder.work/posts/</loc><lastmod>2024-03-06T14:40:28&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://gowinder.work/tags/shell-script/</loc><lastmod>2024-03-06T14:40:28&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://gowinder.work/tags/</loc><lastmod>2024-03-06T14:40:28&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
@@ -97,42 +80,6 @@
             <loc>https://gowinder.work/nestjsx-crud-xxxrepository-not-found%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</loc><lastmod>2023-02-06T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://gowinder.work/nestjs-typeorm-entity-%E4%BA%92%E7%9B%B8%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/</loc><lastmod>2023-01-31T14:01:39&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://gowinder.work/chromium-zai-chromesettings-zeng-jia-xin-de-she-zhi-fang-fa/</loc><lastmod>2020-08-14T14:01:39&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://gowinder.work/categories/</loc><lastmod>2020-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://gowinder.work/en/categories/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="zh-cn"
-                    href="https://gowinder.work/categories/"
-                    /></url><url>
-            <loc>https://gowinder.work/tags/html/</loc><lastmod>2020-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://gowinder.work/en/tags/html/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="zh-cn"
-                    href="https://gowinder.work/tags/html/"
-                    /></url><url>
-            <loc>https://gowinder.work/tags/markdown/</loc><lastmod>2020-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://gowinder.work/en/tags/markdown/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="zh-cn"
-                    href="https://gowinder.work/tags/markdown/"
-                    /></url><url>
-            <loc>https://gowinder.work/categories/markdown/</loc><lastmod>2020-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://gowinder.work/en/categories/markdown/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="zh-cn"
-                    href="https://gowinder.work/categories/markdown/"
-                    /></url><url>
             <loc>https://gowinder.work/about/</loc><lastmod>2019-08-02T11:04:49&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
@@ -189,6 +136,15 @@
             <loc>https://gowinder.work/tags/%E9%BB%98%E8%AE%A4%E5%88%86%E7%B1%BB/</loc><lastmod>2008-07-18T13:34:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://gowinder.work/d3d8-%E7%AA%97%E5%8F%A3%E6%A8%A1%E5%BC%8F%E5%9E%82%E7%9B%B4%E5%90%8C%E6%AD%A5-fighting-tearing/</loc><lastmod>2008-07-18T11:16:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://gowinder.work/tags/@nestjsx/crud-typeorm/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://gowinder.work/categories/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://gowinder.work/en/categories/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://gowinder.work/categories/"
+                    /></url><url>
             <loc>https://gowinder.work/tags/installation/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://gowinder.work/tags/content/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://gowinder.work/tags/configuration/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url><url>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>APAD RK2808 开ROOT权限注意事项,挂NFS网络硬盘 - gowinder个人博客</title><meta name="Description" content="记录生活,编码,折腾,杂七杂八"><meta property="og:title" content="APAD RK2808 开ROOT权限注意事项,挂NFS网络硬盘" />
+<meta property="og:description" content="参见:RK2808 System磁盘映像拿到root权限, 其他自作自定义固件的资料 瑞芯微RK28XX_安卓(android)系统固件包修改基础" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gowinder.work/apad-rk2808-%E5%BC%80root%E6%9D%83%E9%99%90%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E6%8C%82nfs%E7%BD%91%E7%BB%9C%E7%A1%AC%E7%9B%98/" /><meta property="og:image" content="https://gravatar.com/userimage/16926726/2de44cb9918f08ff7f430244b10bf37b.jpeg?size=256"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2010-10-26T09:41:37+00:00" />
+<meta property="article:modified_time" content="2010-10-26T09:41:37+00:00" /><meta property="og:site_name" content="gowinder个人博客" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://gravatar.com/userimage/16926726/2de44cb9918f08ff7f430244b10bf37b.jpeg?size=256"/>
+
+<meta name="twitter:title" content="APAD RK2808 开ROOT权限注意事项,挂NFS网络硬盘"/>
+<meta name="twitter:description" content="参见:RK2808 System磁盘映像拿到root权限, 其他自作自定义固件的资料 瑞芯微RK28XX_安卓(android)系统固件包修改基础"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://gowinder.work/apad-rk2808-%E5%BC%80root%E6%9D%83%E9%99%90%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E6%8C%82nfs%E7%BD%91%E7%BB%9C%E7%A1%AC%E7%9B%98/" /><link rel="prev" href="https://gowinder.work/%E4%BB%8A%E5%B9%B4%E4%B8%8B%E5%8D%8A%E5%B9%B4%E7%AC%AC%E9%87%87%E8%B4%AD%E7%9A%84%E7%AC%AC%E4%B8%80%E6%B3%A2%E7%A7%91%E5%B9%BB%E4%B9%A6%E5%88%B0%E8%B4%A7/" /><link rel="next" href="https://gowinder.work/%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8cifs-ko%E6%8C%82%E8%BD%BDwindows-%E5%85%B1%E4%BA%AB/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "APAD RK2808 开ROOT权限注意事项,挂NFS网络硬盘",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/gowinder.work\/apad-rk2808-%E5%BC%80root%E6%9D%83%E9%99%90%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E6%8C%82nfs%E7%BD%91%E7%BB%9C%E7%A1%AC%E7%9B%98\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/gowinder.work\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","keywords": "ANDROID, APAD RK2808 平板 ANDROID NFS ROOT权限","wordcount":  2331 ,
+        "url": "https:\/\/gowinder.work\/apad-rk2808-%E5%BC%80root%E6%9D%83%E9%99%90%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E6%8C%82nfs%E7%BD%91%E7%BB%9C%E7%A1%AC%E7%9B%98\/","datePublished": "2010-10-26T09:41:37+00:00","dateModified": "2010-10-26T09:41:37+00:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/gowinder.work\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "gowinder"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="gowinder个人博客"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw' aria-hidden='true'></i></span>LoveIt</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/categories/documentation/"> 文档 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a><a href="javascript:void(0);" class="menu-item language" title="选择语言">
+                    <i class="fa fa-globe" aria-hidden="true"></i>                      
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/apad-rk2808-%E5%BC%80root%E6%9D%83%E9%99%90%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E6%8C%82nfs%E7%BD%91%E7%BB%9C%E7%A1%AC%E7%9B%98/" selected>简体中文</option></select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="gowinder个人博客"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw' aria-hidden='true'></i></span>LoveIt</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/categories/documentation/" title="">文档</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">
+                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/apad-rk2808-%E5%BC%80root%E6%9D%83%E9%99%90%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E6%8C%82nfs%E7%BD%91%E7%BB%9C%E7%A1%AC%E7%9B%98/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">APAD RK2808 开ROOT权限注意事项,挂NFS网络硬盘</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>gowinder</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2010-10-26">2010-10-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2331 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 5 分钟&nbsp;<span id="/apad-rk2808-%E5%BC%80root%E6%9D%83%E9%99%90%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E6%8C%82nfs%E7%BD%91%E7%BB%9C%E7%A1%AC%E7%9B%98/" class="leancloud_visitors" data-flag-title="APAD RK2808 开ROOT权限注意事项,挂NFS网络硬盘">
+                        <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+            </div><div class="content" id="content"><p>参见:<a href="http://hiapad.com/bbs/forum.php?mod=viewthread&amp;tid=47&amp;extra=page%3D2" target="_blank" rel="noopener noreffer ">RK2808 System磁盘映像拿到root权限, 其他自作自定义固件的资料</a></p>
+<p><a href="http://lockeyue.spaces.live.com/blog/cns!B3988DF30734BED3!1553.entry" target="_blank" rel="noopener noreffer ">瑞芯微RK28XX_安卓(android)系统固件包修改基础教程</a></p>
+<p>很麻烦,搞了很多次,发现教程有,但是都不完全,差一步,就可能开不了ROOT.</p>
+<p>准备工作:</p>
+<p>刷机工具.下载地址:<a href="http://cid-b3988df30734bed3.office.live.com/self.aspx/.Public/%E7%BD%91%E7%BB%9C/%E7%91%9E%E8%8A%AF%E5%BE%AERK2808%5E_android%E7%B3%BB%E7%BB%9F%E5%9B%BA%E4%BB%B6%E4%BF%AE%E6%94%B9%E5%B7%A5%E5%85%B7%E5%8C%85%5E_Ver01.rar" target="_blank" rel="noopener noreffer ">刷机工具</a></p>
+<p>ROM,有很多版本,有原始的,有修改版的,我用的修改版的,从国外论坛上下载的<a href="http://www.slatedroid.com/apad-rogerbraun-firmware/566-%5B-piece-software-flashed-device-expand-its-functionality%5D-hybrid-custom-firmware-apad-5-1-batch-2-red-led-only-july-3rd.html" target="_blank" rel="noopener noreffer ">hybrid 5.1</a> 注意此ROM号称开了ROOT,实际上是没有的.可以加QQ群,里面的共享有:83895562</p>
+<p>LINUX系统,没有LINUX系统就装个虚拟机啦,推荐VirtualBox,然后安装一个Ubuntu,就很方便了.</p>
+<p>要安装cramfs工具,因为天杀的RK2808使用的就是这个系统,具体的请谷歌或者BING,简单的说就是一个压缩包,是只读的系统,因此必须要在刷机前对固件进行修改.</p>
+<p>装update.img解开后,拷贝到UBUNTU下面.这里假设拷贝到了/home/zzz/rom/ 下面(注:zzz是你的登录用户名)</p>
+<p>然后运行</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cd /home/zzz/rom    
+</span></span><span class="line"><span class="cl">mkdir system
+</span></span><span class="line"><span class="cl">sudo mount -t cramfs -o loop system.img  system
+</span></span><span class="line"><span class="cl">tar cvzf system.tgz system
+</span></span><span class="line"><span class="cl">sudo umount system
+</span></span><span class="line"><span class="cl">rm -r system
+</span></span><span class="line"><span class="cl">tar xzvf system.tgz
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">这一步就是将IMG解压到一个system目录中,如果你用的是5.1的那个固件,里面已经有SU了,只需要改一下权限就可以了,如果没有,就去下载一个:[XDA的SUPERUSER](http://forum.xda-developers.com/showthread.php?t=682828)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后将里面的system/bin/su 拷贝到刚才解开目录下面的system/bin/su, system/xbin/su 注意两个都要拷</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">system/app/Superuser.apk 也拷到对应目录下去,注意大小写.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后运行</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo chown root system/bin/su
+</span></span><span class="line"><span class="cl">sudo chown root system/xbin/su
+</span></span><span class="line"><span class="cl">sudo chmod 4577 system/bin/su
+</span></span><span class="line"><span class="cl">sudo chmod 4577 system/xbin/su
+</span></span><span class="line"><span class="cl">sudo chmod 644 system/app/Superuser.apk
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">```</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">这一步就是给权限</span><span class="p">,</span><span class="err">我以前搞了</span><span class="n">N次失败了</span><span class="p">,</span><span class="err">就是差前面两句</span><span class="p">,</span><span class="err">一定要将此文件的所有权分配给</span><span class="n">root用户才行</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">好了</span><span class="p">,</span><span class="err">上面完成后</span><span class="p">,</span><span class="err">就可以打包</span><span class="n">SYSTEM</span><span class="o">.</span><span class="n">IMG了</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">```</span>
+</span></span><span class="line"><span class="cl"><span class="n">mkcramfs</span>  <span class="n">system</span> <span class="n">system</span><span class="o">.</span><span class="n">img</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">```</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="err">将这个</span><span class="n">system</span><span class="o">.</span><span class="n">img拷贝到原来解开的Image目录去</span><span class="p">,</span><span class="err">然后用工具重新打包成</span><span class="n">udpate</span><span class="o">.</span><span class="n">img</span><span class="p">,</span><span class="err">刷机</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">安装一个</span><span class="n">BetterTerminal</span><span class="p">,</span><span class="err">就是一个终端工具</span><span class="p">,</span><span class="err">装好后在终端输入</span><span class="n">su回车</span><span class="p">,</span><span class="err">会有一个提示</span><span class="p">,</span><span class="err">选</span><span class="n">yes</span><span class="p">,</span><span class="err">然后终端上的提示符由</span><span class="o">$</span><span class="err">变为</span><span class="c1">#就表明成功了,如果显示Permission denied就是没成功.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">以下是开</span><span class="n">NFS网络硬盘所需要的工作</span><span class="p">,</span><span class="err">如果你不准备挂</span><span class="n">NFS</span><span class="p">,</span><span class="err">可以跳过</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">参见</span><span class="p">:[</span><span class="n">CIFS</span> <span class="ow">and</span> <span class="n">NFS</span> <span class="n">modules</span><span class="p">](</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">slatedroid</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">nationite</span><span class="o">-</span><span class="n">midnite</span><span class="o">-</span><span class="n">firmware</span><span class="o">-</span><span class="n">development</span><span class="o">/</span><span class="mi">8087</span><span class="o">-</span><span class="n">cifs</span><span class="o">-</span><span class="n">nfs</span><span class="o">-</span><span class="n">modules</span><span class="o">-</span><span class="mf">3.</span><span class="n">html</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="n">windows</span> <span class="n">NFS</span> <span class="err">配置</span><span class="p">](</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">ygliang</span><span class="o">.</span><span class="n">blog</span><span class="o">.</span><span class="mi">51</span><span class="n">cto</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="mi">69909</span><span class="o">/</span><span class="mi">52898</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">在共享的台式机上安装</span><span class="p">[</span><span class="n">Windows</span> <span class="n">Services</span> <span class="k">for</span> <span class="n">UNIX</span> <span class="n">Version</span> <span class="mf">3.5</span><span class="p">](</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">microsoft</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">downloads</span><span class="o">/</span><span class="n">en</span><span class="o">/</span><span class="n">details</span><span class="o">.</span><span class="n">aspx</span><span class="err">?</span><span class="n">FamilyID</span><span class="o">=</span><span class="mi">896</span><span class="n">c9688</span><span class="o">-</span><span class="mi">601</span><span class="n">b</span><span class="o">-</span><span class="mi">44</span><span class="n">f1</span><span class="o">-</span><span class="mi">81</span><span class="n">a4</span><span class="o">-</span><span class="mi">02878</span><span class="n">ff11778</span><span class="p">),</span><span class="err">应该都是</span><span class="n">WINDOWS系统吧</span><span class="p">,</span><span class="err">只试过</span><span class="n">XP</span><span class="p">,</span><span class="n">WIN7没试过</span><span class="p">,</span><span class="err">应该差不多</span><span class="o">.</span><span class="err">如果是</span><span class="n">LINUX好像就可以直接开了</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">主要目的</span><span class="p">,</span><span class="err">就是因为</span><span class="mf">1.5</span><span class="err">的</span><span class="n">ANDROID不支持CJFS格式</span><span class="p">,</span><span class="err">是内核不支持</span><span class="p">,</span><span class="err">咱又不会编内核</span><span class="p">(</span><span class="err">现在在学习中</span><span class="p">),</span><span class="err">不然就可以直接拷</span><span class="n">SMB共享</span><span class="p">(</span><span class="err">就是</span><span class="n">WINDOWS的共享啦</span><span class="p">)</span><span class="err">到本地目录</span><span class="p">,</span><span class="err">然后什么小说啊</span><span class="p">,</span><span class="err">电影啊</span><span class="p">,</span><span class="err">之类</span> <span class="err">的</span><span class="p">,</span><span class="err">就</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">不用从台式机上拷贝到平板</span><span class="p">,</span><span class="err">而可以直接通过共享</span><span class="p">,</span><span class="n">WIFI来随时访问了</span><span class="p">,</span><span class="err">直接播放电影什么的</span><span class="o">.</span><span class="err">可惜不支持</span><span class="n">CJFS格式</span><span class="p">,</span><span class="err">所以又有一种方式</span><span class="p">,</span><span class="err">搞了好半天才找到</span><span class="p">,</span><span class="err">就是用</span><span class="n">NFS格式</span><span class="p">,</span><span class="err">在国外的论坛上无意中看到的</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="mf">1.5</span><span class="err">的内核支持</span><span class="n">NFS</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">先下载</span><span class="p">[</span><span class="n">Windows</span> <span class="n">Services</span> <span class="k">for</span> <span class="n">UNIX</span> <span class="n">Version</span> <span class="mf">3.5</span><span class="p">](</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">microsoft</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">downloads</span><span class="o">/</span><span class="n">en</span><span class="o">/</span><span class="n">details</span><span class="o">.</span><span class="n">aspx</span><span class="err">?</span><span class="n">FamilyID</span><span class="o">=</span><span class="mi">896</span><span class="n">c9688</span><span class="o">-</span><span class="mi">601</span><span class="n">b</span><span class="o">-</span><span class="mi">44</span><span class="n">f1</span><span class="o">-</span><span class="mi">81</span><span class="n">a4</span><span class="o">-</span><span class="mi">02878</span><span class="n">ff11778</span><span class="p">),</span><span class="err">然后按照上面的参考帖子配置共享</span><span class="p">,</span><span class="err">注意在本地安全策划中</span><span class="p">,</span><span class="err">有一项一定要打开</span><span class="p">,</span><span class="err">不然可以挂载</span><span class="p">,</span><span class="err">但是目录却是空的</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">网络访问</span><span class="p">:</span> <span class="err">将</span> <span class="n">Everyone</span> <span class="err">权限应用于匿名用户</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">具体方法</span><span class="p">,</span><span class="err">运行</span><span class="n">gpedit</span><span class="o">.</span><span class="n">msc</span><span class="p">,</span><span class="err">在</span><span class="s2">&#34;计算机配置-WINDOWS设置-安全设置-本地策略-安全选项&#34;</span><span class="err">下面</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">然后在</span><span class="p">[</span><span class="n">CIFS</span> <span class="ow">and</span> <span class="n">NFS</span> <span class="n">modules</span><span class="p">](</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">slatedroid</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">nationite</span><span class="o">-</span><span class="n">midnite</span><span class="o">-</span><span class="n">firmware</span><span class="o">-</span><span class="n">development</span><span class="o">/</span><span class="mi">8087</span><span class="o">-</span><span class="n">cifs</span><span class="o">-</span><span class="n">nfs</span><span class="o">-</span><span class="n">modules</span><span class="o">-</span><span class="mf">3.</span><span class="n">html</span><span class="p">)</span><span class="err">这个帖子中</span><span class="p">,</span><span class="err">有一个</span><span class="n">MountNfs</span><span class="o">.</span><span class="n">apk</span><span class="p">,</span><span class="err">下载安装</span><span class="p">,</span><span class="err">然后运行</span><span class="n">MOUNTNFS</span><span class="p">,</span><span class="err">在第一个对话框上填写地址</span><span class="p">,</span><span class="err">格式应该是</span><span class="p">:</span> <span class="ne">IP</span><span class="p">:</span><span class="o">/</span><span class="n">FOLDER</span>\<span class="n">_NAME</span><span class="p">,</span><span class="n">IP就是你的WINDOWS的IP</span><span class="p">,</span><span class="n">FOLDER</span>\<span class="n">_NAME就是在NFS共享上设置的名字</span><span class="p">(</span><span class="err">注意不是你硬盘上的目标名</span><span class="p">,</span><span class="err">而是属性里面</span><span class="n">NFS</span> <span class="err">共享的名字</span><span class="p">),</span><span class="err">注意不要掉了</span><span class="p">:</span><span class="err">号</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">下面填写平板上的目录</span><span class="p">,</span><span class="err">自己先建一个空目录</span><span class="p">,</span><span class="err">如</span><span class="n">sdcard</span><span class="o">/</span><span class="n">movie</span><span class="p">,</span><span class="err">然后点</span><span class="n">MOUNT</span><span class="p">,</span><span class="err">如果提示</span><span class="n">MOUNT成功</span><span class="p">,</span><span class="err">就</span><span class="n">OK了</span><span class="p">,</span><span class="err">用</span><span class="n">ES文件管理器查看此目录</span><span class="p">,</span><span class="err">就可以看到共享了</span><span class="p">(</span><span class="err">如果没有</span><span class="p">,</span><span class="err">使用终端</span><span class="p">,</span><span class="err">然后切换到</span><span class="n">su</span><span class="p">,</span><span class="err">使用</span><span class="n">ls命令查看</span><span class="p">:</span><span class="n">ls</span> <span class="o">/</span><span class="n">sdcard</span><span class="o">/</span><span class="n">movie</span> <span class="err">看看有没有</span><span class="p">,</span><span class="err">如果</span> <span class="err">有</span><span class="p">,</span><span class="err">很可能是</span><span class="n">WINDOWS的策略没改</span><span class="p">,</span><span class="err">我之前就是这样</span><span class="p">,</span><span class="n">MOUNT成功了</span><span class="p">,</span><span class="err">但是用文件管理器看不到</span><span class="p">,</span><span class="err">用超级用户用</span><span class="n">LS命令可以看到</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">点击一个电影</span><span class="p">,</span><span class="err">就可以直接播放了</span><span class="p">,</span><span class="err">不用拷过来</span><span class="p">,</span><span class="err">注意</span><span class="n">WIFI要信号好才行</span><span class="p">,</span><span class="err">不然就会卡</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">有一个问题还没解决</span><span class="p">,</span><span class="err">就是</span><span class="n">NFS不支持UTF8</span><span class="p">,</span><span class="err">所以中文是乱码</span><span class="p">,</span><span class="err">最好手动把文件名改成英文</span><span class="p">,</span><span class="err">哈哈</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">有什么问题可以到</span><span class="n">QQ群交流</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">还有我的</span><span class="n">GOOGLE</span> <span class="n">MAP无法定位自己的位置</span><span class="p">,</span><span class="err">在设置里面开了</span><span class="s2">&#34;我的位置&#34;</span><span class="err">也没用</span><span class="p">,</span><span class="err">哪位知道</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2010-10-26</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/apad-rk2808-%E5%BC%80root%E6%9D%83%E9%99%90%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E6%8C%82nfs%E7%BD%91%E7%BB%9C%E7%A1%AC%E7%9B%98/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://gowinder.work/apad-rk2808-%E5%BC%80root%E6%9D%83%E9%99%90%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E6%8C%82nfs%E7%BD%91%E7%BB%9C%E7%A1%AC%E7%9B%98/" data-title="APAD RK2808 开ROOT权限注意事项,挂NFS网络硬盘" data-hashtags="ANDROID,APAD RK2808 平板 ANDROID NFS ROOT权限"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://gowinder.work/apad-rk2808-%E5%BC%80root%E6%9D%83%E9%99%90%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E6%8C%82nfs%E7%BD%91%E7%BB%9C%E7%A1%AC%E7%9B%98/" data-hashtag="ANDROID"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://gowinder.work/apad-rk2808-%E5%BC%80root%E6%9D%83%E9%99%90%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E6%8C%82nfs%E7%BD%91%E7%BB%9C%E7%A1%AC%E7%9B%98/" data-title="APAD RK2808 开ROOT权限注意事项,挂NFS网络硬盘"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://gowinder.work/apad-rk2808-%E5%BC%80root%E6%9D%83%E9%99%90%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E6%8C%82nfs%E7%BD%91%E7%BB%9C%E7%A1%AC%E7%9B%98/" data-title="APAD RK2808 开ROOT权限注意事项,挂NFS网络硬盘"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://gowinder.work/apad-rk2808-%E5%BC%80root%E6%9D%83%E9%99%90%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E6%8C%82nfs%E7%BD%91%E7%BB%9C%E7%A1%AC%E7%9B%98/" data-title="APAD RK2808 开ROOT权限注意事项,挂NFS网络硬盘"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/android/">ANDROID</a>,&nbsp;<a href="/tags/apad-rk2808-%E5%B9%B3%E6%9D%BF-android-nfs-root%E6%9D%83%E9%99%90/">APAD RK2808 平板 ANDROID NFS ROOT权限</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/%E4%BB%8A%E5%B9%B4%E4%B8%8B%E5%8D%8A%E5%B9%B4%E7%AC%AC%E9%87%87%E8%B4%AD%E7%9A%84%E7%AC%AC%E4%B8%80%E6%B3%A2%E7%A7%91%E5%B9%BB%E4%B9%A6%E5%88%B0%E8%B4%A7/" class="prev" rel="prev" title="今年下半年第采购的第一波科幻书到货"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>今年下半年第采购的第一波科幻书到货</a>
+            <a href="/%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8cifs-ko%E6%8C%82%E8%BD%BDwindows-%E5%85%B1%E4%BA%AB/" class="next" rel="next" title="直接使用cifs.ko挂载WINDOWS 共享">直接使用cifs.ko挂载WINDOWS 共享<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.120.4">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">gowinder</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.5.0/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{"valine":{"appId":"QGzwQXOqs5JOhN4RGPOkR2mR-MdYXbMMI","appKey":"WBmoGyJtbqUswvfLh6L8iEBr","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-CN","pageSize":10,"placeholder":"你的评论 ...","recordIP":true,"serverURLs":"https://leancloud.hugoloveit.com","visitor":true}},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.zh-cn","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

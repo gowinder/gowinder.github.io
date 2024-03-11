@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>使用chatgpt帮我编写一个给视频文件生成中文字幕的脚本 - gowinder个人博客</title><meta name="Description" content="记录生活,编码,折腾,杂七杂八"><meta property="og:title" content="使用chatgpt帮我编写一个给视频文件生成中文字幕的脚本" />
+<meta property="og:description" content="使用chatgpt帮我编写一个给视频文件生成中文字幕的脚本 背景 因为有些冷门的电影或者视频，很难找到中文字幕，但是又有故事情节，这时候就需要自" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gowinder.work/use-chatgpt-to-make-a-sub-generator-script/" /><meta property="og:image" content="https://gowinder.work/use-chatgpt-to-make-a-sub-generator-script/featured-image.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-03-06T14:40:28+08:00" />
+<meta property="article:modified_time" content="2024-03-06T14:40:28+08:00" /><meta property="og:site_name" content="gowinder个人博客" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://gowinder.work/use-chatgpt-to-make-a-sub-generator-script/featured-image.png"/>
+<meta name="twitter:title" content="使用chatgpt帮我编写一个给视频文件生成中文字幕的脚本"/>
+<meta name="twitter:description" content="使用chatgpt帮我编写一个给视频文件生成中文字幕的脚本 背景 因为有些冷门的电影或者视频，很难找到中文字幕，但是又有故事情节，这时候就需要自"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://gowinder.work/use-chatgpt-to-make-a-sub-generator-script/" /><link rel="prev" href="https://gowinder.work/create-local-stable-diffusion-env/" /><link rel="next" href="https://gowinder.work/basic-markdown-syntax/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "使用chatgpt帮我编写一个给视频文件生成中文字幕的脚本",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/gowinder.work\/use-chatgpt-to-make-a-sub-generator-script\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/gowinder.work\/use-chatgpt-to-make-a-sub-generator-script\/featured-image.png",
+                            "width":  1094 ,
+                            "height":  568 
+                        }],"genre": "posts","keywords": "chatgpt, shell script, ffmpeg, whisper, openai, chatgpt-subtitle-translator","wordcount":  2443 ,
+        "url": "https:\/\/gowinder.work\/use-chatgpt-to-make-a-sub-generator-script\/","datePublished": "2024-03-06T14:40:28+08:00","dateModified": "2024-03-06T14:40:28+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/gowinder.work\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "gowinder"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="gowinder个人博客"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw' aria-hidden='true'></i></span>LoveIt</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/categories/documentation/"> 文档 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a><a href="javascript:void(0);" class="menu-item language" title="选择语言">
+                    <i class="fa fa-globe" aria-hidden="true"></i>                      
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/use-chatgpt-to-make-a-sub-generator-script/" selected>简体中文</option></select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="gowinder个人博客"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw' aria-hidden='true'></i></span>LoveIt</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/categories/documentation/" title="">文档</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">
+                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/use-chatgpt-to-make-a-sub-generator-script/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">使用chatgpt帮我编写一个给视频文件生成中文字幕的脚本</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>gowinder</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-03-06">2024-03-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2443 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 5 分钟&nbsp;<span id="/use-chatgpt-to-make-a-sub-generator-script/" class="leancloud_visitors" data-flag-title="使用chatgpt帮我编写一个给视频文件生成中文字幕的脚本">
+                        <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/use-chatgpt-to-make-a-sub-generator-script/featured-image.png"
+        data-srcset="/use-chatgpt-to-make-a-sub-generator-script/featured-image.png, /use-chatgpt-to-make-a-sub-generator-script/featured-image.png 1.5x, /use-chatgpt-to-make-a-sub-generator-script/featured-image.png 2x"
+        data-sizes="auto"
+        alt="/use-chatgpt-to-make-a-sub-generator-script/featured-image.png"
+        title="/use-chatgpt-to-make-a-sub-generator-script/featured-image.png" /></div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#背景">背景</a></li>
+    <li><a href="#实现思路">实现思路</a>
+      <ul>
+        <li><a href="#ffmpeg提取音频"><code>ffmpeg</code>提取音频</a></li>
+        <li><a href="#whispercpp-提取文本"><code>whisper.cpp</code> 提取文本</a></li>
+        <li><a href="#chatgpt-subtitle-translator翻译文本"><code>chatgpt-subtitle-translator</code>翻译文本</a></li>
+      </ul>
+    </li>
+    <li><a href="#chatgpt聊天过程"><code>chatgpt</code>聊天过程</a></li>
+    <li><a href="#效果">效果</a></li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="使用chatgpt帮我编写一个给视频文件生成中文字幕的脚本">使用chatgpt帮我编写一个给视频文件生成中文字幕的脚本</h1>
+<h2 id="背景">背景</h2>
+<p>因为有些冷门的电影或者视频，很难找到中文字幕，但是又有故事情节，这时候就需要自己手动添加中文字幕。但是手动添加中文字幕非常耗时，尤其是对于长视频来说。所以我想要使用chatgpt来帮我编写一个脚本，能够自动给视频文件生成中文字幕。</p>
+<h2 id="实现思路">实现思路</h2>
+<p>首先要把流程分解成几个步骤：</p>
+<ul>
+<li>使用<code>ffmpeg</code>提取视频的音频文件</li>
+<li>使用<code>whisper.cpp</code>将音频文件转换成文本文件</li>
+<li>使用<code>chatgpt-subtitle-translator</code>将文本文件翻译成中文字幕</li>
+</ul>
+<p>每个步骤的命令大概如下:</p>
+<h3 id="ffmpeg提取音频"><code>ffmpeg</code>提取音频</h3>
+<p><code>ffmpeg -i input.mp4 -hide_banner -vn -loglevel error -ar 16000 -ac 1 -c:a pcm_s16le -y output.wav -progress -</code></p>
+<h3 id="whispercpp-提取文本"><code>whisper.cpp</code> 提取文本</h3>
+<p><code>whisper.cpp</code>也可以翻译,但是只能到英文,如果用他翻译的英文再去翻译出中文,效果会更差,所以这里只是用来提取文本(英文)。</p>
+<p><code>./main -m models/ggml-small.bin -l $WHISPER_LANGUAGE -f $AUDIO_FILE_PATH -t 8 -osrt</code></p>
+<p>这个命令直将<code>$AUDIO_FILE_PATH</code>的音频文件转换成文本文件，并且保存为<code>.srt</code>英文字幕。<code>$WHISPER_LANGUAGE</code>是指定语言，这里可以选择英文或者其他语言。<code>-t 8</code>是指定线程数，可以根据自己的电脑性能来调整。</p>
+<h3 id="chatgpt-subtitle-translator翻译文本"><code>chatgpt-subtitle-translator</code>翻译文本</h3>
+<p>本来准备自己写一个脚本来调用<code>openai</code>的API来翻译文本，但是发现已经有人写好了一个脚本，叫做<code>chatgpt-subtitle-translator</code>，可以直接使用。这个脚本的使用方法可以参考<a href="https://github.com/Cerlancism/chatgpt-subtitle-translator.git" target="_blank" rel="noopener noreffer "><strong>这里</strong></a>。</p>
+<h2 id="chatgpt聊天过程"><code>chatgpt</code>聊天过程</h2>
+<p><strong>第一次提问:</strong></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/use-chatgpt-to-make-a-sub-generator-script/chatgpt-q1.png"
+        data-srcset="/use-chatgpt-to-make-a-sub-generator-script/chatgpt-q1.png, /use-chatgpt-to-make-a-sub-generator-script/chatgpt-q1.png 1.5x, /use-chatgpt-to-make-a-sub-generator-script/chatgpt-q1.png 2x"
+        data-sizes="auto"
+        alt="/use-chatgpt-to-make-a-sub-generator-script/chatgpt-q1.png"
+        title="Q1" width="1166" height="2208" /></p>
+<p>我把问题描述得非常清楚了,有哪些步骤,每一步是什么,我具体的要求, 第一步他给出的答案:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 定义变量</span>
+</span></span><span class="line"><span class="cl"><span class="nv">VIDEO_FILE_PATH</span><span class="o">=</span><span class="se">\$</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="nv">WHISPER_PATH</span><span class="o">=</span><span class="s2">&#34;/User/gowinder/code/whisper.cpp/main&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">WHISPER_LANGUAGE</span><span class="o">=</span><span class="s2">&#34;Japanese&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">WHISPER_MODEL</span><span class="o">=</span><span class="s2">&#34;/User/gowinder/code/whisper.cpp/models/ggml-small.bin&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">TRANSLATOR_PATH</span><span class="o">=</span><span class="s2">&#34;/User/gowinder/code/chatgpt-subtitle-translator/&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">TRANSLATOR_TO_LANGUAGE</span><span class="o">=</span><span class="s2">&#34;Chinese&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 提取音频并转换为wav格式</span>
+</span></span><span class="line"><span class="cl"><span class="nv">AUDIO_FILE_PATH</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">VIDEO_FILE_PATH</span><span class="p">%.*</span><span class="si">}</span><span class="s2">.wav&#34;</span>
+</span></span><span class="line"><span class="cl">ffmpeg -i <span class="s2">&#34;</span><span class="nv">$VIDEO_FILE_PATH</span><span class="s2">&#34;</span> -hide_banner -vn -loglevel error -ar <span class="m">16000</span> -ac <span class="m">1</span> -c:a pcm_s16le -y <span class="s2">&#34;</span><span class="nv">$AUDIO_FILE_PATH</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 使用whisper生成srt字幕文件</span>
+</span></span><span class="line"><span class="cl"><span class="nv">SRT_FILE_PATH</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">AUDIO_FILE_PATH</span><span class="p">%.*</span><span class="si">}</span><span class="s2">.srt&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$WHISPER_PATH</span> -m <span class="nv">$WHISPER_MODEL</span> -l <span class="nv">$WHISPER_LANGUAGE</span> -f <span class="s2">&#34;</span><span class="nv">$AUDIO_FILE_PATH</span><span class="s2">&#34;</span> -t <span class="s2">&#34;8&#34;</span> -osr
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 使用ChatGPT翻译字幕</span>
+</span></span><span class="line"><span class="cl"><span class="nv">TRANSLATED_SRT_FILE_PATH</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">AUDIO_FILE_PATH</span><span class="p">%.*</span><span class="si">}</span><span class="s2">.out_</span><span class="si">${</span><span class="nv">TRANSLATOR_TO_LANGUAGE</span><span class="si">}</span><span class="s2">.srt&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> <span class="nv">$TRANSLATOR_PATH</span>
+</span></span><span class="line"><span class="cl">cli/translator.mjs --stream --temperature <span class="m">0</span> --from <span class="s2">&#34;</span><span class="nv">$WHISPER_LANGUAGE</span><span class="s2">&#34;</span> --to <span class="s2">&#34;</span><span class="nv">$TRANSLATOR_TO_LANGUAGE</span><span class="s2">&#34;</span> --file <span class="s2">&#34;</span><span class="nv">$SRT_FILE_PATH</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 重命名输出文件</span>
+</span></span><span class="line"><span class="cl"><span class="nv">FINAL_SRT_FILE_PATH</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">AUDIO_FILE_PATH</span><span class="p">%.*</span><span class="si">}</span><span class="s2">.chs.srt&#34;</span>
+</span></span><span class="line"><span class="cl">mv <span class="s2">&#34;</span><span class="nv">$TRANSLATED_SRT_FILE_PATH</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="nv">$FINAL_SRT_FILE_PATH</span><span class="s2">&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这时可见回复基本已经把我需要的编辑好了,但是还有几个问题,如: 没有检查每一步的返回结果等,于是我继续提问:</p>
+<p><strong>第二次提问:</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="err">需要修改</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">-</span><span class="w"> </span><span class="err">检测每一步时候正常完成</span><span class="p">,</span><span class="err">如果没有就退出</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">-</span><span class="w"> </span><span class="o">`</span><span class="err">使用</span><span class="n">ChatGPT翻译字幕</span><span class="o">`</span><span class="w"> </span><span class="err">这一步不要</span><span class="o">`</span><span class="n">cd</span><span class="o">`</span><span class="err">到</span><span class="o">`</span><span class="n">TRANSLATOR_PATH</span><span class="o">`</span><span class="w"> </span><span class="err">目录去</span><span class="p">,</span><span class="err">而是设置他的工作目录</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>回答:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 定义变量</span>
+</span></span><span class="line"><span class="cl"><span class="nv">VIDEO_FILE_PATH</span><span class="o">=</span><span class="se">\$</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="nv">WHISPER_PATH</span><span class="o">=</span><span class="s2">&#34;/User/gowinder/code/whisper.cpp/main&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">WHISPER_LANGUAGE</span><span class="o">=</span><span class="s2">&#34;Japanese&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">WHISPER_MODEL</span><span class="o">=</span><span class="s2">&#34;/User/gowinder/code/whisper.cpp/models/ggml-small.bin&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">TRANSLATOR_PATH</span><span class="o">=</span><span class="s2">&#34;/User/gowinder/code/chatgpt-subtitle-translator/&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">TRANSLATOR_TO_LANGUAGE</span><span class="o">=</span><span class="s2">&#34;Chinese&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 提取音频并转换为wav格式</span>
+</span></span><span class="line"><span class="cl"><span class="nv">AUDIO_FILE_PATH</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">VIDEO_FILE_PATH</span><span class="p">%.*</span><span class="si">}</span><span class="s2">.wav&#34;</span>
+</span></span><span class="line"><span class="cl">ffmpeg -i <span class="s2">&#34;</span><span class="nv">$VIDEO_FILE_PATH</span><span class="s2">&#34;</span> -hide_banner -vn -loglevel error -ar <span class="m">16000</span> -ac <span class="m">1</span> -c:a pcm_s16le -y <span class="s2">&#34;</span><span class="nv">$AUDIO_FILE_PATH</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> -ne <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Error: Failed to extract audio from video.&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">exit</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 使用whisper生成srt字幕文件</span>
+</span></span><span class="line"><span class="cl"><span class="nv">SRT_FILE_PATH</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">AUDIO_FILE_PATH</span><span class="p">%.*</span><span class="si">}</span><span class="s2">.srt&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$WHISPER_PATH</span> -m <span class="nv">$WHISPER_MODEL</span> -l <span class="nv">$WHISPER_LANGUAGE</span> -f <span class="s2">&#34;</span><span class="nv">$AUDIO_FILE_PATH</span><span class="s2">&#34;</span> -t <span class="s2">&#34;8&#34;</span> -osr
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> -ne <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Error: Failed to generate srt file.&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">exit</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 使用ChatGPT翻译字幕</span>
+</span></span><span class="line"><span class="cl"><span class="nv">TRANSLATED_SRT_FILE_PATH</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">AUDIO_FILE_PATH</span><span class="p">%.*</span><span class="si">}</span><span class="s2">.out_</span><span class="si">${</span><span class="nv">TRANSLATOR_TO_LANGUAGE</span><span class="si">}</span><span class="s2">.srt&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">pushd</span> <span class="nv">$TRANSLATOR_PATH</span>
+</span></span><span class="line"><span class="cl">cli/translator.mjs --stream --temperature <span class="m">0</span> --from <span class="s2">&#34;</span><span class="nv">$WHISPER_LANGUAGE</span><span class="s2">&#34;</span> --to <span class="s2">&#34;</span><span class="nv">$TRANSLATOR_TO_LANGUAGE</span><span class="s2">&#34;</span> --file <span class="s2">&#34;</span><span class="nv">$SRT_FILE_PATH</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">popd</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> -ne <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Error: Failed to translate srt file.&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">exit</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 重命名输出文件</span>
+</span></span><span class="line"><span class="cl"><span class="nv">FINAL_SRT_FILE_PATH</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">AUDIO_FILE_PATH</span><span class="p">%.*</span><span class="si">}</span><span class="s2">.chs.srt&#34;</span>
+</span></span><span class="line"><span class="cl">mv <span class="s2">&#34;</span><span class="nv">$TRANSLATED_SRT_FILE_PATH</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="nv">$FINAL_SRT_FILE_PATH</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> -ne <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Error: Failed to rename srt file.&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">exit</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Subtitle generation completed successfully.&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>我想把一些配置放到<code>.env</code>文件中去,于是</p>
+<p><strong>第三次提问:</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">将 :
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">WHISPER_PATH=&#34;/User/gowinder/code/whisper.cpp/main&#34;
+</span></span><span class="line"><span class="cl">WHISPER_LANGUAGE=&#34;Japanese&#34;
+</span></span><span class="line"><span class="cl">WHISPER_MODEL=&#34;/User/gowinder/code/whisper.cpp/models/ggml-small.bin&#34;
+</span></span><span class="line"><span class="cl">TRANSLATOR_PATH=&#34;/User/gowinder/code/chatgpt-subtitle-translator/&#34;
+</span></span><span class="line"><span class="cl">TRANSLATOR_TO_LANGUAGE=&#34;Chinese&#34;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">放到env文件中去
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>输出结果:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 读取环境变量</span>
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> .env
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 输入的视频文件路径</span>
+</span></span><span class="line"><span class="cl"><span class="nv">VIDEO_FILE_PATH</span><span class="o">=</span><span class="se">\$</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 提取音频并转换为wav格式</span>
+</span></span><span class="line"><span class="cl"><span class="nv">AUDIO_FILE_PATH</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">VIDEO_FILE_PATH</span><span class="p">%.*</span><span class="si">}</span><span class="s2">.wav&#34;</span>
+</span></span><span class="line"><span class="cl">ffmpeg -i <span class="s2">&#34;</span><span class="nv">$VIDEO_FILE_PATH</span><span class="s2">&#34;</span> -hide_banner -vn -loglevel error -ar <span class="m">16000</span> -ac <span class="m">1</span> -c:a pcm_s16le -y <span class="s2">&#34;</span><span class="nv">$AUDIO_FILE_PATH</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> -ne <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Error: Failed to extract audio from video.&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">exit</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 使用whisper生成srt字幕文件</span>
+</span></span><span class="line"><span class="cl"><span class="nv">SRT_FILE_PATH</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">AUDIO_FILE_PATH</span><span class="p">%.*</span><span class="si">}</span><span class="s2">.srt&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$WHISPER_PATH</span> -m <span class="nv">$WHISPER_MODEL</span> -l <span class="nv">$WHISPER_LANGUAGE</span> -f <span class="s2">&#34;</span><span class="nv">$AUDIO_FILE_PATH</span><span class="s2">&#34;</span> -t <span class="s2">&#34;8&#34;</span> -osr
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> -ne <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Error: Failed to generate srt file.&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">exit</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 使用ChatGPT翻译字幕</span>
+</span></span><span class="line"><span class="cl"><span class="nv">TRANSLATED_SRT_FILE_PATH</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">AUDIO_FILE_PATH</span><span class="p">%.*</span><span class="si">}</span><span class="s2">.out_</span><span class="si">${</span><span class="nv">TRANSLATOR_TO_LANGUAGE</span><span class="si">}</span><span class="s2">.srt&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">pushd</span> <span class="nv">$TRANSLATOR_PATH</span>
+</span></span><span class="line"><span class="cl">cli/translator.mjs --stream --temperature <span class="m">0</span> --from <span class="s2">&#34;</span><span class="nv">$WHISPER_LANGUAGE</span><span class="s2">&#34;</span> --to <span class="s2">&#34;</span><span class="nv">$TRANSLATOR_TO_LANGUAGE</span><span class="s2">&#34;</span> --file <span class="s2">&#34;</span><span class="nv">$SRT_FILE_PATH</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">popd</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> -ne <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Error: Failed to translate srt file.&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">exit</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 重命名输出文件</span>
+</span></span><span class="line"><span class="cl"><span class="nv">FINAL_SRT_FILE_PATH</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">AUDIO_FILE_PATH</span><span class="p">%.*</span><span class="si">}</span><span class="s2">.chs.srt&#34;</span>
+</span></span><span class="line"><span class="cl">mv <span class="s2">&#34;</span><span class="nv">$TRANSLATED_SRT_FILE_PATH</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="nv">$FINAL_SRT_FILE_PATH</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> -ne <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Error: Failed to rename srt file.&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">exit</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Subtitle generation completed successfully.&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后我需要一些日志之类的,还有删除中间文件的操作,增加跳过的步骤等&hellip;
+最终结果:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 读取环境变量</span>
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> .env
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 输入的视频文件路径</span>
+</span></span><span class="line"><span class="cl"><span class="nv">VIDEO_FILE_PATH</span><span class="o">=</span><span class="se">\$</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 跳过的步骤数</span>
+</span></span><span class="line"><span class="cl"><span class="nv">SKIP_STEP</span><span class="o">=</span><span class="se">\$</span><span class="m">2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 提取音频并转换为wav格式</span>
+</span></span><span class="line"><span class="cl"><span class="nv">AUDIO_FILE_PATH</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">VIDEO_FILE_PATH</span><span class="p">%.*</span><span class="si">}</span><span class="s2">.wav&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$SKIP_STEP</span><span class="s2">&#34;</span> -lt <span class="m">1</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Starting audio extraction: ffmpeg -i </span><span class="nv">$VIDEO_FILE_PATH</span><span class="s2"> -hide_banner -vn -loglevel error -ar 16000 -ac 1 -c:a pcm_s16le -y </span><span class="nv">$AUDIO_FILE_PATH</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">START</span><span class="o">=</span><span class="k">$(</span>date +%s<span class="k">)</span>
+</span></span><span class="line"><span class="cl">    ffmpeg -i <span class="s2">&#34;</span><span class="nv">$VIDEO_FILE_PATH</span><span class="s2">&#34;</span> -hide_banner -vn -ar <span class="m">16000</span> -ac <span class="m">1</span> -c:a pcm_s16le -y <span class="s2">&#34;</span><span class="nv">$AUDIO_FILE_PATH</span><span class="s2">&#34;</span> -progress -
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> -ne <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s2">&#34;Error: Failed to extract audio from video.&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">exit</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">END</span><span class="o">=</span><span class="k">$(</span>date +%s<span class="k">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">DIFF</span><span class="o">=</span><span class="k">$((</span><span class="nv">$END</span> <span class="o">-</span> <span class="nv">$START</span><span class="k">))</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Audio extraction completed in </span><span class="nv">$DIFF</span><span class="s2"> seconds.&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Skipping audio extraction step.&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 使用whisper生成srt字幕文件</span>
+</span></span><span class="line"><span class="cl"><span class="nv">SRT_FILE_PATH</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">AUDIO_FILE_PATH</span><span class="p">%.*</span><span class="si">}</span><span class="s2">.wav.srt&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$SKIP_STEP</span><span class="s2">&#34;</span> -lt <span class="m">2</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Starting srt generation: </span><span class="nv">$WHISPER_PATH</span><span class="s2"> -m </span><span class="nv">$WHISPER_MODEL</span><span class="s2"> -l </span><span class="nv">$WHISPER_LANGUAGE</span><span class="s2"> -f </span><span class="nv">$AUDIO_FILE_PATH</span><span class="s2"> -t 8 -osr&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">START</span><span class="o">=</span><span class="k">$(</span>date +%s<span class="k">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$WHISPER_PATH</span> -m <span class="nv">$WHISPER_MODEL</span> -l <span class="nv">$WHISPER_LANGUAGE</span> -f <span class="s2">&#34;</span><span class="nv">$AUDIO_FILE_PATH</span><span class="s2">&#34;</span> -t <span class="s2">&#34;8&#34;</span> -osrt
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> -ne <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s2">&#34;Error: Failed to generate srt file.&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">exit</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">END</span><span class="o">=</span><span class="k">$(</span>date +%s<span class="k">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">DIFF</span><span class="o">=</span><span class="k">$((</span><span class="nv">$END</span> <span class="o">-</span> <span class="nv">$START</span><span class="k">))</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Srt generation completed in </span><span class="nv">$DIFF</span><span class="s2"> seconds.&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Skipping srt generation step.&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 重命名whisper生成的srt文件</span>
+</span></span><span class="line"><span class="cl"><span class="nv">RENAME_SRT_FILE_PATH</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">AUDIO_FILE_PATH</span><span class="p">%.*</span><span class="si">}</span><span class="s2">.srt&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$SKIP_STEP</span><span class="s2">&#34;</span> -lt <span class="m">3</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Starting srt file renaming: mv </span><span class="nv">$SRT_FILE_PATH</span><span class="s2"> </span><span class="nv">$RENAME_SRT_FILE_PATH</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">START</span><span class="o">=</span><span class="k">$(</span>date +%s<span class="k">)</span>
+</span></span><span class="line"><span class="cl">    mv <span class="s2">&#34;</span><span class="nv">$SRT_FILE_PATH</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="nv">$RENAME_SRT_FILE_PATH</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> -ne <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s2">&#34;Error: Failed to rename srt file.&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">exit</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">END</span><span class="o">=</span><span class="k">$(</span>date +%s<span class="k">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">DIFF</span><span class="o">=</span><span class="k">$((</span><span class="nv">$END</span> <span class="o">-</span> <span class="nv">$START</span><span class="k">))</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Srt file renaming completed in </span><span class="nv">$DIFF</span><span class="s2"> seconds.&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Skipping srt file renaming step.&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 使用ChatGPT翻译字幕</span>
+</span></span><span class="line"><span class="cl"><span class="nv">TRANSLATED_SRT_FILE_PATH</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">AUDIO_FILE_PATH</span><span class="p">%.*</span><span class="si">}</span><span class="s2">.out_</span><span class="si">${</span><span class="nv">TRANSLATOR_TO_LANGUAGE</span><span class="si">}</span><span class="s2">.srt&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$SKIP_STEP</span><span class="s2">&#34;</span> -lt <span class="m">4</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Starting srt translation: cli/translator.mjs --stream --temperature 0 --from </span><span class="nv">$WHISPER_LANGUAGE</span><span class="s2"> --to </span><span class="nv">$TRANSLATOR_TO_LANGUAGE</span><span class="s2"> --file </span><span class="nv">$RENAME_SRT_FILE_PATH</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">START</span><span class="o">=</span><span class="k">$(</span>date +%s<span class="k">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">pushd</span> <span class="nv">$TRANSLATOR_PATH</span>
+</span></span><span class="line"><span class="cl">    cli/translator.mjs --stream --temperature <span class="m">0</span> --from <span class="s2">&#34;</span><span class="nv">$WHISPER_LANGUAGE</span><span class="s2">&#34;</span> --to <span class="s2">&#34;</span><span class="nv">$TRANSLATOR_TO_LANGUAGE</span><span class="s2">&#34;</span> --file <span class="s2">&#34;</span><span class="nv">$RENAME_SRT_FILE_PATH</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">popd</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> -ne <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s2">&#34;Error: Failed to translate srt file.&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">exit</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">END</span><span class="o">=</span><span class="k">$(</span>date +%s<span class="k">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">DIFF</span><span class="o">=</span><span class="k">$((</span><span class="nv">$END</span> <span class="o">-</span> <span class="nv">$START</span><span class="k">))</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Srt translation completed in </span><span class="nv">$DIFF</span><span class="s2"> seconds.&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Skipping srt translation step.&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 重命名输出文件</span>
+</span></span><span class="line"><span class="cl"><span class="nv">FINAL_SRT_FILE_PATH</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">AUDIO_FILE_PATH</span><span class="p">%.*</span><span class="si">}</span><span class="s2">.chs.srt&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$SKIP_STEP</span><span class="s2">&#34;</span> -lt <span class="m">5</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Starting final file renaming: mv </span><span class="nv">$TRANSLATED_SRT_FILE_PATH</span><span class="s2"> </span><span class="nv">$FINAL_SRT_FILE_PATH</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">START</span><span class="o">=</span><span class="k">$(</span>date +%s<span class="k">)</span>
+</span></span><span class="line"><span class="cl">    mv <span class="s2">&#34;</span><span class="nv">$TRANSLATED_SRT_FILE_PATH</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="nv">$FINAL_SRT_FILE_PATH</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> -ne <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s2">&#34;Error: Failed to rename final srt file.&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">exit</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">END</span><span class="o">=</span><span class="k">$(</span>date +%s<span class="k">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">DIFF</span><span class="o">=</span><span class="k">$((</span><span class="nv">$END</span> <span class="o">-</span> <span class="nv">$START</span><span class="k">))</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Final file renaming completed in </span><span class="nv">$DIFF</span><span class="s2"> seconds.&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Skipping final file renaming step.&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 删除wav文件</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$SKIP_STEP</span><span class="s2">&#34;</span> -lt <span class="m">6</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Deleting wav file: rm </span><span class="nv">$AUDIO_FILE_PATH</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    rm <span class="s2">&#34;</span><span class="nv">$AUDIO_FILE_PATH</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> -ne <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s2">&#34;Error: Failed to delete wav file.&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">exit</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Skipping wav file deletion step.&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Subtitle generation completed successfully.&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="效果">效果</h2>
+<p>最后在<code>macbook m1 max 64g</code>上测试的效果, 一个<code>1:38:50</code>的<code>mp4</code>,最后:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Total time: 622 seconds.
+</span></span><span class="line"><span class="cl">Total tokens: 72580
+</span></span><span class="line"><span class="cl">Total cost: 0.145 USD
+</span></span><span class="line"><span class="cl">Total number of subtitles: 198
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>差不多用了10分钟,(因为我的mp4文件是<code>nfs</code>挂载的,读取和写入<code>wav</code>都是通过网路,这块就花了<code>75</code>秒,<code>whisper.cpp</code> 花费了<code>172</code>秒, 差不多3分钟, 其他的时间就是调用<code>openai</code>翻译的时间了),其实还是很快的.</p>
+<p>视频截图:
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/use-chatgpt-to-make-a-sub-generator-script/screen-shot-movie.png"
+        data-srcset="/use-chatgpt-to-make-a-sub-generator-script/screen-shot-movie.png, /use-chatgpt-to-make-a-sub-generator-script/screen-shot-movie.png 1.5x, /use-chatgpt-to-make-a-sub-generator-script/screen-shot-movie.png 2x"
+        data-sizes="auto"
+        alt="/use-chatgpt-to-make-a-sub-generator-script/screen-shot-movie.png"
+        title="视频截图" width="1438" height="970" /></p>
+<h2 id="总结">总结</h2>
+<p>最后这个脚本就非常好用了.</p>
+<p>总结上面的,我个人会<code>linux</code>命令,但是对<code>shell script</code>不是很熟悉,而且不想写,因为调试不方便,用<code>chatgpt</code>非常方便,我个人觉得<code>gpt-4</code>已经很准确了,前提是需求一定要提明确,修改过程中需要偶尔再次提示一下上下文,不然他会忘记.</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2024-03-06</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/use-chatgpt-to-make-a-sub-generator-script/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://gowinder.work/use-chatgpt-to-make-a-sub-generator-script/" data-title="使用chatgpt帮我编写一个给视频文件生成中文字幕的脚本" data-hashtags="chatgpt,shell script,ffmpeg,whisper,openai,chatgpt-subtitle-translator"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://gowinder.work/use-chatgpt-to-make-a-sub-generator-script/" data-hashtag="chatgpt"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://gowinder.work/use-chatgpt-to-make-a-sub-generator-script/" data-title="使用chatgpt帮我编写一个给视频文件生成中文字幕的脚本"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://gowinder.work/use-chatgpt-to-make-a-sub-generator-script/" data-title="使用chatgpt帮我编写一个给视频文件生成中文字幕的脚本"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://gowinder.work/use-chatgpt-to-make-a-sub-generator-script/" data-title="使用chatgpt帮我编写一个给视频文件生成中文字幕的脚本"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/chatgpt/">chatgpt</a>,&nbsp;<a href="/tags/shell-script/">shell script</a>,&nbsp;<a href="/tags/ffmpeg/">ffmpeg</a>,&nbsp;<a href="/tags/whisper/">whisper</a>,&nbsp;<a href="/tags/openai/">openai</a>,&nbsp;<a href="/tags/chatgpt-subtitle-translator/">chatgpt-subtitle-translator</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/create-local-stable-diffusion-env/" class="prev" rel="prev" title="部署本地 Stable Diffusion运行环境"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>部署本地 Stable Diffusion运行环境</a>
+            <a href="/basic-markdown-syntax/" class="next" rel="next" title="Markdown 基本语法">Markdown 基本语法<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.120.4">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">gowinder</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.5.0/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{"valine":{"appId":"QGzwQXOqs5JOhN4RGPOkR2mR-MdYXbMMI","appKey":"WBmoGyJtbqUswvfLh6L8iEBr","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-CN","pageSize":10,"placeholder":"你的评论 ...","recordIP":true,"serverURLs":"https://leancloud.hugoloveit.com","visitor":true}},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.zh-cn","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

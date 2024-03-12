@@ -4,7 +4,55 @@
         <link>https://gowinder.work/tags/</link>
         <description>Tags - 标签 - gowinder个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>gowinder@hotmail.com (gowinder)</managingEditor>
-            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 06 Mar 2024 14:40:28 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 11 Mar 2024 17:16:15 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>dell</title>
+    <link>https://gowinder.work/tags/dell/</link>
+    <pubDate>Mon, 11 Mar 2024 17:16:15 &#43;0800</pubDate>
+    <author>gowinder</author>
+    <guid>https://gowinder.work/tags/dell/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>homeserver</title>
+    <link>https://gowinder.work/tags/homeserver/</link>
+    <pubDate>Mon, 11 Mar 2024 17:16:15 &#43;0800</pubDate>
+    <author>gowinder</author>
+    <guid>https://gowinder.work/tags/homeserver/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>MacbookPro</title>
+    <link>https://gowinder.work/tags/macbookpro/</link>
+    <pubDate>Mon, 11 Mar 2024 17:16:15 &#43;0800</pubDate>
+    <author>gowinder</author>
+    <guid>https://gowinder.work/tags/macbookpro/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>pve</title>
+    <link>https://gowinder.work/tags/pve/</link>
+    <pubDate>Mon, 11 Mar 2024 17:16:15 &#43;0800</pubDate>
+    <author>gowinder</author>
+    <guid>https://gowinder.work/tags/pve/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>r720</title>
+    <link>https://gowinder.work/tags/r720/</link>
+    <pubDate>Mon, 11 Mar 2024 17:16:15 &#43;0800</pubDate>
+    <author>gowinder</author>
+    <guid>https://gowinder.work/tags/r720/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>蜗牛星际</title>
+    <link>https://gowinder.work/tags/%E8%9C%97%E7%89%9B%E6%98%9F%E9%99%85/</link>
+    <pubDate>Mon, 11 Mar 2024 17:16:15 &#43;0800</pubDate>
+    <author>gowinder</author>
+    <guid>https://gowinder.work/tags/%E8%9C%97%E7%89%9B%E6%98%9F%E9%99%85/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>chatgpt</title>
     <link>https://gowinder.work/tags/chatgpt/</link>
     <pubDate>Wed, 06 Mar 2024 14:40:28 &#43;0800</pubDate>
@@ -34,54 +82,6 @@
     <pubDate>Wed, 06 Mar 2024 14:40:28 &#43;0800</pubDate>
     <author>gowinder</author>
     <guid>https://gowinder.work/tags/openai/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>shell script</title>
-    <link>https://gowinder.work/tags/shell-script/</link>
-    <pubDate>Wed, 06 Mar 2024 14:40:28 &#43;0800</pubDate>
-    <author>gowinder</author>
-    <guid>https://gowinder.work/tags/shell-script/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>whisper</title>
-    <link>https://gowinder.work/tags/whisper/</link>
-    <pubDate>Wed, 06 Mar 2024 14:40:28 &#43;0800</pubDate>
-    <author>gowinder</author>
-    <guid>https://gowinder.work/tags/whisper/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>ai</title>
-    <link>https://gowinder.work/tags/ai/</link>
-    <pubDate>Sun, 23 Apr 2023 14:13:38 &#43;0800</pubDate>
-    <author>gowinder</author>
-    <guid>https://gowinder.work/tags/ai/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>machine learning</title>
-    <link>https://gowinder.work/tags/machine-learning/</link>
-    <pubDate>Sun, 23 Apr 2023 14:13:38 &#43;0800</pubDate>
-    <author>gowinder</author>
-    <guid>https://gowinder.work/tags/machine-learning/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>stable diffusion</title>
-    <link>https://gowinder.work/tags/stable-diffusion/</link>
-    <pubDate>Sun, 23 Apr 2023 14:13:38 &#43;0800</pubDate>
-    <author>gowinder</author>
-    <guid>https://gowinder.work/tags/stable-diffusion/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>CORS</title>
-    <link>https://gowinder.work/tags/cors/</link>
-    <pubDate>Tue, 28 Mar 2023 11:01:11 &#43;0800</pubDate>
-    <author>gowinder</author>
-    <guid>https://gowinder.work/tags/cors/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

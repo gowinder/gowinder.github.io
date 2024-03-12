@@ -111,6 +111,11 @@
         alt="https://www.gravatar.com/avatar/f54704641b5fd99f865013a8196d6caf?s=240&amp;d=mp"
         title="https://www.gravatar.com/avatar/f54704641b5fd99f865013a8196d6caf?s=240&amp;d=mp" /></a></div><h1 class="home-title">gowinder个人博客</h1><div class="home-subtitle"><div id="id-1" class="typeit"></div></div><div class="links"><a href="https://github.com/gowinder" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="https://steamcommunity.com/id/gowinder" title="Steam" target="_blank" rel="noopener noreffer me"><i class="fab fa-steam fa-fw" aria-hidden="true"></i></a><a href="https://www.douban.com/people/gowinder" title="豆瓣" target="_blank" rel="noopener noreffer me"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/douban.svg" aria-hidden="true"></i></a><a href="mailto:gowinder@hotmail.com" title="Email" rel="me"><i class="far fa-envelope fa-fw" aria-hidden="true"></i></a><a href="/index.xml" title="RSS" target="_blank" rel="noopener noreffer me"><i class="fas fa-rss fa-fw" aria-hidden="true"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/use-microservce-in-websocketgateway-in-nestjs/">nestjs整合websocketgateway和microservice</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>gowinder</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2023-02-23">2023-02-23</time></span></div><div class="content">nestjs整合websocketgateway和microservice 启因 使用WebsocketGateway做网关,接收客户端长连接后</div><div class="post-footer">
+        <a href="/use-microservce-in-websocketgateway-in-nestjs/">阅读全文</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/nestjs/">nestjs</a>,&nbsp;<a href="/tags/typescript/">typescript</a>,&nbsp;<a href="/tags/node/">node</a>,&nbsp;<a href="/tags/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/">开发笔记</a>,&nbsp;<a href="/tags/microservice/">microservice</a>,&nbsp;<a href="/tags/websocketg/">websocketg</a>,&nbsp;<a href="/tags/websocketgateway/">websocketgateway</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/proxmox-ve-%E5%A2%9E%E5%8A%A0%E8%87%AA%E5%8A%A8trim%E7%9A%84cron-job/">proxmox ve 增加自动trim的cron job</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>gowinder</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2023-02-17">2023-02-17</time></span></div><div class="content">proxmox ve 增加自动trim的cron job 检查状态 1 2 3 4 5 6 7 8 sudo systemctl status fstrim.timer # output: ● fstrim.timer - Discard unused blocks once a week Loaded: loaded (/lib/systemd/system/fstrim.timer; disabled; vendor preset: enabled) Active: inactive (dead) Trigger: n/a Triggers: ● fstrim.service Docs: man:fstrim 开启服务 1 sudo systemctl start fstrim.timer 检</div><div class="post-footer">
         <a href="/proxmox-ve-%E5%A2%9E%E5%8A%A0%E8%87%AA%E5%8A%A8trim%E7%9A%84cron-job/">阅读全文</a><div class="post-tags">
@@ -135,11 +140,6 @@
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>gowinder</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2023-02-14">2023-02-14</time></span></div><div class="content">nestjs中,Service无法找到Repository依赖 启因 如下代码: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 @Injectable() export class SiteRbacService {</div><div class="post-footer">
         <a href="/nestjs%E4%B8%ADservice%E6%97%A0%E6%B3%95%E6%89%BE%E5%88%B0repository%E4%BE%9D%E8%B5%96/">阅读全文</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/nestjs/">nestjs</a>,&nbsp;<a href="/tags/typescript/">typescript</a>,&nbsp;<a href="/tags/node/">node</a>,&nbsp;<a href="/tags/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/">开发笔记</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/proxmox-ve-vm%E6%8C%82%E8%BD%BD%E7%89%A9%E7%90%86%E7%A1%AC%E7%9B%98/">proxmox ve VM挂载物理硬盘</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>gowinder</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2023-02-14">2023-02-14</time></span></div><div class="content">proxmox ve VM挂载物理硬盘 先找到要挂载的硬盘的id: 1 lsblk |awk &#39;NR==1{print $0&#34; DEVICE-ID(S)&#34;}NR&gt;1{dev=$1;printf $0&#34; &#34;;system(&#34;find /dev/disk/by-id -lname \&#34;*&#34;dev&#34;\&#34; -printf \&#34; %p\&#34;&#34;);print &#34;&#34;;}&#39;|grep -v -E &#39;part|lvm&#39; 结果类似: 1 2 3 4 5 NAME MAJ:MIN RM SIZE RO TYPE MOUNTPOINT DEVICE-ID(S) loop0 7:0 0 20G 0 loop loop1 7:1 0 80G 0</div><div class="post-footer">
-        <a href="/proxmox-ve-vm%E6%8C%82%E8%BD%BD%E7%89%A9%E7%90%86%E7%A1%AC%E7%9B%98/">阅读全文</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/proxmox-ve/">proxmox ve</a>,&nbsp;<a href="/tags/linux/">linux</a>,&nbsp;<a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">虚拟机</a>,&nbsp;<a href="/tags/%E7%A3%81%E7%9B%98/">磁盘</a></div></div>
 </article><ul class="pagination"><li class="page-item ">
                     <span class="page-link">
                         <a href="/">1</a>
@@ -160,7 +160,7 @@
                     <span class="page-link" aria-hidden="true">&hellip;</span>
                 </li><li class="page-item ">
                     <span class="page-link">
-                        <a href="/page/8/">8</a>
+                        <a href="/page/9/">9</a>
                     </span>
                 </li></ul></div></div>
             </main><footer class="footer">

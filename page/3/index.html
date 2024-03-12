@@ -111,6 +111,11 @@
         alt="https://www.gravatar.com/avatar/f54704641b5fd99f865013a8196d6caf?s=240&amp;d=mp"
         title="https://www.gravatar.com/avatar/f54704641b5fd99f865013a8196d6caf?s=240&amp;d=mp" /></a></div><h1 class="home-title">gowinder个人博客</h1><div class="home-subtitle"><div id="id-1" class="typeit"></div></div><div class="links"><a href="https://github.com/gowinder" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="https://steamcommunity.com/id/gowinder" title="Steam" target="_blank" rel="noopener noreffer me"><i class="fab fa-steam fa-fw" aria-hidden="true"></i></a><a href="https://www.douban.com/people/gowinder" title="豆瓣" target="_blank" rel="noopener noreffer me"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/douban.svg" aria-hidden="true"></i></a><a href="mailto:gowinder@hotmail.com" title="Email" rel="me"><i class="far fa-envelope fa-fw" aria-hidden="true"></i></a><a href="/index.xml" title="RSS" target="_blank" rel="noopener noreffer me"><i class="fas fa-rss fa-fw" aria-hidden="true"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/proxmox-ve-vm%E6%8C%82%E8%BD%BD%E7%89%A9%E7%90%86%E7%A1%AC%E7%9B%98/">proxmox ve VM挂载物理硬盘</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>gowinder</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2023-02-14">2023-02-14</time></span></div><div class="content">proxmox ve VM挂载物理硬盘 先找到要挂载的硬盘的id: 1 lsblk |awk &#39;NR==1{print $0&#34; DEVICE-ID(S)&#34;}NR&gt;1{dev=$1;printf $0&#34; &#34;;system(&#34;find /dev/disk/by-id -lname \&#34;*&#34;dev&#34;\&#34; -printf \&#34; %p\&#34;&#34;);print &#34;&#34;;}&#39;|grep -v -E &#39;part|lvm&#39; 结果类似: 1 2 3 4 5 NAME MAJ:MIN RM SIZE RO TYPE MOUNTPOINT DEVICE-ID(S) loop0 7:0 0 20G 0 loop loop1 7:1 0 80G 0</div><div class="post-footer">
+        <a href="/proxmox-ve-vm%E6%8C%82%E8%BD%BD%E7%89%A9%E7%90%86%E7%A1%AC%E7%9B%98/">阅读全文</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/proxmox-ve/">proxmox ve</a>,&nbsp;<a href="/tags/linux/">linux</a>,&nbsp;<a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">虚拟机</a>,&nbsp;<a href="/tags/%E7%A3%81%E7%9B%98/">磁盘</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/gluster-brick%E4%B8%8B%E7%BA%BF%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/">gluster brick下线问题解决</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>gowinder</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2023-02-11">2023-02-11</time></span></div><div class="content">gluster brick下线问题解决 下线问题 刚装好gluster,在上面存放了linux container的rootfs,这样linux containe</div><div class="post-footer">
         <a href="/gluster-brick%E4%B8%8B%E7%BA%BF%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/">阅读全文</a><div class="post-tags">
@@ -134,11 +139,6 @@
         <a href="/nestjsx-crud-xxxrepository-not-found%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/">nestjsx/crud xxxRepository not found问题解决</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>gowinder</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2023-02-06">2023-02-06</time></span></div><div class="content">nestjsx/crud xxxRepository not found问题解决 nestjsx/crud可以快速帮我生成 使用@Entity 定义好typeorm对象的对应service,contro</div><div class="post-footer">
         <a href="/nestjsx-crud-xxxrepository-not-found%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/">阅读全文</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/nestjs/">nestjs</a>,&nbsp;<a href="/tags/typescript/">typescript</a>,&nbsp;<a href="/tags/node/">node</a>,&nbsp;<a href="/tags/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/">开发笔记</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/nestjs-typeorm-entity-%E4%BA%92%E7%9B%B8%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/">Nestjs, typeorm中的entity中的互相引用问题</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>gowinder</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2023-01-31">2023-01-31</time></span></div><div class="content">Nestjs, typeorm中的entity中的互相引用问题 20230131-152600 使用nestjs时,用到typeorm,有互相引用关系的entity,老是报错,按照官方文</div><div class="post-footer">
-        <a href="/nestjs-typeorm-entity-%E4%BA%92%E7%9B%B8%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/">阅读全文</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/nestjs/">nestjs</a>,&nbsp;<a href="/tags/typescript/">typescript</a>,&nbsp;<a href="/tags/node/">node</a>,&nbsp;<a href="/tags/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/">开发笔记</a></div></div>
 </article><ul class="pagination"><li class="page-item ">
                     <span class="page-link">
@@ -164,7 +164,7 @@
                     <span class="page-link" aria-hidden="true">&hellip;</span>
                 </li><li class="page-item ">
                     <span class="page-link">
-                        <a href="/page/8/">8</a>
+                        <a href="/page/9/">9</a>
                     </span>
                 </li></ul></div></div>
             </main><footer class="footer">

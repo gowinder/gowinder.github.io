@@ -2,14 +2,16 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <sitemap>
-    <loc>https://gowinder.work/en/sitemap.xml</loc>
+    <loc>http://localhost:1313/zh-cn/sitemap.xml</loc>
+    
+      <lastmod>2024-03-16T17:16:15+08:00</lastmod>
     
   </sitemap>
   
   <sitemap>
-    <loc>https://gowinder.work/zh-cn/sitemap.xml</loc>
+    <loc>http://localhost:1313/en/sitemap.xml</loc>
     
-      <lastmod>2024-03-11T17:16:15+08:00</lastmod>
+      <lastmod>2019-08-02T11:04:49+08:00</lastmod>
     
   </sitemap>
   

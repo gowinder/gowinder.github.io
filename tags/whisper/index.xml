@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>whisper - 标签 - gowinder个人博客</title>
-        <link>https://gowinder.work/tags/whisper/</link>
-        <description>whisper - 标签 - gowinder个人博客</description>
+        <title>Whisper - 标签 - gowinder个人博客</title>
+        <link>http://localhost:1313/tags/whisper/</link>
+        <description>Whisper - 标签 - gowinder个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>gowinder@hotmail.com (gowinder)</managingEditor>
-            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 06 Mar 2024 14:40:28 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/whisper/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 06 Mar 2024 14:40:28 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/whisper/" rel="self" type="application/rss+xml" /><item>
     <title>使用chatgpt帮我编写一个给视频文件生成中文字幕的脚本</title>
-    <link>https://gowinder.work/use-chatgpt-to-make-a-sub-generator-script/</link>
+    <link>http://localhost:1313/use-chatgpt-to-make-a-sub-generator-script/</link>
     <pubDate>Wed, 06 Mar 2024 14:40:28 &#43;0800</pubDate>
     <author>gowinder</author>
-    <guid>https://gowinder.work/use-chatgpt-to-make-a-sub-generator-script/</guid>
+    <guid>http://localhost:1313/use-chatgpt-to-make-a-sub-generator-script/</guid>
     <description><![CDATA[使用chatgpt帮我编写一个给视频文件生成中文字幕的脚本 背景 因为有些冷门的电影或者视频，很难找到中文字幕，但是又有故事情节，这时候就需要自]]></description>
 </item>
 </channel>

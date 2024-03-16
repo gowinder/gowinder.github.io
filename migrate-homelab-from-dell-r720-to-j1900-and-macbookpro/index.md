@@ -46,28 +46,20 @@
 默认`swap`只有`512M`, 于是准备用`swapon`等命令创建几个G的`swap`分区, 结果发现`root`分区不够了,因为我一开始就是测试下, 所以在`蜗牛`上内置的`sata`接了一个`120G`的`ssd`, 用来做`root`分区, 但是`120G`的`ssd`太小了, 光是`lxc`的硬盘就占了`80G`, 现在没有去买大的`sata`接口的`ssd`了,就先将就,后面直接用大的`ssd`, 用`clonezilla`替换. 
 
 先把`lxc`的硬盘迁移到机械硬盘组的`zpool`上去,慢一点其实无所谓,都是后台服务,不需要太快的`io`读写. 然后用`swapon`加了`4G`空间,现在好多了:
-
 ![alt text](j1900-htop.png)
-
 占用`cpu`最多的是`baidupan`的服务,其实什么也没有下载,截图的时候. 
 可以看到`qbittorrent`确实占了很多内存,因为任务太多了.
-
 ![alt text](qbittorrent-status.png)
-
 几百个,能不多吗.
 
 ### `j1900` 解码能力
 
 `j1900`毕竟快10年了,好多解码不支持. 对比`n100` 解码:
-
 ![alt text](j1900-n100-decode.png)
-
 特别是现在下载的都是`4k HDR`的视频,大多是`h.256`, `HEVC`编码的,都不支持,就做不了转码,好多客户端使用`jellyfin`就看不了`4k`的视频.
 
 于是我想了一个办法,我的`MacbookPro`不是在家里吗, `M1Max`应该可以解码大部分了吧:
-
 ![alt text](m1max-n100-decode.png)
-
 除了`AV1`, 基本都可以了,于是在`MacbookPro`上安装`jellyfin`, 这个时候又出了两个问题:
 
 1. `jellyfin`在`m1 mac`上,运行一段时间,他的服务端就卡死了,原因不明,搜索了下`github`上的`issue`, 也有人提了这样的问题,但是没有解决.

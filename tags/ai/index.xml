@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>ai - 标签 - gowinder个人博客</title>
-        <link>https://gowinder.work/tags/ai/</link>
-        <description>ai - 标签 - gowinder个人博客</description>
+        <title>Ai - 标签 - gowinder个人博客</title>
+        <link>http://localhost:1313/tags/ai/</link>
+        <description>Ai - 标签 - gowinder个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>gowinder@hotmail.com (gowinder)</managingEditor>
-            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 23 Apr 2023 14:13:38 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/ai/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 23 Apr 2023 14:13:38 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/ai/" rel="self" type="application/rss+xml" /><item>
     <title>部署本地 Stable Diffusion运行环境</title>
-    <link>https://gowinder.work/create-local-stable-diffusion-env/</link>
+    <link>http://localhost:1313/create-local-stable-diffusion-env/</link>
     <pubDate>Sun, 23 Apr 2023 14:13:38 &#43;0800</pubDate>
     <author>gowinder</author>
-    <guid>https://gowinder.work/create-local-stable-diffusion-env/</guid>
+    <guid>http://localhost:1313/create-local-stable-diffusion-env/</guid>
     <description><![CDATA[部署本地 Stable Diffusion运行环境 最近 midjourney 比较火，不过开始收费了，10刀一个月，消费不起，换成开源的Stable Diffusion来往，可以]]></description>
 </item>
 </channel>

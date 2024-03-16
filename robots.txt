@@ -61,4 +61,4 @@ Disallow: /
 User-agent: ZoominfoBot
 Disallow: /
 
-Sitemap: https://gowinder.work/en/sitemap.xml
+Sitemap: http://localhost:1313/sitemap.xml

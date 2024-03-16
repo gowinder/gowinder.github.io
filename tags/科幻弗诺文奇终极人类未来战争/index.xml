@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>科幻，弗诺文奇，终极人类，未来战争 - 标签 - gowinder个人博客</title>
-        <link>https://gowinder.work/tags/%E7%A7%91%E5%B9%BB%E5%BC%97%E8%AF%BA%E6%96%87%E5%A5%87%E7%BB%88%E6%9E%81%E4%BA%BA%E7%B1%BB%E6%9C%AA%E6%9D%A5%E6%88%98%E4%BA%89/</link>
+        <link>http://localhost:1313/tags/%E7%A7%91%E5%B9%BB%E5%BC%97%E8%AF%BA%E6%96%87%E5%A5%87%E7%BB%88%E6%9E%81%E4%BA%BA%E7%B1%BB%E6%9C%AA%E6%9D%A5%E6%88%98%E4%BA%89/</link>
         <description>科幻，弗诺文奇，终极人类，未来战争 - 标签 - gowinder个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>gowinder@hotmail.com (gowinder)</managingEditor>
-            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 03 Oct 2010 12:12:51 &#43;0000</lastBuildDate><atom:link href="https://gowinder.work/tags/%E7%A7%91%E5%B9%BB%E5%BC%97%E8%AF%BA%E6%96%87%E5%A5%87%E7%BB%88%E6%9E%81%E4%BA%BA%E7%B1%BB%E6%9C%AA%E6%9D%A5%E6%88%98%E4%BA%89/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 03 Oct 2010 12:12:51 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/tags/%E7%A7%91%E5%B9%BB%E5%BC%97%E8%AF%BA%E6%96%87%E5%A5%87%E7%BB%88%E6%9E%81%E4%BA%BA%E7%B1%BB%E6%9C%AA%E6%9D%A5%E6%88%98%E4%BA%89/" rel="self" type="application/rss+xml" /><item>
     <title>书评：实时放逐</title>
-    <link>https://gowinder.work/%E4%B9%A6%E8%AF%84%E5%AE%9E%E6%97%B6%E6%94%BE%E9%80%90/</link>
+    <link>http://localhost:1313/%E4%B9%A6%E8%AF%84%E5%AE%9E%E6%97%B6%E6%94%BE%E9%80%90/</link>
     <pubDate>Sun, 03 Oct 2010 12:12:51 &#43;0000</pubDate>
     <author>gowinder</author>
-    <guid>https://gowinder.work/%E4%B9%A6%E8%AF%84%E5%AE%9E%E6%97%B6%E6%94%BE%E9%80%90/</guid>
+    <guid>http://localhost:1313/%E4%B9%A6%E8%AF%84%E5%AE%9E%E6%97%B6%E6%94%BE%E9%80%90/</guid>
     <description><![CDATA[http://book.douban.com/review/3801851/ “实时放逐”明显是“为和平而战”的继集啦。 虽然方式不一样，实时很像是侦破小说，不过我觉得描述方式没有太大的区别。 文奇的小说，总是在前期要花]]></description>
 </item>
 </channel>

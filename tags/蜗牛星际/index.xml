@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>蜗牛星际 - 标签 - gowinder个人博客</title>
-        <link>https://gowinder.work/tags/%E8%9C%97%E7%89%9B%E6%98%9F%E9%99%85/</link>
+        <link>http://localhost:1313/tags/%E8%9C%97%E7%89%9B%E6%98%9F%E9%99%85/</link>
         <description>蜗牛星际 - 标签 - gowinder个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>gowinder@hotmail.com (gowinder)</managingEditor>
-            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 11 Mar 2024 17:16:15 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/%E8%9C%97%E7%89%9B%E6%98%9F%E9%99%85/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 11 Mar 2024 17:16:15 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/%E8%9C%97%E7%89%9B%E6%98%9F%E9%99%85/" rel="self" type="application/rss+xml" /><item>
     <title>将家庭服务器从DELL R720迁移到蜗牛星际&#43;MacbookPro</title>
-    <link>https://gowinder.work/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro/</link>
+    <link>http://localhost:1313/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro/</link>
     <pubDate>Mon, 11 Mar 2024 17:16:15 &#43;0800</pubDate>
     <author>gowinder</author>
-    <guid>https://gowinder.work/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro/</guid>
+    <guid>http://localhost:1313/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro/</guid>
     <description><![CDATA[将家庭服务器从DELL R720迁移到蜗牛星际+MacbookPro 前几年网HomeLab, 买了一台二手Dell R720机架服务器, 用来做家庭]]></description>
 </item>
 </channel>

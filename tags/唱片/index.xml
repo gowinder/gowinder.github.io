@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>唱片 - 标签 - gowinder个人博客</title>
-        <link>https://gowinder.work/tags/%E5%94%B1%E7%89%87/</link>
+        <link>http://localhost:1313/tags/%E5%94%B1%E7%89%87/</link>
         <description>唱片 - 标签 - gowinder个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>gowinder@hotmail.com (gowinder)</managingEditor>
-            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 18 Oct 2008 14:31:00 &#43;0000</lastBuildDate><atom:link href="https://gowinder.work/tags/%E5%94%B1%E7%89%87/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 18 Oct 2008 14:31:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/tags/%E5%94%B1%E7%89%87/" rel="self" type="application/rss+xml" /><item>
     <title>CD 肥妈正传</title>
-    <link>https://gowinder.work/cd-%E8%82%A5%E5%A6%88%E6%AD%A3%E4%BC%A0/</link>
+    <link>http://localhost:1313/cd-%E8%82%A5%E5%A6%88%E6%AD%A3%E4%BC%A0/</link>
     <pubDate>Sat, 18 Oct 2008 14:31:00 &#43;0000</pubDate>
     <author>gowinder</author>
-    <guid>https://gowinder.work/cd-%E8%82%A5%E5%A6%88%E6%AD%A3%E4%BC%A0/</guid>
+    <guid>http://localhost:1313/cd-%E8%82%A5%E5%A6%88%E6%AD%A3%E4%BC%A0/</guid>
     <description><![CDATA[以前总是下载APE,自己克碟子,这次不同了,偶然的机会听到了一首&quot;海上花&quot;,于是毫不犹豫的买了一张! 歌手玛丽亚,说实话,]]></description>
 </item>
 </channel>

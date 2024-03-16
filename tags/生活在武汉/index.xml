@@ -1,23 +1,23 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>生活在武汉 - 标签 - gowinder个人博客</title>
-        <link>https://gowinder.work/tags/%E7%94%9F%E6%B4%BB%E5%9C%A8%E6%AD%A6%E6%B1%89/</link>
+        <link>http://localhost:1313/tags/%E7%94%9F%E6%B4%BB%E5%9C%A8%E6%AD%A6%E6%B1%89/</link>
         <description>生活在武汉 - 标签 - gowinder个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>gowinder@hotmail.com (gowinder)</managingEditor>
-            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 03 Sep 2008 10:30:00 &#43;0000</lastBuildDate><atom:link href="https://gowinder.work/tags/%E7%94%9F%E6%B4%BB%E5%9C%A8%E6%AD%A6%E6%B1%89/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 03 Sep 2008 10:30:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/tags/%E7%94%9F%E6%B4%BB%E5%9C%A8%E6%AD%A6%E6%B1%89/" rel="self" type="application/rss+xml" /><item>
     <title>我的多普达手机被偷了,郁闷~!</title>
-    <link>https://gowinder.work/%E6%88%91%E7%9A%84%E5%A4%9A%E6%99%AE%E8%BE%BE%E6%89%8B%E6%9C%BA%E8%A2%AB%E5%81%B7%E4%BA%86%E9%83%81%E9%97%B7/</link>
+    <link>http://localhost:1313/%E6%88%91%E7%9A%84%E5%A4%9A%E6%99%AE%E8%BE%BE%E6%89%8B%E6%9C%BA%E8%A2%AB%E5%81%B7%E4%BA%86%E9%83%81%E9%97%B7/</link>
     <pubDate>Wed, 03 Sep 2008 10:30:00 &#43;0000</pubDate>
     <author>gowinder</author>
-    <guid>https://gowinder.work/%E6%88%91%E7%9A%84%E5%A4%9A%E6%99%AE%E8%BE%BE%E6%89%8B%E6%9C%BA%E8%A2%AB%E5%81%B7%E4%BA%86%E9%83%81%E9%97%B7/</guid>
+    <guid>http://localhost:1313/%E6%88%91%E7%9A%84%E5%A4%9A%E6%99%AE%E8%BE%BE%E6%89%8B%E6%9C%BA%E8%A2%AB%E5%81%B7%E4%BA%86%E9%83%81%E9%97%B7/</guid>
     <description><![CDATA[昨天在新华路换527时被偷了,哎,分期才付了1期,还有23期,哎! 都怪太困了,一心想到上车抢位置,前面那个人那明显是为后面的人挡着的,我还一]]></description>
 </item>
 <item>
     <title>武汉的交通,已经成为城市发展的瓶颈!</title>
-    <link>https://gowinder.work/%E6%AD%A6%E6%B1%89%E7%9A%84%E4%BA%A4%E9%80%9A%E5%B7%B2%E7%BB%8F%E6%88%90%E4%B8%BA%E5%9F%8E%E5%B8%82%E5%8F%91%E5%B1%95%E7%9A%84%E7%93%B6%E9%A2%88/</link>
+    <link>http://localhost:1313/%E6%AD%A6%E6%B1%89%E7%9A%84%E4%BA%A4%E9%80%9A%E5%B7%B2%E7%BB%8F%E6%88%90%E4%B8%BA%E5%9F%8E%E5%B8%82%E5%8F%91%E5%B1%95%E7%9A%84%E7%93%B6%E9%A2%88/</link>
     <pubDate>Wed, 06 Aug 2008 11:02:00 &#43;0000</pubDate>
     <author>gowinder</author>
-    <guid>https://gowinder.work/%E6%AD%A6%E6%B1%89%E7%9A%84%E4%BA%A4%E9%80%9A%E5%B7%B2%E7%BB%8F%E6%88%90%E4%B8%BA%E5%9F%8E%E5%B8%82%E5%8F%91%E5%B1%95%E7%9A%84%E7%93%B6%E9%A2%88/</guid>
+    <guid>http://localhost:1313/%E6%AD%A6%E6%B1%89%E7%9A%84%E4%BA%A4%E9%80%9A%E5%B7%B2%E7%BB%8F%E6%88%90%E4%B8%BA%E5%9F%8E%E5%B8%82%E5%8F%91%E5%B1%95%E7%9A%84%E7%93%B6%E9%A2%88/</guid>
     <description><![CDATA[昨天同事告诉我一个不幸的消息,常青路要封路啦,一封就是52天,那边80W人,全部会从我每天经过的姑嫂树路经过. 晕死哦,本来每天从汉口到武昌上]]></description>
 </item>
 </channel>

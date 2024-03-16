@@ -1,87 +1,87 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Tags - 标签 - gowinder个人博客</title>
-        <link>https://gowinder.work/tags/</link>
+        <link>http://localhost:1313/tags/</link>
         <description>Tags - 标签 - gowinder个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>gowinder@hotmail.com (gowinder)</managingEditor>
-            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 11 Mar 2024 17:16:15 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/" rel="self" type="application/rss+xml" /><item>
-    <title>dell</title>
-    <link>https://gowinder.work/tags/dell/</link>
+            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 11 Mar 2024 17:16:15 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>Dell</title>
+    <link>http://localhost:1313/tags/dell/</link>
     <pubDate>Mon, 11 Mar 2024 17:16:15 &#43;0800</pubDate>
     <author>gowinder</author>
-    <guid>https://gowinder.work/tags/dell/</guid>
+    <guid>http://localhost:1313/tags/dell/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>homeserver</title>
-    <link>https://gowinder.work/tags/homeserver/</link>
+    <title>Homeserver</title>
+    <link>http://localhost:1313/tags/homeserver/</link>
     <pubDate>Mon, 11 Mar 2024 17:16:15 &#43;0800</pubDate>
     <author>gowinder</author>
-    <guid>https://gowinder.work/tags/homeserver/</guid>
+    <guid>http://localhost:1313/tags/homeserver/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>MacbookPro</title>
-    <link>https://gowinder.work/tags/macbookpro/</link>
+    <link>http://localhost:1313/tags/macbookpro/</link>
     <pubDate>Mon, 11 Mar 2024 17:16:15 &#43;0800</pubDate>
     <author>gowinder</author>
-    <guid>https://gowinder.work/tags/macbookpro/</guid>
+    <guid>http://localhost:1313/tags/macbookpro/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>pve</title>
-    <link>https://gowinder.work/tags/pve/</link>
+    <title>Pve</title>
+    <link>http://localhost:1313/tags/pve/</link>
     <pubDate>Mon, 11 Mar 2024 17:16:15 &#43;0800</pubDate>
     <author>gowinder</author>
-    <guid>https://gowinder.work/tags/pve/</guid>
+    <guid>http://localhost:1313/tags/pve/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>r720</title>
-    <link>https://gowinder.work/tags/r720/</link>
+    <title>R720</title>
+    <link>http://localhost:1313/tags/r720/</link>
     <pubDate>Mon, 11 Mar 2024 17:16:15 &#43;0800</pubDate>
     <author>gowinder</author>
-    <guid>https://gowinder.work/tags/r720/</guid>
+    <guid>http://localhost:1313/tags/r720/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>蜗牛星际</title>
-    <link>https://gowinder.work/tags/%E8%9C%97%E7%89%9B%E6%98%9F%E9%99%85/</link>
+    <link>http://localhost:1313/tags/%E8%9C%97%E7%89%9B%E6%98%9F%E9%99%85/</link>
     <pubDate>Mon, 11 Mar 2024 17:16:15 &#43;0800</pubDate>
     <author>gowinder</author>
-    <guid>https://gowinder.work/tags/%E8%9C%97%E7%89%9B%E6%98%9F%E9%99%85/</guid>
+    <guid>http://localhost:1313/tags/%E8%9C%97%E7%89%9B%E6%98%9F%E9%99%85/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>chatgpt</title>
-    <link>https://gowinder.work/tags/chatgpt/</link>
+    <title>Chatgpt</title>
+    <link>http://localhost:1313/tags/chatgpt/</link>
     <pubDate>Wed, 06 Mar 2024 14:40:28 &#43;0800</pubDate>
     <author>gowinder</author>
-    <guid>https://gowinder.work/tags/chatgpt/</guid>
+    <guid>http://localhost:1313/tags/chatgpt/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>chatgpt-subtitle-translator</title>
-    <link>https://gowinder.work/tags/chatgpt-subtitle-translator/</link>
+    <title>Chatgpt-Subtitle-Translator</title>
+    <link>http://localhost:1313/tags/chatgpt-subtitle-translator/</link>
     <pubDate>Wed, 06 Mar 2024 14:40:28 &#43;0800</pubDate>
     <author>gowinder</author>
-    <guid>https://gowinder.work/tags/chatgpt-subtitle-translator/</guid>
+    <guid>http://localhost:1313/tags/chatgpt-subtitle-translator/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>ffmpeg</title>
-    <link>https://gowinder.work/tags/ffmpeg/</link>
+    <title>Ffmpeg</title>
+    <link>http://localhost:1313/tags/ffmpeg/</link>
     <pubDate>Wed, 06 Mar 2024 14:40:28 &#43;0800</pubDate>
     <author>gowinder</author>
-    <guid>https://gowinder.work/tags/ffmpeg/</guid>
+    <guid>http://localhost:1313/tags/ffmpeg/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>openai</title>
-    <link>https://gowinder.work/tags/openai/</link>
+    <title>Openai</title>
+    <link>http://localhost:1313/tags/openai/</link>
     <pubDate>Wed, 06 Mar 2024 14:40:28 &#43;0800</pubDate>
     <author>gowinder</author>
-    <guid>https://gowinder.work/tags/openai/</guid>
+    <guid>http://localhost:1313/tags/openai/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Categories - 分类 - gowinder个人博客</title>
-        <link>http://localhost:1313/categories/</link>
+        <link>https://gowinder.work/categories/</link>
         <description>Categories - 分类 - gowinder个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>gowinder@hotmail.com (gowinder)</managingEditor>
-            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><atom:link href="http://localhost:1313/categories/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><atom:link href="https://gowinder.work/categories/" rel="self" type="application/rss+xml" /><item>
     <title>文档</title>
-    <link>http://localhost:1313/categories/documentation/</link>
+    <link>https://gowinder.work/categories/documentation/</link>
     <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
     <author>gowinder</author>
-    <guid>http://localhost:1313/categories/documentation/</guid>
+    <guid>https://gowinder.work/categories/documentation/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

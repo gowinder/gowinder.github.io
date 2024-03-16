@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Websocketg - 标签 - gowinder个人博客</title>
-        <link>http://localhost:1313/tags/websocketg/</link>
+        <link>https://gowinder.work/tags/websocketg/</link>
         <description>Websocketg - 标签 - gowinder个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>gowinder@hotmail.com (gowinder)</managingEditor>
-            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 23 Feb 2023 16:09:08 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/websocketg/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 23 Feb 2023 16:09:08 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/websocketg/" rel="self" type="application/rss+xml" /><item>
     <title>nestjs整合websocketgateway和microservice</title>
-    <link>http://localhost:1313/use-microservce-in-websocketgateway-in-nestjs/</link>
+    <link>https://gowinder.work/use-microservce-in-websocketgateway-in-nestjs/</link>
     <pubDate>Thu, 23 Feb 2023 16:09:08 &#43;0800</pubDate>
     <author>gowinder</author>
-    <guid>http://localhost:1313/use-microservce-in-websocketgateway-in-nestjs/</guid>
+    <guid>https://gowinder.work/use-microservce-in-websocketgateway-in-nestjs/</guid>
     <description><![CDATA[nestjs整合websocketgateway和microservice 启因 使用WebsocketGateway做网关,接收客户端长连接后]]></description>
 </item>
 </channel>

@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Android 1.5 Cifs Smb WIDNOWS共享 - 标签 - gowinder个人博客</title>
-        <link>http://localhost:1313/tags/android-1.5-cifs-smb-widnows%E5%85%B1%E4%BA%AB/</link>
+        <link>https://gowinder.work/tags/android-1.5-cifs-smb-widnows%E5%85%B1%E4%BA%AB/</link>
         <description>Android 1.5 Cifs Smb WIDNOWS共享 - 标签 - gowinder个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>gowinder@hotmail.com (gowinder)</managingEditor>
-            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 27 Oct 2010 03:22:56 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/tags/android-1.5-cifs-smb-widnows%E5%85%B1%E4%BA%AB/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 27 Oct 2010 03:22:56 &#43;0000</lastBuildDate><atom:link href="https://gowinder.work/tags/android-1.5-cifs-smb-widnows%E5%85%B1%E4%BA%AB/" rel="self" type="application/rss+xml" /><item>
     <title>直接使用cifs.ko挂载WINDOWS 共享</title>
-    <link>http://localhost:1313/%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8cifs-ko%E6%8C%82%E8%BD%BDwindows-%E5%85%B1%E4%BA%AB/</link>
+    <link>https://gowinder.work/%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8cifs-ko%E6%8C%82%E8%BD%BDwindows-%E5%85%B1%E4%BA%AB/</link>
     <pubDate>Wed, 27 Oct 2010 03:22:56 &#43;0000</pubDate>
     <author>gowinder</author>
-    <guid>http://localhost:1313/%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8cifs-ko%E6%8C%82%E8%BD%BDwindows-%E5%85%B1%E4%BA%AB/</guid>
+    <guid>https://gowinder.work/%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8cifs-ko%E6%8C%82%E8%BD%BDwindows-%E5%85%B1%E4%BA%AB/</guid>
     <description><![CDATA[在网上找到的,http://myapad.wordpress.com/author/xaueious/ 这个家伙,用爱可视的内核源代码编了一个]]></description>
 </item>
 </channel>

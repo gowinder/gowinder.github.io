@@ -1,92 +1,90 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>gowinder个人博客</title>
-        <link>http://localhost:1313/</link>
+        <link>https://gowinder.work/</link>
         <description>记录生活,编码,折腾,杂七杂八</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>gowinder@hotmail.com (gowinder)</managingEditor>
-            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 16 Mar 2024 17:16:15 &#43;0800</lastBuildDate>
-            <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 16 Mar 2024 10:16:15 &#43;0800</lastBuildDate>
+            <atom:link href="https://gowinder.work/index.xml" rel="self" type="application/rss+xml" />
         <item>
     <title>将家庭服务器从DELL R720迁移到蜗牛星际&#43;MacbookPro</title>
-    <link>http://localhost:1313/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro/</link>
+    <link>https://gowinder.work/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro/</link>
     <pubDate>Mon, 11 Mar 2024 17:16:15 &#43;0800</pubDate>
     <author>gowinder</author>
-    <guid>http://localhost:1313/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro/</guid>
+    <guid>https://gowinder.work/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro/</guid>
     <description><![CDATA[将家庭服务器从DELL R720迁移到蜗牛星际+MacbookPro 前几年网HomeLab, 买了一台二手Dell R720机架服务器, 用来做家庭]]></description>
 </item>
 <item>
     <title>使用chatgpt帮我编写一个给视频文件生成中文字幕的脚本</title>
-    <link>http://localhost:1313/use-chatgpt-to-make-a-sub-generator-script/</link>
+    <link>https://gowinder.work/use-chatgpt-to-make-a-sub-generator-script/</link>
     <pubDate>Wed, 06 Mar 2024 14:40:28 &#43;0800</pubDate>
     <author>gowinder</author>
-    <guid>http://localhost:1313/use-chatgpt-to-make-a-sub-generator-script/</guid>
+    <guid>https://gowinder.work/use-chatgpt-to-make-a-sub-generator-script/</guid>
     <description><![CDATA[使用chatgpt帮我编写一个给视频文件生成中文字幕的脚本 背景 因为有些冷门的电影或者视频，很难找到中文字幕，但是又有故事情节，这时候就需要自]]></description>
 </item>
 <item>
-    <title>在MackbookPro m1max 上运行 ComfyUI</title>
-    <link>http://localhost:1313/run-comfyui-on-macbookpro-m1max/</link>
-    <pubDate>Sun, 11 Feb 2024 11:30:29 &#43;0800</pubDate>
-    <author>gowinder</author>
-    <guid>http://localhost:1313/run-comfyui-on-macbookpro-m1max/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>官翻macbookpro 16 m1max 64g选购日志</title>
-    <link>http://localhost:1313/macbookpro-16-m1max-64g-refurbish-buying-log/</link>
-    <pubDate>Sun, 11 Feb 2024 11:29:09 &#43;0800</pubDate>
-    <author>gowinder</author>
-    <guid>http://localhost:1313/macbookpro-16-m1max-64g-refurbish-buying-log/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="/image.jpg" referrerpolicy="no-referrer">
-            </div>官翻macbookpro 16 m1max 64g选购日志 换`apple silicon的原因: // TODO 黑苹果图片 黑苹果麻烦 博通wifi不能免驱动 不能运行ios应]]></description>
-</item>
-<item>
     <title>部署本地 Stable Diffusion运行环境</title>
-    <link>http://localhost:1313/create-local-stable-diffusion-env/</link>
+    <link>https://gowinder.work/create-local-stable-diffusion-env/</link>
     <pubDate>Sun, 23 Apr 2023 14:13:38 &#43;0800</pubDate>
     <author>gowinder</author>
-    <guid>http://localhost:1313/create-local-stable-diffusion-env/</guid>
+    <guid>https://gowinder.work/create-local-stable-diffusion-env/</guid>
     <description><![CDATA[部署本地 Stable Diffusion运行环境 最近 midjourney 比较火，不过开始收费了，10刀一个月，消费不起，换成开源的Stable Diffusion来往，可以]]></description>
 </item>
 <item>
     <title>解决React开发模式服务端Cors问题</title>
-    <link>http://localhost:1313/react-scripts-cors/</link>
+    <link>https://gowinder.work/react-scripts-cors/</link>
     <pubDate>Tue, 28 Mar 2023 11:01:11 &#43;0800</pubDate>
     <author>gowinder</author>
-    <guid>http://localhost:1313/react-scripts-cors/</guid>
+    <guid>https://gowinder.work/react-scripts-cors/</guid>
     <description><![CDATA[&ldquo;解决React开发模式服务端Cors问题 启因 最近在做openai的后端代理服务,一个后台池账号池,缓冲前端过来的openai的]]></description>
 </item>
 <item>
     <title>Class Constructor TypeOrmCrudService Cannot Be Invoked Without &#39;New&#39;</title>
-    <link>http://localhost:1313/class-constructor-typeormcrudservice-cannot-be-invoked-without-new/</link>
+    <link>https://gowinder.work/class-constructor-typeormcrudservice-cannot-be-invoked-without-new/</link>
     <pubDate>Tue, 28 Feb 2023 11:08:03 &#43;0800</pubDate>
     <author>gowinder</author>
-    <guid>http://localhost:1313/class-constructor-typeormcrudservice-cannot-be-invoked-without-new/</guid>
+    <guid>https://gowinder.work/class-constructor-typeormcrudservice-cannot-be-invoked-without-new/</guid>
     <description><![CDATA[Class Constructor TypeOrmCrudService Cannot Be Invoked Without &lsquo;New&rsquo; 错误 启因 最近开发一个chatgpt网关项目,使用nestjs,其中用nestjsx-crud来提高curd开发效率,有以下代]]></description>
 </item>
 <item>
     <title>在Orange Pi Zero上安装pihole后,webui无法启动问题</title>
-    <link>http://localhost:1313/pihile-lighttp-cannot-start-in-orange-pi-zero/</link>
+    <link>https://gowinder.work/pihile-lighttp-cannot-start-in-orange-pi-zero/</link>
     <pubDate>Mon, 27 Feb 2023 14:05:41 &#43;0800</pubDate>
     <author>gowinder</author>
-    <guid>http://localhost:1313/pihile-lighttp-cannot-start-in-orange-pi-zero/</guid>
+    <guid>https://gowinder.work/pihile-lighttp-cannot-start-in-orange-pi-zero/</guid>
     <description><![CDATA[在Orange Pi Zero上安装pihole后,webui无法启动问题 启因 最新在空闲Orange Pi Zero上安装了Pihole用来做家庭主DN]]></description>
 </item>
 <item>
     <title>nestjs整合websocketgateway和microservice</title>
-    <link>http://localhost:1313/use-microservce-in-websocketgateway-in-nestjs/</link>
+    <link>https://gowinder.work/use-microservce-in-websocketgateway-in-nestjs/</link>
     <pubDate>Thu, 23 Feb 2023 16:09:08 &#43;0800</pubDate>
     <author>gowinder</author>
-    <guid>http://localhost:1313/use-microservce-in-websocketgateway-in-nestjs/</guid>
+    <guid>https://gowinder.work/use-microservce-in-websocketgateway-in-nestjs/</guid>
     <description><![CDATA[nestjs整合websocketgateway和microservice 启因 使用WebsocketGateway做网关,接收客户端长连接后]]></description>
 </item>
 <item>
     <title>proxmox ve 增加自动trim的cron job</title>
-    <link>http://localhost:1313/proxmox-ve-%E5%A2%9E%E5%8A%A0%E8%87%AA%E5%8A%A8trim%E7%9A%84cron-job/</link>
+    <link>https://gowinder.work/proxmox-ve-%E5%A2%9E%E5%8A%A0%E8%87%AA%E5%8A%A8trim%E7%9A%84cron-job/</link>
     <pubDate>Fri, 17 Feb 2023 15:12:05 &#43;0800</pubDate>
     <author>gowinder</author>
-    <guid>http://localhost:1313/proxmox-ve-%E5%A2%9E%E5%8A%A0%E8%87%AA%E5%8A%A8trim%E7%9A%84cron-job/</guid>
+    <guid>https://gowinder.work/proxmox-ve-%E5%A2%9E%E5%8A%A0%E8%87%AA%E5%8A%A8trim%E7%9A%84cron-job/</guid>
     <description><![CDATA[proxmox ve 增加自动trim的cron job 检查状态 1 2 3 4 5 6 7 8 sudo systemctl status fstrim.timer # output: ● fstrim.timer - Discard unused blocks once a week Loaded: loaded (/lib/systemd/system/fstrim.timer; disabled; vendor preset: enabled) Active: inactive (dead) Trigger: n/a Triggers: ● fstrim.service Docs: man:fstrim 开启服务 1 sudo systemctl start fstrim.timer 检]]></description>
+</item>
+<item>
+    <title>proxmox ve 中扩展pvm-local空间</title>
+    <link>https://gowinder.work/proxmox-ve-%E4%B8%AD%E6%89%A9%E5%B1%95pvm-local%E7%A9%BA%E9%97%B4/</link>
+    <pubDate>Fri, 17 Feb 2023 14:16:05 &#43;0800</pubDate>
+    <author>gowinder</author>
+    <guid>https://gowinder.work/proxmox-ve-%E4%B8%AD%E6%89%A9%E5%B1%95pvm-local%E7%A9%BA%E9%97%B4/</guid>
+    <description><![CDATA[proxmox ve 中扩展pvm-local空间 原因 之前在DIY E3服务器上安装的proxmox ve,用的一张120G的SSD,当时年纪轻,把pve的逻辑分]]></description>
+</item>
+<item>
+    <title>proxmox ve 中nvme电源管理问题导致的磁盘性能急剧下降问题</title>
+    <link>https://gowinder.work/proxmox-ve-%E4%B8%ADnvme%E7%94%B5%E6%BA%90%E7%AE%A1%E7%90%86%E9%97%AE%E9%A2%98%E5%AF%BC%E8%87%B4%E7%9A%84%E7%A3%81%E7%9B%98%E6%80%A7%E8%83%BD%E6%80%A5%E5%89%A7%E4%B8%8B%E9%99%8D%E9%97%AE%E9%A2%98/</link>
+    <pubDate>Fri, 17 Feb 2023 10:25:05 &#43;0800</pubDate>
+    <author>gowinder</author>
+    <guid>https://gowinder.work/proxmox-ve-%E4%B8%ADnvme%E7%94%B5%E6%BA%90%E7%AE%A1%E7%90%86%E9%97%AE%E9%A2%98%E5%AF%BC%E8%87%B4%E7%9A%84%E7%A3%81%E7%9B%98%E6%80%A7%E8%83%BD%E6%80%A5%E5%89%A7%E4%B8%8B%E9%99%8D%E9%97%AE%E9%A2%98/</guid>
+    <description><![CDATA[proxmox ve 中nvme电源管理问题导致的磁盘性能急剧下降问题 这几天部署了proxmox ve双节点集群,正常用没什么问题,但是过了一天,dell r72]]></description>
 </item>
 </channel>
 </rss>

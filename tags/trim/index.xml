@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Trim - 标签 - gowinder个人博客</title>
-        <link>http://localhost:1313/tags/trim/</link>
+        <link>https://gowinder.work/tags/trim/</link>
         <description>Trim - 标签 - gowinder个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>gowinder@hotmail.com (gowinder)</managingEditor>
-            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 17 Feb 2023 15:12:05 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/trim/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 17 Feb 2023 15:12:05 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/trim/" rel="self" type="application/rss+xml" /><item>
     <title>proxmox ve 增加自动trim的cron job</title>
-    <link>http://localhost:1313/proxmox-ve-%E5%A2%9E%E5%8A%A0%E8%87%AA%E5%8A%A8trim%E7%9A%84cron-job/</link>
+    <link>https://gowinder.work/proxmox-ve-%E5%A2%9E%E5%8A%A0%E8%87%AA%E5%8A%A8trim%E7%9A%84cron-job/</link>
     <pubDate>Fri, 17 Feb 2023 15:12:05 &#43;0800</pubDate>
     <author>gowinder</author>
-    <guid>http://localhost:1313/proxmox-ve-%E5%A2%9E%E5%8A%A0%E8%87%AA%E5%8A%A8trim%E7%9A%84cron-job/</guid>
+    <guid>https://gowinder.work/proxmox-ve-%E5%A2%9E%E5%8A%A0%E8%87%AA%E5%8A%A8trim%E7%9A%84cron-job/</guid>
     <description><![CDATA[proxmox ve 增加自动trim的cron job 检查状态 1 2 3 4 5 6 7 8 sudo systemctl status fstrim.timer # output: ● fstrim.timer - Discard unused blocks once a week Loaded: loaded (/lib/systemd/system/fstrim.timer; disabled; vendor preset: enabled) Active: inactive (dead) Trigger: n/a Triggers: ● fstrim.service Docs: man:fstrim 开启服务 1 sudo systemctl start fstrim.timer 检]]></description>
 </item>
 </channel>

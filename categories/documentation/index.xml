@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>文档 - 分类 - gowinder个人博客</title>
-        <link>http://localhost:1313/categories/documentation/</link>
+        <link>https://gowinder.work/categories/documentation/</link>
         <description>文档 - 分类 - gowinder个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>gowinder@hotmail.com (gowinder)</managingEditor>
-            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><atom:link href="http://localhost:1313/categories/documentation/" rel="self" type="application/rss+xml" /></channel>
+            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><atom:link href="https://gowinder.work/categories/documentation/" rel="self" type="application/rss+xml" /></channel>
 </rss>

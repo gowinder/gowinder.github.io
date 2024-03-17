@@ -5,6 +5,14 @@
         <description>所有文章 | gowinder个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>gowinder@hotmail.com (gowinder)</managingEditor>
             <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 16 Mar 2024 10:16:15 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>一个youtube app使用quic引起的问题</title>
+    <link>https://gowinder.work/sing-box-youtube-app-quic-issue/</link>
+    <pubDate>Sat, 16 Mar 2024 10:16:15 &#43;0800</pubDate>
+    <author>gowinder</author>
+    <guid>https://gowinder.work/sing-box-youtube-app-quic-issue/</guid>
+    <description><![CDATA[一个youtube app使用quic引起的问题 问题描述 家里是r2s做旁路由,使用的是sing-box的tun模式, 之前一直用的是cn2 gia]]></description>
+</item>
+<item>
     <title>将家庭服务器从DELL R720迁移到蜗牛星际&#43;MacbookPro</title>
     <link>https://gowinder.work/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro/</link>
     <pubDate>Mon, 11 Mar 2024 17:16:15 &#43;0800</pubDate>
@@ -75,14 +83,6 @@
     <author>gowinder</author>
     <guid>https://gowinder.work/proxmox-ve-%E4%B8%AD%E6%89%A9%E5%B1%95pvm-local%E7%A9%BA%E9%97%B4/</guid>
     <description><![CDATA[proxmox ve 中扩展pvm-local空间 原因 之前在DIY E3服务器上安装的proxmox ve,用的一张120G的SSD,当时年纪轻,把pve的逻辑分]]></description>
-</item>
-<item>
-    <title>proxmox ve 中nvme电源管理问题导致的磁盘性能急剧下降问题</title>
-    <link>https://gowinder.work/proxmox-ve-%E4%B8%ADnvme%E7%94%B5%E6%BA%90%E7%AE%A1%E7%90%86%E9%97%AE%E9%A2%98%E5%AF%BC%E8%87%B4%E7%9A%84%E7%A3%81%E7%9B%98%E6%80%A7%E8%83%BD%E6%80%A5%E5%89%A7%E4%B8%8B%E9%99%8D%E9%97%AE%E9%A2%98/</link>
-    <pubDate>Fri, 17 Feb 2023 10:25:05 &#43;0800</pubDate>
-    <author>gowinder</author>
-    <guid>https://gowinder.work/proxmox-ve-%E4%B8%ADnvme%E7%94%B5%E6%BA%90%E7%AE%A1%E7%90%86%E9%97%AE%E9%A2%98%E5%AF%BC%E8%87%B4%E7%9A%84%E7%A3%81%E7%9B%98%E6%80%A7%E8%83%BD%E6%80%A5%E5%89%A7%E4%B8%8B%E9%99%8D%E9%97%AE%E9%A2%98/</guid>
-    <description><![CDATA[proxmox ve 中nvme电源管理问题导致的磁盘性能急剧下降问题 这几天部署了proxmox ve双节点集群,正常用没什么问题,但是过了一天,dell r72]]></description>
 </item>
 </channel>
 </rss>

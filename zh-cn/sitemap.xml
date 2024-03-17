@@ -11,13 +11,12 @@
                     hreflang="zh-cn"
                     href="https://gowinder.work/"
                     /></url><url>
+            <loc>https://gowinder.work/tags/hysteria/</loc><lastmod>2024-03-16T10:16:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://gowinder.work/posts/</loc><lastmod>2024-03-16T10:16:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://gowinder.work/tags/dell/</loc><lastmod>2024-03-11T17:16:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://gowinder.work/tags/homeserver/</loc><lastmod>2024-03-11T17:16:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://gowinder.work/tags/macbookpro/</loc><lastmod>2024-03-11T17:16:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://gowinder.work/tags/pve/</loc><lastmod>2024-03-11T17:16:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://gowinder.work/tags/r720/</loc><lastmod>2024-03-11T17:16:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://gowinder.work/tags/</loc><lastmod>2024-03-11T17:16:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://gowinder.work/tags/quic/</loc><lastmod>2024-03-16T10:16:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://gowinder.work/tags/r2s/</loc><lastmod>2024-03-16T10:16:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://gowinder.work/tags/sing-box/</loc><lastmod>2024-03-16T10:16:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://gowinder.work/tags/</loc><lastmod>2024-03-16T10:16:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://gowinder.work/en/tags/"
@@ -26,6 +25,14 @@
                     hreflang="zh-cn"
                     href="https://gowinder.work/tags/"
                     /></url><url>
+            <loc>https://gowinder.work/tags/youtube/</loc><lastmod>2024-03-16T10:16:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://gowinder.work/tags/%E6%97%81%E8%B7%AF%E7%94%B1/</loc><lastmod>2024-03-16T10:16:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://gowinder.work/sing-box-youtube-app-quic-issue/</loc><lastmod>2024-03-16T10:16:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://gowinder.work/tags/dell/</loc><lastmod>2024-03-11T17:16:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://gowinder.work/tags/homeserver/</loc><lastmod>2024-03-11T17:16:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://gowinder.work/tags/macbookpro/</loc><lastmod>2024-03-11T17:16:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://gowinder.work/tags/pve/</loc><lastmod>2024-03-11T17:16:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://gowinder.work/tags/r720/</loc><lastmod>2024-03-11T17:16:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://gowinder.work/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro/</loc><lastmod>2024-03-11T17:16:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://gowinder.work/tags/%E8%9C%97%E7%89%9B%E6%98%9F%E9%99%85/</loc><lastmod>2024-03-11T17:16:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://gowinder.work/tags/chatgpt/</loc><lastmod>2024-03-06T14:40:28&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>

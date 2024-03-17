@@ -4,7 +4,55 @@
         <link>https://gowinder.work/tags/</link>
         <description>Tags - 标签 - gowinder个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>gowinder@hotmail.com (gowinder)</managingEditor>
-            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 11 Mar 2024 17:16:15 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 16 Mar 2024 10:16:15 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>Hysteria</title>
+    <link>https://gowinder.work/tags/hysteria/</link>
+    <pubDate>Sat, 16 Mar 2024 10:16:15 &#43;0800</pubDate>
+    <author>gowinder</author>
+    <guid>https://gowinder.work/tags/hysteria/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Quic</title>
+    <link>https://gowinder.work/tags/quic/</link>
+    <pubDate>Sat, 16 Mar 2024 10:16:15 &#43;0800</pubDate>
+    <author>gowinder</author>
+    <guid>https://gowinder.work/tags/quic/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>R2s</title>
+    <link>https://gowinder.work/tags/r2s/</link>
+    <pubDate>Sat, 16 Mar 2024 10:16:15 &#43;0800</pubDate>
+    <author>gowinder</author>
+    <guid>https://gowinder.work/tags/r2s/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Sing-Box</title>
+    <link>https://gowinder.work/tags/sing-box/</link>
+    <pubDate>Sat, 16 Mar 2024 10:16:15 &#43;0800</pubDate>
+    <author>gowinder</author>
+    <guid>https://gowinder.work/tags/sing-box/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Youtube</title>
+    <link>https://gowinder.work/tags/youtube/</link>
+    <pubDate>Sat, 16 Mar 2024 10:16:15 &#43;0800</pubDate>
+    <author>gowinder</author>
+    <guid>https://gowinder.work/tags/youtube/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>旁路由</title>
+    <link>https://gowinder.work/tags/%E6%97%81%E8%B7%AF%E7%94%B1/</link>
+    <pubDate>Sat, 16 Mar 2024 10:16:15 &#43;0800</pubDate>
+    <author>gowinder</author>
+    <guid>https://gowinder.work/tags/%E6%97%81%E8%B7%AF%E7%94%B1/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>Dell</title>
     <link>https://gowinder.work/tags/dell/</link>
     <pubDate>Mon, 11 Mar 2024 17:16:15 &#43;0800</pubDate>
@@ -34,54 +82,6 @@
     <pubDate>Mon, 11 Mar 2024 17:16:15 &#43;0800</pubDate>
     <author>gowinder</author>
     <guid>https://gowinder.work/tags/pve/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>R720</title>
-    <link>https://gowinder.work/tags/r720/</link>
-    <pubDate>Mon, 11 Mar 2024 17:16:15 &#43;0800</pubDate>
-    <author>gowinder</author>
-    <guid>https://gowinder.work/tags/r720/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>蜗牛星际</title>
-    <link>https://gowinder.work/tags/%E8%9C%97%E7%89%9B%E6%98%9F%E9%99%85/</link>
-    <pubDate>Mon, 11 Mar 2024 17:16:15 &#43;0800</pubDate>
-    <author>gowinder</author>
-    <guid>https://gowinder.work/tags/%E8%9C%97%E7%89%9B%E6%98%9F%E9%99%85/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Chatgpt</title>
-    <link>https://gowinder.work/tags/chatgpt/</link>
-    <pubDate>Wed, 06 Mar 2024 14:40:28 &#43;0800</pubDate>
-    <author>gowinder</author>
-    <guid>https://gowinder.work/tags/chatgpt/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Chatgpt-Subtitle-Translator</title>
-    <link>https://gowinder.work/tags/chatgpt-subtitle-translator/</link>
-    <pubDate>Wed, 06 Mar 2024 14:40:28 &#43;0800</pubDate>
-    <author>gowinder</author>
-    <guid>https://gowinder.work/tags/chatgpt-subtitle-translator/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Ffmpeg</title>
-    <link>https://gowinder.work/tags/ffmpeg/</link>
-    <pubDate>Wed, 06 Mar 2024 14:40:28 &#43;0800</pubDate>
-    <author>gowinder</author>
-    <guid>https://gowinder.work/tags/ffmpeg/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Openai</title>
-    <link>https://gowinder.work/tags/openai/</link>
-    <pubDate>Wed, 06 Mar 2024 14:40:28 &#43;0800</pubDate>
-    <author>gowinder</author>
-    <guid>https://gowinder.work/tags/openai/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

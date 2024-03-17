@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sing-Box on </title>
+    <link>http://localhost:1313/zh-cn/tags/sing-box/</link>
+    <description>Recent content in Sing-Box on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <managingEditor>gowinder@hotmail.com (gowinder)</managingEditor>
+    <webMaster>gowinder@hotmail.com (gowinder)</webMaster>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Sat, 16 Mar 2024 10:16:15 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/zh-cn/tags/sing-box/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>一个youtube app使用quic引起的问题</title>
+      <link>http://localhost:1313/zh-cn/sing-box-youtube-app-quic-issue/</link>
+      <pubDate>Sat, 16 Mar 2024 10:16:15 +0800</pubDate><author>gowinder@hotmail.com (gowinder)</author>
+      <guid>http://localhost:1313/zh-cn/sing-box-youtube-app-quic-issue/</guid>
+      <description>一个youtube app使用quic引起的问题 问题描述 家里是r2s做旁路由,使用的是sing-box的tun模式, 之前一直用的是cn2 gia</description>
+    </item>
+  </channel>
+</rss>

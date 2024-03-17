@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gowinder个人博客 on </title>
+    <link>http://localhost:1313/zh-cn/gowinder%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
+    <description>Recent content in Gowinder个人博客 on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <managingEditor>gowinder@hotmail.com (gowinder)</managingEditor>
+    <webMaster>gowinder@hotmail.com (gowinder)</webMaster>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <atom:link href="http://localhost:1313/zh-cn/gowinder%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

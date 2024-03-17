@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on </title>
+    <link>http://localhost:1313/zh-cn/tags/</link>
+    <description>Recent content in Tags on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <managingEditor>gowinder@hotmail.com (gowinder)</managingEditor>
+    <webMaster>gowinder@hotmail.com (gowinder)</webMaster>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Sat, 16 Mar 2024 10:16:15 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/zh-cn/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hysteria</title>
+      <link>http://localhost:1313/zh-cn/tags/hysteria/</link>
+      <pubDate>Sat, 16 Mar 2024 10:16:15 +0800</pubDate><author>gowinder@hotmail.com (gowinder)</author>
+      <guid>http://localhost:1313/zh-cn/tags/hysteria/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Quic</title>
+      <link>http://localhost:1313/zh-cn/tags/quic/</link>
+      <pubDate>Sat, 16 Mar 2024 10:16:15 +0800</pubDate><author>gowinder@hotmail.com (gowinder)</author>
+      <guid>http://localhost:1313/zh-cn/tags/quic/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>R2s</title>
+      <link>http://localhost:1313/zh-cn/tags/r2s/</link>
+      <pubDate>Sat, 16 Mar 2024 10:16:15 +0800</pubDate><author>gowinder@hotmail.com (gowinder)</author>
+      <guid>http://localhost:1313/zh-cn/tags/r2s/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sing-Box</title>
+      <link>http://localhost:1313/zh-cn/tags/sing-box/</link>
+      <pubDate>Sat, 16 Mar 2024 10:16:15 +0800</pubDate><author>gowinder@hotmail.com (gowinder)</author>
+      <guid>http://localhost:1313/zh-cn/tags/sing-box/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Youtube</title>
+      <link>http://localhost:1313/zh-cn/tags/youtube/</link>
+      <pubDate>Sat, 16 Mar 2024 10:16:15 +0800</pubDate><author>gowinder@hotmail.com (gowinder)</author>
+      <guid>http://localhost:1313/zh-cn/tags/youtube/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>旁路由</title>
+      <link>http://localhost:1313/zh-cn/tags/%E6%97%81%E8%B7%AF%E7%94%B1/</link>
+      <pubDate>Sat, 16 Mar 2024 10:16:15 +0800</pubDate><author>gowinder@hotmail.com (gowinder)</author>
+      <guid>http://localhost:1313/zh-cn/tags/%E6%97%81%E8%B7%AF%E7%94%B1/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

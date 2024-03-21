@@ -4,7 +4,7 @@
         <link>https://gowinder.work/en/</link>
         <description>记录生活,编码,折腾,杂七杂八</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>gowinder@hotmail.com (gowinder)</managingEditor>
-            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 02 Aug 2019 11:04:49 &#43;0800</lastBuildDate>
+            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
             <atom:link href="https://gowinder.work/en/index.xml" rel="self" type="application/rss+xml" />
         </channel>
 </rss>

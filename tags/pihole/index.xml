@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Pihole - 标签 - gowinder个人博客</title>
+        <title>pihole - 标签 - gowinder个人博客</title>
         <link>https://gowinder.work/tags/pihole/</link>
-        <description>Pihole - 标签 - gowinder个人博客</description>
+        <description>pihole - 标签 - gowinder个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>gowinder@hotmail.com (gowinder)</managingEditor>
             <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 27 Feb 2023 14:05:41 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/pihole/" rel="self" type="application/rss+xml" /><item>
     <title>在Orange Pi Zero上安装pihole后,webui无法启动问题</title>

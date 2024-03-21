@@ -1,10 +1,18 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Dell - 标签 - gowinder个人博客</title>
+        <title>dell - 标签 - gowinder个人博客</title>
         <link>https://gowinder.work/tags/dell/</link>
-        <description>Dell - 标签 - gowinder个人博客</description>
+        <description>dell - 标签 - gowinder个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>gowinder@hotmail.com (gowinder)</managingEditor>
-            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 11 Mar 2024 17:16:15 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/dell/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 21 Mar 2024 13:54:13 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/dell/" rel="self" type="application/rss+xml" /><item>
+    <title>将家庭服务器从DELL R720迁移到蜗牛星际&#43;MacbookPro 后续</title>
+    <link>https://gowinder.work/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/</link>
+    <pubDate>Thu, 21 Mar 2024 13:54:13 &#43;0800</pubDate>
+    <author>gowinder</author>
+    <guid>https://gowinder.work/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/</guid>
+    <description><![CDATA[将家庭服务器从DELL R720迁移到蜗牛星际+MacbookPro 后续 千兆网络断流问题 迁移已经完成了,试用了一段时间, 星际蜗牛功耗很低(相对]]></description>
+</item>
+<item>
     <title>将家庭服务器从DELL R720迁移到蜗牛星际&#43;MacbookPro</title>
     <link>https://gowinder.work/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro/</link>
     <pubDate>Mon, 11 Mar 2024 17:16:15 &#43;0800</pubDate>

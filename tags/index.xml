@@ -4,66 +4,18 @@
         <link>https://gowinder.work/tags/</link>
         <description>Tags - 标签 - gowinder个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>gowinder@hotmail.com (gowinder)</managingEditor>
-            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 16 Mar 2024 10:16:15 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/" rel="self" type="application/rss+xml" /><item>
-    <title>Hysteria</title>
-    <link>https://gowinder.work/tags/hysteria/</link>
-    <pubDate>Sat, 16 Mar 2024 10:16:15 &#43;0800</pubDate>
-    <author>gowinder</author>
-    <guid>https://gowinder.work/tags/hysteria/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Quic</title>
-    <link>https://gowinder.work/tags/quic/</link>
-    <pubDate>Sat, 16 Mar 2024 10:16:15 &#43;0800</pubDate>
-    <author>gowinder</author>
-    <guid>https://gowinder.work/tags/quic/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>R2s</title>
-    <link>https://gowinder.work/tags/r2s/</link>
-    <pubDate>Sat, 16 Mar 2024 10:16:15 &#43;0800</pubDate>
-    <author>gowinder</author>
-    <guid>https://gowinder.work/tags/r2s/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Sing-Box</title>
-    <link>https://gowinder.work/tags/sing-box/</link>
-    <pubDate>Sat, 16 Mar 2024 10:16:15 &#43;0800</pubDate>
-    <author>gowinder</author>
-    <guid>https://gowinder.work/tags/sing-box/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Youtube</title>
-    <link>https://gowinder.work/tags/youtube/</link>
-    <pubDate>Sat, 16 Mar 2024 10:16:15 &#43;0800</pubDate>
-    <author>gowinder</author>
-    <guid>https://gowinder.work/tags/youtube/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>旁路由</title>
-    <link>https://gowinder.work/tags/%E6%97%81%E8%B7%AF%E7%94%B1/</link>
-    <pubDate>Sat, 16 Mar 2024 10:16:15 &#43;0800</pubDate>
-    <author>gowinder</author>
-    <guid>https://gowinder.work/tags/%E6%97%81%E8%B7%AF%E7%94%B1/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Dell</title>
+            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 21 Mar 2024 13:54:13 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>dell</title>
     <link>https://gowinder.work/tags/dell/</link>
-    <pubDate>Mon, 11 Mar 2024 17:16:15 &#43;0800</pubDate>
+    <pubDate>Thu, 21 Mar 2024 13:54:13 &#43;0800</pubDate>
     <author>gowinder</author>
     <guid>https://gowinder.work/tags/dell/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>Homeserver</title>
+    <title>homeserver</title>
     <link>https://gowinder.work/tags/homeserver/</link>
-    <pubDate>Mon, 11 Mar 2024 17:16:15 &#43;0800</pubDate>
+    <pubDate>Thu, 21 Mar 2024 13:54:13 &#43;0800</pubDate>
     <author>gowinder</author>
     <guid>https://gowinder.work/tags/homeserver/</guid>
     <description><![CDATA[]]></description>
@@ -71,17 +23,65 @@
 <item>
     <title>MacbookPro</title>
     <link>https://gowinder.work/tags/macbookpro/</link>
-    <pubDate>Mon, 11 Mar 2024 17:16:15 &#43;0800</pubDate>
+    <pubDate>Thu, 21 Mar 2024 13:54:13 &#43;0800</pubDate>
     <author>gowinder</author>
     <guid>https://gowinder.work/tags/macbookpro/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>Pve</title>
+    <title>pve</title>
     <link>https://gowinder.work/tags/pve/</link>
-    <pubDate>Mon, 11 Mar 2024 17:16:15 &#43;0800</pubDate>
+    <pubDate>Thu, 21 Mar 2024 13:54:13 &#43;0800</pubDate>
     <author>gowinder</author>
     <guid>https://gowinder.work/tags/pve/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>r720</title>
+    <link>https://gowinder.work/tags/r720/</link>
+    <pubDate>Thu, 21 Mar 2024 13:54:13 &#43;0800</pubDate>
+    <author>gowinder</author>
+    <guid>https://gowinder.work/tags/r720/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>蜗牛星际</title>
+    <link>https://gowinder.work/tags/%E8%9C%97%E7%89%9B%E6%98%9F%E9%99%85/</link>
+    <pubDate>Thu, 21 Mar 2024 13:54:13 &#43;0800</pubDate>
+    <author>gowinder</author>
+    <guid>https://gowinder.work/tags/%E8%9C%97%E7%89%9B%E6%98%9F%E9%99%85/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>休眠</title>
+    <link>https://gowinder.work/tags/%E4%BC%91%E7%9C%A0/</link>
+    <pubDate>Thu, 21 Mar 2024 13:54:13 &#43;0800</pubDate>
+    <author>gowinder</author>
+    <guid>https://gowinder.work/tags/%E4%BC%91%E7%9C%A0/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>hysteria</title>
+    <link>https://gowinder.work/tags/hysteria/</link>
+    <pubDate>Sat, 16 Mar 2024 10:16:15 &#43;0800</pubDate>
+    <author>gowinder</author>
+    <guid>https://gowinder.work/tags/hysteria/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>quic</title>
+    <link>https://gowinder.work/tags/quic/</link>
+    <pubDate>Sat, 16 Mar 2024 10:16:15 &#43;0800</pubDate>
+    <author>gowinder</author>
+    <guid>https://gowinder.work/tags/quic/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>r2s</title>
+    <link>https://gowinder.work/tags/r2s/</link>
+    <pubDate>Sat, 16 Mar 2024 10:16:15 &#43;0800</pubDate>
+    <author>gowinder</author>
+    <guid>https://gowinder.work/tags/r2s/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

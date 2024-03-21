@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Android 1.5 Cifs Smb WIDNOWS共享 - 标签 - gowinder个人博客</title>
+        <title>android 1.5 cifs smb WIDNOWS共享 - 标签 - gowinder个人博客</title>
         <link>https://gowinder.work/tags/android-1.5-cifs-smb-widnows%E5%85%B1%E4%BA%AB/</link>
-        <description>Android 1.5 Cifs Smb WIDNOWS共享 - 标签 - gowinder个人博客</description>
+        <description>android 1.5 cifs smb WIDNOWS共享 - 标签 - gowinder个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>gowinder@hotmail.com (gowinder)</managingEditor>
             <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 27 Oct 2010 03:22:56 &#43;0000</lastBuildDate><atom:link href="https://gowinder.work/tags/android-1.5-cifs-smb-widnows%E5%85%B1%E4%BA%AB/" rel="self" type="application/rss+xml" /><item>
     <title>直接使用cifs.ko挂载WINDOWS 共享</title>

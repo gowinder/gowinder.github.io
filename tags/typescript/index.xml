@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Typescript - 标签 - gowinder个人博客</title>
+        <title>typescript - 标签 - gowinder个人博客</title>
         <link>https://gowinder.work/tags/typescript/</link>
-        <description>Typescript - 标签 - gowinder个人博客</description>
+        <description>typescript - 标签 - gowinder个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>gowinder@hotmail.com (gowinder)</managingEditor>
             <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 28 Feb 2023 11:08:03 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/typescript/" rel="self" type="application/rss+xml" /><item>
     <title>Class Constructor TypeOrmCrudService Cannot Be Invoked Without &#39;New&#39;</title>

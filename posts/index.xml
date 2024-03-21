@@ -4,7 +4,15 @@
         <link>https://gowinder.work/posts/</link>
         <description>所有文章 | gowinder个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>gowinder@hotmail.com (gowinder)</managingEditor>
-            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 16 Mar 2024 10:16:15 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 21 Mar 2024 13:54:13 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>将家庭服务器从DELL R720迁移到蜗牛星际&#43;MacbookPro 后续</title>
+    <link>https://gowinder.work/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/</link>
+    <pubDate>Thu, 21 Mar 2024 13:54:13 &#43;0800</pubDate>
+    <author>gowinder</author>
+    <guid>https://gowinder.work/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/</guid>
+    <description><![CDATA[将家庭服务器从DELL R720迁移到蜗牛星际+MacbookPro 后续 千兆网络断流问题 迁移已经完成了,试用了一段时间, 星际蜗牛功耗很低(相对]]></description>
+</item>
+<item>
     <title>一个youtube app使用quic引起的问题</title>
     <link>https://gowinder.work/sing-box-youtube-app-quic-issue/</link>
     <pubDate>Sat, 16 Mar 2024 10:16:15 &#43;0800</pubDate>
@@ -75,14 +83,6 @@
     <author>gowinder</author>
     <guid>https://gowinder.work/proxmox-ve-%E5%A2%9E%E5%8A%A0%E8%87%AA%E5%8A%A8trim%E7%9A%84cron-job/</guid>
     <description><![CDATA[proxmox ve 增加自动trim的cron job 检查状态 1 2 3 4 5 6 7 8 sudo systemctl status fstrim.timer # output: ● fstrim.timer - Discard unused blocks once a week Loaded: loaded (/lib/systemd/system/fstrim.timer; disabled; vendor preset: enabled) Active: inactive (dead) Trigger: n/a Triggers: ● fstrim.service Docs: man:fstrim 开启服务 1 sudo systemctl start fstrim.timer 检]]></description>
-</item>
-<item>
-    <title>proxmox ve 中扩展pvm-local空间</title>
-    <link>https://gowinder.work/proxmox-ve-%E4%B8%AD%E6%89%A9%E5%B1%95pvm-local%E7%A9%BA%E9%97%B4/</link>
-    <pubDate>Fri, 17 Feb 2023 14:16:05 &#43;0800</pubDate>
-    <author>gowinder</author>
-    <guid>https://gowinder.work/proxmox-ve-%E4%B8%AD%E6%89%A9%E5%B1%95pvm-local%E7%A9%BA%E9%97%B4/</guid>
-    <description><![CDATA[proxmox ve 中扩展pvm-local空间 原因 之前在DIY E3服务器上安装的proxmox ve,用的一张120G的SSD,当时年纪轻,把pve的逻辑分]]></description>
 </item>
 </channel>
 </rss>

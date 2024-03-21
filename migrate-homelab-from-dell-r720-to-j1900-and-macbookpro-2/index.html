@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>将家庭服务器从DELL R720迁移到蜗牛星际&#43;MacbookPro 后续 - gowinder个人博客</title><meta name="Description" content="记录生活,编码,折腾,杂七杂八"><meta property="og:title" content="将家庭服务器从DELL R720迁移到蜗牛星际&#43;MacbookPro 后续" />
+<meta property="og:description" content="将家庭服务器从DELL R720迁移到蜗牛星际&#43;MacbookPro 后续 千兆网络断流问题 迁移已经完成了,试用了一段时间, 星际蜗牛功耗很低(相对" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gowinder.work/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/" /><meta property="og:image" content="https://gowinder.work/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/featured-image.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-03-21T13:54:13+08:00" />
+<meta property="article:modified_time" content="2024-03-21T13:54:13+08:00" /><meta property="og:site_name" content="gowinder个人博客" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://gowinder.work/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/featured-image.png"/>
+<meta name="twitter:title" content="将家庭服务器从DELL R720迁移到蜗牛星际&#43;MacbookPro 后续"/>
+<meta name="twitter:description" content="将家庭服务器从DELL R720迁移到蜗牛星际&#43;MacbookPro 后续 千兆网络断流问题 迁移已经完成了,试用了一段时间, 星际蜗牛功耗很低(相对"/>
+<meta name="application-name" content="gowinder个人博客">
+<meta name="apple-mobile-web-app-title" content="gowinder个人博客"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://gowinder.work/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/" /><link rel="prev" href="https://gowinder.work/sing-box-youtube-app-quic-issue/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "将家庭服务器从DELL R720迁移到蜗牛星际+MacbookPro 后续",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/gowinder.work\/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/gowinder.work\/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2\/featured-image.png",
+                            "width":  2222 ,
+                            "height":  718 
+                        }],"genre": "posts","keywords": "homeserver, r720, dell, MacbookPro, pve, 蜗牛星际, 休眠","wordcount":  758 ,
+        "url": "https:\/\/gowinder.work\/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2\/","datePublished": "2024-03-21T13:54:13+08:00","dateModified": "2024-03-21T13:54:13+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/gowinder.work\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "gowinder"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="gowinder个人博客"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw' aria-hidden='true'></i></span>Gowinder</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/categories/documentation/"> 文档 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a><a href="javascript:void(0);" class="menu-item language" title="选择语言">
+                    <i class="fa fa-globe" aria-hidden="true"></i>                      
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/" selected>简体中文</option></select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="gowinder个人博客"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw' aria-hidden='true'></i></span>Gowinder</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/categories/documentation/" title="">文档</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">
+                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">将家庭服务器从DELL R720迁移到蜗牛星际+MacbookPro 后续</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>gowinder</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-03-21">2024-03-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 758 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/" class="leancloud_visitors" data-flag-title="将家庭服务器从DELL R720迁移到蜗牛星际&#43;MacbookPro 后续">
+                        <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/featured-image.png"
+        data-srcset="/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/featured-image.png, /migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/featured-image.png 1.5x, /migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/featured-image.png 2x"
+        data-sizes="auto"
+        alt="/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/featured-image.png"
+        title="/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/featured-image.png" /></div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#千兆网络断流问题">千兆网络断流问题</a></li>
+    <li><a href="#解决">解决</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="将家庭服务器从dell-r720迁移到蜗牛星际macbookpro-后续">将家庭服务器从DELL R720迁移到蜗牛星际+MacbookPro 后续</h1>
+<h2 id="千兆网络断流问题">千兆网络断流问题</h2>
+<p>迁移已经完成了,试用了一段时间, <code>星际蜗牛</code>功耗很低(相对<code>R720</code> 100多瓦), 3块<code>HDD</code>, 1块<code>SSD</code> 功耗35瓦, 一天不到1度电,非常不错.</p>
+<p>但是目前有个问题,就是<code>MacbookPro</code>, 只要一盒盖,或者锁定屏幕, 或者远程桌面关闭后, <code>雷电HUB</code>上的有线网卡就断开了.</p>
+<p>这个时候非要重新登入,如果是远程的话,用<code>MacbookPro</code> 的无线网卡的<code>IP</code>连接,才可以再次使用有线网卡的<code>IP</code>.</p>
+<p>一开始以为是<code>HP G2</code>雷电<code>hub</code>的问题, 换了别的<code>USB HUB</code>使用千兆网口也是一样.</p>
+<p>继续测试,我用旧的<code>Intel</code> 架构的老<code>Macbook</code> 测试, 结果也是一样.</p>
+<h2 id="解决">解决</h2>
+<p>于是开始漫长的<code>google</code>, 发现很多人有这个问题,但是,没什么解决办法, 都是说在<code>设置-节能</code>中修改, 我也改了:
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/mac-settings-power.png"
+        data-srcset="/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/mac-settings-power.png, /migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/mac-settings-power.png 1.5x, /migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/mac-settings-power.png 2x"
+        data-sizes="auto"
+        alt="/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/mac-settings-power.png"
+        title="电源设置" width="958" height="660" />
+主要就是:</p>
+<ul>
+<li>使用电源适配器时,防治自动进入休眠</li>
+<li>唤醒以供网络访问</li>
+</ul>
+<p>这两个选项的各种排列组合我都试过了, 不行.</p>
+<p>然后又有说去<code>pmset -g</code>看<code>hibernatemode</code>, <code>pmset</code>是<code>Mac</code>系统查看电源管理的<code>cli</code>工具.
+我看了下我的, 是<code>3</code>, 觉得跟这个没有关系, 但是这个时候我看到<code>pmset -g</code>结果中有一个 <code>SleepDisabled 0</code>, 这个参数我去查了一下: 表示禁用休眠,难道是这个?抱着试一试的心态我执行了:
+<code>sudo pmset -a disablesleep 1</code>
+执行完成后, <code>pmset -g</code>输出结果:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">System</span><span class="o">-</span><span class="n">wide</span> <span class="n">power</span> <span class="n">settings</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl"> <span class="n">SleepDisabled</span>          <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="n">Currently</span> <span class="ow">in</span> <span class="n">use</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl"> <span class="n">standby</span>              <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"> <span class="n">Sleep</span> <span class="n">On</span> <span class="n">Power</span> <span class="ne">Button</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"> <span class="n">hibernatefile</span>        <span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">vm</span><span class="o">/</span><span class="n">sleepimage</span>
+</span></span><span class="line"><span class="cl"> <span class="n">powernap</span>             <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"> <span class="n">networkoversleep</span>     <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"> <span class="n">disksleep</span>            <span class="mi">10</span>
+</span></span><span class="line"><span class="cl"> <span class="n">sleep</span>                <span class="mi">0</span> <span class="p">(</span><span class="n">sleep</span> <span class="n">prevented</span> <span class="n">by</span> <span class="n">screensharingd</span><span class="p">,</span> <span class="n">powerd</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"> <span class="n">hibernatemode</span>        <span class="mi">3</span>
+</span></span><span class="line"><span class="cl"> <span class="n">ttyskeepawake</span>        <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"> <span class="n">displaysleep</span>         <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"> <span class="n">tcpkeepalive</span>         <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"> <span class="n">powermode</span>            <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"> <span class="n">womp</span>                 <span class="mi">1</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>其中<code>SleepDisabled          1</code>表示设置成功了,测试一下, 果然. 不管多长时间, 有线网卡都是可以使用的了.</p>
+<p>这样看来,<code>Mac</code>没有类似<code>Windows</code> 那样的设置开关, 让系统在接电源时一直不休眠.</p>
+<p><code>M1</code>架构一直开机待机,功耗也就不到10瓦
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/istats-cpu.png"
+        data-srcset="/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/istats-cpu.png, /migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/istats-cpu.png 1.5x, /migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/istats-cpu.png 2x"
+        data-sizes="auto"
+        alt="/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/istats-cpu.png"
+        title="功耗" width="510" height="1284" /></p>
+<p>现在可以安心使用<code>emby</code>随时看片了&hellip;</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2024-03-21</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://gowinder.work/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/" data-title="将家庭服务器从DELL R720迁移到蜗牛星际&#43;MacbookPro 后续" data-hashtags="homeserver,r720,dell,MacbookPro,pve,蜗牛星际,休眠"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://gowinder.work/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/" data-hashtag="homeserver"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://gowinder.work/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/" data-title="将家庭服务器从DELL R720迁移到蜗牛星际&#43;MacbookPro 后续"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://gowinder.work/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/" data-title="将家庭服务器从DELL R720迁移到蜗牛星际&#43;MacbookPro 后续"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://gowinder.work/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/" data-title="将家庭服务器从DELL R720迁移到蜗牛星际&#43;MacbookPro 后续"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/homeserver/">homeserver</a>,&nbsp;<a href="/tags/r720/">r720</a>,&nbsp;<a href="/tags/dell/">dell</a>,&nbsp;<a href="/tags/macbookpro/">MacbookPro</a>,&nbsp;<a href="/tags/pve/">pve</a>,&nbsp;<a href="/tags/%E8%9C%97%E7%89%9B%E6%98%9F%E9%99%85/">蜗牛星际</a>,&nbsp;<a href="/tags/%E4%BC%91%E7%9C%A0/">休眠</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/sing-box-youtube-app-quic-issue/" class="prev" rel="prev" title="一个youtube app使用quic引起的问题"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>一个youtube app使用quic引起的问题</a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript><div id="utterances" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.120.4">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">gowinder</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.5.0/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"gowinder/hugo-comment"},"valine":{"appId":"QGzwQXOqs5JOhN4RGPOkR2mR-MdYXbMMI","appKey":"WBmoGyJtbqUswvfLh6L8iEBr","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-CN","pageSize":10,"placeholder":"你的评论 ...","recordIP":true,"serverURLs":"https://leancloud.hugoloveit.com","visitor":true}},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.zh-cn","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

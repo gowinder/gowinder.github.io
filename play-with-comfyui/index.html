@@ -4,38 +4,38 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>将家庭服务器从DELL R720迁移到蜗牛星际&#43;MacbookPro 后续 - gowinder个人博客</title><meta name="Description" content="记录生活,编码,折腾,杂七杂八"><meta property="og:title" content="将家庭服务器从DELL R720迁移到蜗牛星际&#43;MacbookPro 后续" />
-<meta property="og:description" content="将家庭服务器从DELL R720迁移到蜗牛星际&#43;MacbookPro 后续 千兆网络断流问题 迁移已经完成了,试用了一段时间, 星际蜗牛功耗很低(相对" />
+        <title>部署ComfyUI玩 - gowinder个人博客</title><meta name="Description" content="记录生活,编码,折腾,杂七杂八"><meta property="og:title" content="部署ComfyUI玩" />
+<meta property="og:description" content="部署ComfyUI玩 之前AIGC非常火, 我本地部署了Stable Diffusion 的WebUI玩了一下,见: text 但是吧, WebUI 界面, 太复杂了, 元素太多了, 看起来非" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://gowinder.work/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/" /><meta property="og:image" content="https://gowinder.work/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/featured-image.png"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2024-03-21T13:54:13+08:00" />
-<meta property="article:modified_time" content="2024-03-21T13:54:13+08:00" /><meta property="og:site_name" content="gowinder个人博客" />
+<meta property="og:url" content="https://gowinder.work/play-with-comfyui/" /><meta property="og:image" content="https://gowinder.work/play-with-comfyui/comfyui_screenshot.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-03-25T14:12:16+08:00" />
+<meta property="article:modified_time" content="2024-03-25T14:12:16+08:00" /><meta property="og:site_name" content="gowinder个人博客" />
 
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://gowinder.work/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/featured-image.png"/>
-<meta name="twitter:title" content="将家庭服务器从DELL R720迁移到蜗牛星际&#43;MacbookPro 后续"/>
-<meta name="twitter:description" content="将家庭服务器从DELL R720迁移到蜗牛星际&#43;MacbookPro 后续 千兆网络断流问题 迁移已经完成了,试用了一段时间, 星际蜗牛功耗很低(相对"/>
+<meta name="twitter:image" content="https://gowinder.work/play-with-comfyui/comfyui_screenshot.png"/>
+<meta name="twitter:title" content="部署ComfyUI玩"/>
+<meta name="twitter:description" content="部署ComfyUI玩 之前AIGC非常火, 我本地部署了Stable Diffusion 的WebUI玩了一下,见: text 但是吧, WebUI 界面, 太复杂了, 元素太多了, 看起来非"/>
 <meta name="application-name" content="gowinder个人博客">
 <meta name="apple-mobile-web-app-title" content="gowinder个人博客"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://gowinder.work/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/" /><link rel="prev" href="https://gowinder.work/sing-box-youtube-app-quic-issue/" /><link rel="next" href="https://gowinder.work/play-with-comfyui/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://gowinder.work/play-with-comfyui/" /><link rel="prev" href="https://gowinder.work/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "将家庭服务器从DELL R720迁移到蜗牛星际+MacbookPro 后续",
+        "headline": "部署ComfyUI玩",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/gowinder.work\/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2\/"
+            "@id": "https:\/\/gowinder.work\/play-with-comfyui\/"
         },"image": [{
                             "@type": "ImageObject",
-                            "url": "https:\/\/gowinder.work\/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2\/featured-image.png",
-                            "width":  2222 ,
-                            "height":  718 
-                        }],"genre": "posts","keywords": "homeserver, r720, dell, MacbookPro, pve, 蜗牛星际, 休眠","wordcount":  758 ,
-        "url": "https:\/\/gowinder.work\/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2\/","datePublished": "2024-03-21T13:54:13+08:00","dateModified": "2024-03-21T13:54:13+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+                            "url": "https:\/\/gowinder.work\/play-with-comfyui\/comfyui_screenshot.png",
+                            "width":  1859 ,
+                            "height":  705 
+                        }],"genre": "posts","keywords": "comfyui, comfyui-manager, ai, stable diffusion, machine learning","wordcount":  1301 ,
+        "url": "https:\/\/gowinder.work\/play-with-comfyui\/","datePublished": "2024-03-25T14:12:16+08:00","dateModified": "2024-03-25T14:12:16+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": {
                     "@type": "ImageObject",
@@ -71,7 +71,7 @@
                     <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
                 </a><a href="javascript:void(0);" class="menu-item language" title="选择语言">
                     <i class="fa fa-globe" aria-hidden="true"></i>                      
-                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/" selected>简体中文</option></select>
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/play-with-comfyui/" selected>简体中文</option></select>
                 </a></div>
         </div>
     </div>
@@ -105,7 +105,7 @@
                 <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
             </a><a href="javascript:void(0);" class="menu-item" title="选择语言">
                     <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
-                    <select class="language-select" onchange="location = this.value;"><option value="/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/" selected>简体中文</option></select>
+                    <select class="language-select" onchange="location = this.value;"><option value="/play-with-comfyui/" selected>简体中文</option></select>
                 </a></div>
     </div>
 </header><div class="search-dropdown desktop">
@@ -117,132 +117,170 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">将家庭服务器从DELL R720迁移到蜗牛星际+MacbookPro 后续</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">部署ComfyUI玩</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>gowinder</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-03-21">2024-03-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 758 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/" class="leancloud_visitors" data-flag-title="将家庭服务器从DELL R720迁移到蜗牛星际&#43;MacbookPro 后续">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-03-25">2024-03-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1301 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/play-with-comfyui/" class="leancloud_visitors" data-flag-title="部署ComfyUI玩">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/featured-image.png"
-        data-srcset="/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/featured-image.png, /migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/featured-image.png 1.5x, /migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/featured-image.png 2x"
+        data-src="/play-with-comfyui/comfyui_screenshot.png"
+        data-srcset="/play-with-comfyui/comfyui_screenshot.png, /play-with-comfyui/comfyui_screenshot.png 1.5x, /play-with-comfyui/comfyui_screenshot.png 2x"
         data-sizes="auto"
-        alt="/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/featured-image.png"
-        title="/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/featured-image.png" /></div><div class="details toc" id="toc-static"  data-kept="">
+        alt="/play-with-comfyui/comfyui_screenshot.png"
+        title="/play-with-comfyui/comfyui_screenshot.png" /></div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
                     <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#千兆网络断流问题">千兆网络断流问题</a></li>
-    <li><a href="#解决">解决</a></li>
+    <li><a href="#安装">安装</a>
+      <ul>
+        <li><a href="#python-环境配置"><code>python</code> 环境配置</a></li>
+        <li><a href="#模型配置">模型配置</a></li>
+      </ul>
+    </li>
+    <li><a href="#使用">使用</a></li>
+    <li><a href="#更多玩法">更多玩法</a></li>
+    <li><a href="#总结">总结</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h1 id="将家庭服务器从dell-r720迁移到蜗牛星际macbookpro-后续">将家庭服务器从DELL R720迁移到蜗牛星际+MacbookPro 后续</h1>
-<h2 id="千兆网络断流问题">千兆网络断流问题</h2>
-<p>迁移已经完成了,试用了一段时间, <code>星际蜗牛</code>功耗很低(相对<code>R720</code> 100多瓦), 3块<code>HDD</code>, 1块<code>SSD</code> 功耗35瓦, 一天不到1度电,非常不错.</p>
-<p>但是目前有个问题,就是<code>MacbookPro</code>, 只要一盒盖,或者锁定屏幕, 或者远程桌面关闭后, <code>雷电HUB</code>上的有线网卡就断开了.</p>
-<p>这个时候非要重新登入,如果是远程的话,用<code>MacbookPro</code> 的无线网卡的<code>IP</code>连接,才可以再次使用有线网卡的<code>IP</code>.</p>
-<p>一开始以为是<code>HP G2</code>雷电<code>hub</code>的问题, 换了别的<code>USB HUB</code>使用千兆网口也是一样.</p>
-<p>继续测试,我用旧的<code>Intel</code> 架构的老<code>Macbook</code> 测试, 结果也是一样.</p>
-<h2 id="解决">解决</h2>
-<p>于是开始漫长的<code>google</code>, 发现很多人有这个问题,但是,没什么解决办法, 都是说在<code>设置-节能</code>中修改, 我也改了:
+            </div><div class="content" id="content"><h1 id="部署comfyui玩">部署ComfyUI玩</h1>
+<p>之前<code>AIGC</code>非常火, 我本地部署了<code>Stable Diffusion</code> 的<code>WebUI</code>玩了一下,见: <a href="/content/posts/create-local-stable-diffusion-env.md" rel="">text</a></p>
+<p>但是吧, <code>WebUI</code> 界面, 太复杂了, 元素太多了, 看起来非常专业, 但是用起来也是有一定难度的. 正好那段时间工作比较忙, 玩了一段时间, 就放着没有继续玩了.</p>
+<p>最近, 又发现一个特别好用的<code>Stable Diffusion</code> 的<code>UI</code>, 叫做<code>ComfyUI</code>, 看起来非常舒服, 使用的是 节点链接:
 <img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/mac-settings-power.png"
-        data-srcset="/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/mac-settings-power.png, /migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/mac-settings-power.png 1.5x, /migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/mac-settings-power.png 2x"
+        data-src="comfyui_screenshot.png"
+        data-srcset="comfyui_screenshot.png, comfyui_screenshot.png 1.5x, comfyui_screenshot.png 2x"
         data-sizes="auto"
-        alt="/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/mac-settings-power.png"
-        title="电源设置" width="958" height="660" />
-主要就是:</p>
+        alt="comfyui_screenshot.png"
+        title="comfyui" />
+可以看到, 不同的节点可以根据输入输出来链接, 每个节点有自己的功能, 非常直观, 擦了一下, 这个类型的<code>UI</code>叫: **可视化工作流 **</p>
+<h2 id="安装">安装</h2>
+<p><code>ComfyUI</code> 安装也很方便, 参照官网就可以了: <code>https://github.com/comfyanonymous/ComfyUI?tab=readme-ov-file#installing</code>.</p>
+<p>注意</p>
 <ul>
-<li>使用电源适配器时,防治自动进入休眠</li>
-<li>唤醒以供网络访问</li>
+<li><code>Nvidia</code>卡需要先安装<code>pytorch</code>:
+<code>pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu121</code></li>
+<li><code>Apple Silicon</code> 也及时<code>M1/2/3</code>也是可以运行的, 这就是我为什么搞了<code>64G</code>统一内存的<code>MacbookPro</code>的原因: <a href="/content/posts/macbookpro-16-m1max-64g-refurbish-buying-log/index.zh-cn.md" rel="">详见帖子</a>. 需要安装<code>pytorh</code>的<code>nightly</code> 版本, 将: <code>https://github.com/comfyanonymous/ComfyUI?tab=readme-ov-file#apple-mac-silicon</code></li>
 </ul>
-<p>这两个选项的各种排列组合我都试过了, 不行.</p>
-<p>然后又有说去<code>pmset -g</code>看<code>hibernatemode</code>, <code>pmset</code>是<code>Mac</code>系统查看电源管理的<code>cli</code>工具.
-我看了下我的, 是<code>3</code>, 觉得跟这个没有关系, 但是这个时候我看到<code>pmset -g</code>结果中有一个 <code>SleepDisabled 0</code>, 这个参数我去查了一下: 表示禁用休眠,难道是这个?抱着试一试的心态我执行了:
-<code>sudo pmset -a disablesleep 1</code>
-执行完成后, <code>pmset -g</code>输出结果:</p>
+<p>然后再安装<code>ComfyUI-Manager</code>:
+直接用<code>ComfyUI Manger</code>, 地址: <code>https://github.com/ltdrdata/ComfyUI-Manager</code>, <code>ComfyUI-Manger</code>是一个插件,可以方便管理各种开源的附加类型<code>节点</code>, 有了这个, <code>ComfyUI</code>的可玩性才更高. 注意, 需要放在<code>ComfyUI</code>的<code>custom_nodes</code>目录下, 所以需要先安装<code>ComfyUI</code>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">System</span><span class="o">-</span><span class="n">wide</span> <span class="n">power</span> <span class="n">settings</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl"> <span class="n">SleepDisabled</span>          <span class="mi">1</span>
-</span></span><span class="line"><span class="cl"><span class="n">Currently</span> <span class="ow">in</span> <span class="n">use</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl"> <span class="n">standby</span>              <span class="mi">1</span>
-</span></span><span class="line"><span class="cl"> <span class="n">Sleep</span> <span class="n">On</span> <span class="n">Power</span> <span class="ne">Button</span> <span class="mi">1</span>
-</span></span><span class="line"><span class="cl"> <span class="n">hibernatefile</span>        <span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">vm</span><span class="o">/</span><span class="n">sleepimage</span>
-</span></span><span class="line"><span class="cl"> <span class="n">powernap</span>             <span class="mi">1</span>
-</span></span><span class="line"><span class="cl"> <span class="n">networkoversleep</span>     <span class="mi">0</span>
-</span></span><span class="line"><span class="cl"> <span class="n">disksleep</span>            <span class="mi">10</span>
-</span></span><span class="line"><span class="cl"> <span class="n">sleep</span>                <span class="mi">0</span> <span class="p">(</span><span class="n">sleep</span> <span class="n">prevented</span> <span class="n">by</span> <span class="n">screensharingd</span><span class="p">,</span> <span class="n">powerd</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"> <span class="n">hibernatemode</span>        <span class="mi">3</span>
-</span></span><span class="line"><span class="cl"> <span class="n">ttyskeepawake</span>        <span class="mi">1</span>
-</span></span><span class="line"><span class="cl"> <span class="n">displaysleep</span>         <span class="mi">1</span>
-</span></span><span class="line"><span class="cl"> <span class="n">tcpkeepalive</span>         <span class="mi">1</span>
-</span></span><span class="line"><span class="cl"> <span class="n">powermode</span>            <span class="mi">0</span>
-</span></span><span class="line"><span class="cl"> <span class="n">womp</span>                 <span class="mi">1</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> ComfyUI/custom_nodes
+</span></span><span class="line"><span class="cl">git clone https://github.com/ltdrdata/ComfyUI-Manager.git
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>其中<code>SleepDisabled          1</code>表示设置成功了,测试一下, 果然. 不管多长时间, 有线网卡都是可以使用的了.</p>
-<p>这样看来,<code>Mac</code>没有类似<code>Windows</code> 那样的设置开关, 让系统在接电源时一直不休眠.</p>
-<p><code>M1</code>架构一直开机待机,功耗也就不到10瓦
+</div><h3 id="python-环境配置"><code>python</code> 环境配置</h3>
+<p>最好使用<code>conda</code>来做, 安装<code>conda</code>后, 创建一个<code>python</code>环境:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">conda create -n py310sd <span class="nv">python</span><span class="o">=</span>3.10 pytorch torchvision torchaudio <span class="nv">cudatoolkit</span><span class="o">=</span>11.3 -c pytorch -c nvidia
+</span></span><span class="line"><span class="cl">conda activate py310sd
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="模型配置">模型配置</h3>
+<p>之前使用<code>WebUI</code>下载了的模型,就不用再次下载了,可以直接使用, 方法将文档:<code>https://github.com/comfyanonymous/ComfyUI?tab=readme-ov-file#how-do-i-share-models-between-another-ui-and-comfyui</code>, 简单说就是修改<code>config.yaml</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">a111</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">base_path</span><span class="p">:</span><span class="w"> </span><span class="l">path/to/stable-diffusion-webui/</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>指定<code>WebUI</code>的路径, 然后, 就可以使用<code>WebUI</code>下载的模型了.</p>
+<h2 id="使用">使用</h2>
+<p><code>python main.py --listen 0.0.0.0</code></p>
+<p>注意<code>--listen 0.0.0.0</code> 可以让你在非本机也可以访问, 比如我在<code>MacbookPro</code>上启动, 在<code>iPad</code>上也可以访问.</p>
+<p>访问: <code>http://yourip:8188</code>, 然后, 打开新世界!!!</p>
+<h2 id="更多玩法">更多玩法</h2>
+<p><code>ComfyUI</code>社区发展非常快, 各种<code>Node</code>层出不穷, 个人感觉已经超过<code>WebUI</code>的流行程度了. 最近又发现了一个好玩的: <code>https://comfyworkflows.com/</code>. 是一个<code>ComfyUI</code>的<code>Workflow</code>的聚集地, 有很多<code>Workflow</code>可以直接使用, 也可以自己创建, 然后分享给大家. 有了这个, 就可以直接使用别人的<code>Workflow</code>了, 不用自己创建了, 也可以学习别人的<code>Workflow</code>是怎么创建的.</p>
+<p>比如, 我现在用这个: <code>https://comfyworkflows.com/workflows/e6c1c436-f878-4cc3-be0a-43ee96864467</code></p>
+<p>下载后, 在<code>ComfyUI</code>中选择<code>Upload</code>, 选择刚才下载的<code>json</code>文件, 然后就可以导入了. 我这里会报错:
 <img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/istats-cpu.png"
-        data-srcset="/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/istats-cpu.png, /migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/istats-cpu.png 1.5x, /migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/istats-cpu.png 2x"
+        data-src="/play-with-comfyui/workflow-import-error.png"
+        data-srcset="/play-with-comfyui/workflow-import-error.png, /play-with-comfyui/workflow-import-error.png 1.5x, /play-with-comfyui/workflow-import-error.png 2x"
         data-sizes="auto"
-        alt="/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/istats-cpu.png"
-        title="功耗" width="510" height="1284" /></p>
-<p>现在可以安心使用<code>emby</code>随时看片了&hellip;</p>
+        alt="/play-with-comfyui/workflow-import-error.png"
+        title="错误" width="1314" height="532" />
+这个时候就体现<code>ComfyUI-Manager</code>的好处了, 点击&rsquo;Manger&rsquo;: <img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/play-with-comfyui/comfyui-panel.png"
+        data-srcset="/play-with-comfyui/comfyui-panel.png, /play-with-comfyui/comfyui-panel.png 1.5x, /play-with-comfyui/comfyui-panel.png 2x"
+        data-sizes="auto"
+        alt="/play-with-comfyui/comfyui-panel.png"
+        title="panel" width="378" height="882" />
+选择<code>Install Custom Nodes</code>: <img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/play-with-comfyui/comfyui-manager-ui.png"
+        data-srcset="/play-with-comfyui/comfyui-manager-ui.png, /play-with-comfyui/comfyui-manager-ui.png 1.5x, /play-with-comfyui/comfyui-manager-ui.png 2x"
+        data-sizes="auto"
+        alt="/play-with-comfyui/comfyui-manager-ui.png"
+        title="manager-ui" width="2136" height="1146" />
+然后在搜索中选择需要的节点, 比如<code>UltimateSDUpscale</code>, 搜索出来后安装就可以了. <img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/play-with-comfyui/install-custom-node.png"
+        data-srcset="/play-with-comfyui/install-custom-node.png, /play-with-comfyui/install-custom-node.png 1.5x, /play-with-comfyui/install-custom-node.png 2x"
+        data-sizes="auto"
+        alt="/play-with-comfyui/install-custom-node.png"
+        title="install custom node" width="2696" height="326" /></p>
+<p>最后加载的效果:
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/play-with-comfyui/comfyui-workflow.png"
+        data-srcset="/play-with-comfyui/comfyui-workflow.png, /play-with-comfyui/comfyui-workflow.png 1.5x, /play-with-comfyui/comfyui-workflow.png 2x"
+        data-sizes="auto"
+        alt="/play-with-comfyui/comfyui-workflow.png"
+        title="workflow" width="2878" height="2382" /></p>
+<h2 id="总结">总结</h2>
+<p><code>ComfyUI</code>这种形式,确实比以前的<code>WebUI</code>要方便很多, 可玩性极高, 我也是刚开始搞, 最近工作比较慢, 空了慢慢搞, <code>AIGC</code>这一关发展速度太快了, 感觉一天一个变, 希望不要掉队了哈&hellip;</p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2024-03-21</span>
+                <span>更新于 2024-03-25</span>
             </div></div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/index.md" target="_blank">阅读原始文档</a>
+                            <a class="link-to-markdown" href="/play-with-comfyui/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://gowinder.work/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/" data-title="将家庭服务器从DELL R720迁移到蜗牛星际&#43;MacbookPro 后续" data-hashtags="homeserver,r720,dell,MacbookPro,pve,蜗牛星际,休眠"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://gowinder.work/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/" data-hashtag="homeserver"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://gowinder.work/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/" data-title="将家庭服务器从DELL R720迁移到蜗牛星际&#43;MacbookPro 后续"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://gowinder.work/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/" data-title="将家庭服务器从DELL R720迁移到蜗牛星际&#43;MacbookPro 后续"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://gowinder.work/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/" data-title="将家庭服务器从DELL R720迁移到蜗牛星际&#43;MacbookPro 后续"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://gowinder.work/play-with-comfyui/" data-title="部署ComfyUI玩" data-hashtags="comfyui,comfyui-manager,ai,stable diffusion,machine learning"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://gowinder.work/play-with-comfyui/" data-hashtag="comfyui"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://gowinder.work/play-with-comfyui/" data-title="部署ComfyUI玩"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://gowinder.work/play-with-comfyui/" data-title="部署ComfyUI玩"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://gowinder.work/play-with-comfyui/" data-title="部署ComfyUI玩"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/homeserver/">homeserver</a>,&nbsp;<a href="/tags/r720/">r720</a>,&nbsp;<a href="/tags/dell/">dell</a>,&nbsp;<a href="/tags/macbookpro/">MacbookPro</a>,&nbsp;<a href="/tags/pve/">pve</a>,&nbsp;<a href="/tags/%E8%9C%97%E7%89%9B%E6%98%9F%E9%99%85/">蜗牛星际</a>,&nbsp;<a href="/tags/%E4%BC%91%E7%9C%A0/">休眠</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/comfyui/">comfyui</a>,&nbsp;<a href="/tags/comfyui-manager/">comfyui-manager</a>,&nbsp;<a href="/tags/ai/">ai</a>,&nbsp;<a href="/tags/stable-diffusion/">stable diffusion</a>,&nbsp;<a href="/tags/machine-learning/">machine learning</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>
     </div>
 
-    <div class="post-nav"><a href="/sing-box-youtube-app-quic-issue/" class="prev" rel="prev" title="一个youtube app使用quic引起的问题"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>一个youtube app使用quic引起的问题</a>
-            <a href="/play-with-comfyui/" class="next" rel="next" title="部署ComfyUI玩">部署ComfyUI玩<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+    <div class="post-nav"><a href="/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/" class="prev" rel="prev" title="将家庭服务器从DELL R720迁移到蜗牛星际&#43;MacbookPro 后续"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>将家庭服务器从DELL R720迁移到蜗牛星际+MacbookPro 后续</a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.

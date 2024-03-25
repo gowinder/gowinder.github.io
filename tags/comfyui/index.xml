@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>comfyui - 标签 - gowinder个人博客</title>
+        <link>https://gowinder.work/tags/comfyui/</link>
+        <description>comfyui - 标签 - gowinder个人博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>gowinder@hotmail.com (gowinder)</managingEditor>
+            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 25 Mar 2024 14:12:16 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/comfyui/" rel="self" type="application/rss+xml" /><item>
+    <title>部署ComfyUI玩</title>
+    <link>https://gowinder.work/play-with-comfyui/</link>
+    <pubDate>Mon, 25 Mar 2024 14:12:16 &#43;0800</pubDate>
+    <author>gowinder</author>
+    <guid>https://gowinder.work/play-with-comfyui/</guid>
+    <description><![CDATA[部署ComfyUI玩 之前AIGC非常火, 我本地部署了Stable Diffusion 的WebUI玩了一下,见: text 但是吧, WebUI 界面, 太复杂了, 元素太多了, 看起来非]]></description>
+</item>
+</channel>
+</rss>

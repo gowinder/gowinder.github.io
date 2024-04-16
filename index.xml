@@ -4,9 +4,17 @@
         <link>https://gowinder.work/</link>
         <description>记录生活,编码,折腾,杂七杂八</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>gowinder@hotmail.com (gowinder)</managingEditor>
-            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 25 Mar 2024 14:12:16 &#43;0800</lastBuildDate>
+            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 08 Apr 2024 14:20:06 &#43;0800</lastBuildDate>
             <atom:link href="https://gowinder.work/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>将remix项目迁移到cloudflare</title>
+    <link>https://gowinder.work/migrate-remix-to-cloudflare/</link>
+    <pubDate>Mon, 08 Apr 2024 14:20:06 &#43;0800</pubDate>
+    <author>gowinder</author>
+    <guid>https://gowinder.work/migrate-remix-to-cloudflare/</guid>
+    <description><![CDATA[将remix项目迁移到cloudflare 最近使用remix开发了一个项目,之前没有做过全栈开发,reactjs用过一些,不是很熟,用的是N]]></description>
+</item>
+<item>
     <title>部署ComfyUI玩</title>
     <link>https://gowinder.work/play-with-comfyui/</link>
     <pubDate>Mon, 25 Mar 2024 14:12:16 &#43;0800</pubDate>
@@ -77,14 +85,6 @@
     <author>gowinder</author>
     <guid>https://gowinder.work/pihile-lighttp-cannot-start-in-orange-pi-zero/</guid>
     <description><![CDATA[在Orange Pi Zero上安装pihole后,webui无法启动问题 启因 最新在空闲Orange Pi Zero上安装了Pihole用来做家庭主DN]]></description>
-</item>
-<item>
-    <title>nestjs整合websocketgateway和microservice</title>
-    <link>https://gowinder.work/use-microservce-in-websocketgateway-in-nestjs/</link>
-    <pubDate>Thu, 23 Feb 2023 16:09:08 &#43;0800</pubDate>
-    <author>gowinder</author>
-    <guid>https://gowinder.work/use-microservce-in-websocketgateway-in-nestjs/</guid>
-    <description><![CDATA[nestjs整合websocketgateway和microservice 启因 使用WebsocketGateway做网关,接收客户端长连接后]]></description>
 </item>
 </channel>
 </rss>

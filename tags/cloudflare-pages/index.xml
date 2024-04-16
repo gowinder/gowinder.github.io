@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>cloudflare pages - 标签 - gowinder个人博客</title>
+        <link>https://gowinder.work/tags/cloudflare-pages/</link>
+        <description>cloudflare pages - 标签 - gowinder个人博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>gowinder@hotmail.com (gowinder)</managingEditor>
+            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 08 Apr 2024 14:20:06 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/cloudflare-pages/" rel="self" type="application/rss+xml" /><item>
+    <title>将remix项目迁移到cloudflare</title>
+    <link>https://gowinder.work/migrate-remix-to-cloudflare/</link>
+    <pubDate>Mon, 08 Apr 2024 14:20:06 &#43;0800</pubDate>
+    <author>gowinder</author>
+    <guid>https://gowinder.work/migrate-remix-to-cloudflare/</guid>
+    <description><![CDATA[将remix项目迁移到cloudflare 最近使用remix开发了一个项目,之前没有做过全栈开发,reactjs用过一些,不是很熟,用的是N]]></description>
+</item>
+</channel>
+</rss>

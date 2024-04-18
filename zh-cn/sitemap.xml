@@ -2,10 +2,10 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://gowinder.work/tags/cloudflare/</loc><lastmod>2024-04-08T14:20:06&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
-            <loc>https://gowinder.work/tags/cloudflare-pages/</loc><lastmod>2024-04-08T14:20:06&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
-            <loc>https://gowinder.work/tags/cloudflare-workers/</loc><lastmod>2024-04-08T14:20:06&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
-            <loc>https://gowinder.work/</loc><lastmod>2024-04-08T14:20:06&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority><xhtml:link
+            <loc>https://gowinder.work/tags/cloudflare/</loc><lastmod>2024-04-18T19:12:56&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://gowinder.work/tags/cloudflare-kv/</loc><lastmod>2024-04-18T19:12:56&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://gowinder.work/tags/cloudflare-pages/</loc><lastmod>2024-04-18T19:12:56&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://gowinder.work/</loc><lastmod>2024-04-18T19:12:56&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://gowinder.work/en/"
@@ -14,10 +14,8 @@
                     hreflang="zh-cn"
                     href="https://gowinder.work/"
                     /></url><url>
-            <loc>https://gowinder.work/tags/machine-learning/</loc><lastmod>2024-04-08T14:20:06&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
-            <loc>https://gowinder.work/posts/</loc><lastmod>2024-04-08T14:20:06&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
-            <loc>https://gowinder.work/tags/remix/</loc><lastmod>2024-04-08T14:20:06&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
-            <loc>https://gowinder.work/tags/</loc><lastmod>2024-04-08T14:20:06&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority><xhtml:link
+            <loc>https://gowinder.work/posts/</loc><lastmod>2024-04-18T19:12:56&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://gowinder.work/tags/</loc><lastmod>2024-04-18T19:12:56&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://gowinder.work/en/tags/"
@@ -26,20 +24,24 @@
                     hreflang="zh-cn"
                     href="https://gowinder.work/tags/"
                     /></url><url>
+            <loc>https://gowinder.work/bulk-delete-key-in-cloudflare-kv/</loc><lastmod>2024-04-18T19:12:56&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://gowinder.work/tags/cloudflare-workers/</loc><lastmod>2024-04-08T14:20:06&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://gowinder.work/tags/machine-learning/</loc><lastmod>2024-04-08T14:20:06&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://gowinder.work/tags/remix/</loc><lastmod>2024-04-08T14:20:06&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
             <loc>https://gowinder.work/migrate-remix-to-cloudflare/</loc><lastmod>2024-04-08T14:20:06&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
             <loc>https://gowinder.work/tags/ai/</loc><lastmod>2024-03-25T14:12:16&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
             <loc>https://gowinder.work/tags/comfyui/</loc><lastmod>2024-03-25T14:12:16&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
             <loc>https://gowinder.work/tags/comfyui-manager/</loc><lastmod>2024-03-25T14:12:16&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
             <loc>https://gowinder.work/tags/stable-diffusion/</loc><lastmod>2024-03-25T14:12:16&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
             <loc>https://gowinder.work/play-with-comfyui/</loc><lastmod>2024-03-25T14:12:16&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://gowinder.work/tags/dell/</loc><lastmod>2024-03-21T13:54:13&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://gowinder.work/tags/homeserver/</loc><lastmod>2024-03-21T13:54:13&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://gowinder.work/tags/macbookpro/</loc><lastmod>2024-03-21T13:54:13&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://gowinder.work/tags/pve/</loc><lastmod>2024-03-21T13:54:13&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://gowinder.work/tags/r720/</loc><lastmod>2024-03-21T13:54:13&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://gowinder.work/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/</loc><lastmod>2024-03-21T13:54:13&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://gowinder.work/tags/%E8%9C%97%E7%89%9B%E6%98%9F%E9%99%85/</loc><lastmod>2024-03-21T13:54:13&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://gowinder.work/tags/%E4%BC%91%E7%9C%A0/</loc><lastmod>2024-03-21T13:54:13&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+            <loc>https://gowinder.work/tags/dell/</loc><lastmod>2024-03-21T13:54:13&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+            <loc>https://gowinder.work/tags/homeserver/</loc><lastmod>2024-03-21T13:54:13&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+            <loc>https://gowinder.work/tags/macbookpro/</loc><lastmod>2024-03-21T13:54:13&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+            <loc>https://gowinder.work/tags/pve/</loc><lastmod>2024-03-21T13:54:13&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+            <loc>https://gowinder.work/tags/r720/</loc><lastmod>2024-03-21T13:54:13&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+            <loc>https://gowinder.work/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/</loc><lastmod>2024-03-21T13:54:13&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+            <loc>https://gowinder.work/tags/%E8%9C%97%E7%89%9B%E6%98%9F%E9%99%85/</loc><lastmod>2024-03-21T13:54:13&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+            <loc>https://gowinder.work/tags/%E4%BC%91%E7%9C%A0/</loc><lastmod>2024-03-21T13:54:13&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
             <loc>https://gowinder.work/tags/hysteria/</loc><lastmod>2024-03-16T10:16:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
             <loc>https://gowinder.work/tags/quic/</loc><lastmod>2024-03-16T10:16:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
             <loc>https://gowinder.work/tags/r2s/</loc><lastmod>2024-03-16T10:16:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>

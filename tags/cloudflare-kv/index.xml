@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>cloudflare KV - 标签 - gowinder个人博客</title>
+        <link>https://gowinder.work/tags/cloudflare-kv/</link>
+        <description>cloudflare KV - 标签 - gowinder个人博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>gowinder@hotmail.com (gowinder)</managingEditor>
+            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 18 Apr 2024 19:12:56 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/cloudflare-kv/" rel="self" type="application/rss+xml" /><item>
+    <title>批量删除`Cloudflare KV`中的`key`</title>
+    <link>https://gowinder.work/bulk-delete-key-in-cloudflare-kv/</link>
+    <pubDate>Thu, 18 Apr 2024 19:12:56 &#43;0800</pubDate>
+    <author>gowinder</author>
+    <guid>https://gowinder.work/bulk-delete-key-in-cloudflare-kv/</guid>
+    <description><![CDATA[批量删除Cloudflare KV中的key 取得key列表 先执行 1 pnpm wrangler kv:key list --namespace-id=${namespaceID} &gt; PURGE.json` 拿到完整key列表, 如果要条件,就加上: --prefix=&quot;prefix&quot; 批量删除 1 cat purge.json | jq -r]]></description>
+</item>
+</channel>
+</rss>

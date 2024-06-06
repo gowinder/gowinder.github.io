@@ -4,21 +4,21 @@
         <link>https://gowinder.work/tags/cloudflare/</link>
         <description>cloudflare - 标签 - gowinder个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>gowinder@hotmail.com (gowinder)</managingEditor>
-            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 18 Apr 2024 19:12:56 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/cloudflare/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 06 Jun 2024 10:00:06 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/cloudflare/" rel="self" type="application/rss+xml" /><item>
+    <title>useQuery直接使用honojs client报错: TypeError: Cannot read properties of undefined (reading &#39;replace&#39;)</title>
+    <link>https://gowinder.work/honojs-usequery-error/</link>
+    <pubDate>Thu, 06 Jun 2024 10:00:06 &#43;0800</pubDate>
+    <author>gowinder</author>
+    <guid>https://gowinder.work/honojs-usequery-error/</guid>
+    <description><![CDATA[useQuery直接使用honojs client报错: TypeError: Cannot read properties of undefined (reading &lsquo;replace&rsquo;) 最近开发了一个项目, 使用nextjs, honojs, drizzle-orm, 部署在cloudflare p]]></description>
+</item>
+<item>
     <title>批量删除`Cloudflare KV`中的`key`</title>
     <link>https://gowinder.work/bulk-delete-key-in-cloudflare-kv/</link>
     <pubDate>Thu, 18 Apr 2024 19:12:56 &#43;0800</pubDate>
     <author>gowinder</author>
     <guid>https://gowinder.work/bulk-delete-key-in-cloudflare-kv/</guid>
     <description><![CDATA[批量删除Cloudflare KV中的key 取得key列表 先执行 1 pnpm wrangler kv:key list --namespace-id=${namespaceID} &gt; PURGE.json` 拿到完整key列表, 如果要条件,就加上: --prefix=&quot;prefix&quot; 批量删除 1 cat purge.json | jq -r]]></description>
-</item>
-<item>
-    <title>useQuery直接使用honojs client报错: TypeError: Cannot read properties of undefined (reading &#39;replace&#39;)</title>
-    <link>https://gowinder.work/honojs-usequery-error/</link>
-    <pubDate>Mon, 08 Apr 2024 14:20:06 &#43;0800</pubDate>
-    <author>gowinder</author>
-    <guid>https://gowinder.work/honojs-usequery-error/</guid>
-    <description><![CDATA[useQuery直接使用honojs client报错: TypeError: Cannot read properties of undefined (reading &lsquo;replace&rsquo;) 最近开发了一个项目, 使用nextjs, honojs, drizzle-orm, 部署在cloudflare p]]></description>
 </item>
 <item>
     <title>将remix项目迁移到cloudflare</title>

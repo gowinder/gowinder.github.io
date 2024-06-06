@@ -15,6 +15,14 @@
     <description><![CDATA[批量删除Cloudflare KV中的key 取得key列表 先执行 1 pnpm wrangler kv:key list --namespace-id=${namespaceID} &gt; PURGE.json` 拿到完整key列表, 如果要条件,就加上: --prefix=&quot;prefix&quot; 批量删除 1 cat purge.json | jq -r]]></description>
 </item>
 <item>
+    <title>useQuery直接使用honojs client报错: TypeError: Cannot read properties of undefined (reading &#39;replace&#39;)</title>
+    <link>https://gowinder.work/honojs-usequery-error/</link>
+    <pubDate>Mon, 08 Apr 2024 14:20:06 &#43;0800</pubDate>
+    <author>gowinder</author>
+    <guid>https://gowinder.work/honojs-usequery-error/</guid>
+    <description><![CDATA[useQuery直接使用honojs client报错: TypeError: Cannot read properties of undefined (reading &lsquo;replace&rsquo;) 最近开发了一个项目, 使用nextjs, honojs, drizzle-orm, 部署在cloudflare p]]></description>
+</item>
+<item>
     <title>将remix项目迁移到cloudflare</title>
     <link>https://gowinder.work/migrate-remix-to-cloudflare/</link>
     <pubDate>Mon, 08 Apr 2024 14:20:06 &#43;0800</pubDate>
@@ -77,14 +85,6 @@
     <author>gowinder</author>
     <guid>https://gowinder.work/react-scripts-cors/</guid>
     <description><![CDATA[&ldquo;解决React开发模式服务端Cors问题 启因 最近在做openai的后端代理服务,一个后台池账号池,缓冲前端过来的openai的]]></description>
-</item>
-<item>
-    <title>Class Constructor TypeOrmCrudService Cannot Be Invoked Without &#39;New&#39;</title>
-    <link>https://gowinder.work/class-constructor-typeormcrudservice-cannot-be-invoked-without-new/</link>
-    <pubDate>Tue, 28 Feb 2023 11:08:03 &#43;0800</pubDate>
-    <author>gowinder</author>
-    <guid>https://gowinder.work/class-constructor-typeormcrudservice-cannot-be-invoked-without-new/</guid>
-    <description><![CDATA[Class Constructor TypeOrmCrudService Cannot Be Invoked Without &lsquo;New&rsquo; 错误 启因 最近开发一个chatgpt网关项目,使用nestjs,其中用nestjsx-crud来提高curd开发效率,有以下代]]></description>
 </item>
 </channel>
 </rss>

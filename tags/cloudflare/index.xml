@@ -13,6 +13,14 @@
     <description><![CDATA[批量删除Cloudflare KV中的key 取得key列表 先执行 1 pnpm wrangler kv:key list --namespace-id=${namespaceID} &gt; PURGE.json` 拿到完整key列表, 如果要条件,就加上: --prefix=&quot;prefix&quot; 批量删除 1 cat purge.json | jq -r]]></description>
 </item>
 <item>
+    <title>useQuery直接使用honojs client报错: TypeError: Cannot read properties of undefined (reading &#39;replace&#39;)</title>
+    <link>https://gowinder.work/honojs-usequery-error/</link>
+    <pubDate>Mon, 08 Apr 2024 14:20:06 &#43;0800</pubDate>
+    <author>gowinder</author>
+    <guid>https://gowinder.work/honojs-usequery-error/</guid>
+    <description><![CDATA[useQuery直接使用honojs client报错: TypeError: Cannot read properties of undefined (reading &lsquo;replace&rsquo;) 最近开发了一个项目, 使用nextjs, honojs, drizzle-orm, 部署在cloudflare p]]></description>
+</item>
+<item>
     <title>将remix项目迁移到cloudflare</title>
     <link>https://gowinder.work/migrate-remix-to-cloudflare/</link>
     <pubDate>Mon, 08 Apr 2024 14:20:06 &#43;0800</pubDate>

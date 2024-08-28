@@ -33,7 +33,6 @@ export default app;
 ## hono app的route设置
 
 ```typescript
-
 const app = new Hono<{ Bindings: Bindings }>().basePath('/api');
 const routes = app.route('/sometable', someTable);
 
@@ -46,7 +45,6 @@ export type AppType = typeof routes;
 ## useQuery 调用
 
 ```typescript
-
 export const useGetSomeTable = () => {
   const query = useQuery({
     queryKey: ['someTable'], // 使用 filters 作为查询键

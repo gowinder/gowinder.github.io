@@ -31,7 +31,7 @@
 
 ### 初始化项目
 
-这段内容可以参考官方文档: [Get started | Full-stack (SSR) | Next.js apps</title><title>Get started | Cloudflare Pages docs](https://developers.cloudflare.com/pages/framework-guides/nextjs/ssr/get-started/)
+这段内容可以参考[官方文档](https://developers.cloudflare.com/pages/framework-guides/nextjs/ssr/get-started/)
 
 项目根目录新建一个`wrangler.toml`,内容如下:
 

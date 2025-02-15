@@ -1,16 +1,36 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>cloudflare KV - 标签 - gowinder个人博客</title>
+        <title>Cloudflare KV - 标签 - gowinder个人博客</title>
         <link>https://gowinder.work/tags/cloudflare-kv/</link>
-        <description>cloudflare KV - 标签 - gowinder个人博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>gowinder@hotmail.com (gowinder)</managingEditor>
-            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 18 Apr 2024 19:12:56 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/cloudflare-kv/" rel="self" type="application/rss+xml" /><item>
+        <description>Cloudflare KV - 标签 - gowinder个人博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 18 Apr 2024 19:12:56 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/cloudflare-kv/" rel="self" type="application/rss+xml" /><item>
     <title>批量删除`Cloudflare KV`中的`key`</title>
     <link>https://gowinder.work/bulk-delete-key-in-cloudflare-kv/</link>
     <pubDate>Thu, 18 Apr 2024 19:12:56 &#43;0800</pubDate>
-    <author>gowinder</author>
+    <author>作者</author>
     <guid>https://gowinder.work/bulk-delete-key-in-cloudflare-kv/</guid>
-    <description><![CDATA[批量删除Cloudflare KV中的key 取得key列表 先执行 1 pnpm wrangler kv:key list --namespace-id=${namespaceID} &gt; PURGE.json` 拿到完整key列表, 如果要条件,就加上: --prefix=&quot;prefix&quot; 批量删除 1 cat purge.json | jq -r]]></description>
+    <description><![CDATA[<h1 id="批量删除cloudflare-kv中的key">批量删除<code>Cloudflare KV</code>中的<code>key</code></h1>
+<h2 id="取得key列表">取得<code>key</code>列表</h2>
+<p>先执行</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">pnpm wrangler kv:key list --namespace-id<span class="o">=</span><span class="si">${</span><span class="nv">namespaceID</span><span class="si">}</span> &gt; PURGE.json<span class="sb">`</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>拿到完整<code>key</code>列表, 如果要条件,就加上: <code>--prefix=&quot;prefix&quot;</code></p>
+<h2 id="批量删除">批量删除</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">cat purge.json <span class="p">|</span> jq -r <span class="s1">&#39;.[].name&#39;</span> <span class="p">|</span> xargs -I <span class="o">{}</span> pnpm wrangler kv:key delete --namespace-id<span class="o">=</span><span class="si">${</span><span class="nv">namespaceID</span><span class="si">}</span> <span class="o">{}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>]]></description>
 </item>
 </channel>
 </rss>

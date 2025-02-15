@@ -3,14 +3,40 @@
         <title>磁盘 - 标签 - gowinder个人博客</title>
         <link>https://gowinder.work/tags/%E7%A3%81%E7%9B%98/</link>
         <description>磁盘 - 标签 - gowinder个人博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>gowinder@hotmail.com (gowinder)</managingEditor>
-            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 14 Feb 2023 09:39:05 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/%E7%A3%81%E7%9B%98/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 14 Feb 2023 09:39:05 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/%E7%A3%81%E7%9B%98/" rel="self" type="application/rss+xml" /><item>
     <title>proxmox ve VM挂载物理硬盘</title>
     <link>https://gowinder.work/proxmox-ve-vm%E6%8C%82%E8%BD%BD%E7%89%A9%E7%90%86%E7%A1%AC%E7%9B%98/</link>
     <pubDate>Tue, 14 Feb 2023 09:39:05 &#43;0800</pubDate>
-    <author>gowinder</author>
+    <author>作者</author>
     <guid>https://gowinder.work/proxmox-ve-vm%E6%8C%82%E8%BD%BD%E7%89%A9%E7%90%86%E7%A1%AC%E7%9B%98/</guid>
-    <description><![CDATA[proxmox ve VM挂载物理硬盘 先找到要挂载的硬盘的id: 1 lsblk |awk &#39;NR==1{print $0&#34; DEVICE-ID(S)&#34;}NR&gt;1{dev=$1;printf $0&#34; &#34;;system(&#34;find /dev/disk/by-id -lname \&#34;*&#34;dev&#34;\&#34; -printf \&#34; %p\&#34;&#34;);print &#34;&#34;;}&#39;|grep -v -E &#39;part|lvm&#39; 结果类似: 1 2 3 4 5 NAME MAJ:MIN RM SIZE RO TYPE MOUNTPOINT DEVICE-ID(S) loop0 7:0 0 20G 0 loop loop1 7:1 0 80G 0]]></description>
+    <description><![CDATA[<h1 id="proxmox-ve-vm挂载物理硬盘">proxmox ve VM挂载物理硬盘</h1>
+<p>先找到要挂载的硬盘的<code>id</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">lsblk <span class="p">|</span>awk <span class="s1">&#39;NR==1{print $0&#34; DEVICE-ID(S)&#34;}NR&gt;1{dev=$1;printf $0&#34; &#34;;system(&#34;find /dev/disk/by-id -lname \&#34;*&#34;dev&#34;\&#34; -printf \&#34; %p\&#34;&#34;);print &#34;&#34;;}&#39;</span><span class="p">|</span>grep -v -E <span class="s1">&#39;part|lvm&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>结果类似:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">NAME         MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT DEVICE-ID<span class="o">(</span>S<span class="o">)</span>
+</span></span><span class="line"><span class="cl">loop0          7:0    <span class="m">0</span>    20G  <span class="m">0</span> loop
+</span></span><span class="line"><span class="cl">loop1          7:1    <span class="m">0</span>    80G  <span class="m">0</span> loop
+</span></span><span class="line"><span class="cl">loop2          7:2    <span class="m">0</span>    50G  <span class="m">0</span> loop
+</span></span><span class="line"><span class="cl">sda            8:0    <span class="m">0</span>   3.6T  <span class="m">0</span> disk   /dev/disk/by-id/ata-WDC_WD40EJRX-XXXXXXX_WD-WWWWW0XXXXXX /dev/disk/by-id/wwn-0x5000000000000
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>比如要挂载<code>/dev/disk/by-id/wwn-0x5000000000000</code>,<code>VM</code>编号为: <code>103</code>,执行如下操作:</p>]]></description>
 </item>
 </channel>
 </rss>

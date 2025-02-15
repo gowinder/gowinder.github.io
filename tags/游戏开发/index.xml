@@ -3,86 +3,120 @@
         <title>游戏开发 - 标签 - gowinder个人博客</title>
         <link>https://gowinder.work/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/</link>
         <description>游戏开发 - 标签 - gowinder个人博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>gowinder@hotmail.com (gowinder)</managingEditor>
-            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 26 Jul 2016 03:07:22 &#43;0000</lastBuildDate><atom:link href="https://gowinder.work/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 26 Jul 2016 03:07:22 &#43;0000</lastBuildDate><atom:link href="https://gowinder.work/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" rel="self" type="application/rss+xml" /><item>
     <title>RectTransform中的坐标</title>
     <link>https://gowinder.work/recttransform%E4%B8%AD%E7%9A%84%E5%9D%90%E6%A0%87/</link>
     <pubDate>Tue, 26 Jul 2016 03:07:22 &#43;0000</pubDate>
-    <author>gowinder</author>
+    <author>作者</author>
     <guid>https://gowinder.work/recttransform%E4%B8%AD%E7%9A%84%E5%9D%90%E6%A0%87/</guid>
-    <description><![CDATA[一直用position去得，后来发现代码输出跟属性上显示不一样，后来把ugui的源代码拿下来看了，才知道，要用anchoredPositio]]></description>
+    <description><![CDATA[<p>一直用position去得，后来发现代码输出跟属性上显示不一样，后来把ugui的源代码拿下来看了，才知道，要用anchoredPosition</p>]]></description>
 </item>
 <item>
     <title>ListBox控制样式自定义与绑定小记</title>
     <link>https://gowinder.work/listbox%E6%8E%A7%E5%88%B6%E6%A0%B7%E5%BC%8F%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%8E%E7%BB%91%E5%AE%9A%E5%B0%8F%E8%AE%B0/</link>
     <pubDate>Sun, 07 Nov 2010 12:26:13 &#43;0000</pubDate>
-    <author>gowinder</author>
+    <author>作者</author>
     <guid>https://gowinder.work/listbox%E6%8E%A7%E5%88%B6%E6%A0%B7%E5%BC%8F%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%8E%E7%BB%91%E5%AE%9A%E5%B0%8F%E8%AE%B0/</guid>
-    <description><![CDATA[Silverlight中绑定自定义样式的ListBox,要注意以下几点 ItemTemplate 指定的属性可以单独放在一个资源文件中. 要绑定的对象,如一个ItemT]]></description>
+    <description><![CDATA[<p>Silverlight中绑定自定义样式的ListBox,要注意以下几点</p>
+<ol>
+<li>ItemTemplate 指定的属性可以单独放在一个资源文件中.</li>
+<li>要绑定的对象,如一个ItemTestData,要从接口INotifyPropertyChanged继承,所使用到的绑定的set属性要调用NotifyPropertyChanged(&ldquo;属性名称&rdquo;);</li>
+<li>如果要绑定数据到Item对象, 自定义的ItemTemplate 样式,要在其根LayoutRoot 中指定绑定名称.</li>
+</ol>
+<p>假设其根是一个Grid,一个Item由2个TextBlock组成,分别要绑定到一个ItemTestData对象的 Data1和Data2上去, 那么,在Grid下首先要指定一个ItemTestData的别名</p>]]></description>
 </item>
 <item>
     <title>自动生成代码的好处-纪念第一个集成代码生成工作DBCodeGen</title>
     <link>https://gowinder.work/%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81%E7%9A%84%E5%A5%BD%E5%A4%84-%E7%BA%AA%E5%BF%B5%E7%AC%AC%E4%B8%80%E4%B8%AA%E9%9B%86%E6%88%90%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%B7%A5%E4%BD%9Cd/</link>
     <pubDate>Wed, 06 Oct 2010 13:09:52 &#43;0000</pubDate>
-    <author>gowinder</author>
+    <author>作者</author>
     <guid>https://gowinder.work/%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81%E7%9A%84%E5%A5%BD%E5%A4%84-%E7%BA%AA%E5%BF%B5%E7%AC%AC%E4%B8%80%E4%B8%AA%E9%9B%86%E6%88%90%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%B7%A5%E4%BD%9Cd/</guid>
-    <description><![CDATA[突然觉得,一个支持快速开发的引擎,除了有好的底层,方便的模板,还应该具体一套完善的开发工具, 这套工具中,包括了一些自动化生成代码的处理,就是]]></description>
+    <description><![CDATA[<p>突然觉得,一个支持快速开发的引擎,除了有好的底层,方便的模板,还应该具体一套完善的开发工具, 这套工具中,包括了一些自动化生成代码的处理,就是VS里面自动生成MFC应用程序一样.省去咱们很多不必要的工作啊.</p>]]></description>
 </item>
 <item>
     <title>几个创建模式的理解</title>
     <link>https://gowinder.work/%E5%87%A0%E4%B8%AA%E5%88%9B%E5%BB%BA%E6%A8%A1%E5%BC%8F%E7%9A%84%E7%90%86%E8%A7%A3/</link>
     <pubDate>Wed, 23 Jun 2010 15:14:00 &#43;0000</pubDate>
-    <author>gowinder</author>
+    <author>作者</author>
     <guid>https://gowinder.work/%E5%87%A0%E4%B8%AA%E5%88%9B%E5%BB%BA%E6%A8%A1%E5%BC%8F%E7%9A%84%E7%90%86%E8%A7%A3/</guid>
-    <description><![CDATA[Abstract Factory 对一整套产品的统一创建。 也就是说，相当于一个模板，一个具体的工厂，创建一个系列的产品，这一系列的产品可能有着同一个风格，因此，将不同系列]]></description>
+    <description><![CDATA[<p>Abstract Factory 对一整套产品的统一创建。 也就是说，相当于一个模板，一个具体的工厂，创建一个系列的产品，这一系列的产品可能有着同一个风格，因此，将不同系列的产品分派到不同的工厂中去做。缺点就是这一系列的产品规划，是已经知道的，如果要加入新的产品到系列中，就需要扩展工厂，修改底层。这模式可以用来控制差异化，也就是说，我要在一个统一系列同，对某一个产品做特别修改，必需要重新生成一个新的工厂。<br>
+Builder 我个人觉得跟Abstract Factory很相似，之所以称为Builder，就是因为在他提供的接口中，并不是生成最基本的零件（这是Abstract Factory做的事情），而是生成零件后，还负责装配和组和（Abstract Factory不做组和），这样调用者，就不用关心是哪些零件组成的最终产品，而只需要找到能够生成最终产品的Builder就可以了，而通过派生Builder，就可以实现不同规格的零件，按不同的方式组合。说白了，Builder比Abstract Factory多一个装配过程，如果在底层中不能确定装配过程以及零件细节，就使用Builder，反之如果在底层就要限制装配过程及零件规格，就使用Abstract Factory。<br>
+Factory Method 跟Abstract Factory有点相似，但是Abstract Factory提供的是一整套零件，而Factory Method提供的是单个零件，当一个产品的装配方式及零件规格固定后，可以使用Factory Method，让派生类按零件规格生成自己需要的零件。</p>]]></description>
 </item>
 <item>
     <title>晕头了，做了次重复工作</title>
     <link>https://gowinder.work/%E6%99%95%E5%A4%B4%E4%BA%86%E5%81%9A%E4%BA%86%E6%AC%A1%E9%87%8D%E5%A4%8D%E5%B7%A5%E4%BD%9C/</link>
     <pubDate>Tue, 18 May 2010 15:32:00 &#43;0000</pubDate>
-    <author>gowinder</author>
+    <author>作者</author>
     <guid>https://gowinder.work/%E6%99%95%E5%A4%B4%E4%BA%86%E5%81%9A%E4%BA%86%E6%AC%A1%E9%87%8D%E5%A4%8D%E5%B7%A5%E4%BD%9C/</guid>
-    <description><![CDATA[今天晕头了，居然把昨天做完的工作今天 又做了一次。 一个将领管理类，昨天写了个CHeroCenter,基本已经写完了，今天又写了个一个，叫CHe]]></description>
+    <description><![CDATA[<p>今天晕头了，居然把昨天做完的工作今天 又做了一次。<br>
+一个将领管理类，昨天写了个CHeroCenter,基本已经写完了，今天又写了个一个，叫CHeroTender,队了类名字不一样，其它的完全一样，函数，成员变量，连函数的参数都一样。在写解聘将领时，需要返回错误代码，准备让策划加到string.xml里，结果发现string.xml里已经有了，惊奇的我在代码中搜索，结果就发现了这一模一样的类，郁闷啊。<br>
+还好这个类不大。百把行代码。</p>]]></description>
 </item>
 <item>
     <title>格式化日志输出具体方式</title>
     <link>https://gowinder.work/%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%97%A5%E5%BF%97%E8%BE%93%E5%87%BA%E5%85%B7%E4%BD%93%E6%96%B9%E5%BC%8F/</link>
     <pubDate>Mon, 15 Mar 2010 14:05:00 &#43;0000</pubDate>
-    <author>gowinder</author>
+    <author>作者</author>
     <guid>https://gowinder.work/%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%97%A5%E5%BF%97%E8%BE%93%E5%87%BA%E5%85%B7%E4%BD%93%E6%96%B9%E5%BC%8F/</guid>
-    <description><![CDATA[底层函数可以继续使用原来的方式，就是直接写字符串。由其它输出日志函数调用。 再写一个参数为XMLNODE的代理函数，此函数接受其它全部上层写日]]></description>
+    <description><![CDATA[<p>底层函数可以继续使用原来的方式，就是直接写字符串。由其它输出日志函数调用。</p>
+<p>再写一个参数为XMLNODE的代理函数，此函数接受其它全部上层写日志函数的调用，上层函数将其日志格式全部统一，将信息放入XMLNODE中，然后由此代理调用底层函数写日志。</p>]]></description>
 </item>
 <item>
     <title>新日志函数:格式化可控级别日志输出</title>
     <link>https://gowinder.work/%E6%96%B0%E6%97%A5%E5%BF%97%E5%87%BD%E6%95%B0%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%8F%AF%E6%8E%A7%E7%BA%A7%E5%88%AB%E6%97%A5%E5%BF%97%E8%BE%93%E5%87%BA/</link>
     <pubDate>Fri, 12 Mar 2010 15:32:00 &#43;0000</pubDate>
-    <author>gowinder</author>
+    <author>作者</author>
     <guid>https://gowinder.work/%E6%96%B0%E6%97%A5%E5%BF%97%E5%87%BD%E6%95%B0%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%8F%AF%E6%8E%A7%E7%BA%A7%E5%88%AB%E6%97%A5%E5%BF%97%E8%BE%93%E5%87%BA/</guid>
-    <description><![CDATA[以往的几个系统都是使用一种比较随意的日志输出方式，就是有什么问题就输出，超时日志，错误日志，ASSERT，异常等全部在一个文件中，这样不方便]]></description>
+    <description><![CDATA[<p>以往的几个系统都是使用一种比较随意的日志输出方式，就是有什么问题就输出，超时日志，错误日志，ASSERT，异常等全部在一个文件中，这样不方便查看，也不方便于对于紧急事件的反应；也无法控制输出级别，有些输出可能只在DEBUG版本或者第一个RELEASE版本才需要，当版本稳定后，就不需要这些日志了，日志级别应该全部是可以控制的。分两部分来谈这个问题：<br>
+1.可控级别：可控级别分在两个部位控制，第一个是编译级别，在编译级别中通过预编译参数或者宏来实现最高可输出级别，别一种是动态控制，使用参数来控制级别，只在小于参数值的级别才可以输出。编译级别的参数值优先级应该大于动态级别的，这样就可以方便显示控制日志输出量。</p>]]></description>
 </item>
 <item>
     <title>关于服务器自动同步时间服务引起的问题</title>
     <link>https://gowinder.work/%E5%85%B3%E4%BA%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%87%AA%E5%8A%A8%E5%90%8C%E6%AD%A5%E6%97%B6%E9%97%B4%E6%9C%8D%E5%8A%A1%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98/</link>
     <pubDate>Fri, 12 Mar 2010 12:34:00 &#43;0000</pubDate>
-    <author>gowinder</author>
+    <author>作者</author>
     <guid>https://gowinder.work/%E5%85%B3%E4%BA%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%87%AA%E5%8A%A8%E5%90%8C%E6%AD%A5%E6%97%B6%E9%97%B4%E6%9C%8D%E5%8A%A1%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
-    <description><![CDATA[士兵突击有一次出现故障，就是因为同步服务把时间同步回去了，这样就造成当前时间可能会比内存中已经发现的事件的时间更早，一相减，是一个负数，因为]]></description>
+    <description><![CDATA[<p>士兵突击有一次出现故障，就是因为同步服务把时间同步回去了，这样就造成当前时间可能会比内存中已经发现的事件的时间更早，一相减，是一个负数，因为我们使用的是DWORD，所以就变成一个很大的数目，造成数据异常。<br>
+解决办法：首先最好关掉服务器上的时间同步服务，然后对DWORD差值做检查，如果是负的，就不做操作，我认为使用DWORD要谨慎，在这上面出的问题不止一次了！</p>]]></description>
 </item>
 <item>
     <title>关于优先队列容器中元素为指针的情况</title>
     <link>https://gowinder.work/%E5%85%B3%E4%BA%8E%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B8%AD%E5%85%83%E7%B4%A0%E4%B8%BA%E6%8C%87%E9%92%88%E7%9A%84%E6%83%85%E5%86%B5/</link>
     <pubDate>Fri, 12 Mar 2010 12:19:00 &#43;0000</pubDate>
-    <author>gowinder</author>
+    <author>作者</author>
     <guid>https://gowinder.work/%E5%85%B3%E4%BA%8E%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B8%AD%E5%85%83%E7%B4%A0%E4%B8%BA%E6%8C%87%E9%92%88%E7%9A%84%E6%83%85%E5%86%B5/</guid>
-    <description><![CDATA[使用优先队列，元素为指针，如： typedef priority_queue&lt;TimeEvent*, deque &lt;TimeEvent*&gt;, less&lt;deque&lt;TimeEvent*&gt;::value_type&gt; TIME_EVENT_QUEUE; 这样比较的话，其结果是比较指针值，如果我要比较TimeEvent中的某个成员，就不行了，经过谷歌，]]></description>
+    <description><![CDATA[<p>使用优先队列，元素为指针，如：<br>
+typedef priority_queue&lt;TimeEvent*, deque &lt;TimeEvent*&gt;, less&lt;deque&lt;TimeEvent*&gt;::value_type&gt;    TIME_EVENT_QUEUE;<br>
+这样比较的话，其结果是比较指针值，如果我要比较TimeEvent中的某个成员，就不行了，经过谷歌，可以采取一个方式，将less替换成一个结构的函数：<br>
+struct TimeEventLessComp<br>
+{<br>
+bool operator () (TimeEvent*&amp; a, TimeEvent*&amp; b) const<br>
+{<br>
+return a-&gt;dwTick &gt; b-&gt;dwTick;<br>
+};<br>
+};<br>
+然后申明时改为：<br>
+typedef priority_queue&lt;TimeEvent*, deque &lt;TimeEvent*&gt;, TimeEventLessComp&gt;    TIME_EVENT_QUEUE;</p>]]></description>
 </item>
 <item>
     <title>关于时间服务的测试结果</title>
     <link>https://gowinder.work/%E5%85%B3%E4%BA%8E%E6%97%B6%E9%97%B4%E6%9C%8D%E5%8A%A1%E7%9A%84%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C/</link>
     <pubDate>Fri, 12 Mar 2010 12:08:00 &#43;0000</pubDate>
-    <author>gowinder</author>
+    <author>作者</author>
     <guid>https://gowinder.work/%E5%85%B3%E4%BA%8E%E6%97%B6%E9%97%B4%E6%9C%8D%E5%8A%A1%E7%9A%84%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C/</guid>
-    <description><![CDATA[经过简单测试，生成500000个计时器，将指针分别插入list和priority_queue，其中priority_queue使用vecto]]></description>
+    <description><![CDATA[<p>经过简单测试，生成500000个计时器，将指针分别插入list和priority_queue，其中priority_queue使用vector容器(不能使用list),先使用list自的sort函数，用时516ms,反复测了几次，都在500ms以上550ms以下 ,对priority_queue进行插入，在500000个的基础上，进行100000次插入，总用时31ms，平均每个0.00031ms<br>
+输出结果如下：<br>
+list sort time:516 ms<br>
+priority_queue push 100000 event use 31 ms time, average 0.000310 ms per event<br>
+sorted list sort time:516 ms<br>
+sorted list trace 0<br>
+sorted list trace 1<br>
+&hellip;.<br>
+priority_queue trace 0<br>
+priority_queue trace 1<br>
+&hellip;.<br>
+经过测试，优先队列明显性能高于LIST的自排序，很适合我的要求！</p>]]></description>
 </item>
 </channel>
 </rss>

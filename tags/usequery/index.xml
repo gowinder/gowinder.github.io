@@ -1,24 +1,25 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>useQuery - 标签 - gowinder个人博客</title>
+        <title>UseQuery - 标签 - gowinder个人博客</title>
         <link>https://gowinder.work/tags/usequery/</link>
-        <description>useQuery - 标签 - gowinder个人博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>gowinder@hotmail.com (gowinder)</managingEditor>
-            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 26 Aug 2024 00:00:06 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/usequery/" rel="self" type="application/rss+xml" /><item>
+        <description>UseQuery - 标签 - gowinder个人博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 26 Aug 2024 00:00:06 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/usequery/" rel="self" type="application/rss+xml" /><item>
     <title>使用nestjs&#43;honojs&#43;drizzle&#43;shadcnui开发部署在cloudflare pages上的web app</title>
     <link>https://gowinder.work/nextjs-honojs-shadcnui-drizzle-cloudflare-pages/</link>
     <pubDate>Mon, 26 Aug 2024 00:00:06 &#43;0800</pubDate>
-    <author>gowinder</author>
+    <author>作者</author>
     <guid>https://gowinder.work/nextjs-honojs-shadcnui-drizzle-cloudflare-pages/</guid>
-    <description><![CDATA[使用 nestjs+honojs+drizzle+shadcnui 开发部署在 cloudflare pages 上的 web app 最近一段时间,一直在撸 cloudflare 的羊毛, workers, pages 都有. 经过几个小项目的折腾, 读过了开始的摸索期, 现在分享一下使用这几个开源库]]></description>
+    <description><![CDATA[<h1 id="使用-nestjshonojsdrizzleshadcnui-开发部署在-cloudflare-pages-上的-web-app">使用 nestjs+honojs+drizzle+shadcnui 开发部署在 cloudflare pages 上的 web app</h1>
+<p>最近一段时间,一直在撸 cloudflare 的羊毛, workers, pages 都有. 经过几个小项目的折腾, 读过了开始的摸索期, 现在分享一下使用这几个开源库,快速开发一个部署在<code>Cloudflare Pages</code>上的<code>Web App</code>的过程.</p>]]></description>
 </item>
 <item>
     <title>useQuery直接使用honojs client报错: TypeError: Cannot read properties of undefined (reading &#39;replace&#39;)</title>
     <link>https://gowinder.work/honojs-usequery-error/</link>
     <pubDate>Thu, 06 Jun 2024 10:00:06 &#43;0800</pubDate>
-    <author>gowinder</author>
+    <author>作者</author>
     <guid>https://gowinder.work/honojs-usequery-error/</guid>
-    <description><![CDATA[useQuery直接使用honojs client报错: TypeError: Cannot read properties of undefined (reading &lsquo;replace&rsquo;) 最近开发了一个项目, 使用nextjs, honojs, drizzle-orm, 部署在cloudflare p]]></description>
+    <description><![CDATA[<h1 id="usequery直接使用honojs-client报错-typeerror-cannot-read-properties-of-undefined-reading-replace">useQuery直接使用honojs client报错: TypeError: Cannot read properties of undefined (reading &lsquo;replace&rsquo;)</h1>
+<p>最近开发了一个项目, 使用<code>nextjs</code>, <code>honojs</code>, <code>drizzle-orm</code>, 部署在<code>cloudflare pages</code>上, 因为<code>honojs</code>对于边缘计算比较友好,所以采用.</p>]]></description>
 </item>
 </channel>
 </rss>

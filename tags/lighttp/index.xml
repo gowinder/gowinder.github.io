@@ -1,16 +1,17 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>lighttp - 标签 - gowinder个人博客</title>
+        <title>Lighttp - 标签 - gowinder个人博客</title>
         <link>https://gowinder.work/tags/lighttp/</link>
-        <description>lighttp - 标签 - gowinder个人博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>gowinder@hotmail.com (gowinder)</managingEditor>
-            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 27 Feb 2023 14:05:41 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/lighttp/" rel="self" type="application/rss+xml" /><item>
+        <description>Lighttp - 标签 - gowinder个人博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 27 Feb 2023 14:05:41 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/lighttp/" rel="self" type="application/rss+xml" /><item>
     <title>在Orange Pi Zero上安装pihole后,webui无法启动问题</title>
     <link>https://gowinder.work/pihile-lighttp-cannot-start-in-orange-pi-zero/</link>
     <pubDate>Mon, 27 Feb 2023 14:05:41 &#43;0800</pubDate>
-    <author>gowinder</author>
+    <author>作者</author>
     <guid>https://gowinder.work/pihile-lighttp-cannot-start-in-orange-pi-zero/</guid>
-    <description><![CDATA[在Orange Pi Zero上安装pihole后,webui无法启动问题 启因 最新在空闲Orange Pi Zero上安装了Pihole用来做家庭主DN]]></description>
+    <description><![CDATA[<h1 id="在orange-pi-zero上安装pihole后webui无法启动问题">在Orange Pi Zero上安装pihole后,webui无法启动问题</h1>
+<h2 id="启因">启因</h2>
+<p>最新在空闲<code>Orange Pi Zero</code>上安装了<code>Pihole</code>用来做家庭主<code>DNS</code>服务器,安装一路顺序: <code>Armbian</code>-&gt;<code>Pihole</code>,结果安装好后,无法启动<code>WebUI</code>, <code>Pihole</code>用的是<code>Lighttp</code></p>]]></description>
 </item>
 </channel>
 </rss>

@@ -1,40 +1,63 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>cloudflare pages - 标签 - gowinder个人博客</title>
+        <title>Cloudflare Pages - 标签 - gowinder个人博客</title>
         <link>https://gowinder.work/tags/cloudflare-pages/</link>
-        <description>cloudflare pages - 标签 - gowinder个人博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>gowinder@hotmail.com (gowinder)</managingEditor>
-            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 26 Aug 2024 00:00:06 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/cloudflare-pages/" rel="self" type="application/rss+xml" /><item>
+        <description>Cloudflare Pages - 标签 - gowinder个人博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 26 Aug 2024 00:00:06 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/cloudflare-pages/" rel="self" type="application/rss+xml" /><item>
     <title>使用nestjs&#43;honojs&#43;drizzle&#43;shadcnui开发部署在cloudflare pages上的web app</title>
     <link>https://gowinder.work/nextjs-honojs-shadcnui-drizzle-cloudflare-pages/</link>
     <pubDate>Mon, 26 Aug 2024 00:00:06 &#43;0800</pubDate>
-    <author>gowinder</author>
+    <author>作者</author>
     <guid>https://gowinder.work/nextjs-honojs-shadcnui-drizzle-cloudflare-pages/</guid>
-    <description><![CDATA[使用 nestjs+honojs+drizzle+shadcnui 开发部署在 cloudflare pages 上的 web app 最近一段时间,一直在撸 cloudflare 的羊毛, workers, pages 都有. 经过几个小项目的折腾, 读过了开始的摸索期, 现在分享一下使用这几个开源库]]></description>
+    <description><![CDATA[<h1 id="使用-nestjshonojsdrizzleshadcnui-开发部署在-cloudflare-pages-上的-web-app">使用 nestjs+honojs+drizzle+shadcnui 开发部署在 cloudflare pages 上的 web app</h1>
+<p>最近一段时间,一直在撸 cloudflare 的羊毛, workers, pages 都有. 经过几个小项目的折腾, 读过了开始的摸索期, 现在分享一下使用这几个开源库,快速开发一个部署在<code>Cloudflare Pages</code>上的<code>Web App</code>的过程.</p>]]></description>
 </item>
 <item>
     <title>useQuery直接使用honojs client报错: TypeError: Cannot read properties of undefined (reading &#39;replace&#39;)</title>
     <link>https://gowinder.work/honojs-usequery-error/</link>
     <pubDate>Thu, 06 Jun 2024 10:00:06 &#43;0800</pubDate>
-    <author>gowinder</author>
+    <author>作者</author>
     <guid>https://gowinder.work/honojs-usequery-error/</guid>
-    <description><![CDATA[useQuery直接使用honojs client报错: TypeError: Cannot read properties of undefined (reading &lsquo;replace&rsquo;) 最近开发了一个项目, 使用nextjs, honojs, drizzle-orm, 部署在cloudflare p]]></description>
+    <description><![CDATA[<h1 id="usequery直接使用honojs-client报错-typeerror-cannot-read-properties-of-undefined-reading-replace">useQuery直接使用honojs client报错: TypeError: Cannot read properties of undefined (reading &lsquo;replace&rsquo;)</h1>
+<p>最近开发了一个项目, 使用<code>nextjs</code>, <code>honojs</code>, <code>drizzle-orm</code>, 部署在<code>cloudflare pages</code>上, 因为<code>honojs</code>对于边缘计算比较友好,所以采用.</p>]]></description>
 </item>
 <item>
     <title>批量删除`Cloudflare KV`中的`key`</title>
     <link>https://gowinder.work/bulk-delete-key-in-cloudflare-kv/</link>
     <pubDate>Thu, 18 Apr 2024 19:12:56 &#43;0800</pubDate>
-    <author>gowinder</author>
+    <author>作者</author>
     <guid>https://gowinder.work/bulk-delete-key-in-cloudflare-kv/</guid>
-    <description><![CDATA[批量删除Cloudflare KV中的key 取得key列表 先执行 1 pnpm wrangler kv:key list --namespace-id=${namespaceID} &gt; PURGE.json` 拿到完整key列表, 如果要条件,就加上: --prefix=&quot;prefix&quot; 批量删除 1 cat purge.json | jq -r]]></description>
+    <description><![CDATA[<h1 id="批量删除cloudflare-kv中的key">批量删除<code>Cloudflare KV</code>中的<code>key</code></h1>
+<h2 id="取得key列表">取得<code>key</code>列表</h2>
+<p>先执行</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">pnpm wrangler kv:key list --namespace-id<span class="o">=</span><span class="si">${</span><span class="nv">namespaceID</span><span class="si">}</span> &gt; PURGE.json<span class="sb">`</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>拿到完整<code>key</code>列表, 如果要条件,就加上: <code>--prefix=&quot;prefix&quot;</code></p>
+<h2 id="批量删除">批量删除</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">cat purge.json <span class="p">|</span> jq -r <span class="s1">&#39;.[].name&#39;</span> <span class="p">|</span> xargs -I <span class="o">{}</span> pnpm wrangler kv:key delete --namespace-id<span class="o">=</span><span class="si">${</span><span class="nv">namespaceID</span><span class="si">}</span> <span class="o">{}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>]]></description>
 </item>
 <item>
     <title>将remix项目迁移到cloudflare</title>
     <link>https://gowinder.work/migrate-remix-to-cloudflare/</link>
     <pubDate>Mon, 08 Apr 2024 14:20:06 &#43;0800</pubDate>
-    <author>gowinder</author>
+    <author>作者</author>
     <guid>https://gowinder.work/migrate-remix-to-cloudflare/</guid>
-    <description><![CDATA[将remix项目迁移到cloudflare 最近使用remix开发了一个项目,之前没有做过全栈开发,reactjs用过一些,不是很熟,用的是N]]></description>
+    <description><![CDATA[<h1 id="将remix项目迁移到cloudflare">将remix项目迁移到cloudflare</h1>
+<p>最近使用<code>remix</code>开发了一个项目,之前没有做过全栈开发,<code>reactjs</code>用过一些,不是很熟,用的是<code>Nextjs</code>, 感觉太难用, 主要是<code>13</code>版本换了<code>app router</code>后,有点摸不着头脑了.</p>]]></description>
 </item>
 </channel>
 </rss>

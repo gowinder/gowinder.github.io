@@ -1,24 +1,27 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>ai - 标签 - gowinder个人博客</title>
+        <title>Ai - 标签 - gowinder个人博客</title>
         <link>https://gowinder.work/tags/ai/</link>
-        <description>ai - 标签 - gowinder个人博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>gowinder@hotmail.com (gowinder)</managingEditor>
-            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 25 Mar 2024 14:12:16 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/ai/" rel="self" type="application/rss+xml" /><item>
+        <description>Ai - 标签 - gowinder个人博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 25 Mar 2024 14:12:16 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/ai/" rel="self" type="application/rss+xml" /><item>
     <title>部署ComfyUI玩</title>
     <link>https://gowinder.work/play-with-comfyui/</link>
     <pubDate>Mon, 25 Mar 2024 14:12:16 &#43;0800</pubDate>
-    <author>gowinder</author>
+    <author>作者</author>
     <guid>https://gowinder.work/play-with-comfyui/</guid>
-    <description><![CDATA[部署ComfyUI玩 之前AIGC非常火, 我本地部署了Stable Diffusion 的WebUI玩了一下,见: text 但是吧, WebUI 界面, 太复杂了, 元素太多了, 看起来非]]></description>
+    <description><![CDATA[<h1 id="部署comfyui玩">部署ComfyUI玩</h1>
+<p>之前<code>AIGC</code>非常火, 我本地部署了<code>Stable Diffusion</code> 的<code>WebUI</code>玩了一下,见: <a href="/content/posts/create-local-stable-diffusion-env.md" rel="">text</a></p>
+<p>但是吧, <code>WebUI</code> 界面, 太复杂了, 元素太多了, 看起来非常专业, 但是用起来也是有一定难度的. 正好那段时间工作比较忙, 玩了一段时间, 就放着没有继续玩了.</p>]]></description>
 </item>
 <item>
     <title>部署本地 Stable Diffusion运行环境</title>
     <link>https://gowinder.work/create-local-stable-diffusion-env/</link>
     <pubDate>Sun, 23 Apr 2023 14:13:38 &#43;0800</pubDate>
-    <author>gowinder</author>
+    <author>作者</author>
     <guid>https://gowinder.work/create-local-stable-diffusion-env/</guid>
-    <description><![CDATA[部署本地 Stable Diffusion运行环境 最近 midjourney 比较火，不过开始收费了，10刀一个月，消费不起，换成开源的Stable Diffusion来往，可以]]></description>
+    <description><![CDATA[<h1 id="部署本地-stable-diffusion运行环境">部署本地 Stable Diffusion运行环境</h1>
+<p>最近 <code>midjourney</code> 比较火，不过开始收费了，10刀一个月，消费不起，换成开源的<code>Stable Diffusion</code>来往，可以在<code>Google Colab</code>上一件部署：
+<code>https://github.com/camenduru/stable-diffusion-webui-colab</code>，不过<code>Google Colab</code>免费的<code>gpu</code>一下就没有了，付费的虽然便宜，还是得省着用，如果本地有<code>gpu</code>，而且有<code>8G</code>以上显存可以用自己的电脑来跑，节约成本，<code>6G</code>显存应该也可以，降低分辨率和关键字试试。</p>]]></description>
 </item>
 </channel>
 </rss>

@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
     <head>
-	<meta name="generator" content="Hugo 0.120.4">
+	<meta name="generator" content="Hugo 0.143.1">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>gowinder个人博客</title><meta name="Description" content="记录生活,编码,折腾,杂七杂八"><meta property="og:title" content="gowinder个人博客" />
-<meta property="og:description" content="记录生活,编码,折腾,杂七杂八" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://gowinder.work/" /><meta property="og:image" content="https://gravatar.com/userimage/16926726/2de44cb9918f08ff7f430244b10bf37b.jpeg?size=256"/><meta property="og:site_name" content="gowinder个人博客" />
+        <title>gowinder个人博客</title><meta name="Description" content="记录生活,编码,折腾,杂七杂八"><meta property="og:url" content="https://gowinder.work/">
+  <meta property="og:site_name" content="gowinder个人博客">
+  <meta property="og:title" content="gowinder个人博客">
+  <meta property="og:description" content="记录生活,编码,折腾,杂七杂八">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="website">
+    <meta property="og:image" content="https://gravatar.com/userimage/16926726/2de44cb9918f08ff7f430244b10bf37b.jpeg?size=256">
 
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://gravatar.com/userimage/16926726/2de44cb9918f08ff7f430244b10bf37b.jpeg?size=256"/>
-
-<meta name="twitter:title" content="gowinder个人博客"/>
-<meta name="twitter:description" content="记录生活,编码,折腾,杂七杂八"/>
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://gravatar.com/userimage/16926726/2de44cb9918f08ff7f430244b10bf37b.jpeg?size=256">
+  <meta name="twitter:title" content="gowinder个人博客">
+  <meta name="twitter:description" content="记录生活,编码,折腾,杂七杂八">
 <meta name="application-name" content="gowinder个人博客">
 <meta name="apple-mobile-web-app-title" content="gowinder个人博客"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -25,10 +27,7 @@
     {
         "@context": "http://schema.org",
         "@type": "WebSite",
-        "url": "https:\/\/gowinder.work\/","inLanguage": "zh-CN","author": {
-                "@type": "Person",
-                "name": "gowinder"
-            },"description": "记录生活,编码,折腾,杂七杂八","image": {
+        "url": "https:\/\/gowinder.work\/","inLanguage": "zh-CN","description": "记录生活,编码,折腾,杂七杂八","image": {
                 "@type": "ImageObject",
                 "url": "https:\/\/gowinder.work\/images\/Apple-Devices-Preview.png",
                 "width":  3200 ,
@@ -112,34 +111,68 @@
         title="https://www.gravatar.com/avatar/f54704641b5fd99f865013a8196d6caf?s=240&amp;d=mp" /></a></div><h1 class="home-title">gowinder个人博客</h1><div class="home-subtitle"><div id="id-1" class="typeit"></div></div><div class="links"><a href="https://github.com/gowinder" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="https://steamcommunity.com/id/gowinder" title="Steam" target="_blank" rel="noopener noreffer me"><i class="fab fa-steam fa-fw" aria-hidden="true"></i></a><a href="https://www.douban.com/people/gowinder" title="豆瓣" target="_blank" rel="noopener noreffer me"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/douban.svg" aria-hidden="true"></i></a><a href="mailto:gowinder@hotmail.com" title="Email" rel="me"><i class="far fa-envelope fa-fw" aria-hidden="true"></i></a><a href="/index.xml" title="RSS" target="_blank" rel="noopener noreffer me"><i class="fas fa-rss fa-fw" aria-hidden="true"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/%E5%85%B3%E4%BA%8E%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B8%AD%E5%85%83%E7%B4%A0%E4%B8%BA%E6%8C%87%E9%92%88%E7%9A%84%E6%83%85%E5%86%B5/">关于优先队列容器中元素为指针的情况</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>gowinder</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2010-03-12">2010-03-12</time></span></div><div class="content">使用优先队列，元素为指针，如： typedef priority_queue&lt;TimeEvent*, deque &lt;TimeEvent*&gt;, less&lt;deque&lt;TimeEvent*&gt;::value_type&gt; TIME_EVENT_QUEUE; 这样比较的话，其结果是比较指针值，如果我要比较TimeEvent中的某个成员，就不行了，经过谷歌，</div><div class="post-footer">
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>作者</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2010-03-12">2010-03-12</time></span></div><div class="content"><p>使用优先队列，元素为指针，如：<br>
+typedef priority_queue&lt;TimeEvent*, deque &lt;TimeEvent*&gt;, less&lt;deque&lt;TimeEvent*&gt;::value_type&gt;    TIME_EVENT_QUEUE;<br>
+这样比较的话，其结果是比较指针值，如果我要比较TimeEvent中的某个成员，就不行了，经过谷歌，可以采取一个方式，将less替换成一个结构的函数：<br>
+struct TimeEventLessComp<br>
+{<br>
+bool operator () (TimeEvent*&amp; a, TimeEvent*&amp; b) const<br>
+{<br>
+return a-&gt;dwTick &gt; b-&gt;dwTick;<br>
+};<br>
+};<br>
+然后申明时改为：<br>
+typedef priority_queue&lt;TimeEvent*, deque &lt;TimeEvent*&gt;, TimeEventLessComp&gt;    TIME_EVENT_QUEUE;</p></div><div class="post-footer">
         <a href="/%E5%85%B3%E4%BA%8E%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B8%AD%E5%85%83%E7%B4%A0%E4%B8%BA%E6%8C%87%E9%92%88%E7%9A%84%E6%83%85%E5%86%B5/">阅读全文</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/">游戏开发</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/%E5%85%B3%E4%BA%8E%E6%97%B6%E9%97%B4%E6%9C%8D%E5%8A%A1%E7%9A%84%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C/">关于时间服务的测试结果</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>gowinder</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2010-03-12">2010-03-12</time></span></div><div class="content">经过简单测试，生成500000个计时器，将指针分别插入list和priority_queue，其中priority_queue使用vecto</div><div class="post-footer">
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>作者</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2010-03-12">2010-03-12</time></span></div><div class="content"><p>经过简单测试，生成500000个计时器，将指针分别插入list和priority_queue，其中priority_queue使用vector容器(不能使用list),先使用list自的sort函数，用时516ms,反复测了几次，都在500ms以上550ms以下 ,对priority_queue进行插入，在500000个的基础上，进行100000次插入，总用时31ms，平均每个0.00031ms<br>
+输出结果如下：<br>
+list sort time:516 ms<br>
+priority_queue push 100000 event use 31 ms time, average 0.000310 ms per event<br>
+sorted list sort time:516 ms<br>
+sorted list trace 0<br>
+sorted list trace 1<br>
+&hellip;.<br>
+priority_queue trace 0<br>
+priority_queue trace 1<br>
+&hellip;.<br>
+经过测试，优先队列明显性能高于LIST的自排序，很适合我的要求！</p></div><div class="post-footer">
         <a href="/%E5%85%B3%E4%BA%8E%E6%97%B6%E9%97%B4%E6%9C%8D%E5%8A%A1%E7%9A%84%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C/">阅读全文</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/">游戏开发</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/%E6%97%B6%E9%97%B4%E6%9C%8D%E5%8A%A1%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/">时间服务实现方式</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>gowinder</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2010-03-11">2010-03-11</time></span></div><div class="content">使用一个单向或者双向链表，或者使用一个优先队列（priority_queue）. 队列中的元素为一个计时器对象。计时器对象包括，从标准时间（程</div><div class="post-footer">
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>作者</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2010-03-11">2010-03-11</time></span></div><div class="content"><p>使用一个单向或者双向链表，或者使用一个优先队列（priority_queue）.<br>
+队列中的元素为一个计时器对象。计时器对象包括，从标准时间（程序运行时）开始的时间差。越晚触发的计时器，这个值越大，及触发器事件类型。<br>
+如果只使用链表，每次插入后，就要进行一次重排，如果使用优先队列，自动插入顺序位置，我想使用优先队列应该效果好些，还要实验。<br>
+每次心跳（服务器线程循环），调用时间服务OnTicker函数，此函数检查队列中最前一个计时器的时间值，如果到达或者超过当前时间的时间差，就将此计时器取出，然后调用其触发器事件。<br>
+现在，有二个问题还未解答：<br>
+1.时间差值的精确程度,精确到什么程度？最好的情况是精确到微秒，那样，时间服务中的队列可能就会到几十万，这样对插入会有多大的影响，需要具体测试。<br>
+2.关于时间差的问题，以什么方式设置？目前使用的TICK是DWORD，32位，42亿多毫秒，换成天数是是49.71天，如果时间差直接放系统TICK+触发事件需要的时间，那么很可能会溢出。如果以程序运行时间为0点，且此时间点的系统TICK为SYSTEM_TICK，以此为参照，新加入的事件的时间值EVENT_TICK为：<br>
+EVENT_TICK = NOW_TICK(当前系统TICK) - SYSTEM_TICK+NEED_TIME（需要的时间），也就是说存放时有一个换算过程。这样最多可以存放离程序运行49天内的触发器。还没有考虑好</p></div><div class="post-footer">
         <a href="/%E6%97%B6%E9%97%B4%E6%9C%8D%E5%8A%A1%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/">阅读全文</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/">游戏开发</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0-2/">压力测试笔记 2</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>gowinder</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2009-07-15">2009-07-15</time></span></div><div class="content">昨天发现登录时,任务初始化读取数据库操作频繁问题，今天为了找出其它数据库操作频繁问题，加入数据库操作计数变量，如果在登录或者运行某些计算时操</div><div class="post-footer">
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>作者</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2009-07-15">2009-07-15</time></span></div><div class="content"><p>昨天发现登录时,任务初始化读取数据库操作频繁问题，今天为了找出其它数据库操作频繁问题，加入数据库操作计数变量，如果在登录或者运行某些计算时操作过于频繁，就再输出数据库操作日志，找出原因。</p></div><div class="post-footer">
         <a href="/%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0-2/">阅读全文</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/">游戏开发</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/windows-socket-%E7%AC%94%E8%AE%B0/">windows socket 笔记</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>gowinder</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2009-07-14">2009-07-14</time></span></div><div class="content">10055错误,压力测试客户端开了1000个连接,就报10055错误,查了发现是资源不足,后来想想,应该是连得太快了,服务器响应不过来,所以</div><div class="post-footer">
-        <a href="/windows-socket-%E7%AC%94%E8%AE%B0/">阅读全文</a><div class="post-tags">
+        <a href="/%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0-1/">压力测试笔记 1</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>作者</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2009-07-14">2009-07-14</time></span></div><div class="content"><p>马上要封测了,现在开始压力测试.<br>
+1000个连接上,没有问题,但是登录后问题来了,处理一个登录要1秒钟时间,可想而知1000个需要多长时间.<br>
+这是肯定不行.<br>
+于是加入测试语句,查找是谁在拖时间.<br>
+最后找到是登录时初始化玩家的任务,才发现有900多个任务,每个任务又有小任务,而且小任务不管数据库有没有记录,都要去数据库中SELECT 一次.难怪,明天找人改过来,已经完成和还没有开始的任务就不需要读了.应该会快很多.<br>
+又发现写日志问题,在每次TICK调用的函数中,如果有CHECK之类的日志出错,会不停的写,导致服务器没有响应,除了关掉日志写硬盘外,几乎没有别的办法.在介面线程显示时,取日志消息时,每取一个,要加一个判断,看是否超出此次TICK可能使用的时间,如果超出,还未处理的TICK就下次再处理,这样介面就不会死掉了.</p></div><div class="post-footer">
+        <a href="/%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0-1/">阅读全文</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/">游戏开发</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/%E5%B0%BC%E5%8F%A4%E6%8B%89%E6%96%AF%E5%87%AF%E5%A5%87-%E5%B1%85%E5%AE%B6%E7%94%B7%E4%BA%BA-the-family-man/">尼古拉斯凯奇 居家男人 The Family Man</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>gowinder</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2008-10-25">2008-10-25</time></span></div><div class="content">当时看这部片子的时候,本人正在外地出长差,虽然不说事业正劲,但是至少也没想过要回武汉。 片子是在一个普通的工作日，下班之后，没地方去，一个人在</div><div class="post-footer">
-        <a href="/%E5%B0%BC%E5%8F%A4%E6%8B%89%E6%96%AF%E5%87%AF%E5%A5%87-%E5%B1%85%E5%AE%B6%E7%94%B7%E4%BA%BA-the-family-man/">阅读全文</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/%E7%94%B5%E5%BD%B1/">电影</a></div></div>
+        <a href="/windows-socket-%E7%AC%94%E8%AE%B0/">windows socket 笔记</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>作者</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2009-07-14">2009-07-14</time></span></div><div class="content"><p>10055错误,压力测试客户端开了1000个连接,就报10055错误,查了发现是资源不足,后来想想,应该是连得太快了,服务器响应不过来,所以客户端的缓冲满了.调多点线程,或者发送每个连接的之间停一下.</p></div><div class="post-footer">
+        <a href="/windows-socket-%E7%AC%94%E8%AE%B0/">阅读全文</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/">游戏开发</a></div></div>
 </article><ul class="pagination"><li class="page-item ">
                     <span class="page-link">
                         <a href="/">1</a>
@@ -168,8 +201,8 @@
                     </span>
                 </li></ul></div></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.120.4">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
-                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">gowinder</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.143.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 
@@ -178,5 +211,14 @@
             </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
                 <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
             </a>
-        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@8.6.0/dist/index.umd.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"data":{"id-1":"记录生活,编码,折腾,杂七杂八"},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.zh-cn","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@8.6.0/dist/index.umd.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"data":{"id-1":"记录生活,编码,折腾,杂七杂八"},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.zh-cn","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5259365864322361" crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:inline-block;width:200px;height:800px"
+     data-ad-client="ca-pub-XXXX"
+     data-ad-slot="XXXX"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    </body>
 </html>

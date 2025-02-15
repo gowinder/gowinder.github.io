@@ -1,16 +1,18 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>r2s - 标签 - gowinder个人博客</title>
+        <title>R2s - 标签 - gowinder个人博客</title>
         <link>https://gowinder.work/tags/r2s/</link>
-        <description>r2s - 标签 - gowinder个人博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>gowinder@hotmail.com (gowinder)</managingEditor>
-            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 16 Mar 2024 10:16:15 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/r2s/" rel="self" type="application/rss+xml" /><item>
+        <description>R2s - 标签 - gowinder个人博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 16 Mar 2024 10:16:15 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/r2s/" rel="self" type="application/rss+xml" /><item>
     <title>一个youtube app使用quic引起的问题</title>
     <link>https://gowinder.work/sing-box-youtube-app-quic-issue/</link>
     <pubDate>Sat, 16 Mar 2024 10:16:15 &#43;0800</pubDate>
-    <author>gowinder</author>
+    <author>作者</author>
     <guid>https://gowinder.work/sing-box-youtube-app-quic-issue/</guid>
-    <description><![CDATA[一个youtube app使用quic引起的问题 问题描述 家里是r2s做旁路由,使用的是sing-box的tun模式, 之前一直用的是cn2 gia]]></description>
+    <description><![CDATA[<hr>
+<h1 id="一个youtube-app使用quic引起的问题">一个youtube app使用quic引起的问题</h1>
+<h2 id="问题描述">问题描述</h2>
+<p>家里是<code>r2s</code>做旁路由,使用的是<code>sing-box</code>的<code>tun</code>模式, 之前一直用的是<code>cn2 gia</code>的线路,每天晚上用<code>apple tv</code>上的<code>youtube</code> 看看视频睡觉,没有什么问题, 这个月服务器流量用光了, 就在普通线路上用<code>hysteria2</code>, 半天用的都没有什么问题,结果到了晚上, <code>youtube</code>根本不能看,想到可能是晚上<code>udp</code>丢包比较严重,于是就没有管.</p>]]></description>
 </item>
 </channel>
 </rss>

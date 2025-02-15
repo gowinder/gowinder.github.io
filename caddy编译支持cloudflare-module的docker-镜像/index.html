@@ -4,16 +4,23 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>caddy编译支持cloudflare module的docker 镜像 - gowinder个人博客</title><meta name="Description" content="记录生活,编码,折腾,杂七杂八"><meta property="og:title" content="caddy编译支持cloudflare module的docker 镜像" />
-<meta property="og:description" content="caddy编译支持cloudflare module的docker 镜像 caddy使用cloudflare的dns时,会报错 出现: Error: adapting config using caddyfile: parsing caddyfile" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/caddy%E7%BC%96%E8%AF%91%E6%94%AF%E6%8C%81cloudflare-module%E7%9A%84docker-%E9%95%9C%E5%83%8F/" /><meta property="og:image" content="https://gravatar.com/userimage/16926726/2de44cb9918f08ff7f430244b10bf37b.jpeg?size=256" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-02-13T14:31:05+08:00" />
-<meta property="article:modified_time" content="2023-02-13T14:31:05+08:00" /><meta property="og:site_name" content="gowinder个人博客" />
+        <title>caddy编译支持cloudflare module的docker 镜像 - gowinder个人博客</title><meta name="Description" content="记录生活,编码,折腾,杂七杂八"><meta property="og:url" content="http://localhost:1313/caddy%E7%BC%96%E8%AF%91%E6%94%AF%E6%8C%81cloudflare-module%E7%9A%84docker-%E9%95%9C%E5%83%8F/">
+  <meta property="og:site_name" content="gowinder个人博客">
+  <meta property="og:title" content="caddy编译支持cloudflare module的docker 镜像">
+  <meta property="og:description" content="caddy编译支持cloudflare module的docker 镜像 caddy使用cloudflare的dns时,会报错 出现: Error: adapting config using caddyfile: parsing caddyfile tokens for &#39;tls&#39;: /etc/caddy/Caddyfile:3 - Error during parsing: getting module named &#39;dns.providers.cloudflare&#39;: module not registered: dns.providers.cloudflare,查了下,需要自已编辑module">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-02-13T14:31:05+08:00">
+    <meta property="article:modified_time" content="2023-02-13T14:31:05+08:00">
+    <meta property="article:tag" content="Caddy">
+    <meta property="article:tag" content="Docker">
+    <meta property="og:image" content="https://gravatar.com/userimage/16926726/2de44cb9918f08ff7f430244b10bf37b.jpeg?size=256">
 
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://gravatar.com/userimage/16926726/2de44cb9918f08ff7f430244b10bf37b.jpeg?size=256" /><meta name="twitter:title" content="caddy编译支持cloudflare module的docker 镜像"/>
-<meta name="twitter:description" content="caddy编译支持cloudflare module的docker 镜像 caddy使用cloudflare的dns时,会报错 出现: Error: adapting config using caddyfile: parsing caddyfile"/>
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://gravatar.com/userimage/16926726/2de44cb9918f08ff7f430244b10bf37b.jpeg?size=256">
+  <meta name="twitter:title" content="caddy编译支持cloudflare module的docker 镜像">
+  <meta name="twitter:description" content="caddy编译支持cloudflare module的docker 镜像 caddy使用cloudflare的dns时,会报错 出现: Error: adapting config using caddyfile: parsing caddyfile tokens for &#39;tls&#39;: /etc/caddy/Caddyfile:3 - Error during parsing: getting module named &#39;dns.providers.cloudflare&#39;: module not registered: dns.providers.cloudflare,查了下,需要自已编辑module">
 <meta name="application-name" content="gowinder个人博客">
 <meta name="apple-mobile-web-app-title" content="gowinder个人博客"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -43,7 +50,7 @@
                     "height":  560 
                 }},"author": {
                 "@type": "Person",
-                "name": "gowinder"
+                "name": "作者"
             },"description": ""
     }
     </script></head>
@@ -117,7 +124,7 @@
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">caddy编译支持cloudflare module的docker 镜像</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>gowinder</a></span></div>
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>作者</a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-02-13">2023-02-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 287 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 1 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
@@ -191,16 +198,16 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-Caddyfile" data-lang="Caddyfile"><span class="line"><span class="cl"><span class="n">(cors)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="nd">@origin{args.0}</span> <span class="k">header</span> <span class="s">Origin</span> <span class="se">{args.0}</span>
-</span></span><span class="line"><span class="cl">        <span class="k">header</span> <span class="nd">@origin{args.0}</span> <span class="s">Access-Control-Allow-Origin</span> <span class="s">&#34;</span><span class="se">{args.0}</span><span class="s">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">header</span> <span class="nd">@origin{args.0}</span> <span class="s">Access-Control-Allow-Origin</span> <span class="s2">&#34;</span><span class="se">{args.0}</span><span class="s2">&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">&#34;module&#34;:</span> <span class="s">&#34;acme&#34;,</span>
+</span></span><span class="line"><span class="cl">        <span class="k">&#34;module&#34;:</span> <span class="s2">&#34;acme&#34;</span><span class="s">,</span>
 </span></span><span class="line"><span class="cl">        <span class="k">&#34;challenges&#34;:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">                <span class="k">&#34;dns&#34;:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">                        <span class="k">&#34;provider&#34;:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">                                <span class="k">&#34;name&#34;:</span> <span class="s">&#34;cloudflare&#34;,</span>
-</span></span><span class="line"><span class="cl">                                <span class="k">&#34;api_token&#34;:</span> <span class="s">&#34;</span><span class="se">{env.CLOUDFLARE_DNS_API_TOKEN}</span><span class="s">&#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="s2">&#34;dns&#34;</span><span class="k">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                        <span class="s2">&#34;provider&#34;</span><span class="k">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                                <span class="s2">&#34;name&#34;</span><span class="k">:</span> <span class="s2">&#34;cloudflare&#34;</span><span class="s">,</span>
+</span></span><span class="line"><span class="cl">                                <span class="s2">&#34;api_token&#34;</span><span class="k">:</span> <span class="s2">&#34;</span><span class="se">{env.CLOUDFLARE_DNS_API_TOKEN}</span><span class="s2">&#34;</span>
 </span></span><span class="line"><span class="cl">                        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">                <span class="p">}</span>
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
@@ -212,8 +219,8 @@
 </span></span><span class="line"><span class="cl">        <span class="k">root</span> <span class="nd">*</span> <span class="s">/var/www/html</span><span class="c1">
 </span></span></span><span class="line"><span class="cl"><span class="c1">        # Enable the static file server.
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">file_server</span>
-</span></span><span class="line"><span class="cl">        <span class="k">header</span> <span class="s">Access-Control-Allow-Methods</span> <span class="s">&#34;POST,</span> <span class="s">GET,</span> <span class="s">OPTIONS,</span> <span class="s">PUT&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="k">header</span> <span class="s">Access-Control-Allow-Headers</span> <span class="s">&#34;*&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">header</span> <span class="s">Access-Control-Allow-Methods</span> <span class="s2">&#34;POST, GET, OPTIONS, PUT&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">header</span> <span class="s">Access-Control-Allow-Headers</span> <span class="s2">&#34;*&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
@@ -248,8 +255,8 @@
 </span></span><span class="line"><span class="cl">    <span class="k">root</span> <span class="nd">*</span> <span class="s">/var/www/html</span><span class="c1">
 </span></span></span><span class="line"><span class="cl"><span class="c1">    # Enable the static file server.
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">file_server</span>
-</span></span><span class="line"><span class="cl">    <span class="k">header</span> <span class="s">Access-Control-Allow-Methods</span> <span class="s">&#34;POST,</span> <span class="s">GET,</span> <span class="s">OPTIONS,</span> <span class="s">PUT&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">header</span> <span class="s">Access-Control-Allow-Headers</span> <span class="s">&#34;*&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">header</span> <span class="s">Access-Control-Allow-Methods</span> <span class="s2">&#34;POST, GET, OPTIONS, PUT&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">header</span> <span class="s">Access-Control-Allow-Headers</span> <span class="s2">&#34;*&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
@@ -281,8 +288,8 @@
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.123.8">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
-                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">gowinder</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.143.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 
@@ -291,5 +298,14 @@
             </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
                 <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
             </a>
-        </div><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.zh-cn","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+        </div><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.zh-cn","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5259365864322361" crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:inline-block;width:200px;height:800px"
+     data-ad-client="ca-pub-XXXX"
+     data-ad-slot="XXXX"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    </body>
 </html>

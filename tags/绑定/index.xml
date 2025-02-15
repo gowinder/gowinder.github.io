@@ -3,14 +3,19 @@
         <title>绑定 - 标签 - gowinder个人博客</title>
         <link>https://gowinder.work/tags/%E7%BB%91%E5%AE%9A/</link>
         <description>绑定 - 标签 - gowinder个人博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>gowinder@hotmail.com (gowinder)</managingEditor>
-            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 07 Nov 2010 12:26:13 &#43;0000</lastBuildDate><atom:link href="https://gowinder.work/tags/%E7%BB%91%E5%AE%9A/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 07 Nov 2010 12:26:13 &#43;0000</lastBuildDate><atom:link href="https://gowinder.work/tags/%E7%BB%91%E5%AE%9A/" rel="self" type="application/rss+xml" /><item>
     <title>ListBox控制样式自定义与绑定小记</title>
     <link>https://gowinder.work/listbox%E6%8E%A7%E5%88%B6%E6%A0%B7%E5%BC%8F%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%8E%E7%BB%91%E5%AE%9A%E5%B0%8F%E8%AE%B0/</link>
     <pubDate>Sun, 07 Nov 2010 12:26:13 &#43;0000</pubDate>
-    <author>gowinder</author>
+    <author>作者</author>
     <guid>https://gowinder.work/listbox%E6%8E%A7%E5%88%B6%E6%A0%B7%E5%BC%8F%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%8E%E7%BB%91%E5%AE%9A%E5%B0%8F%E8%AE%B0/</guid>
-    <description><![CDATA[Silverlight中绑定自定义样式的ListBox,要注意以下几点 ItemTemplate 指定的属性可以单独放在一个资源文件中. 要绑定的对象,如一个ItemT]]></description>
+    <description><![CDATA[<p>Silverlight中绑定自定义样式的ListBox,要注意以下几点</p>
+<ol>
+<li>ItemTemplate 指定的属性可以单独放在一个资源文件中.</li>
+<li>要绑定的对象,如一个ItemTestData,要从接口INotifyPropertyChanged继承,所使用到的绑定的set属性要调用NotifyPropertyChanged(&ldquo;属性名称&rdquo;);</li>
+<li>如果要绑定数据到Item对象, 自定义的ItemTemplate 样式,要在其根LayoutRoot 中指定绑定名称.</li>
+</ol>
+<p>假设其根是一个Grid,一个Item由2个TextBlock组成,分别要绑定到一个ItemTestData对象的 Data1和Data2上去, 那么,在Grid下首先要指定一个ItemTestData的别名</p>]]></description>
 </item>
 </channel>
 </rss>

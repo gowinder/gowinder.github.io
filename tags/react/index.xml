@@ -1,16 +1,18 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>react - 标签 - gowinder个人博客</title>
+        <title>React - 标签 - gowinder个人博客</title>
         <link>https://gowinder.work/tags/react/</link>
-        <description>react - 标签 - gowinder个人博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>gowinder@hotmail.com (gowinder)</managingEditor>
-            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 28 Mar 2023 11:01:11 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/react/" rel="self" type="application/rss+xml" /><item>
+        <description>React - 标签 - gowinder个人博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 28 Mar 2023 11:01:11 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/react/" rel="self" type="application/rss+xml" /><item>
     <title>解决React开发模式服务端Cors问题</title>
     <link>https://gowinder.work/react-scripts-cors/</link>
     <pubDate>Tue, 28 Mar 2023 11:01:11 &#43;0800</pubDate>
-    <author>gowinder</author>
+    <author>作者</author>
     <guid>https://gowinder.work/react-scripts-cors/</guid>
-    <description><![CDATA[&ldquo;解决React开发模式服务端Cors问题 启因 最近在做openai的后端代理服务,一个后台池账号池,缓冲前端过来的openai的]]></description>
+    <description><![CDATA[<h1 id="解决react开发模式服务端cors问题">&ldquo;解决React开发模式服务端Cors问题</h1>
+<h2 id="启因">启因</h2>
+<p>最近在做<code>openai</code>的后端代理服务,一个后台池账号池,缓冲前端过来的<code>openai</code>的<code>completion</code>请求.</p>
+<p>后端基本开发完成了,所以需要一个demo前端做测试及演示用,就用<code>react</code>做了一个简单的前端聊天程序,代码基本由<code>GPT-4</code>来生成,生成了多次,拼接了一下,由于我也没有写过<code>react</code>,所以还花了点时间选择拼接,因为<code>CHATGPT</code>也经常出些错误,懂的人一看就知道,不懂的人就要上当.</p>]]></description>
 </item>
 </channel>
 </rss>

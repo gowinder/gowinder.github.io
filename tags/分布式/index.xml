@@ -3,38 +3,111 @@
         <title>分布式 - 标签 - gowinder个人博客</title>
         <link>https://gowinder.work/tags/%E5%88%86%E5%B8%83%E5%BC%8F/</link>
         <description>分布式 - 标签 - gowinder个人博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>gowinder@hotmail.com (gowinder)</managingEditor>
-            <webMaster>gowinder@hotmail.com (gowinder)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 17 Feb 2023 15:12:05 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/%E5%88%86%E5%B8%83%E5%BC%8F/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 17 Feb 2023 15:12:05 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/%E5%88%86%E5%B8%83%E5%BC%8F/" rel="self" type="application/rss+xml" /><item>
     <title>proxmox ve 增加自动trim的cron job</title>
     <link>https://gowinder.work/proxmox-ve-%E5%A2%9E%E5%8A%A0%E8%87%AA%E5%8A%A8trim%E7%9A%84cron-job/</link>
     <pubDate>Fri, 17 Feb 2023 15:12:05 &#43;0800</pubDate>
-    <author>gowinder</author>
+    <author>作者</author>
     <guid>https://gowinder.work/proxmox-ve-%E5%A2%9E%E5%8A%A0%E8%87%AA%E5%8A%A8trim%E7%9A%84cron-job/</guid>
-    <description><![CDATA[proxmox ve 增加自动trim的cron job 检查状态 1 2 3 4 5 6 7 8 sudo systemctl status fstrim.timer # output: ● fstrim.timer - Discard unused blocks once a week Loaded: loaded (/lib/systemd/system/fstrim.timer; disabled; vendor preset: enabled) Active: inactive (dead) Trigger: n/a Triggers: ● fstrim.service Docs: man:fstrim 开启服务 1 sudo systemctl start fstrim.timer 检]]></description>
+    <description><![CDATA[<h1 id="proxmox-ve-增加自动trim的cron-job">proxmox ve 增加自动trim的cron job</h1>
+<h2 id="检查状态">检查状态</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl status fstrim.timer
+</span></span><span class="line"><span class="cl"><span class="c1"># output:</span>
+</span></span><span class="line"><span class="cl">● fstrim.timer - Discard unused blocks once a week
+</span></span><span class="line"><span class="cl">     Loaded: loaded <span class="o">(</span>/lib/systemd/system/fstrim.timer<span class="p">;</span> disabled<span class="p">;</span> vendor preset: enabled<span class="o">)</span>
+</span></span><span class="line"><span class="cl">     Active: inactive <span class="o">(</span>dead<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    Trigger: n/a
+</span></span><span class="line"><span class="cl">   Triggers: ● fstrim.service
+</span></span><span class="line"><span class="cl">       Docs: man:fstrim
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="开启服务">开启服务</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl start fstrim.timer
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="检查下次清理时间">检查下次清理时间</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl list-timers --all
+</span></span><span class="line"><span class="cl"><span class="c1"># output:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">NEXT                        LEFT           LAST                        PASSED     UNIT                         ACTIVATES
+</span></span><span class="line"><span class="cl">Fri 2023-02-17 23:54:54 CST 8h left        Thu 2023-02-16 23:54:54 CST 15h ago    systemd-tmpfiles-clean.timer systemd-tmpfiles-clean.servi&gt;
+</span></span><span class="line"><span class="cl">Sat 2023-02-18 00:00:00 CST 8h left        Fri 2023-02-17 00:00:00 CST 15h ago    atop-rotate.timer            atop-rotate.service
+</span></span><span class="line"><span class="cl">Sat 2023-02-18 00:00:00 CST 8h left        Fri 2023-02-17 00:00:00 CST 15h ago    logrotate.timer              logrotate.service
+</span></span><span class="line"><span class="cl">Sat 2023-02-18 00:00:00 CST 8h left        Fri 2023-02-17 00:00:00 CST 15h ago    man-db.timer                 man-db.service
+</span></span><span class="line"><span class="cl">Sat 2023-02-18 04:19:48 CST 13h left       Fri 2023-02-17 05:29:22 CST 9h ago     pve-daily-update.timer       pve-daily-update.service
+</span></span><span class="line"><span class="cl">Sat 2023-02-18 05:18:55 CST 14h left       Fri 2023-02-17 06:45:48 CST 8h ago     apt-daily.timer              apt-daily.service
+</span></span><span class="line"><span class="cl">Sat 2023-02-18 06:41:05 CST 15h left       Fri 2023-02-17 06:02:36 CST 9h ago     apt-daily-upgrade.timer      apt-daily-upgrade.service
+</span></span><span class="line"><span class="cl">Sun 2023-02-19 03:10:12 CST <span class="m">1</span> day 12h left Sun 2023-02-12 03:10:19 CST <span class="m">5</span> days ago e2scrub_all.timer            e2scrub_all.service
+</span></span><span class="line"><span class="cl">Mon 2023-02-20 00:37:59 CST <span class="m">2</span> days left    n/a                         n/a        fstrim.timer                 fstrim.service
+</span></span><span class="line"><span class="cl">n/a                         n/a            n/a                         n/a        pvesr.timer
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>完成</p>]]></description>
 </item>
 <item>
     <title>glusterfs重建volume</title>
     <link>https://gowinder.work/glusterfs%E9%87%8D%E5%BB%BAvolume/</link>
     <pubDate>Thu, 16 Feb 2023 10:53:05 &#43;0800</pubDate>
-    <author>gowinder</author>
+    <author>作者</author>
     <guid>https://gowinder.work/glusterfs%E9%87%8D%E5%BB%BAvolume/</guid>
-    <description><![CDATA[glusterfs重建volume 启因 因为之前做glusterfs集群时,比较急,直接用的pve主机的网络地址,运行了几天,发现volume]]></description>
+    <description><![CDATA[<h1 id="glusterfs重建volume">glusterfs重建volume</h1>
+<h2 id="启因">启因</h2>
+<p>因为之前做<code>glusterfs</code>集群时,比较急,直接用的<code>pve</code>主机的网络地址,运行了几天,发现<code>volume</code>同步的时候,占用了<code>pve</code>本身的网络通道,正好<code>dell r720</code>有4个网口,<code>e3</code>主机上有2个,所以都拿出一个来单独做<code>gluster</code>的绑定地址</p>]]></description>
 </item>
 <item>
     <title>gluster brick下线问题解决</title>
     <link>https://gowinder.work/gluster-brick%E4%B8%8B%E7%BA%BF%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</link>
     <pubDate>Sat, 11 Feb 2023 21:13:05 &#43;0800</pubDate>
-    <author>gowinder</author>
+    <author>作者</author>
     <guid>https://gowinder.work/gluster-brick%E4%B8%8B%E7%BA%BF%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</guid>
-    <description><![CDATA[gluster brick下线问题解决 下线问题 刚装好gluster,在上面存放了linux container的rootfs,这样linux containe]]></description>
+    <description><![CDATA[<h1 id="gluster-brick下线问题解决">gluster brick下线问题解决</h1>
+<h2 id="下线问题">下线问题</h2>
+<p>刚装好<code>gluster</code>,在上面存放了<code>linux container</code>的<code>rootfs</code>,这样<code>linux container</code>就可以在两台<code>pve</code>的群集中做高可用了.</p>]]></description>
 </item>
 <item>
     <title>proxmox ve 部署双节点HA集群及glusterfs分布式文件系统笔记</title>
     <link>https://gowinder.work/proxmox-ve-%E9%83%A8%E7%BD%B2%E5%8F%8C%E8%8A%82%E7%82%B9%E9%9B%86%E7%BE%A4%E5%8F%8Aglusterfs%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/</link>
     <pubDate>Thu, 09 Feb 2023 14:14:05 &#43;0800</pubDate>
-    <author>gowinder</author>
+    <author>作者</author>
     <guid>https://gowinder.work/proxmox-ve-%E9%83%A8%E7%BD%B2%E5%8F%8C%E8%8A%82%E7%82%B9%E9%9B%86%E7%BE%A4%E5%8F%8Aglusterfs%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/</guid>
-    <description><![CDATA[proxmox ve 部署双节点HA集群及glusterfs分布式文件系统 需要保存两个pve节点的版本一样 两个proxmox ve节点,实现高可用vm,lxc自]]></description>
+    <description><![CDATA[<h1 id="proxmox-ve-部署双节点ha集群及glusterfs分布式文件系统">proxmox ve 部署双节点HA集群及glusterfs分布式文件系统</h1>
+<p><strong>需要保存两个pve节点的版本一样</strong></p>
+<p>两个<code>proxmox ve</code>节点,实现高可用<code>vm</code>,<code>lxc</code>自动迁移</p>]]></description>
 </item>
 </channel>
 </rss>

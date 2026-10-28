@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Unity3d - Tag - gowinder&#39;s Blog</title>
+        <link>https://gowinder.work/en/tags/unity3d/</link>
+        <description>Unity3d - Tag - gowinder&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 26 Jul 2016 03:07:22 &#43;0000</lastBuildDate><atom:link href="https://gowinder.work/en/tags/unity3d/" rel="self" type="application/rss+xml" /><item>
+    <title>Coordinates in RectTransform</title>
+    <link>https://gowinder.work/en/recttransform-coordinates/</link>
+    <pubDate>Tue, 26 Jul 2016 03:07:22 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/recttransform-coordinates/</guid>
+    <description><![CDATA[<p>I had always been using position to get the value, but later I found that the code output didn&rsquo;t match what the inspector displayed. So I pulled down the uGUI source code and read it, and only then did I learn that you have to use anchoredPosition.</p>]]></description>
+</item>
+</channel>
+</rss>

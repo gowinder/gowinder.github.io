@@ -1,0 +1,22 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Android 1.5 Cifs Smb Windows Share - Tag - gowinder&#39;s Blog</title>
+        <link>https://gowinder.work/en/tags/android-1.5-cifs-smb-windows-share/</link>
+        <description>Android 1.5 Cifs Smb Windows Share - Tag - gowinder&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 27 Oct 2010 03:22:56 &#43;0000</lastBuildDate><atom:link href="https://gowinder.work/en/tags/android-1.5-cifs-smb-windows-share/" rel="self" type="application/rss+xml" /><item>
+    <title>Mounting a Windows Share Directly with cifs.ko</title>
+    <link>https://gowinder.work/en/mount-windows-share-with-cifs-ko/</link>
+    <pubDate>Wed, 27 Oct 2010 03:22:56 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/mount-windows-share-with-cifs-ko/</guid>
+    <description><![CDATA[<p>Found this online, <a href="http://myapad.wordpress.com/author/xaueious/" title="http://myapad.wordpress.com/author/xaueious/" target="_blank" rel="noopener noreffer ">http://myapad.wordpress.com/author/xaueious/</a></p>
+<p>This guy compiled a cifs module for the RK2808 using Archos&rsquo;s kernel source code</p>
+<p>Download it and put it in any directory on the flash, say /flash/cifs.ko</p>
+<p>Then run this from the command line</p>
+<p>insmod /flash/cifs.ko</p>
+<p>That loads the module, and after that you can mount network shares</p>
+<p>mount –t cifs –o username=guest,iocharset=utf8 //192.168.0.3/movie /sdcard/movie</p>
+<p>I specified the guest user for username, so there&rsquo;s no password; if there is one, you also need to add password=somekey,</p>]]></description>
+</item>
+</channel>
+</rss>

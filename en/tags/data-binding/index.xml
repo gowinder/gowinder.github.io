@@ -1,0 +1,21 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Data Binding - Tag - gowinder&#39;s Blog</title>
+        <link>https://gowinder.work/en/tags/data-binding/</link>
+        <description>Data Binding - Tag - gowinder&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 07 Nov 2010 12:26:13 &#43;0000</lastBuildDate><atom:link href="https://gowinder.work/en/tags/data-binding/" rel="self" type="application/rss+xml" /><item>
+    <title>Notes on Custom ListBox Control Styles and Data Binding</title>
+    <link>https://gowinder.work/en/listbox-custom-style-and-binding-notes/</link>
+    <pubDate>Sun, 07 Nov 2010 12:26:13 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/listbox-custom-style-and-binding-notes/</guid>
+    <description><![CDATA[<p>When binding a custom-styled ListBox in Silverlight, there are a few things to watch out for:</p>
+<ol>
+<li>The properties specified by ItemTemplate can live in a separate resource file.</li>
+<li>The object you bind to, say an ItemTestData, must inherit from the INotifyPropertyChanged interface, and every bound set property you use must call NotifyPropertyChanged(&ldquo;property name&rdquo;);</li>
+<li>If you want to bind data to the Item object, the custom ItemTemplate style must declare the binding name in its root LayoutRoot.</li>
+</ol>
+<p>Suppose the root is a Grid and an Item consists of 2 TextBlocks, each bound to Data1 and Data2 of an ItemTestData object. Then under the Grid you first need to declare an alias for ItemTestData:</p>]]></description>
+</item>
+</channel>
+</rss>

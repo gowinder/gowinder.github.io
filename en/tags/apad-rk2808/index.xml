@@ -1,0 +1,19 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Apad Rk2808 - Tag - gowinder&#39;s Blog</title>
+        <link>https://gowinder.work/en/tags/apad-rk2808/</link>
+        <description>Apad Rk2808 - Tag - gowinder&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 26 Oct 2010 09:41:37 &#43;0000</lastBuildDate><atom:link href="https://gowinder.work/en/tags/apad-rk2808/" rel="self" type="application/rss+xml" /><item>
+    <title>APAD RK2808: Notes on Getting Root, and Mounting an NFS Network Drive</title>
+    <link>https://gowinder.work/en/apad-rk2808-root-and-nfs-drive/</link>
+    <pubDate>Tue, 26 Oct 2010 09:41:37 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/apad-rk2808-root-and-nfs-drive/</guid>
+    <description><![CDATA[<p>See: <a href="http://hiapad.com/bbs/forum.php?mod=viewthread&amp;tid=47&amp;extra=page%3D2" target="_blank" rel="noopener noreffer ">Getting root on the RK2808 System disk image, plus material on other custom firmware builds</a></p>
+<p><a href="http://lockeyue.spaces.live.com/blog/cns!B3988DF30734BED3!1553.entry" target="_blank" rel="noopener noreffer ">A basic tutorial for modifying Rockchip RK28XX Android system firmware images</a></p>
+<p>It was a real pain. I did it many times, and I found that tutorials exist but none of them are complete — miss one step and you may end up without root.</p>
+<p>Preparation:</p>
+<p>A flashing tool. Download link: <a href="http://cid-b3988df30734bed3.office.live.com/self.aspx/.Public/%E7%BD%91%E7%BB%9C/%E7%91%9E%E8%8A%AF%E5%BE%AERK2808%5E_android%E7%B3%BB%E7%BB%9F%E5%9B%BA%E4%BB%B6%E4%BF%AE%E6%94%B9%E5%B7%A5%E5%85%B7%E5%8C%85%5E_Ver01.rar" target="_blank" rel="noopener noreffer ">flashing tool</a></p>]]></description>
+</item>
+</channel>
+</rss>

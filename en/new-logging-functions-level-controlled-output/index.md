@@ -1,0 +1,11 @@
+# New Logging Functions: Formatted, Level-Controlled Log Output
+
+
+In the past, several of our systems used a fairly casual approach to log output: whatever the problem was, you just printed it. Timeout logs, error logs, ASSERTs, exceptions — all dumped into one file. That makes it inconvenient to read, and it makes it hard to react to urgent events. There was also no way to control the output level. Some output is only needed in the DEBUG build or the first RELEASE build; once the version stabilises, those logs are no longer needed. Log levels should all be controllable. I'll split this into two parts:  
+1. Controllable levels: control happens in two places. The first is the compile level, where preprocessor parameters or macros set the highest output level. The other is dynamic control, where a parameter sets the level and only messages below that value get printed. The compile-level value should take priority over the dynamic one, so you can conveniently control how much logging gets shown.  
+
+2. Formatted output: the old logs were sloppy and couldn't be formatted. I did once try formatted output before — in the new system, for example, the "valuables flow" log. That kind of log separates fields with spaces, so a tool can read it easily for filtering and querying, and it's fairly fast too. The downside is that the format is rigid and very strict, so it only works for systems that share a common structure. Another formatted approach is XML: different kinds of logs can be distinguished by different markers, each can carry its own attributes, and tools can inspect them conveniently. The biggest problem is file size — it multiplies the number of bytes written to the log. A final approach is to split logs across different files, but that produces a pile of files and makes it awkward for tools to search through them.  
+
+Personally I lean towards XML. Yes, the log gets bloated, but it's easy to manage and a tool can query it very easily. A lot of the low-level logging doesn't use that approach though, so I need to estimate how big a change this would be.  
+The other problem I can't solve right now is "duplicate logs". If there's an error that gets recorded on every heartbeat, the log fills up with them and wastes a lot of space — logs routinely run to hundreds of megabytes. I still haven't found a way around that.
+

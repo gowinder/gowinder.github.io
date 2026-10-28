@@ -248,6 +248,39 @@
 <p>After many attempts, I found it needs to be written like this. Suppose there are two <code>entity</code>s, one <code>UserEntity</code> and one <code>CarEntity</code>, referencing each other. Writing them the following way throws <code>circular import errors</code>.</p></div><div class="post-footer">
         <a href="/en/mutual-references-between-entities-in-nestjs-and-typeorm/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/nestjs/">Nestjs</a>,&nbsp;<a href="/en/tags/typescript/">Typescript</a>,&nbsp;<a href="/en/tags/node/">Node</a>,&nbsp;<a href="/en/tags/dev-notes/">Dev-Notes</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/en/chromium-new-settings-page/">Adding a New Settings Page to chrome://settings in Chromium</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span>&nbsp;<span class="post-publish">published on <time datetime="2020-08-14">2020-08-14</time></span></div><div class="content"><p>The left-hand menu of the settings page is edited in</p>
+<p><code>chrome/browser/resources/settings/settings_menu/settings_menu.html</code></p>
+<p>If you want to add or remove a setting, that is where you change it.</p>
+<p>To add one, put in a block like this:</p>
+<pre><code>&lt;a id=&quot;new_setting&quot; href=&quot;/new_setting&quot;
+    hidden=&quot;[[!pageVisibility.new_setting]]&quot;&gt;
+  &lt;iron-icon icon=&quot;settings:assignment&quot;&gt;&lt;/iron-icon&gt;
+  $i18n{newSettingTitle}
+&lt;/a&gt;
+</code></pre>
+<p>Then create a directory <code>chrome/browser/resources/settings/new_setting</code></p>
+<p>and put the settings page inside it.</p>
+<p>Create <code>new_setting_page.html</code> and <code>new_setting_page.js</code> — that is the content.</p>
+<p>Create <code>new_setting_section.htm</code> and <code>new_setting_section.js</code> — that is the section.</p></div><div class="post-footer">
+        <a href="/en/chromium-new-settings-page/">Read More</a></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/en/recttransform-coordinates/">Coordinates in RectTransform</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span>&nbsp;<span class="post-publish">published on <time datetime="2016-07-26">2016-07-26</time></span></div><div class="content"><p>I had always been using position to get the value, but later I found that the code output didn&rsquo;t match what the inspector displayed. So I pulled down the uGUI source code and read it, and only then did I learn that you have to use anchoredPosition.</p></div><div class="post-footer">
+        <a href="/en/recttransform-coordinates/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/unity3d/">Unity3d</a>,&nbsp;<a href="/en/tags/game-development/">Game Development</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/en/listbox-custom-style-and-binding-notes/">Notes on Custom ListBox Control Styles and Data Binding</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span>&nbsp;<span class="post-publish">published on <time datetime="2010-11-07">2010-11-07</time></span></div><div class="content"><p>When binding a custom-styled ListBox in Silverlight, there are a few things to watch out for:</p>
+<ol>
+<li>The properties specified by ItemTemplate can live in a separate resource file.</li>
+<li>The object you bind to, say an ItemTestData, must inherit from the INotifyPropertyChanged interface, and every bound set property you use must call NotifyPropertyChanged(&ldquo;property name&rdquo;);</li>
+<li>If you want to bind data to the Item object, the custom ItemTemplate style must declare the binding name in its root LayoutRoot.</li>
+</ol>
+<p>Suppose the root is a Grid and an Item consists of 2 TextBlocks, each bound to Data1 and Data2 of an ItemTestData object. Then under the Grid you first need to declare an alias for ItemTestData:</p></div><div class="post-footer">
+        <a href="/en/listbox-custom-style-and-binding-notes/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/.net/">.Net</a>,&nbsp;<a href=""></a>,&nbsp;<a href="/en/tags/data-binding/">Data Binding</a>,&nbsp;<a href="/en/tags/listbox/">Listbox</a>,&nbsp;<a href="/en/tags/silverlight/">Silverlight</a>,&nbsp;<a href="/en/tags/custom-controls/">Custom Controls</a>,&nbsp;<a href="/en/tags/game-development/">Game Development</a></div></div>
 </article><ul class="pagination"><li class="page-item ">
                     <span class="page-link">
                         <a href="/en/">1</a>
@@ -265,6 +298,20 @@
                 </li><li class="page-item active">
                     <span class="page-link">
                         <a href="/en/page/5/">5</a>
+                    </span>
+                </li><li class="page-item ">
+                    <span class="page-link">
+                        <a href="/en/page/6/">6</a>
+                    </span>
+                </li><li class="page-item ">
+                    <span class="page-link">
+                        <a href="/en/page/7/">7</a>
+                    </span>
+                </li><li class="page-item ">
+                    <span class="page-link" aria-hidden="true">&hellip;</span>
+                </li><li class="page-item ">
+                    <span class="page-link">
+                        <a href="/en/page/10/">10</a>
                     </span>
                 </li></ul></div></div>
             </main><footer class="footer">

@@ -1,0 +1,34 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Android - Tag - gowinder&#39;s Blog</title>
+        <link>https://gowinder.work/en/tags/android/</link>
+        <description>Android - Tag - gowinder&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 27 Oct 2010 03:22:56 &#43;0000</lastBuildDate><atom:link href="https://gowinder.work/en/tags/android/" rel="self" type="application/rss+xml" /><item>
+    <title>Mounting a Windows Share Directly with cifs.ko</title>
+    <link>https://gowinder.work/en/mount-windows-share-with-cifs-ko/</link>
+    <pubDate>Wed, 27 Oct 2010 03:22:56 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/mount-windows-share-with-cifs-ko/</guid>
+    <description><![CDATA[<p>Found this online, <a href="http://myapad.wordpress.com/author/xaueious/" title="http://myapad.wordpress.com/author/xaueious/" target="_blank" rel="noopener noreffer ">http://myapad.wordpress.com/author/xaueious/</a></p>
+<p>This guy compiled a cifs module for the RK2808 using Archos&rsquo;s kernel source code</p>
+<p>Download it and put it in any directory on the flash, say /flash/cifs.ko</p>
+<p>Then run this from the command line</p>
+<p>insmod /flash/cifs.ko</p>
+<p>That loads the module, and after that you can mount network shares</p>
+<p>mount –t cifs –o username=guest,iocharset=utf8 //192.168.0.3/movie /sdcard/movie</p>
+<p>I specified the guest user for username, so there&rsquo;s no password; if there is one, you also need to add password=somekey,</p>]]></description>
+</item>
+<item>
+    <title>APAD RK2808: Notes on Getting Root, and Mounting an NFS Network Drive</title>
+    <link>https://gowinder.work/en/apad-rk2808-root-and-nfs-drive/</link>
+    <pubDate>Tue, 26 Oct 2010 09:41:37 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/apad-rk2808-root-and-nfs-drive/</guid>
+    <description><![CDATA[<p>See: <a href="http://hiapad.com/bbs/forum.php?mod=viewthread&amp;tid=47&amp;extra=page%3D2" target="_blank" rel="noopener noreffer ">Getting root on the RK2808 System disk image, plus material on other custom firmware builds</a></p>
+<p><a href="http://lockeyue.spaces.live.com/blog/cns!B3988DF30734BED3!1553.entry" target="_blank" rel="noopener noreffer ">A basic tutorial for modifying Rockchip RK28XX Android system firmware images</a></p>
+<p>It was a real pain. I did it many times, and I found that tutorials exist but none of them are complete — miss one step and you may end up without root.</p>
+<p>Preparation:</p>
+<p>A flashing tool. Download link: <a href="http://cid-b3988df30734bed3.office.live.com/self.aspx/.Public/%E7%BD%91%E7%BB%9C/%E7%91%9E%E8%8A%AF%E5%BE%AERK2808%5E_android%E7%B3%BB%E7%BB%9F%E5%9B%BA%E4%BB%B6%E4%BF%AE%E6%94%B9%E5%B7%A5%E5%85%B7%E5%8C%85%5E_Ver01.rar" target="_blank" rel="noopener noreffer ">flashing tool</a></p>]]></description>
+</item>
+</channel>
+</rss>

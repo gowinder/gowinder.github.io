@@ -1,0 +1,124 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Game Development - Tag - gowinder&#39;s Blog</title>
+        <link>https://gowinder.work/en/tags/game-development/</link>
+        <description>Game Development - Tag - gowinder&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 26 Jul 2016 03:07:22 &#43;0000</lastBuildDate><atom:link href="https://gowinder.work/en/tags/game-development/" rel="self" type="application/rss+xml" /><item>
+    <title>Coordinates in RectTransform</title>
+    <link>https://gowinder.work/en/recttransform-coordinates/</link>
+    <pubDate>Tue, 26 Jul 2016 03:07:22 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/recttransform-coordinates/</guid>
+    <description><![CDATA[<p>I had always been using position to get the value, but later I found that the code output didn&rsquo;t match what the inspector displayed. So I pulled down the uGUI source code and read it, and only then did I learn that you have to use anchoredPosition.</p>]]></description>
+</item>
+<item>
+    <title>Notes on Custom ListBox Control Styles and Data Binding</title>
+    <link>https://gowinder.work/en/listbox-custom-style-and-binding-notes/</link>
+    <pubDate>Sun, 07 Nov 2010 12:26:13 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/listbox-custom-style-and-binding-notes/</guid>
+    <description><![CDATA[<p>When binding a custom-styled ListBox in Silverlight, there are a few things to watch out for:</p>
+<ol>
+<li>The properties specified by ItemTemplate can live in a separate resource file.</li>
+<li>The object you bind to, say an ItemTestData, must inherit from the INotifyPropertyChanged interface, and every bound set property you use must call NotifyPropertyChanged(&ldquo;property name&rdquo;);</li>
+<li>If you want to bind data to the Item object, the custom ItemTemplate style must declare the binding name in its root LayoutRoot.</li>
+</ol>
+<p>Suppose the root is a Grid and an Item consists of 2 TextBlocks, each bound to Data1 and Data2 of an ItemTestData object. Then under the Grid you first need to declare an alias for ItemTestData:</p>]]></description>
+</item>
+<item>
+    <title>The Joy of Code Generation — Marking My First Integrated Code Generator, DBCodeGen</title>
+    <link>https://gowinder.work/en/why-code-generation-rocks-dbcodegen/</link>
+    <pubDate>Wed, 06 Oct 2010 13:09:52 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/why-code-generation-rocks-dbcodegen/</guid>
+    <description><![CDATA[<p>It suddenly struck me that an engine which supports rapid development needs, besides a good foundation and convenient templates, a complete set of development tools. That toolset should include automated code generation — the way Visual Studio generates an MFC application for you. It saves us a ton of unnecessary work.</p>
+<p>Nobody who has used a code generator needs convincing. Back when I was building each system, there was always some repetitive work, and that work was awkward to handle with templates or interface base classes — every time it was copy, paste, then modify, which was a real pain. Then one day a colleague said to me, you can write a program to generate that code. And that&rsquo;s how, after eating rice for 30 years, I finally learned you can make congee.</p>]]></description>
+</item>
+<item>
+    <title>Understanding a Few Creational Patterns</title>
+    <link>https://gowinder.work/en/understanding-creational-patterns/</link>
+    <pubDate>Wed, 23 Jun 2010 15:14:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/understanding-creational-patterns/</guid>
+    <description><![CDATA[<p>Abstract Factory is about creating a whole family of products in a unified way. That is, it&rsquo;s like a template: one concrete factory creates a series of products, and that series probably shares a single style, so different product series get assigned to different factories. The downside is that the product lineup for the series is already known in advance; if you want to add a new product to the series, you have to extend the factory and modify the low-level code. This pattern can be used to control variation — in other words, if I want to make a special modification to one product within an otherwise uniform series, I have to generate a whole new factory.<br>
+Builder, I personally feel, is very similar to Abstract Factory. The reason it&rsquo;s called Builder is that the interface it provides doesn&rsquo;t produce the basic parts (that&rsquo;s what Abstract Factory does) — after producing the parts it also takes responsibility for assembling and combining them (Abstract Factory doesn&rsquo;t do the combining). That way the caller doesn&rsquo;t have to care which parts make up the final product; it just needs to find a Builder that can produce the final product. And by deriving from Builder, you can get parts of different specifications combined in different ways. Put plainly, Builder has one extra assembly step compared with Abstract Factory. If the assembly process and the details of the parts can&rsquo;t be determined in the low-level code, use Builder; conversely, if the assembly process and the part specifications must be constrained down at the low level, use Abstract Factory.<br>
+Factory Method is a bit similar to Abstract Factory, but Abstract Factory supplies a whole set of parts while Factory Method supplies a single part. Once a product&rsquo;s assembly method and part specifications are fixed, you can use Factory Method and let derived classes create the parts they need according to those specifications.</p>]]></description>
+</item>
+<item>
+    <title>Dazed and Confused: I Did the Same Work Twice</title>
+    <link>https://gowinder.work/en/did-the-same-work-twice/</link>
+    <pubDate>Tue, 18 May 2010 15:32:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/did-the-same-work-twice/</guid>
+    <description><![CDATA[<p>Today I was completely out of it — I actually did yesterday&rsquo;s work all over again.<br>
+It&rsquo;s a general-management feature. Yesterday I wrote a CHeroCenter, basically finished. Today I wrote another one called CHeroTender. Apart from the class name, everything is identical: the functions, the member variables, even the function parameters. When I was writing the code to dismiss a general I needed to return an error code, and I was going to have the designers add it to string.xml — then it turned out string.xml already had it. Surprised, I searched the code, and there it was, that exact same class. Depressing.<br>
+Good thing the class isn&rsquo;t big. A hundred-odd lines of code.</p>]]></description>
+</item>
+<item>
+    <title>How the Formatted Log Output Actually Works</title>
+    <link>https://gowinder.work/en/formatted-log-output-approach/</link>
+    <pubDate>Mon, 15 Mar 2010 14:05:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/formatted-log-output-approach/</guid>
+    <description><![CDATA[<p>The low-level function can keep using the old approach, writing strings directly. It gets called by the other log-output functions.</p>
+<p>Then write a proxy function that takes an XMLNODE parameter. This function accepts calls from all the other upper-level log-writing functions; the upper-level functions unify their log format, put the information into an XMLNODE, and then the proxy calls the low-level function to write the log.</p>
+<p>As for the upper-level functions, the most common kinds of log output are: plain text output (LOGERROR), assertion ASSERT, and exception CATCH. Make these three into three separate functions or macros. In practice, LOGERROR creates an XMLNODE, writes the log type, time, string and other information into the XMLNODE&rsquo;s attributes, then calls the proxy function.<br>
+Then there&rsquo;s the logging for each feature block. Item-loss logging, for example, needs its own upper-level log function that formats the information into an XMLNODE and hands it to the proxy function to write.</p>]]></description>
+</item>
+<item>
+    <title>New Logging Functions: Formatted, Level-Controlled Log Output</title>
+    <link>https://gowinder.work/en/new-logging-functions-level-controlled-output/</link>
+    <pubDate>Fri, 12 Mar 2010 15:32:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/new-logging-functions-level-controlled-output/</guid>
+    <description><![CDATA[<p>In the past, several of our systems used a fairly casual approach to log output: whatever the problem was, you just printed it. Timeout logs, error logs, ASSERTs, exceptions — all dumped into one file. That makes it inconvenient to read, and it makes it hard to react to urgent events. There was also no way to control the output level. Some output is only needed in the DEBUG build or the first RELEASE build; once the version stabilises, those logs are no longer needed. Log levels should all be controllable. I&rsquo;ll split this into two parts:</p>]]></description>
+</item>
+<item>
+    <title>The Trouble Caused by the Server&#39;s Automatic Time Sync Service</title>
+    <link>https://gowinder.work/en/server-time-sync-service-trouble/</link>
+    <pubDate>Fri, 12 Mar 2010 12:34:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/server-time-sync-service-trouble/</guid>
+    <description><![CDATA[<p>Soldiers Sortie had an outage once, and the cause was the sync service pulling the time backwards. That meant the current time could end up earlier than the timestamp of an event already recorded in memory, so subtracting one from the other produced a negative number — and since we were using DWORD, it became an enormous value and corrupted the data.<br>
+The fix: first, it&rsquo;s best to turn off the time sync service on the server; then check the DWORD difference and skip the operation if it&rsquo;s negative. I think DWORD has to be used with care — I&rsquo;ve run into trouble on this more than once!</p>]]></description>
+</item>
+<item>
+    <title>When the Elements of a Priority Queue Are Pointers</title>
+    <link>https://gowinder.work/en/priority-queue-with-pointer-elements/</link>
+    <pubDate>Fri, 12 Mar 2010 12:19:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/priority-queue-with-pointer-elements/</guid>
+    <description><![CDATA[<p>Using a priority queue whose elements are pointers, like this:<br>
+typedef priority_queue&lt;TimeEvent*, deque &lt;TimeEvent*&gt;, less&lt;deque&lt;TimeEvent*&gt;::value_type&gt;    TIME_EVENT_QUEUE;<br>
+Compared this way, the result is a comparison of pointer values. If I want to compare some member of TimeEvent, that doesn&rsquo;t work. After some Googling, there&rsquo;s an approach: replace less with a functor struct:<br>
+struct TimeEventLessComp<br>
+{<br>
+bool operator () (TimeEvent*&amp; a, TimeEvent*&amp; b) const<br>
+{<br>
+return a-&gt;dwTick &gt; b-&gt;dwTick;<br>
+};<br>
+};<br>
+Then change the declaration to:<br>
+typedef priority_queue&lt;TimeEvent*, deque &lt;TimeEvent*&gt;, TimeEventLessComp&gt;    TIME_EVENT_QUEUE;</p>]]></description>
+</item>
+<item>
+    <title>Test Results for the Time Service</title>
+    <link>https://gowinder.work/en/time-service-benchmark-results/</link>
+    <pubDate>Fri, 12 Mar 2010 12:08:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/time-service-benchmark-results/</guid>
+    <description><![CDATA[<p>After a simple test: generate 500,000 timers, then insert the pointers into a list and into a priority_queue respectively, with the priority_queue using a vector container (it can&rsquo;t use list). First I used list&rsquo;s own sort function: 516ms, and I ran it several times, always above 500ms and below 550ms. For the priority_queue, on top of the existing 500,000 I did 100,000 insertions, 31ms in total, 0.00031ms per event on average.<br>
+The output looks like this:<br>
+list sort time:516 ms<br>
+priority_queue push 100000 event use 31 ms time, average 0.000310 ms per event<br>
+sorted list sort time:516 ms<br>
+sorted list trace 0<br>
+sorted list trace 1<br>
+&hellip;.<br>
+priority_queue trace 0<br>
+priority_queue trace 1<br>
+&hellip;.<br>
+So the test shows the priority queue is clearly faster than sorting the LIST myself — a great fit for what I need!</p>]]></description>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Uncategorized - Tag - gowinder&#39;s Blog</title>
+        <link>https://gowinder.work/en/tags/uncategorized/</link>
+        <description>Uncategorized - Tag - gowinder&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 18 Jul 2008 13:34:00 &#43;0000</lastBuildDate><atom:link href="https://gowinder.work/en/tags/uncategorized/" rel="self" type="application/rss+xml" /><item>
+    <title>The Very First Post!</title>
+    <link>https://gowinder.work/en/the-very-first-post/</link>
+    <pubDate>Fri, 18 Jul 2008 13:34:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/the-very-first-post/</guid>
+    <description><![CDATA[<p>The world keeps speeding up. If I don&rsquo;t catch this train before I turn thirty, I&rsquo;m afraid there won&rsquo;t be another chance later on!</p>
+<p>I hereby declare this blog officially open!</p>]]></description>
+</item>
+</channel>
+</rss>

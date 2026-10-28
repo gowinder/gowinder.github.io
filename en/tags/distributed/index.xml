@@ -1,0 +1,133 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Distributed - Tag - gowinder&#39;s Blog</title>
+        <link>https://gowinder.work/en/tags/distributed/</link>
+        <description>Distributed - Tag - gowinder&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 17 Feb 2023 15:12:05 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/en/tags/distributed/" rel="self" type="application/rss+xml" /><item>
+    <title>Adding a Cron Job for Automatic TRIM in Proxmox VE</title>
+    <link>https://gowinder.work/en/adding-a-cron-job-for-automatic-trim-in-proxmox-ve/</link>
+    <pubDate>Fri, 17 Feb 2023 15:12:05 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/adding-a-cron-job-for-automatic-trim-in-proxmox-ve/</guid>
+    <description><![CDATA[<h1 id="adding-a-cron-job-for-automatic-trim-in-proxmox-ve">Adding a Cron Job for Automatic TRIM in Proxmox VE</h1>
+<h2 id="check-the-status">Check the status</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl status fstrim.timer
+</span></span><span class="line"><span class="cl"><span class="c1"># output:</span>
+</span></span><span class="line"><span class="cl">● fstrim.timer - Discard unused blocks once a week
+</span></span><span class="line"><span class="cl">     Loaded: loaded <span class="o">(</span>/lib/systemd/system/fstrim.timer<span class="p">;</span> disabled<span class="p">;</span> vendor preset: enabled<span class="o">)</span>
+</span></span><span class="line"><span class="cl">     Active: inactive <span class="o">(</span>dead<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    Trigger: n/a
+</span></span><span class="line"><span class="cl">   Triggers: ● fstrim.service
+</span></span><span class="line"><span class="cl">       Docs: man:fstrim
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="start-the-service">Start the service</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl start fstrim.timer
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="check-the-next-cleanup-time">Check the next cleanup time</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl list-timers --all
+</span></span><span class="line"><span class="cl"><span class="c1"># output:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">NEXT                        LEFT           LAST                        PASSED     UNIT                         ACTIVATES
+</span></span><span class="line"><span class="cl">Fri 2023-02-17 23:54:54 CST 8h left        Thu 2023-02-16 23:54:54 CST 15h ago    systemd-tmpfiles-clean.timer systemd-tmpfiles-clean.servi&gt;
+</span></span><span class="line"><span class="cl">Sat 2023-02-18 00:00:00 CST 8h left        Fri 2023-02-17 00:00:00 CST 15h ago    atop-rotate.timer            atop-rotate.service
+</span></span><span class="line"><span class="cl">Sat 2023-02-18 00:00:00 CST 8h left        Fri 2023-02-17 00:00:00 CST 15h ago    logrotate.timer              logrotate.service
+</span></span><span class="line"><span class="cl">Sat 2023-02-18 00:00:00 CST 8h left        Fri 2023-02-17 00:00:00 CST 15h ago    man-db.timer                 man-db.service
+</span></span><span class="line"><span class="cl">Sat 2023-02-18 04:19:48 CST 13h left       Fri 2023-02-17 05:29:22 CST 9h ago     pve-daily-update.timer       pve-daily-update.service
+</span></span><span class="line"><span class="cl">Sat 2023-02-18 05:18:55 CST 14h left       Fri 2023-02-17 06:45:48 CST 8h ago     apt-daily.timer              apt-daily.service
+</span></span><span class="line"><span class="cl">Sat 2023-02-18 06:41:05 CST 15h left       Fri 2023-02-17 06:02:36 CST 9h ago     apt-daily-upgrade.timer      apt-daily-upgrade.service
+</span></span><span class="line"><span class="cl">Sun 2023-02-19 03:10:12 CST <span class="m">1</span> day 12h left Sun 2023-02-12 03:10:19 CST <span class="m">5</span> days ago e2scrub_all.timer            e2scrub_all.service
+</span></span><span class="line"><span class="cl">Mon 2023-02-20 00:37:59 CST <span class="m">2</span> days left    n/a                         n/a        fstrim.timer                 fstrim.service
+</span></span><span class="line"><span class="cl">n/a                         n/a            n/a                         n/a        pvesr.timer
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Done</p>]]></description>
+</item>
+<item>
+    <title>Rebuilding a GlusterFS Volume</title>
+    <link>https://gowinder.work/en/rebuilding-a-glusterfs-volume/</link>
+    <pubDate>Thu, 16 Feb 2023 10:53:05 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/rebuilding-a-glusterfs-volume/</guid>
+    <description><![CDATA[<h1 id="rebuilding-a-glusterfs-volume">Rebuilding a GlusterFS Volume</h1>
+<h2 id="background">Background</h2>
+<p>When I first set up the <code>glusterfs</code> cluster I was in a hurry and used the network addresses of the <code>pve</code> hosts directly. After a few days I noticed that when <code>volume</code> replication ran it was saturating the <code>pve</code> hosts&rsquo; own network channel. The <code>dell r720</code> happened to have four NICs and the <code>e3</code> host had two, so I took one from each and dedicated it as the <code>gluster</code> bind address.</p>]]></description>
+</item>
+<item>
+    <title>Resolving Gluster Brick Offline Issues</title>
+    <link>https://gowinder.work/en/resolving-gluster-brick-offline-issues/</link>
+    <pubDate>Sat, 11 Feb 2023 21:13:05 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/resolving-gluster-brick-offline-issues/</guid>
+    <description><![CDATA[<h1 id="resolving-gluster-brick-offline-issues">Resolving Gluster Brick Offline Issues</h1>
+<h2 id="offline-issue">Offline Issue</h2>
+<p>I had just finished installing <code>gluster</code> and stored the <code>rootfs</code> of a <code>linux container</code> on it, so that the <code>linux container</code> could achieve high availability within a two-node <code>pve</code> cluster.</p>
+<p>When I had some spare time, I checked with the command: <code>sudo gluster vol status VMS</code>, and found that one <code>brick</code> was in <code>offline</code> state.</p>
+<p>I looked it up online and installed <code>gstatus</code>:</p>]]></description>
+</item>
+<item>
+    <title>Notes on Deploying a Two-Node HA Cluster and GlusterFS Distributed File System on Proxmox VE</title>
+    <link>https://gowinder.work/en/deploying-a-two-node-ha-cluster-and-glusterfs-distributed-file-system-on-proxmox-ve/</link>
+    <pubDate>Thu, 09 Feb 2023 14:14:05 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/deploying-a-two-node-ha-cluster-and-glusterfs-distributed-file-system-on-proxmox-ve/</guid>
+    <description><![CDATA[<h1 id="deploying-a-two-node-ha-cluster-and-glusterfs-distributed-file-system-on-proxmox-ve">Deploying a Two-Node HA Cluster and GlusterFS Distributed File System on Proxmox VE</h1>
+<p><strong>Make sure both pve nodes run the same version</strong></p>
+<p>Two <code>proxmox ve</code> nodes, enabling high availability with automatic <code>vm</code> and <code>lxc</code> migration</p>
+<h2 id="edit-the-hosts-file">Edit the <code>hosts</code> file</h2>
+<p>In <code>/etc/hosts</code> on both <code>pve</code> machines, add the following <code>host</code> entries:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">192.168.1.229 pve1.local pve1
+</span></span><span class="line"><span class="cl">192.168.1.230 pve2.local pve2
+</span></span><span class="line"><span class="cl">192.168.1.229 gluster1
+</span></span><span class="line"><span class="cl">192.168.1.230 gluster2
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="install-glusterfs">Install <code>glusterfs</code></h2>
+<p>The following operations are performed on both machines, referred to here as <code>pve1</code> and <code>pve2</code></p>]]></description>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,42 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Virtual Machine - Tag - gowinder&#39;s Blog</title>
+        <link>https://gowinder.work/en/tags/virtual-machine/</link>
+        <description>Virtual Machine - Tag - gowinder&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 14 Feb 2023 09:39:05 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/en/tags/virtual-machine/" rel="self" type="application/rss+xml" /><item>
+    <title>Mounting a Physical Disk to a Proxmox VE VM</title>
+    <link>https://gowinder.work/en/mounting-a-physical-disk-to-a-proxmox-ve-vm/</link>
+    <pubDate>Tue, 14 Feb 2023 09:39:05 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/mounting-a-physical-disk-to-a-proxmox-ve-vm/</guid>
+    <description><![CDATA[<h1 id="mounting-a-physical-disk-to-a-proxmox-ve-vm">Mounting a Physical Disk to a Proxmox VE VM</h1>
+<p>First, find the <code>id</code> of the disk you want to mount:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">lsblk <span class="p">|</span>awk <span class="s1">&#39;NR==1{print $0&#34; DEVICE-ID(S)&#34;}NR&gt;1{dev=$1;printf $0&#34; &#34;;system(&#34;find /dev/disk/by-id -lname \&#34;*&#34;dev&#34;\&#34; -printf \&#34; %p\&#34;&#34;);print &#34;&#34;;}&#39;</span><span class="p">|</span>grep -v -E <span class="s1">&#39;part|lvm&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>The output looks similar to this:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">NAME         MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT DEVICE-ID<span class="o">(</span>S<span class="o">)</span>
+</span></span><span class="line"><span class="cl">loop0          7:0    <span class="m">0</span>    20G  <span class="m">0</span> loop
+</span></span><span class="line"><span class="cl">loop1          7:1    <span class="m">0</span>    80G  <span class="m">0</span> loop
+</span></span><span class="line"><span class="cl">loop2          7:2    <span class="m">0</span>    50G  <span class="m">0</span> loop
+</span></span><span class="line"><span class="cl">sda            8:0    <span class="m">0</span>   3.6T  <span class="m">0</span> disk   /dev/disk/by-id/ata-WDC_WD40EJRX-XXXXXXX_WD-WWWWW0XXXXXX /dev/disk/by-id/wwn-0x5000000000000
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>For example, to mount <code>/dev/disk/by-id/wwn-0x5000000000000</code> for a <code>VM</code> whose ID is <code>103</code>, run the following:</p>]]></description>
+</item>
+</channel>
+</rss>

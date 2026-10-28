@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Comfyui - Tag - gowinder&#39;s Blog</title>
+        <link>https://gowinder.work/en/tags/comfyui/</link>
+        <description>Comfyui - Tag - gowinder&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 25 Mar 2024 14:12:16 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/en/tags/comfyui/" rel="self" type="application/rss+xml" /><item>
+    <title>Playing Around with ComfyUI</title>
+    <link>https://gowinder.work/en/play-with-comfyui/</link>
+    <pubDate>Mon, 25 Mar 2024 14:12:16 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/play-with-comfyui/</guid>
+    <description><![CDATA[<h1 id="playing-around-with-comfyui">Playing Around with ComfyUI</h1>
+<p><code>AIGC</code> was very popular a while back, so I deployed <code>Stable Diffusion</code>&rsquo;s <code>WebUI</code> locally and played with it for a bit. See: <a href="/content/posts/create-local-stable-diffusion-env.md" rel="">text</a></p>
+<p>But the <code>WebUI</code> interface is too complex and has too many elements. It looks very professional, but it&rsquo;s also somewhat difficult to use. I happened to be busy with work around that time, so after playing with it for a while I set it aside and didn&rsquo;t continue.</p>]]></description>
+</item>
+</channel>
+</rss>

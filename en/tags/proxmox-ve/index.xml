@@ -1,0 +1,335 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Proxmox Ve - Tag - gowinder&#39;s Blog</title>
+        <link>https://gowinder.work/en/tags/proxmox-ve/</link>
+        <description>Proxmox Ve - Tag - gowinder&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 17 Feb 2023 15:12:05 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/en/tags/proxmox-ve/" rel="self" type="application/rss+xml" /><item>
+    <title>Adding a Cron Job for Automatic TRIM in Proxmox VE</title>
+    <link>https://gowinder.work/en/adding-a-cron-job-for-automatic-trim-in-proxmox-ve/</link>
+    <pubDate>Fri, 17 Feb 2023 15:12:05 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/adding-a-cron-job-for-automatic-trim-in-proxmox-ve/</guid>
+    <description><![CDATA[<h1 id="adding-a-cron-job-for-automatic-trim-in-proxmox-ve">Adding a Cron Job for Automatic TRIM in Proxmox VE</h1>
+<h2 id="check-the-status">Check the status</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl status fstrim.timer
+</span></span><span class="line"><span class="cl"><span class="c1"># output:</span>
+</span></span><span class="line"><span class="cl">● fstrim.timer - Discard unused blocks once a week
+</span></span><span class="line"><span class="cl">     Loaded: loaded <span class="o">(</span>/lib/systemd/system/fstrim.timer<span class="p">;</span> disabled<span class="p">;</span> vendor preset: enabled<span class="o">)</span>
+</span></span><span class="line"><span class="cl">     Active: inactive <span class="o">(</span>dead<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    Trigger: n/a
+</span></span><span class="line"><span class="cl">   Triggers: ● fstrim.service
+</span></span><span class="line"><span class="cl">       Docs: man:fstrim
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="start-the-service">Start the service</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl start fstrim.timer
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="check-the-next-cleanup-time">Check the next cleanup time</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl list-timers --all
+</span></span><span class="line"><span class="cl"><span class="c1"># output:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">NEXT                        LEFT           LAST                        PASSED     UNIT                         ACTIVATES
+</span></span><span class="line"><span class="cl">Fri 2023-02-17 23:54:54 CST 8h left        Thu 2023-02-16 23:54:54 CST 15h ago    systemd-tmpfiles-clean.timer systemd-tmpfiles-clean.servi&gt;
+</span></span><span class="line"><span class="cl">Sat 2023-02-18 00:00:00 CST 8h left        Fri 2023-02-17 00:00:00 CST 15h ago    atop-rotate.timer            atop-rotate.service
+</span></span><span class="line"><span class="cl">Sat 2023-02-18 00:00:00 CST 8h left        Fri 2023-02-17 00:00:00 CST 15h ago    logrotate.timer              logrotate.service
+</span></span><span class="line"><span class="cl">Sat 2023-02-18 00:00:00 CST 8h left        Fri 2023-02-17 00:00:00 CST 15h ago    man-db.timer                 man-db.service
+</span></span><span class="line"><span class="cl">Sat 2023-02-18 04:19:48 CST 13h left       Fri 2023-02-17 05:29:22 CST 9h ago     pve-daily-update.timer       pve-daily-update.service
+</span></span><span class="line"><span class="cl">Sat 2023-02-18 05:18:55 CST 14h left       Fri 2023-02-17 06:45:48 CST 8h ago     apt-daily.timer              apt-daily.service
+</span></span><span class="line"><span class="cl">Sat 2023-02-18 06:41:05 CST 15h left       Fri 2023-02-17 06:02:36 CST 9h ago     apt-daily-upgrade.timer      apt-daily-upgrade.service
+</span></span><span class="line"><span class="cl">Sun 2023-02-19 03:10:12 CST <span class="m">1</span> day 12h left Sun 2023-02-12 03:10:19 CST <span class="m">5</span> days ago e2scrub_all.timer            e2scrub_all.service
+</span></span><span class="line"><span class="cl">Mon 2023-02-20 00:37:59 CST <span class="m">2</span> days left    n/a                         n/a        fstrim.timer                 fstrim.service
+</span></span><span class="line"><span class="cl">n/a                         n/a            n/a                         n/a        pvesr.timer
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Done</p>]]></description>
+</item>
+<item>
+    <title>Extending pvm-local Space in Proxmox VE</title>
+    <link>https://gowinder.work/en/extending-pvm-local-space-in-proxmox-ve/</link>
+    <pubDate>Fri, 17 Feb 2023 14:16:05 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/extending-pvm-local-space-in-proxmox-ve/</guid>
+    <description><![CDATA[<h1 id="extending-pvm-local-space-in-proxmox-ve">Extending pvm-local Space in Proxmox VE</h1>
+<h2 id="reason">Reason</h2>
+<p>The <code>proxmox ve</code> I installed earlier on the <code>DIY E3</code> server used a <code>120G</code> <code>SSD</code>. Back then, being young and naive, I also carved a <code>30g</code> <code>data</code> partition out of the <code>pve</code> logical volume. Now I want to use <code>local</code> for <code>glusterfs</code>, so I wanted to merge the space in <code>data</code> into <code>root</code>.</p>
+<h2 id="steps">Steps</h2>
+<h3 id="first-copy-out-the-contents-of-the-data-partition">First, copy out the contents of the <code>data</code> partition</h3>
+<ul>
+<li>First delete what you don&rsquo;t need on the <code>pve</code> <code>webui</code>; for what you do need, copy it out first. My <code>data</code> is mounted at <code>/mnt/data</code>:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo rsync -ar --info<span class="o">=</span>progress2 /mnt/data/ /var/lib/vz
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>After copying is done, remove the <code>data</code> logical volume:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo umount /mnt/data
+</span></span><span class="line"><span class="cl">sudo lvdisplay
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Take a look at the result:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"> --- Logical volume ---
+</span></span><span class="line"><span class="cl">  LV Path                /dev/pve/data
+</span></span><span class="line"><span class="cl">  LV Name                data
+</span></span><span class="line"><span class="cl">  VG Name                pve
+</span></span><span class="line"><span class="cl">  LV UUID                xxxx
+</span></span><span class="line"><span class="cl">  LV Write Access        read/write
+</span></span><span class="line"><span class="cl">  LV Creation host, <span class="nb">time</span> pve, 2020-12-13 12:19:01 +0800
+</span></span><span class="line"><span class="cl">  LV Status              available
+</span></span><span class="line"><span class="cl">  <span class="c1"># open                 0</span>
+</span></span><span class="line"><span class="cl">  LV Size                30.39 GiB
+</span></span><span class="line"><span class="cl">  Current LE             <span class="m">7781</span>
+</span></span><span class="line"><span class="cl">  Segments               <span class="m">1</span>
+</span></span><span class="line"><span class="cl">  Allocation             inherit
+</span></span><span class="line"><span class="cl">  Read ahead sectors     auto
+</span></span><span class="line"><span class="cl">  - currently <span class="nb">set</span> to     <span class="m">256</span>
+</span></span><span class="line"><span class="cl">  Block device           253:2
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Remove it:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo lvremove pve/data
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Logical volume &#34;data&#34; successfully removed</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Check the <code>vg</code> space with <code>sudo vgdisplay</code>:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">  --- Volume group ---
+</span></span><span class="line"><span class="cl">  VG Name               pve
+</span></span><span class="line"><span class="cl">  System ID
+</span></span><span class="line"><span class="cl">  Format                lvm2
+</span></span><span class="line"><span class="cl">  Metadata Areas        <span class="m">1</span>
+</span></span><span class="line"><span class="cl">  Metadata Sequence No  <span class="m">73</span>
+</span></span><span class="line"><span class="cl">  VG Access             read/write
+</span></span><span class="line"><span class="cl">  VG Status             resizable
+</span></span><span class="line"><span class="cl">  MAX LV                <span class="m">0</span>
+</span></span><span class="line"><span class="cl">  Cur LV                <span class="m">2</span>
+</span></span><span class="line"><span class="cl">  Open LV               <span class="m">2</span>
+</span></span><span class="line"><span class="cl">  Max PV                <span class="m">0</span>
+</span></span><span class="line"><span class="cl">  Cur PV                <span class="m">1</span>
+</span></span><span class="line"><span class="cl">  Act PV                <span class="m">1</span>
+</span></span><span class="line"><span class="cl">  VG Size               &lt;106.60 GiB
+</span></span><span class="line"><span class="cl">  PE Size               4.00 MiB
+</span></span><span class="line"><span class="cl">  Total PE              <span class="m">27289</span>
+</span></span><span class="line"><span class="cl">  Alloc PE / Size       <span class="m">19508</span> / 76.20 GiB
+</span></span><span class="line"><span class="cl">  Free  PE / Size       <span class="m">7781</span> / 30.39 GiB
+</span></span><span class="line"><span class="cl">  VG UUID               xxxx
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>As you can see, there is <code>30.39 Gib</code> of space. Now merge it into <code>pve-root</code>:</li>
+<li><code>sudo lvresize -l +100%FREE /dev/pve/root</code>:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">  Size of logical volume pve/root changed from 72.70 GiB <span class="o">(</span><span class="m">18612</span> extents<span class="o">)</span> to &lt;103.10 GiB <span class="o">(</span><span class="m">26393</span> extents<span class="o">)</span>.
+</span></span><span class="line"><span class="cl">  Logical volume pve/root successfully resized.<span class="sb">`</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p>It becomes <code>103.10 GiB</code>.</p>]]></description>
+</item>
+<item>
+    <title>Drastic Disk Performance Drop Caused by NVMe Power Management in Proxmox VE</title>
+    <link>https://gowinder.work/en/drastic-disk-performance-drop-caused-by-nvme-power-management-in-proxmox-ve/</link>
+    <pubDate>Fri, 17 Feb 2023 10:25:05 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/drastic-disk-performance-drop-caused-by-nvme-power-management-in-proxmox-ve/</guid>
+    <description><![CDATA[<h1 id="drastic-disk-performance-drop-caused-by-nvme-power-management-in-proxmox-ve">Drastic Disk Performance Drop Caused by NVMe Power Management in Proxmox VE</h1>
+<p>A few days ago I deployed a two-node <code>proxmox ve</code> cluster. It worked fine at first, but after a day, when I logged in to the <code>dell r720</code> host over <code>ssh</code>, I found the <code>shell</code> responding very slowly, and going into the <code>linux container</code> on it was even worse — every time I typed a command, <code>zsh</code> would freeze for quite a while.</p>]]></description>
+</item>
+<item>
+    <title>Rebuilding a GlusterFS Volume</title>
+    <link>https://gowinder.work/en/rebuilding-a-glusterfs-volume/</link>
+    <pubDate>Thu, 16 Feb 2023 10:53:05 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/rebuilding-a-glusterfs-volume/</guid>
+    <description><![CDATA[<h1 id="rebuilding-a-glusterfs-volume">Rebuilding a GlusterFS Volume</h1>
+<h2 id="background">Background</h2>
+<p>When I first set up the <code>glusterfs</code> cluster I was in a hurry and used the network addresses of the <code>pve</code> hosts directly. After a few days I noticed that when <code>volume</code> replication ran it was saturating the <code>pve</code> hosts&rsquo; own network channel. The <code>dell r720</code> happened to have four NICs and the <code>e3</code> host had two, so I took one from each and dedicated it as the <code>gluster</code> bind address.</p>]]></description>
+</item>
+<item>
+    <title>Mounting a Physical Disk to a Proxmox VE VM</title>
+    <link>https://gowinder.work/en/mounting-a-physical-disk-to-a-proxmox-ve-vm/</link>
+    <pubDate>Tue, 14 Feb 2023 09:39:05 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/mounting-a-physical-disk-to-a-proxmox-ve-vm/</guid>
+    <description><![CDATA[<h1 id="mounting-a-physical-disk-to-a-proxmox-ve-vm">Mounting a Physical Disk to a Proxmox VE VM</h1>
+<p>First, find the <code>id</code> of the disk you want to mount:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">lsblk <span class="p">|</span>awk <span class="s1">&#39;NR==1{print $0&#34; DEVICE-ID(S)&#34;}NR&gt;1{dev=$1;printf $0&#34; &#34;;system(&#34;find /dev/disk/by-id -lname \&#34;*&#34;dev&#34;\&#34; -printf \&#34; %p\&#34;&#34;);print &#34;&#34;;}&#39;</span><span class="p">|</span>grep -v -E <span class="s1">&#39;part|lvm&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>The output looks similar to this:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">NAME         MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT DEVICE-ID<span class="o">(</span>S<span class="o">)</span>
+</span></span><span class="line"><span class="cl">loop0          7:0    <span class="m">0</span>    20G  <span class="m">0</span> loop
+</span></span><span class="line"><span class="cl">loop1          7:1    <span class="m">0</span>    80G  <span class="m">0</span> loop
+</span></span><span class="line"><span class="cl">loop2          7:2    <span class="m">0</span>    50G  <span class="m">0</span> loop
+</span></span><span class="line"><span class="cl">sda            8:0    <span class="m">0</span>   3.6T  <span class="m">0</span> disk   /dev/disk/by-id/ata-WDC_WD40EJRX-XXXXXXX_WD-WWWWW0XXXXXX /dev/disk/by-id/wwn-0x5000000000000
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>For example, to mount <code>/dev/disk/by-id/wwn-0x5000000000000</code> for a <code>VM</code> whose ID is <code>103</code>, run the following:</p>]]></description>
+</item>
+<item>
+    <title>Resolving Gluster Brick Offline Issues</title>
+    <link>https://gowinder.work/en/resolving-gluster-brick-offline-issues/</link>
+    <pubDate>Sat, 11 Feb 2023 21:13:05 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/resolving-gluster-brick-offline-issues/</guid>
+    <description><![CDATA[<h1 id="resolving-gluster-brick-offline-issues">Resolving Gluster Brick Offline Issues</h1>
+<h2 id="offline-issue">Offline Issue</h2>
+<p>I had just finished installing <code>gluster</code> and stored the <code>rootfs</code> of a <code>linux container</code> on it, so that the <code>linux container</code> could achieve high availability within a two-node <code>pve</code> cluster.</p>
+<p>When I had some spare time, I checked with the command: <code>sudo gluster vol status VMS</code>, and found that one <code>brick</code> was in <code>offline</code> state.</p>
+<p>I looked it up online and installed <code>gstatus</code>:</p>]]></description>
+</item>
+<item>
+    <title>Notes on Deploying a Two-Node HA Cluster and GlusterFS Distributed File System on Proxmox VE</title>
+    <link>https://gowinder.work/en/deploying-a-two-node-ha-cluster-and-glusterfs-distributed-file-system-on-proxmox-ve/</link>
+    <pubDate>Thu, 09 Feb 2023 14:14:05 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/deploying-a-two-node-ha-cluster-and-glusterfs-distributed-file-system-on-proxmox-ve/</guid>
+    <description><![CDATA[<h1 id="deploying-a-two-node-ha-cluster-and-glusterfs-distributed-file-system-on-proxmox-ve">Deploying a Two-Node HA Cluster and GlusterFS Distributed File System on Proxmox VE</h1>
+<p><strong>Make sure both pve nodes run the same version</strong></p>
+<p>Two <code>proxmox ve</code> nodes, enabling high availability with automatic <code>vm</code> and <code>lxc</code> migration</p>
+<h2 id="edit-the-hosts-file">Edit the <code>hosts</code> file</h2>
+<p>In <code>/etc/hosts</code> on both <code>pve</code> machines, add the following <code>host</code> entries:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">192.168.1.229 pve1.local pve1
+</span></span><span class="line"><span class="cl">192.168.1.230 pve2.local pve2
+</span></span><span class="line"><span class="cl">192.168.1.229 gluster1
+</span></span><span class="line"><span class="cl">192.168.1.230 gluster2
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="install-glusterfs">Install <code>glusterfs</code></h2>
+<p>The following operations are performed on both machines, referred to here as <code>pve1</code> and <code>pve2</code></p>]]></description>
+</item>
+</channel>
+</rss>

@@ -15,5 +15,236 @@
 <p>I wanted to test one question: can one person, with no budget and no ads, get anywhere by taking a very narrow need all the way to the end?</p>
 <p>Rather than argue about it, I built two things. They sit at opposite ends of the spectrum — one is pure content, one is a pure tool — which makes them a clean control group.</p>]]></description>
 </item>
+<item>
+    <title>Building and Deploying a Web App on Cloudflare Pages with Next.js, Hono.js, Drizzle and shadcn/ui</title>
+    <link>https://gowinder.work/en/nextjs-honojs-shadcnui-drizzle-cloudflare-pages/</link>
+    <pubDate>Mon, 26 Aug 2024 00:00:06 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/nextjs-honojs-shadcnui-drizzle-cloudflare-pages/</guid>
+    <description><![CDATA[<h1 id="building-and-deploying-a-web-app-on-cloudflare-pages-with-nextjs-honojs-drizzle-and-shadcnui">Building and Deploying a Web App on Cloudflare Pages with Next.js, Hono.js, Drizzle and shadcn/ui</h1>
+<p>Lately I&rsquo;ve been taking advantage of Cloudflare&rsquo;s free offerings—both Workers and Pages. After tinkering with a few small projects and getting through the initial exploration phase, I&rsquo;d like to share the process of quickly building a <code>Web App</code> deployed on <code>Cloudflare Pages</code> using these open-source libraries.</p>
+<p>If you don&rsquo;t want to read through the process, you can skip straight to the end. I&rsquo;ve shared the project address; just <code>fork</code> <a href="https://github.com/gowinder/cloudflare-pages-starter" target="_blank" rel="noopener noreffer ">my example project</a> and you can use it right away.</p>]]></description>
+</item>
+<item>
+    <title>useQuery Error When Using the honojs Client Directly: TypeError: Cannot read properties of undefined (reading &#39;replace&#39;)</title>
+    <link>https://gowinder.work/en/honojs-usequery-error/</link>
+    <pubDate>Thu, 06 Jun 2024 10:00:06 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/honojs-usequery-error/</guid>
+    <description><![CDATA[<h1 id="usequery-error-when-using-the-honojs-client-directly-typeerror-cannot-read-properties-of-undefined-reading-replace">useQuery Error When Using the honojs Client Directly: TypeError: Cannot read properties of undefined (reading &lsquo;replace&rsquo;)</h1>
+<p>Recently I developed a project using <code>nextjs</code>, <code>honojs</code>, and <code>drizzle-orm</code>, deployed on <code>cloudflare pages</code>. I chose <code>honojs</code> because it is friendly to edge computing.</p>
+<h2 id="honojs-query-endpoint-definition">honojs Query Endpoint Definition</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">runtime</span> <span class="o">=</span> <span class="s1">&#39;edge&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">type</span> <span class="nx">Bindings</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">DB</span>: <span class="kt">D1Database</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Hono</span><span class="o">&lt;</span><span class="p">{</span> <span class="nx">Bindings</span>: <span class="kt">Bindings</span> <span class="p">}</span><span class="o">&gt;</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="kr">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="kr">async</span> <span class="p">(</span><span class="nx">c</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="kr">const</span> <span class="nx">conditions</span>: <span class="kt">Record</span><span class="p">&lt;</span><span class="nt">string</span><span class="p">,</span> <span class="na">any</span><span class="p">&gt;</span> <span class="o">=</span> <span class="p">{};</span>
+</span></span><span class="line"><span class="cl">      <span class="kr">const</span> <span class="nx">results</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getDb</span><span class="p">().</span><span class="nx">query</span><span class="p">.</span><span class="nx">someTable</span><span class="p">.</span><span class="nx">findMany</span><span class="p">({});</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="nx">c</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="nx">results</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">// return c.json(resultData);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span>: <span class="kt">Error</span> <span class="o">|</span> <span class="kt">any</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="nx">c</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="nx">app</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="route-setup-for-the-hono-app">Route Setup for the hono app</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Hono</span><span class="o">&lt;</span><span class="p">{</span> <span class="nx">Bindings</span>: <span class="kt">Bindings</span> <span class="p">}</span><span class="o">&gt;</span><span class="p">().</span><span class="nx">basePath</span><span class="p">(</span><span class="s1">&#39;/api&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">routes</span> <span class="o">=</span> <span class="nx">app</span><span class="p">.</span><span class="nx">route</span><span class="p">(</span><span class="s1">&#39;/sometable&#39;</span><span class="p">,</span> <span class="nx">someTable</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">GET</span> <span class="o">=</span> <span class="nx">handle</span><span class="p">(</span><span class="nx">app</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">POST</span> <span class="o">=</span> <span class="nx">handle</span><span class="p">(</span><span class="nx">app</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">type</span> <span class="nx">AppType</span> <span class="o">=</span> <span class="k">typeof</span> <span class="nx">routes</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="calling-with-usequery">Calling with useQuery</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">useGetSomeTable</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">query</span> <span class="o">=</span> <span class="nx">useQuery</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">queryKey</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;someTable&#39;</span><span class="p">],</span> <span class="c1">// Use filters as the query key
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">queryFn</span>: <span class="kt">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">api</span><span class="p">.</span><span class="nx">someTable</span><span class="p">.</span><span class="nx">$get</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;API Response: &#39;</span><span class="p">,</span> <span class="nx">response</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">response</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">&#39;Failed to fetch sometable&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">throwOnError</span>: <span class="kt">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">refetchOnWindowFocus</span>: <span class="kt">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">staleTime</span>: <span class="kt">1000</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">5</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">query</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="the-error-when-calling">The Error When Calling</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">TypeError: Cannot read properties of undefined (reading &#39;replace&#39;)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>The problem was here: <code>const response = await client.api.someTable.$get();</code>
+I debugged it for two days, asked <code>chatgpt</code>, asked <code>gemini pro</code>, tried many methods, with no result.</p>]]></description>
+</item>
+<item>
+    <title>Bulk Delete Keys in `Cloudflare KV`</title>
+    <link>https://gowinder.work/en/bulk-delete-key-in-cloudflare-kv/</link>
+    <pubDate>Thu, 18 Apr 2024 19:12:56 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/bulk-delete-key-in-cloudflare-kv/</guid>
+    <description><![CDATA[<h1 id="bulk-delete-keys-in-cloudflare-kv">Bulk Delete Keys in <code>Cloudflare KV</code></h1>
+<h2 id="get-the-list-of-keys">Get the List of <code>key</code>s</h2>
+<p>Run this first</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">pnpm wrangler kv:key list --namespace-id<span class="o">=</span><span class="si">${</span><span class="nv">namespaceID</span><span class="si">}</span> &gt; PURGE.json<span class="sb">`</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>This gives you the complete list of <code>key</code>s; if you need a condition, just add: <code>--prefix=&quot;prefix&quot;</code></p>
+<h2 id="bulk-delete">Bulk Delete</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">cat purge.json <span class="p">|</span> jq -r <span class="s1">&#39;.[].name&#39;</span> <span class="p">|</span> xargs -I <span class="o">{}</span> pnpm wrangler kv:key delete --namespace-id<span class="o">=</span><span class="si">${</span><span class="nv">namespaceID</span><span class="si">}</span> <span class="o">{}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>]]></description>
+</item>
+<item>
+    <title>Migrating a Remix Project to Cloudflare</title>
+    <link>https://gowinder.work/en/migrate-remix-to-cloudflare/</link>
+    <pubDate>Mon, 08 Apr 2024 14:20:06 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/migrate-remix-to-cloudflare/</guid>
+    <description><![CDATA[<h1 id="migrating-a-remix-project-to-cloudflare">Migrating a Remix Project to Cloudflare</h1>
+<p>Recently I developed a project using <code>remix</code>. I hadn&rsquo;t done full-stack development before; I&rsquo;d used <code>reactjs</code> a bit but wasn&rsquo;t very familiar with it, and I was using <code>Nextjs</code>, which felt very hard to use — mainly because after version <code>13</code> switched to the <code>app router</code>, I was somewhat at a loss.</p>
+<p>Later I discovered <code>remix</code>, which uses filename-based routing directly and is much more convenient, and the <code>loader</code> and <code>action</code> approach is also very intuitive, so I chose <code>remix</code>.</p>]]></description>
+</item>
+<item>
+    <title>Playing Around with ComfyUI</title>
+    <link>https://gowinder.work/en/play-with-comfyui/</link>
+    <pubDate>Mon, 25 Mar 2024 14:12:16 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/play-with-comfyui/</guid>
+    <description><![CDATA[<h1 id="playing-around-with-comfyui">Playing Around with ComfyUI</h1>
+<p><code>AIGC</code> was very popular a while back, so I deployed <code>Stable Diffusion</code>&rsquo;s <code>WebUI</code> locally and played with it for a bit. See: <a href="/content/posts/create-local-stable-diffusion-env.md" rel="">text</a></p>
+<p>But the <code>WebUI</code> interface is too complex and has too many elements. It looks very professional, but it&rsquo;s also somewhat difficult to use. I happened to be busy with work around that time, so after playing with it for a while I set it aside and didn&rsquo;t continue.</p>]]></description>
+</item>
+<item>
+    <title>Migrating My Home Server from a Dell R720 to a Snail Interstellar &#43; MacBook Pro: Follow-up</title>
+    <link>https://gowinder.work/en/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/</link>
+    <pubDate>Thu, 21 Mar 2024 13:54:13 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/</guid>
+    <description><![CDATA[<h1 id="migrating-my-home-server-from-a-dell-r720-to-a-snail-interstellar--macbook-pro-follow-up">Migrating My Home Server from a Dell R720 to a Snail Interstellar + MacBook Pro: Follow-up</h1>
+<h2 id="gigabit-network-disconnection-problem">Gigabit Network Disconnection Problem</h2>
+<p>The migration is complete and I&rsquo;ve been using it for a while. The <code>Snail Interstellar</code>&rsquo;s power consumption is very low (compared with the <code>R720</code>&rsquo;s 100+ watts); with 3 <code>HDD</code>s and 1 <code>SSD</code> it draws 35 watts, less than 1 kWh a day—very nice.</p>
+<p>But there&rsquo;s currently a problem: on the <code>MacbookPro</code>, as soon as I close the lid, lock the screen, or close the remote desktop, the wired network adapter on the <code>Thunderbolt HUB</code> disconnects.</p>]]></description>
+</item>
+<item>
+    <title>A Problem Caused by a YouTube App Using QUIC</title>
+    <link>https://gowinder.work/en/sing-box-youtube-app-quic-issue/</link>
+    <pubDate>Sat, 16 Mar 2024 10:16:15 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/sing-box-youtube-app-quic-issue/</guid>
+    <description><![CDATA[<hr>
+<h1 id="a-problem-caused-by-a-youtube-app-using-quic">A Problem Caused by a YouTube App Using QUIC</h1>
+<h2 id="problem-description">Problem Description</h2>
+<p>At home, an <code>r2s</code> serves as the bypass router using <code>sing-box</code> in <code>tun</code> mode. I had always used a <code>cn2 gia</code> line, and every night I&rsquo;d watch videos on <code>youtube</code> on my <code>apple tv</code> before going to sleep, with no problems. This month the server&rsquo;s traffic ran out, so I switched to <code>hysteria2</code> on an ordinary line. It was fine all day, but come evening <code>youtube</code> was completely unwatchable. I figured <code>udp</code> packet loss was probably severe in the evening, so I didn&rsquo;t bother with it.</p>]]></description>
+</item>
+<item>
+    <title>Migrating My Home Server from a Dell R720 to a Snail Interstellar &#43; MacBook Pro</title>
+    <link>https://gowinder.work/en/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro/</link>
+    <pubDate>Mon, 11 Mar 2024 17:16:15 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro/</guid>
+    <description><![CDATA[<h1 id="migrating-my-home-server-from-a-dell-r720-to-a-snail-interstellar--macbook-pro">Migrating My Home Server from a Dell R720 to a Snail Interstellar + MacBook Pro</h1>
+<p>A few years ago I got into <code>HomeLab</code> and bought a second-hand <code>Dell R720</code> rack server to use as a home server. But this server&rsquo;s power consumption was too high—dual <code>cpu</code>s idled at nearly 200w. After switching to low-power <code>Xeon</code>s and installing only one <code>cpu</code>, it was still 100w+. Over a year the electricity bill added up, and in summer it got very hot. Later I used the <code>ipmi</code> tool and wrote some code in <code>python</code> to adjust the loud fans based on temperature, which made it much more comfortable, but in summer as the room temperature rose the fans still ramped up their speed dramatically. I always wanted to switch to a low-power server. I&rsquo;d previously bought a <code>Snail Interstellar</code>, which uses a <code>j1900</code> and has very low power consumption, so I migrated the home server from the <code>Dell R720</code> to the <code>Snail Interstellar</code>.</p>]]></description>
+</item>
+<item>
+    <title>Using ChatGPT to Write a Script for Generating Chinese Subtitles for Video Files</title>
+    <link>https://gowinder.work/en/use-chatgpt-to-make-a-sub-generator-script/</link>
+    <pubDate>Wed, 06 Mar 2024 14:40:28 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/use-chatgpt-to-make-a-sub-generator-script/</guid>
+    <description><![CDATA[<h1 id="using-chatgpt-to-write-a-script-for-generating-chinese-subtitles-for-video-files">Using ChatGPT to Write a Script for Generating Chinese Subtitles for Video Files</h1>
+<h2 id="background">Background</h2>
+<p>For some obscure movies or videos, it is hard to find Chinese subtitles even though they have a plot, so in these cases you have to add Chinese subtitles manually. But adding Chinese subtitles by hand is extremely time-consuming, especially for long videos. So I wanted to use ChatGPT to help me write a script that can automatically generate Chinese subtitles for video files.</p>]]></description>
+</item>
 </channel>
 </rss>

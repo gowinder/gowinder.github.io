@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Drizzle-Orm - Tag - gowinder&#39;s Blog</title>
+        <link>https://gowinder.work/en/tags/drizzle-orm/</link>
+        <description>Drizzle-Orm - Tag - gowinder&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 26 Aug 2024 00:00:06 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/en/tags/drizzle-orm/" rel="self" type="application/rss+xml" /><item>
+    <title>Building and Deploying a Web App on Cloudflare Pages with Next.js, Hono.js, Drizzle and shadcn/ui</title>
+    <link>https://gowinder.work/en/nextjs-honojs-shadcnui-drizzle-cloudflare-pages/</link>
+    <pubDate>Mon, 26 Aug 2024 00:00:06 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/nextjs-honojs-shadcnui-drizzle-cloudflare-pages/</guid>
+    <description><![CDATA[<h1 id="building-and-deploying-a-web-app-on-cloudflare-pages-with-nextjs-honojs-drizzle-and-shadcnui">Building and Deploying a Web App on Cloudflare Pages with Next.js, Hono.js, Drizzle and shadcn/ui</h1>
+<p>Lately I&rsquo;ve been taking advantage of Cloudflare&rsquo;s free offerings—both Workers and Pages. After tinkering with a few small projects and getting through the initial exploration phase, I&rsquo;d like to share the process of quickly building a <code>Web App</code> deployed on <code>Cloudflare Pages</code> using these open-source libraries.</p>
+<p>If you don&rsquo;t want to read through the process, you can skip straight to the end. I&rsquo;ve shared the project address; just <code>fork</code> <a href="https://github.com/gowinder/cloudflare-pages-starter" target="_blank" rel="noopener noreffer ">my example project</a> and you can use it right away.</p>]]></description>
+</item>
+</channel>
+</rss>

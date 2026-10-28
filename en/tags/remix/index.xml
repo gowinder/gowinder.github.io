@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Remix - Tag - gowinder&#39;s Blog</title>
+        <link>https://gowinder.work/en/tags/remix/</link>
+        <description>Remix - Tag - gowinder&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 08 Apr 2024 14:20:06 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/en/tags/remix/" rel="self" type="application/rss+xml" /><item>
+    <title>Migrating a Remix Project to Cloudflare</title>
+    <link>https://gowinder.work/en/migrate-remix-to-cloudflare/</link>
+    <pubDate>Mon, 08 Apr 2024 14:20:06 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/migrate-remix-to-cloudflare/</guid>
+    <description><![CDATA[<h1 id="migrating-a-remix-project-to-cloudflare">Migrating a Remix Project to Cloudflare</h1>
+<p>Recently I developed a project using <code>remix</code>. I hadn&rsquo;t done full-stack development before; I&rsquo;d used <code>reactjs</code> a bit but wasn&rsquo;t very familiar with it, and I was using <code>Nextjs</code>, which felt very hard to use — mainly because after version <code>13</code> switched to the <code>app router</code>, I was somewhat at a loss.</p>
+<p>Later I discovered <code>remix</code>, which uses filename-based routing directly and is much more convenient, and the <code>loader</code> and <code>action</code> approach is also very intuitive, so I chose <code>remix</code>.</p>]]></description>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>A Problem Caused by a YouTube App Using QUIC - gowinder&#39;s Blog</title><meta name="Description" content="Diagnosing and fixing slow YouTube playback on Apple TV and Chromecast caused by QUIC over UDP through a sing-box TUN bypass router."><meta property="og:url" content="https://gowinder.work/en/sing-box-youtube-app-quic-issue/">
+  <meta property="og:site_name" content="gowinder&#39;s Blog">
+  <meta property="og:title" content="A Problem Caused by a YouTube App Using QUIC">
+  <meta property="og:description" content="Diagnosing and fixing slow YouTube playback on Apple TV and Chromecast caused by QUIC over UDP through a sing-box TUN bypass router.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-03-16T10:16:15+08:00">
+    <meta property="article:modified_time" content="2024-03-16T10:16:15+08:00">
+    <meta property="article:tag" content="Bypass-Router">
+    <meta property="article:tag" content="R2s">
+    <meta property="article:tag" content="Quic">
+    <meta property="article:tag" content="Sing-Box">
+    <meta property="article:tag" content="Hysteria">
+    <meta property="article:tag" content="Youtube">
+    <meta property="og:image" content="https://gowinder.work/sing-box-youtube-app-quic-issue/featured-image.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://gowinder.work/sing-box-youtube-app-quic-issue/featured-image.png">
+  <meta name="twitter:title" content="A Problem Caused by a YouTube App Using QUIC">
+  <meta name="twitter:description" content="Diagnosing and fixing slow YouTube playback on Apple TV and Chromecast caused by QUIC over UDP through a sing-box TUN bypass router.">
+<meta name="application-name" content="gowinder个人博客">
+<meta name="apple-mobile-web-app-title" content="gowinder个人博客"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://gowinder.work/en/sing-box-youtube-app-quic-issue/" /><link rel="prev" href="https://gowinder.work/en/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro/" /><link rel="next" href="https://gowinder.work/en/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "A Problem Caused by a YouTube App Using QUIC",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/gowinder.work\/en\/sing-box-youtube-app-quic-issue\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/gowinder.work\/sing-box-youtube-app-quic-issue\/featured-image.png",
+                            "width":  2000 ,
+                            "height":  679 
+                        }],"genre": "posts","keywords": "bypass-router, r2s, quic, sing-box, hysteria, youtube","wordcount":  701 ,
+        "url": "https:\/\/gowinder.work\/en\/sing-box-youtube-app-quic-issue\/","datePublished": "2024-03-16T10:16:15+08:00","dateModified": "2024-03-16T10:16:15+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/gowinder.work\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "Author"
+            },"description": "Diagnosing and fixing slow YouTube playback on Apple TV and Chromecast caused by QUIC over UDP through a sing-box TUN bypass router."
+    }
+    </script>
+    </head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/en/" title="gowinder&#39;s Blog"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw' aria-hidden='true'></i></span>Gowinder</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/en/posts/"> Posts </a><a class="menu-item" href="/en/tags/"> Tags </a><a class="menu-item" href="/en/categories/"> Categories </a><a class="menu-item" href="/en/categories/documentation/"> Docs </a><a class="menu-item" href="/en/about/"> About </a><a class="menu-item" href="https://github.com/gowinder" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i>  </a><a class="menu-item" href="/en/projects/"> Projects </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a><a href="javascript:void(0);" class="menu-item language" title="Select Language">
+                    <i class="fa fa-globe" aria-hidden="true"></i>                      
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/en/sing-box-youtube-app-quic-issue/" selected>English</option><option value="/sing-box-youtube-app-quic-issue/">简体中文</option></select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/en/" title="gowinder&#39;s Blog"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw' aria-hidden='true'></i></span>Gowinder</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/en/posts/" title="">Posts</a><a class="menu-item" href="/en/tags/" title="">Tags</a><a class="menu-item" href="/en/categories/" title="">Categories</a><a class="menu-item" href="/en/categories/documentation/" title="">Docs</a><a class="menu-item" href="/en/about/" title="">About</a><a class="menu-item" href="https://github.com/gowinder" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i></a><a class="menu-item" href="/en/projects/" title="">Projects</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">
+                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/en/sing-box-youtube-app-quic-issue/" selected>English</option><option value="/sing-box-youtube-app-quic-issue/">简体中文</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">A Problem Caused by a YouTube App Using QUIC</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-03-16">2024-03-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;701 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;4 minutes&nbsp;<span id="/en/sing-box-youtube-app-quic-issue/" class="leancloud_visitors" data-flag-title="A Problem Caused by a YouTube App Using QUIC">
+                        <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;views
+                    </span>&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/sing-box-youtube-app-quic-issue/featured-image.png"
+        data-srcset="/sing-box-youtube-app-quic-issue/featured-image.png, /sing-box-youtube-app-quic-issue/featured-image.png 1.5x, /sing-box-youtube-app-quic-issue/featured-image.png 2x"
+        data-sizes="auto"
+        alt="/sing-box-youtube-app-quic-issue/featured-image.png"
+        title="Diagnosing and fixing slow YouTube playback on Apple TV and Chromecast caused by QUIC over UDP through a sing-box TUN bypass router." /></div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#problem-description">Problem Description</a></li>
+    <li><a href="#troubleshooting-process">Troubleshooting Process</a></li>
+    <li><a href="#solution">Solution</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><hr>
+<h1 id="a-problem-caused-by-a-youtube-app-using-quic">A Problem Caused by a YouTube App Using QUIC</h1>
+<h2 id="problem-description">Problem Description</h2>
+<p>At home, an <code>r2s</code> serves as the bypass router using <code>sing-box</code> in <code>tun</code> mode. I had always used a <code>cn2 gia</code> line, and every night I&rsquo;d watch videos on <code>youtube</code> on my <code>apple tv</code> before going to sleep, with no problems. This month the server&rsquo;s traffic ran out, so I switched to <code>hysteria2</code> on an ordinary line. It was fine all day, but come evening <code>youtube</code> was completely unwatchable. I figured <code>udp</code> packet loss was probably severe in the evening, so I didn&rsquo;t bother with it.</p>
+<p>One day I couldn&rsquo;t take it anymore. In the evening I opened a browser on my laptop and tested the speed at <code>speed.cloudflare.com</code>, and it was indeed normal—downstream over <code>40M</code>. I figured there&rsquo;d be no problem watching YouTube with that, so I opened <code>youtube</code> in the laptop browser and found the speed normal, 20K+ <code>Kbps</code>, and even <code>4k</code> was fine. I hurried back to test on the <code>apple tv</code>, and it was still laggy, with the speed only 200–300 <code>Kbps</code>. I was completely baffled.</p>
+<h2 id="troubleshooting-process">Troubleshooting Process</h2>
+<p>So I tested with various devices and found that, apart from the <code>youtube app</code> on <code>apple tv</code> and <code>chromecast tv</code>, everything else—phone <code>app</code>s and browsers—was completely normal.
+This was clearly a problem. I also thought it had only appeared recently, so I googled to see whether anyone else had the same issue. I searched separately by the version numbers of the <code>youtube app</code> on <code>apple tv</code> and <code>chromecast tv</code>, but found nothing relevant.</p>
+<p>So I looked at the <code>sing-box</code> <code>dashboard</code>. When playing at normal speed, the connections looked normal; when playing with <code>youtube tv</code> on the TV, the connection speed just wouldn&rsquo;t come up and stayed below <code>100KBps</code> the whole time.
+It was extremely frustrating. I tried switching the protocol to <code>vmess</code>, and it was actually faster than the current setup, though the speed in the browser and <code>app</code>s still wasn&rsquo;t great.</p>
+<p>Just as I was about to give up again, I noticed that on the <code>dashboard</code> the number of closed connections for <code>apple tv</code> kept growing, while the corresponding <code>pc</code> <code>ip</code> was normal. This was clearly a problem—how could <code>apple tv</code> initiate so many connections? Looking more carefully, I found that the connection from <code>apple tv</code> to <code>YouTube</code> had the protocol <code>tun(udp)</code>. It&rsquo;s clearly video going over port <code>443</code>, so how come it&rsquo;s <code>udp</code>? I suddenly thought of <code>quic</code>. Could it be going over <code>quic</code>? And <code>quic</code> is based on <code>udp</code>, packet by packet, and when the <code>tun</code> side receives packets it forwards them to <code>hysteria</code>&rsquo;s port hopping—each (or several) packets change ports and establish new connections, which explains why there were so many &ldquo;closed&rdquo; connections.</p>
+<p>So I googled and found an <a href="https://github.com/SagerNet/sing-box/issues/664" target="_blank" rel="noopener noreffer ">issue</a>, and tried using this <code>rule</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&#34;protocol&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;quic&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">],</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&#34;outbound&#34;</span><span class="p">:</span> <span class="s2">&#34;block&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span><span class="err">,</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Updated the config, and the result&hellip; it didn&rsquo;t work. Ugh, it was almost 1 a.m. by then, so I decided to call it a day and try again tomorrow. Because I&rsquo;d had coffee in the afternoon and kept thinking about this, I didn&rsquo;t sleep well all night. I got up early on the weekend to try again.</p>
+<h2 id="solution">Solution</h2>
+<p>After thinking it over all night, I felt my reasoning was right: it must be using <code>quic</code>, and if I disabled it, the <code>youtube app</code> would switch to <code>tcp</code>.
+I looked at the <code>dashboard</code> and found that the <code>rule</code> corresponding to the <code>tun(udp)</code> entry wasn&rsquo;t the <code>block</code> I had set—meaning it hadn&rsquo;t taken effect.</p>
+<p>So I kept reading the <code>sing-box</code> docs and switched to a different <code>rule</code> config:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;logical&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;mode&#34;</span><span class="p">:</span> <span class="s2">&#34;and&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;rules&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;network&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;udp&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;port&#34;</span><span class="p">:</span> <span class="p">[</span><span class="mi">443</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">],</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;outbound&#34;</span><span class="p">:</span> <span class="s2">&#34;block&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>This one is very clear: <code>udp</code> on port <code>443</code> gets <code>block</code>ed. It might cause some false positives, but it shouldn&rsquo;t let YouTube&rsquo;s <code>quic</code> slip through anymore.</p>
+<p>Updated the config, applied the settings, and tested:
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/sing-box-youtube-app-quic-issue/youtube-speed.png"
+        data-srcset="/sing-box-youtube-app-quic-issue/youtube-speed.png, /sing-box-youtube-app-quic-issue/youtube-speed.png 1.5x, /sing-box-youtube-app-quic-issue/youtube-speed.png 2x"
+        data-sizes="auto"
+        alt="/sing-box-youtube-app-quic-issue/youtube-speed.png"
+        title="alt text" width="966" height="98" />
+Finally it was normal. If I hadn&rsquo;t tested it with the browser, I&rsquo;d have stayed in the dark all along. Now, at last, I can watch videos and sleep with peace of mind&hellip;</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2024-03-16</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/en/sing-box-youtube-app-quic-issue/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://gowinder.work/en/sing-box-youtube-app-quic-issue/" data-title="A Problem Caused by a YouTube App Using QUIC" data-hashtags="bypass-router,r2s,quic,sing-box,hysteria,youtube"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://gowinder.work/en/sing-box-youtube-app-quic-issue/" data-hashtag="bypass-router"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://gowinder.work/en/sing-box-youtube-app-quic-issue/" data-title="A Problem Caused by a YouTube App Using QUIC"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://gowinder.work/en/sing-box-youtube-app-quic-issue/" data-title="A Problem Caused by a YouTube App Using QUIC"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://gowinder.work/en/sing-box-youtube-app-quic-issue/" data-title="A Problem Caused by a YouTube App Using QUIC"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/bypass-router/">Bypass-Router</a>,&nbsp;<a href="/en/tags/r2s/">R2s</a>,&nbsp;<a href="/en/tags/quic/">Quic</a>,&nbsp;<a href="/en/tags/sing-box/">Sing-Box</a>,&nbsp;<a href="/en/tags/hysteria/">Hysteria</a>,&nbsp;<a href="/en/tags/youtube/">Youtube</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/en/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/en/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro/" class="prev" rel="prev" title="Migrating My Home Server from a Dell R720 to a Snail Interstellar &#43; MacBook Pro"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Migrating My Home Server from a Dell R720 to a Snail Interstellar + MacBook Pro</a>
+            <a href="/en/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/" class="next" rel="next" title="Migrating My Home Server from a Dell R720 to a Snail Interstellar &#43; MacBook Pro: Follow-up">Migrating My Home Server from a Dell R720 to a Snail Interstellar + MacBook Pro: Follow-up<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript><div id="utterances" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.143.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/en/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.5.0/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"gowinder/hugo-comment"},"valine":{"appId":"QGzwQXOqs5JOhN4RGPOkR2mR-MdYXbMMI","appKey":"WBmoGyJtbqUswvfLh6L8iEBr","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"en","pageSize":10,"placeholder":"Your comment ...","recordIP":true,"serverURLs":"https://leancloud.hugoloveit.com","visitor":true}},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

@@ -1,0 +1,19 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Gstatus - Tag - gowinder&#39;s Blog</title>
+        <link>https://gowinder.work/en/tags/gstatus/</link>
+        <description>Gstatus - Tag - gowinder&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 11 Feb 2023 21:13:05 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/en/tags/gstatus/" rel="self" type="application/rss+xml" /><item>
+    <title>Resolving Gluster Brick Offline Issues</title>
+    <link>https://gowinder.work/en/resolving-gluster-brick-offline-issues/</link>
+    <pubDate>Sat, 11 Feb 2023 21:13:05 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/resolving-gluster-brick-offline-issues/</guid>
+    <description><![CDATA[<h1 id="resolving-gluster-brick-offline-issues">Resolving Gluster Brick Offline Issues</h1>
+<h2 id="offline-issue">Offline Issue</h2>
+<p>I had just finished installing <code>gluster</code> and stored the <code>rootfs</code> of a <code>linux container</code> on it, so that the <code>linux container</code> could achieve high availability within a two-node <code>pve</code> cluster.</p>
+<p>When I had some spare time, I checked with the command: <code>sudo gluster vol status VMS</code>, and found that one <code>brick</code> was in <code>offline</code> state.</p>
+<p>I looked it up online and installed <code>gstatus</code>:</p>]]></description>
+</item>
+</channel>
+</rss>

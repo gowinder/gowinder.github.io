@@ -1,0 +1,36 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Cloudflare KV - Tag - gowinder&#39;s Blog</title>
+        <link>https://gowinder.work/en/tags/cloudflare-kv/</link>
+        <description>Cloudflare KV - Tag - gowinder&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 18 Apr 2024 19:12:56 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/en/tags/cloudflare-kv/" rel="self" type="application/rss+xml" /><item>
+    <title>Bulk Delete Keys in `Cloudflare KV`</title>
+    <link>https://gowinder.work/en/bulk-delete-key-in-cloudflare-kv/</link>
+    <pubDate>Thu, 18 Apr 2024 19:12:56 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/bulk-delete-key-in-cloudflare-kv/</guid>
+    <description><![CDATA[<h1 id="bulk-delete-keys-in-cloudflare-kv">Bulk Delete Keys in <code>Cloudflare KV</code></h1>
+<h2 id="get-the-list-of-keys">Get the List of <code>key</code>s</h2>
+<p>Run this first</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">pnpm wrangler kv:key list --namespace-id<span class="o">=</span><span class="si">${</span><span class="nv">namespaceID</span><span class="si">}</span> &gt; PURGE.json<span class="sb">`</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>This gives you the complete list of <code>key</code>s; if you need a condition, just add: <code>--prefix=&quot;prefix&quot;</code></p>
+<h2 id="bulk-delete">Bulk Delete</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">cat purge.json <span class="p">|</span> jq -r <span class="s1">&#39;.[].name&#39;</span> <span class="p">|</span> xargs -I <span class="o">{}</span> pnpm wrangler kv:key delete --namespace-id<span class="o">=</span><span class="si">${</span><span class="nv">namespaceID</span><span class="si">}</span> <span class="o">{}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>]]></description>
+</item>
+</channel>
+</rss>

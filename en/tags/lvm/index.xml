@@ -1,0 +1,165 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Lvm - Tag - gowinder&#39;s Blog</title>
+        <link>https://gowinder.work/en/tags/lvm/</link>
+        <description>Lvm - Tag - gowinder&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 17 Feb 2023 14:16:05 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/en/tags/lvm/" rel="self" type="application/rss+xml" /><item>
+    <title>Extending pvm-local Space in Proxmox VE</title>
+    <link>https://gowinder.work/en/extending-pvm-local-space-in-proxmox-ve/</link>
+    <pubDate>Fri, 17 Feb 2023 14:16:05 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/extending-pvm-local-space-in-proxmox-ve/</guid>
+    <description><![CDATA[<h1 id="extending-pvm-local-space-in-proxmox-ve">Extending pvm-local Space in Proxmox VE</h1>
+<h2 id="reason">Reason</h2>
+<p>The <code>proxmox ve</code> I installed earlier on the <code>DIY E3</code> server used a <code>120G</code> <code>SSD</code>. Back then, being young and naive, I also carved a <code>30g</code> <code>data</code> partition out of the <code>pve</code> logical volume. Now I want to use <code>local</code> for <code>glusterfs</code>, so I wanted to merge the space in <code>data</code> into <code>root</code>.</p>
+<h2 id="steps">Steps</h2>
+<h3 id="first-copy-out-the-contents-of-the-data-partition">First, copy out the contents of the <code>data</code> partition</h3>
+<ul>
+<li>First delete what you don&rsquo;t need on the <code>pve</code> <code>webui</code>; for what you do need, copy it out first. My <code>data</code> is mounted at <code>/mnt/data</code>:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo rsync -ar --info<span class="o">=</span>progress2 /mnt/data/ /var/lib/vz
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>After copying is done, remove the <code>data</code> logical volume:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo umount /mnt/data
+</span></span><span class="line"><span class="cl">sudo lvdisplay
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Take a look at the result:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"> --- Logical volume ---
+</span></span><span class="line"><span class="cl">  LV Path                /dev/pve/data
+</span></span><span class="line"><span class="cl">  LV Name                data
+</span></span><span class="line"><span class="cl">  VG Name                pve
+</span></span><span class="line"><span class="cl">  LV UUID                xxxx
+</span></span><span class="line"><span class="cl">  LV Write Access        read/write
+</span></span><span class="line"><span class="cl">  LV Creation host, <span class="nb">time</span> pve, 2020-12-13 12:19:01 +0800
+</span></span><span class="line"><span class="cl">  LV Status              available
+</span></span><span class="line"><span class="cl">  <span class="c1"># open                 0</span>
+</span></span><span class="line"><span class="cl">  LV Size                30.39 GiB
+</span></span><span class="line"><span class="cl">  Current LE             <span class="m">7781</span>
+</span></span><span class="line"><span class="cl">  Segments               <span class="m">1</span>
+</span></span><span class="line"><span class="cl">  Allocation             inherit
+</span></span><span class="line"><span class="cl">  Read ahead sectors     auto
+</span></span><span class="line"><span class="cl">  - currently <span class="nb">set</span> to     <span class="m">256</span>
+</span></span><span class="line"><span class="cl">  Block device           253:2
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Remove it:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo lvremove pve/data
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Logical volume &#34;data&#34; successfully removed</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Check the <code>vg</code> space with <code>sudo vgdisplay</code>:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">  --- Volume group ---
+</span></span><span class="line"><span class="cl">  VG Name               pve
+</span></span><span class="line"><span class="cl">  System ID
+</span></span><span class="line"><span class="cl">  Format                lvm2
+</span></span><span class="line"><span class="cl">  Metadata Areas        <span class="m">1</span>
+</span></span><span class="line"><span class="cl">  Metadata Sequence No  <span class="m">73</span>
+</span></span><span class="line"><span class="cl">  VG Access             read/write
+</span></span><span class="line"><span class="cl">  VG Status             resizable
+</span></span><span class="line"><span class="cl">  MAX LV                <span class="m">0</span>
+</span></span><span class="line"><span class="cl">  Cur LV                <span class="m">2</span>
+</span></span><span class="line"><span class="cl">  Open LV               <span class="m">2</span>
+</span></span><span class="line"><span class="cl">  Max PV                <span class="m">0</span>
+</span></span><span class="line"><span class="cl">  Cur PV                <span class="m">1</span>
+</span></span><span class="line"><span class="cl">  Act PV                <span class="m">1</span>
+</span></span><span class="line"><span class="cl">  VG Size               &lt;106.60 GiB
+</span></span><span class="line"><span class="cl">  PE Size               4.00 MiB
+</span></span><span class="line"><span class="cl">  Total PE              <span class="m">27289</span>
+</span></span><span class="line"><span class="cl">  Alloc PE / Size       <span class="m">19508</span> / 76.20 GiB
+</span></span><span class="line"><span class="cl">  Free  PE / Size       <span class="m">7781</span> / 30.39 GiB
+</span></span><span class="line"><span class="cl">  VG UUID               xxxx
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>As you can see, there is <code>30.39 Gib</code> of space. Now merge it into <code>pve-root</code>:</li>
+<li><code>sudo lvresize -l +100%FREE /dev/pve/root</code>:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">  Size of logical volume pve/root changed from 72.70 GiB <span class="o">(</span><span class="m">18612</span> extents<span class="o">)</span> to &lt;103.10 GiB <span class="o">(</span><span class="m">26393</span> extents<span class="o">)</span>.
+</span></span><span class="line"><span class="cl">  Logical volume pve/root successfully resized.<span class="sb">`</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p>It becomes <code>103.10 GiB</code>.</p>]]></description>
+</item>
+</channel>
+</rss>

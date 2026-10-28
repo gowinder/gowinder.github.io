@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Power Management - Tag - gowinder&#39;s Blog</title>
+        <link>https://gowinder.work/en/tags/power-management/</link>
+        <description>Power Management - Tag - gowinder&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 17 Feb 2023 10:25:05 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/en/tags/power-management/" rel="self" type="application/rss+xml" /><item>
+    <title>Drastic Disk Performance Drop Caused by NVMe Power Management in Proxmox VE</title>
+    <link>https://gowinder.work/en/drastic-disk-performance-drop-caused-by-nvme-power-management-in-proxmox-ve/</link>
+    <pubDate>Fri, 17 Feb 2023 10:25:05 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/drastic-disk-performance-drop-caused-by-nvme-power-management-in-proxmox-ve/</guid>
+    <description><![CDATA[<h1 id="drastic-disk-performance-drop-caused-by-nvme-power-management-in-proxmox-ve">Drastic Disk Performance Drop Caused by NVMe Power Management in Proxmox VE</h1>
+<p>A few days ago I deployed a two-node <code>proxmox ve</code> cluster. It worked fine at first, but after a day, when I logged in to the <code>dell r720</code> host over <code>ssh</code>, I found the <code>shell</code> responding very slowly, and going into the <code>linux container</code> on it was even worse — every time I typed a command, <code>zsh</code> would freeze for quite a while.</p>]]></description>
+</item>
+</channel>
+</rss>

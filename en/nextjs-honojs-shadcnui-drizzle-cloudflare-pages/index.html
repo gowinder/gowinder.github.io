@@ -1,0 +1,1916 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Building and Deploying a Web App on Cloudflare Pages with Next.js, Hono.js, Drizzle and shadcn/ui - gowinder&#39;s Blog</title><meta name="Description" content="A step-by-step guide to building and deploying a web app on Cloudflare Pages with Next.js, Hono.js, Drizzle ORM and shadcn/ui."><meta property="og:url" content="https://gowinder.work/en/nextjs-honojs-shadcnui-drizzle-cloudflare-pages/">
+  <meta property="og:site_name" content="gowinder&#39;s Blog">
+  <meta property="og:title" content="Building and Deploying a Web App on Cloudflare Pages with Next.js, Hono.js, Drizzle and shadcn/ui">
+  <meta property="og:description" content="A step-by-step guide to building and deploying a web app on Cloudflare Pages with Next.js, Hono.js, Drizzle ORM and shadcn/ui.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-08-26T00:00:06+08:00">
+    <meta property="article:modified_time" content="2024-08-26T00:00:06+08:00">
+    <meta property="article:tag" content="Nextjs">
+    <meta property="article:tag" content="Cloudflare">
+    <meta property="article:tag" content="Cloudflare Pages">
+    <meta property="article:tag" content="Cloudflare Workers">
+    <meta property="article:tag" content="Honojs">
+    <meta property="article:tag" content="Usequery">
+    <meta property="og:image" content="https://gravatar.com/userimage/16926726/2de44cb9918f08ff7f430244b10bf37b.jpeg?size=256">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://gravatar.com/userimage/16926726/2de44cb9918f08ff7f430244b10bf37b.jpeg?size=256">
+  <meta name="twitter:title" content="Building and Deploying a Web App on Cloudflare Pages with Next.js, Hono.js, Drizzle and shadcn/ui">
+  <meta name="twitter:description" content="A step-by-step guide to building and deploying a web app on Cloudflare Pages with Next.js, Hono.js, Drizzle ORM and shadcn/ui.">
+<meta name="application-name" content="gowinder个人博客">
+<meta name="apple-mobile-web-app-title" content="gowinder个人博客"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://gowinder.work/en/nextjs-honojs-shadcnui-drizzle-cloudflare-pages/" /><link rel="prev" href="https://gowinder.work/en/honojs-usequery-error/" /><link rel="next" href="https://gowinder.work/en/two-small-sites/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Building and Deploying a Web App on Cloudflare Pages with Next.js, Hono.js, Drizzle and shadcn/ui",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/gowinder.work\/en\/nextjs-honojs-shadcnui-drizzle-cloudflare-pages\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/gowinder.work\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","keywords": "nextjs, cloudflare, cloudflare pages, cloudflare workers, honojs, usequery, drizzle-orm, shadcn-ui","wordcount":  3540 ,
+        "url": "https:\/\/gowinder.work\/en\/nextjs-honojs-shadcnui-drizzle-cloudflare-pages\/","datePublished": "2024-08-26T00:00:06+08:00","dateModified": "2024-08-26T00:00:06+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/gowinder.work\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "Author"
+            },"description": "A step-by-step guide to building and deploying a web app on Cloudflare Pages with Next.js, Hono.js, Drizzle ORM and shadcn/ui."
+    }
+    </script>
+    </head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/en/" title="gowinder&#39;s Blog"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw' aria-hidden='true'></i></span>Gowinder</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/en/posts/"> Posts </a><a class="menu-item" href="/en/tags/"> Tags </a><a class="menu-item" href="/en/categories/"> Categories </a><a class="menu-item" href="/en/categories/documentation/"> Docs </a><a class="menu-item" href="/en/about/"> About </a><a class="menu-item" href="https://github.com/gowinder" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i>  </a><a class="menu-item" href="/en/projects/"> Projects </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a><a href="javascript:void(0);" class="menu-item language" title="Select Language">
+                    <i class="fa fa-globe" aria-hidden="true"></i>                      
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/en/nextjs-honojs-shadcnui-drizzle-cloudflare-pages/" selected>English</option><option value="/nextjs-honojs-shadcnui-drizzle-cloudflare-pages/">简体中文</option></select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/en/" title="gowinder&#39;s Blog"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw' aria-hidden='true'></i></span>Gowinder</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/en/posts/" title="">Posts</a><a class="menu-item" href="/en/tags/" title="">Tags</a><a class="menu-item" href="/en/categories/" title="">Categories</a><a class="menu-item" href="/en/categories/documentation/" title="">Docs</a><a class="menu-item" href="/en/about/" title="">About</a><a class="menu-item" href="https://github.com/gowinder" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i></a><a class="menu-item" href="/en/projects/" title="">Projects</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">
+                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/en/nextjs-honojs-shadcnui-drizzle-cloudflare-pages/" selected>English</option><option value="/nextjs-honojs-shadcnui-drizzle-cloudflare-pages/">简体中文</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Building and Deploying a Web App on Cloudflare Pages with Next.js, Hono.js, Drizzle and shadcn/ui</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-08-26">2024-08-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;3540 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;17 minutes&nbsp;<span id="/en/nextjs-honojs-shadcnui-drizzle-cloudflare-pages/" class="leancloud_visitors" data-flag-title="Building and Deploying a Web App on Cloudflare Pages with Next.js, Hono.js, Drizzle and shadcn/ui">
+                        <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;views
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#preparation">Preparation</a></li>
+    <li><a href="#process">Process</a>
+      <ul>
+        <li><a href="#creating-the-project">Creating the Project</a></li>
+        <li><a href="#initializing-the-project">Initializing the Project</a>
+          <ul>
+            <li><a href="#try-running-it">Try Running It</a></li>
+            <li><a href="#common-shadcn-ui-components">Common shadcn-ui Components</a></li>
+            <li><a href="#database">Database</a>
+              <ul>
+                <li><a href="#tsconfig">tsconfig</a></li>
+                <li><a href="#drizzle-config">drizzle config</a></li>
+                <li><a href="#db"><code>db</code></a></li>
+                <li><a href="#schema"><code>schema</code></a></li>
+              </ul>
+            </li>
+            <li><a href="#api"><code>API</code></a>
+              <ul>
+                <li><a href="#auth-configts-authentication-related"><code>auth-config.ts</code> Authentication-related</a></li>
+                <li><a href="#users">users</a></li>
+                <li><a href="#router">router</a></li>
+              </ul>
+            </li>
+            <li><a href="#usequery-related">useQuery-related</a>
+              <ul>
+                <li><a href="#provider">provider</a></li>
+                <li><a href="#hono-client">hono client</a></li>
+                <li><a href="#usesession">useSession</a></li>
+                <li><a href="#use-get-user-infots">use-get-user-info.ts</a></li>
+              </ul>
+            </li>
+            <li><a href="#zustand-storage">zustand Storage</a></li>
+            <li><a href="#dashboard-related-pages"><code>dashboard</code>-related Pages</a>
+              <ul>
+                <li><a href="#-layouttsx">##### layout.tsx</a></li>
+                <li><a href="#pagetsx"><code>page.tsx</code></a></li>
+                <li><a href="#dashboardtsx"><code>dashboard.tsx</code></a></li>
+                <li><a href="#dashboard-navbartsx-navigation-component-generated-with-ai-httpsv0devtxyhqd5mkvkt"><code>dashboard-navbar.tsx</code> Navigation Component (generated with ai: <a href="https://v0.dev/t/xYHqD5MkVkT">https://v0.dev/t/xYHqD5MkVkT</a>)</a></li>
+                <li><a href="#navbar-itemtsx-navigation-button"><code>navbar-item.tsx</code> Navigation Button</a></li>
+              </ul>
+            </li>
+            <li><a href="#environment-variables">Environment Variables</a></li>
+            <li><a href="#wranglertoml">wrangler.toml</a></li>
+            <li><a href="#packagejson">package.json</a></li>
+          </ul>
+        </li>
+        <li><a href="#starting-up">Starting Up</a>
+          <ul>
+            <li><a href="#local">Local</a></li>
+            <li><a href="#preview">Preview</a></li>
+            <li><a href="#production">Production</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="building-and-deploying-a-web-app-on-cloudflare-pages-with-nextjs-honojs-drizzle-and-shadcnui">Building and Deploying a Web App on Cloudflare Pages with Next.js, Hono.js, Drizzle and shadcn/ui</h1>
+<p>Lately I&rsquo;ve been taking advantage of Cloudflare&rsquo;s free offerings—both Workers and Pages. After tinkering with a few small projects and getting through the initial exploration phase, I&rsquo;d like to share the process of quickly building a <code>Web App</code> deployed on <code>Cloudflare Pages</code> using these open-source libraries.</p>
+<p>If you don&rsquo;t want to read through the process, you can skip straight to the end. I&rsquo;ve shared the project address; just <code>fork</code> <a href="https://github.com/gowinder/cloudflare-pages-starter" target="_blank" rel="noopener noreffer ">my example project</a> and you can use it right away.</p>
+<p><strong>Note</strong>: Some of the code was generated by <code>AI</code> and then modified afterward.</p>
+<h2 id="preparation">Preparation</h2>
+<ul>
+<li>
+<p>Get a <code>Cloudflare</code> account ready. <code>Pages</code> and <code>Workers</code> are both free, but the free tier has some limitations. One important one: the compiled binary bundle cannot exceed <code>1MB</code>; see: <a href="https://developers.cloudflare.com/workers/platform/limits" target="_blank" rel="noopener noreffer ">Limits | Cloudflare Workers docs</a>. If your <code>WebApp</code> exceeds <code>1MB</code> after compilation, you&rsquo;ll need to pay—5 dollars a month, which isn&rsquo;t too expensive. It&rsquo;s much more convenient than setting up a bunch of services on your own <code>vps</code>, and you can also enable <code>Cloudflare CDN</code>.</p>
+</li>
+<li>
+<p>I recommend creating the project directly on <code>github</code>. That way, in the deployment settings you can select the branches corresponding to the <code>preview</code> and <code>production</code> environments, and it will compile automatically as soon as you push—very convenient.</p>
+</li>
+<li>
+<p>Install <code>bun</code>: <code>npm install -g bun</code></p>
+</li>
+<li>
+<p>I won&rsquo;t go through the other development-related environments one by one.</p>
+</li>
+</ul>
+<h2 id="process">Process</h2>
+<h3 id="creating-the-project">Creating the Project</h3>
+<ul>
+<li>
+<p>Run the command: <code>bun x create-next-app cloudflare-pages-starter</code>. For every prompt that appears, just press Enter—the defaults are fine. <code>cloudflare-pages-starter</code> is the project name and the directory name.</p>
+</li>
+<li>
+<p><code>cd cloudflare-pages-starter &amp;&amp; git remote add origin YOUR_GITHUB_REPO</code>—this step sets the <code>git</code> remote address.</p>
+</li>
+<li>
+<p>Install the required libraries: <code>bun add @auth/core@^0.32.0 @auth/drizzle-adapter@^1.2.0 @hono/auth-js@1.0.8 drizzle-orm@^0.30.10 drizzle-zod hono@^4.4.2 shadcn-ui zod zustand @tanstack/react-query</code>; dev libraries: <code>bun add -d @cloudflare/next-on-pages @cloudflare/workers-types autoprefixer drizzle-kit@0.21.2 postcss tailwindcss wrangler</code></p>
+</li>
+</ul>
+<h3 id="initializing-the-project">Initializing the Project</h3>
+<p>You can refer to the <a href="https://developers.cloudflare.com/pages/framework-guides/nextjs/ssr/get-started/" target="_blank" rel="noopener noreffer ">official documentation</a> for this part.</p>
+<p>Create a new <code>wrangler.toml</code> in the project root directory with the following content:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;cloudflare-pages-starter&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">compatibility_date</span> <span class="p">=</span> <span class="s2">&#34;2024-04-05&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">pages_build_output_dir</span> <span class="p">=</span> <span class="s2">&#34;.vercel/output/static&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">compatibility_flags</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;nodejs_compat&#34;</span><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Replace <code>name</code> with your own <code>pages</code> project name.</p>
+<p>Then run: <code>bun wrangler login</code>, and authorize <code>wrangler</code> in the web page that pops up.</p>
+<p>Delete <code>next.config.js</code>, create a new <code>next.config.mjs</code>, with the following content:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">setupDevPlatform</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&#34;@cloudflare/next-on-pages/next-dev&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/** @type {import(&#39;next&#39;).NextConfig} */</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">nextConfig</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">reactStrictMode</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">images</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">domains</span><span class="o">:</span> <span class="p">[</span><span class="s2">&#34;example.com&#34;</span><span class="p">,</span> <span class="s2">&#34;images.unsplash.com&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// we only need to use the utility during development so we can check NODE_ENV
+</span></span></span><span class="line"><span class="cl"><span class="c1">// (note: this check is recommended but completely optional)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">if</span> <span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">===</span> <span class="s2">&#34;development&#34;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// `await`ing the call is not necessary but it helps making sure that the setup has succeeded.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="c1">//  If you cannot use top level awaits you could use the following to avoid an unhandled rejection:
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="c1">//  `setupDevPlatform().catch(e =&gt; console.error(e));`
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">await</span> <span class="nx">setupDevPlatform</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="nx">nextConfig</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Note</strong>: If you don&rsquo;t do this, <code>bun dev</code> won&rsquo;t be able to connect to the database when starting the local service.</p>
+<h4 id="try-running-it">Try Running It</h4>
+<p><code>bun dev</code></p>
+<p>Open <code>http://localhost:3000</code>, and you should see the <code>nextj.js</code> page.</p>
+<h4 id="common-shadcn-ui-components">Common shadcn-ui Components</h4>
+<p>First initialize according to the docs: <a href="https://ui.shadcn.com/docs/installation" target="_blank" rel="noopener noreffer ">Installation - shadcn/ui</a></p>
+<p>Then install the components—we&rsquo;ll install them all at once:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">bunx shadcn-ui add toast avatar badge button card dialog dropdown-menu input skeleton table use-toast
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>These component files are installed under <code>components/ui</code>.</p>
+<h4 id="database">Database</h4>
+<h5 id="tsconfig">tsconfig</h5>
+<p>Modify <code>tsconfig.json</code>, changing <code>target</code> to <code>ES2022</code>, as follows:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;compilerOptions&#34;</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;target&#34;</span><span class="o">:</span> <span class="s2">&#34;ES2022&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;lib&#34;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&#34;dom&#34;</span><span class="p">,</span> <span class="s2">&#34;dom.iterable&#34;</span><span class="p">,</span> <span class="s2">&#34;esnext&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;allowJs&#34;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;skipLibCheck&#34;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;strict&#34;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;forceConsistentCasingInFileNames&#34;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;noEmit&#34;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;esModuleInterop&#34;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;module&#34;</span><span class="o">:</span> <span class="s2">&#34;esnext&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;moduleResolution&#34;</span><span class="o">:</span> <span class="s2">&#34;node&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;resolveJsonModule&#34;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;isolatedModules&#34;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;jsx&#34;</span><span class="o">:</span> <span class="s2">&#34;preserve&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;incremental&#34;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;plugins&#34;</span><span class="o">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;name&#34;</span><span class="o">:</span> <span class="s2">&#34;next&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;paths&#34;</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;@/*&#34;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&#34;./*&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;include&#34;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&#34;next-env.d.ts&#34;</span><span class="p">,</span> <span class="s2">&#34;**/*.ts&#34;</span><span class="p">,</span> <span class="s2">&#34;**/*.tsx&#34;</span><span class="p">,</span> <span class="s2">&#34;.next/types/**/*.ts&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;exclude&#34;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&#34;node_modules&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="drizzle-config">drizzle config</h5>
+<p>File: <code>drizzle.config.ts</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">defineConfig</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;drizzle-kit&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="nx">defineConfig</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">schema</span><span class="o">:</span> <span class="s2">&#34;./db/schema.ts&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">out</span><span class="o">:</span> <span class="s2">&#34;./migrations&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">dialect</span><span class="o">:</span> <span class="s2">&#34;sqlite&#34;</span><span class="p">,</span> <span class="c1">// &#39;postgresql&#39; | &#39;mysql&#39; | &#39;sqlite&#39;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">verbose</span>: <span class="kt">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">driver</span><span class="o">:</span> <span class="s2">&#34;d1&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">dbCredentials</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">wranglerConfigPath</span><span class="o">:</span> <span class="s2">&#34;./wrangler.toml&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">dbName</span><span class="o">:</span> <span class="s2">&#34;pages-starter-preview&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="db"><code>db</code></h5>
+<p>Create a new <code>/db/db.ts</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// app/db/db.ts
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">drizzle</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;drizzle-orm/d1&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">schema</span> <span class="kr">from</span> <span class="s2">&#34;./schema&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">runtime</span> <span class="o">=</span> <span class="s2">&#34;edge&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 全局函数，接受 context 参数，返回 drizzle 实例
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="kr">const</span> <span class="nx">getDb</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">drizzle</span><span class="p">((</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span> <span class="kr">as</span> <span class="kt">any</span><span class="p">).</span><span class="nx">DB</span><span class="p">,</span> <span class="p">{</span> <span class="nx">schema</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Note</strong>: <code>export const runtime = &quot;edge&quot;;</code> is required for deploying on <code>Cloudflare Pages</code>.</p>
+<p>With it defined this way, you can use <code>getDb</code> directly anywhere else.</p>
+<h5 id="schema"><code>schema</code></h5>
+<p>Create a new <code>db/schema.ts</code>. For the table interfaces, see: <a href="https://authjs.dev/reference/drizzle-adapter/lib/sqlite" target="_blank" rel="noopener noreffer ">authjs</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">AdapterAccountType</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@auth/core/adapters&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">integer</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">primaryKey</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">sqliteTable</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">text</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;drizzle-orm/sqlite-core&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">users</span> <span class="o">=</span> <span class="nx">sqliteTable</span><span class="p">(</span><span class="s2">&#34;user&#34;</span><span class="p">,</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">id</span>: <span class="kt">text</span><span class="p">(</span><span class="s2">&#34;id&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nx">primaryKey</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nx">$defaultFn</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">crypto</span><span class="p">.</span><span class="nx">randomUUID</span><span class="p">()),</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">name</span>: <span class="kt">text</span><span class="p">(</span><span class="s2">&#34;name&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">email</span>: <span class="kt">text</span><span class="p">(</span><span class="s2">&#34;email&#34;</span><span class="p">).</span><span class="kt">unique</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">emailVerified</span>: <span class="kt">integer</span><span class="p">(</span><span class="s2">&#34;emailVerified&#34;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">mode</span><span class="o">:</span> <span class="s2">&#34;timestamp_ms&#34;</span> <span class="p">}),</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">image</span>: <span class="kt">text</span><span class="p">(</span><span class="s2">&#34;image&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">accounts</span> <span class="o">=</span> <span class="nx">sqliteTable</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;account&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">userId</span>: <span class="kt">text</span><span class="p">(</span><span class="s2">&#34;userId&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">notNull</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">references</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">users</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="p">{</span> <span class="nx">onDelete</span><span class="o">:</span> <span class="s2">&#34;cascade&#34;</span> <span class="p">}),</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">type</span><span class="o">:</span> <span class="nx">text</span><span class="p">(</span><span class="s2">&#34;type&#34;</span><span class="p">).</span><span class="nx">$type</span><span class="p">&lt;</span><span class="nt">AdapterAccountType</span><span class="p">&gt;().</span><span class="nx">notNull</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">provider</span>: <span class="kt">text</span><span class="p">(</span><span class="s2">&#34;provider&#34;</span><span class="p">).</span><span class="nx">notNull</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">providerAccountId</span>: <span class="kt">text</span><span class="p">(</span><span class="s2">&#34;providerAccountId&#34;</span><span class="p">).</span><span class="nx">notNull</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">refresh_token</span>: <span class="kt">text</span><span class="p">(</span><span class="s2">&#34;refresh_token&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">access_token</span>: <span class="kt">text</span><span class="p">(</span><span class="s2">&#34;access_token&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">expires_at</span>: <span class="kt">integer</span><span class="p">(</span><span class="s2">&#34;expires_at&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">token_type</span>: <span class="kt">text</span><span class="p">(</span><span class="s2">&#34;token_type&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">scope</span>: <span class="kt">text</span><span class="p">(</span><span class="s2">&#34;scope&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">id_token</span>: <span class="kt">text</span><span class="p">(</span><span class="s2">&#34;id_token&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">session_state</span>: <span class="kt">text</span><span class="p">(</span><span class="s2">&#34;session_state&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nx">account</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">({</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">compoundKey</span>: <span class="kt">primaryKey</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">columns</span><span class="o">:</span> <span class="p">[</span><span class="nx">account</span><span class="p">.</span><span class="nx">provider</span><span class="p">,</span> <span class="nx">account</span><span class="p">.</span><span class="nx">providerAccountId</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}),</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">sessions</span> <span class="o">=</span> <span class="nx">sqliteTable</span><span class="p">(</span><span class="s2">&#34;session&#34;</span><span class="p">,</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">sessionToken</span>: <span class="kt">text</span><span class="p">(</span><span class="s2">&#34;sessionToken&#34;</span><span class="p">).</span><span class="nx">primaryKey</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">userId</span>: <span class="kt">text</span><span class="p">(</span><span class="s2">&#34;userId&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nx">notNull</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nx">references</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">users</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="p">{</span> <span class="nx">onDelete</span><span class="o">:</span> <span class="s2">&#34;cascade&#34;</span> <span class="p">}),</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">expires</span>: <span class="kt">integer</span><span class="p">(</span><span class="s2">&#34;expires&#34;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">mode</span><span class="o">:</span> <span class="s2">&#34;timestamp_ms&#34;</span> <span class="p">}).</span><span class="nx">notNull</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">verificationTokens</span> <span class="o">=</span> <span class="nx">sqliteTable</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;verificationToken&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">identifier</span>: <span class="kt">text</span><span class="p">(</span><span class="s2">&#34;identifier&#34;</span><span class="p">).</span><span class="nx">notNull</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">token</span>: <span class="kt">text</span><span class="p">(</span><span class="s2">&#34;token&#34;</span><span class="p">).</span><span class="nx">notNull</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">expires</span>: <span class="kt">integer</span><span class="p">(</span><span class="s2">&#34;expires&#34;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">mode</span><span class="o">:</span> <span class="s2">&#34;timestamp_ms&#34;</span> <span class="p">}).</span><span class="nx">notNull</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nx">verificationToken</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">({</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">compositePk</span>: <span class="kt">primaryKey</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">columns</span><span class="o">:</span> <span class="p">[</span><span class="nx">verificationToken</span><span class="p">.</span><span class="nx">identifier</span><span class="p">,</span> <span class="nx">verificationToken</span><span class="p">.</span><span class="nx">token</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}),</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">authenticators</span> <span class="o">=</span> <span class="nx">sqliteTable</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;authenticator&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">credentialID</span>: <span class="kt">text</span><span class="p">(</span><span class="s2">&#34;credentialID&#34;</span><span class="p">).</span><span class="nx">notNull</span><span class="p">().</span><span class="kt">unique</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">userId</span>: <span class="kt">text</span><span class="p">(</span><span class="s2">&#34;userId&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">notNull</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">references</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">users</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="p">{</span> <span class="nx">onDelete</span><span class="o">:</span> <span class="s2">&#34;cascade&#34;</span> <span class="p">}),</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">providerAccountId</span>: <span class="kt">text</span><span class="p">(</span><span class="s2">&#34;providerAccountId&#34;</span><span class="p">).</span><span class="nx">notNull</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">credentialPublicKey</span>: <span class="kt">text</span><span class="p">(</span><span class="s2">&#34;credentialPublicKey&#34;</span><span class="p">).</span><span class="nx">notNull</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">counter</span>: <span class="kt">integer</span><span class="p">(</span><span class="s2">&#34;counter&#34;</span><span class="p">).</span><span class="nx">notNull</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">credentialDeviceType</span>: <span class="kt">text</span><span class="p">(</span><span class="s2">&#34;credentialDeviceType&#34;</span><span class="p">).</span><span class="nx">notNull</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">credentialBackedUp</span>: <span class="kt">integer</span><span class="p">(</span><span class="s2">&#34;credentialBackedUp&#34;</span><span class="p">,</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">mode</span><span class="o">:</span> <span class="s2">&#34;boolean&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}).</span><span class="nx">notNull</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">transports</span>: <span class="kt">text</span><span class="p">(</span><span class="s2">&#34;transports&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nx">authenticator</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">({</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">compositePK</span>: <span class="kt">primaryKey</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">columns</span><span class="o">:</span> <span class="p">[</span><span class="nx">authenticator</span><span class="p">.</span><span class="nx">userId</span><span class="p">,</span> <span class="nx">authenticator</span><span class="p">.</span><span class="nx">credentialID</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}),</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="api"><code>API</code></h4>
+<h5 id="auth-configts-authentication-related"><code>auth-config.ts</code> Authentication-related</h5>
+<p>File: <code>app/api/[[..route]]/auth-config.ts</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">GitHub</span> <span class="kr">from</span> <span class="s2">&#34;@auth/core/providers/github&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">Google</span> <span class="kr">from</span> <span class="s2">&#34;@auth/core/providers/google&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">DrizzleAdapter</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@auth/drizzle-adapter&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">AuthConfig</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@hono/auth-js&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">Context</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;hono&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">getDb</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@/db/db&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kd">function</span> <span class="nx">getAuthConfig</span><span class="p">(</span><span class="nx">c</span>: <span class="kt">Context</span><span class="p">)</span><span class="o">:</span> <span class="nx">AuthConfig</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">session</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">strategy</span><span class="o">:</span> <span class="s2">&#34;jwt&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">maxAge</span>: <span class="kt">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">30</span><span class="p">,</span> <span class="c1">// 30 days
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">debug</span>: <span class="kt">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">secret</span>: <span class="kt">process.env.AUTH_SECRET</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">providers</span><span class="o">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">GitHub</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">clientId</span>: <span class="kt">process.env.GITHUB_CLIENT_ID</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">clientSecret</span>: <span class="kt">process.env.GITHUB_CLIENT_SECRET</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}),</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">Google</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">clientId</span>: <span class="kt">process.env.GOOGLE_CLIENT_ID</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">clientSecret</span>: <span class="kt">process.env.GOOGLE_CLIENT_SECRET</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}),</span>
+</span></span><span class="line"><span class="cl">    <span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">callbacks</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="kr">async</span> <span class="nx">session</span><span class="p">({</span> <span class="nx">session</span><span class="p">,</span> <span class="nx">token</span> <span class="p">})</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">const</span> <span class="nx">newSession</span> <span class="o">=</span> <span class="nx">session</span> <span class="kr">as</span> <span class="kt">any</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">newSession</span><span class="p">[</span><span class="s2">&#34;token&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">token</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nx">session</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="kr">async</span> <span class="nx">jwt</span><span class="p">({</span> <span class="nx">token</span><span class="p">,</span> <span class="nx">user</span><span class="p">,</span> <span class="nx">account</span><span class="p">,</span> <span class="nx">profile</span><span class="p">,</span> <span class="nx">session</span> <span class="p">})</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nx">token</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">adapter</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="p">...</span><span class="nx">DrizzleAdapter</span><span class="p">(</span><span class="nx">getDb</span><span class="p">()),</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>This is the authentication-related configuration. I used two <code>provider</code>s here: <a href="https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app" target="_blank" rel="noopener noreffer ">Creating an OAuth app - GitHub Docs</a>, <a href="https://developers.google.com/identity/protocols/oauth2" target="_blank" rel="noopener noreffer ">Google OAuth2</a></p>
+<h5 id="users">users</h5>
+<p>File: <code>app/api/[[...route]]/users.ts</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">eq</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;drizzle-orm&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">Hono</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;hono&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">HTTPException</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;hono/http-exception&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">Bindings</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;hono/types&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">getDb</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@/db/db&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">accounts</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@/db/schema&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Hono</span><span class="o">&lt;</span><span class="p">{</span> <span class="nx">Bindings</span>: <span class="kt">Bindings</span> <span class="p">}</span><span class="o">&gt;</span><span class="p">().</span><span class="kr">get</span><span class="p">(</span><span class="s2">&#34;/:userId&#34;</span><span class="p">,</span> <span class="kr">async</span> <span class="p">(</span><span class="nx">c</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">userId</span> <span class="o">=</span> <span class="nx">c</span><span class="p">.</span><span class="nx">req</span><span class="p">.</span><span class="nx">param</span><span class="p">(</span><span class="s2">&#34;userId&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">db</span> <span class="o">=</span> <span class="nx">getDb</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">userAccount</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">db</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">findFirst</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">where</span>: <span class="kt">eq</span><span class="p">(</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">userId</span><span class="p">,</span> <span class="nx">userId</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">columns</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">provider</span>: <span class="kt">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">providerAccountId</span>: <span class="kt">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">api_token</span>: <span class="kt">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">api_enabled</span>: <span class="kt">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">userAccount</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">throw</span> <span class="k">new</span> <span class="nx">HTTPException</span><span class="p">(</span><span class="mi">404</span><span class="p">,</span> <span class="p">{</span> <span class="nx">message</span><span class="o">:</span> <span class="s2">&#34;user not found&#34;</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">c</span><span class="p">.</span><span class="nx">json</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span><span class="nx">userAccount</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="nx">app</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>This is used to query user information.</p>
+<h5 id="router">router</h5>
+<p>File <code>app/api/[[..route]]/route.ts</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">D1Database</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@cloudflare/workers-types&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">authHandler</span><span class="p">,</span> <span class="nx">initAuthConfig</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@hono/auth-js&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">Hono</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;hono&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">handle</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;hono/vercel&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">getAuthConfig</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;./auth-config&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">runtime</span> <span class="o">=</span> <span class="s2">&#34;edge&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// This ensures c.env.DB is correctly typed
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">type</span> <span class="nx">Bindings</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">DB</span>: <span class="kt">D1Database</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Hono</span><span class="o">&lt;</span><span class="p">{</span> <span class="nx">Bindings</span>: <span class="kt">Bindings</span> <span class="p">}</span><span class="o">&gt;</span><span class="p">().</span><span class="nx">basePath</span><span class="p">(</span><span class="s2">&#34;/api&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;*&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">initAuthConfig</span><span class="p">((</span><span class="nx">c</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">config</span> <span class="o">=</span> <span class="nx">getAuthConfig</span><span class="p">(</span><span class="nx">c</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">config</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&#34;/auth/*&#34;</span><span class="p">,</span> <span class="nx">authHandler</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&#34;/protected&#34;</span><span class="p">,</span> <span class="kr">async</span> <span class="p">(</span><span class="nx">c</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">auth</span> <span class="o">=</span> <span class="nx">c</span><span class="p">.</span><span class="kr">get</span><span class="p">(</span><span class="s2">&#34;authUser&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// console.log(&#34;c:&#34;, c);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">auth</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">c</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="s2">&#34;Unauthorized&#34;</span><span class="p">,</span> <span class="mi">401</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">c</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">auth</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">user</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&#34;/&#34;</span><span class="p">,</span> <span class="kr">async</span> <span class="p">(</span><span class="nx">c</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">c</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="s2">&#34;Hello World&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">routes</span> <span class="o">=</span> <span class="nx">app</span><span class="p">.</span><span class="kr">get</span><span class="p">(</span><span class="s2">&#34;/routes&#34;</span><span class="p">,</span> <span class="p">(</span><span class="nx">c</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">routes</span> <span class="o">=</span> <span class="nx">app</span><span class="p">.</span><span class="nx">routes</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;所有路由:&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">routes</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">route</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">route</span><span class="p">.</span><span class="nx">method</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="nx">route</span><span class="p">.</span><span class="nx">path</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">});</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">c</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">routes</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">route</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">({</span> <span class="nx">method</span>: <span class="kt">route.method</span><span class="p">,</span> <span class="nx">path</span>: <span class="kt">route.path</span> <span class="p">}))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">GET</span> <span class="o">=</span> <span class="nx">handle</span><span class="p">(</span><span class="nx">app</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">POST</span> <span class="o">=</span> <span class="nx">handle</span><span class="p">(</span><span class="nx">app</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">type</span> <span class="nx">AppType</span> <span class="o">=</span> <span class="k">typeof</span> <span class="nx">routes</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>This way, <code>hono.js</code> handles routing, taking over <code>next.js</code>&rsquo;s routing system.</p>
+<p><strong>Note</strong>: If you define sub-routes in other files, you need to write them directly in <code>route.ts</code> as <code>const routes = app.get().post().route()</code>; otherwise they may not take effect.</p>
+<h4 id="usequery-related">useQuery-related</h4>
+<h5 id="provider">provider</h5>
+<p>File: <code>providers/query-provider.tsx</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// In Next.js, this file would be called: app/providers.jsx
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="s2">&#34;use client&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Since QueryClientProvider relies on useContext under the hood, we have to put &#39;use client&#39; on top
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">QueryClient</span><span class="p">,</span> <span class="nx">QueryClientProvider</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@tanstack/react-query&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">makeQueryClient() {</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="k">new</span> <span class="nx">QueryClient</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">defaultOptions</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">queries</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// With SSR, we usually want to set some default staleTime
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// above 0 to avoid refetching immediately on the client
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nx">staleTime</span>: <span class="kt">60</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">browserQueryClient</span>: <span class="kt">QueryClient</span> <span class="o">|</span> <span class="kc">undefined</span> <span class="o">=</span> <span class="kc">undefined</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">getQueryClient() {</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nb">window</span> <span class="o">===</span> <span class="s2">&#34;undefined&#34;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Server: always make a new query client
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="nx">makeQueryClient</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Browser: make a new query client if we don&#39;t already have one
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// This is very important so we don&#39;t re-make a new client if React
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// suspends during the initial render. This may not be needed if we
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// have a suspense boundary BELOW the creation of the query client
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">browserQueryClient</span><span class="p">)</span> <span class="nx">browserQueryClient</span> <span class="o">=</span> <span class="nx">makeQueryClient</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">browserQueryClient</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">type</span> <span class="nx">Props</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">children</span>: <span class="kt">React.ReactNode</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kd">function</span> <span class="nx">QueryProvider</span><span class="p">({</span> <span class="nx">children</span> <span class="p">}</span><span class="o">:</span> <span class="nx">Props</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// NOTE: Avoid useState when initializing the query client if you don&#39;t
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="c1">//       have a suspense boundary between this and the code that may
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="c1">//       suspend because React will throw away the client on the initial
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="c1">//       render if it suspends and there is no boundary
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">const</span> <span class="nx">queryClient</span> <span class="o">=</span> <span class="nx">getQueryClient</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">QueryClientProvider</span> <span class="na">client</span><span class="o">=</span><span class="p">{</span><span class="nx">queryClient</span><span class="p">}&gt;{</span><span class="nx">children</span><span class="p">}&lt;/</span><span class="nt">QueryClientProvider</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="hono-client">hono client</h5>
+<p>File: <code>lib/hono.ts</code>. This is provided to the client for calling the <code>API</code>s defined with <code>hono</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">hc</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;hono/client&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">AppType</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@/app/api/[[...route]]/route&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;process.env.NODE_ENV:&#34;</span><span class="p">,</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;process.env.NEXT_PUBLIC_APP_URL:&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NEXT_PUBLIC_APP_URL</span>
+</span></span><span class="line"><span class="cl"><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">hc</span><span class="p">&lt;</span><span class="nt">AppType</span><span class="p">&gt;(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NEXT_PUBLIC_APP_URL</span><span class="o">!</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="usesession">useSession</h5>
+<p>File: <code>features/use-session.ts</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">Session</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@auth/core/types&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">QueryClient</span><span class="p">,</span> <span class="nx">useQuery</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@tanstack/react-query&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">interface</span> <span class="nx">CustomSession</span> <span class="kr">extends</span> <span class="nx">Session</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">token</span><span class="o">?:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">sub?</span>: <span class="kt">string</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">useSession</span> <span class="o">=</span> <span class="p">()</span><span class="o">:</span> <span class="p">{</span> <span class="nx">session</span>: <span class="kt">CustomSession</span><span class="p">;</span> <span class="nx">status</span>: <span class="kt">string</span> <span class="p">}</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="p">{</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">status</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useQuery</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">queryKey</span><span class="o">:</span> <span class="p">[</span><span class="s2">&#34;session&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">queryFn</span>: <span class="kt">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="s2">&#34;/api/auth/session&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">      <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">staleTime</span>: <span class="kt">5</span> <span class="o">*</span> <span class="p">(</span><span class="mi">60</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">gcTime</span>: <span class="kt">10</span> <span class="o">*</span> <span class="p">(</span><span class="mi">60</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">refetchOnWindowFocus</span>: <span class="kt">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="k">new</span> <span class="nx">QueryClient</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">{</span> <span class="nx">session</span>: <span class="kt">data</span> <span class="kr">as</span> <span class="nx">CustomSession</span><span class="p">,</span> <span class="nx">status</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>This <code>useQuery</code> is responsible for fetching the <code>session</code> back from the server.</p>
+<h5 id="use-get-user-infots">use-get-user-info.ts</h5>
+<p>File: <code>features/use-get-user-info.ts</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">client</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@/lib/hono&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">useQuery</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@tanstack/react-query&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kd">function</span> <span class="nx">useGetUserInfo</span><span class="p">(</span><span class="nx">userId</span>: <span class="kt">string</span> <span class="o">|</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">useQuery</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">queryKey</span><span class="o">:</span> <span class="p">[</span><span class="s2">&#34;userInfo&#34;</span><span class="p">,</span> <span class="nx">userId</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">queryFn</span>: <span class="kt">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">userId</span><span class="p">)</span> <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">&#34;用户ID是必需的&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">api</span><span class="p">.</span><span class="nx">users</span><span class="p">[</span><span class="s2">&#34;:userId&#34;</span><span class="p">].</span><span class="nx">$get</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">param</span><span class="o">:</span> <span class="p">{</span> <span class="nx">userId</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="p">});</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">response</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span> <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">&#34;获取用户信息失败&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">enabled</span><span class="o">:</span> <span class="o">!!</span><span class="nx">userId</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="zustand-storage">zustand Storage</h4>
+<p>We use zustand to store local data and dispatch events.</p>
+<p>File: <code>stores/ui-event.store.ts</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">z</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;zod&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">create</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;zustand&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">DashboardPage</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@/defines/dashboard-page&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">uiEventSchema</span> <span class="o">=</span> <span class="nx">z</span><span class="p">.</span><span class="kt">object</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">showLogin</span>: <span class="kt">z.boolean</span><span class="p">().</span><span class="k">default</span><span class="p">(</span><span class="kc">false</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">dashboardPage</span>: <span class="kt">z.string</span><span class="p">().</span><span class="k">default</span><span class="p">(</span><span class="nx">DashboardPage</span><span class="p">.</span><span class="nx">Home</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">showSettings</span>: <span class="kt">z.boolean</span><span class="p">().</span><span class="k">default</span><span class="p">(</span><span class="kc">false</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">type</span> <span class="nx">UIEvent</span> <span class="o">=</span> <span class="nx">z</span><span class="p">.</span><span class="k">infer</span><span class="p">&lt;</span><span class="nt">typeof</span> <span class="na">uiEventSchema</span><span class="p">&gt;;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">interface</span> <span class="nx">UIEventStore</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">event</span>: <span class="kt">UIEvent</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">setEvent</span><span class="o">:</span> <span class="p">(</span><span class="nx">event</span>: <span class="kt">UIEvent</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">reset</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">setShowLogin</span><span class="o">:</span> <span class="p">(</span><span class="nx">showLogin</span>: <span class="kt">boolean</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">setDashboardPage</span><span class="o">:</span> <span class="p">(</span><span class="nx">dashboardPage</span>: <span class="kt">string</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">setShowSettings</span><span class="o">:</span> <span class="p">(</span><span class="nx">showSettings</span>: <span class="kt">boolean</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">useUIEventStore</span> <span class="o">=</span> <span class="nx">create</span><span class="p">&lt;</span><span class="nt">UIEventStore</span><span class="p">&gt;((</span><span class="kr">set</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">({</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">event</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">showLogin</span>: <span class="kt">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">dashboardPage</span>: <span class="kt">DashboardPage.Home</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">showSettings</span>: <span class="kt">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">setEvent</span><span class="o">:</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="kr">set</span><span class="p">({</span> <span class="nx">event</span> <span class="p">}),</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">reset</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">set</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">event</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">showLogin</span>: <span class="kt">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">dashboardPage</span>: <span class="kt">DashboardPage.Home</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">showSettings</span>: <span class="kt">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}),</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">setShowLogin</span><span class="o">:</span> <span class="p">(</span><span class="nx">showLogin</span><span class="p">)</span> <span class="o">=&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">set</span><span class="p">((</span><span class="nx">prevState</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">({</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">event</span><span class="o">:</span> <span class="p">{</span> <span class="p">...</span><span class="nx">prevState</span><span class="p">.</span><span class="nx">event</span><span class="p">,</span> <span class="nx">showLogin</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">})),</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">setDashboardPage</span><span class="o">:</span> <span class="p">(</span><span class="nx">dashboardPage</span><span class="p">)</span> <span class="o">=&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">set</span><span class="p">((</span><span class="nx">prevState</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">({</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">event</span><span class="o">:</span> <span class="p">{</span> <span class="p">...</span><span class="nx">prevState</span><span class="p">.</span><span class="nx">event</span><span class="p">,</span> <span class="nx">dashboardPage</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">})),</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">setShowSettings</span><span class="o">:</span> <span class="p">(</span><span class="nx">showSettings</span><span class="p">)</span> <span class="o">=&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">set</span><span class="p">((</span><span class="nx">prevState</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">({</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">event</span><span class="o">:</span> <span class="p">{</span> <span class="p">...</span><span class="nx">prevState</span><span class="p">.</span><span class="nx">event</span><span class="p">,</span> <span class="nx">showSettings</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">})),</span>
+</span></span><span class="line"><span class="cl"><span class="p">}));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="nx">useUIEventStore</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="dashboard-related-pages"><code>dashboard</code>-related Pages</h4>
+<h5 id="-layouttsx">##### layout.tsx</h5>
+<p>File: <code>app/layout.tsx</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">QueryProvider</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@/providers/query-provider&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">Inter</span> <span class="kr">as</span> <span class="nx">FontSans</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;next/font/google&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="s2">&#34;./globals.css&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">cn</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@/lib/utils&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">metadata</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">title</span><span class="o">:</span> <span class="s2">&#34;Create Next App&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">description</span><span class="o">:</span> <span class="s2">&#34;Generated by create next app&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">fontSans</span> <span class="o">=</span> <span class="nx">FontSans</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">subsets</span><span class="o">:</span> <span class="p">[</span><span class="s2">&#34;latin&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">variable</span><span class="o">:</span> <span class="s2">&#34;--font-sans&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">RootLayout</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">children</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">children</span>: <span class="kt">React.ReactNode</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">body</span>
+</span></span><span class="line"><span class="cl">        <span class="na">className</span><span class="o">=</span><span class="p">{</span><span class="nx">cn</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">          <span class="s2">&#34;min-h-screen bg-background font-sans antialiased&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">fontSans</span><span class="p">.</span><span class="nx">variable</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)}</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">QueryProvider</span><span class="p">&gt;{</span><span class="nx">children</span><span class="p">}&lt;/</span><span class="nt">QueryProvider</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Mainly we&rsquo;re adding <code>QueryProvider</code>.</p>
+<h5 id="pagetsx"><code>page.tsx</code></h5>
+<p>Modify <code>app/page.tsx</code> to the following:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="s2">&#34;use client&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">Dashboard</span> <span class="kr">from</span> <span class="s2">&#34;@/components/dashboard/dahsboard&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">Toaster</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@/components/ui/toaster&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">useSession</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@/hooks/use-session&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">Home() {</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">sessionData</span> <span class="o">=</span> <span class="nx">useSession</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;sessionData:&#34;</span><span class="p">,</span> <span class="nx">sessionData</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">session</span> <span class="o">=</span> <span class="nx">sessionData</span><span class="o">?</span><span class="p">.</span><span class="nx">session</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">&#34;flex flex-col items-center justify-center min-h-screen&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">Dashboard</span> <span class="na">session</span><span class="o">=</span><span class="p">{</span><span class="nx">session</span><span class="p">}</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">Toaster</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>We&rsquo;ll add <code>useSession</code> later.</p>
+<h5 id="dashboardtsx"><code>dashboard.tsx</code></h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">CustomSession</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@/features/use-session&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">useUIEventStore</span> <span class="kr">from</span> <span class="s2">&#34;@/stores/ui-event.store&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">useEffect</span><span class="p">,</span> <span class="nx">useState</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;react&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">SignIn</span> <span class="kr">from</span> <span class="s2">&#34;../sign-in&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">DashboardNavbar</span> <span class="kr">from</span> <span class="s2">&#34;./dashboard-navbar&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">UserSettingsDialog</span> <span class="kr">from</span> <span class="s2">&#34;./user-settings-dialog&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">Dashboard</span><span class="p">({</span> <span class="nx">session</span> <span class="p">}</span><span class="o">:</span> <span class="p">{</span> <span class="nx">session</span>: <span class="kt">CustomSession</span> <span class="p">})</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="p">{</span> <span class="nx">event</span><span class="p">,</span> <span class="nx">setShowSettings</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useUIEventStore</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="p">[</span><span class="nx">isDialogOpen</span><span class="p">,</span> <span class="nx">setIsDialogOpen</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="p">[</span><span class="nx">isSettingsOpen</span><span class="p">,</span> <span class="nx">setIsSettingsOpen</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">handleCloseDialog</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;Closing dialog&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">setIsDialogOpen</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">setIsSettingsOpen</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">showSettings</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span> <span class="p">[</span><span class="nx">event</span><span class="p">.</span><span class="nx">showSettings</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">handleCloseSettings</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">setShowSettings</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;Dashboard, Rendering Dashboard isDialogOpen:&#34;</span><span class="p">,</span> <span class="nx">isDialogOpen</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">&#34;flex flex-col items-center justify-center min-h-screen&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">DashboardNavbar</span> <span class="na">session</span><span class="o">=</span><span class="p">{</span><span class="nx">session</span><span class="p">}</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">&#34;container p-4 mx-auto&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">SignIn</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">UserSettingsDialog</span>
+</span></span><span class="line"><span class="cl">        <span class="na">isOpen</span><span class="o">=</span><span class="p">{</span><span class="nx">isSettingsOpen</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="na">onClose</span><span class="o">=</span><span class="p">{</span><span class="nx">handleCloseSettings</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="na">session</span><span class="o">=</span><span class="p">{</span><span class="nx">session</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="dashboard-navbartsx-navigation-component-generated-with-ai-httpsv0devtxyhqd5mkvkt"><code>dashboard-navbar.tsx</code> Navigation Component (generated with ai: <a href="https://v0.dev/t/xYHqD5MkVkT" target="_blank" rel="noopener noreffer ">https://v0.dev/t/xYHqD5MkVkT</a>)</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * v0 by Vercel.
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * @see https://v0.dev/t/xYHqD5MkVkT
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">Avatar</span><span class="p">,</span> <span class="nx">AvatarFallback</span><span class="p">,</span> <span class="nx">AvatarImage</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@/components/ui/avatar&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">Button</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@/components/ui/button&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">DropdownMenu</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">DropdownMenuContent</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">DropdownMenuItem</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">DropdownMenuTrigger</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@/components/ui/dropdown-menu&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">DashboardPage</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@/defines/dashboard-page&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">useLogout</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@/features/use-logout&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">CustomSession</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@/features/use-session&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">useUIEventStore</span> <span class="kr">from</span> <span class="s2">&#34;@/stores/ui-event.store&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">LogOut</span><span class="p">,</span> <span class="nx">Settings</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;lucide-react&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">Link</span> <span class="kr">from</span> <span class="s2">&#34;next/link&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">NavbarItem</span> <span class="kr">from</span> <span class="s2">&#34;./navbar-item&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">type</span> <span class="nx">SiteIconProps</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">session?</span>: <span class="kt">CustomSession</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">DashboardNavbar</span><span class="p">({</span> <span class="nx">session</span> <span class="p">}</span><span class="o">:</span> <span class="nx">SiteIconProps</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="p">{</span> <span class="nx">setShowLogin</span><span class="p">,</span> <span class="nx">setDashboardPage</span><span class="p">,</span> <span class="nx">setShowSettings</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useUIEventStore</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">logout</span> <span class="o">=</span> <span class="nx">useLogout</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">onSettingsClicked</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;settings clicked:&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">setShowSettings</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">onLogoutClicked</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;logout clicked:&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// * 调用 useLogout
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">logout</span><span class="p">.</span><span class="nx">mutateAsync</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;navbar, session:&#34;</span><span class="p">,</span> <span class="nx">session</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;navbar, image:&#34;</span><span class="p">,</span> <span class="nx">session</span><span class="o">?</span><span class="p">.</span><span class="nx">user</span><span class="o">?</span><span class="p">.</span><span class="nx">image</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">nav</span> <span class="na">className</span><span class="o">=</span><span class="s">&#34;fixed inset-x-0 top-0 z-50 bg-white shadow-sm dark:bg-gray-950/90&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">&#34;w-full px-4 mx-auto max-w-7xl&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">&#34;flex items-center justify-between h-14&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="nt">Link</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span> <span class="na">className</span><span class="o">=</span><span class="s">&#34;flex items-center&#34;</span> <span class="na">prefetch</span><span class="o">=</span><span class="p">{</span><span class="kc">false</span><span class="p">}&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">SiteIcon</span> <span class="na">className</span><span class="o">=</span><span class="s">&#34;w-6 h-6&#34;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">span</span> <span class="na">className</span><span class="o">=</span><span class="s">&#34;sr-only&#34;</span><span class="p">&gt;</span><span class="nx">Hub</span><span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;/</span><span class="nt">Link</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="nt">nav</span> <span class="na">className</span><span class="o">=</span><span class="s">&#34;hidden gap-4 md:flex&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">NavbarItem</span> <span class="na">name</span><span class="o">=</span><span class="p">{</span><span class="nx">DashboardPage</span><span class="p">.</span><span class="nx">Home</span><span class="p">}</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;Home&#34;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">{</span><span class="nx">session</span><span class="o">?</span><span class="p">.</span><span class="nx">user</span><span class="o">?</span><span class="p">.</span><span class="nx">name</span> <span class="o">?</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">DropdownMenu</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">              <span class="p">&lt;</span><span class="nt">DropdownMenuTrigger</span> <span class="na">asChild</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="nt">Button</span>
+</span></span><span class="line"><span class="cl">                  <span class="na">variant</span><span class="o">=</span><span class="s">&#34;ghost&#34;</span>
+</span></span><span class="line"><span class="cl">                  <span class="na">className</span><span class="o">=</span><span class="s">&#34;relative w-8 h-8 rounded-full&#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                  <span class="p">&lt;</span><span class="nt">Avatar</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">&lt;</span><span class="nt">AvatarImage</span>
+</span></span><span class="line"><span class="cl">                      <span class="na">src</span><span class="o">=</span><span class="p">{</span><span class="nx">session</span><span class="o">?</span><span class="p">.</span><span class="nx">user</span><span class="o">?</span><span class="p">.</span><span class="nx">image</span> <span class="o">??</span> <span class="s2">&#34;&#34;</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">                      <span class="na">alt</span><span class="o">=</span><span class="s">&#34;@shadcn&#34;</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">&lt;</span><span class="nt">AvatarFallback</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                      <span class="p">{</span><span class="nx">session</span><span class="o">?</span><span class="p">.</span><span class="nx">user</span><span class="o">?</span><span class="p">.</span><span class="nx">name</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">??</span> <span class="s2">&#34;&#34;</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">&lt;/</span><span class="nt">AvatarFallback</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                  <span class="p">&lt;/</span><span class="nt">Avatar</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;/</span><span class="nt">Button</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">              <span class="p">&lt;/</span><span class="nt">DropdownMenuTrigger</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">              <span class="p">&lt;</span><span class="nt">DropdownMenuContent</span> <span class="na">className</span><span class="o">=</span><span class="s">&#34;w-56&#34;</span> <span class="na">align</span><span class="o">=</span><span class="s">&#34;end&#34;</span> <span class="na">forceMount</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="nt">DropdownMenuItem</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">onSettingsClicked</span><span class="p">()}&gt;</span>
+</span></span><span class="line"><span class="cl">                  <span class="p">&lt;</span><span class="nt">Settings</span> <span class="na">className</span><span class="o">=</span><span class="s">&#34;w-4 h-4 mr-2&#34;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">                  <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span><span class="nx">Settings</span><span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;/</span><span class="nt">DropdownMenuItem</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="nt">DropdownMenuItem</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">onLogoutClicked</span><span class="p">()}&gt;</span>
+</span></span><span class="line"><span class="cl">                  <span class="p">&lt;</span><span class="nt">LogOut</span> <span class="na">className</span><span class="o">=</span><span class="s">&#34;w-4 h-4 mr-2&#34;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">                  <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span><span class="nx">Logout</span><span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;/</span><span class="nt">DropdownMenuItem</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">              <span class="p">&lt;/</span><span class="nt">DropdownMenuContent</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="nt">DropdownMenu</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">)</span> <span class="o">:</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">&#34;flex items-center gap-4&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">              <span class="p">&lt;</span><span class="nt">Button</span>
+</span></span><span class="line"><span class="cl">                <span class="na">variant</span><span class="o">=</span><span class="s">&#34;outline&#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="na">size</span><span class="o">=</span><span class="s">&#34;sm&#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="na">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">setShowLogin</span><span class="p">(</span><span class="kc">true</span><span class="p">)}</span>
+</span></span><span class="line"><span class="cl">              <span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">Sign</span> <span class="k">in</span>
+</span></span><span class="line"><span class="cl">              <span class="p">&lt;/</span><span class="nt">Button</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">              <span class="p">&lt;</span><span class="nt">Button</span> <span class="na">size</span><span class="o">=</span><span class="s">&#34;sm&#34;</span><span class="p">&gt;</span><span class="nx">Sign</span> <span class="nx">up</span><span class="p">&lt;/</span><span class="nt">Button</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">)}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">SiteIcon</span><span class="p">(</span><span class="nx">props</span>: <span class="kt">React.SVGProps</span><span class="p">&lt;</span><span class="nt">SVGSVGElement</span><span class="p">&gt;)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Note</strong>: If you want to add a new navigation item to the navbar, just add it after <code>&lt;NavbarItem name={DashboardPage.Home} title=&quot;Home&quot; /&gt;</code>, and also add it to the <code>DashboardPage</code> enum.</p>
+<h5 id="navbar-itemtsx-navigation-button"><code>navbar-item.tsx</code> Navigation Button</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">useUIEventStore</span> <span class="kr">from</span> <span class="s2">&#34;@/stores/ui-event.store&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">Link</span> <span class="kr">from</span> <span class="s2">&#34;next/link&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">type</span> <span class="nx">NavbarItemProps</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">name</span>: <span class="kt">string</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">title</span>: <span class="kt">string</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">NavbarItem</span><span class="p">({</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">title</span> <span class="p">}</span><span class="o">:</span> <span class="nx">NavbarItemProps</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="p">{</span> <span class="nx">setDashboardPage</span><span class="p">,</span> <span class="nx">event</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useUIEventStore</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">isActive</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">dashboardPage</span> <span class="o">===</span> <span class="nx">name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span>
+</span></span><span class="line"><span class="cl">      <span class="na">className</span><span class="o">=</span><span class="p">{</span><span class="sb">`relative px-4 py-2 </span><span class="si">${</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">isActive</span> <span class="o">?</span> <span class="s2">&#34;bg-gray-100 backdrop-blur-sm rounded-md shadow-md&#34;</span> <span class="o">:</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="si">}</span><span class="sb">`</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">Link</span>
+</span></span><span class="line"><span class="cl">        <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">className</span><span class="o">=</span><span class="s">&#34;flex items-center text-sm font-medium transition-colors hover:underline&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">prefetch</span><span class="o">=</span><span class="p">{</span><span class="kc">false</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="na">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">setDashboardPage</span><span class="p">(</span><span class="nx">name</span><span class="p">)}</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span><span class="nx">title</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">Link</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="environment-variables">Environment Variables</h4>
+<p>File: <code>.env</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-env" data-lang="env"><span class="line"><span class="cl"><span class="nv">NEXT_PUBLIC_APP_URL</span><span class="o">=</span><span class="s1">&#39;http://localhost:3000&#39;</span>  <span class="c1"># 本地用</span>
+</span></span><span class="line"><span class="cl"><span class="nv">AUTH_SECRET</span><span class="o">=</span><span class="s2">&#34;local-dev&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">GITHUB_CLIENT_ID</span><span class="o">=</span><span class="s2">&#34;...&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">GITHUB_CLIENT_SECRET</span><span class="o">=</span><span class="s2">&#34;...&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">GOOGLE_CLIENT_ID</span><span class="o">=</span><span class="s2">&#34;...&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">GOOGLE_CLIENT_SECRET</span><span class="o">=</span><span class="s2">&#34;...&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Note: The <code>.env</code> file is used locally when starting with <code>bun dev</code>. If you want to deploy online, apart from <code>NEXT_PUBLIC_APP_URL</code>, the other variables need to be added as <code>secret</code> variables at <a href="https://dash.cloudflare.com/" target="_blank" rel="noopener noreffer ">https://dash.cloudflare.com/</a>. For <code>NEXT_PUBLIC_APP_URL</code>, see below:</p>
+<h4 id="wranglertoml">wrangler.toml</h4>
+<p>Modify <code>wrangler.toml</code>, adding:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[</span><span class="nx">env</span><span class="p">.</span><span class="nx">preview</span><span class="p">.</span><span class="nx">vars</span><span class="p">]</span> <span class="c"># 预览环境变量, 如果有其他非secret变量,都需要放这里</span>
+</span></span><span class="line"><span class="cl"><span class="nx">BUN_VERSION</span> <span class="p">=</span> <span class="s2">&#34;1.1.8&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">NEXT_PUBLIC_APP_URL</span> <span class="p">=</span> <span class="s2">&#34;https://develop.your-pages-name.pages.dev&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">env</span><span class="p">.</span><span class="nx">production</span><span class="p">.</span><span class="nx">vars</span><span class="p">]</span> <span class="c"># 生产环境变量, 如果有其他非secret变量,都需要放这里</span>
+</span></span><span class="line"><span class="cl"><span class="nx">BUN_VERSION</span> <span class="p">=</span> <span class="s2">&#34;1.1.8&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">NEXT_PUBLIC_APP_URL</span> <span class="p">=</span> <span class="s2">&#34;https://your-pages-name.pages.dev&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">d1_databases</span><span class="p">]]</span> <span class="c"># 测试环境(本地) D1 数据库</span>
+</span></span><span class="line"><span class="cl"><span class="nx">binding</span> <span class="p">=</span> <span class="s2">&#34;DB&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">database_name</span> <span class="p">=</span> <span class="s2">&#34;your-d1-database-name&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">database_id</span> <span class="p">=</span> <span class="s2">&#34;your-d1-database-id&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">env</span><span class="p">.</span><span class="nx">preview</span><span class="p">.</span><span class="nx">d1_databases</span><span class="p">]]</span> <span class="c"># 测试环境 D1 数据库</span>
+</span></span><span class="line"><span class="cl"><span class="nx">binding</span> <span class="p">=</span> <span class="s2">&#34;DB&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">database_name</span> <span class="p">=</span> <span class="s2">&#34;your-d1-database-name&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">database_id</span> <span class="p">=</span> <span class="s2">&#34;your-d1-database-id&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">env</span><span class="p">.</span><span class="nx">production</span><span class="p">.</span><span class="nx">d1_databases</span><span class="p">]]</span> <span class="c"># 生产环境 D1 数据库</span>
+</span></span><span class="line"><span class="cl"><span class="nx">binding</span> <span class="p">=</span> <span class="s2">&#34;DB&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">database_name</span> <span class="p">=</span> <span class="s2">&#34;your-d1-database-name&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">database_id</span> <span class="p">=</span> <span class="s2">&#34;your-d1-database-id&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Go to <a href="https://dash.cloudflare.com/" target="_blank" rel="noopener noreffer ">https://dash.cloudflare.com/</a> and configure the <code>D1</code> database (it&rsquo;s just a <code>sqlite3</code> database, only deployed on edge computing nodes). You can configure the test and production databases separately.</p>
+<h4 id="packagejson">package.json</h4>
+<p>In <code>scripts</code>, add:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="s2">&#34;build:local&#34;</span><span class="err">:</span> <span class="s2">&#34;bun x @cloudflare/next-on-pages@1&#34;</span><span class="err">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;preview&#34;</span><span class="err">:</span> <span class="s2">&#34;wrangler pages dev .vercel/output/static --live-reload --compatibility-flag=nodejs_compat --d1 DB=your_db_id --r2=your_r2_id&#34;</span><span class="err">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;drizzle-gen&#34;</span><span class="err">:</span> <span class="s2">&#34;drizzle-kit generate --dialect sqlite --schema=./db/schema.ts --out=./migrations&#34;</span><span class="err">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;migrate-local&#34;</span><span class="err">:</span> <span class="s2">&#34;wrangler d1 migrations apply page-starter-preview --local&#34;</span><span class="err">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;migrate-preview&#34;</span><span class="err">:</span> <span class="s2">&#34;wrangler d1 migrations apply page-starter-preview --remote&#34;</span><span class="err">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;migrate-prod&#34;</span><span class="err">:</span> <span class="s2">&#34;wrangler d1 migrations apply page-starter-prod&#34;</span><span class="err">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;commit&#34;</span><span class="err">:</span> <span class="s2">&#34;./node_modules/cz-customizable/standalone.js&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="starting-up">Starting Up</h3>
+<ul>
+<li>Generate the <code>drizzle</code> intermediate code: `bun drizzle-gen``</li>
+</ul>
+<h4 id="local">Local</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">bun migrate-local <span class="c1"># 本地数据库迁移</span>
+</span></span><span class="line"><span class="cl">bun dev
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="preview">Preview</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">bun migrate-previe <span class="c1"># 预览数据库迁移</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="production">Production</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">bun migrate-prod <span class="c1"># 生产数据库迁移</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>In the <code>Cloudflare Pages Dashboard</code>, simply bind the <code>preview</code> environment to the <code>develop</code> branch and <code>production</code> to the <code>main</code> branch, and the corresponding environment will be published automatically after you push.</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2024-08-26</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/en/nextjs-honojs-shadcnui-drizzle-cloudflare-pages/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://gowinder.work/en/nextjs-honojs-shadcnui-drizzle-cloudflare-pages/" data-title="Building and Deploying a Web App on Cloudflare Pages with Next.js, Hono.js, Drizzle and shadcn/ui" data-hashtags="nextjs,cloudflare,cloudflare pages,cloudflare workers,honojs,usequery,drizzle-orm,shadcn-ui"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://gowinder.work/en/nextjs-honojs-shadcnui-drizzle-cloudflare-pages/" data-hashtag="nextjs"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://gowinder.work/en/nextjs-honojs-shadcnui-drizzle-cloudflare-pages/" data-title="Building and Deploying a Web App on Cloudflare Pages with Next.js, Hono.js, Drizzle and shadcn/ui"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://gowinder.work/en/nextjs-honojs-shadcnui-drizzle-cloudflare-pages/" data-title="Building and Deploying a Web App on Cloudflare Pages with Next.js, Hono.js, Drizzle and shadcn/ui"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://gowinder.work/en/nextjs-honojs-shadcnui-drizzle-cloudflare-pages/" data-title="Building and Deploying a Web App on Cloudflare Pages with Next.js, Hono.js, Drizzle and shadcn/ui"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/nextjs/">Nextjs</a>,&nbsp;<a href="/en/tags/cloudflare/">Cloudflare</a>,&nbsp;<a href="/en/tags/cloudflare-pages/">Cloudflare Pages</a>,&nbsp;<a href="/en/tags/cloudflare-workers/">Cloudflare Workers</a>,&nbsp;<a href="/en/tags/honojs/">Honojs</a>,&nbsp;<a href="/en/tags/usequery/">Usequery</a>,&nbsp;<a href="/en/tags/drizzle-orm/">Drizzle-Orm</a>,&nbsp;<a href="/en/tags/shadcn-ui/">Shadcn-Ui</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/en/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/en/honojs-usequery-error/" class="prev" rel="prev" title="useQuery Error When Using the honojs Client Directly: TypeError: Cannot read properties of undefined (reading &#39;replace&#39;)"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>useQuery Error When Using the honojs Client Directly: TypeError: Cannot read properties of undefined (reading 'replace')</a>
+            <a href="/en/two-small-sites/" class="next" rel="next" title="Two small sites went live: an Old English dictionary and a batch renamer">Two small sites went live: an Old English dictionary and a batch renamer<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript><div id="utterances" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.143.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/en/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.5.0/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"gowinder/hugo-comment"},"valine":{"appId":"QGzwQXOqs5JOhN4RGPOkR2mR-MdYXbMMI","appKey":"WBmoGyJtbqUswvfLh6L8iEBr","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"en","pageSize":10,"placeholder":"Your comment ...","recordIP":true,"serverURLs":"https://leancloud.hugoloveit.com","visitor":true}},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

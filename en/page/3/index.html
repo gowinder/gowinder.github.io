@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<meta name="generator" content="Hugo 0.143.1">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>gowinder&#39;s Blog</title><meta name="Description" content="Life, coding, tinkering, and everything else."><meta property="og:url" content="https://gowinder.work/en/">
+  <meta property="og:site_name" content="gowinder&#39;s Blog">
+  <meta property="og:title" content="gowinder&#39;s Blog">
+  <meta property="og:description" content="Life, coding, tinkering, and everything else.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="website">
+    <meta property="og:image" content="https://gravatar.com/userimage/16926726/2de44cb9918f08ff7f430244b10bf37b.jpeg?size=256">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://gravatar.com/userimage/16926726/2de44cb9918f08ff7f430244b10bf37b.jpeg?size=256">
+  <meta name="twitter:title" content="gowinder&#39;s Blog">
+  <meta name="twitter:description" content="Life, coding, tinkering, and everything else.">
+<meta name="application-name" content="gowinder个人博客">
+<meta name="apple-mobile-web-app-title" content="gowinder个人博客"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://gowinder.work/en/" /><link rel="alternate" href="/en/index.xml" type="application/rss+xml" title="gowinder&#39;s Blog">
+    <link rel="feed" href="/en/index.xml" type="application/rss+xml" title="gowinder&#39;s Blog"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "url": "https:\/\/gowinder.work\/en\/","inLanguage": "en","description": "Life, coding, tinkering, and everything else.","image": {
+                "@type": "ImageObject",
+                "url": "https:\/\/gowinder.work\/images\/Apple-Devices-Preview.png",
+                "width":  3200 ,
+                "height":  2048 
+            },"thumbnailUrl": "https:\/\/gowinder.work\/images\/screenshot.png","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","name": "gowinder's Blog"
+    }
+    </script>
+    </head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/en/" title="gowinder&#39;s Blog"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw' aria-hidden='true'></i></span>Gowinder</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/en/posts/"> Posts </a><a class="menu-item" href="/en/tags/"> Tags </a><a class="menu-item" href="/en/categories/"> Categories </a><a class="menu-item" href="/en/categories/documentation/"> Docs </a><a class="menu-item" href="/en/about/"> About </a><a class="menu-item" href="https://github.com/gowinder" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i>  </a><a class="menu-item" href="/en/projects/"> Projects </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a><a href="javascript:void(0);" class="menu-item language" title="Select Language">
+                    <i class="fa fa-globe" aria-hidden="true"></i>                      
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/en/" selected>English</option><option value="/">简体中文</option></select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/en/" title="gowinder&#39;s Blog"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw' aria-hidden='true'></i></span>Gowinder</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/en/posts/" title="">Posts</a><a class="menu-item" href="/en/tags/" title="">Tags</a><a class="menu-item" href="/en/categories/" title="">Categories</a><a class="menu-item" href="/en/categories/documentation/" title="">Docs</a><a class="menu-item" href="/en/about/" title="">About</a><a class="menu-item" href="https://github.com/gowinder" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i></a><a class="menu-item" href="/en/projects/" title="">Projects</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">
+                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/en/" selected>English</option><option value="/">简体中文</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="page home" data-home="posts"><div class="home-profile"><div class="home-avatar"><a href="/en/posts/" title="Posts"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gravatar.com/userimage/16926726/2de44cb9918f08ff7f430244b10bf37b.jpeg?size=256"
+        data-srcset="https://gravatar.com/userimage/16926726/2de44cb9918f08ff7f430244b10bf37b.jpeg?size=256, https://gravatar.com/userimage/16926726/2de44cb9918f08ff7f430244b10bf37b.jpeg?size=256 1.5x, https://gravatar.com/userimage/16926726/2de44cb9918f08ff7f430244b10bf37b.jpeg?size=256 2x"
+        data-sizes="auto"
+        alt="https://gravatar.com/userimage/16926726/2de44cb9918f08ff7f430244b10bf37b.jpeg?size=256"
+        title="https://gravatar.com/userimage/16926726/2de44cb9918f08ff7f430244b10bf37b.jpeg?size=256" /></a></div><h1 class="home-title">gowinder's Blog</h1><div class="home-subtitle"><div id="id-1" class="typeit"></div></div><div class="links"><a href="https://github.com/gowinder" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="mailto:gowinder@hotmail.com" title="Email" rel="me"><i class="far fa-envelope fa-fw" aria-hidden="true"></i></a><a href="/en/index.xml" title="RSS" target="_blank" rel="noopener noreffer me"><i class="fas fa-rss fa-fw" aria-hidden="true"></i></a></div></div>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/en/class-constructor-typeormcrudservice-cannot-be-invoked-without-new/">Class Constructor TypeOrmCrudService Cannot Be Invoked Without 'New'</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-02-28">2023-02-28</time></span></div><div class="content"><h1 id="class-constructor-typeormcrudservice-cannot-be-invoked-without-new-error">Class Constructor TypeOrmCrudService Cannot Be Invoked Without &lsquo;New&rsquo; Error</h1>
+<h2 id="cause">Cause</h2>
+<p>Recently I was developing a <code>chatgpt</code> gateway project using <code>nestjs</code>, with <code>nestjsx-crud</code> to speed up <code>curd</code> development, and I had the following code:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kd">@Injectable</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">class</span> <span class="nx">ChatgptAccountService</span> <span class="kr">extends</span> <span class="nx">TypeOrmCrudService</span><span class="p">&lt;</span><span class="nt">ChatGPTAccount</span><span class="p">&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">constructor</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">@InjectRepository</span><span class="p">(</span><span class="nx">ChatGPTAccount</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">private</span> <span class="kr">readonly</span> <span class="nx">chatgptAccountRepository</span>: <span class="kt">Repository</span><span class="p">&lt;</span><span class="nt">ChatGPTAccount</span><span class="p">&gt;,</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">super</span><span class="p">(</span><span class="nx">chatgptAccountRepository</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>At runtime it threw the error:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">Class Constructor TypeOrmCrudService Cannot Be Invoked Without <span class="s1">&#39;New&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="solution">Solution</h2>
+<p>I looked it up online and found one <a href="https://github.com/nestjsx/crud/issues/378#issuecomment-764648149" target="_blank" rel="noopener noreffer ">here</a>: <code>For anyone stumbling over this issue: it's probably a tsconfig issue. Try bumping your target from es5 to es6.</code></p></div><div class="post-footer">
+        <a href="/en/class-constructor-typeormcrudservice-cannot-be-invoked-without-new/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/nestjs/">Nestjs</a>,&nbsp;<a href="/en/tags/typescript/">Typescript</a>,&nbsp;<a href="/en/tags/node/">Node</a>,&nbsp;<a href="/en/tags/dev-notes/">Dev-Notes</a>,&nbsp;<a href="/en/tags/typeorm/">Typeorm</a>,&nbsp;<a href="/en/tags/es2017/">Es2017</a>,&nbsp;<a href="/en/tags/es5/">Es5</a>,&nbsp;<a href="/en/tags/@nestjsx/crud-typeorm/">@Nestjsx/Crud-Typeorm</a>,&nbsp;<a href="/en/tags/chatgpt/">Chatgpt</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/en/pihole-web-ui-fails-to-start-on-orange-pi-zero/">Pi-hole Web UI Fails to Start on an Orange Pi Zero</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-02-27">2023-02-27</time></span></div><div class="content"><h1 id="pi-hole-web-ui-fails-to-start-on-an-orange-pi-zero">Pi-hole Web UI Fails to Start on an Orange Pi Zero</h1>
+<h2 id="background">Background</h2>
+<p>I recently installed <code>Pihole</code> on an idle <code>Orange Pi Zero</code> to use as the home primary <code>DNS</code> server. The install went smoothly: <code>Armbian</code> -&gt; <code>Pihole</code>. But after it finished, the <code>WebUI</code> would not start — <code>Pihole</code> uses <code>Lighttp</code>.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p>I checked with: <code>sudo lighttpd -t -f /etc/lighttpd/lighttpd.conf</code> — the result was <code>Syntax OK</code>, no problem.</p>
+<p>Checking the <code>lighttpd</code> service: <code>sudo systemctl status lighttpd</code>, I found it exited immediately on start with <code>exited=255</code>.</p></div><div class="post-footer">
+        <a href="/en/pihole-web-ui-fails-to-start-on-orange-pi-zero/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/pihole/">Pihole</a>,&nbsp;<a href="/en/tags/linux/">Linux</a>,&nbsp;<a href="/en/tags/lighttp/">Lighttp</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/en/integrating-websocketgateway-with-microservices-in-nestjs/">Integrating WebSocketGateway with Microservices in NestJS</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-02-23">2023-02-23</time></span></div><div class="content"><h1 id="integrating-websocketgateway-with-microservices-in-nestjs">Integrating WebSocketGateway with Microservices in NestJS</h1>
+<h2 id="motivation">Motivation</h2>
+<p>Using <code>WebsocketGateway</code> as a gateway: after receiving the client&rsquo;s long-lived connection, forward the message to the <code>microservice</code> through the <code>RabbitMQ</code> message queue for further processing. After the <code>microservice</code> finishes processing, it also sends the result to <code>RabbitMQ</code>; when <code>WebsocketGateway</code> receives the message, it sends it back to the client.</p>
+<h3 id="directory-structure">Directory structure</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">src
+</span></span><span class="line"><span class="cl">  ws-gateway
+</span></span><span class="line"><span class="cl">    ws-gateway.controller.ts
+</span></span><span class="line"><span class="cl">    ws-gateway.module.ts
+</span></span><span class="line"><span class="cl">    ws-gateway.ts
+</span></span><span class="line"><span class="cl">  gateway.controller.ts
+</span></span><span class="line"><span class="cl">  gateway.module.ts
+</span></span><span class="line"><span class="cl">  gateway.service.ts
+</span></span><span class="line"><span class="cl">  main.ts
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="files">Files</h3>
+<h4 id="first-take-a-look-at-the-wsgateway-module">First, take a look at the <code>WSGateway</code> module</h4>
+<h5 id="wsgatewayts"><code>WSGateway.ts</code></h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">SHARED_SERVICE</span><span class="p">,</span> <span class="nx">SharedService</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@app/shared&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">Inject</span><span class="p">,</span> <span class="nx">Injectable</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@nestjs/common&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">ConfigService</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@nestjs/config&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">ClientProxy</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">ClientProxyFactory</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Ctx</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">MessagePattern</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Payload</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">RmqContext</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Server</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@nestjs/microservices&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">WebSocketGateway</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">WebSocketServer</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">SubscribeMessage</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">MessageBody</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">OnGatewayConnection</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">OnGatewayDisconnect</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">OnGatewayInit</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">ConnectedSocket</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@nestjs/websockets&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">SendMsgDTO</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;./dto/send-msg.dto&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">Socket</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@nestjs/platform-socket.io&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">@Injectable</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="kd">@WebSocketGateway</span><span class="p">(</span><span class="mi">3333</span><span class="p">,</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">cors</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">origin</span><span class="o">:</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">namespace</span><span class="o">:</span> <span class="s1">&#39;main&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// implements OnGatewayInit, OnGatewayConnection, OnGatewayDisconnect
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="kr">class</span> <span class="nx">WSGateway</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">implements</span> <span class="nx">OnGatewayInit</span><span class="p">,</span> <span class="nx">OnGatewayConnection</span><span class="p">,</span> <span class="nx">OnGatewayDisconnect</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">apiClient</span>: <span class="kt">ClientProxy</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">clients</span>: <span class="kt">Map</span><span class="p">&lt;</span><span class="nt">string</span><span class="p">,</span> <span class="na">Socket</span><span class="p">&gt;;</span>     <span class="c1">// 存放客户端
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">constructor</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">@Inject</span><span class="p">(</span><span class="nx">SHARED_SERVICE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">private</span> <span class="kr">readonly</span> <span class="nx">sharedService</span>: <span class="kt">SharedService</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">private</span> <span class="kr">readonly</span> <span class="nx">configService</span>: <span class="kt">ConfigService</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">  <span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;WSGateway constructor: &#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">client</span>: <span class="kt">ClientProxy</span> <span class="o">=</span> <span class="nx">ClientProxyFactory</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">sharedService</span><span class="p">.</span><span class="nx">getRmqOptions</span><span class="p">(</span><span class="nx">configService</span><span class="p">.</span><span class="kr">get</span><span class="p">(</span><span class="s1">&#39;API_QUEUE&#39;</span><span class="p">),</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">apiClient</span> <span class="o">=</span> <span class="nx">client</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">clients</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Map</span><span class="p">&lt;</span><span class="nt">string</span><span class="p">,</span> <span class="na">Socket</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">@WebSocketServer</span><span class="p">()</span> <span class="nx">server</span>: <span class="kt">Server</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nx">afterInit</span><span class="p">(</span><span class="nx">server</span>: <span class="kt">any</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;websocket init:&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">server</span> <span class="o">=</span> <span class="nx">server</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nx">handleConnection</span><span class="p">(</span><span class="nx">socket</span>: <span class="kt">Socket</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;WebSocket client connecting, clients&#39;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">clients</span><span class="p">.</span><span class="nx">size</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 生成 socket_id，存储 socket 对象
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kr">const</span> <span class="nx">socket_id</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">().</span><span class="nx">toString</span><span class="p">(</span><span class="mi">36</span><span class="p">).</span><span class="nx">substring</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nx">socket</span><span class="p">[</span><span class="s1">&#39;socket_id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">socket_id</span><span class="p">;</span>  <span class="c1">//  将socket_id存到客户端socket连接对象中去
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">this</span><span class="p">.</span><span class="nx">clients</span><span class="p">.</span><span class="kr">set</span><span class="p">(</span><span class="nx">socket_id</span><span class="p">,</span> <span class="nx">socket</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nx">handleDisconnect</span><span class="p">(</span><span class="nx">socket</span>: <span class="kt">Socket</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;WebSocket client disconnected&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 查找 socket_id，删除 socket 对象
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kr">const</span> <span class="nx">socket_id</span> <span class="o">=</span> <span class="nx">socket</span><span class="p">[</span><span class="s1">&#39;socket_id&#39;</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;remove socket:&#39;</span><span class="p">,</span> <span class="nx">socket_id</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">clients</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="nx">socket_id</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">//  订阅客户端发来的send消息: socket.emit(&#39;send&#39;, data)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">@SubscribeMessage</span><span class="p">(</span><span class="s1">&#39;send&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">async</span> <span class="nx">handleMessage</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">@ConnectedSocket</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">client</span>: <span class="kt">Socket</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">@MessageBody</span><span class="p">()</span> <span class="nx">data</span>: <span class="kt">SendMsgDTO</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">number</span><span class="p">&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;; got [send]: prompt: &#39;</span><span class="p">,</span> <span class="nx">data</span><span class="p">.</span><span class="nx">prompt</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//  数据中加入metadata, socket_id表示此消息属于哪个socket,回传的消息带上metadata就知道发给谁了
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kr">const</span> <span class="nx">metadata</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">socket_id</span>: <span class="kt">client</span><span class="p">[</span><span class="s1">&#39;socket_id&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">websocket_service</span><span class="o">:</span> <span class="s1">&#39;ws-gateway&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">data</span><span class="p">[</span><span class="s1">&#39;metadata&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">metadata</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">apiClient</span><span class="p">.</span><span class="nx">emit</span><span class="p">({</span> <span class="nx">cmd</span><span class="o">:</span> <span class="s1">&#39;send&#39;</span> <span class="p">},</span> <span class="nx">data</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">//  此为发送消息给客户端
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">async</span> <span class="nx">emit</span><span class="p">(</span><span class="nx">socket_id</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">event</span>: <span class="kt">any</span><span class="p">,</span> <span class="nx">content</span>: <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">clients</span><span class="p">.</span><span class="kr">get</span><span class="p">(</span><span class="nx">socket_id</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">content</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">client</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;recv&#39;</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="ws-gatewaycontrollerts"><code>ws-gateway.controller.ts</code></h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">SHARED_SERVICE</span><span class="p">,</span> <span class="nx">SharedService</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@app/shared&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">Controller</span><span class="p">,</span> <span class="nx">Inject</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@nestjs/common&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">ConfigService</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@nestjs/config&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Ctx</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">MessagePattern</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Payload</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">RmqContext</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@nestjs/microservices&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">WSGateway</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;./ws-gateway&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">@Controller</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">class</span> <span class="nx">WSGatewayController</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">constructor</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">@Inject</span><span class="p">(</span><span class="nx">SHARED_SERVICE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">private</span> <span class="kr">readonly</span> <span class="nx">sharedService</span>: <span class="kt">SharedService</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">private</span> <span class="kr">readonly</span> <span class="nx">gateway</span>: <span class="kt">WSGateway</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">//  订阅微服务事件,从rabbitmq读取 recv事件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">@MessagePattern</span><span class="p">({</span> <span class="nx">cmd</span><span class="o">:</span> <span class="s1">&#39;recv&#39;</span> <span class="p">})</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">async</span> <span class="nx">recv</span><span class="p">(</span><span class="kd">@Ctx</span><span class="p">()</span> <span class="nx">context</span>: <span class="kt">RmqContext</span><span class="p">,</span> <span class="kd">@Payload</span><span class="p">()</span> <span class="nx">content</span>: <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;GatewayController got [recv]: &#39;</span><span class="p">,</span> <span class="nx">content</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">sharedService</span><span class="p">.</span><span class="nx">acknowledgeMessage</span><span class="p">(</span><span class="nx">context</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//  调用 wsgateway发送
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">gateway</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="nx">content</span><span class="p">[</span><span class="s1">&#39;metadata&#39;</span><span class="p">][</span><span class="s1">&#39;socket_id&#39;</span><span class="p">],</span> <span class="s1">&#39;recv&#39;</span><span class="p">,</span> <span class="nx">content</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="ws-gatewaymodulets"><code>ws-gateway.module.ts</code></h5>
+<p>Notes:</p></div><div class="post-footer">
+        <a href="/en/integrating-websocketgateway-with-microservices-in-nestjs/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/nestjs/">Nestjs</a>,&nbsp;<a href="/en/tags/typescript/">Typescript</a>,&nbsp;<a href="/en/tags/node/">Node</a>,&nbsp;<a href="/en/tags/dev-notes/">Dev-Notes</a>,&nbsp;<a href="/en/tags/microservice/">Microservice</a>,&nbsp;<a href="/en/tags/websocketg/">Websocketg</a>,&nbsp;<a href="/en/tags/websocketgateway/">Websocketgateway</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/en/adding-a-cron-job-for-automatic-trim-in-proxmox-ve/">Adding a Cron Job for Automatic TRIM in Proxmox VE</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-02-17">2023-02-17</time></span></div><div class="content"><h1 id="adding-a-cron-job-for-automatic-trim-in-proxmox-ve">Adding a Cron Job for Automatic TRIM in Proxmox VE</h1>
+<h2 id="check-the-status">Check the status</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl status fstrim.timer
+</span></span><span class="line"><span class="cl"><span class="c1"># output:</span>
+</span></span><span class="line"><span class="cl">● fstrim.timer - Discard unused blocks once a week
+</span></span><span class="line"><span class="cl">     Loaded: loaded <span class="o">(</span>/lib/systemd/system/fstrim.timer<span class="p">;</span> disabled<span class="p">;</span> vendor preset: enabled<span class="o">)</span>
+</span></span><span class="line"><span class="cl">     Active: inactive <span class="o">(</span>dead<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    Trigger: n/a
+</span></span><span class="line"><span class="cl">   Triggers: ● fstrim.service
+</span></span><span class="line"><span class="cl">       Docs: man:fstrim
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="start-the-service">Start the service</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl start fstrim.timer
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="check-the-next-cleanup-time">Check the next cleanup time</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl list-timers --all
+</span></span><span class="line"><span class="cl"><span class="c1"># output:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">NEXT                        LEFT           LAST                        PASSED     UNIT                         ACTIVATES
+</span></span><span class="line"><span class="cl">Fri 2023-02-17 23:54:54 CST 8h left        Thu 2023-02-16 23:54:54 CST 15h ago    systemd-tmpfiles-clean.timer systemd-tmpfiles-clean.servi&gt;
+</span></span><span class="line"><span class="cl">Sat 2023-02-18 00:00:00 CST 8h left        Fri 2023-02-17 00:00:00 CST 15h ago    atop-rotate.timer            atop-rotate.service
+</span></span><span class="line"><span class="cl">Sat 2023-02-18 00:00:00 CST 8h left        Fri 2023-02-17 00:00:00 CST 15h ago    logrotate.timer              logrotate.service
+</span></span><span class="line"><span class="cl">Sat 2023-02-18 00:00:00 CST 8h left        Fri 2023-02-17 00:00:00 CST 15h ago    man-db.timer                 man-db.service
+</span></span><span class="line"><span class="cl">Sat 2023-02-18 04:19:48 CST 13h left       Fri 2023-02-17 05:29:22 CST 9h ago     pve-daily-update.timer       pve-daily-update.service
+</span></span><span class="line"><span class="cl">Sat 2023-02-18 05:18:55 CST 14h left       Fri 2023-02-17 06:45:48 CST 8h ago     apt-daily.timer              apt-daily.service
+</span></span><span class="line"><span class="cl">Sat 2023-02-18 06:41:05 CST 15h left       Fri 2023-02-17 06:02:36 CST 9h ago     apt-daily-upgrade.timer      apt-daily-upgrade.service
+</span></span><span class="line"><span class="cl">Sun 2023-02-19 03:10:12 CST <span class="m">1</span> day 12h left Sun 2023-02-12 03:10:19 CST <span class="m">5</span> days ago e2scrub_all.timer            e2scrub_all.service
+</span></span><span class="line"><span class="cl">Mon 2023-02-20 00:37:59 CST <span class="m">2</span> days left    n/a                         n/a        fstrim.timer                 fstrim.service
+</span></span><span class="line"><span class="cl">n/a                         n/a            n/a                         n/a        pvesr.timer
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Done</p></div><div class="post-footer">
+        <a href="/en/adding-a-cron-job-for-automatic-trim-in-proxmox-ve/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/proxmox-ve/">Proxmox Ve</a>,&nbsp;<a href="/en/tags/linux/">Linux</a>,&nbsp;<a href="/en/tags/distributed/">Distributed</a>,&nbsp;<a href="/en/tags/ssd/">Ssd</a>,&nbsp;<a href="/en/tags/trim/">Trim</a>,&nbsp;<a href="/en/tags/cron/">Cron</a>,&nbsp;<a href="/en/tags/deployment/">Deployment</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/en/extending-pvm-local-space-in-proxmox-ve/">Extending pvm-local Space in Proxmox VE</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-02-17">2023-02-17</time></span></div><div class="content"><h1 id="extending-pvm-local-space-in-proxmox-ve">Extending pvm-local Space in Proxmox VE</h1>
+<h2 id="reason">Reason</h2>
+<p>The <code>proxmox ve</code> I installed earlier on the <code>DIY E3</code> server used a <code>120G</code> <code>SSD</code>. Back then, being young and naive, I also carved a <code>30g</code> <code>data</code> partition out of the <code>pve</code> logical volume. Now I want to use <code>local</code> for <code>glusterfs</code>, so I wanted to merge the space in <code>data</code> into <code>root</code>.</p>
+<h2 id="steps">Steps</h2>
+<h3 id="first-copy-out-the-contents-of-the-data-partition">First, copy out the contents of the <code>data</code> partition</h3>
+<ul>
+<li>First delete what you don&rsquo;t need on the <code>pve</code> <code>webui</code>; for what you do need, copy it out first. My <code>data</code> is mounted at <code>/mnt/data</code>:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo rsync -ar --info<span class="o">=</span>progress2 /mnt/data/ /var/lib/vz
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>After copying is done, remove the <code>data</code> logical volume:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo umount /mnt/data
+</span></span><span class="line"><span class="cl">sudo lvdisplay
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Take a look at the result:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"> --- Logical volume ---
+</span></span><span class="line"><span class="cl">  LV Path                /dev/pve/data
+</span></span><span class="line"><span class="cl">  LV Name                data
+</span></span><span class="line"><span class="cl">  VG Name                pve
+</span></span><span class="line"><span class="cl">  LV UUID                xxxx
+</span></span><span class="line"><span class="cl">  LV Write Access        read/write
+</span></span><span class="line"><span class="cl">  LV Creation host, <span class="nb">time</span> pve, 2020-12-13 12:19:01 +0800
+</span></span><span class="line"><span class="cl">  LV Status              available
+</span></span><span class="line"><span class="cl">  <span class="c1"># open                 0</span>
+</span></span><span class="line"><span class="cl">  LV Size                30.39 GiB
+</span></span><span class="line"><span class="cl">  Current LE             <span class="m">7781</span>
+</span></span><span class="line"><span class="cl">  Segments               <span class="m">1</span>
+</span></span><span class="line"><span class="cl">  Allocation             inherit
+</span></span><span class="line"><span class="cl">  Read ahead sectors     auto
+</span></span><span class="line"><span class="cl">  - currently <span class="nb">set</span> to     <span class="m">256</span>
+</span></span><span class="line"><span class="cl">  Block device           253:2
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Remove it:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo lvremove pve/data
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Logical volume &#34;data&#34; successfully removed</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Check the <code>vg</code> space with <code>sudo vgdisplay</code>:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">  --- Volume group ---
+</span></span><span class="line"><span class="cl">  VG Name               pve
+</span></span><span class="line"><span class="cl">  System ID
+</span></span><span class="line"><span class="cl">  Format                lvm2
+</span></span><span class="line"><span class="cl">  Metadata Areas        <span class="m">1</span>
+</span></span><span class="line"><span class="cl">  Metadata Sequence No  <span class="m">73</span>
+</span></span><span class="line"><span class="cl">  VG Access             read/write
+</span></span><span class="line"><span class="cl">  VG Status             resizable
+</span></span><span class="line"><span class="cl">  MAX LV                <span class="m">0</span>
+</span></span><span class="line"><span class="cl">  Cur LV                <span class="m">2</span>
+</span></span><span class="line"><span class="cl">  Open LV               <span class="m">2</span>
+</span></span><span class="line"><span class="cl">  Max PV                <span class="m">0</span>
+</span></span><span class="line"><span class="cl">  Cur PV                <span class="m">1</span>
+</span></span><span class="line"><span class="cl">  Act PV                <span class="m">1</span>
+</span></span><span class="line"><span class="cl">  VG Size               &lt;106.60 GiB
+</span></span><span class="line"><span class="cl">  PE Size               4.00 MiB
+</span></span><span class="line"><span class="cl">  Total PE              <span class="m">27289</span>
+</span></span><span class="line"><span class="cl">  Alloc PE / Size       <span class="m">19508</span> / 76.20 GiB
+</span></span><span class="line"><span class="cl">  Free  PE / Size       <span class="m">7781</span> / 30.39 GiB
+</span></span><span class="line"><span class="cl">  VG UUID               xxxx
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>As you can see, there is <code>30.39 Gib</code> of space. Now merge it into <code>pve-root</code>:</li>
+<li><code>sudo lvresize -l +100%FREE /dev/pve/root</code>:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">  Size of logical volume pve/root changed from 72.70 GiB <span class="o">(</span><span class="m">18612</span> extents<span class="o">)</span> to &lt;103.10 GiB <span class="o">(</span><span class="m">26393</span> extents<span class="o">)</span>.
+</span></span><span class="line"><span class="cl">  Logical volume pve/root successfully resized.<span class="sb">`</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p>It becomes <code>103.10 GiB</code>.</p></div><div class="post-footer">
+        <a href="/en/extending-pvm-local-space-in-proxmox-ve/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/proxmox-ve/">Proxmox Ve</a>,&nbsp;<a href="/en/tags/linux/">Linux</a>,&nbsp;<a href="/en/tags/deployment/">Deployment</a>,&nbsp;<a href="/en/tags/lvm/">Lvm</a>,&nbsp;<a href="/en/tags/expansion/">Expansion</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/en/drastic-disk-performance-drop-caused-by-nvme-power-management-in-proxmox-ve/">Drastic Disk Performance Drop Caused by NVMe Power Management in Proxmox VE</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-02-17">2023-02-17</time></span></div><div class="content"><h1 id="drastic-disk-performance-drop-caused-by-nvme-power-management-in-proxmox-ve">Drastic Disk Performance Drop Caused by NVMe Power Management in Proxmox VE</h1>
+<p>A few days ago I deployed a two-node <code>proxmox ve</code> cluster. It worked fine at first, but after a day, when I logged in to the <code>dell r720</code> host over <code>ssh</code>, I found the <code>shell</code> responding very slowly, and going into the <code>linux container</code> on it was even worse — every time I typed a command, <code>zsh</code> would freeze for quite a while.</p></div><div class="post-footer">
+        <a href="/en/drastic-disk-performance-drop-caused-by-nvme-power-management-in-proxmox-ve/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/proxmox-ve/">Proxmox Ve</a>,&nbsp;<a href="/en/tags/linux/">Linux</a>,&nbsp;<a href="/en/tags/deployment/">Deployment</a>,&nbsp;<a href="/en/tags/nvme/">Nvme</a>,&nbsp;<a href="/en/tags/apm/">Apm</a>,&nbsp;<a href="/en/tags/power-management/">Power Management</a>,&nbsp;<a href="/en/tags/performance/">Performance</a></div></div>
+</article><ul class="pagination"><li class="page-item ">
+                    <span class="page-link">
+                        <a href="/en/">1</a>
+                    </span>
+                </li><li class="page-item ">
+                    <span class="page-link">
+                        <a href="/en/page/2/">2</a>
+                    </span>
+                </li><li class="page-item active">
+                    <span class="page-link">
+                        <a href="/en/page/3/">3</a>
+                    </span>
+                </li><li class="page-item ">
+                    <span class="page-link">
+                        <a href="/en/page/4/">4</a>
+                    </span>
+                </li><li class="page-item ">
+                    <span class="page-link">
+                        <a href="/en/page/5/">5</a>
+                    </span>
+                </li></ul></div></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.143.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/en/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@8.6.0/dist/index.umd.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"data":{"id-1":"Life, coding, tinkering, and everything else."},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

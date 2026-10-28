@@ -1,0 +1,27 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Homeserver - Tag - gowinder&#39;s Blog</title>
+        <link>https://gowinder.work/en/tags/homeserver/</link>
+        <description>Homeserver - Tag - gowinder&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 21 Mar 2024 13:54:13 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/en/tags/homeserver/" rel="self" type="application/rss+xml" /><item>
+    <title>Migrating My Home Server from a Dell R720 to a Snail Interstellar &#43; MacBook Pro: Follow-up</title>
+    <link>https://gowinder.work/en/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/</link>
+    <pubDate>Thu, 21 Mar 2024 13:54:13 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/</guid>
+    <description><![CDATA[<h1 id="migrating-my-home-server-from-a-dell-r720-to-a-snail-interstellar--macbook-pro-follow-up">Migrating My Home Server from a Dell R720 to a Snail Interstellar + MacBook Pro: Follow-up</h1>
+<h2 id="gigabit-network-disconnection-problem">Gigabit Network Disconnection Problem</h2>
+<p>The migration is complete and I&rsquo;ve been using it for a while. The <code>Snail Interstellar</code>&rsquo;s power consumption is very low (compared with the <code>R720</code>&rsquo;s 100+ watts); with 3 <code>HDD</code>s and 1 <code>SSD</code> it draws 35 watts, less than 1 kWh a day—very nice.</p>
+<p>But there&rsquo;s currently a problem: on the <code>MacbookPro</code>, as soon as I close the lid, lock the screen, or close the remote desktop, the wired network adapter on the <code>Thunderbolt HUB</code> disconnects.</p>]]></description>
+</item>
+<item>
+    <title>Migrating My Home Server from a Dell R720 to a Snail Interstellar &#43; MacBook Pro</title>
+    <link>https://gowinder.work/en/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro/</link>
+    <pubDate>Mon, 11 Mar 2024 17:16:15 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro/</guid>
+    <description><![CDATA[<h1 id="migrating-my-home-server-from-a-dell-r720-to-a-snail-interstellar--macbook-pro">Migrating My Home Server from a Dell R720 to a Snail Interstellar + MacBook Pro</h1>
+<p>A few years ago I got into <code>HomeLab</code> and bought a second-hand <code>Dell R720</code> rack server to use as a home server. But this server&rsquo;s power consumption was too high—dual <code>cpu</code>s idled at nearly 200w. After switching to low-power <code>Xeon</code>s and installing only one <code>cpu</code>, it was still 100w+. Over a year the electricity bill added up, and in summer it got very hot. Later I used the <code>ipmi</code> tool and wrote some code in <code>python</code> to adjust the loud fans based on temperature, which made it much more comfortable, but in summer as the room temperature rose the fans still ramped up their speed dramatically. I always wanted to switch to a low-power server. I&rsquo;d previously bought a <code>Snail Interstellar</code>, which uses a <code>j1900</code> and has very low power consumption, so I migrated the home server from the <code>Dell R720</code> to the <code>Snail Interstellar</code>.</p>]]></description>
+</item>
+</channel>
+</rss>

@@ -117,7 +117,227 @@
 <p>Rather than argue about it, I built two things. They sit at opposite ends of the spectrum — one is pure content, one is a pure tool — which makes them a clean control group.</p></div><div class="post-footer">
         <a href="/en/two-small-sites/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/indie/">Indie</a>,&nbsp;<a href="/en/tags/side-project/">Side-Project</a>,&nbsp;<a href="/en/tags/pseo/">PSEO</a>,&nbsp;<a href="/en/tags/cloudflare/">Cloudflare</a>,&nbsp;<a href="/en/tags/astro/">Astro</a></div></div>
-</article></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/en/nextjs-honojs-shadcnui-drizzle-cloudflare-pages/">Building and Deploying a Web App on Cloudflare Pages with Next.js, Hono.js, Drizzle and shadcn/ui</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span>&nbsp;<span class="post-publish">published on <time datetime="2024-08-26">2024-08-26</time></span></div><div class="content"><h1 id="building-and-deploying-a-web-app-on-cloudflare-pages-with-nextjs-honojs-drizzle-and-shadcnui">Building and Deploying a Web App on Cloudflare Pages with Next.js, Hono.js, Drizzle and shadcn/ui</h1>
+<p>Lately I&rsquo;ve been taking advantage of Cloudflare&rsquo;s free offerings—both Workers and Pages. After tinkering with a few small projects and getting through the initial exploration phase, I&rsquo;d like to share the process of quickly building a <code>Web App</code> deployed on <code>Cloudflare Pages</code> using these open-source libraries.</p>
+<p>If you don&rsquo;t want to read through the process, you can skip straight to the end. I&rsquo;ve shared the project address; just <code>fork</code> <a href="https://github.com/gowinder/cloudflare-pages-starter" target="_blank" rel="noopener noreffer ">my example project</a> and you can use it right away.</p></div><div class="post-footer">
+        <a href="/en/nextjs-honojs-shadcnui-drizzle-cloudflare-pages/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/nextjs/">Nextjs</a>,&nbsp;<a href="/en/tags/cloudflare/">Cloudflare</a>,&nbsp;<a href="/en/tags/cloudflare-pages/">Cloudflare Pages</a>,&nbsp;<a href="/en/tags/cloudflare-workers/">Cloudflare Workers</a>,&nbsp;<a href="/en/tags/honojs/">Honojs</a>,&nbsp;<a href="/en/tags/usequery/">Usequery</a>,&nbsp;<a href="/en/tags/drizzle-orm/">Drizzle-Orm</a>,&nbsp;<a href="/en/tags/shadcn-ui/">Shadcn-Ui</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/en/honojs-usequery-error/">useQuery Error When Using the honojs Client Directly: TypeError: Cannot read properties of undefined (reading 'replace')</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span>&nbsp;<span class="post-publish">published on <time datetime="2024-06-06">2024-06-06</time></span></div><div class="content"><h1 id="usequery-error-when-using-the-honojs-client-directly-typeerror-cannot-read-properties-of-undefined-reading-replace">useQuery Error When Using the honojs Client Directly: TypeError: Cannot read properties of undefined (reading &lsquo;replace&rsquo;)</h1>
+<p>Recently I developed a project using <code>nextjs</code>, <code>honojs</code>, and <code>drizzle-orm</code>, deployed on <code>cloudflare pages</code>. I chose <code>honojs</code> because it is friendly to edge computing.</p>
+<h2 id="honojs-query-endpoint-definition">honojs Query Endpoint Definition</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">runtime</span> <span class="o">=</span> <span class="s1">&#39;edge&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">type</span> <span class="nx">Bindings</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">DB</span>: <span class="kt">D1Database</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Hono</span><span class="o">&lt;</span><span class="p">{</span> <span class="nx">Bindings</span>: <span class="kt">Bindings</span> <span class="p">}</span><span class="o">&gt;</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="kr">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="kr">async</span> <span class="p">(</span><span class="nx">c</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="kr">const</span> <span class="nx">conditions</span>: <span class="kt">Record</span><span class="p">&lt;</span><span class="nt">string</span><span class="p">,</span> <span class="na">any</span><span class="p">&gt;</span> <span class="o">=</span> <span class="p">{};</span>
+</span></span><span class="line"><span class="cl">      <span class="kr">const</span> <span class="nx">results</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getDb</span><span class="p">().</span><span class="nx">query</span><span class="p">.</span><span class="nx">someTable</span><span class="p">.</span><span class="nx">findMany</span><span class="p">({});</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="nx">c</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="nx">results</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">// return c.json(resultData);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span>: <span class="kt">Error</span> <span class="o">|</span> <span class="kt">any</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="nx">c</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="nx">app</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="route-setup-for-the-hono-app">Route Setup for the hono app</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Hono</span><span class="o">&lt;</span><span class="p">{</span> <span class="nx">Bindings</span>: <span class="kt">Bindings</span> <span class="p">}</span><span class="o">&gt;</span><span class="p">().</span><span class="nx">basePath</span><span class="p">(</span><span class="s1">&#39;/api&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">routes</span> <span class="o">=</span> <span class="nx">app</span><span class="p">.</span><span class="nx">route</span><span class="p">(</span><span class="s1">&#39;/sometable&#39;</span><span class="p">,</span> <span class="nx">someTable</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">GET</span> <span class="o">=</span> <span class="nx">handle</span><span class="p">(</span><span class="nx">app</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">POST</span> <span class="o">=</span> <span class="nx">handle</span><span class="p">(</span><span class="nx">app</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">type</span> <span class="nx">AppType</span> <span class="o">=</span> <span class="k">typeof</span> <span class="nx">routes</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="calling-with-usequery">Calling with useQuery</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">useGetSomeTable</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">query</span> <span class="o">=</span> <span class="nx">useQuery</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">queryKey</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;someTable&#39;</span><span class="p">],</span> <span class="c1">// Use filters as the query key
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">queryFn</span>: <span class="kt">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">api</span><span class="p">.</span><span class="nx">someTable</span><span class="p">.</span><span class="nx">$get</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;API Response: &#39;</span><span class="p">,</span> <span class="nx">response</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">response</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">&#39;Failed to fetch sometable&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">throwOnError</span>: <span class="kt">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">refetchOnWindowFocus</span>: <span class="kt">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">staleTime</span>: <span class="kt">1000</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">5</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">query</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="the-error-when-calling">The Error When Calling</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">TypeError: Cannot read properties of undefined (reading &#39;replace&#39;)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>The problem was here: <code>const response = await client.api.someTable.$get();</code>
+I debugged it for two days, asked <code>chatgpt</code>, asked <code>gemini pro</code>, tried many methods, with no result.</p></div><div class="post-footer">
+        <a href="/en/honojs-usequery-error/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/nextjs/">Nextjs</a>,&nbsp;<a href="/en/tags/cloudflare/">Cloudflare</a>,&nbsp;<a href="/en/tags/cloudflare-pages/">Cloudflare Pages</a>,&nbsp;<a href="/en/tags/cloudflare-workers/">Cloudflare Workers</a>,&nbsp;<a href="/en/tags/honojs/">Honojs</a>,&nbsp;<a href="/en/tags/usequery/">Usequery</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
+            <a href="/en/bulk-delete-key-in-cloudflare-kv/"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/bulk-delete-key-in-cloudflare-kv/featured-image.png"
+        data-srcset="/bulk-delete-key-in-cloudflare-kv/featured-image.png, /bulk-delete-key-in-cloudflare-kv/featured-image.png 1.5x, /bulk-delete-key-in-cloudflare-kv/featured-image.png 2x"
+        data-sizes="auto"
+        alt="/bulk-delete-key-in-cloudflare-kv/featured-image.png"
+        title="A quick way to list all keys in a Cloudflare KV namespace and bulk delete them with Wrangler and jq." /></a>
+        </div><h1 class="single-title" itemprop="name headline">
+        <a href="/en/bulk-delete-key-in-cloudflare-kv/">Bulk Delete Keys in `Cloudflare KV`</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span>&nbsp;<span class="post-publish">published on <time datetime="2024-04-18">2024-04-18</time></span></div><div class="content"><h1 id="bulk-delete-keys-in-cloudflare-kv">Bulk Delete Keys in <code>Cloudflare KV</code></h1>
+<h2 id="get-the-list-of-keys">Get the List of <code>key</code>s</h2>
+<p>Run this first</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">pnpm wrangler kv:key list --namespace-id<span class="o">=</span><span class="si">${</span><span class="nv">namespaceID</span><span class="si">}</span> &gt; PURGE.json<span class="sb">`</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>This gives you the complete list of <code>key</code>s; if you need a condition, just add: <code>--prefix=&quot;prefix&quot;</code></p>
+<h2 id="bulk-delete">Bulk Delete</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">cat purge.json <span class="p">|</span> jq -r <span class="s1">&#39;.[].name&#39;</span> <span class="p">|</span> xargs -I <span class="o">{}</span> pnpm wrangler kv:key delete --namespace-id<span class="o">=</span><span class="si">${</span><span class="nv">namespaceID</span><span class="si">}</span> <span class="o">{}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer">
+        <a href="/en/bulk-delete-key-in-cloudflare-kv/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/cloudflare/">Cloudflare</a>,&nbsp;<a href="/en/tags/cloudflare-pages/">Cloudflare Pages</a>,&nbsp;<a href="/en/tags/cloudflare-kv/">Cloudflare KV</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
+            <a href="/en/migrate-remix-to-cloudflare/"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/migrate-remix-to-cloudflare/featured-image.png"
+        data-srcset="/migrate-remix-to-cloudflare/featured-image.png, /migrate-remix-to-cloudflare/featured-image.png 1.5x, /migrate-remix-to-cloudflare/featured-image.png 2x"
+        data-sizes="auto"
+        alt="/migrate-remix-to-cloudflare/featured-image.png"
+        title="A step-by-step account of migrating an existing Remix project to Cloudflare Pages and Workers." /></a>
+        </div><h1 class="single-title" itemprop="name headline">
+        <a href="/en/migrate-remix-to-cloudflare/">Migrating a Remix Project to Cloudflare</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span>&nbsp;<span class="post-publish">published on <time datetime="2024-04-08">2024-04-08</time></span></div><div class="content"><h1 id="migrating-a-remix-project-to-cloudflare">Migrating a Remix Project to Cloudflare</h1>
+<p>Recently I developed a project using <code>remix</code>. I hadn&rsquo;t done full-stack development before; I&rsquo;d used <code>reactjs</code> a bit but wasn&rsquo;t very familiar with it, and I was using <code>Nextjs</code>, which felt very hard to use — mainly because after version <code>13</code> switched to the <code>app router</code>, I was somewhat at a loss.</p>
+<p>Later I discovered <code>remix</code>, which uses filename-based routing directly and is much more convenient, and the <code>loader</code> and <code>action</code> approach is also very intuitive, so I chose <code>remix</code>.</p></div><div class="post-footer">
+        <a href="/en/migrate-remix-to-cloudflare/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/remix/">Remix</a>,&nbsp;<a href="/en/tags/cloudflare/">Cloudflare</a>,&nbsp;<a href="/en/tags/cloudflare-pages/">Cloudflare Pages</a>,&nbsp;<a href="/en/tags/cloudflare-workers/">Cloudflare Workers</a>,&nbsp;<a href="/en/tags/machine-learning/">Machine Learning</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
+            <a href="/en/play-with-comfyui/"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/play-with-comfyui/comfyui_screenshot.png"
+        data-srcset="/play-with-comfyui/comfyui_screenshot.png, /play-with-comfyui/comfyui_screenshot.png 1.5x, /play-with-comfyui/comfyui_screenshot.png 2x"
+        data-sizes="auto"
+        alt="/play-with-comfyui/comfyui_screenshot.png"
+        title="A hands-on guide to deploying ComfyUI, installing ComfyUI-Manager, and exploring node-based Stable Diffusion workflows." /></a>
+        </div><h1 class="single-title" itemprop="name headline">
+        <a href="/en/play-with-comfyui/">Playing Around with ComfyUI</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span>&nbsp;<span class="post-publish">published on <time datetime="2024-03-25">2024-03-25</time></span></div><div class="content"><h1 id="playing-around-with-comfyui">Playing Around with ComfyUI</h1>
+<p><code>AIGC</code> was very popular a while back, so I deployed <code>Stable Diffusion</code>&rsquo;s <code>WebUI</code> locally and played with it for a bit. See: <a href="/content/posts/create-local-stable-diffusion-env.md" rel="">text</a></p>
+<p>But the <code>WebUI</code> interface is too complex and has too many elements. It looks very professional, but it&rsquo;s also somewhat difficult to use. I happened to be busy with work around that time, so after playing with it for a while I set it aside and didn&rsquo;t continue.</p></div><div class="post-footer">
+        <a href="/en/play-with-comfyui/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/comfyui/">Comfyui</a>,&nbsp;<a href="/en/tags/comfyui-manager/">Comfyui-Manager</a>,&nbsp;<a href="/en/tags/ai/">Ai</a>,&nbsp;<a href="/en/tags/stable-diffusion/">Stable Diffusion</a>,&nbsp;<a href="/en/tags/machine-learning/">Machine Learning</a></div></div>
+</article><ul class="pagination"><li class="page-item active">
+                    <span class="page-link">
+                        <a href="/en/">1</a>
+                    </span>
+                </li><li class="page-item ">
+                    <span class="page-link">
+                        <a href="/en/page/2/">2</a>
+                    </span>
+                </li><li class="page-item ">
+                    <span class="page-link">
+                        <a href="/en/page/3/">3</a>
+                    </span>
+                </li><li class="page-item ">
+                    <span class="page-link" aria-hidden="true">&hellip;</span>
+                </li><li class="page-item ">
+                    <span class="page-link">
+                        <a href="/en/page/5/">5</a>
+                    </span>
+                </li></ul></div></div>
             </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.143.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
                 </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/en/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>

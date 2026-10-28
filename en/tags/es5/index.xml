@@ -1,0 +1,50 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Es5 - Tag - gowinder&#39;s Blog</title>
+        <link>https://gowinder.work/en/tags/es5/</link>
+        <description>Es5 - Tag - gowinder&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 28 Feb 2023 11:08:03 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/en/tags/es5/" rel="self" type="application/rss+xml" /><item>
+    <title>Class Constructor TypeOrmCrudService Cannot Be Invoked Without &#39;New&#39;</title>
+    <link>https://gowinder.work/en/class-constructor-typeormcrudservice-cannot-be-invoked-without-new/</link>
+    <pubDate>Tue, 28 Feb 2023 11:08:03 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/class-constructor-typeormcrudservice-cannot-be-invoked-without-new/</guid>
+    <description><![CDATA[<h1 id="class-constructor-typeormcrudservice-cannot-be-invoked-without-new-error">Class Constructor TypeOrmCrudService Cannot Be Invoked Without &lsquo;New&rsquo; Error</h1>
+<h2 id="cause">Cause</h2>
+<p>Recently I was developing a <code>chatgpt</code> gateway project using <code>nestjs</code>, with <code>nestjsx-crud</code> to speed up <code>curd</code> development, and I had the following code:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kd">@Injectable</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">class</span> <span class="nx">ChatgptAccountService</span> <span class="kr">extends</span> <span class="nx">TypeOrmCrudService</span><span class="p">&lt;</span><span class="nt">ChatGPTAccount</span><span class="p">&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">constructor</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">@InjectRepository</span><span class="p">(</span><span class="nx">ChatGPTAccount</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">private</span> <span class="kr">readonly</span> <span class="nx">chatgptAccountRepository</span>: <span class="kt">Repository</span><span class="p">&lt;</span><span class="nt">ChatGPTAccount</span><span class="p">&gt;,</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">super</span><span class="p">(</span><span class="nx">chatgptAccountRepository</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>At runtime it threw the error:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">Class Constructor TypeOrmCrudService Cannot Be Invoked Without <span class="s1">&#39;New&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="solution">Solution</h2>
+<p>I looked it up online and found one <a href="https://github.com/nestjsx/crud/issues/378#issuecomment-764648149" target="_blank" rel="noopener noreffer ">here</a>: <code>For anyone stumbling over this issue: it's probably a tsconfig issue. Try bumping your target from es5 to es6.</code></p>]]></description>
+</item>
+</channel>
+</rss>

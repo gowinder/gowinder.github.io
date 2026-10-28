@@ -1,0 +1,20 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Pihole - Tag - gowinder&#39;s Blog</title>
+        <link>https://gowinder.work/en/tags/pihole/</link>
+        <description>Pihole - Tag - gowinder&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 27 Feb 2023 14:05:41 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/en/tags/pihole/" rel="self" type="application/rss+xml" /><item>
+    <title>Pi-hole Web UI Fails to Start on an Orange Pi Zero</title>
+    <link>https://gowinder.work/en/pihole-web-ui-fails-to-start-on-orange-pi-zero/</link>
+    <pubDate>Mon, 27 Feb 2023 14:05:41 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/pihole-web-ui-fails-to-start-on-orange-pi-zero/</guid>
+    <description><![CDATA[<h1 id="pi-hole-web-ui-fails-to-start-on-an-orange-pi-zero">Pi-hole Web UI Fails to Start on an Orange Pi Zero</h1>
+<h2 id="background">Background</h2>
+<p>I recently installed <code>Pihole</code> on an idle <code>Orange Pi Zero</code> to use as the home primary <code>DNS</code> server. The install went smoothly: <code>Armbian</code> -&gt; <code>Pihole</code>. But after it finished, the <code>WebUI</code> would not start — <code>Pihole</code> uses <code>Lighttp</code>.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p>I checked with: <code>sudo lighttpd -t -f /etc/lighttpd/lighttpd.conf</code> — the result was <code>Syntax OK</code>, no problem.</p>
+<p>Checking the <code>lighttpd</code> service: <code>sudo systemctl status lighttpd</code>, I found it exited immediately on start with <code>exited=255</code>.</p>]]></description>
+</item>
+</channel>
+</rss>

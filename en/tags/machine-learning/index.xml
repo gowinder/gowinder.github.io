@@ -1,0 +1,37 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Machine Learning - Tag - gowinder&#39;s Blog</title>
+        <link>https://gowinder.work/en/tags/machine-learning/</link>
+        <description>Machine Learning - Tag - gowinder&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 08 Apr 2024 14:20:06 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/en/tags/machine-learning/" rel="self" type="application/rss+xml" /><item>
+    <title>Migrating a Remix Project to Cloudflare</title>
+    <link>https://gowinder.work/en/migrate-remix-to-cloudflare/</link>
+    <pubDate>Mon, 08 Apr 2024 14:20:06 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/migrate-remix-to-cloudflare/</guid>
+    <description><![CDATA[<h1 id="migrating-a-remix-project-to-cloudflare">Migrating a Remix Project to Cloudflare</h1>
+<p>Recently I developed a project using <code>remix</code>. I hadn&rsquo;t done full-stack development before; I&rsquo;d used <code>reactjs</code> a bit but wasn&rsquo;t very familiar with it, and I was using <code>Nextjs</code>, which felt very hard to use — mainly because after version <code>13</code> switched to the <code>app router</code>, I was somewhat at a loss.</p>
+<p>Later I discovered <code>remix</code>, which uses filename-based routing directly and is much more convenient, and the <code>loader</code> and <code>action</code> approach is also very intuitive, so I chose <code>remix</code>.</p>]]></description>
+</item>
+<item>
+    <title>Playing Around with ComfyUI</title>
+    <link>https://gowinder.work/en/play-with-comfyui/</link>
+    <pubDate>Mon, 25 Mar 2024 14:12:16 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/play-with-comfyui/</guid>
+    <description><![CDATA[<h1 id="playing-around-with-comfyui">Playing Around with ComfyUI</h1>
+<p><code>AIGC</code> was very popular a while back, so I deployed <code>Stable Diffusion</code>&rsquo;s <code>WebUI</code> locally and played with it for a bit. See: <a href="/content/posts/create-local-stable-diffusion-env.md" rel="">text</a></p>
+<p>But the <code>WebUI</code> interface is too complex and has too many elements. It looks very professional, but it&rsquo;s also somewhat difficult to use. I happened to be busy with work around that time, so after playing with it for a while I set it aside and didn&rsquo;t continue.</p>]]></description>
+</item>
+<item>
+    <title>Deploy a Local Stable Diffusion Runtime Environment</title>
+    <link>https://gowinder.work/en/deploy-local-stable-diffusion-runtime-environment/</link>
+    <pubDate>Sun, 23 Apr 2023 14:13:38 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/deploy-local-stable-diffusion-runtime-environment/</guid>
+    <description><![CDATA[<h1 id="deploy-a-local-stable-diffusion-runtime-environment">Deploy a Local Stable Diffusion Runtime Environment</h1>
+<p><code>midjourney</code> has been quite popular lately, but it has started charging—10 dollars a month, which is more than I can afford—so I switched to the open-source <code>Stable Diffusion</code>. You can deploy it on <code>Google Colab</code> with one click:
+<code>https://github.com/camenduru/stable-diffusion-webui-colab</code>. However, the free <code>gpu</code> on <code>Google Colab</code> runs out quickly, and although the paid one is cheap, you still have to use it sparingly. If you have a local <code>gpu</code> with more than <code>8G</code> of VRAM, you can run it on your own computer to save costs; <code>6G</code> of VRAM should also work—try lowering the resolution and keywords.</p>]]></description>
+</item>
+</channel>
+</rss>

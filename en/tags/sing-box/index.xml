@@ -1,0 +1,18 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Sing-Box - Tag - gowinder&#39;s Blog</title>
+        <link>https://gowinder.work/en/tags/sing-box/</link>
+        <description>Sing-Box - Tag - gowinder&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 16 Mar 2024 10:16:15 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/en/tags/sing-box/" rel="self" type="application/rss+xml" /><item>
+    <title>A Problem Caused by a YouTube App Using QUIC</title>
+    <link>https://gowinder.work/en/sing-box-youtube-app-quic-issue/</link>
+    <pubDate>Sat, 16 Mar 2024 10:16:15 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/sing-box-youtube-app-quic-issue/</guid>
+    <description><![CDATA[<hr>
+<h1 id="a-problem-caused-by-a-youtube-app-using-quic">A Problem Caused by a YouTube App Using QUIC</h1>
+<h2 id="problem-description">Problem Description</h2>
+<p>At home, an <code>r2s</code> serves as the bypass router using <code>sing-box</code> in <code>tun</code> mode. I had always used a <code>cn2 gia</code> line, and every night I&rsquo;d watch videos on <code>youtube</code> on my <code>apple tv</code> before going to sleep, with no problems. This month the server&rsquo;s traffic ran out, so I switched to <code>hysteria2</code> on an ordinary line. It was fine all day, but come evening <code>youtube</code> was completely unwatchable. I figured <code>udp</code> packet loss was probably severe in the evening, so I didn&rsquo;t bother with it.</p>]]></description>
+</item>
+</channel>
+</rss>

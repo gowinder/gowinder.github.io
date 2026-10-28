@@ -2,11 +2,7 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://gowinder.work/tags/cloudflare/</loc><lastmod>2024-08-26T00:00:06&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://gowinder.work/tags/cloudflare-pages/</loc><lastmod>2024-08-26T00:00:06&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://gowinder.work/tags/cloudflare-workers/</loc><lastmod>2024-08-26T00:00:06&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://gowinder.work/tags/drizzle-orm/</loc><lastmod>2024-08-26T00:00:06&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://gowinder.work/</loc><lastmod>2024-08-26T00:00:06&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>https://gowinder.work/</loc><lastmod>2026-10-28T10:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://gowinder.work/en/"
@@ -15,9 +11,30 @@
                     hreflang="zh-cn"
                     href="https://gowinder.work/"
                     /></url><url>
+            <loc>https://gowinder.work/projects/</loc><lastmod>2026-10-28T10:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://gowinder.work/en/projects/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://gowinder.work/projects/"
+                    /></url><url>
+            <loc>https://gowinder.work/tags/cloudflare/</loc><lastmod>2024-08-26T00:00:06&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://gowinder.work/tags/cloudflare-pages/</loc><lastmod>2024-08-26T00:00:06&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://gowinder.work/tags/cloudflare-workers/</loc><lastmod>2024-08-26T00:00:06&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://gowinder.work/tags/drizzle-orm/</loc><lastmod>2024-08-26T00:00:06&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://gowinder.work/tags/honojs/</loc><lastmod>2024-08-26T00:00:06&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://gowinder.work/tags/nextjs/</loc><lastmod>2024-08-26T00:00:06&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://gowinder.work/posts/</loc><lastmod>2024-08-26T00:00:06&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://gowinder.work/posts/</loc><lastmod>2024-08-26T00:00:06&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://gowinder.work/en/posts/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://gowinder.work/posts/"
+                    /></url><url>
             <loc>https://gowinder.work/tags/shadcn-ui/</loc><lastmod>2024-08-26T00:00:06&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://gowinder.work/tags/</loc><lastmod>2024-08-26T00:00:06&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"

@@ -2,6 +2,33 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
+            <loc>https://gowinder.work/en/</loc><lastmod>2026-10-30T10:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://gowinder.work/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://gowinder.work/en/"
+                    /></url><url>
+            <loc>https://gowinder.work/en/posts/</loc><lastmod>2026-10-30T10:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://gowinder.work/posts/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://gowinder.work/en/posts/"
+                    /></url><url>
+            <loc>https://gowinder.work/en/projects/</loc><lastmod>2026-10-28T10:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://gowinder.work/projects/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://gowinder.work/en/projects/"
+                    /></url><url>
             <loc>https://gowinder.work/en/about/</loc><lastmod>2019-08-02T11:04:49&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
@@ -10,15 +37,6 @@
                     rel="alternate"
                     hreflang="en"
                     href="https://gowinder.work/en/about/"
-                    /></url><url>
-            <loc>https://gowinder.work/en/</loc><lastmod>2019-08-02T11:04:49&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="https://gowinder.work/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://gowinder.work/en/"
                     /></url><url>
             <loc>https://gowinder.work/en/categories/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"

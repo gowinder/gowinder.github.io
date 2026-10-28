@@ -1,7 +1,47 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Tags - Tag - gowinder个人博客</title>
+        <title>Tags - Tag - gowinder&#39;s Blog</title>
         <link>https://gowinder.work/en/tags/</link>
-        <description>Tags - Tag - gowinder个人博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><atom:link href="https://gowinder.work/en/tags/" rel="self" type="application/rss+xml" /></channel>
+        <description>Tags - Tag - gowinder&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 28 Oct 2026 14:30:00 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/en/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>Astro</title>
+    <link>https://gowinder.work/en/tags/astro/</link>
+    <pubDate>Wed, 28 Oct 2026 14:30:00 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/tags/astro/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Cloudflare</title>
+    <link>https://gowinder.work/en/tags/cloudflare/</link>
+    <pubDate>Wed, 28 Oct 2026 14:30:00 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/tags/cloudflare/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Indie</title>
+    <link>https://gowinder.work/en/tags/indie/</link>
+    <pubDate>Wed, 28 Oct 2026 14:30:00 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/tags/indie/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>PSEO</title>
+    <link>https://gowinder.work/en/tags/pseo/</link>
+    <pubDate>Wed, 28 Oct 2026 14:30:00 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/tags/pseo/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Side-Project</title>
+    <link>https://gowinder.work/en/tags/side-project/</link>
+    <pubDate>Wed, 28 Oct 2026 14:30:00 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/tags/side-project/</guid>
+    <description><![CDATA[]]></description>
+</item>
+</channel>
 </rss>

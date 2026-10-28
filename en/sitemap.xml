@@ -2,7 +2,17 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://gowinder.work/en/</loc><lastmod>2026-10-30T10:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://gowinder.work/en/tags/astro/</loc><lastmod>2026-10-28T14:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://gowinder.work/en/tags/cloudflare/</loc><lastmod>2026-10-28T14:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://gowinder.work/tags/cloudflare/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://gowinder.work/en/tags/cloudflare/"
+                    /></url><url>
+            <loc>https://gowinder.work/en/</loc><lastmod>2026-10-28T14:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="https://gowinder.work/"
@@ -11,7 +21,8 @@
                     hreflang="en"
                     href="https://gowinder.work/en/"
                     /></url><url>
-            <loc>https://gowinder.work/en/posts/</loc><lastmod>2026-10-30T10:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://gowinder.work/en/tags/indie/</loc><lastmod>2026-10-28T14:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://gowinder.work/en/posts/</loc><lastmod>2026-10-28T14:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="https://gowinder.work/posts/"
@@ -20,6 +31,18 @@
                     hreflang="en"
                     href="https://gowinder.work/en/posts/"
                     /></url><url>
+            <loc>https://gowinder.work/en/tags/pseo/</loc><lastmod>2026-10-28T14:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://gowinder.work/en/tags/side-project/</loc><lastmod>2026-10-28T14:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://gowinder.work/en/tags/</loc><lastmod>2026-10-28T14:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://gowinder.work/tags/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://gowinder.work/en/tags/"
+                    /></url><url>
+            <loc>https://gowinder.work/en/two-small-sites/</loc><lastmod>2026-10-28T14:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://gowinder.work/en/projects/</loc><lastmod>2026-10-28T10:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
@@ -55,13 +78,4 @@
                     rel="alternate"
                     hreflang="en"
                     href="https://gowinder.work/en/categories/documentation/"
-                    /></url><url>
-            <loc>https://gowinder.work/en/tags/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="https://gowinder.work/tags/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://gowinder.work/en/tags/"
                     /></url></urlset>

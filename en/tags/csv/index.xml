@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Csv - Tag - gowinder&#39;s Blog</title>
+        <link>https://gowinder.work/en/tags/csv/</link>
+        <description>Csv - Tag - gowinder&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 31 Oct 2026 10:00:00 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/en/tags/csv/" rel="self" type="application/rss+xml" /><item>
+    <title>Batch renaming files from an Excel or CSV list: three approaches that actually work</title>
+    <link>https://gowinder.work/en/batch-renaming-files-from-excel-csv/</link>
+    <pubDate>Sat, 31 Oct 2026 10:00:00 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/batch-renaming-files-from-excel-csv/</guid>
+    <description><![CDATA[<h1 id="batch-renaming-files-from-an-excel-or-csv-list">Batch renaming files from an Excel or CSV list</h1>
+<p>If you are cleaning up photos, scans, lecture videos or invoices, the situation is usually the same: <strong>you already have a table</strong>. Column A is the current filename, column B is what you want it to be, maybe column C is a capture date and D is a client code. The hard part is not inventing new names. It is turning that table into actual renames on disk.</p>]]></description>
+</item>
+</channel>
+</rss>

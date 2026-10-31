@@ -111,6 +111,12 @@
         alt="https://gravatar.com/userimage/16926726/2de44cb9918f08ff7f430244b10bf37b.jpeg?size=256"
         title="https://gravatar.com/userimage/16926726/2de44cb9918f08ff7f430244b10bf37b.jpeg?size=256" /></a></div><h1 class="home-title">gowinder's Blog</h1><div class="home-subtitle"><div id="id-1" class="typeit"></div></div><div class="links"><a href="https://github.com/gowinder" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="mailto:gowinder@hotmail.com" title="Email" rel="me"><i class="far fa-envelope fa-fw" aria-hidden="true"></i></a><a href="/en/index.xml" title="RSS" target="_blank" rel="noopener noreffer me"><i class="fas fa-rss fa-fw" aria-hidden="true"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/en/drastic-disk-performance-drop-caused-by-nvme-power-management-in-proxmox-ve/">Drastic Disk Performance Drop Caused by NVMe Power Management in Proxmox VE</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-02-17">2023-02-17</time></span></div><div class="content"><h1 id="drastic-disk-performance-drop-caused-by-nvme-power-management-in-proxmox-ve">Drastic Disk Performance Drop Caused by NVMe Power Management in Proxmox VE</h1>
+<p>A few days ago I deployed a two-node <code>proxmox ve</code> cluster. It worked fine at first, but after a day, when I logged in to the <code>dell r720</code> host over <code>ssh</code>, I found the <code>shell</code> responding very slowly, and going into the <code>linux container</code> on it was even worse — every time I typed a command, <code>zsh</code> would freeze for quite a while.</p></div><div class="post-footer">
+        <a href="/en/drastic-disk-performance-drop-caused-by-nvme-power-management-in-proxmox-ve/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/proxmox-ve/">Proxmox Ve</a>,&nbsp;<a href="/en/tags/linux/">Linux</a>,&nbsp;<a href="/en/tags/deployment/">Deployment</a>,&nbsp;<a href="/en/tags/nvme/">Nvme</a>,&nbsp;<a href="/en/tags/apm/">Apm</a>,&nbsp;<a href="/en/tags/power-management/">Power Management</a>,&nbsp;<a href="/en/tags/performance/">Performance</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/en/rebuilding-a-glusterfs-volume/">Rebuilding a GlusterFS Volume</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-02-16">2023-02-16</time></span></div><div class="content"><h1 id="rebuilding-a-glusterfs-volume">Rebuilding a GlusterFS Volume</h1>
 <h2 id="background">Background</h2>
@@ -251,48 +257,6 @@
 <p>The following operations are performed on both machines, referred to here as <code>pve1</code> and <code>pve2</code></p></div><div class="post-footer">
         <a href="/en/deploying-a-two-node-ha-cluster-and-glusterfs-distributed-file-system-on-proxmox-ve/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/proxmox-ve/">Proxmox Ve</a>,&nbsp;<a href="/en/tags/linux/">Linux</a>,&nbsp;<a href="/en/tags/distributed/">Distributed</a>,&nbsp;<a href="/en/tags/dev-notes/">Dev-Notes</a>,&nbsp;<a href="/en/tags/deployment/">Deployment</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/en/jwtservice-error-in-nestjs-missing-secret/">JwtService Error in NestJS: Missing SECRET</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-02-07">2023-02-07</time></span></div><div class="content"><h1 id="jwtservice-error-in-nestjs-jsonwebtokenerror-secret-or-public-key-must-be-provided">JwtService Error in NestJS: &ldquo;JsonWebTokenError: secret or public key must be provided&rdquo;</h1>
-<h2 id="cause">Cause</h2>
-<p>This error keeps appearing recently: <code>JsonWebTokenError: secret or public key must be provided</code>,</p>
-<ul>
-<li>
-<p>I have already added <code>imports: [JwtService]</code> in the environment variables,</p>
-</li>
-<li>
-<p>And I also added the following in the underlying library <code>shared.module.ts</code>:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl">  <span class="nx">imports</span><span class="o">:</span> <span class="p">[</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">JwtModule</span><span class="p">.</span><span class="nx">registerAsync</span><span class="p">({</span>
-</span></span><span class="line"><span class="cl">      <span class="nx">imports</span><span class="o">:</span> <span class="p">[</span><span class="nx">ConfigModule</span><span class="p">],</span>
-</span></span><span class="line"><span class="cl">      <span class="nx">useFactory</span><span class="o">:</span> <span class="p">(</span><span class="nx">configService</span>: <span class="kt">ConfigService</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">({</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">secret</span>: <span class="kt">configService.get</span><span class="p">&lt;</span><span class="nt">string</span><span class="p">&gt;(</span><span class="s1">&#39;JWT_SECRET&#39;</span><span class="p">)</span> <span class="kr">as</span> <span class="kt">string</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">signOptions</span><span class="o">:</span> <span class="p">{</span> <span class="nx">expiresIn</span><span class="o">:</span> <span class="s1">&#39;1d&#39;</span> <span class="p">},</span>
-</span></span><span class="line"><span class="cl">      <span class="p">}),</span>
-</span></span><span class="line"><span class="cl">      <span class="nx">inject</span><span class="o">:</span> <span class="p">[</span><span class="nx">ConfigService</span><span class="p">],</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}),</span>
-</span></span><span class="line"><span class="cl"><span class="p">]</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div></li>
-</ul>
-<p>But <code>JwtService</code> inside <code>AuthGurad</code> still can&rsquo;t find <code>secret</code>; based on past experience, it should be that <code>AuthModule</code> did not import it correctly.</p></div><div class="post-footer">
-        <a href="/en/jwtservice-error-in-nestjs-missing-secret/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/nestjs/">Nestjs</a>,&nbsp;<a href="/en/tags/typescript/">Typescript</a>,&nbsp;<a href="/en/tags/node/">Node</a>,&nbsp;<a href="/en/tags/dev-notes/">Dev-Notes</a></div></div>
 </article><ul class="pagination"><li class="page-item ">
                     <span class="page-link">
                         <a href="/en/">1</a>

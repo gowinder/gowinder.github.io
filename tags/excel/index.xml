@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Excel - 标签 - gowinder个人博客</title>
+        <link>https://gowinder.work/tags/excel/</link>
+        <description>Excel - 标签 - gowinder个人博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 31 Oct 2026 10:00:00 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/excel/" rel="self" type="application/rss+xml" /><item>
+    <title>用 Excel 或 CSV 批量重命名文件：三种能落地的做法</title>
+    <link>https://gowinder.work/batch-rename-from-excel-csv/</link>
+    <pubDate>Sat, 31 Oct 2026 10:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://gowinder.work/batch-rename-from-excel-csv/</guid>
+    <description><![CDATA[<h1 id="用-excel-或-csv-批量重命名文件三种能落地的做法">用 Excel 或 CSV 批量重命名文件：三种能落地的做法</h1>
+<p>整理照片、扫描件、课程视频、发票的时候，最常见的处境是：<strong>你手上已经有一张表了</strong>——A 列是现在的文件名，B 列是你想要的文件名，可能还有 C 列是拍摄日期、D 列是客户编号。真正的问题不是&quot;怎么想出新名字&quot;，而是&quot;这张表怎么变成磁盘上的实际改名&quot;。</p>]]></description>
+</item>
+</channel>
+</rss>

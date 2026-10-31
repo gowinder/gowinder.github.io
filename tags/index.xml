@@ -3,84 +3,84 @@
         <title>Tags - 标签 - gowinder个人博客</title>
         <link>https://gowinder.work/tags/</link>
         <description>Tags - 标签 - gowinder个人博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 26 Aug 2024 00:00:06 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 31 Oct 2026 10:00:00 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>Automation</title>
+    <link>https://gowinder.work/tags/automation/</link>
+    <pubDate>Sat, 31 Oct 2026 10:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://gowinder.work/tags/automation/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Csv</title>
+    <link>https://gowinder.work/tags/csv/</link>
+    <pubDate>Sat, 31 Oct 2026 10:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://gowinder.work/tags/csv/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Excel</title>
+    <link>https://gowinder.work/tags/excel/</link>
+    <pubDate>Sat, 31 Oct 2026 10:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://gowinder.work/tags/excel/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Powershell</title>
+    <link>https://gowinder.work/tags/powershell/</link>
+    <pubDate>Sat, 31 Oct 2026 10:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://gowinder.work/tags/powershell/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Shell</title>
+    <link>https://gowinder.work/tags/shell/</link>
+    <pubDate>Sat, 31 Oct 2026 10:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://gowinder.work/tags/shell/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Astro</title>
+    <link>https://gowinder.work/tags/astro/</link>
+    <pubDate>Wed, 28 Oct 2026 14:30:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://gowinder.work/tags/astro/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>Cloudflare</title>
     <link>https://gowinder.work/tags/cloudflare/</link>
-    <pubDate>Mon, 26 Aug 2024 00:00:06 &#43;0800</pubDate>
+    <pubDate>Wed, 28 Oct 2026 14:30:00 &#43;0800</pubDate>
     <author>作者</author>
     <guid>https://gowinder.work/tags/cloudflare/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>Cloudflare Pages</title>
-    <link>https://gowinder.work/tags/cloudflare-pages/</link>
-    <pubDate>Mon, 26 Aug 2024 00:00:06 &#43;0800</pubDate>
+    <title>Indie</title>
+    <link>https://gowinder.work/tags/indie/</link>
+    <pubDate>Wed, 28 Oct 2026 14:30:00 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://gowinder.work/tags/cloudflare-pages/</guid>
+    <guid>https://gowinder.work/tags/indie/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>Cloudflare Workers</title>
-    <link>https://gowinder.work/tags/cloudflare-workers/</link>
-    <pubDate>Mon, 26 Aug 2024 00:00:06 &#43;0800</pubDate>
+    <title>PSEO</title>
+    <link>https://gowinder.work/tags/pseo/</link>
+    <pubDate>Wed, 28 Oct 2026 14:30:00 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://gowinder.work/tags/cloudflare-workers/</guid>
+    <guid>https://gowinder.work/tags/pseo/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>Drizzle-Orm</title>
-    <link>https://gowinder.work/tags/drizzle-orm/</link>
-    <pubDate>Mon, 26 Aug 2024 00:00:06 &#43;0800</pubDate>
+    <title>Seo</title>
+    <link>https://gowinder.work/tags/seo/</link>
+    <pubDate>Wed, 28 Oct 2026 14:30:00 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://gowinder.work/tags/drizzle-orm/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Honojs</title>
-    <link>https://gowinder.work/tags/honojs/</link>
-    <pubDate>Mon, 26 Aug 2024 00:00:06 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://gowinder.work/tags/honojs/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Nextjs</title>
-    <link>https://gowinder.work/tags/nextjs/</link>
-    <pubDate>Mon, 26 Aug 2024 00:00:06 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://gowinder.work/tags/nextjs/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Shadcn-Ui</title>
-    <link>https://gowinder.work/tags/shadcn-ui/</link>
-    <pubDate>Mon, 26 Aug 2024 00:00:06 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://gowinder.work/tags/shadcn-ui/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>UseQuery</title>
-    <link>https://gowinder.work/tags/usequery/</link>
-    <pubDate>Mon, 26 Aug 2024 00:00:06 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://gowinder.work/tags/usequery/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Cloudflare KV</title>
-    <link>https://gowinder.work/tags/cloudflare-kv/</link>
-    <pubDate>Thu, 18 Apr 2024 19:12:56 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://gowinder.work/tags/cloudflare-kv/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Machine Learning</title>
-    <link>https://gowinder.work/tags/machine-learning/</link>
-    <pubDate>Mon, 08 Apr 2024 14:20:06 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://gowinder.work/tags/machine-learning/</guid>
+    <guid>https://gowinder.work/tags/seo/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

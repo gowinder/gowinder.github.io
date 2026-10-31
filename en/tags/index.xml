@@ -3,7 +3,47 @@
         <title>Tags - Tag - gowinder&#39;s Blog</title>
         <link>https://gowinder.work/en/tags/</link>
         <description>Tags - Tag - gowinder&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 28 Oct 2026 14:30:00 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/en/tags/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 31 Oct 2026 10:00:00 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/en/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>Automation</title>
+    <link>https://gowinder.work/en/tags/automation/</link>
+    <pubDate>Sat, 31 Oct 2026 10:00:00 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/tags/automation/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Csv</title>
+    <link>https://gowinder.work/en/tags/csv/</link>
+    <pubDate>Sat, 31 Oct 2026 10:00:00 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/tags/csv/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Excel</title>
+    <link>https://gowinder.work/en/tags/excel/</link>
+    <pubDate>Sat, 31 Oct 2026 10:00:00 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/tags/excel/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Powershell</title>
+    <link>https://gowinder.work/en/tags/powershell/</link>
+    <pubDate>Sat, 31 Oct 2026 10:00:00 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/tags/powershell/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Shell</title>
+    <link>https://gowinder.work/en/tags/shell/</link>
+    <pubDate>Sat, 31 Oct 2026 10:00:00 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/tags/shell/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>Astro</title>
     <link>https://gowinder.work/en/tags/astro/</link>
     <pubDate>Wed, 28 Oct 2026 14:30:00 &#43;0800</pubDate>
@@ -41,46 +81,6 @@
     <pubDate>Wed, 28 Oct 2026 14:30:00 &#43;0800</pubDate>
     <author>Author</author>
     <guid>https://gowinder.work/en/tags/side-project/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Cloudflare Pages</title>
-    <link>https://gowinder.work/en/tags/cloudflare-pages/</link>
-    <pubDate>Mon, 26 Aug 2024 00:00:06 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://gowinder.work/en/tags/cloudflare-pages/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Cloudflare Workers</title>
-    <link>https://gowinder.work/en/tags/cloudflare-workers/</link>
-    <pubDate>Mon, 26 Aug 2024 00:00:06 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://gowinder.work/en/tags/cloudflare-workers/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Drizzle-Orm</title>
-    <link>https://gowinder.work/en/tags/drizzle-orm/</link>
-    <pubDate>Mon, 26 Aug 2024 00:00:06 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://gowinder.work/en/tags/drizzle-orm/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Honojs</title>
-    <link>https://gowinder.work/en/tags/honojs/</link>
-    <pubDate>Mon, 26 Aug 2024 00:00:06 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://gowinder.work/en/tags/honojs/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Nextjs</title>
-    <link>https://gowinder.work/en/tags/nextjs/</link>
-    <pubDate>Mon, 26 Aug 2024 00:00:06 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://gowinder.work/en/tags/nextjs/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

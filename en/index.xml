@@ -3,9 +3,18 @@
         <title>gowinder&#39;s Blog</title>
         <link>https://gowinder.work/en/</link>
         <description>Life, coding, tinkering, and everything else.</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 28 Oct 2026 14:30:00 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 31 Oct 2026 10:00:00 &#43;0800</lastBuildDate>
             <atom:link href="https://gowinder.work/en/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Batch renaming files from an Excel or CSV list: three approaches that actually work</title>
+    <link>https://gowinder.work/en/batch-renaming-files-from-excel-csv/</link>
+    <pubDate>Sat, 31 Oct 2026 10:00:00 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/batch-renaming-files-from-excel-csv/</guid>
+    <description><![CDATA[<h1 id="batch-renaming-files-from-an-excel-or-csv-list">Batch renaming files from an Excel or CSV list</h1>
+<p>If you are cleaning up photos, scans, lecture videos or invoices, the situation is usually the same: <strong>you already have a table</strong>. Column A is the current filename, column B is what you want it to be, maybe column C is a capture date and D is a client code. The hard part is not inventing new names. It is turning that table into actual renames on disk.</p>]]></description>
+</item>
+<item>
     <title>Two small sites went live: an Old English dictionary and a batch renamer</title>
     <link>https://gowinder.work/en/two-small-sites/</link>
     <pubDate>Wed, 28 Oct 2026 14:30:00 &#43;0800</pubDate>
@@ -235,16 +244,6 @@ I debugged it for two days, asked <code>chatgpt</code>, asked <code>gemini pro</
     <guid>https://gowinder.work/en/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro/</guid>
     <description><![CDATA[<h1 id="migrating-my-home-server-from-a-dell-r720-to-a-snail-interstellar--macbook-pro">Migrating My Home Server from a Dell R720 to a Snail Interstellar + MacBook Pro</h1>
 <p>A few years ago I got into <code>HomeLab</code> and bought a second-hand <code>Dell R720</code> rack server to use as a home server. But this server&rsquo;s power consumption was too high—dual <code>cpu</code>s idled at nearly 200w. After switching to low-power <code>Xeon</code>s and installing only one <code>cpu</code>, it was still 100w+. Over a year the electricity bill added up, and in summer it got very hot. Later I used the <code>ipmi</code> tool and wrote some code in <code>python</code> to adjust the loud fans based on temperature, which made it much more comfortable, but in summer as the room temperature rose the fans still ramped up their speed dramatically. I always wanted to switch to a low-power server. I&rsquo;d previously bought a <code>Snail Interstellar</code>, which uses a <code>j1900</code> and has very low power consumption, so I migrated the home server from the <code>Dell R720</code> to the <code>Snail Interstellar</code>.</p>]]></description>
-</item>
-<item>
-    <title>Using ChatGPT to Write a Script for Generating Chinese Subtitles for Video Files</title>
-    <link>https://gowinder.work/en/use-chatgpt-to-make-a-sub-generator-script/</link>
-    <pubDate>Wed, 06 Mar 2024 14:40:28 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://gowinder.work/en/use-chatgpt-to-make-a-sub-generator-script/</guid>
-    <description><![CDATA[<h1 id="using-chatgpt-to-write-a-script-for-generating-chinese-subtitles-for-video-files">Using ChatGPT to Write a Script for Generating Chinese Subtitles for Video Files</h1>
-<h2 id="background">Background</h2>
-<p>For some obscure movies or videos, it is hard to find Chinese subtitles even though they have a plot, so in these cases you have to add Chinese subtitles manually. But adding Chinese subtitles by hand is extremely time-consuming, especially for long videos. So I wanted to use ChatGPT to help me write a script that can automatically generate Chinese subtitles for video files.</p>]]></description>
 </item>
 </channel>
 </rss>

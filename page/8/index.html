@@ -111,6 +111,18 @@
         alt="https://www.gravatar.com/avatar/f54704641b5fd99f865013a8196d6caf?s=240&amp;d=mp"
         title="https://www.gravatar.com/avatar/f54704641b5fd99f865013a8196d6caf?s=240&amp;d=mp" /></a></div><h1 class="home-title">gowinder个人博客</h1><div class="home-subtitle"><div id="id-1" class="typeit"></div></div><div class="links"><a href="https://github.com/gowinder" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="https://steamcommunity.com/id/gowinder" title="Steam" target="_blank" rel="noopener noreffer me"><i class="fab fa-steam fa-fw" aria-hidden="true"></i></a><a href="https://www.douban.com/people/gowinder" title="豆瓣" target="_blank" rel="noopener noreffer me"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/douban.svg" aria-hidden="true"></i></a><a href="mailto:gowinder@hotmail.com" title="Email" rel="me"><i class="far fa-envelope fa-fw" aria-hidden="true"></i></a><a href="/index.xml" title="RSS" target="_blank" rel="noopener noreffer me"><i class="fas fa-rss fa-fw" aria-hidden="true"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/%E6%96%B0%E6%97%A5%E5%BF%97%E5%87%BD%E6%95%B0%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%8F%AF%E6%8E%A7%E7%BA%A7%E5%88%AB%E6%97%A5%E5%BF%97%E8%BE%93%E5%87%BA/">新日志函数:格式化可控级别日志输出</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>作者</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2010-03-12">2010-03-12</time></span></div><div class="content"><p>以往的几个系统都是使用一种比较随意的日志输出方式，就是有什么问题就输出，超时日志，错误日志，ASSERT，异常等全部在一个文件中，这样不方便查看，也不方便于对于紧急事件的反应；也无法控制输出级别，有些输出可能只在DEBUG版本或者第一个RELEASE版本才需要，当版本稳定后，就不需要这些日志了，日志级别应该全部是可以控制的。分两部分来谈这个问题：<br>
+1.可控级别：可控级别分在两个部位控制，第一个是编译级别，在编译级别中通过预编译参数或者宏来实现最高可输出级别，别一种是动态控制，使用参数来控制级别，只在小于参数值的级别才可以输出。编译级别的参数值优先级应该大于动态级别的，这样就可以方便显示控制日志输出量。</p></div><div class="post-footer">
+        <a href="/%E6%96%B0%E6%97%A5%E5%BF%97%E5%87%BD%E6%95%B0%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%8F%AF%E6%8E%A7%E7%BA%A7%E5%88%AB%E6%97%A5%E5%BF%97%E8%BE%93%E5%87%BA/">阅读全文</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/">游戏开发</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/%E5%85%B3%E4%BA%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%87%AA%E5%8A%A8%E5%90%8C%E6%AD%A5%E6%97%B6%E9%97%B4%E6%9C%8D%E5%8A%A1%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98/">关于服务器自动同步时间服务引起的问题</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>作者</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2010-03-12">2010-03-12</time></span></div><div class="content"><p>士兵突击有一次出现故障，就是因为同步服务把时间同步回去了，这样就造成当前时间可能会比内存中已经发现的事件的时间更早，一相减，是一个负数，因为我们使用的是DWORD，所以就变成一个很大的数目，造成数据异常。<br>
+解决办法：首先最好关掉服务器上的时间同步服务，然后对DWORD差值做检查，如果是负的，就不做操作，我认为使用DWORD要谨慎，在这上面出的问题不止一次了！</p></div><div class="post-footer">
+        <a href="/%E5%85%B3%E4%BA%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%87%AA%E5%8A%A8%E5%90%8C%E6%AD%A5%E6%97%B6%E9%97%B4%E6%9C%8D%E5%8A%A1%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98/">阅读全文</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/">游戏开发</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/%E5%85%B3%E4%BA%8E%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B8%AD%E5%85%83%E7%B4%A0%E4%B8%BA%E6%8C%87%E9%92%88%E7%9A%84%E6%83%85%E5%86%B5/">关于优先队列容器中元素为指针的情况</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>作者</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2010-03-12">2010-03-12</time></span></div><div class="content"><p>使用优先队列，元素为指针，如：<br>
 typedef priority_queue&lt;TimeEvent*, deque &lt;TimeEvent*&gt;, less&lt;deque&lt;TimeEvent*&gt;::value_type&gt;    TIME_EVENT_QUEUE;<br>
@@ -158,21 +170,6 @@ EVENT_TICK = NOW_TICK(当前系统TICK) - SYSTEM_TICK+NEED_TIME（需要的时�
         <a href="/%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0-2/">压力测试笔记 2</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>作者</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2009-07-15">2009-07-15</time></span></div><div class="content"><p>昨天发现登录时,任务初始化读取数据库操作频繁问题，今天为了找出其它数据库操作频繁问题，加入数据库操作计数变量，如果在登录或者运行某些计算时操作过于频繁，就再输出数据库操作日志，找出原因。</p></div><div class="post-footer">
         <a href="/%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0-2/">阅读全文</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/">游戏开发</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0-1/">压力测试笔记 1</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>作者</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2009-07-14">2009-07-14</time></span></div><div class="content"><p>马上要封测了,现在开始压力测试.<br>
-1000个连接上,没有问题,但是登录后问题来了,处理一个登录要1秒钟时间,可想而知1000个需要多长时间.<br>
-这是肯定不行.<br>
-于是加入测试语句,查找是谁在拖时间.<br>
-最后找到是登录时初始化玩家的任务,才发现有900多个任务,每个任务又有小任务,而且小任务不管数据库有没有记录,都要去数据库中SELECT 一次.难怪,明天找人改过来,已经完成和还没有开始的任务就不需要读了.应该会快很多.<br>
-又发现写日志问题,在每次TICK调用的函数中,如果有CHECK之类的日志出错,会不停的写,导致服务器没有响应,除了关掉日志写硬盘外,几乎没有别的办法.在介面线程显示时,取日志消息时,每取一个,要加一个判断,看是否超出此次TICK可能使用的时间,如果超出,还未处理的TICK就下次再处理,这样介面就不会死掉了.</p></div><div class="post-footer">
-        <a href="/%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0-1/">阅读全文</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/">游戏开发</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/windows-socket-%E7%AC%94%E8%AE%B0/">windows socket 笔记</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>作者</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2009-07-14">2009-07-14</time></span></div><div class="content"><p>10055错误,压力测试客户端开了1000个连接,就报10055错误,查了发现是资源不足,后来想想,应该是连得太快了,服务器响应不过来,所以客户端的缓冲满了.调多点线程,或者发送每个连接的之间停一下.</p></div><div class="post-footer">
-        <a href="/windows-socket-%E7%AC%94%E8%AE%B0/">阅读全文</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/">游戏开发</a></div></div>
 </article><ul class="pagination"><li class="page-item ">
                     <span class="page-link">

@@ -2,7 +2,96 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://gowinder.work/en/tags/astro/</loc><lastmod>2026-10-28T14:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://gowinder.work/en/tags/automation/</loc><lastmod>2026-10-31T10:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://gowinder.work/tags/automation/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://gowinder.work/en/tags/automation/"
+                    /></url><url>
+            <loc>https://gowinder.work/en/batch-renaming-files-from-excel-csv/</loc><lastmod>2026-10-31T10:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://gowinder.work/batch-rename-from-excel-csv/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://gowinder.work/en/batch-renaming-files-from-excel-csv/"
+                    /></url><url>
+            <loc>https://gowinder.work/en/tags/csv/</loc><lastmod>2026-10-31T10:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://gowinder.work/tags/csv/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://gowinder.work/en/tags/csv/"
+                    /></url><url>
+            <loc>https://gowinder.work/en/tags/excel/</loc><lastmod>2026-10-31T10:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://gowinder.work/tags/excel/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://gowinder.work/en/tags/excel/"
+                    /></url><url>
+            <loc>https://gowinder.work/en/</loc><lastmod>2026-10-31T10:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://gowinder.work/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://gowinder.work/en/"
+                    /></url><url>
+            <loc>https://gowinder.work/en/posts/</loc><lastmod>2026-10-31T10:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://gowinder.work/posts/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://gowinder.work/en/posts/"
+                    /></url><url>
+            <loc>https://gowinder.work/en/tags/powershell/</loc><lastmod>2026-10-31T10:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://gowinder.work/tags/powershell/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://gowinder.work/en/tags/powershell/"
+                    /></url><url>
+            <loc>https://gowinder.work/en/tags/shell/</loc><lastmod>2026-10-31T10:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://gowinder.work/tags/shell/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://gowinder.work/en/tags/shell/"
+                    /></url><url>
+            <loc>https://gowinder.work/en/tags/</loc><lastmod>2026-10-31T10:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://gowinder.work/tags/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://gowinder.work/en/tags/"
+                    /></url><url>
+            <loc>https://gowinder.work/en/tags/astro/</loc><lastmod>2026-10-28T14:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://gowinder.work/tags/astro/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://gowinder.work/en/tags/astro/"
+                    /></url><url>
             <loc>https://gowinder.work/en/tags/cloudflare/</loc><lastmod>2026-10-28T14:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
@@ -12,37 +101,42 @@
                     hreflang="en"
                     href="https://gowinder.work/en/tags/cloudflare/"
                     /></url><url>
-            <loc>https://gowinder.work/en/</loc><lastmod>2026-10-28T14:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://gowinder.work/en/tags/indie/</loc><lastmod>2026-10-28T14:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
-                        href="https://gowinder.work/"
+                        href="https://gowinder.work/tags/indie/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="https://gowinder.work/en/"
+                    href="https://gowinder.work/en/tags/indie/"
                     /></url><url>
-            <loc>https://gowinder.work/en/tags/indie/</loc><lastmod>2026-10-28T14:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://gowinder.work/en/posts/</loc><lastmod>2026-10-28T14:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://gowinder.work/en/tags/pseo/</loc><lastmod>2026-10-28T14:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
-                        href="https://gowinder.work/posts/"
+                        href="https://gowinder.work/tags/pseo/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="https://gowinder.work/en/posts/"
+                    href="https://gowinder.work/en/tags/pseo/"
                     /></url><url>
-            <loc>https://gowinder.work/en/tags/pseo/</loc><lastmod>2026-10-28T14:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://gowinder.work/en/tags/side-project/</loc><lastmod>2026-10-28T14:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://gowinder.work/en/tags/</loc><lastmod>2026-10-28T14:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://gowinder.work/en/tags/side-project/</loc><lastmod>2026-10-28T14:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
-                        href="https://gowinder.work/tags/"
+                        href="https://gowinder.work/tags/side-project/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="https://gowinder.work/en/tags/"
+                    href="https://gowinder.work/en/tags/side-project/"
                     /></url><url>
-            <loc>https://gowinder.work/en/two-small-sites/</loc><lastmod>2026-10-28T14:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://gowinder.work/en/two-small-sites/</loc><lastmod>2026-10-28T14:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://gowinder.work/two-small-sites/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://gowinder.work/en/two-small-sites/"
+                    /></url><url>
             <loc>https://gowinder.work/en/projects/</loc><lastmod>2026-10-28T10:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"

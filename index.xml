@@ -3,9 +3,28 @@
         <title>gowinder个人博客</title>
         <link>https://gowinder.work/</link>
         <description>记录生活,编码,折腾,杂七杂八</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 28 Oct 2026 10:00:00 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 31 Oct 2026 10:00:00 &#43;0800</lastBuildDate>
             <atom:link href="https://gowinder.work/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>用 Excel 或 CSV 批量重命名文件：三种能落地的做法</title>
+    <link>https://gowinder.work/batch-rename-from-excel-csv/</link>
+    <pubDate>Sat, 31 Oct 2026 10:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://gowinder.work/batch-rename-from-excel-csv/</guid>
+    <description><![CDATA[<h1 id="用-excel-或-csv-批量重命名文件三种能落地的做法">用 Excel 或 CSV 批量重命名文件：三种能落地的做法</h1>
+<p>整理照片、扫描件、课程视频、发票的时候，最常见的处境是：<strong>你手上已经有一张表了</strong>——A 列是现在的文件名，B 列是你想要的文件名，可能还有 C 列是拍摄日期、D 列是客户编号。真正的问题不是&quot;怎么想出新名字&quot;，而是&quot;这张表怎么变成磁盘上的实际改名&quot;。</p>]]></description>
+</item>
+<item>
+    <title>两个小站上线了：一个古英语词典，一个批量重命名工具</title>
+    <link>https://gowinder.work/two-small-sites/</link>
+    <pubDate>Wed, 28 Oct 2026 14:30:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://gowinder.work/two-small-sites/</guid>
+    <description><![CDATA[<h1 id="两个小站上线了一个古英语词典一个批量重命名工具">两个小站上线了：一个古英语词典，一个批量重命名工具</h1>
+<p>我一直想验证一个问题：一个人、零预算、不投广告，能不能靠&quot;把一个很窄的需求做到底&quot;做出点东西。</p>
+<p>与其想，不如做两个出来看看。这两个站方向完全不同，一个是纯内容站，一个是纯工具站，正好可以当一对对照组。</p>]]></description>
+</item>
+<item>
     <title>使用nestjs&#43;honojs&#43;drizzle&#43;shadcnui开发部署在cloudflare pages上的web app</title>
     <link>https://gowinder.work/nextjs-honojs-shadcnui-drizzle-cloudflare-pages/</link>
     <pubDate>Mon, 26 Aug 2024 00:00:06 &#43;0800</pubDate>
@@ -100,26 +119,6 @@
     <guid>https://gowinder.work/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro/</guid>
     <description><![CDATA[<h1 id="将家庭服务器从dell-r720迁移到蜗牛星际macbookpro">将家庭服务器从DELL R720迁移到蜗牛星际+MacbookPro</h1>
 <p>前几年网<code>HomeLab</code>, 买了一台二手<code>Dell R720</code>机架服务器, 用来做家庭服务器. 但是由于这台服务器的功耗太高, 双<code>cpu</code>待机就要快200w, 换了低功耗的<code>志强</code>后,只安装一个<code>cpu</code>,也有100w+, 一年下来电费不少,而且,到了夏天,非常的热,后来使用<code>ipmi</code>工具,用<code>python</code>写了个代码,根据温度来调节暴力风扇,要舒服许多,但是,夏天,室温升高,风扇还是会平方提高转速. 一直想换成低功耗的服务器. 之前买了<code>蜗牛星际</code>, 这个使用的是<code>j1900</code>, 功耗很低的, 于是就把家庭服务器从<code>Dell R720</code>迁移到了<code>蜗牛星际</code>.</p>]]></description>
-</item>
-<item>
-    <title>使用chatgpt帮我编写一个给视频文件生成中文字幕的脚本</title>
-    <link>https://gowinder.work/use-chatgpt-to-make-a-sub-generator-script/</link>
-    <pubDate>Wed, 06 Mar 2024 14:40:28 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://gowinder.work/use-chatgpt-to-make-a-sub-generator-script/</guid>
-    <description><![CDATA[<h1 id="使用chatgpt帮我编写一个给视频文件生成中文字幕的脚本">使用chatgpt帮我编写一个给视频文件生成中文字幕的脚本</h1>
-<h2 id="背景">背景</h2>
-<p>因为有些冷门的电影或者视频，很难找到中文字幕，但是又有故事情节，这时候就需要自己手动添加中文字幕。但是手动添加中文字幕非常耗时，尤其是对于长视频来说。所以我想要使用chatgpt来帮我编写一个脚本，能够自动给视频文件生成中文字幕。</p>]]></description>
-</item>
-<item>
-    <title>部署本地 Stable Diffusion运行环境</title>
-    <link>https://gowinder.work/create-local-stable-diffusion-env/</link>
-    <pubDate>Sun, 23 Apr 2023 14:13:38 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://gowinder.work/create-local-stable-diffusion-env/</guid>
-    <description><![CDATA[<h1 id="部署本地-stable-diffusion运行环境">部署本地 Stable Diffusion运行环境</h1>
-<p>最近 <code>midjourney</code> 比较火，不过开始收费了，10刀一个月，消费不起，换成开源的<code>Stable Diffusion</code>来往，可以在<code>Google Colab</code>上一件部署：
-<code>https://github.com/camenduru/stable-diffusion-webui-colab</code>，不过<code>Google Colab</code>免费的<code>gpu</code>一下就没有了，付费的虽然便宜，还是得省着用，如果本地有<code>gpu</code>，而且有<code>8G</code>以上显存可以用自己的电脑来跑，节约成本，<code>6G</code>显存应该也可以，降低分辨率和关键字试试。</p>]]></description>
 </item>
 </channel>
 </rss>

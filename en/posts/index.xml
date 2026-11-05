@@ -3,7 +3,16 @@
         <title>All Posts - gowinder&#39;s Blog</title>
         <link>https://gowinder.work/en/posts/</link>
         <description>All Posts | gowinder&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 31 Oct 2026 10:00:00 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/en/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 05 Nov 2026 15:00:00 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/en/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Grok Bot, Claude Code, and DeepSeek Harness: one result file that saves most of the tokens</title>
+    <link>https://gowinder.work/en/agent-handoff-result-file/</link>
+    <pubDate>Thu, 05 Nov 2026 15:00:00 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/agent-handoff-result-file/</guid>
+    <description><![CDATA[<p>I keep a handful of Grok bots across a few projects: a game, some small SEO sites, a few MCP tools of my own. They plan and schedule. The actual work, writing code, running tests, clicking through a browser, goes to two agents on my Mac: dsh in a sandbox, and Claude Code via <code>claude -p</code>.</p>
+<p>Heavy work on the laptop, coordination in the cloud. The seam between them was the problem. Bots bill by the token, and a long context is both expensive and dumber. The first version of the handoff was me copy-pasting: I would run dsh or Claude Code myself and paste the terminal output back into the chat. The delay was tolerable. The cost was not. That block of output sat in every later turn, and the bot would read logs and think and slowly lose track of what it had said ten minutes earlier.</p>]]></description>
+</item>
+<item>
     <title>Batch renaming files from an Excel or CSV list: three approaches that actually work</title>
     <link>https://gowinder.work/en/batch-renaming-files-from-excel-csv/</link>
     <pubDate>Sat, 31 Oct 2026 10:00:00 &#43;0800</pubDate>
@@ -233,15 +242,6 @@ I debugged it for two days, asked <code>chatgpt</code>, asked <code>gemini pro</
 <h1 id="a-problem-caused-by-a-youtube-app-using-quic">A Problem Caused by a YouTube App Using QUIC</h1>
 <h2 id="problem-description">Problem Description</h2>
 <p>At home, an <code>r2s</code> serves as the bypass router using <code>sing-box</code> in <code>tun</code> mode. I had always used a <code>cn2 gia</code> line, and every night I&rsquo;d watch videos on <code>youtube</code> on my <code>apple tv</code> before going to sleep, with no problems. This month the server&rsquo;s traffic ran out, so I switched to <code>hysteria2</code> on an ordinary line. It was fine all day, but come evening <code>youtube</code> was completely unwatchable. I figured <code>udp</code> packet loss was probably severe in the evening, so I didn&rsquo;t bother with it.</p>]]></description>
-</item>
-<item>
-    <title>Migrating My Home Server from a Dell R720 to a Snail Interstellar &#43; MacBook Pro</title>
-    <link>https://gowinder.work/en/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro/</link>
-    <pubDate>Mon, 11 Mar 2024 17:16:15 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://gowinder.work/en/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro/</guid>
-    <description><![CDATA[<h1 id="migrating-my-home-server-from-a-dell-r720-to-a-snail-interstellar--macbook-pro">Migrating My Home Server from a Dell R720 to a Snail Interstellar + MacBook Pro</h1>
-<p>A few years ago I got into <code>HomeLab</code> and bought a second-hand <code>Dell R720</code> rack server to use as a home server. But this server&rsquo;s power consumption was too high—dual <code>cpu</code>s idled at nearly 200w. After switching to low-power <code>Xeon</code>s and installing only one <code>cpu</code>, it was still 100w+. Over a year the electricity bill added up, and in summer it got very hot. Later I used the <code>ipmi</code> tool and wrote some code in <code>python</code> to adjust the loud fans based on temperature, which made it much more comfortable, but in summer as the room temperature rose the fans still ramped up their speed dramatically. I always wanted to switch to a low-power server. I&rsquo;d previously bought a <code>Snail Interstellar</code>, which uses a <code>j1900</code> and has very low power consumption, so I migrated the home server from the <code>Dell R720</code> to the <code>Snail Interstellar</code>.</p>]]></description>
 </item>
 </channel>
 </rss>

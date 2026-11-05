@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>用 Grok Bot 指挥 Claude Code 与 DeepSeek Harness：一个结果文件省掉大半 token - gowinder个人博客</title><meta name="Description" content="记录生活,编码,折腾,杂七杂八"><meta property="og:url" content="https://gowinder.work/agent-handoff-result-file/">
+  <meta property="og:site_name" content="gowinder个人博客">
+  <meta property="og:title" content="用 Grok Bot 指挥 Claude Code 与 DeepSeek Harness：一个结果文件省掉大半 token">
+  <meta property="og:description" content="我用一堆 Grok Bot 管几个项目，游戏、SEO 小站、自己的 MCP 工具都有。它们负责想事情和排期，真正写代码、跑测试、点浏览器的活丢给本机 Mac 上的两个 agent，dsh 跑在沙箱里，Claude Code 用 claude -p 非交互地改文件。">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-11-05T15:00:00+08:00">
+    <meta property="article:modified_time" content="2026-11-05T15:00:00+08:00">
+    <meta property="article:tag" content="Agent">
+    <meta property="article:tag" content="Claude Code">
+    <meta property="article:tag" content="工作流">
+    <meta property="article:tag" content="自动化">
+    <meta property="article:tag" content="Notion">
+    <meta property="og:image" content="https://gravatar.com/userimage/16926726/2de44cb9918f08ff7f430244b10bf37b.jpeg?size=256">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://gravatar.com/userimage/16926726/2de44cb9918f08ff7f430244b10bf37b.jpeg?size=256">
+  <meta name="twitter:title" content="用 Grok Bot 指挥 Claude Code 与 DeepSeek Harness：一个结果文件省掉大半 token">
+  <meta name="twitter:description" content="我用一堆 Grok Bot 管几个项目，游戏、SEO 小站、自己的 MCP 工具都有。它们负责想事情和排期，真正写代码、跑测试、点浏览器的活丢给本机 Mac 上的两个 agent，dsh 跑在沙箱里，Claude Code 用 claude -p 非交互地改文件。">
+<meta name="application-name" content="gowinder个人博客">
+<meta name="apple-mobile-web-app-title" content="gowinder个人博客"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://gowinder.work/agent-handoff-result-file/" /><link rel="prev" href="https://gowinder.work/batch-rename-from-excel-csv/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "用 Grok Bot 指挥 Claude Code 与 DeepSeek Harness：一个结果文件省掉大半 token",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/gowinder.work\/agent-handoff-result-file\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/gowinder.work\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","keywords": "agent, claude code, 工作流, 自动化, notion","wordcount":  3438 ,
+        "url": "https:\/\/gowinder.work\/agent-handoff-result-file\/","datePublished": "2026-11-05T15:00:00+08:00","dateModified": "2026-11-05T15:00:00+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/gowinder.work\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "作者"
+            },"description": ""
+    }
+    </script>
+    </head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="gowinder个人博客"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw' aria-hidden='true'></i></span>Gowinder</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/categories/documentation/"> 文档 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="/projects/"> 项目 </a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a><a href="javascript:void(0);" class="menu-item language" title="选择语言">
+                    <i class="fa fa-globe" aria-hidden="true"></i>                      
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/en/agent-handoff-result-file/">English</option><option value="/agent-handoff-result-file/" selected>简体中文</option></select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="gowinder个人博客"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw' aria-hidden='true'></i></span>Gowinder</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/categories/documentation/" title="">文档</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="/projects/" title="">项目</a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">
+                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/en/agent-handoff-result-file/">English</option><option value="/agent-handoff-result-file/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">用 Grok Bot 指挥 Claude Code 与 DeepSeek Harness：一个结果文件省掉大半 token</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>作者</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2026-11-05">2026-11-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 3438 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 7 分钟&nbsp;<span id="/agent-handoff-result-file/" class="leancloud_visitors" data-flag-title="用 Grok Bot 指挥 Claude Code 与 DeepSeek Harness：一个结果文件省掉大半 token">
+                        <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#先约定结果文件">先约定结果文件</a></li>
+    <li><a href="#我以为后台跑完会叫醒我">我以为后台跑完会叫醒我</a></li>
+    <li><a href="#不结束本轮挂住等">不结束本轮，挂住等</a></li>
+    <li><a href="#四十分钟交一次班">四十分钟交一次班</a></li>
+    <li><a href="#最贵的用法">最贵的用法</a></li>
+    <li><a href="#只读-ok-和-summary">只读 ok 和 summary</a></li>
+    <li><a href="#notion-那本账">Notion 那本账</a></li>
+    <li><a href="#权限开小一点">权限开小一点</a></li>
+    <li><a href="#浏览器只认-ego-lite">浏览器只认 ego lite</a></li>
+    <li><a href="#连不上本机的时候">连不上本机的时候</a></li>
+    <li><a href="#两个技能">两个技能</a></li>
+    <li><a href="#现在的约定">现在的约定</a></li>
+    <li><a href="#后来我把重活收了回来">后来我把重活收了回来</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>我用一堆 Grok Bot 管几个项目，游戏、SEO 小站、自己的 MCP 工具都有。它们负责想事情和排期，真正写代码、跑测试、点浏览器的活丢给本机 Mac 上的两个 agent，dsh 跑在沙箱里，Claude Code 用 <code>claude -p</code> 非交互地改文件。</p>
+<p>重活在本机，协调在云端，中间那条缝一直不好处理。Bot 自己有额度，上下文一长就贵，也容易犯迷糊。最早的版本是人肉粘贴，我自己开 dsh 或 Claude Code，跑完把终端输出整段贴回对话。慢还能忍，难受的是那段输出会一直压在后面的每一轮里，bot 一边读日志一边想下一步，读着读着连自己前面说过什么都不太确定。</p>
+<p>后来定了一件事，执行方干完活写一个结果文件，人不用再搬日志。好处是文件待在磁盘上，bot 想知道什么就读什么，没读的那部分不占上下文，执行方也不用等人来问。</p>
+<figure><a class="lightgallery" href="/images/agent-handoff-loop.svg" title="Grok Bot 与 Mac 执行方之间只传结果文件的交接流程" data-thumbnail="/images/agent-handoff-loop.svg" data-sub-html="<h2>任务下发、写结果文件、dsh-wait 打印三行，回到 bot 的就只有 ok= 和 summary=。</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/agent-handoff-loop.svg"
+            data-srcset="/images/agent-handoff-loop.svg, /images/agent-handoff-loop.svg 1.5x, /images/agent-handoff-loop.svg 2x"
+            data-sizes="auto"
+            alt="Grok Bot 与 Mac 执行方之间只传结果文件的交接流程" width="480" />
+    </a><figcaption class="image-caption">任务下发、写结果文件、<code>dsh-wait</code> 打印三行，回到 bot 的就只有 <code>ok=</code> 和 <code>summary=</code>。</figcaption>
+    </figure>
+<h2 id="先约定结果文件">先约定结果文件</h2>
+<p>字段顺序固定：<code>ok</code>、<code>summary</code>、<code>task</code>、<code>finished_at</code>、<code>changed</code>、<code>next</code>、<code>detail</code>。失败也要写，<code>ok</code> 放 false，<code>summary</code> 说清楚卡在哪。密钥不进这个文件。</p>
+<p>dsh 的结果写在工作区的 <code>.dsh-results/&lt;task-id&gt;.json</code>。我一开始想写 <code>~/.dsh-results</code>，试了才发现沙箱写不出工作区以外，这个念头当场作废。Claude Code 写在 <code>.claude-results/&lt;task-id&gt;.json</code>，整个目录丢进 <code>.gitignore</code>。两边都先写临时文件再 <code>mv</code> 到正式名字，免得协调方读到写了一半的 JSON。</p>
+<p>有了文件，下一个念头自然是让 bot 等着。</p>
+<h2 id="我以为后台跑完会叫醒我">我以为后台跑完会叫醒我</h2>
+<p>本机放了个 <code>dsh-wait</code>，每 15 秒看一眼结果文件在不在，出现了就只打印 <code>ok=</code>、<code>summary=</code>、<code>file=</code> 三行，超时退出。想法很顺：bot 把脚本丢到后台，结束本轮，Mac 跑完自然会把它叫醒。我信这个方案，是因为云端的后台命令确实会回调，我把同一个印象直接搬到了本机 Shell 上，没去验证 Mac 这边有没有这种机制。</p>
+<p>不会。Mac 上的后台 Shell 跑完不叫醒 bot，只有云端自己的后台命令才有那个回调。这一点我踩过两次。竞品调研那次，结果文件早就躺在那了，bot 一声不响睡到我主动去问；试玩测试又来一遍。任务没丢，bot 半天没汇报，省下来的那点 token 早就亏回去了。</p>
+<p>所以流程按这台机器的规则写：本机 Shell 跑完不回调，任何一步都不许等回调。</p>
+<h2 id="不结束本轮挂住等">不结束本轮，挂住等</h2>
+<p>改法是别结束本轮。<code>dsh-wait</code> 启动之后，bot 用 AwaitShell 原地等，匹配 <code>^ok=</code> 这一行，一轮大约 13 分钟，没等到就再等一轮，等到了只报 <code>ok</code> 和 <code>summary</code>。等待期间没有新东西进上下文。</p>
+<p>接着撞上第二个限制，Grok Bot 单轮大约 50 分钟会被系统掐掉。任务长一点，bot 就在等待里被杀，那一轮等的 13 分钟白等。</p>
+<h2 id="四十分钟交一次班">四十分钟交一次班</h2>
+<p>绕过去靠接龙。等到差不多 40 分钟还没结果，让 bot 给自己定一个 5 分钟后触发的一次性提醒，安静结束本轮；闹钟响了先删掉提醒，再接着 <code>dsh-wait</code>。40 分钟一次微唤醒，离 50 分钟硬限还差一截，代价只是每轮多醒一次。</p>
+<p>顺带一个参数：<code>dsh-wait</code> 默认超时 30 分钟，对长任务太短，后来长活一律设 2 小时。</p>
+<h2 id="最贵的用法">最贵的用法</h2>
+<p>中间有段时间，别的 bot 走了另一条路，自己 <code>nohup claude -p</code>，每半小时去读一次进度文件，定时把进度和截图发出来。看着挺勤快，其实是最费 token 的用法，每隔半小时就把一份大文件重新拉进上下文。</p>
+<p>后来做了一次审计，同一套技能下，样板 bot（006）整条链路按规矩走，另一只（005）几乎每个环节都错，nohup 轮询进度文件就是它。规则于是写成硬话：禁止 nohup 之后轮询进度文件，每个任务只起一个 <code>dsh-wait</code>，禁止定时读进度。</p>
+<h2 id="只读-ok-和-summary">只读 ok 和 summary</h2>
+<p>上下文纪律最后收成一句话，<code>detail</code> 永远留在磁盘上。bot 之间交接、向人汇报、执行方回传，都只带 <code>ok</code>、<code>summary</code> 和结果文件路径，<code>changed</code> 短的话可以捎上。要细节就用 <code>plutil</code> 加 <code>rg</code> 从 JSON 里抽那一段，不许 <code>cat</code> 整份文件，更不许把整份日志贴进对话。</p>
+<p><code>summary</code> 后来加了 200 字硬上限。起因是有个任务往里塞了五百多字，读完发现那就是一份报告，进上下文的量和粘贴日志差不多。200 字大概是既能说清做没做成、又不会让人滚屏的长度，多出来的内容一律落到 <code>detail</code>。</p>
+<h2 id="notion-那本账">Notion 那本账</h2>
+<p>活多了得有个地方看进度。开工前在 Notion 建一行或复用一行，状态设进行中，带上来源（哪个 bot）、编号（项目号）和完整 prompt。成功改成已完成，摘要进备注；失败或超时，状态留着不动，备注写失败原因。失败不改成已完成，是为了下次翻表还能看见它没做完，写成完成等于把它埋了。</p>
+<p>两个坑。来源和编号是 select 列，填表里没有的选项会直接写不进去，得先改表结构。还有一列叫 note，那是我自己的进度日志，bot 一个字都不能碰，它只能用备注。</p>
+<h2 id="权限开小一点">权限开小一点</h2>
+<p>Claude Code 默认给 <code>--permission-mode acceptEdits</code>，能改文件，不能跑任意命令。要跑构建、测试、git、ego-browser 了，再上 <code>--allowedTools</code> 的最小白名单。<code>--dangerously-skip-permissions</code> 和 bypassPermissions 除非我在对话里明说，否则不用。</p>
+<p>启动时把完整命令行写进 <code>.claude-results/&lt;task-id&gt;.log</code> 第一行，权限模式和 allowedTools 都在里面。事后想查当时开了哪些权限，翻这一行就够。prompt 另外存成 <code>.prompt.md</code>，免得命令行长得吓人。</p>
+<h2 id="浏览器只认-ego-lite">浏览器只认 ego lite</h2>
+<p>本机的浏览器测试固定在 ego lite，应用在 <code>/Applications/ego lite.app</code>，命令行是 <code>~/.local/bin/ego-browser</code>。prompt 里写死步骤：先 <code>ego-browser skill</code> 读用法，会话名用 task id，优先连本地预览，做完关页。Playwright、Puppeteer、无头 Chromium 都不许用，失败了也不许退回去用。Claude 那边给 <code>Bash(ego-browser:*)</code> 一条就够。</p>
+<h2 id="连不上本机的时候">连不上本机的时候</h2>
+<p>翻墙不稳的时候 bot 连不上 Mac。有只 bot 自作主张设成每 15 分钟查一次，到晚上能醒几十次，多数是白醒，纯烧额度。现在约定，连不上就定时查，最多 2 小时一次；人等不及自己戳一下；连上了立刻回到每个任务一个 <code>dsh-wait</code>。</p>
+<h2 id="两个技能">两个技能</h2>
+<p>这些规矩散在对话里会走样，最后落成两个技能文件：<code>dsh result json</code> 和 <code>claude result json</code>。后者开头写明结果文件、等待、Notion 都照前一份来，只有启动那段不同。</p>
+<p>两个文件里最常被复制出去的是三段模板。结果文件那段，每个任务 prompt 末尾都贴一遍：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">When done, write `.dsh-results/&lt;task-id&gt;.json` at the
+</span></span><span class="line"><span class="cl">workspace root with exactly these top-level keys, in this
+</span></span><span class="line"><span class="cl">order:
+</span></span><span class="line"><span class="cl">- `ok`: true if the task fully succeeded, false otherwise
+</span></span><span class="line"><span class="cl">- `summary`: one sentence, hard limit 200 characters, what
+</span></span><span class="line"><span class="cl">happened or why it failed
+</span></span><span class="line"><span class="cl">- `task`: the task id
+</span></span><span class="line"><span class="cl">- `finished_at`: ISO 8601 time with offset
+</span></span><span class="line"><span class="cl">- `changed`: list of files, commits, or resources changed
+</span></span><span class="line"><span class="cl">- `next`: what a human or caller should do next, or empty
+</span></span><span class="line"><span class="cl">- `detail`: the full output, logs, diffs, and reasoning
+</span></span><span class="line"><span class="cl">Write it to a temp file in `.dsh-results/` first, then `mv`
+</span></span><span class="line"><span class="cl">it into place. Write the file even on failure. Never put
+</span></span><span class="line"><span class="cl">secrets, tokens, or keys in it.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>交给 Claude Code 时，路径换成 <code>.claude-results/&lt;task-id&gt;.json</code>。</p>
+<p>任务碰到浏览器，再贴一段限制：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Browser testing: use only ego lite through the `ego-browser`
+</span></span><span class="line"><span class="cl">CLI.
+</span></span><span class="line"><span class="cl">First run `ego-browser skill` and follow the guide it
+</span></span><span class="line"><span class="cl">prints.
+</span></span><span class="line"><span class="cl">Do not install, import, or launch Playwright, Puppeteer,
+</span></span><span class="line"><span class="cl">headless Chromium, or Chrome.
+</span></span><span class="line"><span class="cl">Use one TaskSpace named after the task id, open only the
+</span></span><span class="line"><span class="cl">URLs the task needs, close the pages you opened and call
+</span></span><span class="line"><span class="cl">`finish()` at the end.
+</span></span><span class="line"><span class="cl">If ego-browser fails, report ok false with the error; do not
+</span></span><span class="line"><span class="cl">fall back to another browser.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Claude Code 的启动命令，<code>$FLAGS</code> 里是 <code>--permission-mode acceptEdits</code> 和这次的工具白名单，先把整串写进 log 第一行，事后查它当时拿到了什么权限：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">&#34;# cmd: claude -p &lt;prompt.md&gt; </span><span class="nv">$FLAGS</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">  claude -p <span class="s2">&#34;</span><span class="k">$(</span>cat &lt;prompt.md&gt;<span class="k">)</span><span class="s2">&#34;</span> <span class="nv">$FLAGS</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span> &gt; .claude-results/&lt;task-id&gt;.log 2&gt;<span class="p">&amp;</span><span class="m">1</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="现在的约定">现在的约定</h2>
+<p>短版本，如果还要这样接：</p>
+<ul>
+<li><code>dsh result json</code> 和 <code>claude result json</code> 两个技能，所有 bot 共用</li>
+<li>结果文件就七个字段，<code>summary</code> 不超过 200 字</li>
+<li>等结果用 <code>~/.local/bin/dsh-wait &lt;结果文件&gt; [间隔秒=15] [超时秒]</code> 配 AwaitShell，40 分钟交一次班</li>
+<li>读结果先看 <code>ok</code> 和 <code>summary</code>，<code>detail</code> 按需切片</li>
+<li>Notion 进行中，成功改已完成，失败留在进行中</li>
+<li>Claude 用 acceptEdits 加最小 allowedTools，命令行进日志首行</li>
+<li>浏览器只认 ego lite</li>
+<li>不做的四件事：结束本轮空等 Mac 叫醒，nohup 后轮询进度，把 detail 贴进聊天，15 分钟空转检查</li>
+</ul>
+<h2 id="后来我把重活收了回来">后来我把重活收了回来</h2>
+<p>这套东西能跑，但它有成本。省下的是上下文，省不掉的是编排方自己的额度和稳定性：每 40 分钟接一次龙，连不上要退避，结果回来还得判读，全都压在那个 bot 上。做到后面我算了一笔很朴素的账，写代码、跑测试这些活，我在 dsh 里自己动手，上下文在我眼前，看得见也改得快；让云端 bot 隔着云端和本机两头指挥，光对齐状态就要来回好几轮。</p>
+<p>于是分工改了。写代码、跑 dsh 和 Claude Code，我自己来；Grok Bot 以后主要做调研和 SEO 推广。那类活它确实比我划算，信息散在网页上，它能并着翻，还不用我在旁边盯着。</p>
+<p>结果文件那套东西我没删，还留着。两个技能文档也留着，<code>dsh result json</code> 和 <code>claude result json</code>，谁要接就照着做。真正贵的地方在于把大结果反复读进编排方的上下文，结果文件加一句 200 字的 summary，是在编排方和执行方之间立的一道闸。闸还在，只是现在过闸的活儿少了。</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2026-11-05</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/agent-handoff-result-file/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://gowinder.work/agent-handoff-result-file/" data-title="用 Grok Bot 指挥 Claude Code 与 DeepSeek Harness：一个结果文件省掉大半 token" data-hashtags="agent,claude code,工作流,自动化,notion"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://gowinder.work/agent-handoff-result-file/" data-hashtag="agent"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://gowinder.work/agent-handoff-result-file/" data-title="用 Grok Bot 指挥 Claude Code 与 DeepSeek Harness：一个结果文件省掉大半 token"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://gowinder.work/agent-handoff-result-file/" data-title="用 Grok Bot 指挥 Claude Code 与 DeepSeek Harness：一个结果文件省掉大半 token"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://gowinder.work/agent-handoff-result-file/" data-title="用 Grok Bot 指挥 Claude Code 与 DeepSeek Harness：一个结果文件省掉大半 token"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/agent/">Agent</a>,&nbsp;<a href="/tags/claude-code/">Claude Code</a>,&nbsp;<a href="/tags/%E5%B7%A5%E4%BD%9C%E6%B5%81/">工作流</a>,&nbsp;<a href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/">自动化</a>,&nbsp;<a href="/tags/notion/">Notion</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/batch-rename-from-excel-csv/" class="prev" rel="prev" title="用 Excel 或 CSV 批量重命名文件：三种能落地的做法"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>用 Excel 或 CSV 批量重命名文件：三种能落地的做法</a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript><div id="utterances" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.143.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.5.0/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"gowinder/hugo-comment"},"valine":{"appId":"QGzwQXOqs5JOhN4RGPOkR2mR-MdYXbMMI","appKey":"WBmoGyJtbqUswvfLh6L8iEBr","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-CN","pageSize":10,"placeholder":"你的评论 ...","recordIP":true,"serverURLs":"https://leancloud.hugoloveit.com","visitor":true}},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.zh-cn","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

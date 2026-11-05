@@ -3,12 +3,44 @@
         <title>Tags - Tag - gowinder&#39;s Blog</title>
         <link>https://gowinder.work/en/tags/</link>
         <description>Tags - Tag - gowinder&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 31 Oct 2026 10:00:00 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/en/tags/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 05 Nov 2026 15:00:00 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/en/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>Agent</title>
+    <link>https://gowinder.work/en/tags/agent/</link>
+    <pubDate>Thu, 05 Nov 2026 15:00:00 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/tags/agent/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>Automation</title>
     <link>https://gowinder.work/en/tags/automation/</link>
-    <pubDate>Sat, 31 Oct 2026 10:00:00 &#43;0800</pubDate>
+    <pubDate>Thu, 05 Nov 2026 15:00:00 &#43;0800</pubDate>
     <author>Author</author>
     <guid>https://gowinder.work/en/tags/automation/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Claude Code</title>
+    <link>https://gowinder.work/en/tags/claude-code/</link>
+    <pubDate>Thu, 05 Nov 2026 15:00:00 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/tags/claude-code/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Notion</title>
+    <link>https://gowinder.work/en/tags/notion/</link>
+    <pubDate>Thu, 05 Nov 2026 15:00:00 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/tags/notion/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Workflow</title>
+    <link>https://gowinder.work/en/tags/workflow/</link>
+    <pubDate>Thu, 05 Nov 2026 15:00:00 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/tags/workflow/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
@@ -49,38 +81,6 @@
     <pubDate>Wed, 28 Oct 2026 14:30:00 &#43;0800</pubDate>
     <author>Author</author>
     <guid>https://gowinder.work/en/tags/astro/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Cloudflare</title>
-    <link>https://gowinder.work/en/tags/cloudflare/</link>
-    <pubDate>Wed, 28 Oct 2026 14:30:00 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://gowinder.work/en/tags/cloudflare/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Indie</title>
-    <link>https://gowinder.work/en/tags/indie/</link>
-    <pubDate>Wed, 28 Oct 2026 14:30:00 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://gowinder.work/en/tags/indie/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>PSEO</title>
-    <link>https://gowinder.work/en/tags/pseo/</link>
-    <pubDate>Wed, 28 Oct 2026 14:30:00 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://gowinder.work/en/tags/pseo/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Side-Project</title>
-    <link>https://gowinder.work/en/tags/side-project/</link>
-    <pubDate>Wed, 28 Oct 2026 14:30:00 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://gowinder.work/en/tags/side-project/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

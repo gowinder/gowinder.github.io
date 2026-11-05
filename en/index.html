@@ -111,6 +111,12 @@
         alt="https://gravatar.com/userimage/16926726/2de44cb9918f08ff7f430244b10bf37b.jpeg?size=256"
         title="https://gravatar.com/userimage/16926726/2de44cb9918f08ff7f430244b10bf37b.jpeg?size=256" /></a></div><h1 class="home-title">gowinder's Blog</h1><div class="home-subtitle"><div id="id-1" class="typeit"></div></div><div class="links"><a href="https://github.com/gowinder" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="mailto:gowinder@hotmail.com" title="Email" rel="me"><i class="far fa-envelope fa-fw" aria-hidden="true"></i></a><a href="/en/index.xml" title="RSS" target="_blank" rel="noopener noreffer me"><i class="fas fa-rss fa-fw" aria-hidden="true"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/en/agent-handoff-result-file/">Grok Bot, Claude Code, and DeepSeek Harness: one result file that saves most of the tokens</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span>&nbsp;<span class="post-publish">published on <time datetime="2026-11-05">2026-11-05</time></span></div><div class="content"><p>I keep a handful of Grok bots across a few projects: a game, some small SEO sites, a few MCP tools of my own. They plan and schedule. The actual work, writing code, running tests, clicking through a browser, goes to two agents on my Mac: dsh in a sandbox, and Claude Code via <code>claude -p</code>.</p>
+<p>Heavy work on the laptop, coordination in the cloud. The seam between them was the problem. Bots bill by the token, and a long context is both expensive and dumber. The first version of the handoff was me copy-pasting: I would run dsh or Claude Code myself and paste the terminal output back into the chat. The delay was tolerable. The cost was not. That block of output sat in every later turn, and the bot would read logs and think and slowly lose track of what it had said ten minutes earlier.</p></div><div class="post-footer">
+        <a href="/en/agent-handoff-result-file/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/agent/">Agent</a>,&nbsp;<a href="/en/tags/claude-code/">Claude Code</a>,&nbsp;<a href="/en/tags/workflow/">Workflow</a>,&nbsp;<a href="/en/tags/automation/">Automation</a>,&nbsp;<a href="/en/tags/notion/">Notion</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/en/batch-renaming-files-from-excel-csv/">Batch renaming files from an Excel or CSV list: three approaches that actually work</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span>&nbsp;<span class="post-publish">published on <time datetime="2026-10-31">2026-10-31</time></span></div><div class="content"><h1 id="batch-renaming-files-from-an-excel-or-csv-list">Batch renaming files from an Excel or CSV list</h1>
 <p>If you are cleaning up photos, scans, lecture videos or invoices, the situation is usually the same: <strong>you already have a table</strong>. Column A is the current filename, column B is what you want it to be, maybe column C is a capture date and D is a client code. The hard part is not inventing new names. It is turning that table into actual renames on disk.</p></div><div class="post-footer">
@@ -293,22 +299,6 @@ I debugged it for two days, asked <code>chatgpt</code>, asked <code>gemini pro</
 </div></div><div class="post-footer">
         <a href="/en/bulk-delete-key-in-cloudflare-kv/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/cloudflare/">Cloudflare</a>,&nbsp;<a href="/en/tags/cloudflare-pages/">Cloudflare Pages</a>,&nbsp;<a href="/en/tags/cloudflare-kv/">Cloudflare KV</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
-            <a href="/en/migrate-remix-to-cloudflare/"><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/migrate-remix-to-cloudflare/featured-image.png"
-        data-srcset="/migrate-remix-to-cloudflare/featured-image.png, /migrate-remix-to-cloudflare/featured-image.png 1.5x, /migrate-remix-to-cloudflare/featured-image.png 2x"
-        data-sizes="auto"
-        alt="/migrate-remix-to-cloudflare/featured-image.png"
-        title="A step-by-step account of migrating an existing Remix project to Cloudflare Pages and Workers." /></a>
-        </div><h1 class="single-title" itemprop="name headline">
-        <a href="/en/migrate-remix-to-cloudflare/">Migrating a Remix Project to Cloudflare</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span>&nbsp;<span class="post-publish">published on <time datetime="2024-04-08">2024-04-08</time></span></div><div class="content"><h1 id="migrating-a-remix-project-to-cloudflare">Migrating a Remix Project to Cloudflare</h1>
-<p>Recently I developed a project using <code>remix</code>. I hadn&rsquo;t done full-stack development before; I&rsquo;d used <code>reactjs</code> a bit but wasn&rsquo;t very familiar with it, and I was using <code>Nextjs</code>, which felt very hard to use — mainly because after version <code>13</code> switched to the <code>app router</code>, I was somewhat at a loss.</p>
-<p>Later I discovered <code>remix</code>, which uses filename-based routing directly and is much more convenient, and the <code>loader</code> and <code>action</code> approach is also very intuitive, so I chose <code>remix</code>.</p></div><div class="post-footer">
-        <a href="/en/migrate-remix-to-cloudflare/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/remix/">Remix</a>,&nbsp;<a href="/en/tags/cloudflare/">Cloudflare</a>,&nbsp;<a href="/en/tags/cloudflare-pages/">Cloudflare Pages</a>,&nbsp;<a href="/en/tags/cloudflare-workers/">Cloudflare Workers</a>,&nbsp;<a href="/en/tags/machine-learning/">Machine Learning</a></div></div>
 </article><ul class="pagination"><li class="page-item active">
                     <span class="page-link">
                         <a href="/en/">1</a>

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 760" width="500" height="760" role="img" aria-label="Grok Bot 与 Mac 执行方之间只传结果文件的交接流程">
+  <rect width="500" height="760" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 z" fill="#334155"/>
+    </marker>
+  </defs>
+  <style>
+    .box { fill: #f8fafc; stroke: #334155; stroke-width: 1.3; }
+    .cloud { fill: #eef2ff; }
+    .mac { fill: #f0f7f0; }
+    .file { fill: #fdf6ec; }
+    .wait { fill: #f6f6f6; }
+    .t { font-family: ui-sans-serif, -apple-system, "Helvetica Neue", Arial, sans-serif; fill: #1e293b; }
+    .title { font-size: 18px; font-weight: 600; }
+    .sub { font-size: 13px; fill: #475569; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px; fill: #334155; }
+    .lbl { font-size: 12.5px; fill: #475569; }
+    .arrow { stroke: #334155; stroke-width: 1.6; fill: none; marker-end: url(#arrow); }
+    .bad { font-size: 12.5px; fill: #b91c1c; }
+    .note { font-size: 12px; fill: #64748b; }
+  </style>
+
+  <rect class="box cloud" x="20" y="20" width="460" height="110" rx="9"/>
+  <text class="t title" x="40" y="52">Grok Bot</text>
+  <text class="t sub" x="40" y="74">cloud orchestrator · 50 min per turn</text>
+  <text class="t mono" x="40" y="98">reads ok= summary= only</text>
+  <text class="t sub" x="40" y="118">never the log, never the screenshot</text>
+
+  <rect class="box mac" x="20" y="190" width="460" height="110" rx="9"/>
+  <text class="t title" x="40" y="222">Mac agents</text>
+  <text class="t sub" x="40" y="246">dsh sandbox · claude -p</text>
+  <text class="t sub" x="40" y="268">write the file when the job ends</text>
+  <text class="t sub" x="40" y="288">the shell never wakes the bot</text>
+
+  <rect class="box file" x="20" y="370" width="460" height="140" rx="9"/>
+  <text class="t title" x="40" y="402">result file</text>
+  <text class="t mono" x="40" y="430">.dsh-results/&lt;task-id&gt;.json</text>
+  <text class="t mono" x="40" y="452">.claude-results/&lt;task-id&gt;.json</text>
+  <text class="t sub" x="40" y="480">ok · summary · task · finished_at · changed · next · detail</text>
+
+  <rect class="box wait" x="20" y="580" width="460" height="110" rx="9"/>
+  <text class="t title" x="40" y="612">dsh-wait</text>
+  <text class="t sub" x="40" y="636">checks every 15 s</text>
+  <text class="t mono" x="40" y="660">prints ok= summary= file=</text>
+  <text class="t sub" x="40" y="680">three lines leave the Mac, nothing else</text>
+
+  <path class="arrow" d="M250,130 V185"/>
+  <text class="t lbl" x="262" y="162">task id + prompt</text>
+
+  <path class="arrow" d="M250,300 V365"/>
+  <text class="t lbl" x="262" y="337">write on exit</text>
+
+  <path class="arrow" d="M250,510 V575"/>
+  <text class="t lbl" x="262" y="547">reads the file</text>
+
+  <text class="t bad" x="20" y="722">✗ nohup … &amp; 每 30 分钟轮询进度文件：整份文件反复进上下文</text>
+  <text class="t note" x="20" y="744">006 走完上面这条链；005 用轮询把额度烧在了重复读取上</text>
+</svg>

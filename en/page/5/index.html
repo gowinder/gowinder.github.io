@@ -111,6 +111,31 @@
         alt="https://gravatar.com/userimage/16926726/2de44cb9918f08ff7f430244b10bf37b.jpeg?size=256"
         title="https://gravatar.com/userimage/16926726/2de44cb9918f08ff7f430244b10bf37b.jpeg?size=256" /></a></div><h1 class="home-title">gowinder's Blog</h1><div class="home-subtitle"><div id="id-1" class="typeit"></div></div><div class="links"><a href="https://github.com/gowinder" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="mailto:gowinder@hotmail.com" title="Email" rel="me"><i class="far fa-envelope fa-fw" aria-hidden="true"></i></a><a href="/en/index.xml" title="RSS" target="_blank" rel="noopener noreffer me"><i class="fas fa-rss fa-fw" aria-hidden="true"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/en/deploying-a-two-node-ha-cluster-and-glusterfs-distributed-file-system-on-proxmox-ve/">Notes on Deploying a Two-Node HA Cluster and GlusterFS Distributed File System on Proxmox VE</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-02-09">2023-02-09</time></span></div><div class="content"><h1 id="deploying-a-two-node-ha-cluster-and-glusterfs-distributed-file-system-on-proxmox-ve">Deploying a Two-Node HA Cluster and GlusterFS Distributed File System on Proxmox VE</h1>
+<p><strong>Make sure both pve nodes run the same version</strong></p>
+<p>Two <code>proxmox ve</code> nodes, enabling high availability with automatic <code>vm</code> and <code>lxc</code> migration</p>
+<h2 id="edit-the-hosts-file">Edit the <code>hosts</code> file</h2>
+<p>In <code>/etc/hosts</code> on both <code>pve</code> machines, add the following <code>host</code> entries:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">192.168.1.229 pve1.local pve1
+</span></span><span class="line"><span class="cl">192.168.1.230 pve2.local pve2
+</span></span><span class="line"><span class="cl">192.168.1.229 gluster1
+</span></span><span class="line"><span class="cl">192.168.1.230 gluster2
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="install-glusterfs">Install <code>glusterfs</code></h2>
+<p>The following operations are performed on both machines, referred to here as <code>pve1</code> and <code>pve2</code></p></div><div class="post-footer">
+        <a href="/en/deploying-a-two-node-ha-cluster-and-glusterfs-distributed-file-system-on-proxmox-ve/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/proxmox-ve/">Proxmox Ve</a>,&nbsp;<a href="/en/tags/linux/">Linux</a>,&nbsp;<a href="/en/tags/distributed/">Distributed</a>,&nbsp;<a href="/en/tags/dev-notes/">Dev-Notes</a>,&nbsp;<a href="/en/tags/deployment/">Deployment</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/en/jwtservice-error-in-nestjs-missing-secret/">JwtService Error in NestJS: Missing SECRET</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-02-07">2023-02-07</time></span></div><div class="content"><h1 id="jwtservice-error-in-nestjs-jsonwebtokenerror-secret-or-public-key-must-be-provided">JwtService Error in NestJS: &ldquo;JsonWebTokenError: secret or public key must be provided&rdquo;</h1>
 <h2 id="cause">Cause</h2>
@@ -307,11 +332,6 @@
 <p>Create <code>new_setting_page.html</code> and <code>new_setting_page.js</code> — that is the content.</p>
 <p>Create <code>new_setting_section.htm</code> and <code>new_setting_section.js</code> — that is the section.</p></div><div class="post-footer">
         <a href="/en/chromium-new-settings-page/">Read More</a></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/en/recttransform-coordinates/">Coordinates in RectTransform</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span>&nbsp;<span class="post-publish">published on <time datetime="2016-07-26">2016-07-26</time></span></div><div class="content"><p>I had always been using position to get the value, but later I found that the code output didn&rsquo;t match what the inspector displayed. So I pulled down the uGUI source code and read it, and only then did I learn that you have to use anchoredPosition.</p></div><div class="post-footer">
-        <a href="/en/recttransform-coordinates/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/unity3d/">Unity3d</a>,&nbsp;<a href="/en/tags/game-development/">Game Development</a></div></div>
 </article><ul class="pagination"><li class="page-item ">
                     <span class="page-link">
                         <a href="/en/">1</a>

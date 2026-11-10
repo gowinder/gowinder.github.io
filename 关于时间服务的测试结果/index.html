@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>关于时间服务的测试结果 - gowinder个人博客</title><meta name="Description" content="记录生活,编码,折腾,杂七杂八"><meta property="og:url" content="https://gowinder.work/%E5%85%B3%E4%BA%8E%E6%97%B6%E9%97%B4%E6%9C%8D%E5%8A%A1%E7%9A%84%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C/">
+        <title>关于时间服务的测试结果 - gowinder个人博客</title><meta name="Description" content="经过简单测试，生成500000个计时器，将指针分别插入list和priority_queue，其中priority_queue使用vector容器(不能使用list),先使用list自的sort函数，用时516ms,反复测了几次，都"><meta property="og:url" content="https://gowinder.work/%E5%85%B3%E4%BA%8E%E6%97%B6%E9%97%B4%E6%9C%8D%E5%8A%A1%E7%9A%84%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C/">
   <meta property="og:site_name" content="gowinder个人博客">
   <meta property="og:title" content="关于时间服务的测试结果">
   <meta property="og:description" content="经过简单测试，生成500000个计时器，将指针分别插入list和priority_queue，其中priority_queue使用vector容器(不能使用list),先使用list自的sort函数，用时516ms,反复测了几次，都在500ms以上550ms以下 ,对priority_queue进行插入，在500000个的基础上，进行100000次插入，总用时31ms，平均每个0.00031ms
@@ -72,7 +72,7 @@ priority_queue trace 1
                 }},"author": {
                 "@type": "Person",
                 "name": "作者"
-            },"description": ""
+            },"description": "经过简单测试，生成500000个计时器，将指针分别插入list和priority_queue，其中priority_queue使用vector容器(不能使用list),先使用list自的sort函数，用时516ms,反复测了几次，都"
     }
     </script>
     </head>

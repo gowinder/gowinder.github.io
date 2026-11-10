@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>关于服务器自动同步时间服务引起的问题 - gowinder个人博客</title><meta name="Description" content="记录生活,编码,折腾,杂七杂八"><meta property="og:url" content="https://gowinder.work/%E5%85%B3%E4%BA%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%87%AA%E5%8A%A8%E5%90%8C%E6%AD%A5%E6%97%B6%E9%97%B4%E6%9C%8D%E5%8A%A1%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98/">
+        <title>关于服务器自动同步时间服务引起的问题 - gowinder个人博客</title><meta name="Description" content="士兵突击有一次出现故障，就是因为同步服务把时间同步回去了，这样就造成当前时间可能会比内存中已经发现的事件的时间更早，一相减，是一个负数，因为我们使用的是DWORD，所以就变成一个很大的数目，造成数据异常。 解决办法：首先最好关掉服务器上的时"><meta property="og:url" content="https://gowinder.work/%E5%85%B3%E4%BA%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%87%AA%E5%8A%A8%E5%90%8C%E6%AD%A5%E6%97%B6%E9%97%B4%E6%9C%8D%E5%8A%A1%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98/">
   <meta property="og:site_name" content="gowinder个人博客">
   <meta property="og:title" content="关于服务器自动同步时间服务引起的问题">
   <meta property="og:description" content="士兵突击有一次出现故障，就是因为同步服务把时间同步回去了，这样就造成当前时间可能会比内存中已经发现的事件的时间更早，一相减，是一个负数，因为我们使用的是DWORD，所以就变成一个很大的数目，造成数据异常。
@@ -52,7 +52,7 @@
                 }},"author": {
                 "@type": "Person",
                 "name": "作者"
-            },"description": ""
+            },"description": "士兵突击有一次出现故障，就是因为同步服务把时间同步回去了，这样就造成当前时间可能会比内存中已经发现的事件的时间更早，一相减，是一个负数，因为我们使用的是DWORD，所以就变成一个很大的数目，造成数据异常。 解决办法：首先最好关掉服务器上的时"
     }
     </script>
     </head>

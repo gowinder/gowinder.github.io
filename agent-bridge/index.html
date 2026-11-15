@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>离开工位以后：我给 Mac 上的 agent 装了一个手机入口，以及为什么手机上说「可以，合并」不算数 - gowinder个人博客</title><meta name="Description" content="上一篇写结果文件，讲的是协调方和执行方怎么交接。那套东西能跑，但有个前提我当时绕过去了：执行方在本机，人也得在本机。后来我把重活收回本机自己跑，这个前提就变成了每天的问题——活在 Mac 上，人经常不在 Mac 跟前。"><meta property="og:url" content="https://gowinder.work/agent-bridge/">
+  <meta property="og:site_name" content="gowinder个人博客">
+  <meta property="og:title" content="离开工位以后：我给 Mac 上的 agent 装了一个手机入口，以及为什么手机上说「可以，合并」不算数">
+  <meta property="og:description" content="上一篇写结果文件，讲的是协调方和执行方怎么交接。那套东西能跑，但有个前提我当时绕过去了：执行方在本机，人也得在本机。后来我把重活收回本机自己跑，这个前提就变成了每天的问题——活在 Mac 上，人经常不在 Mac 跟前。">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-11-15T20:00:00+08:00">
+    <meta property="article:modified_time" content="2026-11-15T20:00:00+08:00">
+    <meta property="article:tag" content="Agent">
+    <meta property="article:tag" content="Claude Code">
+    <meta property="article:tag" content="Pi">
+    <meta property="article:tag" content="工作流">
+    <meta property="article:tag" content="远程控制">
+    <meta property="og:image" content="https://gravatar.com/userimage/16926726/2de44cb9918f08ff7f430244b10bf37b.jpeg?size=256">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://gravatar.com/userimage/16926726/2de44cb9918f08ff7f430244b10bf37b.jpeg?size=256">
+  <meta name="twitter:title" content="离开工位以后：我给 Mac 上的 agent 装了一个手机入口，以及为什么手机上说「可以，合并」不算数">
+  <meta name="twitter:description" content="上一篇写结果文件，讲的是协调方和执行方怎么交接。那套东西能跑，但有个前提我当时绕过去了：执行方在本机，人也得在本机。后来我把重活收回本机自己跑，这个前提就变成了每天的问题——活在 Mac 上，人经常不在 Mac 跟前。">
+<meta name="application-name" content="gowinder个人博客">
+<meta name="apple-mobile-web-app-title" content="gowinder个人博客"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://gowinder.work/agent-bridge/" /><link rel="prev" href="https://gowinder.work/agent-handoff-result-file/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "离开工位以后：我给 Mac 上的 agent 装了一个手机入口，以及为什么手机上说「可以，合并」不算数",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/gowinder.work\/agent-bridge\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/gowinder.work\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","keywords": "agent, claude code, pi, 工作流, 远程控制","wordcount":  3897 ,
+        "url": "https:\/\/gowinder.work\/agent-bridge\/","datePublished": "2026-11-15T20:00:00+08:00","dateModified": "2026-11-15T20:00:00+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/gowinder.work\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "作者"
+            },"description": "上一篇写结果文件，讲的是协调方和执行方怎么交接。那套东西能跑，但有个前提我当时绕过去了：执行方在本机，人也得在本机。后来我把重活收回本机自己跑，这个前提就变成了每天的问题——活在 Mac 上，人经常不在 Mac 跟前。"
+    }
+    </script>
+    </head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="gowinder个人博客"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw' aria-hidden='true'></i></span>Gowinder</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/categories/documentation/"> 文档 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="/projects/"> 项目 </a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a><a href="javascript:void(0);" class="menu-item language" title="选择语言">
+                    <i class="fa fa-globe" aria-hidden="true"></i>                      
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/en/agent-bridge/">English</option><option value="/agent-bridge/" selected>简体中文</option></select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="gowinder个人博客"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw' aria-hidden='true'></i></span>Gowinder</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/categories/documentation/" title="">文档</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="/projects/" title="">项目</a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">
+                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/en/agent-bridge/">English</option><option value="/agent-bridge/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">离开工位以后：我给 Mac 上的 agent 装了一个手机入口，以及为什么手机上说「可以，合并」不算数</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>作者</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2026-11-15">2026-11-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 3897 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 8 分钟&nbsp;<span id="/agent-bridge/" class="leancloud_visitors" data-flag-title="离开工位以后：我给 Mac 上的 agent 装了一个手机入口，以及为什么手机上说「可以，合并」不算数">
+                        <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#动手之前先验证了五轮">动手之前先验证了五轮</a></li>
+    <li><a href="#架构没什么花样">架构没什么花样</a></li>
+    <li><a href="#功能都是用出来的">功能都是用出来的</a></li>
+    <li><a href="#我最常用的反而是三个小功能">我最常用的反而是三个小功能</a></li>
+    <li><a href="#批准不了这件事我想了很久">批准不了，这件事我想了很久</a></li>
+    <li><a href="#现在的状态">现在的状态</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>上一篇写结果文件，讲的是协调方和执行方怎么交接。那套东西能跑，但有个前提我当时绕过去了：执行方在本机，人也得在本机。后来我把重活收回本机自己跑，这个前提就变成了每天的问题——活在 Mac 上，人经常不在 Mac 跟前。</p>
+<p>我平时用 Claude Code 和 pi，都接自己的 magpie 网关，日常模型是 DeepSeek v4.1 Flash，编码和杂活都是它，设计审核另找一个强一点的模型看（gpt 6.1 sol，之前用 Opus 5.5，用了几年的账号被封了才换）。活以编码为主，也拿它们上网收集资料，最近还找工作、投简历。会话开多少看事情多少，闲时一两个，忙起来十个以上，每个管一摊事。agent 跑完一轮或者问了个只有我能答的问题，就停在那儿等着。我在工位上当然没事，问题是我总有不在的时候，出去遛个狗，那个会话就干等半小时。</p>
+<p>远程桌面我试过，为回一句话开个桌面太重了。隧道之类的方案要在内网留个入口，不想留。官方倒是有个 Remote Control，后面会说为什么用不了。看了一圈，自己做了一个，Agent Bridge，11 月 10 号建仓，14 号发到 0.11.0。干的事情很窄：手机浏览器里能看到 Mac 上的 agent 会话，能回话，如此而已。</p>
+<h2 id="动手之前先验证了五轮">动手之前先验证了五轮</h2>
+<p>这次没直接写代码。11 月 9 号先写了份方案，花了几天做预验证，主要是怕几个想当然。有的话听起来理所当然，实测完全不是那么回事，这个项目后面最大的坑也确实不在写不出来，在想错了。</p>
+<p>验证下来，中继这条路是通的，Cloudflare 的 Durable Object 能做 WebSocket 房间，Noise 有标准实现，端到端加密不用自己发明。Claude Desktop 的 Code 会话，桌面开着的时候能往里送话，每个会话进程都在 <code>/tmp/cc-socks/</code> 下面挂了个 socket，实测送进去的消息落在同一条记录的末尾，界面上看得见，也没把记录写分叉。ChatGPT 那边的 Codex 线程能走它自己的 IPC，不过只能发给桌面里已经打开的线程，没打开的发不了。</p>
+<p>也有当场划掉的。Claude 的普通聊天在本机根本没有本地记录，我装的这个版本连聊天界面都没有，这条线就不要再想了。所以最后的结论只能写「部分通过」，范围就按这个划，通哪条做哪条。</p>
+<h2 id="架构没什么花样">架构没什么花样</h2>
+<p>Mac 上装个 daemon，加一个菜单栏的小应用。它只往外连，连到 Cloudflare 的中继上挂着，家里网络不开放任何入站的东西，不用端口映射也不用改防火墙，我比较在意这条，为了远程回个话在路由器上开个洞，我不干。</p>
+<p>中继看不见内容。浏览器和 Mac 之间是 Noise 端到端加密的，它只管转发密文，顶多知道房间号、什么时候有流量、多大的包。配对也不搞账号那一套，本机生成一个一次性令牌，只有哈希传到中继，令牌本身放在链接的 # 后面，那部分浏览器本来就不会发给服务器。配对时手机和 Mac 上各出一个 6 位的码，对上了才算数，令牌用完就废，几分钟过期。</p>
+<p>麻烦的是适配器，每个 agent 存会话、收消息的方式都不一样，只能一个个接。Claude Desktop 的 Code、Claude Code 的命令行、ChatGPT 的 Codex、Codex 命令行、Antigravity、DeepSeek Harness，后来还有 pi。接完还得如实标能力，读不全的就标 partial。这些 agent 没有哪个给过稳定的接口，硬说全支持是骗人，也骗自己。</p>
+<h2 id="功能都是用出来的">功能都是用出来的</h2>
+<p>第一版只有镜像，把桌面上的会话搬到手机上，能看能回。够用了几天，然后就卡在批准上，手机上说「可以，合并」，它不认。这个问题值得单独一节，放在后面。</p>
+<p>破局的是托管会话。往别人的会话里塞话，语义上就是转达，那就不塞了，让 Bridge 自己拉起一个 Claude Code 进程，输入口归它管。从网页新建的会话都是这种，工具调用要批准、agent 要提问，都走协议回到浏览器，手机上点同意或者拒绝，是真的生效。代价是这种会话在桌面应用里看不到，两边是两套。0.1.7 上线之后，我的使用习惯就慢慢全挪过来了。</p>
+<p>剩下的改动回头看全是被小事追的。Bridge 重启会把它拉起的进程一起带死，跑了一半的那轮就没了，后来加了个常驻的守护进程专门持有这些子进程，Bridge 重启只断一下连接，回合照跑，回来把中间的输出补上。agent 半夜跑完我不知道，又加了推送。再后来 pi 也能托管了，它本来就是我用得最多的，网页上能换模型、能给子代理单独设模型和思考等级。</p>
+<h2 id="我最常用的反而是三个小功能">我最常用的反而是三个小功能</h2>
+<p>todo 是 0.11 才加的，加之前我没觉得缺，加完离不开了。用着用着会突然想起一件事，可能是个功能，可能是个 bug，当时手头这个对话正在跑，又不想为它新开一个对话、多拉一个分支出来，就先记在 todo 里，标一下是功能还是 bug。等这个对话跑完、空出来了，点一下那条，它就接到输入框里发过去了。东西存在 Bridge 自己的库里，不怕清浏览器缓存，换台机器就是另一个库，这点要注意。</p>
+<p>侧边栏在手机上不明显，在桌面浏览器里是主力。左边那一列可以一直开着，结构树、历史都在，哪个会话在跑、哪个在等我回话、哪个有没看的新回复，一眼就知道。会话里那条信息栏也是，上下文用了多少、挂着哪些后台任务，摊开摆在那儿。比起在终端里滚来滚去翻 TUI，我现在更愿意开着网页看，信息是摊开的，不用记。</p>
+<p>还有一个快速切换，顶栏一个按钮，在最近两个对话之间来回跳。听起来小，用起来停不下来，因为我发现自己同时深跟的对话其实只有两个，开十个是有的，但注意力就两个之间转。再多，维护不过来。说到底 agent 再能跑，最后排队等的是我，AI 时代瓶颈是人脑，这个没办法。</p>
+<p>这些功能现在长在我的日常动线里。通勤路上、遛狗的时候、在沙发上看电视、晚上躺床上、甚至坐在马桶上——只要想起来某个会话该回了，掏出手机就能看、能回、能安排下一件。能这样用的前提是托管模式基本就是全功能：不是桌面版的只读镜像，是会话本身就在手机上完整地跑。</p>
+<h2 id="批准不了这件事我想了很久">批准不了，这件事我想了很久</h2>
+<p>往桌面会话里送话只有 peer socket 这一条路，送进去的话会被包上一层：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;cross-session-message from=&#34;uds:/tmp/cc-socks/&lt;pid&gt;.sock&#34; from-name=&#34;Agent Bridge · &lt;设备名&gt;&#34;&gt;
+</span></span><span class="line"><span class="cl">你说的话
+</span></span><span class="line"><span class="cl">&lt;/cross-session-message&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>收到话的 agent 分得清内容和人。改代码、查东西这种，它照做。但合并、发版、删东西这类事，它会回一句，这话是另一个会话转来的，不算我本人说的。我一开始觉得这是障碍，后来觉得它是对的。Bridge 要是把这层包拆了，把手机上的话伪装成我在桌面输入框里打的，那任何一段被转发的文字都能冒充我去批准一次上线。这个口子不能开，开了这个工具的安全模型就全塌了。</p>
+<p>所以现在就三条土办法。要么最后一步我回电脑自己点；要么在桌面那个会话里提前说好，检查都过了的 PR 你自己合，手机上再说合并，算在提前给的授权里；要么让它把命令打出来，我复制到终端自己执行。都不优雅，但语义是干净的。真要手机上批，就开托管会话，那边没有这个问题。</p>
+<p>官方的 Remote Control 我认真查过，它在官方应用里发的话确实算本人回合，没有这层包。查完发现三条对不上：它要 claude.ai 订阅登录，不认 API key 也不认第三方网关，我本机走 magpie 又没登录，跑起来直接报错；它不给本地程序留接口，Bridge 没办法把手机的输入递进去；还有它的记录存在 Anthropic 那边，我做这个东西的前提就是内容不出自己的机器和密文通道。功能是好功能，解的不是我这个问题。</p>
+<p>还有条路实验过，<code>claude --resume -p</code>，拿会话 id 把话追加进去。它是真执行，连提交都给你做了，但执行的不是桌面里开着的那个进程，是新拉起来的一个。桌面那个不读磁盘上的记录，新说的话进不了它的脑子，而且两个进程同时写一个记录文件，写着写着就分叉了，后加的那些话成了没人认的孤儿。回执说成功了，实际状态对不上，这种比做不到还坏，停了，不做。</p>
+<p>终端里直接跑的会话还有个小问题，它弹出选择题的时候，网页上是答不了的。试了几种送法，要么通道不理，要么写进去的地方根本不是输入队列，要么权限不够。只有当会话跑在 herdr 的面板里时有办法，那个面板能把真按键送进去，先看清光标指着哪个选项，再按方向键和回车，只敢做单选，多选不敢碰。没有 herdr 的时候，老实回终端答。</p>
+<p>剩下的限制一次说完吧。网页只能新建托管会话，别的适配器都是附着在已经有的会话上。读取普遍不全，缺工具输出、缺附件、缺早期的对话，都有可能。Antigravity 的桌面版只能看不能发。协议里有些方法写了还没实现，网页拿新消息靠轮询，聊天页五秒刷一次，不实时。界面只有中文。记录文件落在磁盘上没加密，靠系统给的目录权限挡着。一个房间只能绑一台 Mac，大概就这些，想起来再补 CHANGELOG 里都有。</p>
+<h2 id="现在的状态">现在的状态</h2>
+<p>0.11.0，MIT 开源，GitHub 上 gowinder/agent-bridge，有 DMG 下载，网页端在 agent-bridge.craftstead.app。签名公证要配了苹果的证书才有，没配的版本第一次打开得去系统设置里手动放行，README 里写了，没什么好美化的。</p>
+<p>我自己的用法换过三茬。一开始用 Claude 桌面版的会话，镜像看着是方便，但真到要提交代码、开 PR 的时候就卡住，批准不了事，最后一步总得回电脑。后来换成 Bridge 托管的 Claude Code，能跑完整流程了。现在主要用托管的 pi，功能比较全，也比较开放，模型、子代理、思考等级这些都能在网页上直接设。</p>
+<p>还有一件说出来有点绕的事：Agent Bridge 后期的开发，大部分就是托管 pi 通过 Agent Bridge 自己开发的。我有灵感先丢进它自带的 todo 里记着，完成一个，手动安排下一个，人在哪儿都能推进。等 app 设置里那个「自动更新」开关做到开了就全自己来（检测到新版就自己下载装上，不用我点「检查更新」和「立即更新」），我基本可以脱离 Mac 主机用它——工具做到能脱离自己的开发机继续开发自己，这条线算是闭环了。</p>
+<p>下一步不急着加新 agent。订阅推送欠着，做了轮询就能退，那是体验上最大的一块，pi 托管还有几个边角在磨，先磨完再说。</p>
+<p>最后留个问题，也是我真想听听别人怎么想的：一个能从手机直达你开发机的工具，做到什么程度你才敢让它常开着。我的答案就是前面那些，只出不进，中继看不见明文，批准权不外借。哪条松了，我宁可不用它。</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2026-11-15</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/agent-bridge/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://gowinder.work/agent-bridge/" data-title="离开工位以后：我给 Mac 上的 agent 装了一个手机入口，以及为什么手机上说「可以，合并」不算数" data-hashtags="agent,claude code,pi,工作流,远程控制"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://gowinder.work/agent-bridge/" data-hashtag="agent"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://gowinder.work/agent-bridge/" data-title="离开工位以后：我给 Mac 上的 agent 装了一个手机入口，以及为什么手机上说「可以，合并」不算数"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://gowinder.work/agent-bridge/" data-title="离开工位以后：我给 Mac 上的 agent 装了一个手机入口，以及为什么手机上说「可以，合并」不算数"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://gowinder.work/agent-bridge/" data-title="离开工位以后：我给 Mac 上的 agent 装了一个手机入口，以及为什么手机上说「可以，合并」不算数"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/agent/">Agent</a>,&nbsp;<a href="/tags/claude-code/">Claude Code</a>,&nbsp;<a href="/tags/pi/">Pi</a>,&nbsp;<a href="/tags/%E5%B7%A5%E4%BD%9C%E6%B5%81/">工作流</a>,&nbsp;<a href="/tags/%E8%BF%9C%E7%A8%8B%E6%8E%A7%E5%88%B6/">远程控制</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/agent-handoff-result-file/" class="prev" rel="prev" title="用 Grok Bot 指挥 Claude Code 与 DeepSeek Harness：一个结果文件省掉大半 token"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>用 Grok Bot 指挥 Claude Code 与 DeepSeek Harness：一个结果文件省掉大半 token</a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript><div id="utterances" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.143.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.5.0/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"gowinder/hugo-comment"},"valine":{"appId":"QGzwQXOqs5JOhN4RGPOkR2mR-MdYXbMMI","appKey":"WBmoGyJtbqUswvfLh6L8iEBr","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-CN","pageSize":10,"placeholder":"你的评论 ...","recordIP":true,"serverURLs":"https://leancloud.hugoloveit.com","visitor":true}},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.zh-cn","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

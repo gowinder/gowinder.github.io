@@ -111,6 +111,11 @@
         alt="https://gravatar.com/userimage/16926726/2de44cb9918f08ff7f430244b10bf37b.jpeg?size=256"
         title="https://gravatar.com/userimage/16926726/2de44cb9918f08ff7f430244b10bf37b.jpeg?size=256" /></a></div><h1 class="home-title">gowinder's Blog</h1><div class="home-subtitle"><div id="id-1" class="typeit"></div></div><div class="links"><a href="https://github.com/gowinder" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="mailto:gowinder@hotmail.com" title="Email" rel="me"><i class="far fa-envelope fa-fw" aria-hidden="true"></i></a><a href="/en/index.xml" title="RSS" target="_blank" rel="noopener noreffer me"><i class="fas fa-rss fa-fw" aria-hidden="true"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/en/agent-bridge/">Away From the Desk: I Gave My Mac Agents a Phone Entrance, and Why "Yes, Merge It" on a Phone Doesn't Count</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span>&nbsp;<span class="post-publish">published on <time datetime="2026-11-15">2026-11-15</time></span></div><div class="content"><p>The last post was about the result file, how the coordinator and the executor hand work over. That setup works, but I skipped past a precondition at the time: the executor runs on my machine, so the human has to be at my machine too. Later I moved the heavy work back onto my own laptop, and that precondition turned into a daily problem — the work lives on the Mac, and I am often not in front of the Mac.</p></div><div class="post-footer">
+        <a href="/en/agent-bridge/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/agent/">Agent</a>,&nbsp;<a href="/en/tags/claude-code/">Claude Code</a>,&nbsp;<a href="/en/tags/pi/">Pi</a>,&nbsp;<a href="/en/tags/workflow/">Workflow</a>,&nbsp;<a href="/en/tags/remote-control/">Remote Control</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/en/agent-handoff-result-file/">Grok Bot, Claude Code, and DeepSeek Harness: one result file that saves most of the tokens</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span>&nbsp;<span class="post-publish">published on <time datetime="2026-11-05">2026-11-05</time></span></div><div class="content"><p>I keep a handful of Grok bots across a few projects: a game, some small SEO sites, a few MCP tools of my own. They plan and schedule. The actual work, writing code, running tests, clicking through a browser, goes to two agents on my Mac: dsh in a sandbox, and Claude Code via <code>claude -p</code>.</p>
 <p>Heavy work on the laptop, coordination in the cloud. The seam between them was the problem. Bots bill by the token, and a long context is both expensive and dumber. The first version of the handoff was me copy-pasting: I would run dsh or Claude Code myself and paste the terminal output back into the chat. The delay was tolerable. The cost was not. That block of output sat in every later turn, and the bot would read logs and think and slowly lose track of what it had said ten minutes earlier.</p></div><div class="post-footer">
@@ -264,41 +269,6 @@
 I debugged it for two days, asked <code>chatgpt</code>, asked <code>gemini pro</code>, tried many methods, with no result.</p></div><div class="post-footer">
         <a href="/en/honojs-usequery-error/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/nextjs/">Nextjs</a>,&nbsp;<a href="/en/tags/cloudflare/">Cloudflare</a>,&nbsp;<a href="/en/tags/cloudflare-pages/">Cloudflare Pages</a>,&nbsp;<a href="/en/tags/cloudflare-workers/">Cloudflare Workers</a>,&nbsp;<a href="/en/tags/honojs/">Honojs</a>,&nbsp;<a href="/en/tags/usequery/">Usequery</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
-            <a href="/en/bulk-delete-key-in-cloudflare-kv/"><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/bulk-delete-key-in-cloudflare-kv/featured-image.png"
-        data-srcset="/bulk-delete-key-in-cloudflare-kv/featured-image.png, /bulk-delete-key-in-cloudflare-kv/featured-image.png 1.5x, /bulk-delete-key-in-cloudflare-kv/featured-image.png 2x"
-        data-sizes="auto"
-        alt="/bulk-delete-key-in-cloudflare-kv/featured-image.png"
-        title="A quick way to list all keys in a Cloudflare KV namespace and bulk delete them with Wrangler and jq." /></a>
-        </div><h1 class="single-title" itemprop="name headline">
-        <a href="/en/bulk-delete-key-in-cloudflare-kv/">Bulk Delete Keys in `Cloudflare KV`</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span>&nbsp;<span class="post-publish">published on <time datetime="2024-04-18">2024-04-18</time></span></div><div class="content"><h1 id="bulk-delete-keys-in-cloudflare-kv">Bulk Delete Keys in <code>Cloudflare KV</code></h1>
-<h2 id="get-the-list-of-keys">Get the List of <code>key</code>s</h2>
-<p>Run this first</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">pnpm wrangler kv:key list --namespace-id<span class="o">=</span><span class="si">${</span><span class="nv">namespaceID</span><span class="si">}</span> &gt; PURGE.json<span class="sb">`</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>This gives you the complete list of <code>key</code>s; if you need a condition, just add: <code>--prefix=&quot;prefix&quot;</code></p>
-<h2 id="bulk-delete">Bulk Delete</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">cat purge.json <span class="p">|</span> jq -r <span class="s1">&#39;.[].name&#39;</span> <span class="p">|</span> xargs -I <span class="o">{}</span> pnpm wrangler kv:key delete --namespace-id<span class="o">=</span><span class="si">${</span><span class="nv">namespaceID</span><span class="si">}</span> <span class="o">{}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div></div><div class="post-footer">
-        <a href="/en/bulk-delete-key-in-cloudflare-kv/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/cloudflare/">Cloudflare</a>,&nbsp;<a href="/en/tags/cloudflare-pages/">Cloudflare Pages</a>,&nbsp;<a href="/en/tags/cloudflare-kv/">Cloudflare KV</a></div></div>
 </article><ul class="pagination"><li class="page-item active">
                     <span class="page-link">
                         <a href="/en/">1</a>

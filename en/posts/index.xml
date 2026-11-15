@@ -3,7 +3,15 @@
         <title>All Posts - gowinder&#39;s Blog</title>
         <link>https://gowinder.work/en/posts/</link>
         <description>All Posts | gowinder&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 05 Nov 2026 15:00:00 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/en/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 15 Nov 2026 20:00:00 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/en/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Away From the Desk: I Gave My Mac Agents a Phone Entrance, and Why &#34;Yes, Merge It&#34; on a Phone Doesn&#39;t Count</title>
+    <link>https://gowinder.work/en/agent-bridge/</link>
+    <pubDate>Sun, 15 Nov 2026 20:00:00 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://gowinder.work/en/agent-bridge/</guid>
+    <description><![CDATA[<p>The last post was about the result file, how the coordinator and the executor hand work over. That setup works, but I skipped past a precondition at the time: the executor runs on my machine, so the human has to be at my machine too. Later I moved the heavy work back onto my own laptop, and that precondition turned into a daily problem — the work lives on the Mac, and I am often not in front of the Mac.</p>]]></description>
+</item>
+<item>
     <title>Grok Bot, Claude Code, and DeepSeek Harness: one result file that saves most of the tokens</title>
     <link>https://gowinder.work/en/agent-handoff-result-file/</link>
     <pubDate>Thu, 05 Nov 2026 15:00:00 &#43;0800</pubDate>
@@ -231,17 +239,6 @@ I debugged it for two days, asked <code>chatgpt</code>, asked <code>gemini pro</
 <h2 id="gigabit-network-disconnection-problem">Gigabit Network Disconnection Problem</h2>
 <p>The migration is complete and I&rsquo;ve been using it for a while. The <code>Snail Interstellar</code>&rsquo;s power consumption is very low (compared with the <code>R720</code>&rsquo;s 100+ watts); with 3 <code>HDD</code>s and 1 <code>SSD</code> it draws 35 watts, less than 1 kWh a day—very nice.</p>
 <p>But there&rsquo;s currently a problem: on the <code>MacbookPro</code>, as soon as I close the lid, lock the screen, or close the remote desktop, the wired network adapter on the <code>Thunderbolt HUB</code> disconnects.</p>]]></description>
-</item>
-<item>
-    <title>A Problem Caused by a YouTube App Using QUIC</title>
-    <link>https://gowinder.work/en/sing-box-youtube-app-quic-issue/</link>
-    <pubDate>Sat, 16 Mar 2024 10:16:15 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://gowinder.work/en/sing-box-youtube-app-quic-issue/</guid>
-    <description><![CDATA[<hr>
-<h1 id="a-problem-caused-by-a-youtube-app-using-quic">A Problem Caused by a YouTube App Using QUIC</h1>
-<h2 id="problem-description">Problem Description</h2>
-<p>At home, an <code>r2s</code> serves as the bypass router using <code>sing-box</code> in <code>tun</code> mode. I had always used a <code>cn2 gia</code> line, and every night I&rsquo;d watch videos on <code>youtube</code> on my <code>apple tv</code> before going to sleep, with no problems. This month the server&rsquo;s traffic ran out, so I switched to <code>hysteria2</code> on an ordinary line. It was fine all day, but come evening <code>youtube</code> was completely unwatchable. I figured <code>udp</code> packet loss was probably severe in the evening, so I didn&rsquo;t bother with it.</p>]]></description>
 </item>
 </channel>
 </rss>

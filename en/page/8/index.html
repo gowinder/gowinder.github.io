@@ -111,6 +111,11 @@
         alt="https://gravatar.com/userimage/16926726/2de44cb9918f08ff7f430244b10bf37b.jpeg?size=256"
         title="https://gravatar.com/userimage/16926726/2de44cb9918f08ff7f430244b10bf37b.jpeg?size=256" /></a></div><h1 class="home-title">gowinder's Blog</h1><div class="home-subtitle"><div id="id-1" class="typeit"></div></div><div class="links"><a href="https://github.com/gowinder" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="mailto:gowinder@hotmail.com" title="Email" rel="me"><i class="far fa-envelope fa-fw" aria-hidden="true"></i></a><a href="/en/index.xml" title="RSS" target="_blank" rel="noopener noreffer me"><i class="fas fa-rss fa-fw" aria-hidden="true"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/en/google-wave-and-it-competition/">Thoughts on IT Competition, Inspired by Google Wave</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span>&nbsp;<span class="post-publish">published on <time datetime="2010-05-09">2010-05-09</time></span></div><div class="content"><p>Today I took my wife out for DQ, and then while keeping her company over a bowl of Ajisen ramen I drank some iced lemon water. The result was that the moment I got home I made a beeline for the toilet. Of course I didn&rsquo;t forget to bring a magazine — we have a pile of back issues at home, so I grabbed a copy of CBN Weekly at random, no idea which issue it was. Flipping through it, being an IT guy, IT is naturally what interests me most, so the article about Google Wave was the first thing I read.</p></div><div class="post-footer">
+        <a href="/en/google-wave-and-it-competition/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/random-thoughts/">Random Thoughts</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/en/formatted-log-output-approach/">How the Formatted Log Output Actually Works</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span>&nbsp;<span class="post-publish">published on <time datetime="2010-03-15">2010-03-15</time></span></div><div class="content"><p>The low-level function can keep using the old approach, writing strings directly. It gets called by the other log-output functions.</p>
 <p>Then write a proxy function that takes an XMLNODE parameter. This function accepts calls from all the other upper-level log-writing functions; the upper-level functions unify their log format, put the information into an XMLNODE, and then the proxy calls the low-level function to write the log.</p>
@@ -160,15 +165,6 @@ priority_queue trace 1<br>
 &hellip;.<br>
 So the test shows the priority queue is clearly faster than sorting the LIST myself — a great fit for what I need!</p></div><div class="post-footer">
         <a href="/en/time-service-benchmark-results/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/game-development/">Game Development</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/en/implementing-a-time-service/">How to Implement a Time Service</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span>&nbsp;<span class="post-publish">published on <time datetime="2010-03-11">2010-03-11</time></span></div><div class="content"><p>Use a singly or doubly linked list, or a priority queue (priority_queue).
-Each element in the queue is a timer object. A timer object holds the time difference measured from a standard point in time (when the program started running) — the later a timer is supposed to fire, the larger this value — along with the trigger event type.
-If you only use a linked list, you have to re-sort after every insertion. With a priority queue the insertion position is handled automatically, so I figure the priority queue should work better, though I still need to test it.
-On every heartbeat (the server thread loop), the time service&rsquo;s OnTicker function is called. It checks the time value of the first timer in the queue, and if the current time difference has reached or passed it, the timer is popped out and its trigger event is called.
-Right now there are two questions still unanswered:</p></div><div class="post-footer">
-        <a href="/en/implementing-a-time-service/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/game-development/">Game Development</a></div></div>
 </article><ul class="pagination"><li class="page-item ">
                     <span class="page-link">

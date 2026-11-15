@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Pi - 标签 - gowinder个人博客</title>
+        <link>https://gowinder.work/tags/pi/</link>
+        <description>Pi - 标签 - gowinder个人博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 15 Nov 2026 20:00:00 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/pi/" rel="self" type="application/rss+xml" /><item>
+    <title>离开工位以后：我给 Mac 上的 agent 装了一个手机入口，以及为什么手机上说「可以，合并」不算数</title>
+    <link>https://gowinder.work/agent-bridge/</link>
+    <pubDate>Sun, 15 Nov 2026 20:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://gowinder.work/agent-bridge/</guid>
+    <description><![CDATA[<p>上一篇写结果文件，讲的是协调方和执行方怎么交接。那套东西能跑，但有个前提我当时绕过去了：执行方在本机，人也得在本机。后来我把重活收回本机自己跑，这个前提就变成了每天的问题——活在 Mac 上，人经常不在 Mac 跟前。</p>]]></description>
+</item>
+</channel>
+</rss>

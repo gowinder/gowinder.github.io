@@ -111,6 +111,41 @@
         alt="https://www.gravatar.com/avatar/f54704641b5fd99f865013a8196d6caf?s=240&amp;d=mp"
         title="https://www.gravatar.com/avatar/f54704641b5fd99f865013a8196d6caf?s=240&amp;d=mp" /></a></div><h1 class="home-title">gowinder个人博客</h1><div class="home-subtitle"><div id="id-1" class="typeit"></div></div><div class="links"><a href="https://github.com/gowinder" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="https://steamcommunity.com/id/gowinder" title="Steam" target="_blank" rel="noopener noreffer me"><i class="fab fa-steam fa-fw" aria-hidden="true"></i></a><a href="https://www.douban.com/people/gowinder" title="豆瓣" target="_blank" rel="noopener noreffer me"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/douban.svg" aria-hidden="true"></i></a><a href="mailto:gowinder@hotmail.com" title="Email" rel="me"><i class="far fa-envelope fa-fw" aria-hidden="true"></i></a><a href="/index.xml" title="RSS" target="_blank" rel="noopener noreffer me"><i class="fas fa-rss fa-fw" aria-hidden="true"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
+            <a href="/bulk-delete-key-in-cloudflare-kv/"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/bulk-delete-key-in-cloudflare-kv/featured-image.png"
+        data-srcset="/bulk-delete-key-in-cloudflare-kv/featured-image.png, /bulk-delete-key-in-cloudflare-kv/featured-image.png 1.5x, /bulk-delete-key-in-cloudflare-kv/featured-image.png 2x"
+        data-sizes="auto"
+        alt="/bulk-delete-key-in-cloudflare-kv/featured-image.png"
+        title="/bulk-delete-key-in-cloudflare-kv/featured-image.png" /></a>
+        </div><h1 class="single-title" itemprop="name headline">
+        <a href="/bulk-delete-key-in-cloudflare-kv/">批量删除`Cloudflare KV`中的`key`</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>作者</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2024-04-18">2024-04-18</time></span></div><div class="content"><h1 id="批量删除cloudflare-kv中的key">批量删除<code>Cloudflare KV</code>中的<code>key</code></h1>
+<h2 id="取得key列表">取得<code>key</code>列表</h2>
+<p>先执行</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">pnpm wrangler kv:key list --namespace-id<span class="o">=</span><span class="si">${</span><span class="nv">namespaceID</span><span class="si">}</span> &gt; PURGE.json<span class="sb">`</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>拿到完整<code>key</code>列表, 如果要条件,就加上: <code>--prefix=&quot;prefix&quot;</code></p>
+<h2 id="批量删除">批量删除</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">cat purge.json <span class="p">|</span> jq -r <span class="s1">&#39;.[].name&#39;</span> <span class="p">|</span> xargs -I <span class="o">{}</span> pnpm wrangler kv:key delete --namespace-id<span class="o">=</span><span class="si">${</span><span class="nv">namespaceID</span><span class="si">}</span> <span class="o">{}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer">
+        <a href="/bulk-delete-key-in-cloudflare-kv/">阅读全文</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/cloudflare/">Cloudflare</a>,&nbsp;<a href="/tags/cloudflare-pages/">Cloudflare Pages</a>,&nbsp;<a href="/tags/cloudflare-kv/">Cloudflare KV</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
             <a href="/migrate-remix-to-cloudflare/"><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -189,22 +224,6 @@
 <p>前几年网<code>HomeLab</code>, 买了一台二手<code>Dell R720</code>机架服务器, 用来做家庭服务器. 但是由于这台服务器的功耗太高, 双<code>cpu</code>待机就要快200w, 换了低功耗的<code>志强</code>后,只安装一个<code>cpu</code>,也有100w+, 一年下来电费不少,而且,到了夏天,非常的热,后来使用<code>ipmi</code>工具,用<code>python</code>写了个代码,根据温度来调节暴力风扇,要舒服许多,但是,夏天,室温升高,风扇还是会平方提高转速. 一直想换成低功耗的服务器. 之前买了<code>蜗牛星际</code>, 这个使用的是<code>j1900</code>, 功耗很低的, 于是就把家庭服务器从<code>Dell R720</code>迁移到了<code>蜗牛星际</code>.</p></div><div class="post-footer">
         <a href="/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro/">阅读全文</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/homeserver/">Homeserver</a>,&nbsp;<a href="/tags/r720/">R720</a>,&nbsp;<a href="/tags/dell/">Dell</a>,&nbsp;<a href="/tags/macbookpro/">MacbookPro</a>,&nbsp;<a href="/tags/pve/">Pve</a>,&nbsp;<a href="/tags/%E8%9C%97%E7%89%9B%E6%98%9F%E9%99%85/">蜗牛星际</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
-            <a href="/use-chatgpt-to-make-a-sub-generator-script/"><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/use-chatgpt-to-make-a-sub-generator-script/featured-image.png"
-        data-srcset="/use-chatgpt-to-make-a-sub-generator-script/featured-image.png, /use-chatgpt-to-make-a-sub-generator-script/featured-image.png 1.5x, /use-chatgpt-to-make-a-sub-generator-script/featured-image.png 2x"
-        data-sizes="auto"
-        alt="/use-chatgpt-to-make-a-sub-generator-script/featured-image.png"
-        title="/use-chatgpt-to-make-a-sub-generator-script/featured-image.png" /></a>
-        </div><h1 class="single-title" itemprop="name headline">
-        <a href="/use-chatgpt-to-make-a-sub-generator-script/">使用chatgpt帮我编写一个给视频文件生成中文字幕的脚本</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>作者</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2024-03-06">2024-03-06</time></span></div><div class="content"><h1 id="使用chatgpt帮我编写一个给视频文件生成中文字幕的脚本">使用chatgpt帮我编写一个给视频文件生成中文字幕的脚本</h1>
-<h2 id="背景">背景</h2>
-<p>因为有些冷门的电影或者视频，很难找到中文字幕，但是又有故事情节，这时候就需要自己手动添加中文字幕。但是手动添加中文字幕非常耗时，尤其是对于长视频来说。所以我想要使用chatgpt来帮我编写一个脚本，能够自动给视频文件生成中文字幕。</p></div><div class="post-footer">
-        <a href="/use-chatgpt-to-make-a-sub-generator-script/">阅读全文</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/chatgpt/">Chatgpt</a>,&nbsp;<a href="/tags/shell-script/">Shell Script</a>,&nbsp;<a href="/tags/ffmpeg/">Ffmpeg</a>,&nbsp;<a href="/tags/whisper/">Whisper</a>,&nbsp;<a href="/tags/openai/">Openai</a>,&nbsp;<a href="/tags/chatgpt-subtitle-translator/">Chatgpt-Subtitle-Translator</a></div></div>
 </article><ul class="pagination"><li class="page-item ">
                     <span class="page-link">
                         <a href="/">1</a>

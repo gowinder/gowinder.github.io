@@ -110,7 +110,23 @@
         data-sizes="auto"
         alt="https://gravatar.com/userimage/16926726/2de44cb9918f08ff7f430244b10bf37b.jpeg?size=256"
         title="https://gravatar.com/userimage/16926726/2de44cb9918f08ff7f430244b10bf37b.jpeg?size=256" /></a></div><h1 class="home-title">gowinder's Blog</h1><div class="home-subtitle"><div id="id-1" class="typeit"></div></div><div class="links"><a href="https://github.com/gowinder" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="mailto:gowinder@hotmail.com" title="Email" rel="me"><i class="far fa-envelope fa-fw" aria-hidden="true"></i></a><a href="/en/index.xml" title="RSS" target="_blank" rel="noopener noreffer me"><i class="fas fa-rss fa-fw" aria-hidden="true"></i></a></div></div>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
+            <a href="/en/use-chatgpt-to-make-a-sub-generator-script/"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/use-chatgpt-to-make-a-sub-generator-script/featured-image.png"
+        data-srcset="/use-chatgpt-to-make-a-sub-generator-script/featured-image.png, /use-chatgpt-to-make-a-sub-generator-script/featured-image.png 1.5x, /use-chatgpt-to-make-a-sub-generator-script/featured-image.png 2x"
+        data-sizes="auto"
+        alt="/use-chatgpt-to-make-a-sub-generator-script/featured-image.png"
+        title="A walkthrough of prompting ChatGPT step by step to build a shell script that generates Chinese subtitles for video files using ffmpeg, whisper.cpp, and chatgpt-subtitle-translator." /></a>
+        </div><h1 class="single-title" itemprop="name headline">
+        <a href="/en/use-chatgpt-to-make-a-sub-generator-script/">Using ChatGPT to Write a Script for Generating Chinese Subtitles for Video Files</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span>&nbsp;<span class="post-publish">published on <time datetime="2024-03-06">2024-03-06</time></span></div><div class="content"><h1 id="using-chatgpt-to-write-a-script-for-generating-chinese-subtitles-for-video-files">Using ChatGPT to Write a Script for Generating Chinese Subtitles for Video Files</h1>
+<h2 id="background">Background</h2>
+<p>For some obscure movies or videos, it is hard to find Chinese subtitles even though they have a plot, so in these cases you have to add Chinese subtitles manually. But adding Chinese subtitles by hand is extremely time-consuming, especially for long videos. So I wanted to use ChatGPT to help me write a script that can automatically generate Chinese subtitles for video files.</p></div><div class="post-footer">
+        <a href="/en/use-chatgpt-to-make-a-sub-generator-script/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/chatgpt/">Chatgpt</a>,&nbsp;<a href="/en/tags/shell-script/">Shell Script</a>,&nbsp;<a href="/en/tags/ffmpeg/">Ffmpeg</a>,&nbsp;<a href="/en/tags/whisper/">Whisper</a>,&nbsp;<a href="/en/tags/openai/">Openai</a>,&nbsp;<a href="/en/tags/chatgpt-subtitle-translator/">Chatgpt-Subtitle-Translator</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/en/deploy-local-stable-diffusion-runtime-environment/">Deploy a Local Stable Diffusion Runtime Environment</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-04-23">2023-04-23</time></span></div><div class="content"><h1 id="deploy-a-local-stable-diffusion-runtime-environment">Deploy a Local Stable Diffusion Runtime Environment</h1>
 <p><code>midjourney</code> has been quite popular lately, but it has started charging—10 dollars a month, which is more than I can afford—so I switched to the open-source <code>Stable Diffusion</code>. You can deploy it on <code>Google Colab</code> with one click:
@@ -489,79 +505,6 @@
 <p>Notes:</p></div><div class="post-footer">
         <a href="/en/integrating-websocketgateway-with-microservices-in-nestjs/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/nestjs/">Nestjs</a>,&nbsp;<a href="/en/tags/typescript/">Typescript</a>,&nbsp;<a href="/en/tags/node/">Node</a>,&nbsp;<a href="/en/tags/dev-notes/">Dev-Notes</a>,&nbsp;<a href="/en/tags/microservice/">Microservice</a>,&nbsp;<a href="/en/tags/websocketg/">Websocketg</a>,&nbsp;<a href="/en/tags/websocketgateway/">Websocketgateway</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/en/adding-a-cron-job-for-automatic-trim-in-proxmox-ve/">Adding a Cron Job for Automatic TRIM in Proxmox VE</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-02-17">2023-02-17</time></span></div><div class="content"><h1 id="adding-a-cron-job-for-automatic-trim-in-proxmox-ve">Adding a Cron Job for Automatic TRIM in Proxmox VE</h1>
-<h2 id="check-the-status">Check the status</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl status fstrim.timer
-</span></span><span class="line"><span class="cl"><span class="c1"># output:</span>
-</span></span><span class="line"><span class="cl">● fstrim.timer - Discard unused blocks once a week
-</span></span><span class="line"><span class="cl">     Loaded: loaded <span class="o">(</span>/lib/systemd/system/fstrim.timer<span class="p">;</span> disabled<span class="p">;</span> vendor preset: enabled<span class="o">)</span>
-</span></span><span class="line"><span class="cl">     Active: inactive <span class="o">(</span>dead<span class="o">)</span>
-</span></span><span class="line"><span class="cl">    Trigger: n/a
-</span></span><span class="line"><span class="cl">   Triggers: ● fstrim.service
-</span></span><span class="line"><span class="cl">       Docs: man:fstrim
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="start-the-service">Start the service</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl start fstrim.timer
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="check-the-next-cleanup-time">Check the next cleanup time</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl list-timers --all
-</span></span><span class="line"><span class="cl"><span class="c1"># output:</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">NEXT                        LEFT           LAST                        PASSED     UNIT                         ACTIVATES
-</span></span><span class="line"><span class="cl">Fri 2023-02-17 23:54:54 CST 8h left        Thu 2023-02-16 23:54:54 CST 15h ago    systemd-tmpfiles-clean.timer systemd-tmpfiles-clean.servi&gt;
-</span></span><span class="line"><span class="cl">Sat 2023-02-18 00:00:00 CST 8h left        Fri 2023-02-17 00:00:00 CST 15h ago    atop-rotate.timer            atop-rotate.service
-</span></span><span class="line"><span class="cl">Sat 2023-02-18 00:00:00 CST 8h left        Fri 2023-02-17 00:00:00 CST 15h ago    logrotate.timer              logrotate.service
-</span></span><span class="line"><span class="cl">Sat 2023-02-18 00:00:00 CST 8h left        Fri 2023-02-17 00:00:00 CST 15h ago    man-db.timer                 man-db.service
-</span></span><span class="line"><span class="cl">Sat 2023-02-18 04:19:48 CST 13h left       Fri 2023-02-17 05:29:22 CST 9h ago     pve-daily-update.timer       pve-daily-update.service
-</span></span><span class="line"><span class="cl">Sat 2023-02-18 05:18:55 CST 14h left       Fri 2023-02-17 06:45:48 CST 8h ago     apt-daily.timer              apt-daily.service
-</span></span><span class="line"><span class="cl">Sat 2023-02-18 06:41:05 CST 15h left       Fri 2023-02-17 06:02:36 CST 9h ago     apt-daily-upgrade.timer      apt-daily-upgrade.service
-</span></span><span class="line"><span class="cl">Sun 2023-02-19 03:10:12 CST <span class="m">1</span> day 12h left Sun 2023-02-12 03:10:19 CST <span class="m">5</span> days ago e2scrub_all.timer            e2scrub_all.service
-</span></span><span class="line"><span class="cl">Mon 2023-02-20 00:37:59 CST <span class="m">2</span> days left    n/a                         n/a        fstrim.timer                 fstrim.service
-</span></span><span class="line"><span class="cl">n/a                         n/a            n/a                         n/a        pvesr.timer
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Done</p></div><div class="post-footer">
-        <a href="/en/adding-a-cron-job-for-automatic-trim-in-proxmox-ve/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/proxmox-ve/">Proxmox Ve</a>,&nbsp;<a href="/en/tags/linux/">Linux</a>,&nbsp;<a href="/en/tags/distributed/">Distributed</a>,&nbsp;<a href="/en/tags/ssd/">Ssd</a>,&nbsp;<a href="/en/tags/trim/">Trim</a>,&nbsp;<a href="/en/tags/cron/">Cron</a>,&nbsp;<a href="/en/tags/deployment/">Deployment</a></div></div>
 </article><ul class="pagination"><li class="page-item ">
                     <span class="page-link">
                         <a href="/en/">1</a>

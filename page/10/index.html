@@ -111,6 +111,31 @@
         alt="https://www.gravatar.com/avatar/f54704641b5fd99f865013a8196d6caf?s=240&amp;d=mp"
         title="https://www.gravatar.com/avatar/f54704641b5fd99f865013a8196d6caf?s=240&amp;d=mp" /></a></div><h1 class="home-title">gowinder个人博客</h1><div class="home-subtitle"><div id="id-1" class="typeit"></div></div><div class="links"><a href="https://github.com/gowinder" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="https://steamcommunity.com/id/gowinder" title="Steam" target="_blank" rel="noopener noreffer me"><i class="fab fa-steam fa-fw" aria-hidden="true"></i></a><a href="https://www.douban.com/people/gowinder" title="豆瓣" target="_blank" rel="noopener noreffer me"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/douban.svg" aria-hidden="true"></i></a><a href="mailto:gowinder@hotmail.com" title="Email" rel="me"><i class="far fa-envelope fa-fw" aria-hidden="true"></i></a><a href="/index.xml" title="RSS" target="_blank" rel="noopener noreffer me"><i class="fas fa-rss fa-fw" aria-hidden="true"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/%E6%96%87%E6%91%98%E9%AA%A8%E9%AA%BC%E5%8A%A8%E7%94%BB%E4%B8%AD%E7%9A%84%E5%9D%90%E6%A0%87%E6%8F%92%E5%80%BC/">文摘:骨骼动画中的坐标插值</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>作者</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2008-10-09">2008-10-09</time></span></div><div class="content"><p>摘之:Advanced.Animation.with.DirectX</p>
+<p>Here&rsquo;s where using key frames comes in handy. Suppose you want to calculate the orientation of the bones at<br>
+a specific timesay, at 648 milliseconds. That time just so happens to fall between the second and third keys<br>
+(148 milliseconds past the second key). Now, assume that the two transformation matrices represent the<br>
+orientations of each bone in the animation.<br>
+D3DXMATRIX matKey1, matKey2;<br>
+By taking each key and interpolating the values between them, you can come up with a transformation to use<br>
+at any time between the keys. In this example, at 648 milliseconds in the animation, you can interpolate the<br>
+transformations as follows:<br>
+// Get the difference in the matrices<br>
+D3DXMATRIX matTransformation = matKey2 − MatKey1; // 请坐标位移<br>
+// Get keys&rsquo; times<br>
+float Key1Time = 500.0f;<br>
+float Key2Time = 1200.0f;<br>
+// Get the time difference of the keys<br>
+float TimeDiff = Key2Time − Key1Time; // 算出时间差<br>
+// Get the scalar from animation time and time difference<br>
+float Scalar = (648.0f − Key1Time) / TimeDiff; // 当前帧在两关键帧中间的比值<br>
+// Calculate the interpolated transformation matrix<br>
+matTransformation *= Scalar; // 算出当前帧的相对变换矩阵<br>
+matTransformation += matKey1; // 算出最终的当前帧的变换矩阵</p></div><div class="post-footer">
+        <a href="/%E6%96%87%E6%91%98%E9%AA%A8%E9%AA%BC%E5%8A%A8%E7%94%BB%E4%B8%AD%E7%9A%84%E5%9D%90%E6%A0%87%E6%8F%92%E5%80%BC/">阅读全文</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/">游戏开发</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/%E6%88%91%E7%9A%84%E5%A4%9A%E6%99%AE%E8%BE%BE%E6%89%8B%E6%9C%BA%E8%A2%AB%E5%81%B7%E4%BA%86%E9%83%81%E9%97%B7/">我的多普达手机被偷了,郁闷~!</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>作者</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2008-09-03">2008-09-03</time></span></div><div class="content"><p>昨天在新华路换527时被偷了,哎,分期才付了1期,还有23期,哎!</p>
 <p>都怪太困了,一心想到上车抢位置,前面那个人那明显是为后面的人挡着的,我还一心想挤过去!</p></div><div class="post-footer">

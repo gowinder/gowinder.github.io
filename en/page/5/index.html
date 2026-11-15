@@ -111,6 +111,15 @@
         alt="https://gravatar.com/userimage/16926726/2de44cb9918f08ff7f430244b10bf37b.jpeg?size=256"
         title="https://gravatar.com/userimage/16926726/2de44cb9918f08ff7f430244b10bf37b.jpeg?size=256" /></a></div><h1 class="home-title">gowinder's Blog</h1><div class="home-subtitle"><div id="id-1" class="typeit"></div></div><div class="links"><a href="https://github.com/gowinder" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="mailto:gowinder@hotmail.com" title="Email" rel="me"><i class="far fa-envelope fa-fw" aria-hidden="true"></i></a><a href="/en/index.xml" title="RSS" target="_blank" rel="noopener noreffer me"><i class="fas fa-rss fa-fw" aria-hidden="true"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/en/resolving-gluster-brick-offline-issues/">Resolving Gluster Brick Offline Issues</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-02-11">2023-02-11</time></span></div><div class="content"><h1 id="resolving-gluster-brick-offline-issues">Resolving Gluster Brick Offline Issues</h1>
+<h2 id="offline-issue">Offline Issue</h2>
+<p>I had just finished installing <code>gluster</code> and stored the <code>rootfs</code> of a <code>linux container</code> on it, so that the <code>linux container</code> could achieve high availability within a two-node <code>pve</code> cluster.</p>
+<p>When I had some spare time, I checked with the command: <code>sudo gluster vol status VMS</code>, and found that one <code>brick</code> was in <code>offline</code> state.</p>
+<p>I looked it up online and installed <code>gstatus</code>:</p></div><div class="post-footer">
+        <a href="/en/resolving-gluster-brick-offline-issues/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/proxmox-ve/">Proxmox Ve</a>,&nbsp;<a href="/en/tags/gluster/">Gluster</a>,&nbsp;<a href="/en/tags/distributed/">Distributed</a>,&nbsp;<a href="/en/tags/gstatus/">Gstatus</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/en/deploying-a-two-node-ha-cluster-and-glusterfs-distributed-file-system-on-proxmox-ve/">Notes on Deploying a Two-Node HA Cluster and GlusterFS Distributed File System on Proxmox VE</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-02-09">2023-02-09</time></span></div><div class="content"><h1 id="deploying-a-two-node-ha-cluster-and-glusterfs-distributed-file-system-on-proxmox-ve">Deploying a Two-Node HA Cluster and GlusterFS Distributed File System on Proxmox VE</h1>
 <p><strong>Make sure both pve nodes run the same version</strong></p>
@@ -315,23 +324,6 @@
 <p>After many attempts, I found it needs to be written like this. Suppose there are two <code>entity</code>s, one <code>UserEntity</code> and one <code>CarEntity</code>, referencing each other. Writing them the following way throws <code>circular import errors</code>.</p></div><div class="post-footer">
         <a href="/en/mutual-references-between-entities-in-nestjs-and-typeorm/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/nestjs/">Nestjs</a>,&nbsp;<a href="/en/tags/typescript/">Typescript</a>,&nbsp;<a href="/en/tags/node/">Node</a>,&nbsp;<a href="/en/tags/dev-notes/">Dev-Notes</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/en/chromium-new-settings-page/">Adding a New Settings Page to chrome://settings in Chromium</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span>&nbsp;<span class="post-publish">published on <time datetime="2020-08-14">2020-08-14</time></span></div><div class="content"><p>The left-hand menu of the settings page is edited in</p>
-<p><code>chrome/browser/resources/settings/settings_menu/settings_menu.html</code></p>
-<p>If you want to add or remove a setting, that is where you change it.</p>
-<p>To add one, put in a block like this:</p>
-<pre><code>&lt;a id=&quot;new_setting&quot; href=&quot;/new_setting&quot;
-    hidden=&quot;[[!pageVisibility.new_setting]]&quot;&gt;
-  &lt;iron-icon icon=&quot;settings:assignment&quot;&gt;&lt;/iron-icon&gt;
-  $i18n{newSettingTitle}
-&lt;/a&gt;
-</code></pre>
-<p>Then create a directory <code>chrome/browser/resources/settings/new_setting</code></p>
-<p>and put the settings page inside it.</p>
-<p>Create <code>new_setting_page.html</code> and <code>new_setting_page.js</code> — that is the content.</p>
-<p>Create <code>new_setting_section.htm</code> and <code>new_setting_section.js</code> — that is the section.</p></div><div class="post-footer">
-        <a href="/en/chromium-new-settings-page/">Read More</a></div>
 </article><ul class="pagination"><li class="page-item ">
                     <span class="page-link">
                         <a href="/en/">1</a>

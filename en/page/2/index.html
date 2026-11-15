@@ -111,6 +111,41 @@
         alt="https://gravatar.com/userimage/16926726/2de44cb9918f08ff7f430244b10bf37b.jpeg?size=256"
         title="https://gravatar.com/userimage/16926726/2de44cb9918f08ff7f430244b10bf37b.jpeg?size=256" /></a></div><h1 class="home-title">gowinder's Blog</h1><div class="home-subtitle"><div id="id-1" class="typeit"></div></div><div class="links"><a href="https://github.com/gowinder" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="mailto:gowinder@hotmail.com" title="Email" rel="me"><i class="far fa-envelope fa-fw" aria-hidden="true"></i></a><a href="/en/index.xml" title="RSS" target="_blank" rel="noopener noreffer me"><i class="fas fa-rss fa-fw" aria-hidden="true"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
+            <a href="/en/bulk-delete-key-in-cloudflare-kv/"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/bulk-delete-key-in-cloudflare-kv/featured-image.png"
+        data-srcset="/bulk-delete-key-in-cloudflare-kv/featured-image.png, /bulk-delete-key-in-cloudflare-kv/featured-image.png 1.5x, /bulk-delete-key-in-cloudflare-kv/featured-image.png 2x"
+        data-sizes="auto"
+        alt="/bulk-delete-key-in-cloudflare-kv/featured-image.png"
+        title="A quick way to list all keys in a Cloudflare KV namespace and bulk delete them with Wrangler and jq." /></a>
+        </div><h1 class="single-title" itemprop="name headline">
+        <a href="/en/bulk-delete-key-in-cloudflare-kv/">Bulk Delete Keys in `Cloudflare KV`</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span>&nbsp;<span class="post-publish">published on <time datetime="2024-04-18">2024-04-18</time></span></div><div class="content"><h1 id="bulk-delete-keys-in-cloudflare-kv">Bulk Delete Keys in <code>Cloudflare KV</code></h1>
+<h2 id="get-the-list-of-keys">Get the List of <code>key</code>s</h2>
+<p>Run this first</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">pnpm wrangler kv:key list --namespace-id<span class="o">=</span><span class="si">${</span><span class="nv">namespaceID</span><span class="si">}</span> &gt; PURGE.json<span class="sb">`</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>This gives you the complete list of <code>key</code>s; if you need a condition, just add: <code>--prefix=&quot;prefix&quot;</code></p>
+<h2 id="bulk-delete">Bulk Delete</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">cat purge.json <span class="p">|</span> jq -r <span class="s1">&#39;.[].name&#39;</span> <span class="p">|</span> xargs -I <span class="o">{}</span> pnpm wrangler kv:key delete --namespace-id<span class="o">=</span><span class="si">${</span><span class="nv">namespaceID</span><span class="si">}</span> <span class="o">{}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer">
+        <a href="/en/bulk-delete-key-in-cloudflare-kv/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/cloudflare/">Cloudflare</a>,&nbsp;<a href="/en/tags/cloudflare-pages/">Cloudflare Pages</a>,&nbsp;<a href="/en/tags/cloudflare-kv/">Cloudflare KV</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
             <a href="/en/migrate-remix-to-cloudflare/"><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -191,22 +226,6 @@
 <p>A few years ago I got into <code>HomeLab</code> and bought a second-hand <code>Dell R720</code> rack server to use as a home server. But this server&rsquo;s power consumption was too high—dual <code>cpu</code>s idled at nearly 200w. After switching to low-power <code>Xeon</code>s and installing only one <code>cpu</code>, it was still 100w+. Over a year the electricity bill added up, and in summer it got very hot. Later I used the <code>ipmi</code> tool and wrote some code in <code>python</code> to adjust the loud fans based on temperature, which made it much more comfortable, but in summer as the room temperature rose the fans still ramped up their speed dramatically. I always wanted to switch to a low-power server. I&rsquo;d previously bought a <code>Snail Interstellar</code>, which uses a <code>j1900</code> and has very low power consumption, so I migrated the home server from the <code>Dell R720</code> to the <code>Snail Interstellar</code>.</p></div><div class="post-footer">
         <a href="/en/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/homeserver/">Homeserver</a>,&nbsp;<a href="/en/tags/r720/">R720</a>,&nbsp;<a href="/en/tags/dell/">Dell</a>,&nbsp;<a href="/en/tags/macbookpro/">Macbookpro</a>,&nbsp;<a href="/en/tags/pve/">Pve</a>,&nbsp;<a href="/en/tags/snail-interstellar/">Snail-Interstellar</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
-            <a href="/en/use-chatgpt-to-make-a-sub-generator-script/"><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/use-chatgpt-to-make-a-sub-generator-script/featured-image.png"
-        data-srcset="/use-chatgpt-to-make-a-sub-generator-script/featured-image.png, /use-chatgpt-to-make-a-sub-generator-script/featured-image.png 1.5x, /use-chatgpt-to-make-a-sub-generator-script/featured-image.png 2x"
-        data-sizes="auto"
-        alt="/use-chatgpt-to-make-a-sub-generator-script/featured-image.png"
-        title="A walkthrough of prompting ChatGPT step by step to build a shell script that generates Chinese subtitles for video files using ffmpeg, whisper.cpp, and chatgpt-subtitle-translator." /></a>
-        </div><h1 class="single-title" itemprop="name headline">
-        <a href="/en/use-chatgpt-to-make-a-sub-generator-script/">Using ChatGPT to Write a Script for Generating Chinese Subtitles for Video Files</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span>&nbsp;<span class="post-publish">published on <time datetime="2024-03-06">2024-03-06</time></span></div><div class="content"><h1 id="using-chatgpt-to-write-a-script-for-generating-chinese-subtitles-for-video-files">Using ChatGPT to Write a Script for Generating Chinese Subtitles for Video Files</h1>
-<h2 id="background">Background</h2>
-<p>For some obscure movies or videos, it is hard to find Chinese subtitles even though they have a plot, so in these cases you have to add Chinese subtitles manually. But adding Chinese subtitles by hand is extremely time-consuming, especially for long videos. So I wanted to use ChatGPT to help me write a script that can automatically generate Chinese subtitles for video files.</p></div><div class="post-footer">
-        <a href="/en/use-chatgpt-to-make-a-sub-generator-script/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/chatgpt/">Chatgpt</a>,&nbsp;<a href="/en/tags/shell-script/">Shell Script</a>,&nbsp;<a href="/en/tags/ffmpeg/">Ffmpeg</a>,&nbsp;<a href="/en/tags/whisper/">Whisper</a>,&nbsp;<a href="/en/tags/openai/">Openai</a>,&nbsp;<a href="/en/tags/chatgpt-subtitle-translator/">Chatgpt-Subtitle-Translator</a></div></div>
 </article><ul class="pagination"><li class="page-item ">
                     <span class="page-link">
                         <a href="/en/">1</a>

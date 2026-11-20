@@ -1,0 +1,27 @@
+# gowinder's Blog
+
+> Personal blog of gowinder (Bin Zhu), a software developer and indie maker. Long-form notes on self-hosting, networking tools, web development, and building small products. Written in Chinese (primary) and English. The author also builds indie tools as Craftstead (https://craftstead.app).
+
+## About
+- [About - gowinder's Blog](https://gowinder.work/en/about/): who writes this blog
+- [关于](https://gowinder.work/about/): 中文版关于页
+- [Projects](https://gowinder.work/en/projects/): things the author has built
+- [项目](https://gowinder.work/projects/): 中文版项目页
+- [GitHub](https://github.com/gowinder): the author's GitHub profile
+
+## Selected posts (English)
+- [A Problem Caused by a YouTube App Using QUIC](https://gowinder.work/en/sing-box-youtube-app-quic-issue/): diagnosing a sing-box routing problem caused by the YouTube app's QUIC traffic, and the fix
+- [Use ChatGPT to Make a Sub Generator Script](https://gowinder.work/use-chatgpt-to-make-a-sub-generator-script/): building a subtitle generation/translation script with ChatGPT
+- [Next.js + Hono + shadcn/ui + Drizzle on Cloudflare Pages](https://gowinder.work/en/nextjs-honojs-shadcnui-drizzle-cloudflare-pages/): full-stack setup notes
+- [Batch Renaming Files from Excel/CSV](https://gowinder.work/en/batch-renaming-files-from-excel-csv/): renaming many files from a spreadsheet mapping
+- [Agent Bridge](https://gowinder.work/en/agent-bridge/): notes on Agent Bridge, the author's open-source bridge for remote web access to desktop AI coding agents
+
+## 精选文章（中文）
+- [一个 YouTube App 使用 QUIC 引起的问题](https://gowinder.work/sing-box-youtube-app-quic-issue/): sing-box 排障记录
+- [Next.js + Honojs + shadcn/ui + Drizzle + Cloudflare Pages](https://gowinder.work/nextjs-honojs-shadcnui-drizzle-cloudflare-pages/): 全栈实践笔记
+- [从 Excel/CSV 批量重命名文件](https://gowinder.work/batch-rename-from-excel-csv/)
+- [Agent Bridge](https://gowinder.work/agent-bridge/): Agent Bridge 相关记录
+
+## Feeds and sitemaps
+- RSS: https://gowinder.work/index.xml
+- Sitemap: https://gowinder.work/sitemap.xml

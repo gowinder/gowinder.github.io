@@ -1,63 +1,67 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Cloudflare Pages - 标签 - gowinder个人博客</title>
+        <title>Cloudflare Pages on gowinder个人博客</title>
         <link>https://gowinder.work/tags/cloudflare-pages/</link>
-        <description>Cloudflare Pages - 标签 - gowinder个人博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 26 Aug 2024 00:00:06 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/cloudflare-pages/" rel="self" type="application/rss+xml" /><item>
-    <title>使用nestjs&#43;honojs&#43;drizzle&#43;shadcnui开发部署在cloudflare pages上的web app</title>
-    <link>https://gowinder.work/nextjs-honojs-shadcnui-drizzle-cloudflare-pages/</link>
-    <pubDate>Mon, 26 Aug 2024 00:00:06 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://gowinder.work/nextjs-honojs-shadcnui-drizzle-cloudflare-pages/</guid>
-    <description><![CDATA[<h1 id="使用-nestjshonojsdrizzleshadcnui-开发部署在-cloudflare-pages-上的-web-app">使用 nestjs+honojs+drizzle+shadcnui 开发部署在 cloudflare pages 上的 web app</h1>
-<p>最近一段时间,一直在撸 cloudflare 的羊毛, workers, pages 都有. 经过几个小项目的折腾, 读过了开始的摸索期, 现在分享一下使用这几个开源库,快速开发一个部署在<code>Cloudflare Pages</code>上的<code>Web App</code>的过程.</p>]]></description>
-</item>
-<item>
-    <title>useQuery直接使用honojs client报错: TypeError: Cannot read properties of undefined (reading &#39;replace&#39;)</title>
-    <link>https://gowinder.work/honojs-usequery-error/</link>
-    <pubDate>Thu, 06 Jun 2024 10:00:06 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://gowinder.work/honojs-usequery-error/</guid>
-    <description><![CDATA[<h1 id="usequery直接使用honojs-client报错-typeerror-cannot-read-properties-of-undefined-reading-replace">useQuery直接使用honojs client报错: TypeError: Cannot read properties of undefined (reading &lsquo;replace&rsquo;)</h1>
-<p>最近开发了一个项目, 使用<code>nextjs</code>, <code>honojs</code>, <code>drizzle-orm</code>, 部署在<code>cloudflare pages</code>上, 因为<code>honojs</code>对于边缘计算比较友好,所以采用.</p>]]></description>
-</item>
-<item>
-    <title>批量删除`Cloudflare KV`中的`key`</title>
-    <link>https://gowinder.work/bulk-delete-key-in-cloudflare-kv/</link>
-    <pubDate>Thu, 18 Apr 2024 19:12:56 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://gowinder.work/bulk-delete-key-in-cloudflare-kv/</guid>
-    <description><![CDATA[<h1 id="批量删除cloudflare-kv中的key">批量删除<code>Cloudflare KV</code>中的<code>key</code></h1>
-<h2 id="取得key列表">取得<code>key</code>列表</h2>
-<p>先执行</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">pnpm wrangler kv:key list --namespace-id<span class="o">=</span><span class="si">${</span><span class="nv">namespaceID</span><span class="si">}</span> &gt; PURGE.json<span class="sb">`</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>拿到完整<code>key</code>列表, 如果要条件,就加上: <code>--prefix=&quot;prefix&quot;</code></p>
-<h2 id="批量删除">批量删除</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">cat purge.json <span class="p">|</span> jq -r <span class="s1">&#39;.[].name&#39;</span> <span class="p">|</span> xargs -I <span class="o">{}</span> pnpm wrangler kv:key delete --namespace-id<span class="o">=</span><span class="si">${</span><span class="nv">namespaceID</span><span class="si">}</span> <span class="o">{}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div>]]></description>
-</item>
-<item>
-    <title>将remix项目迁移到cloudflare</title>
-    <link>https://gowinder.work/migrate-remix-to-cloudflare/</link>
-    <pubDate>Mon, 08 Apr 2024 14:20:06 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://gowinder.work/migrate-remix-to-cloudflare/</guid>
-    <description><![CDATA[<h1 id="将remix项目迁移到cloudflare">将remix项目迁移到cloudflare</h1>
-<p>最近使用<code>remix</code>开发了一个项目,之前没有做过全栈开发,<code>reactjs</code>用过一些,不是很熟,用的是<code>Nextjs</code>, 感觉太难用, 主要是<code>13</code>版本换了<code>app router</code>后,有点摸不着头脑了.</p>]]></description>
-</item>
-</channel>
+        <description>Recent content in Cloudflare Pages on gowinder个人博客</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-CN</language>
+        <lastBuildDate>Mon, 26 Aug 2024 00:00:06 +0800</lastBuildDate><atom:link href="https://gowinder.work/tags/cloudflare-pages/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>使用nestjs&#43;honojs&#43;drizzle&#43;shadcnui开发部署在cloudflare pages上的web app</title>
+        <link>https://gowinder.work/nextjs-honojs-shadcnui-drizzle-cloudflare-pages/</link>
+        <pubDate>Mon, 26 Aug 2024 00:00:06 +0800</pubDate>
+        
+        <guid>https://gowinder.work/nextjs-honojs-shadcnui-drizzle-cloudflare-pages/</guid>
+        <description>&lt;h1 id=&#34;使用-nestjshonojsdrizzleshadcnui-开发部署在-cloudflare-pages-上的-web-app&#34;&gt;使用 nestjs+honojs+drizzle+shadcnui 开发部署在 cloudflare pages 上的 web app
+&lt;/h1&gt;&lt;p&gt;最近一段时间,一直在撸 cloudflare 的羊毛, workers, pages 都有. 经过几个小项目的折腾, 读过了开始的摸索期, 现在分享一下使用这几个开源库,快速开发一个部署在&lt;code&gt;Cloudflare Pages&lt;/code&gt;上的&lt;code&gt;Web App&lt;/code&gt;的过程.&lt;/p&gt;</description>
+        </item>
+        <item>
+        <title>useQuery直接使用honojs client报错: TypeError: Cannot read properties of undefined (reading &#39;replace&#39;)</title>
+        <link>https://gowinder.work/honojs-usequery-error/</link>
+        <pubDate>Thu, 06 Jun 2024 10:00:06 +0800</pubDate>
+        
+        <guid>https://gowinder.work/honojs-usequery-error/</guid>
+        <description>&lt;h1 id=&#34;usequery直接使用honojs-client报错-typeerror-cannot-read-properties-of-undefined-reading-replace&#34;&gt;useQuery直接使用honojs client报错: TypeError: Cannot read properties of undefined (reading &amp;lsquo;replace&amp;rsquo;)
+&lt;/h1&gt;&lt;p&gt;最近开发了一个项目, 使用&lt;code&gt;nextjs&lt;/code&gt;, &lt;code&gt;honojs&lt;/code&gt;, &lt;code&gt;drizzle-orm&lt;/code&gt;, 部署在&lt;code&gt;cloudflare pages&lt;/code&gt;上, 因为&lt;code&gt;honojs&lt;/code&gt;对于边缘计算比较友好,所以采用.&lt;/p&gt;</description>
+        </item>
+        <item>
+        <title>批量删除`Cloudflare KV`中的`key`</title>
+        <link>https://gowinder.work/bulk-delete-key-in-cloudflare-kv/</link>
+        <pubDate>Thu, 18 Apr 2024 19:12:56 +0800</pubDate>
+        
+        <guid>https://gowinder.work/bulk-delete-key-in-cloudflare-kv/</guid>
+        <description>&lt;h1 id=&#34;批量删除cloudflare-kv中的key&#34;&gt;批量删除&lt;code&gt;Cloudflare KV&lt;/code&gt;中的&lt;code&gt;key&lt;/code&gt;
+&lt;/h1&gt;&lt;h2 id=&#34;取得key列表&#34;&gt;取得&lt;code&gt;key&lt;/code&gt;列表
+&lt;/h2&gt;&lt;p&gt;先执行&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pnpm wrangler kv:key list --namespace-id&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;namespaceID&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt; &amp;gt; PURGE.json&lt;span class=&#34;sb&#34;&gt;`&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;拿到完整&lt;code&gt;key&lt;/code&gt;列表, 如果要条件,就加上: &lt;code&gt;--prefix=&amp;quot;prefix&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;批量删除&#34;&gt;批量删除
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cat purge.json &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; jq -r &lt;span class=&#34;s1&#34;&gt;&amp;#39;.[].name&amp;#39;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; xargs -I &lt;span class=&#34;o&#34;&gt;{}&lt;/span&gt; pnpm wrangler kv:key delete --namespace-id&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;namespaceID&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>将remix项目迁移到cloudflare</title>
+        <link>https://gowinder.work/migrate-remix-to-cloudflare/</link>
+        <pubDate>Mon, 08 Apr 2024 14:20:06 +0800</pubDate>
+        
+        <guid>https://gowinder.work/migrate-remix-to-cloudflare/</guid>
+        <description>&lt;h1 id=&#34;将remix项目迁移到cloudflare&#34;&gt;将remix项目迁移到cloudflare
+&lt;/h1&gt;&lt;p&gt;最近使用&lt;code&gt;remix&lt;/code&gt;开发了一个项目,之前没有做过全栈开发,&lt;code&gt;reactjs&lt;/code&gt;用过一些,不是很熟,用的是&lt;code&gt;Nextjs&lt;/code&gt;, 感觉太难用, 主要是&lt;code&gt;13&lt;/code&gt;版本换了&lt;code&gt;app router&lt;/code&gt;后,有点摸不着头脑了.&lt;/p&gt;</description>
+        </item>
+        
+    </channel>
 </rss>

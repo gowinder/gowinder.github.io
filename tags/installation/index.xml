@@ -1,7 +1,10 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>安装 - 标签 - gowinder个人博客</title>
+        <title>安装 on gowinder个人博客</title>
         <link>https://gowinder.work/tags/installation/</link>
-        <description>安装 - 标签 - gowinder个人博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><atom:link href="https://gowinder.work/tags/installation/" rel="self" type="application/rss+xml" /></channel>
+        <description>Recent content in 安装 on gowinder个人博客</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-CN</language><atom:link href="https://gowinder.work/tags/installation/index.xml" rel="self" type="application/rss+xml" />
+    </channel>
 </rss>

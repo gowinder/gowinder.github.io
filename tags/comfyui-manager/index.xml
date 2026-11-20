@@ -1,17 +1,21 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Comfyui-Manager - 标签 - gowinder个人博客</title>
+        <title>Comfyui-Manager on gowinder个人博客</title>
         <link>https://gowinder.work/tags/comfyui-manager/</link>
-        <description>Comfyui-Manager - 标签 - gowinder个人博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 25 Mar 2024 14:12:16 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/comfyui-manager/" rel="self" type="application/rss+xml" /><item>
-    <title>部署ComfyUI玩</title>
-    <link>https://gowinder.work/play-with-comfyui/</link>
-    <pubDate>Mon, 25 Mar 2024 14:12:16 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://gowinder.work/play-with-comfyui/</guid>
-    <description><![CDATA[<h1 id="部署comfyui玩">部署ComfyUI玩</h1>
-<p>之前<code>AIGC</code>非常火, 我本地部署了<code>Stable Diffusion</code> 的<code>WebUI</code>玩了一下,见: <a href="/content/posts/create-local-stable-diffusion-env.md" rel="">text</a></p>
-<p>但是吧, <code>WebUI</code> 界面, 太复杂了, 元素太多了, 看起来非常专业, 但是用起来也是有一定难度的. 正好那段时间工作比较忙, 玩了一段时间, 就放着没有继续玩了.</p>]]></description>
-</item>
-</channel>
+        <description>Recent content in Comfyui-Manager on gowinder个人博客</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-CN</language>
+        <lastBuildDate>Mon, 25 Mar 2024 14:12:16 +0800</lastBuildDate><atom:link href="https://gowinder.work/tags/comfyui-manager/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>部署ComfyUI玩</title>
+        <link>https://gowinder.work/play-with-comfyui/</link>
+        <pubDate>Mon, 25 Mar 2024 14:12:16 +0800</pubDate>
+        
+        <guid>https://gowinder.work/play-with-comfyui/</guid>
+        <description>&lt;h1 id=&#34;部署comfyui玩&#34;&gt;部署ComfyUI玩
+&lt;/h1&gt;&lt;p&gt;之前&lt;code&gt;AIGC&lt;/code&gt;非常火, 我本地部署了&lt;code&gt;Stable Diffusion&lt;/code&gt; 的&lt;code&gt;WebUI&lt;/code&gt;玩了一下,见: &lt;a class=&#34;link&#34; href=&#34;https://gowinder.work/content/posts/create-local-stable-diffusion-env.md&#34; &gt;text&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;但是吧, &lt;code&gt;WebUI&lt;/code&gt; 界面, 太复杂了, 元素太多了, 看起来非常专业, 但是用起来也是有一定难度的. 正好那段时间工作比较忙, 玩了一段时间, 就放着没有继续玩了.&lt;/p&gt;</description>
+        </item>
+        
+    </channel>
 </rss>

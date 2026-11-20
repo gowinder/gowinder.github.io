@@ -1,244 +1,247 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>All Posts - gowinder&#39;s Blog</title>
+        <title>Posts on gowinder&#39;s Blog</title>
         <link>https://gowinder.work/en/posts/</link>
-        <description>All Posts | gowinder&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 15 Nov 2026 20:00:00 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/en/posts/" rel="self" type="application/rss+xml" /><item>
-    <title>Away From the Desk: I Gave My Mac Agents a Phone Entrance, and Why &#34;Yes, Merge It&#34; on a Phone Doesn&#39;t Count</title>
-    <link>https://gowinder.work/en/agent-bridge/</link>
-    <pubDate>Sun, 15 Nov 2026 20:00:00 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://gowinder.work/en/agent-bridge/</guid>
-    <description><![CDATA[<p>The last post was about the result file, how the coordinator and the executor hand work over. That setup works, but I skipped past a precondition at the time: the executor runs on my machine, so the human has to be at my machine too. Later I moved the heavy work back onto my own laptop, and that precondition turned into a daily problem — the work lives on the Mac, and I am often not in front of the Mac.</p>]]></description>
-</item>
-<item>
-    <title>Grok Bot, Claude Code, and DeepSeek Harness: one result file that saves most of the tokens</title>
-    <link>https://gowinder.work/en/agent-handoff-result-file/</link>
-    <pubDate>Thu, 05 Nov 2026 15:00:00 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://gowinder.work/en/agent-handoff-result-file/</guid>
-    <description><![CDATA[<p>I keep a handful of Grok bots across a few projects: a game, some small SEO sites, a few MCP tools of my own. They plan and schedule. The actual work, writing code, running tests, clicking through a browser, goes to two agents on my Mac: dsh in a sandbox, and Claude Code via <code>claude -p</code>.</p>
-<p>Heavy work on the laptop, coordination in the cloud. The seam between them was the problem. Bots bill by the token, and a long context is both expensive and dumber. The first version of the handoff was me copy-pasting: I would run dsh or Claude Code myself and paste the terminal output back into the chat. The delay was tolerable. The cost was not. That block of output sat in every later turn, and the bot would read logs and think and slowly lose track of what it had said ten minutes earlier.</p>]]></description>
-</item>
-<item>
-    <title>Batch renaming files from an Excel or CSV list: three approaches that actually work</title>
-    <link>https://gowinder.work/en/batch-renaming-files-from-excel-csv/</link>
-    <pubDate>Sat, 31 Oct 2026 10:00:00 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://gowinder.work/en/batch-renaming-files-from-excel-csv/</guid>
-    <description><![CDATA[<h1 id="batch-renaming-files-from-an-excel-or-csv-list">Batch renaming files from an Excel or CSV list</h1>
-<p>If you are cleaning up photos, scans, lecture videos or invoices, the situation is usually the same: <strong>you already have a table</strong>. Column A is the current filename, column B is what you want it to be, maybe column C is a capture date and D is a client code. The hard part is not inventing new names. It is turning that table into actual renames on disk.</p>]]></description>
-</item>
-<item>
-    <title>Two small sites went live: an Old English dictionary and a batch renamer</title>
-    <link>https://gowinder.work/en/two-small-sites/</link>
-    <pubDate>Wed, 28 Oct 2026 14:30:00 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://gowinder.work/en/two-small-sites/</guid>
-    <description><![CDATA[<h1 id="two-small-sites-went-live-an-old-english-dictionary-and-a-batch-renamer">Two small sites went live: an Old English dictionary and a batch renamer</h1>
-<p>I wanted to test one question: can one person, with no budget and no ads, get anywhere by taking a very narrow need all the way to the end?</p>
-<p>Rather than argue about it, I built two things. They sit at opposite ends of the spectrum — one is pure content, one is a pure tool — which makes them a clean control group.</p>]]></description>
-</item>
-<item>
-    <title>Building and Deploying a Web App on Cloudflare Pages with Next.js, Hono.js, Drizzle and shadcn/ui</title>
-    <link>https://gowinder.work/en/nextjs-honojs-shadcnui-drizzle-cloudflare-pages/</link>
-    <pubDate>Mon, 26 Aug 2024 00:00:06 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://gowinder.work/en/nextjs-honojs-shadcnui-drizzle-cloudflare-pages/</guid>
-    <description><![CDATA[<h1 id="building-and-deploying-a-web-app-on-cloudflare-pages-with-nextjs-honojs-drizzle-and-shadcnui">Building and Deploying a Web App on Cloudflare Pages with Next.js, Hono.js, Drizzle and shadcn/ui</h1>
-<p>Lately I&rsquo;ve been taking advantage of Cloudflare&rsquo;s free offerings—both Workers and Pages. After tinkering with a few small projects and getting through the initial exploration phase, I&rsquo;d like to share the process of quickly building a <code>Web App</code> deployed on <code>Cloudflare Pages</code> using these open-source libraries.</p>
-<p>If you don&rsquo;t want to read through the process, you can skip straight to the end. I&rsquo;ve shared the project address; just <code>fork</code> <a href="https://github.com/gowinder/cloudflare-pages-starter" target="_blank" rel="noopener noreffer ">my example project</a> and you can use it right away.</p>]]></description>
-</item>
-<item>
-    <title>useQuery Error When Using the honojs Client Directly: TypeError: Cannot read properties of undefined (reading &#39;replace&#39;)</title>
-    <link>https://gowinder.work/en/honojs-usequery-error/</link>
-    <pubDate>Thu, 06 Jun 2024 10:00:06 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://gowinder.work/en/honojs-usequery-error/</guid>
-    <description><![CDATA[<h1 id="usequery-error-when-using-the-honojs-client-directly-typeerror-cannot-read-properties-of-undefined-reading-replace">useQuery Error When Using the honojs Client Directly: TypeError: Cannot read properties of undefined (reading &lsquo;replace&rsquo;)</h1>
-<p>Recently I developed a project using <code>nextjs</code>, <code>honojs</code>, and <code>drizzle-orm</code>, deployed on <code>cloudflare pages</code>. I chose <code>honojs</code> because it is friendly to edge computing.</p>
-<h2 id="honojs-query-endpoint-definition">honojs Query Endpoint Definition</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">runtime</span> <span class="o">=</span> <span class="s1">&#39;edge&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kr">type</span> <span class="nx">Bindings</span> <span class="o">=</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">DB</span>: <span class="kt">D1Database</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Hono</span><span class="o">&lt;</span><span class="p">{</span> <span class="nx">Bindings</span>: <span class="kt">Bindings</span> <span class="p">}</span><span class="o">&gt;</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="kr">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="kr">async</span> <span class="p">(</span><span class="nx">c</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">try</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">      <span class="kr">const</span> <span class="nx">conditions</span>: <span class="kt">Record</span><span class="p">&lt;</span><span class="nt">string</span><span class="p">,</span> <span class="na">any</span><span class="p">&gt;</span> <span class="o">=</span> <span class="p">{};</span>
-</span></span><span class="line"><span class="cl">      <span class="kr">const</span> <span class="nx">results</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getDb</span><span class="p">().</span><span class="nx">query</span><span class="p">.</span><span class="nx">someTable</span><span class="p">.</span><span class="nx">findMany</span><span class="p">({});</span>
-</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="nx">c</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="nx">results</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">      <span class="c1">// return c.json(resultData);
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span>: <span class="kt">Error</span> <span class="o">|</span> <span class="kt">any</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">      <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="nx">c</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">  <span class="p">});</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="nx">app</span><span class="p">;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="route-setup-for-the-hono-app">Route Setup for the hono app</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Hono</span><span class="o">&lt;</span><span class="p">{</span> <span class="nx">Bindings</span>: <span class="kt">Bindings</span> <span class="p">}</span><span class="o">&gt;</span><span class="p">().</span><span class="nx">basePath</span><span class="p">(</span><span class="s1">&#39;/api&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">routes</span> <span class="o">=</span> <span class="nx">app</span><span class="p">.</span><span class="nx">route</span><span class="p">(</span><span class="s1">&#39;/sometable&#39;</span><span class="p">,</span> <span class="nx">someTable</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">GET</span> <span class="o">=</span> <span class="nx">handle</span><span class="p">(</span><span class="nx">app</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">POST</span> <span class="o">=</span> <span class="nx">handle</span><span class="p">(</span><span class="nx">app</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">type</span> <span class="nx">AppType</span> <span class="o">=</span> <span class="k">typeof</span> <span class="nx">routes</span><span class="p">;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="calling-with-usequery">Calling with useQuery</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">useGetSomeTable</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">query</span> <span class="o">=</span> <span class="nx">useQuery</span><span class="p">({</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">queryKey</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;someTable&#39;</span><span class="p">],</span> <span class="c1">// Use filters as the query key
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">queryFn</span>: <span class="kt">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">      <span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">api</span><span class="p">.</span><span class="nx">someTable</span><span class="p">.</span><span class="nx">$get</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;API Response: &#39;</span><span class="p">,</span> <span class="nx">response</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">response</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">&#39;Failed to fetch sometable&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">      <span class="p">}</span>
-</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">    <span class="p">},</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">throwOnError</span>: <span class="kt">true</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nx">refetchOnWindowFocus</span>: <span class="kt">false</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nx">staleTime</span>: <span class="kt">1000</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">5</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">  <span class="p">});</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">query</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="the-error-when-calling">The Error When Calling</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">TypeError: Cannot read properties of undefined (reading &#39;replace&#39;)
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>The problem was here: <code>const response = await client.api.someTable.$get();</code>
-I debugged it for two days, asked <code>chatgpt</code>, asked <code>gemini pro</code>, tried many methods, with no result.</p>]]></description>
-</item>
-<item>
-    <title>Bulk Delete Keys in `Cloudflare KV`</title>
-    <link>https://gowinder.work/en/bulk-delete-key-in-cloudflare-kv/</link>
-    <pubDate>Thu, 18 Apr 2024 19:12:56 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://gowinder.work/en/bulk-delete-key-in-cloudflare-kv/</guid>
-    <description><![CDATA[<h1 id="bulk-delete-keys-in-cloudflare-kv">Bulk Delete Keys in <code>Cloudflare KV</code></h1>
-<h2 id="get-the-list-of-keys">Get the List of <code>key</code>s</h2>
-<p>Run this first</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">pnpm wrangler kv:key list --namespace-id<span class="o">=</span><span class="si">${</span><span class="nv">namespaceID</span><span class="si">}</span> &gt; PURGE.json<span class="sb">`</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>This gives you the complete list of <code>key</code>s; if you need a condition, just add: <code>--prefix=&quot;prefix&quot;</code></p>
-<h2 id="bulk-delete">Bulk Delete</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">cat purge.json <span class="p">|</span> jq -r <span class="s1">&#39;.[].name&#39;</span> <span class="p">|</span> xargs -I <span class="o">{}</span> pnpm wrangler kv:key delete --namespace-id<span class="o">=</span><span class="si">${</span><span class="nv">namespaceID</span><span class="si">}</span> <span class="o">{}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div>]]></description>
-</item>
-<item>
-    <title>Migrating a Remix Project to Cloudflare</title>
-    <link>https://gowinder.work/en/migrate-remix-to-cloudflare/</link>
-    <pubDate>Mon, 08 Apr 2024 14:20:06 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://gowinder.work/en/migrate-remix-to-cloudflare/</guid>
-    <description><![CDATA[<h1 id="migrating-a-remix-project-to-cloudflare">Migrating a Remix Project to Cloudflare</h1>
-<p>Recently I developed a project using <code>remix</code>. I hadn&rsquo;t done full-stack development before; I&rsquo;d used <code>reactjs</code> a bit but wasn&rsquo;t very familiar with it, and I was using <code>Nextjs</code>, which felt very hard to use — mainly because after version <code>13</code> switched to the <code>app router</code>, I was somewhat at a loss.</p>
-<p>Later I discovered <code>remix</code>, which uses filename-based routing directly and is much more convenient, and the <code>loader</code> and <code>action</code> approach is also very intuitive, so I chose <code>remix</code>.</p>]]></description>
-</item>
-<item>
-    <title>Playing Around with ComfyUI</title>
-    <link>https://gowinder.work/en/play-with-comfyui/</link>
-    <pubDate>Mon, 25 Mar 2024 14:12:16 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://gowinder.work/en/play-with-comfyui/</guid>
-    <description><![CDATA[<h1 id="playing-around-with-comfyui">Playing Around with ComfyUI</h1>
-<p><code>AIGC</code> was very popular a while back, so I deployed <code>Stable Diffusion</code>&rsquo;s <code>WebUI</code> locally and played with it for a bit. See: <a href="/content/posts/create-local-stable-diffusion-env.md" rel="">text</a></p>
-<p>But the <code>WebUI</code> interface is too complex and has too many elements. It looks very professional, but it&rsquo;s also somewhat difficult to use. I happened to be busy with work around that time, so after playing with it for a while I set it aside and didn&rsquo;t continue.</p>]]></description>
-</item>
-<item>
-    <title>Migrating My Home Server from a Dell R720 to a Snail Interstellar &#43; MacBook Pro: Follow-up</title>
-    <link>https://gowinder.work/en/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/</link>
-    <pubDate>Thu, 21 Mar 2024 13:54:13 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://gowinder.work/en/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/</guid>
-    <description><![CDATA[<h1 id="migrating-my-home-server-from-a-dell-r720-to-a-snail-interstellar--macbook-pro-follow-up">Migrating My Home Server from a Dell R720 to a Snail Interstellar + MacBook Pro: Follow-up</h1>
-<h2 id="gigabit-network-disconnection-problem">Gigabit Network Disconnection Problem</h2>
-<p>The migration is complete and I&rsquo;ve been using it for a while. The <code>Snail Interstellar</code>&rsquo;s power consumption is very low (compared with the <code>R720</code>&rsquo;s 100+ watts); with 3 <code>HDD</code>s and 1 <code>SSD</code> it draws 35 watts, less than 1 kWh a day—very nice.</p>
-<p>But there&rsquo;s currently a problem: on the <code>MacbookPro</code>, as soon as I close the lid, lock the screen, or close the remote desktop, the wired network adapter on the <code>Thunderbolt HUB</code> disconnects.</p>]]></description>
-</item>
-</channel>
+        <description>Recent content in Posts on gowinder&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <lastBuildDate>Sun, 15 Nov 2026 20:00:00 +0800</lastBuildDate><atom:link href="https://gowinder.work/en/posts/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Away From the Desk: I Gave My Mac Agents a Phone Entrance, and Why &#34;Yes, Merge It&#34; on a Phone Doesn&#39;t Count</title>
+        <link>https://gowinder.work/en/agent-bridge/</link>
+        <pubDate>Sun, 15 Nov 2026 20:00:00 +0800</pubDate>
+        
+        <guid>https://gowinder.work/en/agent-bridge/</guid>
+        <description>&lt;p&gt;The last post was about the result file, how the coordinator and the executor hand work over. That setup works, but I skipped past a precondition at the time: the executor runs on my machine, so the human has to be at my machine too. Later I moved the heavy work back onto my own laptop, and that precondition turned into a daily problem — the work lives on the Mac, and I am often not in front of the Mac.&lt;/p&gt;</description>
+        </item>
+        <item>
+        <title>Grok Bot, Claude Code, and DeepSeek Harness: one result file that saves most of the tokens</title>
+        <link>https://gowinder.work/en/agent-handoff-result-file/</link>
+        <pubDate>Thu, 05 Nov 2026 15:00:00 +0800</pubDate>
+        
+        <guid>https://gowinder.work/en/agent-handoff-result-file/</guid>
+        <description>&lt;p&gt;I keep a handful of Grok bots across a few projects: a game, some small SEO sites, a few MCP tools of my own. They plan and schedule. The actual work, writing code, running tests, clicking through a browser, goes to two agents on my Mac: dsh in a sandbox, and Claude Code via &lt;code&gt;claude -p&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Heavy work on the laptop, coordination in the cloud. The seam between them was the problem. Bots bill by the token, and a long context is both expensive and dumber. The first version of the handoff was me copy-pasting: I would run dsh or Claude Code myself and paste the terminal output back into the chat. The delay was tolerable. The cost was not. That block of output sat in every later turn, and the bot would read logs and think and slowly lose track of what it had said ten minutes earlier.&lt;/p&gt;</description>
+        </item>
+        <item>
+        <title>Batch renaming files from an Excel or CSV list: three approaches that actually work</title>
+        <link>https://gowinder.work/en/batch-renaming-files-from-excel-csv/</link>
+        <pubDate>Sat, 31 Oct 2026 10:00:00 +0800</pubDate>
+        
+        <guid>https://gowinder.work/en/batch-renaming-files-from-excel-csv/</guid>
+        <description>&lt;h1 id=&#34;batch-renaming-files-from-an-excel-or-csv-list&#34;&gt;Batch renaming files from an Excel or CSV list
+&lt;/h1&gt;&lt;p&gt;If you are cleaning up photos, scans, lecture videos or invoices, the situation is usually the same: &lt;strong&gt;you already have a table&lt;/strong&gt;. Column A is the current filename, column B is what you want it to be, maybe column C is a capture date and D is a client code. The hard part is not inventing new names. It is turning that table into actual renames on disk.&lt;/p&gt;</description>
+        </item>
+        <item>
+        <title>Two small sites went live: an Old English dictionary and a batch renamer</title>
+        <link>https://gowinder.work/en/two-small-sites/</link>
+        <pubDate>Wed, 28 Oct 2026 14:30:00 +0800</pubDate>
+        
+        <guid>https://gowinder.work/en/two-small-sites/</guid>
+        <description>&lt;h1 id=&#34;two-small-sites-went-live-an-old-english-dictionary-and-a-batch-renamer&#34;&gt;Two small sites went live: an Old English dictionary and a batch renamer
+&lt;/h1&gt;&lt;p&gt;I wanted to test one question: can one person, with no budget and no ads, get anywhere by taking a very narrow need all the way to the end?&lt;/p&gt;
+&lt;p&gt;Rather than argue about it, I built two things. They sit at opposite ends of the spectrum — one is pure content, one is a pure tool — which makes them a clean control group.&lt;/p&gt;</description>
+        </item>
+        <item>
+        <title>Building and Deploying a Web App on Cloudflare Pages with Next.js, Hono.js, Drizzle and shadcn/ui</title>
+        <link>https://gowinder.work/en/nextjs-honojs-shadcnui-drizzle-cloudflare-pages/</link>
+        <pubDate>Mon, 26 Aug 2024 00:00:06 +0800</pubDate>
+        
+        <guid>https://gowinder.work/en/nextjs-honojs-shadcnui-drizzle-cloudflare-pages/</guid>
+        <description>&lt;h1 id=&#34;building-and-deploying-a-web-app-on-cloudflare-pages-with-nextjs-honojs-drizzle-and-shadcnui&#34;&gt;Building and Deploying a Web App on Cloudflare Pages with Next.js, Hono.js, Drizzle and shadcn/ui
+&lt;/h1&gt;&lt;p&gt;Lately I&amp;rsquo;ve been taking advantage of Cloudflare&amp;rsquo;s free offerings—both Workers and Pages. After tinkering with a few small projects and getting through the initial exploration phase, I&amp;rsquo;d like to share the process of quickly building a &lt;code&gt;Web App&lt;/code&gt; deployed on &lt;code&gt;Cloudflare Pages&lt;/code&gt; using these open-source libraries.&lt;/p&gt;</description>
+        </item>
+        <item>
+        <title>useQuery Error When Using the honojs Client Directly: TypeError: Cannot read properties of undefined (reading &#39;replace&#39;)</title>
+        <link>https://gowinder.work/en/honojs-usequery-error/</link>
+        <pubDate>Thu, 06 Jun 2024 10:00:06 +0800</pubDate>
+        
+        <guid>https://gowinder.work/en/honojs-usequery-error/</guid>
+        <description>&lt;h1 id=&#34;usequery-error-when-using-the-honojs-client-directly-typeerror-cannot-read-properties-of-undefined-reading-replace&#34;&gt;useQuery Error When Using the honojs Client Directly: TypeError: Cannot read properties of undefined (reading &amp;lsquo;replace&amp;rsquo;)
+&lt;/h1&gt;&lt;p&gt;Recently I developed a project using &lt;code&gt;nextjs&lt;/code&gt;, &lt;code&gt;honojs&lt;/code&gt;, and &lt;code&gt;drizzle-orm&lt;/code&gt;, deployed on &lt;code&gt;cloudflare pages&lt;/code&gt;. I chose &lt;code&gt;honojs&lt;/code&gt; because it is friendly to edge computing.&lt;/p&gt;
+&lt;h2 id=&#34;honojs-query-endpoint-definition&#34;&gt;honojs Query Endpoint Definition
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-typescript&#34; data-lang=&#34;typescript&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kr&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;kr&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;runtime&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;edge&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kr&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Bindings&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nx&#34;&gt;DB&lt;/span&gt;: &lt;span class=&#34;kt&#34;&gt;D1Database&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;};&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kr&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;app&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Hono&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Bindings&lt;/span&gt;: &lt;span class=&#34;kt&#34;&gt;Bindings&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;/&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kr&#34;&gt;async&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;try&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;kr&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;conditions&lt;/span&gt;: &lt;span class=&#34;kt&#34;&gt;Record&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;string&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;any&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{};&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;kr&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;results&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;await&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;getDb&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;().&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;query&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;someTable&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;findMany&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;({});&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;json&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;results&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;c1&#34;&gt;// return c.json(resultData);
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;catch&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;error&lt;/span&gt;: &lt;span class=&#34;kt&#34;&gt;Error&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;any&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nx&#34;&gt;console&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;error&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;error&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;json&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;error&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;});&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kr&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;default&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;route-setup-for-the-hono-app&#34;&gt;Route Setup for the hono app
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-typescript&#34; data-lang=&#34;typescript&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kr&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;app&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Hono&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Bindings&lt;/span&gt;: &lt;span class=&#34;kt&#34;&gt;Bindings&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;().&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;basePath&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;/api&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kr&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;routes&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;route&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;/sometable&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;someTable&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kr&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;kr&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GET&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;handle&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kr&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;kr&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;POST&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;handle&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kr&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;kr&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;AppType&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;typeof&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;routes&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;calling-with-usequery&#34;&gt;Calling with useQuery
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-typescript&#34; data-lang=&#34;typescript&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kr&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;kr&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;useGetSomeTable&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;kr&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;query&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;useQuery&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;({&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nx&#34;&gt;queryKey&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;someTable&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// Use filters as the query key
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;nx&#34;&gt;queryFn&lt;/span&gt;: &lt;span class=&#34;kt&#34;&gt;async&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;kr&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;response&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;await&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;client&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;api&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;someTable&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;$get&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nx&#34;&gt;console&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;API Response: &amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;response&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;response&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ok&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;throw&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;Error&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;Failed to fetch sometable&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;response&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;json&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nx&#34;&gt;throwOnError&lt;/span&gt;: &lt;span class=&#34;kt&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nx&#34;&gt;refetchOnWindowFocus&lt;/span&gt;: &lt;span class=&#34;kt&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nx&#34;&gt;staleTime&lt;/span&gt;: &lt;span class=&#34;kt&#34;&gt;1000&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;60&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;});&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;query&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;};&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;the-error-when-calling&#34;&gt;The Error When Calling
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;TypeError: Cannot read properties of undefined (reading &amp;#39;replace&amp;#39;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;The problem was here: &lt;code&gt;const response = await client.api.someTable.$get();&lt;/code&gt;
+I debugged it for two days, asked &lt;code&gt;chatgpt&lt;/code&gt;, asked &lt;code&gt;gemini pro&lt;/code&gt;, tried many methods, with no result.&lt;/p&gt;</description>
+        </item>
+        <item>
+        <title>Bulk Delete Keys in `Cloudflare KV`</title>
+        <link>https://gowinder.work/en/bulk-delete-key-in-cloudflare-kv/</link>
+        <pubDate>Thu, 18 Apr 2024 19:12:56 +0800</pubDate>
+        
+        <guid>https://gowinder.work/en/bulk-delete-key-in-cloudflare-kv/</guid>
+        <description>&lt;h1 id=&#34;bulk-delete-keys-in-cloudflare-kv&#34;&gt;Bulk Delete Keys in &lt;code&gt;Cloudflare KV&lt;/code&gt;
+&lt;/h1&gt;&lt;h2 id=&#34;get-the-list-of-keys&#34;&gt;Get the List of &lt;code&gt;key&lt;/code&gt;s
+&lt;/h2&gt;&lt;p&gt;Run this first&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pnpm wrangler kv:key list --namespace-id&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;namespaceID&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt; &amp;gt; PURGE.json&lt;span class=&#34;sb&#34;&gt;`&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;This gives you the complete list of &lt;code&gt;key&lt;/code&gt;s; if you need a condition, just add: &lt;code&gt;--prefix=&amp;quot;prefix&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;bulk-delete&#34;&gt;Bulk Delete
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cat purge.json &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; jq -r &lt;span class=&#34;s1&#34;&gt;&amp;#39;.[].name&amp;#39;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; xargs -I &lt;span class=&#34;o&#34;&gt;{}&lt;/span&gt; pnpm wrangler kv:key delete --namespace-id&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;namespaceID&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>Migrating a Remix Project to Cloudflare</title>
+        <link>https://gowinder.work/en/migrate-remix-to-cloudflare/</link>
+        <pubDate>Mon, 08 Apr 2024 14:20:06 +0800</pubDate>
+        
+        <guid>https://gowinder.work/en/migrate-remix-to-cloudflare/</guid>
+        <description>&lt;h1 id=&#34;migrating-a-remix-project-to-cloudflare&#34;&gt;Migrating a Remix Project to Cloudflare
+&lt;/h1&gt;&lt;p&gt;Recently I developed a project using &lt;code&gt;remix&lt;/code&gt;. I hadn&amp;rsquo;t done full-stack development before; I&amp;rsquo;d used &lt;code&gt;reactjs&lt;/code&gt; a bit but wasn&amp;rsquo;t very familiar with it, and I was using &lt;code&gt;Nextjs&lt;/code&gt;, which felt very hard to use — mainly because after version &lt;code&gt;13&lt;/code&gt; switched to the &lt;code&gt;app router&lt;/code&gt;, I was somewhat at a loss.&lt;/p&gt;
+&lt;p&gt;Later I discovered &lt;code&gt;remix&lt;/code&gt;, which uses filename-based routing directly and is much more convenient, and the &lt;code&gt;loader&lt;/code&gt; and &lt;code&gt;action&lt;/code&gt; approach is also very intuitive, so I chose &lt;code&gt;remix&lt;/code&gt;.&lt;/p&gt;</description>
+        </item>
+        <item>
+        <title>Playing Around with ComfyUI</title>
+        <link>https://gowinder.work/en/play-with-comfyui/</link>
+        <pubDate>Mon, 25 Mar 2024 14:12:16 +0800</pubDate>
+        
+        <guid>https://gowinder.work/en/play-with-comfyui/</guid>
+        <description>&lt;h1 id=&#34;playing-around-with-comfyui&#34;&gt;Playing Around with ComfyUI
+&lt;/h1&gt;&lt;p&gt;&lt;code&gt;AIGC&lt;/code&gt; was very popular a while back, so I deployed &lt;code&gt;Stable Diffusion&lt;/code&gt;&amp;rsquo;s &lt;code&gt;WebUI&lt;/code&gt; locally and played with it for a bit. See: &lt;a class=&#34;link&#34; href=&#34;https://gowinder.work/content/posts/create-local-stable-diffusion-env.md&#34; &gt;text&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;But the &lt;code&gt;WebUI&lt;/code&gt; interface is too complex and has too many elements. It looks very professional, but it&amp;rsquo;s also somewhat difficult to use. I happened to be busy with work around that time, so after playing with it for a while I set it aside and didn&amp;rsquo;t continue.&lt;/p&gt;</description>
+        </item>
+        <item>
+        <title>Migrating My Home Server from a Dell R720 to a Snail Interstellar &#43; MacBook Pro: Follow-up</title>
+        <link>https://gowinder.work/en/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/</link>
+        <pubDate>Thu, 21 Mar 2024 13:54:13 +0800</pubDate>
+        
+        <guid>https://gowinder.work/en/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/</guid>
+        <description>&lt;h1 id=&#34;migrating-my-home-server-from-a-dell-r720-to-a-snail-interstellar--macbook-pro-follow-up&#34;&gt;Migrating My Home Server from a Dell R720 to a Snail Interstellar + MacBook Pro: Follow-up
+&lt;/h1&gt;&lt;h2 id=&#34;gigabit-network-disconnection-problem&#34;&gt;Gigabit Network Disconnection Problem
+&lt;/h2&gt;&lt;p&gt;The migration is complete and I&amp;rsquo;ve been using it for a while. The &lt;code&gt;Snail Interstellar&lt;/code&gt;&amp;rsquo;s power consumption is very low (compared with the &lt;code&gt;R720&lt;/code&gt;&amp;rsquo;s 100+ watts); with 3 &lt;code&gt;HDD&lt;/code&gt;s and 1 &lt;code&gt;SSD&lt;/code&gt; it draws 35 watts, less than 1 kWh a day—very nice.&lt;/p&gt;
+&lt;p&gt;But there&amp;rsquo;s currently a problem: on the &lt;code&gt;MacbookPro&lt;/code&gt;, as soon as I close the lid, lock the screen, or close the remote desktop, the wired network adapter on the &lt;code&gt;Thunderbolt HUB&lt;/code&gt; disconnects.&lt;/p&gt;</description>
+        </item>
+        
+    </channel>
 </rss>

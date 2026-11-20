@@ -1,17 +1,21 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Lvm - 标签 - gowinder个人博客</title>
+        <title>Lvm on gowinder个人博客</title>
         <link>https://gowinder.work/tags/lvm/</link>
-        <description>Lvm - 标签 - gowinder个人博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 17 Feb 2023 14:16:05 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/lvm/" rel="self" type="application/rss+xml" /><item>
-    <title>proxmox ve 中扩展pvm-local空间</title>
-    <link>https://gowinder.work/proxmox-ve-%E4%B8%AD%E6%89%A9%E5%B1%95pvm-local%E7%A9%BA%E9%97%B4/</link>
-    <pubDate>Fri, 17 Feb 2023 14:16:05 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://gowinder.work/proxmox-ve-%E4%B8%AD%E6%89%A9%E5%B1%95pvm-local%E7%A9%BA%E9%97%B4/</guid>
-    <description><![CDATA[<h1 id="proxmox-ve-中扩展pvm-local空间">proxmox ve 中扩展pvm-local空间</h1>
-<h2 id="原因">原因</h2>
-<p>之前在<code>DIY E3</code>服务器上安装的<code>proxmox ve</code>,用的一张<code>120G</code>的<code>SSD</code>,当时年纪轻,把<code>pve</code>的逻辑分区还分了一个<code>30g</code>的<code>data</code>分区出来了,现在想用<code>local</code>做<code>glusterfs</code>,那么就想把<code>data</code>中的空间合并到<code>root</code>中去了.</p>]]></description>
-</item>
-</channel>
+        <description>Recent content in Lvm on gowinder个人博客</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-CN</language>
+        <lastBuildDate>Fri, 17 Feb 2023 14:16:05 +0800</lastBuildDate><atom:link href="https://gowinder.work/tags/lvm/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>proxmox ve 中扩展pvm-local空间</title>
+        <link>https://gowinder.work/proxmox-ve-%E4%B8%AD%E6%89%A9%E5%B1%95pvm-local%E7%A9%BA%E9%97%B4/</link>
+        <pubDate>Fri, 17 Feb 2023 14:16:05 +0800</pubDate>
+        
+        <guid>https://gowinder.work/proxmox-ve-%E4%B8%AD%E6%89%A9%E5%B1%95pvm-local%E7%A9%BA%E9%97%B4/</guid>
+        <description>&lt;h1 id=&#34;proxmox-ve-中扩展pvm-local空间&#34;&gt;proxmox ve 中扩展pvm-local空间
+&lt;/h1&gt;&lt;h2 id=&#34;原因&#34;&gt;原因
+&lt;/h2&gt;&lt;p&gt;之前在&lt;code&gt;DIY E3&lt;/code&gt;服务器上安装的&lt;code&gt;proxmox ve&lt;/code&gt;,用的一张&lt;code&gt;120G&lt;/code&gt;的&lt;code&gt;SSD&lt;/code&gt;,当时年纪轻,把&lt;code&gt;pve&lt;/code&gt;的逻辑分区还分了一个&lt;code&gt;30g&lt;/code&gt;的&lt;code&gt;data&lt;/code&gt;分区出来了,现在想用&lt;code&gt;local&lt;/code&gt;做&lt;code&gt;glusterfs&lt;/code&gt;,那么就想把&lt;code&gt;data&lt;/code&gt;中的空间合并到&lt;code&gt;root&lt;/code&gt;中去了.&lt;/p&gt;</description>
+        </item>
+        
+    </channel>
 </rss>

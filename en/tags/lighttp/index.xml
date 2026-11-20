@@ -1,20 +1,24 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Lighttp - Tag - gowinder&#39;s Blog</title>
+        <title>Lighttp on gowinder&#39;s Blog</title>
         <link>https://gowinder.work/en/tags/lighttp/</link>
-        <description>Lighttp - Tag - gowinder&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 27 Feb 2023 14:05:41 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/en/tags/lighttp/" rel="self" type="application/rss+xml" /><item>
-    <title>Pi-hole Web UI Fails to Start on an Orange Pi Zero</title>
-    <link>https://gowinder.work/en/pihole-web-ui-fails-to-start-on-orange-pi-zero/</link>
-    <pubDate>Mon, 27 Feb 2023 14:05:41 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://gowinder.work/en/pihole-web-ui-fails-to-start-on-orange-pi-zero/</guid>
-    <description><![CDATA[<h1 id="pi-hole-web-ui-fails-to-start-on-an-orange-pi-zero">Pi-hole Web UI Fails to Start on an Orange Pi Zero</h1>
-<h2 id="background">Background</h2>
-<p>I recently installed <code>Pihole</code> on an idle <code>Orange Pi Zero</code> to use as the home primary <code>DNS</code> server. The install went smoothly: <code>Armbian</code> -&gt; <code>Pihole</code>. But after it finished, the <code>WebUI</code> would not start — <code>Pihole</code> uses <code>Lighttp</code>.</p>
-<h2 id="troubleshooting">Troubleshooting</h2>
-<p>I checked with: <code>sudo lighttpd -t -f /etc/lighttpd/lighttpd.conf</code> — the result was <code>Syntax OK</code>, no problem.</p>
-<p>Checking the <code>lighttpd</code> service: <code>sudo systemctl status lighttpd</code>, I found it exited immediately on start with <code>exited=255</code>.</p>]]></description>
-</item>
-</channel>
+        <description>Recent content in Lighttp on gowinder&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <lastBuildDate>Mon, 27 Feb 2023 14:05:41 +0800</lastBuildDate><atom:link href="https://gowinder.work/en/tags/lighttp/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Pi-hole Web UI Fails to Start on an Orange Pi Zero</title>
+        <link>https://gowinder.work/en/pihole-web-ui-fails-to-start-on-orange-pi-zero/</link>
+        <pubDate>Mon, 27 Feb 2023 14:05:41 +0800</pubDate>
+        
+        <guid>https://gowinder.work/en/pihole-web-ui-fails-to-start-on-orange-pi-zero/</guid>
+        <description>&lt;h1 id=&#34;pi-hole-web-ui-fails-to-start-on-an-orange-pi-zero&#34;&gt;Pi-hole Web UI Fails to Start on an Orange Pi Zero
+&lt;/h1&gt;&lt;h2 id=&#34;background&#34;&gt;Background
+&lt;/h2&gt;&lt;p&gt;I recently installed &lt;code&gt;Pihole&lt;/code&gt; on an idle &lt;code&gt;Orange Pi Zero&lt;/code&gt; to use as the home primary &lt;code&gt;DNS&lt;/code&gt; server. The install went smoothly: &lt;code&gt;Armbian&lt;/code&gt; -&amp;gt; &lt;code&gt;Pihole&lt;/code&gt;. But after it finished, the &lt;code&gt;WebUI&lt;/code&gt; would not start — &lt;code&gt;Pihole&lt;/code&gt; uses &lt;code&gt;Lighttp&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;troubleshooting&#34;&gt;Troubleshooting
+&lt;/h2&gt;&lt;p&gt;I checked with: &lt;code&gt;sudo lighttpd -t -f /etc/lighttpd/lighttpd.conf&lt;/code&gt; — the result was &lt;code&gt;Syntax OK&lt;/code&gt;, no problem.&lt;/p&gt;
+&lt;p&gt;Checking the &lt;code&gt;lighttpd&lt;/code&gt; service: &lt;code&gt;sudo systemctl status lighttpd&lt;/code&gt;, I found it exited immediately on start with &lt;code&gt;exited=255&lt;/code&gt;.&lt;/p&gt;</description>
+        </item>
+        
+    </channel>
 </rss>

@@ -1,25 +1,29 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Nextjs - 标签 - gowinder个人博客</title>
+        <title>Nextjs on gowinder个人博客</title>
         <link>https://gowinder.work/tags/nextjs/</link>
-        <description>Nextjs - 标签 - gowinder个人博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 26 Aug 2024 00:00:06 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/nextjs/" rel="self" type="application/rss+xml" /><item>
-    <title>使用nestjs&#43;honojs&#43;drizzle&#43;shadcnui开发部署在cloudflare pages上的web app</title>
-    <link>https://gowinder.work/nextjs-honojs-shadcnui-drizzle-cloudflare-pages/</link>
-    <pubDate>Mon, 26 Aug 2024 00:00:06 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://gowinder.work/nextjs-honojs-shadcnui-drizzle-cloudflare-pages/</guid>
-    <description><![CDATA[<h1 id="使用-nestjshonojsdrizzleshadcnui-开发部署在-cloudflare-pages-上的-web-app">使用 nestjs+honojs+drizzle+shadcnui 开发部署在 cloudflare pages 上的 web app</h1>
-<p>最近一段时间,一直在撸 cloudflare 的羊毛, workers, pages 都有. 经过几个小项目的折腾, 读过了开始的摸索期, 现在分享一下使用这几个开源库,快速开发一个部署在<code>Cloudflare Pages</code>上的<code>Web App</code>的过程.</p>]]></description>
-</item>
-<item>
-    <title>useQuery直接使用honojs client报错: TypeError: Cannot read properties of undefined (reading &#39;replace&#39;)</title>
-    <link>https://gowinder.work/honojs-usequery-error/</link>
-    <pubDate>Thu, 06 Jun 2024 10:00:06 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://gowinder.work/honojs-usequery-error/</guid>
-    <description><![CDATA[<h1 id="usequery直接使用honojs-client报错-typeerror-cannot-read-properties-of-undefined-reading-replace">useQuery直接使用honojs client报错: TypeError: Cannot read properties of undefined (reading &lsquo;replace&rsquo;)</h1>
-<p>最近开发了一个项目, 使用<code>nextjs</code>, <code>honojs</code>, <code>drizzle-orm</code>, 部署在<code>cloudflare pages</code>上, 因为<code>honojs</code>对于边缘计算比较友好,所以采用.</p>]]></description>
-</item>
-</channel>
+        <description>Recent content in Nextjs on gowinder个人博客</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-CN</language>
+        <lastBuildDate>Mon, 26 Aug 2024 00:00:06 +0800</lastBuildDate><atom:link href="https://gowinder.work/tags/nextjs/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>使用nestjs&#43;honojs&#43;drizzle&#43;shadcnui开发部署在cloudflare pages上的web app</title>
+        <link>https://gowinder.work/nextjs-honojs-shadcnui-drizzle-cloudflare-pages/</link>
+        <pubDate>Mon, 26 Aug 2024 00:00:06 +0800</pubDate>
+        
+        <guid>https://gowinder.work/nextjs-honojs-shadcnui-drizzle-cloudflare-pages/</guid>
+        <description>&lt;h1 id=&#34;使用-nestjshonojsdrizzleshadcnui-开发部署在-cloudflare-pages-上的-web-app&#34;&gt;使用 nestjs+honojs+drizzle+shadcnui 开发部署在 cloudflare pages 上的 web app
+&lt;/h1&gt;&lt;p&gt;最近一段时间,一直在撸 cloudflare 的羊毛, workers, pages 都有. 经过几个小项目的折腾, 读过了开始的摸索期, 现在分享一下使用这几个开源库,快速开发一个部署在&lt;code&gt;Cloudflare Pages&lt;/code&gt;上的&lt;code&gt;Web App&lt;/code&gt;的过程.&lt;/p&gt;</description>
+        </item>
+        <item>
+        <title>useQuery直接使用honojs client报错: TypeError: Cannot read properties of undefined (reading &#39;replace&#39;)</title>
+        <link>https://gowinder.work/honojs-usequery-error/</link>
+        <pubDate>Thu, 06 Jun 2024 10:00:06 +0800</pubDate>
+        
+        <guid>https://gowinder.work/honojs-usequery-error/</guid>
+        <description>&lt;h1 id=&#34;usequery直接使用honojs-client报错-typeerror-cannot-read-properties-of-undefined-reading-replace&#34;&gt;useQuery直接使用honojs client报错: TypeError: Cannot read properties of undefined (reading &amp;lsquo;replace&amp;rsquo;)
+&lt;/h1&gt;&lt;p&gt;最近开发了一个项目, 使用&lt;code&gt;nextjs&lt;/code&gt;, &lt;code&gt;honojs&lt;/code&gt;, &lt;code&gt;drizzle-orm&lt;/code&gt;, 部署在&lt;code&gt;cloudflare pages&lt;/code&gt;上, 因为&lt;code&gt;honojs&lt;/code&gt;对于边缘计算比较友好,所以采用.&lt;/p&gt;</description>
+        </item>
+        
+    </channel>
 </rss>

@@ -1,175 +1,472 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="robots" content="noodp" />
-        <title>Away From the Desk: I Gave My Mac Agents a Phone Entrance, and Why &#34;Yes, Merge It&#34; on a Phone Doesn&#39;t Count - gowinder&#39;s Blog</title><meta name="Description" content="Building AgentBridge, a phone entrance to the agents running on my Mac: outbound-only daemon, Cloudflare relay that sees ciphertext, Noise end-to-end encryption, hosted sessions where approval actually works, and why a relayed message can never count as your approval."><meta property="og:url" content="https://gowinder.work/en/agent-bridge/">
-  <meta property="og:site_name" content="gowinder&#39;s Blog">
-  <meta property="og:title" content="Away From the Desk: I Gave My Mac Agents a Phone Entrance, and Why &#34;Yes, Merge It&#34; on a Phone Doesn&#39;t Count">
-  <meta property="og:description" content="Building AgentBridge, a phone entrance to the agents running on my Mac: outbound-only daemon, Cloudflare relay that sees ciphertext, Noise end-to-end encryption, hosted sessions where approval actually works, and why a relayed message can never count as your approval.">
-  <meta property="og:locale" content="en">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2026-11-15T20:00:00+08:00">
-    <meta property="article:modified_time" content="2026-11-15T20:00:00+08:00">
-    <meta property="article:tag" content="Agent">
-    <meta property="article:tag" content="Claude Code">
-    <meta property="article:tag" content="Pi">
-    <meta property="article:tag" content="Workflow">
-    <meta property="article:tag" content="Remote Control">
-    <meta property="og:image" content="https://gravatar.com/userimage/16926726/2de44cb9918f08ff7f430244b10bf37b.jpeg?size=256">
+<html lang="en" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Building AgentBridge, a phone entrance to the agents running on my Mac: outbound-only daemon, Cloudflare relay that sees ciphertext, Noise end-to-end encryption, hosted sessions where approval actually works, and why a relayed message can never count as your approval.">
+<meta name="keywords" content="agent, claude code, pi, remote control, end-to-end encryption, cloudflare durable object, hosted session, workflow"><title>Away From the Desk: I Gave My Mac Agents a Phone Entrance, and Why &#34;Yes, Merge It&#34; on a Phone Doesn&#39;t Count - gowinder&#39;s Blog</title>
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://gravatar.com/userimage/16926726/2de44cb9918f08ff7f430244b10bf37b.jpeg?size=256">
-  <meta name="twitter:title" content="Away From the Desk: I Gave My Mac Agents a Phone Entrance, and Why &#34;Yes, Merge It&#34; on a Phone Doesn&#39;t Count">
-  <meta name="twitter:description" content="Building AgentBridge, a phone entrance to the agents running on my Mac: outbound-only daemon, Cloudflare relay that sees ciphertext, Noise end-to-end encryption, hosted sessions where approval actually works, and why a relayed message can never count as your approval.">
-<meta name="application-name" content="gowinder个人博客">
-<meta name="apple-mobile-web-app-title" content="gowinder个人博客"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://gowinder.work/en/agent-bridge/" /><link rel="prev" href="https://gowinder.work/en/agent-handoff-result-file/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "BlogPosting",
-        "headline": "Away From the Desk: I Gave My Mac Agents a Phone Entrance, and Why \"Yes, Merge It\" on a Phone Doesn't Count",
-        "inLanguage": "en",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https:\/\/gowinder.work\/en\/agent-bridge\/"
-        },"image": [{
-                            "@type": "ImageObject",
-                            "url": "https:\/\/gowinder.work\/images\/Apple-Devices-Preview.png",
-                            "width":  3200 ,
-                            "height":  2048 
-                        }],"genre": "posts","keywords": "agent, claude code, pi, workflow, remote control","wordcount":  2489 ,
-        "url": "https:\/\/gowinder.work\/en\/agent-bridge\/","datePublished": "2026-11-15T20:00:00+08:00","dateModified": "2026-11-15T20:00:00+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
-            "@type": "Organization",
-            "name": "xxxx","logo": {
-                    "@type": "ImageObject",
-                    "url": "https:\/\/gowinder.work\/images\/avatar.png",
-                    "width":  528 ,
-                    "height":  560 
-                }},"author": {
-                "@type": "Person",
-                "name": "Author"
-            },"description": "Building AgentBridge, a phone entrance to the agents running on my Mac: outbound-only daemon, Cloudflare relay that sees ciphertext, Noise end-to-end encryption, hosted sessions where approval actually works, and why a relayed message can never count as your approval."
-    }
-    </script>
+<link rel='canonical' href='https://gowinder.work/en/agent-bridge/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Away From the Desk: I Gave My Mac Agents a Phone Entrance, and Why \"Yes, Merge It\" on a Phone Doesn't Count - gowinder's Blog">
+<meta property='og:description' content="Building AgentBridge, a phone entrance to the agents running on my Mac: outbound-only daemon, Cloudflare relay that sees ciphertext, Noise end-to-end encryption, hosted sessions where approval actually works, and why a relayed message can never count as your approval.">
+<meta property='og:url' content='https://gowinder.work/en/agent-bridge/'>
+<meta property='og:site_name' content='gowinder&#39;s Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='agent' /><meta property='article:tag' content='claude code' /><meta property='article:tag' content='pi' /><meta property='article:tag' content='workflow' /><meta property='article:tag' content='remote control' /><meta property='article:published_time' content='2026-11-15T20:00:00&#43;08:00'/><meta property='article:modified_time' content='2026-11-15T20:00:00&#43;08:00'/><meta property='og:image' content='https://gowinder.work/images/avatar.png' />
+<meta name="twitter:title" content="Away From the Desk: I Gave My Mac Agents a Phone Entrance, and Why \"Yes, Merge It\" on a Phone Doesn't Count - gowinder's Blog">
+<meta name="twitter:description" content="Building AgentBridge, a phone entrance to the agents running on my Mac: outbound-only daemon, Cloudflare relay that sees ciphertext, Noise end-to-end encryption, hosted sessions where approval actually works, and why a relayed message can never count as your approval."><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://gowinder.work/images/avatar.png' /><link rel="alternate" type="text/plain" href="https://gowinder.work/en/agent-bridge/index.md">
+    <link rel="shortcut icon" href="/favicon.ico" />
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Bin Zhu","url":"https://github.com/gowinder"},"dateModified":"2026-11-15T20:00:00+08:00","datePublished":"2026-11-15T20:00:00+08:00","description":"Building AgentBridge, a phone entrance to the agents running on my Mac: outbound-only daemon, Cloudflare relay that sees ciphertext, Noise end-to-end encryption, hosted sessions where approval actually works, and why a relayed message can never count as your approval.","genre":"posts","headline":"Away From the Desk: I Gave My Mac Agents a Phone Entrance, and Why \"Yes, Merge It\" on a Phone Doesn't Count","image":"https://gowinder.work/images/avatar.png","inLanguage":"en","keywords":"agent, claude code, pi, workflow, remote control","mainEntityOfPage":{"@id":"https://gowinder.work/en/agent-bridge/","@type":"WebPage"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://gowinder.work/images/avatar.png"},"name":"gowinder's Blog","url":"https://gowinder.work/"},"url":"https://gowinder.work/en/agent-bridge/","wordCount":2489}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://gowinder.work/","name":"gowinder's Blog","position":1},{"@type":"ListItem","item":"https://gowinder.work/en/posts/","name":"Posts","position":2},{"@type":"ListItem","item":"https://gowinder.work/en/agent-bridge/","name":"Away From the Desk: I Gave My Mac Agents a Phone Entrance, and Why \"Yes, Merge It\" on a Phone Doesn't Count","position":3}]}</script>
     </head>
-    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
 
-        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
-    <div class="header-wrapper">
-        <div class="header-title">
-            <a href="/en/" title="gowinder&#39;s Blog"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw' aria-hidden='true'></i></span>Gowinder</a>
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/en/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/images/avatar_hu_48ba0caa0b985179.png" width="300"
+                            height="318" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/en">gowinder&#39;s Blog</a></h1>
+            <h2 class="site-description">Life, coding, tinkering, and everything else.</h2>
         </div>
-        <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/en/posts/"> Posts </a><a class="menu-item" href="/en/tags/"> Tags </a><a class="menu-item" href="/en/categories/"> Categories </a><a class="menu-item" href="/en/categories/documentation/"> Docs </a><a class="menu-item" href="/en/about/"> About </a><a class="menu-item" href="https://github.com/gowinder" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i>  </a><a class="menu-item" href="/en/projects/"> Projects </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
-                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
-                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-desktop">
-                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-                        </span>
-                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-                </a><a href="javascript:void(0);" class="menu-item language" title="Select Language">
-                    <i class="fa fa-globe" aria-hidden="true"></i>                      
-                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/en/agent-bridge/" selected>English</option><option value="/agent-bridge/">简体中文</option></select>
-                </a></div>
-        </div>
-    </div>
-</header><header class="mobile" id="header-mobile">
-    <div class="header-container">
-        <div class="header-wrapper">
-            <div class="header-title">
-                <a href="/en/" title="gowinder&#39;s Blog"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw' aria-hidden='true'></i></span>Gowinder</a>
-            </div>
-            <div class="menu-toggle" id="menu-toggle-mobile">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-        <div class="menu" id="menu-mobile"><div class="search-wrapper">
-                    <div class="search mobile" id="search-mobile">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
-                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
-                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-mobile">
-                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-                        </span>
-                    </div>
-                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
-                        Cancel
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='mailto:gowinder@hotmail.com'
+                        target="_blank"
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-messages" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
+  <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" />
+</svg>
+
+
+
+                        
                     </a>
-                </div><a class="menu-item" href="/en/posts/" title="">Posts</a><a class="menu-item" href="/en/tags/" title="">Tags</a><a class="menu-item" href="/en/categories/" title="">Categories</a><a class="menu-item" href="/en/categories/documentation/" title="">Docs</a><a class="menu-item" href="/en/about/" title="">About</a><a class="menu-item" href="https://github.com/gowinder" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i></a><a class="menu-item" href="/en/projects/" title="">Projects</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">
-                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
-                    <select class="language-select" onchange="location = this.value;"><option value="/en/agent-bridge/" selected>English</option><option value="/agent-bridge/">简体中文</option></select>
-                </a></div>
-    </div>
-</header><div class="search-dropdown desktop">
-        <div id="search-dropdown-desktop"></div>
-    </div>
-    <div class="search-dropdown mobile">
-        <div id="search-dropdown-mobile"></div>
-    </div><main class="main">
-                <div class="container"><div class="toc" id="toc-auto">
-            <h2 class="toc-title">Contents</h2>
-            <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Away From the Desk: I Gave My Mac Agents a Phone Entrance, and Why "Yes, Merge It" on a Phone Doesn't Count</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2026-11-15">2026-11-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;2489 words&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;12 minutes&nbsp;<span id="/en/agent-bridge/" class="leancloud_visitors" data-flag-title="Away From the Desk: I Gave My Mac Agents a Phone Entrance, and Why &#34;Yes, Merge It&#34; on a Phone Doesn&#39;t Count">
-                        <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;views
-                    </span>&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  data-kept="">
-                <div class="details-summary toc-title">
-                    <span>Contents</span>
-                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
-  <ul>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/gowinder'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='/en/index.xml'
+                        target="_blank"
+                        title="RSS"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-rss" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="5" cy="19" r="1" />
+  <path d="M4 4a16 16 0 0 1 16 16" />
+  <path d="M4 11a9 9 0 0 1 9 9" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/en/posts/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Posts</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/tags/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+  <circle cx="9" cy="9" r="2" />
+</svg>
+
+
+
+                
+                <span>Tags</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/categories/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                
+                <span>Categories</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/projects/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+</svg>
+
+
+
+                
+                <span>Projects</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='https://github.com/gowinder' target="_blank">
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                
+                <span>GitHub</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://gowinder.work/en/" selected>English</option>
+                                
+                                    <option value="https://gowinder.work/" >简体中文</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
     <li><a href="#five-rounds-of-validation-before-writing-any-code">Five rounds of validation before writing any code</a></li>
     <li><a href="#the-architecture-is-nothing-fancy">The architecture is nothing fancy</a></li>
     <li><a href="#every-feature-came-out-of-use">Every feature came out of use</a></li>
     <li><a href="#the-three-small-features-i-use-most">The three small features I use most</a></li>
     <li><a href="#not-being-able-to-approve--i-thought-about-this-for-a-long-time">Not being able to approve — I thought about this for a long time</a></li>
     <li><a href="#where-it-stands-now">Where it stands now</a></li>
-  </ul>
-</nav></div>
-            </div><div class="content" id="content"><p>The last post was about the result file, how the coordinator and the executor hand work over. That setup works, but I skipped past a precondition at the time: the executor runs on my machine, so the human has to be at my machine too. Later I moved the heavy work back onto my own laptop, and that precondition turned into a daily problem — the work lives on the Mac, and I am often not in front of the Mac.</p>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    
+
+
+
+<header class="article-header">
+
+    
+
+
+
+
+
+
+    
+
+
+<div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/en/agent-bridge/">Away From the Desk: I Gave My Mac Agents a Phone Entrance, and Why &#34;Yes, Merge It&#34; on a Phone Doesn&#39;t Count</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            Building AgentBridge, a phone entrance to the agents running on my Mac: outbound-only daemon, Cloudflare relay that sees ciphertext, Noise end-to-end encryption, hosted sessions where approval actually works, and why a relayed message can never count as your approval.
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2026-11-15</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    12 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+        <footer class="article-translations">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+            <div>
+                
+                    <a href="https://gowinder.work/agent-bridge/" class="link">简体中文</a>
+                
+            </div>
+        </footer>
+    
+</div>
+
+</header>
+
+
+    <section class="article-content">
+    
+    
+    <p>The last post was about the result file, how the coordinator and the executor hand work over. That setup works, but I skipped past a precondition at the time: the executor runs on my machine, so the human has to be at my machine too. Later I moved the heavy work back onto my own laptop, and that precondition turned into a daily problem — the work lives on the Mac, and I am often not in front of the Mac.</p>
 <p>I use Claude Code and pi, both wired to my own magpie gateway. The everyday model is DeepSeek v4.1 Flash; it handles coding and chores. For design review I bring in something stronger (gpt 6.1 sol — I used Opus 5.5 before, and switched after the account I&rsquo;d had for years got banned). Most of the work is coding, but I also use them to collect material online, and lately to look for jobs and send resumes. How many sessions I open depends on the day: one or two when things are quiet, more than ten when it&rsquo;s busy, each one holding a different thread. When an agent finishes a round, or asks a question only I can answer, it just sits there waiting. At my desk that&rsquo;s fine. The problem is I&rsquo;m not always at my desk — I take the dog out, and that session waits half an hour.</p>
 <p>I tried remote desktop. Opening a whole desktop session to answer one line is too heavy. Tunnels and the like mean leaving an inbound hole in my home network, and I don&rsquo;t want that hole. There is an official Remote Control, and I&rsquo;ll explain below why it doesn&rsquo;t work for me. So I looked around, found nothing, and built one myself: Agent Bridge. Repo created on November 10, 0.11.0 shipped on the 14th. The scope is deliberately narrow: on a phone browser I can see the agent sessions running on my Mac and reply to them. That&rsquo;s it.</p>
-<h2 id="five-rounds-of-validation-before-writing-any-code">Five rounds of validation before writing any code</h2>
-<p>I didn&rsquo;t start with code this time. I wrote a plan on November 9 and spent a few days on pre-validation, mostly out of fear of a few assumptions. Some things sound self-evident and turn out to be nothing like that in practice. The biggest trap in this project was never &ldquo;can I write it&rdquo;, it was &ldquo;did I get the model of the world wrong&rdquo;.</p>
+<h2 id="five-rounds-of-validation-before-writing-any-code">Five rounds of validation before writing any code
+</h2><p>I didn&rsquo;t start with code this time. I wrote a plan on November 9 and spent a few days on pre-validation, mostly out of fear of a few assumptions. Some things sound self-evident and turn out to be nothing like that in practice. The biggest trap in this project was never &ldquo;can I write it&rdquo;, it was &ldquo;did I get the model of the world wrong&rdquo;.</p>
 <p>Validation said the relay path works: a Cloudflare Durable Object can host WebSocket rooms, Noise has standard implementations, and end-to-end encryption doesn&rsquo;t need to be invented. For Claude Desktop&rsquo;s Code sessions, you can push messages in while the desktop app is running: every session process has a socket under <code>/tmp/cc-socks/</code>, and messages sent in that way landed at the end of the same record, visible in the UI, without forking the record. ChatGPT&rsquo;s Codex threads can go through its own IPC, but only into threads that are already open in the desktop app; threads that aren&rsquo;t open can&rsquo;t receive anything.</p>
 <p>Some options got crossed out on the spot. Claude&rsquo;s regular chat has no local record on the machine at all — the version I have installed doesn&rsquo;t even ship a chat UI — so that line was dead. The honest conclusion was &ldquo;partially works&rdquo;, and I scoped the project to exactly that: whatever path verified, build it; whatever didn&rsquo;t, skip it.</p>
-<h2 id="the-architecture-is-nothing-fancy">The architecture is nothing fancy</h2>
-<p>A daemon on the Mac, plus a small menu bar app. It only dials out, connecting to the Cloudflare relay and staying connected. Nothing inbound is opened on my home network — no port forwarding, no firewall changes. I care about that one: opening a hole in the router just to answer a message remotely is not a trade I&rsquo;ll make.</p>
+<h2 id="the-architecture-is-nothing-fancy">The architecture is nothing fancy
+</h2><p>A daemon on the Mac, plus a small menu bar app. It only dials out, connecting to the Cloudflare relay and staying connected. Nothing inbound is opened on my home network — no port forwarding, no firewall changes. I care about that one: opening a hole in the router just to answer a message remotely is not a trade I&rsquo;ll make.</p>
 <p>The relay can&rsquo;t see content. Browser and Mac speak Noise end-to-end encrypted; the relay forwards ciphertext and at most knows the room id, when there&rsquo;s traffic, and how big the packets are. Pairing doesn&rsquo;t use accounts either. The Mac generates a one-time token, only its hash goes to the relay, and the token itself sits after the <code>#</code> in the link — the part a browser never sends to the server. During pairing, the phone and the Mac each display a 6-digit code; if they match, pairing proceeds. The token is single-use and expires in a few minutes.</p>
 <p>The painful part is adapters. Every agent stores sessions and receives messages differently, so each one has to be wired up individually: Claude Desktop&rsquo;s Code, the Claude Code CLI, ChatGPT&rsquo;s Codex, the Codex CLI, Antigravity, DeepSeek Harness, and later pi. And after wiring each one up, capabilities have to be labeled honestly — if reading is incomplete, mark it partial. None of these agents has ever offered a stable interface; claiming full support would be lying to you and to myself.</p>
-<h2 id="every-feature-came-out-of-use">Every feature came out of use</h2>
-<p>The first version only mirrored: move the desktop session onto the phone, read and reply. That was enough for a few days, until I got stuck on approval — I say &ldquo;yes, merge it&rdquo; on the phone and it doesn&rsquo;t count. That deserves its own section, further down.</p>
+<h2 id="every-feature-came-out-of-use">Every feature came out of use
+</h2><p>The first version only mirrored: move the desktop session onto the phone, read and reply. That was enough for a few days, until I got stuck on approval — I say &ldquo;yes, merge it&rdquo; on the phone and it doesn&rsquo;t count. That deserves its own section, further down.</p>
 <p>The breakthrough was hosted sessions. Injecting text into someone else&rsquo;s session is semantically relaying, so I stopped injecting. Instead Bridge starts a Claude Code process of its own and owns the input side. Sessions created from the web are all like this: tool calls that need approval and questions the agent asks travel back over the protocol to the browser, and tapping approve or reject on the phone actually takes effect. The cost is that these sessions are invisible in the desktop app — two separate worlds. After 0.1.7 shipped, my habits drifted over almost entirely.</p>
 <p>Everything after that was chased by small annoyances. When Bridge restarted, it took the processes it had started down with it, killing whatever round was in flight. So I added a resident daemon that owns those child processes: Bridge restarting now only drops the connection, the round keeps running, and the missing output is filled in when you come back. An agent finishing at 3 a.m. with nobody watching led to push notifications. Later pi became hostable too — pi is what I use most, so the web UI can switch its model and set a separate model and thinking level for subagents.</p>
-<h2 id="the-three-small-features-i-use-most">The three small features I use most</h2>
-<p>Todo was added in 0.11. Before it existed I didn&rsquo;t think anything was missing; after it landed I can&rsquo;t work without it. Mid-conversation I suddenly remember something — maybe a feature, maybe a bug — and the current conversation is busy, and I don&rsquo;t want to start a new conversation and pull a new branch just for that. So I drop it into todo and tag it as feature or bug. When the conversation finishes and things free up, I tap that item and it lands in the input box, ready to send. Items live in Bridge&rsquo;s own database, so clearing browser cache doesn&rsquo;t lose them; a different machine means a different database, which is worth remembering.</p>
+<h2 id="the-three-small-features-i-use-most">The three small features I use most
+</h2><p>Todo was added in 0.11. Before it existed I didn&rsquo;t think anything was missing; after it landed I can&rsquo;t work without it. Mid-conversation I suddenly remember something — maybe a feature, maybe a bug — and the current conversation is busy, and I don&rsquo;t want to start a new conversation and pull a new branch just for that. So I drop it into todo and tag it as feature or bug. When the conversation finishes and things free up, I tap that item and it lands in the input box, ready to send. Items live in Bridge&rsquo;s own database, so clearing browser cache doesn&rsquo;t lose them; a different machine means a different database, which is worth remembering.</p>
 <p>The sidebar is barely noticeable on a phone but is the workhorse in a desktop browser. The left column can stay open, with the structure tree and history; at a glance I can see which session is running, which one is waiting on me, and which one has unread replies. Same for the info bar inside a session: how much context is used, which background tasks are attached, all laid out. Compared with scrolling around a TUI in a terminal, I&rsquo;d rather keep the web page open — the information is spread out, nothing to memorize.</p>
 <p>Then there&rsquo;s quick switching: one button in the top bar that jumps back and forth between the two most recent conversations. It sounds tiny and it&rsquo;s impossible to stop using, because I discovered that I only ever follow two conversations deeply at a time. Ten may be open, but my attention rotates between two; any more and I can&rsquo;t keep up. In the end, however well the agents run, the queue terminates at me. The bottleneck in the AI era is the human brain. That&rsquo;s just how it is.</p>
 <p>These features now sit on the path of my ordinary day. On the commute, walking the dog, on the couch with the TV on, lying in bed at night, even sitting on the toilet — whenever I remember that some session needs a reply, I pull out the phone and read it, answer it, queue the next thing. The reason that works is that hosted mode is basically full-featured: not a read-only mirror of the desktop app, but the session itself running completely on the phone.</p>
-<h2 id="not-being-able-to-approve--i-thought-about-this-for-a-long-time">Not being able to approve — I thought about this for a long time</h2>
-<p>There&rsquo;s only one path for injecting text into a desktop session, the peer socket, and injected text arrives wrapped:</p>
+<h2 id="not-being-able-to-approve--i-thought-about-this-for-a-long-time">Not being able to approve — I thought about this for a long time
+</h2><p>There&rsquo;s only one path for injecting text into a desktop session, the peer socket, and injected text arrives wrapped:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -188,52 +485,228 @@
 <p>I also experimented with <code>claude --resume -p</code>, appending to a session by id. It really executes — it will even make the commit for you — but it executes in a newly spawned process, not the one open on the desktop. The desktop process doesn&rsquo;t read the record off disk, so the new words never enter its head, and two processes writing the same record file fork it; the appended lines become orphans nobody claims. The receipt says success while the actual state disagrees. That&rsquo;s worse than not being able to do it. I stopped and dropped it.</p>
 <p>Sessions running directly in a terminal have one more small problem: when a multiple-choice prompt pops up, the web page can&rsquo;t answer it. I tried several delivery methods — the channel ignores it, or the place I write to isn&rsquo;t the input queue, or permissions aren&rsquo;t enough. There&rsquo;s only a way when the session runs inside a herdr panel: that panel can send real keystrokes, so it first reads which option the cursor is on, then presses arrows and Enter. I only risk single-select; I don&rsquo;t touch multi-select. Without herdr, I go back to the terminal and answer honestly.</p>
 <p>The rest of the limits, all at once. The web UI can only create hosted sessions; every other adapter attaches to a session that already exists. Reading is generally incomplete — missing tool output, missing attachments, missing early conversation, any of these. Antigravity&rsquo;s desktop build is read-only. Some methods in the protocol are defined but not implemented. The web gets new messages by polling: the chat page refreshes every five seconds, so it isn&rsquo;t real-time. The UI is Chinese only. Record files sit on disk unencrypted, protected only by the system&rsquo;s directory permissions. One room binds to exactly one Mac. That&rsquo;s about it; the changelog has the rest.</p>
-<h2 id="where-it-stands-now">Where it stands now</h2>
-<p>0.11.0, MIT licensed, on GitHub at gowinder/agent-bridge, DMG available for download, web client at agent-bridge.craftstead.app. Signing and notarization require an Apple certificate I haven&rsquo;t configured, so the unsigned build needs a manual allow in System Settings the first time you open it. It&rsquo;s in the README. Nothing to gloss over.</p>
+<h2 id="where-it-stands-now">Where it stands now
+</h2><p>0.11.0, MIT licensed, on GitHub at gowinder/agent-bridge, DMG available for download, web client at agent-bridge.craftstead.app. Signing and notarization require an Apple certificate I haven&rsquo;t configured, so the unsigned build needs a manual allow in System Settings the first time you open it. It&rsquo;s in the README. Nothing to gloss over.</p>
 <p>My own usage has changed three times. At first I used Claude Desktop&rsquo;s sessions; mirroring looked convenient, but the moment I needed to commit code or open a PR I got stuck — no approval, so the last step always meant going back to the computer. Then I switched to Bridge-hosted Claude Code, which runs the whole flow. Now I mostly use hosted pi: it&rsquo;s more complete and more open, and models, subagents and thinking levels can all be set directly from the web page.</p>
 <p>One more thing that sounds a bit circular: most of Agent Bridge&rsquo;s later development was Agent Bridge developing itself through hosted pi. When inspiration hits, I drop it into its own todo first, and when one item is done I line up the next one by hand — I can push it forward from anywhere. Once the auto-update toggle in the app&rsquo;s settings does everything by itself — detects a new build and installs it without me clicking &ldquo;Check for updates&rdquo; and &ldquo;Update now&rdquo; — I can basically use it without the Mac as the host machine. A tool that can leave its own development machine and keep developing itself: that line is closed.</p>
 <p>Nothing urgent next by way of new agents. Push notifications for subscriptions are owed — build them and polling can retire, and that&rsquo;s the biggest experience gap. A few corners of hosted pi still need polishing; I&rsquo;ll finish those first.</p>
 <p>One question to leave open, and I genuinely want to hear how others think about it: a tool that reaches your development machine straight from your phone — how far does it have to go before you&rsquo;d dare leave it on all the time? My answer is everything above: outbound only, the relay sees no plaintext, approval rights are never lent out. If any one of those goes slack, I&rsquo;d rather not use it.</p>
-</div><div class="post-footer" id="post-footer">
-    <div class="post-info">
-        <div class="post-info-line">
-            <div class="post-info-mod">
-                <span>Updated on 2026-11-15</span>
-            </div></div>
-        <div class="post-info-line">
-            <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/en/agent-bridge/index.md" target="_blank">Read Markdown</a>
-                        </span></div>
-            <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://gowinder.work/en/agent-bridge/" data-title="Away From the Desk: I Gave My Mac Agents a Phone Entrance, and Why &#34;Yes, Merge It&#34; on a Phone Doesn&#39;t Count" data-hashtags="agent,claude code,pi,workflow,remote control"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://gowinder.work/en/agent-bridge/" data-hashtag="agent"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://gowinder.work/en/agent-bridge/" data-title="Away From the Desk: I Gave My Mac Agents a Phone Entrance, and Why &#34;Yes, Merge It&#34; on a Phone Doesn&#39;t Count"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://gowinder.work/en/agent-bridge/" data-title="Away From the Desk: I Gave My Mac Agents a Phone Entrance, and Why &#34;Yes, Merge It&#34; on a Phone Doesn&#39;t Count"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://gowinder.work/en/agent-bridge/" data-title="Away From the Desk: I Gave My Mac Agents a Phone Entrance, and Why &#34;Yes, Merge It&#34; on a Phone Doesn&#39;t Count"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/en/tags/agent/">Agent</a>
+        
+            <a href="/en/tags/claude-code/">Claude Code</a>
+        
+            <a href="/en/tags/pi/">Pi</a>
+        
+            <a href="/en/tags/workflow/">Workflow</a>
+        
+            <a href="/en/tags/remote-control/">Remote Control</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/en/agent-handoff-result-file/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Grok Bot, Claude Code, and DeepSeek Harness: one result file that saves most of the tokens</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="gowinder/hugo-comment"
+        issue-term="pathname"
+        
+        crossorigin="anonymous"
+        async
+        >
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+<script>
+    let utterancesLoaded = false;
+
+    function setUtterancesTheme(theme) {
+        let utterances = document.querySelector('.utterances iframe');
+        if (utterances) {
+            utterances.contentWindow.postMessage(
+                {
+                    type: 'set-theme',
+                    theme: `github-${theme}`
+                },
+                'https://utteranc.es'
+            );
+        }
+    }
+
+    addEventListener('message', event => {
+        if (event.origin !== 'https://utteranc.es') return;
+
+        
+        utterancesLoaded = true;
+        setUtterancesTheme(document.documentElement.dataset.scheme)
+    });
+
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (!utterancesLoaded) return;
+        setUtterancesTheme(e.detail)
+    })
+</script>
+
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2019 - 
+        
+        2026 gowinder&#39;s Blog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.31.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
         </div>
+
     </div>
 
-    <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/agent/">Agent</a>,&nbsp;<a href="/en/tags/claude-code/">Claude Code</a>,&nbsp;<a href="/en/tags/pi/">Pi</a>,&nbsp;<a href="/en/tags/workflow/">Workflow</a>,&nbsp;<a href="/en/tags/remote-control/">Remote Control</a></section>
-        <section>
-            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/en/">Home</a></span>
-        </section>
-    </div>
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
 
-    <div class="post-nav"><a href="/en/agent-handoff-result-file/" class="prev" rel="prev" title="Grok Bot, Claude Code, and DeepSeek Harness: one result file that saves most of the tokens"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Grok Bot, Claude Code, and DeepSeek Harness: one result file that saves most of the tokens</a></div>
-</div>
-<div id="comments"><div id="valine" class="comment"></div><noscript>
-                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
-            </noscript><div id="utterances" class="comment"></div><noscript>
-                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
-            </noscript></div></article></div>
-            </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.143.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
-                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/en/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+            </main>
         </div>
-    </footer></div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
 
-        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
-                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
-            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
-                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
-            </a>
-        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.5.0/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"gowinder/hugo-comment"},"valine":{"appId":"QGzwQXOqs5JOhN4RGPOkR2mR-MdYXbMMI","appKey":"WBmoGyJtbqUswvfLh6L8iEBr","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"en","pageSize":10,"placeholder":"Your comment ...","recordIP":true,"serverURLs":"https://leancloud.hugoloveit.com","visitor":true}},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
 </html>

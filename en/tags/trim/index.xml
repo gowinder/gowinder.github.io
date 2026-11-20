@@ -1,83 +1,87 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Trim - Tag - gowinder&#39;s Blog</title>
+        <title>Trim on gowinder&#39;s Blog</title>
         <link>https://gowinder.work/en/tags/trim/</link>
-        <description>Trim - Tag - gowinder&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 17 Feb 2023 15:12:05 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/en/tags/trim/" rel="self" type="application/rss+xml" /><item>
-    <title>Adding a Cron Job for Automatic TRIM in Proxmox VE</title>
-    <link>https://gowinder.work/en/adding-a-cron-job-for-automatic-trim-in-proxmox-ve/</link>
-    <pubDate>Fri, 17 Feb 2023 15:12:05 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://gowinder.work/en/adding-a-cron-job-for-automatic-trim-in-proxmox-ve/</guid>
-    <description><![CDATA[<h1 id="adding-a-cron-job-for-automatic-trim-in-proxmox-ve">Adding a Cron Job for Automatic TRIM in Proxmox VE</h1>
-<h2 id="check-the-status">Check the status</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl status fstrim.timer
-</span></span><span class="line"><span class="cl"><span class="c1"># output:</span>
-</span></span><span class="line"><span class="cl">● fstrim.timer - Discard unused blocks once a week
-</span></span><span class="line"><span class="cl">     Loaded: loaded <span class="o">(</span>/lib/systemd/system/fstrim.timer<span class="p">;</span> disabled<span class="p">;</span> vendor preset: enabled<span class="o">)</span>
-</span></span><span class="line"><span class="cl">     Active: inactive <span class="o">(</span>dead<span class="o">)</span>
-</span></span><span class="line"><span class="cl">    Trigger: n/a
-</span></span><span class="line"><span class="cl">   Triggers: ● fstrim.service
-</span></span><span class="line"><span class="cl">       Docs: man:fstrim
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="start-the-service">Start the service</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl start fstrim.timer
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="check-the-next-cleanup-time">Check the next cleanup time</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl list-timers --all
-</span></span><span class="line"><span class="cl"><span class="c1"># output:</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">NEXT                        LEFT           LAST                        PASSED     UNIT                         ACTIVATES
-</span></span><span class="line"><span class="cl">Fri 2023-02-17 23:54:54 CST 8h left        Thu 2023-02-16 23:54:54 CST 15h ago    systemd-tmpfiles-clean.timer systemd-tmpfiles-clean.servi&gt;
-</span></span><span class="line"><span class="cl">Sat 2023-02-18 00:00:00 CST 8h left        Fri 2023-02-17 00:00:00 CST 15h ago    atop-rotate.timer            atop-rotate.service
-</span></span><span class="line"><span class="cl">Sat 2023-02-18 00:00:00 CST 8h left        Fri 2023-02-17 00:00:00 CST 15h ago    logrotate.timer              logrotate.service
-</span></span><span class="line"><span class="cl">Sat 2023-02-18 00:00:00 CST 8h left        Fri 2023-02-17 00:00:00 CST 15h ago    man-db.timer                 man-db.service
-</span></span><span class="line"><span class="cl">Sat 2023-02-18 04:19:48 CST 13h left       Fri 2023-02-17 05:29:22 CST 9h ago     pve-daily-update.timer       pve-daily-update.service
-</span></span><span class="line"><span class="cl">Sat 2023-02-18 05:18:55 CST 14h left       Fri 2023-02-17 06:45:48 CST 8h ago     apt-daily.timer              apt-daily.service
-</span></span><span class="line"><span class="cl">Sat 2023-02-18 06:41:05 CST 15h left       Fri 2023-02-17 06:02:36 CST 9h ago     apt-daily-upgrade.timer      apt-daily-upgrade.service
-</span></span><span class="line"><span class="cl">Sun 2023-02-19 03:10:12 CST <span class="m">1</span> day 12h left Sun 2023-02-12 03:10:19 CST <span class="m">5</span> days ago e2scrub_all.timer            e2scrub_all.service
-</span></span><span class="line"><span class="cl">Mon 2023-02-20 00:37:59 CST <span class="m">2</span> days left    n/a                         n/a        fstrim.timer                 fstrim.service
-</span></span><span class="line"><span class="cl">n/a                         n/a            n/a                         n/a        pvesr.timer
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Done</p>]]></description>
-</item>
-</channel>
+        <description>Recent content in Trim on gowinder&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <lastBuildDate>Fri, 17 Feb 2023 15:12:05 +0800</lastBuildDate><atom:link href="https://gowinder.work/en/tags/trim/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Adding a Cron Job for Automatic TRIM in Proxmox VE</title>
+        <link>https://gowinder.work/en/adding-a-cron-job-for-automatic-trim-in-proxmox-ve/</link>
+        <pubDate>Fri, 17 Feb 2023 15:12:05 +0800</pubDate>
+        
+        <guid>https://gowinder.work/en/adding-a-cron-job-for-automatic-trim-in-proxmox-ve/</guid>
+        <description>&lt;h1 id=&#34;adding-a-cron-job-for-automatic-trim-in-proxmox-ve&#34;&gt;Adding a Cron Job for Automatic TRIM in Proxmox VE
+&lt;/h1&gt;&lt;h2 id=&#34;check-the-status&#34;&gt;Check the status
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl status fstrim.timer
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# output:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;● fstrim.timer - Discard unused blocks once a week
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     Loaded: loaded &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;/lib/systemd/system/fstrim.timer&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; disabled&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; vendor preset: enabled&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     Active: inactive &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;dead&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    Trigger: n/a
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   Triggers: ● fstrim.service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;       Docs: man:fstrim
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;start-the-service&#34;&gt;Start the service
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl start fstrim.timer
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;check-the-next-cleanup-time&#34;&gt;Check the next cleanup time
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl list-timers --all
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# output:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;NEXT                        LEFT           LAST                        PASSED     UNIT                         ACTIVATES
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Fri 2023-02-17 23:54:54 CST 8h left        Thu 2023-02-16 23:54:54 CST 15h ago    systemd-tmpfiles-clean.timer systemd-tmpfiles-clean.servi&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Sat 2023-02-18 00:00:00 CST 8h left        Fri 2023-02-17 00:00:00 CST 15h ago    atop-rotate.timer            atop-rotate.service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Sat 2023-02-18 00:00:00 CST 8h left        Fri 2023-02-17 00:00:00 CST 15h ago    logrotate.timer              logrotate.service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Sat 2023-02-18 00:00:00 CST 8h left        Fri 2023-02-17 00:00:00 CST 15h ago    man-db.timer                 man-db.service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Sat 2023-02-18 04:19:48 CST 13h left       Fri 2023-02-17 05:29:22 CST 9h ago     pve-daily-update.timer       pve-daily-update.service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Sat 2023-02-18 05:18:55 CST 14h left       Fri 2023-02-17 06:45:48 CST 8h ago     apt-daily.timer              apt-daily.service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Sat 2023-02-18 06:41:05 CST 15h left       Fri 2023-02-17 06:02:36 CST 9h ago     apt-daily-upgrade.timer      apt-daily-upgrade.service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Sun 2023-02-19 03:10:12 CST &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; day 12h left Sun 2023-02-12 03:10:19 CST &lt;span class=&#34;m&#34;&gt;5&lt;/span&gt; days ago e2scrub_all.timer            e2scrub_all.service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Mon 2023-02-20 00:37:59 CST &lt;span class=&#34;m&#34;&gt;2&lt;/span&gt; days left    n/a                         n/a        fstrim.timer                 fstrim.service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;n/a                         n/a            n/a                         n/a        pvesr.timer
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Done&lt;/p&gt;</description>
+        </item>
+        
+    </channel>
 </rss>

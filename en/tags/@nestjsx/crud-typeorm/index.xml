@@ -1,50 +1,55 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>@Nestjsx/Crud-Typeorm - Tag - gowinder&#39;s Blog</title>
+        <title>@Nestjsx/Crud-Typeorm on gowinder&#39;s Blog</title>
         <link>https://gowinder.work/en/tags/@nestjsx/crud-typeorm/</link>
-        <description>@Nestjsx/Crud-Typeorm - Tag - gowinder&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 28 Feb 2023 11:08:03 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/en/tags/@nestjsx/crud-typeorm/" rel="self" type="application/rss+xml" /><item>
-    <title>Class Constructor TypeOrmCrudService Cannot Be Invoked Without &#39;New&#39;</title>
-    <link>https://gowinder.work/en/class-constructor-typeormcrudservice-cannot-be-invoked-without-new/</link>
-    <pubDate>Tue, 28 Feb 2023 11:08:03 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://gowinder.work/en/class-constructor-typeormcrudservice-cannot-be-invoked-without-new/</guid>
-    <description><![CDATA[<h1 id="class-constructor-typeormcrudservice-cannot-be-invoked-without-new-error">Class Constructor TypeOrmCrudService Cannot Be Invoked Without &lsquo;New&rsquo; Error</h1>
-<h2 id="cause">Cause</h2>
-<p>Recently I was developing a <code>chatgpt</code> gateway project using <code>nestjs</code>, with <code>nestjsx-crud</code> to speed up <code>curd</code> development, and I had the following code:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kd">@Injectable</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">class</span> <span class="nx">ChatgptAccountService</span> <span class="kr">extends</span> <span class="nx">TypeOrmCrudService</span><span class="p">&lt;</span><span class="nt">ChatGPTAccount</span><span class="p">&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="kr">constructor</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">@InjectRepository</span><span class="p">(</span><span class="nx">ChatGPTAccount</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="kr">private</span> <span class="kr">readonly</span> <span class="nx">chatgptAccountRepository</span>: <span class="kt">Repository</span><span class="p">&lt;</span><span class="nt">ChatGPTAccount</span><span class="p">&gt;,</span>
-</span></span><span class="line"><span class="cl">  <span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kr">super</span><span class="p">(</span><span class="nx">chatgptAccountRepository</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>At runtime it threw the error:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">Class Constructor TypeOrmCrudService Cannot Be Invoked Without <span class="s1">&#39;New&#39;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="solution">Solution</h2>
-<p>I looked it up online and found one <a href="https://github.com/nestjsx/crud/issues/378#issuecomment-764648149" target="_blank" rel="noopener noreffer ">here</a>: <code>For anyone stumbling over this issue: it's probably a tsconfig issue. Try bumping your target from es5 to es6.</code></p>]]></description>
-</item>
-</channel>
+        <description>Recent content in @Nestjsx/Crud-Typeorm on gowinder&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <lastBuildDate>Tue, 28 Feb 2023 11:08:03 +0800</lastBuildDate><atom:link href="https://gowinder.work/en/tags/@nestjsx/crud-typeorm/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Class Constructor TypeOrmCrudService Cannot Be Invoked Without &#39;New&#39;</title>
+        <link>https://gowinder.work/en/class-constructor-typeormcrudservice-cannot-be-invoked-without-new/</link>
+        <pubDate>Tue, 28 Feb 2023 11:08:03 +0800</pubDate>
+        
+        <guid>https://gowinder.work/en/class-constructor-typeormcrudservice-cannot-be-invoked-without-new/</guid>
+        <description>&lt;h1 id=&#34;class-constructor-typeormcrudservice-cannot-be-invoked-without-new-error&#34;&gt;Class Constructor TypeOrmCrudService Cannot Be Invoked Without &amp;lsquo;New&amp;rsquo; Error
+&lt;/h1&gt;&lt;h2 id=&#34;cause&#34;&gt;Cause
+&lt;/h2&gt;&lt;p&gt;Recently I was developing a &lt;code&gt;chatgpt&lt;/code&gt; gateway project using &lt;code&gt;nestjs&lt;/code&gt;, with &lt;code&gt;nestjsx-crud&lt;/code&gt; to speed up &lt;code&gt;curd&lt;/code&gt; development, and I had the following code:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-typescript&#34; data-lang=&#34;typescript&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;@Injectable&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kr&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;kr&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;ChatgptAccountService&lt;/span&gt; &lt;span class=&#34;kr&#34;&gt;extends&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;TypeOrmCrudService&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;ChatGPTAccount&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;kr&#34;&gt;constructor&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kd&#34;&gt;@InjectRepository&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ChatGPTAccount&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kr&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;kr&#34;&gt;readonly&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;chatgptAccountRepository&lt;/span&gt;: &lt;span class=&#34;kt&#34;&gt;Repository&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;ChatGPTAccount&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kr&#34;&gt;super&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;chatgptAccountRepository&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;At runtime it threw the error:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Class Constructor TypeOrmCrudService Cannot Be Invoked Without &lt;span class=&#34;s1&#34;&gt;&amp;#39;New&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;solution&#34;&gt;Solution
+&lt;/h2&gt;&lt;p&gt;I looked it up online and found one &lt;a class=&#34;link&#34; href=&#34;https://github.com/nestjsx/crud/issues/378#issuecomment-764648149&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;here&lt;/a&gt;: &lt;code&gt;For anyone stumbling over this issue: it&#39;s probably a tsconfig issue. Try bumping your target from es5 to es6.&lt;/code&gt;&lt;/p&gt;</description>
+        </item>
+        
+    </channel>
 </rss>

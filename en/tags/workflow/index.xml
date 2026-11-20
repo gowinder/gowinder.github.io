@@ -1,24 +1,28 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Workflow - Tag - gowinder&#39;s Blog</title>
+        <title>Workflow on gowinder&#39;s Blog</title>
         <link>https://gowinder.work/en/tags/workflow/</link>
-        <description>Workflow - Tag - gowinder&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 15 Nov 2026 20:00:00 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/en/tags/workflow/" rel="self" type="application/rss+xml" /><item>
-    <title>Away From the Desk: I Gave My Mac Agents a Phone Entrance, and Why &#34;Yes, Merge It&#34; on a Phone Doesn&#39;t Count</title>
-    <link>https://gowinder.work/en/agent-bridge/</link>
-    <pubDate>Sun, 15 Nov 2026 20:00:00 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://gowinder.work/en/agent-bridge/</guid>
-    <description><![CDATA[<p>The last post was about the result file, how the coordinator and the executor hand work over. That setup works, but I skipped past a precondition at the time: the executor runs on my machine, so the human has to be at my machine too. Later I moved the heavy work back onto my own laptop, and that precondition turned into a daily problem — the work lives on the Mac, and I am often not in front of the Mac.</p>]]></description>
-</item>
-<item>
-    <title>Grok Bot, Claude Code, and DeepSeek Harness: one result file that saves most of the tokens</title>
-    <link>https://gowinder.work/en/agent-handoff-result-file/</link>
-    <pubDate>Thu, 05 Nov 2026 15:00:00 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://gowinder.work/en/agent-handoff-result-file/</guid>
-    <description><![CDATA[<p>I keep a handful of Grok bots across a few projects: a game, some small SEO sites, a few MCP tools of my own. They plan and schedule. The actual work, writing code, running tests, clicking through a browser, goes to two agents on my Mac: dsh in a sandbox, and Claude Code via <code>claude -p</code>.</p>
-<p>Heavy work on the laptop, coordination in the cloud. The seam between them was the problem. Bots bill by the token, and a long context is both expensive and dumber. The first version of the handoff was me copy-pasting: I would run dsh or Claude Code myself and paste the terminal output back into the chat. The delay was tolerable. The cost was not. That block of output sat in every later turn, and the bot would read logs and think and slowly lose track of what it had said ten minutes earlier.</p>]]></description>
-</item>
-</channel>
+        <description>Recent content in Workflow on gowinder&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <lastBuildDate>Sun, 15 Nov 2026 20:00:00 +0800</lastBuildDate><atom:link href="https://gowinder.work/en/tags/workflow/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Away From the Desk: I Gave My Mac Agents a Phone Entrance, and Why &#34;Yes, Merge It&#34; on a Phone Doesn&#39;t Count</title>
+        <link>https://gowinder.work/en/agent-bridge/</link>
+        <pubDate>Sun, 15 Nov 2026 20:00:00 +0800</pubDate>
+        
+        <guid>https://gowinder.work/en/agent-bridge/</guid>
+        <description>&lt;p&gt;The last post was about the result file, how the coordinator and the executor hand work over. That setup works, but I skipped past a precondition at the time: the executor runs on my machine, so the human has to be at my machine too. Later I moved the heavy work back onto my own laptop, and that precondition turned into a daily problem — the work lives on the Mac, and I am often not in front of the Mac.&lt;/p&gt;</description>
+        </item>
+        <item>
+        <title>Grok Bot, Claude Code, and DeepSeek Harness: one result file that saves most of the tokens</title>
+        <link>https://gowinder.work/en/agent-handoff-result-file/</link>
+        <pubDate>Thu, 05 Nov 2026 15:00:00 +0800</pubDate>
+        
+        <guid>https://gowinder.work/en/agent-handoff-result-file/</guid>
+        <description>&lt;p&gt;I keep a handful of Grok bots across a few projects: a game, some small SEO sites, a few MCP tools of my own. They plan and schedule. The actual work, writing code, running tests, clicking through a browser, goes to two agents on my Mac: dsh in a sandbox, and Claude Code via &lt;code&gt;claude -p&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Heavy work on the laptop, coordination in the cloud. The seam between them was the problem. Bots bill by the token, and a long context is both expensive and dumber. The first version of the handoff was me copy-pasting: I would run dsh or Claude Code myself and paste the terminal output back into the chat. The delay was tolerable. The cost was not. That block of output sat in every later turn, and the bot would read logs and think and slowly lose track of what it had said ten minutes earlier.&lt;/p&gt;</description>
+        </item>
+        
+    </channel>
 </rss>

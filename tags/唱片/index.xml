@@ -1,17 +1,30 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>唱片 - 标签 - gowinder个人博客</title>
+        <title>唱片 on gowinder个人博客</title>
         <link>https://gowinder.work/tags/%E5%94%B1%E7%89%87/</link>
-        <description>唱片 - 标签 - gowinder个人博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 18 Oct 2008 14:31:00 &#43;0000</lastBuildDate><atom:link href="https://gowinder.work/tags/%E5%94%B1%E7%89%87/" rel="self" type="application/rss+xml" /><item>
-    <title>CD 肥妈正传</title>
-    <link>https://gowinder.work/cd-%E8%82%A5%E5%A6%88%E6%AD%A3%E4%BC%A0/</link>
-    <pubDate>Sat, 18 Oct 2008 14:31:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://gowinder.work/cd-%E8%82%A5%E5%A6%88%E6%AD%A3%E4%BC%A0/</guid>
-    <description><![CDATA[<p>
-以前总是下载APE,自己克碟子,这次不同了,偶然的机会听到了一首&quot;海上花&quot;,于是毫不犹豫的买了一张!</p>
-<p>歌手玛丽亚,说实话,以前听都没听过这名字,将这首歌演艺得出神入话,个人觉得非常到位.那种低调的气氛,一点点忧郁,平淡中的激情,也许正是生活在一个平淡的世界中,一种自我陶醉的感觉,陶醉什么呢?听了歌就可以发现,其实任何点滴的事情,只要细细的品味,总可以找出一丝乐趣.</p>]]></description>
-</item>
-</channel>
+        <description>Recent content in 唱片 on gowinder个人博客</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-CN</language>
+        <lastBuildDate>Sat, 18 Oct 2008 14:31:00 +0000</lastBuildDate><atom:link href="https://gowinder.work/tags/%E5%94%B1%E7%89%87/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>CD 肥妈正传</title>
+        <link>https://gowinder.work/cd-%E8%82%A5%E5%A6%88%E6%AD%A3%E4%BC%A0/</link>
+        <pubDate>Sat, 18 Oct 2008 14:31:00 +0000</pubDate>
+        
+        <guid>https://gowinder.work/cd-%E8%82%A5%E5%A6%88%E6%AD%A3%E4%BC%A0/</guid>
+        <description>&lt;p&gt;&lt;img src=&#34;https://img1.doubanio.com/view/subject/m/public/s1443060.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;肥妈正传&#34;
+	
+	
+&gt;
+以前总是下载APE,自己克碟子,这次不同了,偶然的机会听到了一首&amp;quot;海上花&amp;quot;,于是毫不犹豫的买了一张!&lt;/p&gt;
+&lt;p&gt;歌手玛丽亚,说实话,以前听都没听过这名字,将这首歌演艺得出神入话,个人觉得非常到位.那种低调的气氛,一点点忧郁,平淡中的激情,也许正是生活在一个平淡的世界中,一种自我陶醉的感觉,陶醉什么呢?听了歌就可以发现,其实任何点滴的事情,只要细细的品味,总可以找出一丝乐趣.&lt;/p&gt;</description>
+        </item>
+        
+    </channel>
 </rss>

@@ -1,18 +1,22 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Sleep - Tag - gowinder&#39;s Blog</title>
+        <title>Sleep on gowinder&#39;s Blog</title>
         <link>https://gowinder.work/en/tags/sleep/</link>
-        <description>Sleep - Tag - gowinder&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 21 Mar 2024 13:54:13 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/en/tags/sleep/" rel="self" type="application/rss+xml" /><item>
-    <title>Migrating My Home Server from a Dell R720 to a Snail Interstellar &#43; MacBook Pro: Follow-up</title>
-    <link>https://gowinder.work/en/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/</link>
-    <pubDate>Thu, 21 Mar 2024 13:54:13 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://gowinder.work/en/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/</guid>
-    <description><![CDATA[<h1 id="migrating-my-home-server-from-a-dell-r720-to-a-snail-interstellar--macbook-pro-follow-up">Migrating My Home Server from a Dell R720 to a Snail Interstellar + MacBook Pro: Follow-up</h1>
-<h2 id="gigabit-network-disconnection-problem">Gigabit Network Disconnection Problem</h2>
-<p>The migration is complete and I&rsquo;ve been using it for a while. The <code>Snail Interstellar</code>&rsquo;s power consumption is very low (compared with the <code>R720</code>&rsquo;s 100+ watts); with 3 <code>HDD</code>s and 1 <code>SSD</code> it draws 35 watts, less than 1 kWh a day—very nice.</p>
-<p>But there&rsquo;s currently a problem: on the <code>MacbookPro</code>, as soon as I close the lid, lock the screen, or close the remote desktop, the wired network adapter on the <code>Thunderbolt HUB</code> disconnects.</p>]]></description>
-</item>
-</channel>
+        <description>Recent content in Sleep on gowinder&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <lastBuildDate>Thu, 21 Mar 2024 13:54:13 +0800</lastBuildDate><atom:link href="https://gowinder.work/en/tags/sleep/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Migrating My Home Server from a Dell R720 to a Snail Interstellar &#43; MacBook Pro: Follow-up</title>
+        <link>https://gowinder.work/en/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/</link>
+        <pubDate>Thu, 21 Mar 2024 13:54:13 +0800</pubDate>
+        
+        <guid>https://gowinder.work/en/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/</guid>
+        <description>&lt;h1 id=&#34;migrating-my-home-server-from-a-dell-r720-to-a-snail-interstellar--macbook-pro-follow-up&#34;&gt;Migrating My Home Server from a Dell R720 to a Snail Interstellar + MacBook Pro: Follow-up
+&lt;/h1&gt;&lt;h2 id=&#34;gigabit-network-disconnection-problem&#34;&gt;Gigabit Network Disconnection Problem
+&lt;/h2&gt;&lt;p&gt;The migration is complete and I&amp;rsquo;ve been using it for a while. The &lt;code&gt;Snail Interstellar&lt;/code&gt;&amp;rsquo;s power consumption is very low (compared with the &lt;code&gt;R720&lt;/code&gt;&amp;rsquo;s 100+ watts); with 3 &lt;code&gt;HDD&lt;/code&gt;s and 1 &lt;code&gt;SSD&lt;/code&gt; it draws 35 watts, less than 1 kWh a day—very nice.&lt;/p&gt;
+&lt;p&gt;But there&amp;rsquo;s currently a problem: on the &lt;code&gt;MacbookPro&lt;/code&gt;, as soon as I close the lid, lock the screen, or close the remote desktop, the wired network adapter on the &lt;code&gt;Thunderbolt HUB&lt;/code&gt; disconnects.&lt;/p&gt;</description>
+        </item>
+        
+    </channel>
 </rss>

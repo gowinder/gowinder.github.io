@@ -1,87 +1,91 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Tags - Tag - gowinder&#39;s Blog</title>
+        <title>Tags on gowinder&#39;s Blog</title>
         <link>https://gowinder.work/en/tags/</link>
-        <description>Tags - Tag - gowinder&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 15 Nov 2026 20:00:00 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/en/tags/" rel="self" type="application/rss+xml" /><item>
-    <title>Agent</title>
-    <link>https://gowinder.work/en/tags/agent/</link>
-    <pubDate>Sun, 15 Nov 2026 20:00:00 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://gowinder.work/en/tags/agent/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Claude Code</title>
-    <link>https://gowinder.work/en/tags/claude-code/</link>
-    <pubDate>Sun, 15 Nov 2026 20:00:00 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://gowinder.work/en/tags/claude-code/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Pi</title>
-    <link>https://gowinder.work/en/tags/pi/</link>
-    <pubDate>Sun, 15 Nov 2026 20:00:00 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://gowinder.work/en/tags/pi/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Remote Control</title>
-    <link>https://gowinder.work/en/tags/remote-control/</link>
-    <pubDate>Sun, 15 Nov 2026 20:00:00 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://gowinder.work/en/tags/remote-control/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Workflow</title>
-    <link>https://gowinder.work/en/tags/workflow/</link>
-    <pubDate>Sun, 15 Nov 2026 20:00:00 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://gowinder.work/en/tags/workflow/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Automation</title>
-    <link>https://gowinder.work/en/tags/automation/</link>
-    <pubDate>Thu, 05 Nov 2026 15:00:00 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://gowinder.work/en/tags/automation/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Notion</title>
-    <link>https://gowinder.work/en/tags/notion/</link>
-    <pubDate>Thu, 05 Nov 2026 15:00:00 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://gowinder.work/en/tags/notion/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Csv</title>
-    <link>https://gowinder.work/en/tags/csv/</link>
-    <pubDate>Sat, 31 Oct 2026 10:00:00 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://gowinder.work/en/tags/csv/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Excel</title>
-    <link>https://gowinder.work/en/tags/excel/</link>
-    <pubDate>Sat, 31 Oct 2026 10:00:00 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://gowinder.work/en/tags/excel/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Powershell</title>
-    <link>https://gowinder.work/en/tags/powershell/</link>
-    <pubDate>Sat, 31 Oct 2026 10:00:00 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://gowinder.work/en/tags/powershell/</guid>
-    <description><![CDATA[]]></description>
-</item>
-</channel>
+        <description>Recent content in Tags on gowinder&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <lastBuildDate>Sun, 15 Nov 2026 20:00:00 +0800</lastBuildDate><atom:link href="https://gowinder.work/en/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Agent</title>
+        <link>https://gowinder.work/en/tags/agent/</link>
+        <pubDate>Sun, 15 Nov 2026 20:00:00 +0800</pubDate>
+        
+        <guid>https://gowinder.work/en/tags/agent/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Claude Code</title>
+        <link>https://gowinder.work/en/tags/claude-code/</link>
+        <pubDate>Sun, 15 Nov 2026 20:00:00 +0800</pubDate>
+        
+        <guid>https://gowinder.work/en/tags/claude-code/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Pi</title>
+        <link>https://gowinder.work/en/tags/pi/</link>
+        <pubDate>Sun, 15 Nov 2026 20:00:00 +0800</pubDate>
+        
+        <guid>https://gowinder.work/en/tags/pi/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Remote Control</title>
+        <link>https://gowinder.work/en/tags/remote-control/</link>
+        <pubDate>Sun, 15 Nov 2026 20:00:00 +0800</pubDate>
+        
+        <guid>https://gowinder.work/en/tags/remote-control/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Workflow</title>
+        <link>https://gowinder.work/en/tags/workflow/</link>
+        <pubDate>Sun, 15 Nov 2026 20:00:00 +0800</pubDate>
+        
+        <guid>https://gowinder.work/en/tags/workflow/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Automation</title>
+        <link>https://gowinder.work/en/tags/automation/</link>
+        <pubDate>Thu, 05 Nov 2026 15:00:00 +0800</pubDate>
+        
+        <guid>https://gowinder.work/en/tags/automation/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Notion</title>
+        <link>https://gowinder.work/en/tags/notion/</link>
+        <pubDate>Thu, 05 Nov 2026 15:00:00 +0800</pubDate>
+        
+        <guid>https://gowinder.work/en/tags/notion/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Csv</title>
+        <link>https://gowinder.work/en/tags/csv/</link>
+        <pubDate>Sat, 31 Oct 2026 10:00:00 +0800</pubDate>
+        
+        <guid>https://gowinder.work/en/tags/csv/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Excel</title>
+        <link>https://gowinder.work/en/tags/excel/</link>
+        <pubDate>Sat, 31 Oct 2026 10:00:00 +0800</pubDate>
+        
+        <guid>https://gowinder.work/en/tags/excel/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Powershell</title>
+        <link>https://gowinder.work/en/tags/powershell/</link>
+        <pubDate>Sat, 31 Oct 2026 10:00:00 +0800</pubDate>
+        
+        <guid>https://gowinder.work/en/tags/powershell/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
 </rss>

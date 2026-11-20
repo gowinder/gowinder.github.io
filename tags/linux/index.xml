@@ -1,167 +1,171 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Linux - 标签 - gowinder个人博客</title>
+        <title>Linux on gowinder个人博客</title>
         <link>https://gowinder.work/tags/linux/</link>
-        <description>Linux - 标签 - gowinder个人博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 27 Feb 2023 14:05:41 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/linux/" rel="self" type="application/rss+xml" /><item>
-    <title>在Orange Pi Zero上安装pihole后,webui无法启动问题</title>
-    <link>https://gowinder.work/pihile-lighttp-cannot-start-in-orange-pi-zero/</link>
-    <pubDate>Mon, 27 Feb 2023 14:05:41 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://gowinder.work/pihile-lighttp-cannot-start-in-orange-pi-zero/</guid>
-    <description><![CDATA[<h1 id="在orange-pi-zero上安装pihole后webui无法启动问题">在Orange Pi Zero上安装pihole后,webui无法启动问题</h1>
-<h2 id="启因">启因</h2>
-<p>最新在空闲<code>Orange Pi Zero</code>上安装了<code>Pihole</code>用来做家庭主<code>DNS</code>服务器,安装一路顺序: <code>Armbian</code>-&gt;<code>Pihole</code>,结果安装好后,无法启动<code>WebUI</code>, <code>Pihole</code>用的是<code>Lighttp</code></p>]]></description>
-</item>
-<item>
-    <title>proxmox ve 增加自动trim的cron job</title>
-    <link>https://gowinder.work/proxmox-ve-%E5%A2%9E%E5%8A%A0%E8%87%AA%E5%8A%A8trim%E7%9A%84cron-job/</link>
-    <pubDate>Fri, 17 Feb 2023 15:12:05 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://gowinder.work/proxmox-ve-%E5%A2%9E%E5%8A%A0%E8%87%AA%E5%8A%A8trim%E7%9A%84cron-job/</guid>
-    <description><![CDATA[<h1 id="proxmox-ve-增加自动trim的cron-job">proxmox ve 增加自动trim的cron job</h1>
-<h2 id="检查状态">检查状态</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl status fstrim.timer
-</span></span><span class="line"><span class="cl"><span class="c1"># output:</span>
-</span></span><span class="line"><span class="cl">● fstrim.timer - Discard unused blocks once a week
-</span></span><span class="line"><span class="cl">     Loaded: loaded <span class="o">(</span>/lib/systemd/system/fstrim.timer<span class="p">;</span> disabled<span class="p">;</span> vendor preset: enabled<span class="o">)</span>
-</span></span><span class="line"><span class="cl">     Active: inactive <span class="o">(</span>dead<span class="o">)</span>
-</span></span><span class="line"><span class="cl">    Trigger: n/a
-</span></span><span class="line"><span class="cl">   Triggers: ● fstrim.service
-</span></span><span class="line"><span class="cl">       Docs: man:fstrim
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="开启服务">开启服务</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl start fstrim.timer
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="检查下次清理时间">检查下次清理时间</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl list-timers --all
-</span></span><span class="line"><span class="cl"><span class="c1"># output:</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">NEXT                        LEFT           LAST                        PASSED     UNIT                         ACTIVATES
-</span></span><span class="line"><span class="cl">Fri 2023-02-17 23:54:54 CST 8h left        Thu 2023-02-16 23:54:54 CST 15h ago    systemd-tmpfiles-clean.timer systemd-tmpfiles-clean.servi&gt;
-</span></span><span class="line"><span class="cl">Sat 2023-02-18 00:00:00 CST 8h left        Fri 2023-02-17 00:00:00 CST 15h ago    atop-rotate.timer            atop-rotate.service
-</span></span><span class="line"><span class="cl">Sat 2023-02-18 00:00:00 CST 8h left        Fri 2023-02-17 00:00:00 CST 15h ago    logrotate.timer              logrotate.service
-</span></span><span class="line"><span class="cl">Sat 2023-02-18 00:00:00 CST 8h left        Fri 2023-02-17 00:00:00 CST 15h ago    man-db.timer                 man-db.service
-</span></span><span class="line"><span class="cl">Sat 2023-02-18 04:19:48 CST 13h left       Fri 2023-02-17 05:29:22 CST 9h ago     pve-daily-update.timer       pve-daily-update.service
-</span></span><span class="line"><span class="cl">Sat 2023-02-18 05:18:55 CST 14h left       Fri 2023-02-17 06:45:48 CST 8h ago     apt-daily.timer              apt-daily.service
-</span></span><span class="line"><span class="cl">Sat 2023-02-18 06:41:05 CST 15h left       Fri 2023-02-17 06:02:36 CST 9h ago     apt-daily-upgrade.timer      apt-daily-upgrade.service
-</span></span><span class="line"><span class="cl">Sun 2023-02-19 03:10:12 CST <span class="m">1</span> day 12h left Sun 2023-02-12 03:10:19 CST <span class="m">5</span> days ago e2scrub_all.timer            e2scrub_all.service
-</span></span><span class="line"><span class="cl">Mon 2023-02-20 00:37:59 CST <span class="m">2</span> days left    n/a                         n/a        fstrim.timer                 fstrim.service
-</span></span><span class="line"><span class="cl">n/a                         n/a            n/a                         n/a        pvesr.timer
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>完成</p>]]></description>
-</item>
-<item>
-    <title>proxmox ve 中扩展pvm-local空间</title>
-    <link>https://gowinder.work/proxmox-ve-%E4%B8%AD%E6%89%A9%E5%B1%95pvm-local%E7%A9%BA%E9%97%B4/</link>
-    <pubDate>Fri, 17 Feb 2023 14:16:05 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://gowinder.work/proxmox-ve-%E4%B8%AD%E6%89%A9%E5%B1%95pvm-local%E7%A9%BA%E9%97%B4/</guid>
-    <description><![CDATA[<h1 id="proxmox-ve-中扩展pvm-local空间">proxmox ve 中扩展pvm-local空间</h1>
-<h2 id="原因">原因</h2>
-<p>之前在<code>DIY E3</code>服务器上安装的<code>proxmox ve</code>,用的一张<code>120G</code>的<code>SSD</code>,当时年纪轻,把<code>pve</code>的逻辑分区还分了一个<code>30g</code>的<code>data</code>分区出来了,现在想用<code>local</code>做<code>glusterfs</code>,那么就想把<code>data</code>中的空间合并到<code>root</code>中去了.</p>]]></description>
-</item>
-<item>
-    <title>proxmox ve 中nvme电源管理问题导致的磁盘性能急剧下降问题</title>
-    <link>https://gowinder.work/proxmox-ve-%E4%B8%ADnvme%E7%94%B5%E6%BA%90%E7%AE%A1%E7%90%86%E9%97%AE%E9%A2%98%E5%AF%BC%E8%87%B4%E7%9A%84%E7%A3%81%E7%9B%98%E6%80%A7%E8%83%BD%E6%80%A5%E5%89%A7%E4%B8%8B%E9%99%8D%E9%97%AE%E9%A2%98/</link>
-    <pubDate>Fri, 17 Feb 2023 10:25:05 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://gowinder.work/proxmox-ve-%E4%B8%ADnvme%E7%94%B5%E6%BA%90%E7%AE%A1%E7%90%86%E9%97%AE%E9%A2%98%E5%AF%BC%E8%87%B4%E7%9A%84%E7%A3%81%E7%9B%98%E6%80%A7%E8%83%BD%E6%80%A5%E5%89%A7%E4%B8%8B%E9%99%8D%E9%97%AE%E9%A2%98/</guid>
-    <description><![CDATA[<h1 id="proxmox-ve-中nvme电源管理问题导致的磁盘性能急剧下降问题">proxmox ve 中nvme电源管理问题导致的磁盘性能急剧下降问题</h1>
-<p>这几天部署了<code>proxmox ve</code>双节点集群,正常用没什么问题,但是过了一天,<code>dell r720</code>这台主机,<code>ssh</code>上去发现<code>shell</code>的反应好慢,然后进去里面的<code>linux container</code>,也是反应慢得狠,每打一个命令,<code>zsh</code>都要卡半天.</p>]]></description>
-</item>
-<item>
-    <title>glusterfs重建volume</title>
-    <link>https://gowinder.work/glusterfs%E9%87%8D%E5%BB%BAvolume/</link>
-    <pubDate>Thu, 16 Feb 2023 10:53:05 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://gowinder.work/glusterfs%E9%87%8D%E5%BB%BAvolume/</guid>
-    <description><![CDATA[<h1 id="glusterfs重建volume">glusterfs重建volume</h1>
-<h2 id="启因">启因</h2>
-<p>因为之前做<code>glusterfs</code>集群时,比较急,直接用的<code>pve</code>主机的网络地址,运行了几天,发现<code>volume</code>同步的时候,占用了<code>pve</code>本身的网络通道,正好<code>dell r720</code>有4个网口,<code>e3</code>主机上有2个,所以都拿出一个来单独做<code>gluster</code>的绑定地址</p>]]></description>
-</item>
-<item>
-    <title>proxmox ve VM挂载物理硬盘</title>
-    <link>https://gowinder.work/proxmox-ve-vm%E6%8C%82%E8%BD%BD%E7%89%A9%E7%90%86%E7%A1%AC%E7%9B%98/</link>
-    <pubDate>Tue, 14 Feb 2023 09:39:05 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://gowinder.work/proxmox-ve-vm%E6%8C%82%E8%BD%BD%E7%89%A9%E7%90%86%E7%A1%AC%E7%9B%98/</guid>
-    <description><![CDATA[<h1 id="proxmox-ve-vm挂载物理硬盘">proxmox ve VM挂载物理硬盘</h1>
-<p>先找到要挂载的硬盘的<code>id</code>:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">lsblk <span class="p">|</span>awk <span class="s1">&#39;NR==1{print $0&#34; DEVICE-ID(S)&#34;}NR&gt;1{dev=$1;printf $0&#34; &#34;;system(&#34;find /dev/disk/by-id -lname \&#34;*&#34;dev&#34;\&#34; -printf \&#34; %p\&#34;&#34;);print &#34;&#34;;}&#39;</span><span class="p">|</span>grep -v -E <span class="s1">&#39;part|lvm&#39;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>结果类似:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">NAME         MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT DEVICE-ID<span class="o">(</span>S<span class="o">)</span>
-</span></span><span class="line"><span class="cl">loop0          7:0    <span class="m">0</span>    20G  <span class="m">0</span> loop
-</span></span><span class="line"><span class="cl">loop1          7:1    <span class="m">0</span>    80G  <span class="m">0</span> loop
-</span></span><span class="line"><span class="cl">loop2          7:2    <span class="m">0</span>    50G  <span class="m">0</span> loop
-</span></span><span class="line"><span class="cl">sda            8:0    <span class="m">0</span>   3.6T  <span class="m">0</span> disk   /dev/disk/by-id/ata-WDC_WD40EJRX-XXXXXXX_WD-WWWWW0XXXXXX /dev/disk/by-id/wwn-0x5000000000000
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>比如要挂载<code>/dev/disk/by-id/wwn-0x5000000000000</code>,<code>VM</code>编号为: <code>103</code>,执行如下操作:</p>]]></description>
-</item>
-<item>
-    <title>proxmox ve 部署双节点HA集群及glusterfs分布式文件系统笔记</title>
-    <link>https://gowinder.work/proxmox-ve-%E9%83%A8%E7%BD%B2%E5%8F%8C%E8%8A%82%E7%82%B9%E9%9B%86%E7%BE%A4%E5%8F%8Aglusterfs%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/</link>
-    <pubDate>Thu, 09 Feb 2023 14:14:05 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://gowinder.work/proxmox-ve-%E9%83%A8%E7%BD%B2%E5%8F%8C%E8%8A%82%E7%82%B9%E9%9B%86%E7%BE%A4%E5%8F%8Aglusterfs%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/</guid>
-    <description><![CDATA[<h1 id="proxmox-ve-部署双节点ha集群及glusterfs分布式文件系统">proxmox ve 部署双节点HA集群及glusterfs分布式文件系统</h1>
-<p><strong>需要保存两个pve节点的版本一样</strong></p>
-<p>两个<code>proxmox ve</code>节点,实现高可用<code>vm</code>,<code>lxc</code>自动迁移</p>]]></description>
-</item>
-</channel>
+        <description>Recent content in Linux on gowinder个人博客</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-CN</language>
+        <lastBuildDate>Mon, 27 Feb 2023 14:05:41 +0800</lastBuildDate><atom:link href="https://gowinder.work/tags/linux/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>在Orange Pi Zero上安装pihole后,webui无法启动问题</title>
+        <link>https://gowinder.work/pihile-lighttp-cannot-start-in-orange-pi-zero/</link>
+        <pubDate>Mon, 27 Feb 2023 14:05:41 +0800</pubDate>
+        
+        <guid>https://gowinder.work/pihile-lighttp-cannot-start-in-orange-pi-zero/</guid>
+        <description>&lt;h1 id=&#34;在orange-pi-zero上安装pihole后webui无法启动问题&#34;&gt;在Orange Pi Zero上安装pihole后,webui无法启动问题
+&lt;/h1&gt;&lt;h2 id=&#34;启因&#34;&gt;启因
+&lt;/h2&gt;&lt;p&gt;最新在空闲&lt;code&gt;Orange Pi Zero&lt;/code&gt;上安装了&lt;code&gt;Pihole&lt;/code&gt;用来做家庭主&lt;code&gt;DNS&lt;/code&gt;服务器,安装一路顺序: &lt;code&gt;Armbian&lt;/code&gt;-&amp;gt;&lt;code&gt;Pihole&lt;/code&gt;,结果安装好后,无法启动&lt;code&gt;WebUI&lt;/code&gt;, &lt;code&gt;Pihole&lt;/code&gt;用的是&lt;code&gt;Lighttp&lt;/code&gt;&lt;/p&gt;</description>
+        </item>
+        <item>
+        <title>proxmox ve 增加自动trim的cron job</title>
+        <link>https://gowinder.work/proxmox-ve-%E5%A2%9E%E5%8A%A0%E8%87%AA%E5%8A%A8trim%E7%9A%84cron-job/</link>
+        <pubDate>Fri, 17 Feb 2023 15:12:05 +0800</pubDate>
+        
+        <guid>https://gowinder.work/proxmox-ve-%E5%A2%9E%E5%8A%A0%E8%87%AA%E5%8A%A8trim%E7%9A%84cron-job/</guid>
+        <description>&lt;h1 id=&#34;proxmox-ve-增加自动trim的cron-job&#34;&gt;proxmox ve 增加自动trim的cron job
+&lt;/h1&gt;&lt;h2 id=&#34;检查状态&#34;&gt;检查状态
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl status fstrim.timer
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# output:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;● fstrim.timer - Discard unused blocks once a week
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     Loaded: loaded &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;/lib/systemd/system/fstrim.timer&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; disabled&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; vendor preset: enabled&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     Active: inactive &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;dead&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    Trigger: n/a
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   Triggers: ● fstrim.service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;       Docs: man:fstrim
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;开启服务&#34;&gt;开启服务
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl start fstrim.timer
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;检查下次清理时间&#34;&gt;检查下次清理时间
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl list-timers --all
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# output:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;NEXT                        LEFT           LAST                        PASSED     UNIT                         ACTIVATES
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Fri 2023-02-17 23:54:54 CST 8h left        Thu 2023-02-16 23:54:54 CST 15h ago    systemd-tmpfiles-clean.timer systemd-tmpfiles-clean.servi&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Sat 2023-02-18 00:00:00 CST 8h left        Fri 2023-02-17 00:00:00 CST 15h ago    atop-rotate.timer            atop-rotate.service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Sat 2023-02-18 00:00:00 CST 8h left        Fri 2023-02-17 00:00:00 CST 15h ago    logrotate.timer              logrotate.service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Sat 2023-02-18 00:00:00 CST 8h left        Fri 2023-02-17 00:00:00 CST 15h ago    man-db.timer                 man-db.service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Sat 2023-02-18 04:19:48 CST 13h left       Fri 2023-02-17 05:29:22 CST 9h ago     pve-daily-update.timer       pve-daily-update.service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Sat 2023-02-18 05:18:55 CST 14h left       Fri 2023-02-17 06:45:48 CST 8h ago     apt-daily.timer              apt-daily.service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Sat 2023-02-18 06:41:05 CST 15h left       Fri 2023-02-17 06:02:36 CST 9h ago     apt-daily-upgrade.timer      apt-daily-upgrade.service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Sun 2023-02-19 03:10:12 CST &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; day 12h left Sun 2023-02-12 03:10:19 CST &lt;span class=&#34;m&#34;&gt;5&lt;/span&gt; days ago e2scrub_all.timer            e2scrub_all.service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Mon 2023-02-20 00:37:59 CST &lt;span class=&#34;m&#34;&gt;2&lt;/span&gt; days left    n/a                         n/a        fstrim.timer                 fstrim.service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;n/a                         n/a            n/a                         n/a        pvesr.timer
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;完成&lt;/p&gt;</description>
+        </item>
+        <item>
+        <title>proxmox ve 中扩展pvm-local空间</title>
+        <link>https://gowinder.work/proxmox-ve-%E4%B8%AD%E6%89%A9%E5%B1%95pvm-local%E7%A9%BA%E9%97%B4/</link>
+        <pubDate>Fri, 17 Feb 2023 14:16:05 +0800</pubDate>
+        
+        <guid>https://gowinder.work/proxmox-ve-%E4%B8%AD%E6%89%A9%E5%B1%95pvm-local%E7%A9%BA%E9%97%B4/</guid>
+        <description>&lt;h1 id=&#34;proxmox-ve-中扩展pvm-local空间&#34;&gt;proxmox ve 中扩展pvm-local空间
+&lt;/h1&gt;&lt;h2 id=&#34;原因&#34;&gt;原因
+&lt;/h2&gt;&lt;p&gt;之前在&lt;code&gt;DIY E3&lt;/code&gt;服务器上安装的&lt;code&gt;proxmox ve&lt;/code&gt;,用的一张&lt;code&gt;120G&lt;/code&gt;的&lt;code&gt;SSD&lt;/code&gt;,当时年纪轻,把&lt;code&gt;pve&lt;/code&gt;的逻辑分区还分了一个&lt;code&gt;30g&lt;/code&gt;的&lt;code&gt;data&lt;/code&gt;分区出来了,现在想用&lt;code&gt;local&lt;/code&gt;做&lt;code&gt;glusterfs&lt;/code&gt;,那么就想把&lt;code&gt;data&lt;/code&gt;中的空间合并到&lt;code&gt;root&lt;/code&gt;中去了.&lt;/p&gt;</description>
+        </item>
+        <item>
+        <title>proxmox ve 中nvme电源管理问题导致的磁盘性能急剧下降问题</title>
+        <link>https://gowinder.work/proxmox-ve-%E4%B8%ADnvme%E7%94%B5%E6%BA%90%E7%AE%A1%E7%90%86%E9%97%AE%E9%A2%98%E5%AF%BC%E8%87%B4%E7%9A%84%E7%A3%81%E7%9B%98%E6%80%A7%E8%83%BD%E6%80%A5%E5%89%A7%E4%B8%8B%E9%99%8D%E9%97%AE%E9%A2%98/</link>
+        <pubDate>Fri, 17 Feb 2023 10:25:05 +0800</pubDate>
+        
+        <guid>https://gowinder.work/proxmox-ve-%E4%B8%ADnvme%E7%94%B5%E6%BA%90%E7%AE%A1%E7%90%86%E9%97%AE%E9%A2%98%E5%AF%BC%E8%87%B4%E7%9A%84%E7%A3%81%E7%9B%98%E6%80%A7%E8%83%BD%E6%80%A5%E5%89%A7%E4%B8%8B%E9%99%8D%E9%97%AE%E9%A2%98/</guid>
+        <description>&lt;h1 id=&#34;proxmox-ve-中nvme电源管理问题导致的磁盘性能急剧下降问题&#34;&gt;proxmox ve 中nvme电源管理问题导致的磁盘性能急剧下降问题
+&lt;/h1&gt;&lt;p&gt;这几天部署了&lt;code&gt;proxmox ve&lt;/code&gt;双节点集群,正常用没什么问题,但是过了一天,&lt;code&gt;dell r720&lt;/code&gt;这台主机,&lt;code&gt;ssh&lt;/code&gt;上去发现&lt;code&gt;shell&lt;/code&gt;的反应好慢,然后进去里面的&lt;code&gt;linux container&lt;/code&gt;,也是反应慢得狠,每打一个命令,&lt;code&gt;zsh&lt;/code&gt;都要卡半天.&lt;/p&gt;</description>
+        </item>
+        <item>
+        <title>glusterfs重建volume</title>
+        <link>https://gowinder.work/glusterfs%E9%87%8D%E5%BB%BAvolume/</link>
+        <pubDate>Thu, 16 Feb 2023 10:53:05 +0800</pubDate>
+        
+        <guid>https://gowinder.work/glusterfs%E9%87%8D%E5%BB%BAvolume/</guid>
+        <description>&lt;h1 id=&#34;glusterfs重建volume&#34;&gt;glusterfs重建volume
+&lt;/h1&gt;&lt;h2 id=&#34;启因&#34;&gt;启因
+&lt;/h2&gt;&lt;p&gt;因为之前做&lt;code&gt;glusterfs&lt;/code&gt;集群时,比较急,直接用的&lt;code&gt;pve&lt;/code&gt;主机的网络地址,运行了几天,发现&lt;code&gt;volume&lt;/code&gt;同步的时候,占用了&lt;code&gt;pve&lt;/code&gt;本身的网络通道,正好&lt;code&gt;dell r720&lt;/code&gt;有4个网口,&lt;code&gt;e3&lt;/code&gt;主机上有2个,所以都拿出一个来单独做&lt;code&gt;gluster&lt;/code&gt;的绑定地址&lt;/p&gt;</description>
+        </item>
+        <item>
+        <title>proxmox ve VM挂载物理硬盘</title>
+        <link>https://gowinder.work/proxmox-ve-vm%E6%8C%82%E8%BD%BD%E7%89%A9%E7%90%86%E7%A1%AC%E7%9B%98/</link>
+        <pubDate>Tue, 14 Feb 2023 09:39:05 +0800</pubDate>
+        
+        <guid>https://gowinder.work/proxmox-ve-vm%E6%8C%82%E8%BD%BD%E7%89%A9%E7%90%86%E7%A1%AC%E7%9B%98/</guid>
+        <description>&lt;h1 id=&#34;proxmox-ve-vm挂载物理硬盘&#34;&gt;proxmox ve VM挂载物理硬盘
+&lt;/h1&gt;&lt;p&gt;先找到要挂载的硬盘的&lt;code&gt;id&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;lsblk &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;awk &lt;span class=&#34;s1&#34;&gt;&amp;#39;NR==1{print $0&amp;#34; DEVICE-ID(S)&amp;#34;}NR&amp;gt;1{dev=$1;printf $0&amp;#34; &amp;#34;;system(&amp;#34;find /dev/disk/by-id -lname \&amp;#34;*&amp;#34;dev&amp;#34;\&amp;#34; -printf \&amp;#34; %p\&amp;#34;&amp;#34;);print &amp;#34;&amp;#34;;}&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;grep -v -E &lt;span class=&#34;s1&#34;&gt;&amp;#39;part|lvm&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;结果类似:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;NAME         MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT DEVICE-ID&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;S&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;loop0          7:0    &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;    20G  &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; loop
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;loop1          7:1    &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;    80G  &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; loop
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;loop2          7:2    &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;    50G  &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; loop
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sda            8:0    &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;   3.6T  &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; disk   /dev/disk/by-id/ata-WDC_WD40EJRX-XXXXXXX_WD-WWWWW0XXXXXX /dev/disk/by-id/wwn-0x5000000000000
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;比如要挂载&lt;code&gt;/dev/disk/by-id/wwn-0x5000000000000&lt;/code&gt;,&lt;code&gt;VM&lt;/code&gt;编号为: &lt;code&gt;103&lt;/code&gt;,执行如下操作:&lt;/p&gt;</description>
+        </item>
+        <item>
+        <title>proxmox ve 部署双节点HA集群及glusterfs分布式文件系统笔记</title>
+        <link>https://gowinder.work/proxmox-ve-%E9%83%A8%E7%BD%B2%E5%8F%8C%E8%8A%82%E7%82%B9%E9%9B%86%E7%BE%A4%E5%8F%8Aglusterfs%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/</link>
+        <pubDate>Thu, 09 Feb 2023 14:14:05 +0800</pubDate>
+        
+        <guid>https://gowinder.work/proxmox-ve-%E9%83%A8%E7%BD%B2%E5%8F%8C%E8%8A%82%E7%82%B9%E9%9B%86%E7%BE%A4%E5%8F%8Aglusterfs%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/</guid>
+        <description>&lt;h1 id=&#34;proxmox-ve-部署双节点ha集群及glusterfs分布式文件系统&#34;&gt;proxmox ve 部署双节点HA集群及glusterfs分布式文件系统
+&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;需要保存两个pve节点的版本一样&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;两个&lt;code&gt;proxmox ve&lt;/code&gt;节点,实现高可用&lt;code&gt;vm&lt;/code&gt;,&lt;code&gt;lxc&lt;/code&gt;自动迁移&lt;/p&gt;</description>
+        </item>
+        
+    </channel>
 </rss>

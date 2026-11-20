@@ -1,25 +1,29 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Automation - Tag - gowinder&#39;s Blog</title>
+        <title>Automation on gowinder&#39;s Blog</title>
         <link>https://gowinder.work/en/tags/automation/</link>
-        <description>Automation - Tag - gowinder&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 05 Nov 2026 15:00:00 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/en/tags/automation/" rel="self" type="application/rss+xml" /><item>
-    <title>Grok Bot, Claude Code, and DeepSeek Harness: one result file that saves most of the tokens</title>
-    <link>https://gowinder.work/en/agent-handoff-result-file/</link>
-    <pubDate>Thu, 05 Nov 2026 15:00:00 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://gowinder.work/en/agent-handoff-result-file/</guid>
-    <description><![CDATA[<p>I keep a handful of Grok bots across a few projects: a game, some small SEO sites, a few MCP tools of my own. They plan and schedule. The actual work, writing code, running tests, clicking through a browser, goes to two agents on my Mac: dsh in a sandbox, and Claude Code via <code>claude -p</code>.</p>
-<p>Heavy work on the laptop, coordination in the cloud. The seam between them was the problem. Bots bill by the token, and a long context is both expensive and dumber. The first version of the handoff was me copy-pasting: I would run dsh or Claude Code myself and paste the terminal output back into the chat. The delay was tolerable. The cost was not. That block of output sat in every later turn, and the bot would read logs and think and slowly lose track of what it had said ten minutes earlier.</p>]]></description>
-</item>
-<item>
-    <title>Batch renaming files from an Excel or CSV list: three approaches that actually work</title>
-    <link>https://gowinder.work/en/batch-renaming-files-from-excel-csv/</link>
-    <pubDate>Sat, 31 Oct 2026 10:00:00 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://gowinder.work/en/batch-renaming-files-from-excel-csv/</guid>
-    <description><![CDATA[<h1 id="batch-renaming-files-from-an-excel-or-csv-list">Batch renaming files from an Excel or CSV list</h1>
-<p>If you are cleaning up photos, scans, lecture videos or invoices, the situation is usually the same: <strong>you already have a table</strong>. Column A is the current filename, column B is what you want it to be, maybe column C is a capture date and D is a client code. The hard part is not inventing new names. It is turning that table into actual renames on disk.</p>]]></description>
-</item>
-</channel>
+        <description>Recent content in Automation on gowinder&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <lastBuildDate>Thu, 05 Nov 2026 15:00:00 +0800</lastBuildDate><atom:link href="https://gowinder.work/en/tags/automation/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Grok Bot, Claude Code, and DeepSeek Harness: one result file that saves most of the tokens</title>
+        <link>https://gowinder.work/en/agent-handoff-result-file/</link>
+        <pubDate>Thu, 05 Nov 2026 15:00:00 +0800</pubDate>
+        
+        <guid>https://gowinder.work/en/agent-handoff-result-file/</guid>
+        <description>&lt;p&gt;I keep a handful of Grok bots across a few projects: a game, some small SEO sites, a few MCP tools of my own. They plan and schedule. The actual work, writing code, running tests, clicking through a browser, goes to two agents on my Mac: dsh in a sandbox, and Claude Code via &lt;code&gt;claude -p&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Heavy work on the laptop, coordination in the cloud. The seam between them was the problem. Bots bill by the token, and a long context is both expensive and dumber. The first version of the handoff was me copy-pasting: I would run dsh or Claude Code myself and paste the terminal output back into the chat. The delay was tolerable. The cost was not. That block of output sat in every later turn, and the bot would read logs and think and slowly lose track of what it had said ten minutes earlier.&lt;/p&gt;</description>
+        </item>
+        <item>
+        <title>Batch renaming files from an Excel or CSV list: three approaches that actually work</title>
+        <link>https://gowinder.work/en/batch-renaming-files-from-excel-csv/</link>
+        <pubDate>Sat, 31 Oct 2026 10:00:00 +0800</pubDate>
+        
+        <guid>https://gowinder.work/en/batch-renaming-files-from-excel-csv/</guid>
+        <description>&lt;h1 id=&#34;batch-renaming-files-from-an-excel-or-csv-list&#34;&gt;Batch renaming files from an Excel or CSV list
+&lt;/h1&gt;&lt;p&gt;If you are cleaning up photos, scans, lecture videos or invoices, the situation is usually the same: &lt;strong&gt;you already have a table&lt;/strong&gt;. Column A is the current filename, column B is what you want it to be, maybe column C is a capture date and D is a client code. The hard part is not inventing new names. It is turning that table into actual renames on disk.&lt;/p&gt;</description>
+        </item>
+        
+    </channel>
 </rss>

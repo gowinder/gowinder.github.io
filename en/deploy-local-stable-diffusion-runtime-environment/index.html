@@ -1,143 +1,335 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="robots" content="noodp" />
-        <title>Deploy a Local Stable Diffusion Runtime Environment - gowinder&#39;s Blog</title><meta name="Description" content="A step-by-step guide to deploying a local Stable Diffusion webui environment with conda, common extensions, ControlNet models, and a curated set of popular checkpoints."><meta property="og:url" content="https://gowinder.work/en/deploy-local-stable-diffusion-runtime-environment/">
-  <meta property="og:site_name" content="gowinder&#39;s Blog">
-  <meta property="og:title" content="Deploy a Local Stable Diffusion Runtime Environment">
-  <meta property="og:description" content="A step-by-step guide to deploying a local Stable Diffusion webui environment with conda, common extensions, ControlNet models, and a curated set of popular checkpoints.">
-  <meta property="og:locale" content="en">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2023-04-23T14:13:38+08:00">
-    <meta property="article:modified_time" content="2023-04-23T14:13:38+08:00">
-    <meta property="article:tag" content="Ai">
-    <meta property="article:tag" content="Stable Diffusion">
-    <meta property="article:tag" content="Machine Learning">
-    <meta property="og:image" content="https://gravatar.com/userimage/16926726/2de44cb9918f08ff7f430244b10bf37b.jpeg?size=256">
+<html lang="en" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="A step-by-step guide to deploying a local Stable Diffusion webui environment with conda, common extensions, ControlNet models, and a curated set of popular checkpoints.">
+<meta name="keywords" content="stable diffusion, webui, ai, machine learning, deployment"><title>Deploy a Local Stable Diffusion Runtime Environment - gowinder&#39;s Blog</title>
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://gravatar.com/userimage/16926726/2de44cb9918f08ff7f430244b10bf37b.jpeg?size=256">
-  <meta name="twitter:title" content="Deploy a Local Stable Diffusion Runtime Environment">
-  <meta name="twitter:description" content="A step-by-step guide to deploying a local Stable Diffusion webui environment with conda, common extensions, ControlNet models, and a curated set of popular checkpoints.">
-<meta name="application-name" content="gowinder个人博客">
-<meta name="apple-mobile-web-app-title" content="gowinder个人博客"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://gowinder.work/en/deploy-local-stable-diffusion-runtime-environment/" /><link rel="prev" href="https://gowinder.work/en/fixing-a-server-side-cors-issue-in-react-development-mode/" /><link rel="next" href="https://gowinder.work/en/use-chatgpt-to-make-a-sub-generator-script/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "BlogPosting",
-        "headline": "Deploy a Local Stable Diffusion Runtime Environment",
-        "inLanguage": "en",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https:\/\/gowinder.work\/en\/deploy-local-stable-diffusion-runtime-environment\/"
-        },"image": [{
-                            "@type": "ImageObject",
-                            "url": "https:\/\/gowinder.work\/images\/Apple-Devices-Preview.png",
-                            "width":  3200 ,
-                            "height":  2048 
-                        }],"genre": "posts","keywords": "ai, stable diffusion, machine learning","wordcount":  1396 ,
-        "url": "https:\/\/gowinder.work\/en\/deploy-local-stable-diffusion-runtime-environment\/","datePublished": "2023-04-23T14:13:38+08:00","dateModified": "2023-04-23T14:13:38+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
-            "@type": "Organization",
-            "name": "xxxx","logo": {
-                    "@type": "ImageObject",
-                    "url": "https:\/\/gowinder.work\/images\/avatar.png",
-                    "width":  528 ,
-                    "height":  560 
-                }},"author": {
-                "@type": "Person",
-                "name": "Author"
-            },"description": "A step-by-step guide to deploying a local Stable Diffusion webui environment with conda, common extensions, ControlNet models, and a curated set of popular checkpoints."
-    }
-    </script>
+<link rel='canonical' href='https://gowinder.work/en/deploy-local-stable-diffusion-runtime-environment/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Deploy a Local Stable Diffusion Runtime Environment - gowinder's Blog">
+<meta property='og:description' content="A step-by-step guide to deploying a local Stable Diffusion webui environment with conda, common extensions, ControlNet models, and a curated set of popular checkpoints.">
+<meta property='og:url' content='https://gowinder.work/en/deploy-local-stable-diffusion-runtime-environment/'>
+<meta property='og:site_name' content='gowinder&#39;s Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='ai' /><meta property='article:tag' content='stable diffusion' /><meta property='article:tag' content='machine learning' /><meta property='article:published_time' content='2023-04-23T14:13:38&#43;08:00'/><meta property='article:modified_time' content='2023-04-23T14:13:38&#43;08:00'/><meta property='og:image' content='https://gowinder.work/images/avatar.png' />
+<meta name="twitter:title" content="Deploy a Local Stable Diffusion Runtime Environment - gowinder's Blog">
+<meta name="twitter:description" content="A step-by-step guide to deploying a local Stable Diffusion webui environment with conda, common extensions, ControlNet models, and a curated set of popular checkpoints."><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://gowinder.work/images/avatar.png' /><link rel="alternate" type="text/plain" href="https://gowinder.work/en/deploy-local-stable-diffusion-runtime-environment/index.md">
+    <link rel="shortcut icon" href="/favicon.ico" />
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Bin Zhu","url":"https://github.com/gowinder"},"dateModified":"2023-04-23T14:13:38+08:00","datePublished":"2023-04-23T14:13:38+08:00","description":"A step-by-step guide to deploying a local Stable Diffusion webui environment with conda, common extensions, ControlNet models, and a curated set of popular checkpoints.","genre":"posts","headline":"Deploy a Local Stable Diffusion Runtime Environment","image":"https://gowinder.work/images/avatar.png","inLanguage":"en","keywords":"ai, stable diffusion, machine learning","mainEntityOfPage":{"@id":"https://gowinder.work/en/deploy-local-stable-diffusion-runtime-environment/","@type":"WebPage"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://gowinder.work/images/avatar.png"},"name":"gowinder's Blog","url":"https://gowinder.work/"},"url":"https://gowinder.work/en/deploy-local-stable-diffusion-runtime-environment/","wordCount":1396}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://gowinder.work/","name":"gowinder's Blog","position":1},{"@type":"ListItem","item":"https://gowinder.work/en/posts/","name":"Posts","position":2},{"@type":"ListItem","item":"https://gowinder.work/en/deploy-local-stable-diffusion-runtime-environment/","name":"Deploy a Local Stable Diffusion Runtime Environment","position":3}]}</script>
     </head>
-    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
 
-        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
-    <div class="header-wrapper">
-        <div class="header-title">
-            <a href="/en/" title="gowinder&#39;s Blog"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw' aria-hidden='true'></i></span>Gowinder</a>
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/en/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/images/avatar_hu_48ba0caa0b985179.png" width="300"
+                            height="318" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/en">gowinder&#39;s Blog</a></h1>
+            <h2 class="site-description">Life, coding, tinkering, and everything else.</h2>
         </div>
-        <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/en/posts/"> Posts </a><a class="menu-item" href="/en/tags/"> Tags </a><a class="menu-item" href="/en/categories/"> Categories </a><a class="menu-item" href="/en/categories/documentation/"> Docs </a><a class="menu-item" href="/en/about/"> About </a><a class="menu-item" href="https://github.com/gowinder" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i>  </a><a class="menu-item" href="/en/projects/"> Projects </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
-                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
-                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-desktop">
-                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-                        </span>
-                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-                </a><a href="javascript:void(0);" class="menu-item language" title="Select Language">
-                    <i class="fa fa-globe" aria-hidden="true"></i>                      
-                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/en/deploy-local-stable-diffusion-runtime-environment/" selected>English</option><option value="/create-local-stable-diffusion-env/">简体中文</option></select>
-                </a></div>
-        </div>
-    </div>
-</header><header class="mobile" id="header-mobile">
-    <div class="header-container">
-        <div class="header-wrapper">
-            <div class="header-title">
-                <a href="/en/" title="gowinder&#39;s Blog"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw' aria-hidden='true'></i></span>Gowinder</a>
-            </div>
-            <div class="menu-toggle" id="menu-toggle-mobile">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-        <div class="menu" id="menu-mobile"><div class="search-wrapper">
-                    <div class="search mobile" id="search-mobile">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
-                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
-                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-mobile">
-                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-                        </span>
-                    </div>
-                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
-                        Cancel
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='mailto:gowinder@hotmail.com'
+                        target="_blank"
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-messages" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
+  <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" />
+</svg>
+
+
+
+                        
                     </a>
-                </div><a class="menu-item" href="/en/posts/" title="">Posts</a><a class="menu-item" href="/en/tags/" title="">Tags</a><a class="menu-item" href="/en/categories/" title="">Categories</a><a class="menu-item" href="/en/categories/documentation/" title="">Docs</a><a class="menu-item" href="/en/about/" title="">About</a><a class="menu-item" href="https://github.com/gowinder" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i></a><a class="menu-item" href="/en/projects/" title="">Projects</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">
-                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
-                    <select class="language-select" onchange="location = this.value;"><option value="/en/deploy-local-stable-diffusion-runtime-environment/" selected>English</option><option value="/create-local-stable-diffusion-env/">简体中文</option></select>
-                </a></div>
-    </div>
-</header><div class="search-dropdown desktop">
-        <div id="search-dropdown-desktop"></div>
-    </div>
-    <div class="search-dropdown mobile">
-        <div id="search-dropdown-mobile"></div>
-    </div><main class="main">
-                <div class="container"><div class="toc" id="toc-auto">
-            <h2 class="toc-title">Contents</h2>
-            <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Deploy a Local Stable Diffusion Runtime Environment</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-04-23">2023-04-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1396 words&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;7 minutes&nbsp;<span id="/en/deploy-local-stable-diffusion-runtime-environment/" class="leancloud_visitors" data-flag-title="Deploy a Local Stable Diffusion Runtime Environment">
-                        <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;views
-                    </span>&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  data-kept="">
-                <div class="details-summary toc-title">
-                    <span>Contents</span>
-                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
-  <ul>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/gowinder'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='/en/index.xml'
+                        target="_blank"
+                        title="RSS"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-rss" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="5" cy="19" r="1" />
+  <path d="M4 4a16 16 0 0 1 16 16" />
+  <path d="M4 11a9 9 0 0 1 9 9" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/en/posts/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Posts</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/tags/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+  <circle cx="9" cy="9" r="2" />
+</svg>
+
+
+
+                
+                <span>Tags</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/categories/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                
+                <span>Categories</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/projects/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+</svg>
+
+
+
+                
+                <span>Projects</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='https://github.com/gowinder' target="_blank">
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                
+                <span>GitHub</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://gowinder.work/en/" selected>English</option>
+                                
+                                    <option value="https://gowinder.work/" >简体中文</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
     <li><a href="#hardware-environment">Hardware Environment</a></li>
     <li><a href="#set-the-root-folder">Set the Root Folder</a></li>
     <li><a href="#install-libraries">Install Libraries</a></li>
@@ -149,9 +341,9 @@
     <li><a href="#download-mo-di-diffusion">download Mo Di diffusion</a></li>
     <li><a href="#abyssorangemix3">AbyssOrangeMix3</a></li>
     <li><a href="#scifi">SCIFI</a></li>
-  </ul>
+  </ol>
 
-  <ul>
+  <ol>
     <li><a href="#complexla-style">complexla style</a></li>
     <li><a href="#f222">f222</a></li>
     <li><a href="#chillout-mix">Chillout Mix</a></li>
@@ -160,10 +352,117 @@
     <li><a href="#anythings-v5">Anythings V5</a></li>
     <li><a href="#dreamshaper">DreamShaper</a></li>
     <li><a href="#run-webui">Run <code>webui</code></a></li>
-  </ul>
-</nav></div>
-            </div><div class="content" id="content"><h1 id="deploy-a-local-stable-diffusion-runtime-environment">Deploy a Local Stable Diffusion Runtime Environment</h1>
-<p><code>midjourney</code> has been quite popular lately, but it has started charging—10 dollars a month, which is more than I can afford—so I switched to the open-source <code>Stable Diffusion</code>. You can deploy it on <code>Google Colab</code> with one click:
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    
+
+
+
+<header class="article-header">
+
+    
+
+
+
+
+
+
+    
+
+
+<div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/en/deploy-local-stable-diffusion-runtime-environment/">Deploy a Local Stable Diffusion Runtime Environment</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            A step-by-step guide to deploying a local Stable Diffusion webui environment with conda, common extensions, ControlNet models, and a curated set of popular checkpoints.
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2023-04-23</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    7 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+        <footer class="article-translations">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+            <div>
+                
+                    <a href="https://gowinder.work/create-local-stable-diffusion-env/" class="link">简体中文</a>
+                
+            </div>
+        </footer>
+    
+</div>
+
+</header>
+
+
+    <section class="article-content">
+    
+    
+    <h1 id="deploy-a-local-stable-diffusion-runtime-environment">Deploy a Local Stable Diffusion Runtime Environment
+</h1><p><code>midjourney</code> has been quite popular lately, but it has started charging—10 dollars a month, which is more than I can afford—so I switched to the open-source <code>Stable Diffusion</code>. You can deploy it on <code>Google Colab</code> with one click:
 <code>https://github.com/camenduru/stable-diffusion-webui-colab</code>. However, the free <code>gpu</code> on <code>Google Colab</code> runs out quickly, and although the paid one is cheap, you still have to use it sparingly. If you have a local <code>gpu</code> with more than <code>8G</code> of VRAM, you can run it on your own computer to save costs; <code>6G</code> of VRAM should also work—try lowering the resolution and keywords.</p>
 <p>This document is based on <code>https://github.com/camenduru/stable-diffusion-webui-colab</code>, and I have added some commonly used models myself.
 One difference between <code>Stable Diffusion</code> and <code>midjourney</code> is that there are a great many models; choosing a model in the style you want will better generate the effect you want, and it is also more fun to play with.
@@ -174,14 +473,15 @@ You can pick models on a few commonly used websites:</p>
 </ul>
 <p>Some commonly used <code>stable diffusion</code> websites:</p>
 <ul>
-<li><code>https://www.reddit.com/r/StableDiffusion/</code> — the <code>stable diffusion</code> section on <code>reddit</code>; its <a href="https://www.reddit.com/r/stablediffusion/wiki/tutorials/" target="_blank" rel="noopener noreffer ">tutorials</a> are excellent</li>
+<li><code>https://www.reddit.com/r/StableDiffusion/</code> — the <code>stable diffusion</code> section on <code>reddit</code>; its <a class="link" href="https://www.reddit.com/r/stablediffusion/wiki/tutorials/"  target="_blank" rel="noopener"
+    >tutorials</a> are excellent</li>
 <li><code>https://stable-diffusion-art.com</code> has many basic tutorials</li>
 </ul>
 <p>Below I will record the deployment process.</p>
-<h2 id="hardware-environment">Hardware Environment</h2>
-<p>I have successfully deployed it on <code>proxvox ev 7.3</code> and <code>ubuntu 20.04</code>, using <code>telsa P4 8G</code> and <code>3070 8G</code> graphics cards.</p>
-<h2 id="set-the-root-folder">Set the Root Folder</h2>
-<p><code>google colab</code> uses <code>/content/stable-diffusion-webui</code>, but I put it on <code>zfs</code> locally because the models are quite large and I don&rsquo;t want to keep downloading them over and over.</p>
+<h2 id="hardware-environment">Hardware Environment
+</h2><p>I have successfully deployed it on <code>proxvox ev 7.3</code> and <code>ubuntu 20.04</code>, using <code>telsa P4 8G</code> and <code>3070 8G</code> graphics cards.</p>
+<h2 id="set-the-root-folder">Set the Root Folder
+</h2><p><code>google colab</code> uses <code>/content/stable-diffusion-webui</code>, but I put it on <code>zfs</code> locally because the models are quite large and I don&rsquo;t want to keep downloading them over and over.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -191,8 +491,8 @@ You can pick models on a few commonly used websites:</p>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>After setting the <code>$PROJ_DIR</code> environment variable, all downloads will be based on this environment variable.</p>
-<h2 id="install-libraries">Install Libraries</h2>
-<p>This step doesn&rsquo;t seem to be mandatory.</p>
+<h2 id="install-libraries">Install Libraries
+</h2><p>This step doesn&rsquo;t seem to be mandatory.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -221,8 +521,8 @@ You can pick models on a few commonly used websites:</p>
 </span></span><span class="line"><span class="cl">sudo apt install libnvinfer8 python3-libnvinfer
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="install-conda">Install <code>conda</code></h2>
-<p>For ordinary <code>python</code> projects I like to use <code>poetry</code> to manage packages, but for machine learning projects I generally use <code>miniconda</code>.</p>
+</div><h2 id="install-conda">Install <code>conda</code>
+</h2><p>For ordinary <code>python</code> projects I like to use <code>poetry</code> to manage packages, but for machine learning projects I generally use <code>miniconda</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -236,8 +536,8 @@ You can pick models on a few commonly used websites:</p>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>Create a <code>conda</code> environment: <code>conda create -n py310sd python=3.10</code></p>
-<h2 id="basic-installation">Basic Installation</h2>
-<p>Install <code>aria2</code>; it supports multi-threaded downloads and is faster than <code>wget</code>: <code>sudo apt -y install aria2</code>.
+<h2 id="basic-installation">Basic Installation
+</h2><p>Install <code>aria2</code>; it supports multi-threaded downloads and is faster than <code>wget</code>: <code>sudo apt -y install aria2</code>.
 Then install the <code>python</code> libraries.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -381,8 +681,8 @@ Then install the <code>python</code> libraries.</p>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>The basics are done; below are some popular <code>models</code>.</p>
-<h2 id="stable-diffusion-15">stable-diffusion 1.5</h2>
-<div class="highlight"><div class="chroma">
+<h2 id="stable-diffusion-15">stable-diffusion 1.5
+</h2><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
@@ -390,8 +690,8 @@ Then install the <code>python</code> libraries.</p>
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/runwayml/stable-diffusion-v1-5/resolve/main/v1-5-pruned.ckpt -d <span class="nv">$PROJ_DIR</span>/models/Stable-diffusion -o v1-5-pruned.ckpt
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="download-abyssorangemix2-nsfw">download AbyssOrangeMix2 NSFW</h2>
-<div class="highlight"><div class="chroma">
+</div><h2 id="download-abyssorangemix2-nsfw">download AbyssOrangeMix2 NSFW
+</h2><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -405,16 +705,18 @@ Then install the <code>python</code> libraries.</p>
 </span></span><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/ckpt/sd-vae-ft-mse-original/resolve/main/vae-ft-mse-840000-ema-pruned.ckpt -d <span class="nv">$PROJ_DIR</span>/models/Stable-diffusion -o AbyssOrangeMix2_nsfw.vae.pt
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="download-inkpunk">download inkpunk</h2>
-<p><code>https://huggingface.co/Envvi/Inkpunk-Diffusion</code></p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://huggingface.co/Envvi/Inkpunk-Diffusion/resolve/main/inkpunk-v2-samples-2.png"
-        data-srcset="https://huggingface.co/Envvi/Inkpunk-Diffusion/resolve/main/inkpunk-v2-samples-2.png, https://huggingface.co/Envvi/Inkpunk-Diffusion/resolve/main/inkpunk-v2-samples-2.png 1.5x, https://huggingface.co/Envvi/Inkpunk-Diffusion/resolve/main/inkpunk-v2-samples-2.png 2x"
-        data-sizes="auto"
-        alt="https://huggingface.co/Envvi/Inkpunk-Diffusion/resolve/main/inkpunk-v2-samples-2.png"
-        title="Inkpunk" /></p>
+</div><h2 id="download-inkpunk">download inkpunk
+</h2><p><code>https://huggingface.co/Envvi/Inkpunk-Diffusion</code></p>
+<p><img src="https://huggingface.co/Envvi/Inkpunk-Diffusion/resolve/main/inkpunk-v2-samples-2.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Inkpunk"
+	
+	
+></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -423,16 +725,18 @@ Then install the <code>python</code> libraries.</p>
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/Envvi/Inkpunk-Diffusion/resolve/main/Inkpunk-Diffusion-v2.ckpt -d <span class="nv">$PROJ_DIR</span>/models/Stable-diffusion -o Inkpunk-Diffusion-v2.ckpt
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="download-mo-di-diffusion">download Mo Di diffusion</h2>
-<p><code>https://huggingface.co/nitrosocke/mo-di-diffusion</code></p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://huggingface.co/nitrosocke/mo-di-diffusion/resolve/main/modi-samples-03s.jpg"
-        data-srcset="https://huggingface.co/nitrosocke/mo-di-diffusion/resolve/main/modi-samples-03s.jpg, https://huggingface.co/nitrosocke/mo-di-diffusion/resolve/main/modi-samples-03s.jpg 1.5x, https://huggingface.co/nitrosocke/mo-di-diffusion/resolve/main/modi-samples-03s.jpg 2x"
-        data-sizes="auto"
-        alt="https://huggingface.co/nitrosocke/mo-di-diffusion/resolve/main/modi-samples-03s.jpg"
-        title="MoDi" /></p>
+</div><h2 id="download-mo-di-diffusion">download Mo Di diffusion
+</h2><p><code>https://huggingface.co/nitrosocke/mo-di-diffusion</code></p>
+<p><img src="https://huggingface.co/nitrosocke/mo-di-diffusion/resolve/main/modi-samples-03s.jpg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="MoDi"
+	
+	
+></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -441,16 +745,18 @@ Then install the <code>python</code> libraries.</p>
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/nitrosocke/mo-di-diffusion/blob/main/moDi-v1-pruned.ckpt -d <span class="nv">$PROJ_DIR</span>/models/Stable-diffusion -o moDi-v1-pruned.ckpt
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="abyssorangemix3">AbyssOrangeMix3</h2>
-<p><code>https://huggingface.co/WarriorMama777/OrangeMixs</code></p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://github.com/WarriorMama777/imgup/raw/3e060893c0fb2c80c6f3aedf63bf8d576c9a37fc/img/AOM3/img_samples_AOM3A1B_01_comp001.webp"
-        data-srcset="https://github.com/WarriorMama777/imgup/raw/3e060893c0fb2c80c6f3aedf63bf8d576c9a37fc/img/AOM3/img_samples_AOM3A1B_01_comp001.webp, https://github.com/WarriorMama777/imgup/raw/3e060893c0fb2c80c6f3aedf63bf8d576c9a37fc/img/AOM3/img_samples_AOM3A1B_01_comp001.webp 1.5x, https://github.com/WarriorMama777/imgup/raw/3e060893c0fb2c80c6f3aedf63bf8d576c9a37fc/img/AOM3/img_samples_AOM3A1B_01_comp001.webp 2x"
-        data-sizes="auto"
-        alt="https://github.com/WarriorMama777/imgup/raw/3e060893c0fb2c80c6f3aedf63bf8d576c9a37fc/img/AOM3/img_samples_AOM3A1B_01_comp001.webp"
-        title="AOM3A1B" /></p>
+</div><h2 id="abyssorangemix3">AbyssOrangeMix3
+</h2><p><code>https://huggingface.co/WarriorMama777/OrangeMixs</code></p>
+<p><img src="https://github.com/WarriorMama777/imgup/raw/3e060893c0fb2c80c6f3aedf63bf8d576c9a37fc/img/AOM3/img_samples_AOM3A1B_01_comp001.webp"
+	
+	
+	
+	loading="lazy"
+	
+		alt="AOM3A1B"
+	
+	
+></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -467,16 +773,18 @@ Then install the <code>python</code> libraries.</p>
 </span></span><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/WarriorMama777/OrangeMixs/resolve/main/Models/AbyssOrangeMix3/AOM3_orangemixs.safetensors -d <span class="nv">$PROJ_DIR</span>/models/Stable-diffusion -o AOM3_orangemixs.safetensors
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="scifi">SCIFI</h2>
-<p><code>https://huggingface.co/Corruptlake/Sci-Fi-Diffusion/tree/main</code></p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://i.ibb.co/vw44xpj/sdvssf.png"
-        data-srcset="https://i.ibb.co/vw44xpj/sdvssf.png, https://i.ibb.co/vw44xpj/sdvssf.png 1.5x, https://i.ibb.co/vw44xpj/sdvssf.png 2x"
-        data-sizes="auto"
-        alt="https://i.ibb.co/vw44xpj/sdvssf.png"
-        title="SCIFI" /></p>
+</div><h2 id="scifi">SCIFI
+</h2><p><code>https://huggingface.co/Corruptlake/Sci-Fi-Diffusion/tree/main</code></p>
+<p><img src="https://i.ibb.co/vw44xpj/sdvssf.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="SCIFI"
+	
+	
+></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -487,8 +795,8 @@ Then install the <code>python</code> libraries.</p>
 </span></span><span class="line"><span class="cl">aria2c --console-log-level<span class="o">=</span>error -c -x <span class="m">16</span> -s <span class="m">16</span> -k 1M https://huggingface.co/Corruptlake/Sci-Fi-Diffusion/resolve/main/Sci-Fi_Diffusion_1.0.ckpt -d <span class="nv">$PROJ_DIR</span>/models/Stable-diffusion -o Sci-Fi_Diffusion_1.0.ckpt
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h1 id="hentai-model">hentai model</h1>
-<p>I won&rsquo;t include an image; the address is at</p>
+</div><h1 id="hentai-model">hentai model
+</h1><p>I won&rsquo;t include an image; the address is at</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -501,8 +809,8 @@ Then install the <code>python</code> libraries.</p>
 </span></span><span class="line"><span class="cl">unzip hd22.zip
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="complexla-style">complexla style</h2>
-<div class="highlight"><div class="chroma">
+</div><h2 id="complexla-style">complexla style
+</h2><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
@@ -510,16 +818,18 @@ Then install the <code>python</code> libraries.</p>
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">aria2c -x <span class="m">15</span> -s <span class="m">10</span> -c -k 1M https://huggingface.co/Conflictx/Complex-Lineart/resolve/main/ComplexLA%20Style.ckpt -d <span class="nv">$PROJ_DIR</span>/models/Stable-diffusion -o ComplexLA-Style.ckpt
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="f222">f222</h2>
-<p><code>https://huggingface.co/acheong08/f222</code></p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://i0.wp.com/stable-diffusion-art.com/wp-content/uploads/2023/01/image-47.png?w=786&amp;ssl=1"
-        data-srcset="https://i0.wp.com/stable-diffusion-art.com/wp-content/uploads/2023/01/image-47.png?w=786&amp;ssl=1, https://i0.wp.com/stable-diffusion-art.com/wp-content/uploads/2023/01/image-47.png?w=786&amp;ssl=1 1.5x, https://i0.wp.com/stable-diffusion-art.com/wp-content/uploads/2023/01/image-47.png?w=786&amp;ssl=1 2x"
-        data-sizes="auto"
-        alt="https://i0.wp.com/stable-diffusion-art.com/wp-content/uploads/2023/01/image-47.png?w=786&amp;ssl=1"
-        title="f222" /></p>
+</div><h2 id="f222">f222
+</h2><p><code>https://huggingface.co/acheong08/f222</code></p>
+<p><img src="https://i0.wp.com/stable-diffusion-art.com/wp-content/uploads/2023/01/image-47.png?w=786&amp;ssl=1"
+	
+	
+	
+	loading="lazy"
+	
+		alt="f222"
+	
+	
+></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -528,16 +838,18 @@ Then install the <code>python</code> libraries.</p>
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">aria2c -x <span class="m">15</span> -s <span class="m">10</span> -c -k 1M https://huggingface.co/acheong08/f222/resolve/main/f222.ckpt -d <span class="nv">$PROJ_DIR</span>/models/Stable-diffusion -o f222.ckpt
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="chillout-mix">Chillout Mix</h2>
-<p><code>https://civitai.com/models/6424/chilloutmix</code></p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://i0.wp.com/stable-diffusion-art.com/wp-content/uploads/2023/03/Untitled.png?w=832&amp;ssl=1"
-        data-srcset="https://i0.wp.com/stable-diffusion-art.com/wp-content/uploads/2023/03/Untitled.png?w=832&amp;ssl=1, https://i0.wp.com/stable-diffusion-art.com/wp-content/uploads/2023/03/Untitled.png?w=832&amp;ssl=1 1.5x, https://i0.wp.com/stable-diffusion-art.com/wp-content/uploads/2023/03/Untitled.png?w=832&amp;ssl=1 2x"
-        data-sizes="auto"
-        alt="https://i0.wp.com/stable-diffusion-art.com/wp-content/uploads/2023/03/Untitled.png?w=832&amp;ssl=1"
-        title="ChilloutMix" /></p>
+</div><h2 id="chillout-mix">Chillout Mix
+</h2><p><code>https://civitai.com/models/6424/chilloutmix</code></p>
+<p><img src="https://i0.wp.com/stable-diffusion-art.com/wp-content/uploads/2023/03/Untitled.png?w=832&amp;ssl=1"
+	
+	
+	
+	loading="lazy"
+	
+		alt="ChilloutMix"
+	
+	
+></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -546,8 +858,8 @@ Then install the <code>python</code> libraries.</p>
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">aria2c -x <span class="m">15</span> -s <span class="m">10</span> -c -k 1M https://civitai.com/api/download/models/11745 -d <span class="nv">$PROJ_DIR</span>/models/Stable-diffusion -o ChilloutMix.safetensors
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="urpm">URPM</h2>
-<div class="highlight"><div class="chroma">
+</div><h2 id="urpm">URPM
+</h2><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
@@ -555,16 +867,18 @@ Then install the <code>python</code> libraries.</p>
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">aria2c -x <span class="m">15</span> -s <span class="m">10</span> -c -k 1M https://civitai.com/api/download/models/15640 -d <span class="nv">$PROJ_DIR</span>/models/Stable-diffusion -o URPM.safetensors
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="openjourney">OpenJourney</h2>
-<p><code>https://huggingface.co/prompthero/openjourney</code></p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://s3.amazonaws.com/moonup/production/uploads/1667904587642-63265d019f9d19bfd4f45031.png"
-        data-srcset="https://s3.amazonaws.com/moonup/production/uploads/1667904587642-63265d019f9d19bfd4f45031.png, https://s3.amazonaws.com/moonup/production/uploads/1667904587642-63265d019f9d19bfd4f45031.png 1.5x, https://s3.amazonaws.com/moonup/production/uploads/1667904587642-63265d019f9d19bfd4f45031.png 2x"
-        data-sizes="auto"
-        alt="https://s3.amazonaws.com/moonup/production/uploads/1667904587642-63265d019f9d19bfd4f45031.png"
-        title="Open Journey" /></p>
+</div><h2 id="openjourney">OpenJourney
+</h2><p><code>https://huggingface.co/prompthero/openjourney</code></p>
+<p><img src="https://s3.amazonaws.com/moonup/production/uploads/1667904587642-63265d019f9d19bfd4f45031.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Open Journey"
+	
+	
+></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -573,16 +887,18 @@ Then install the <code>python</code> libraries.</p>
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">aria2c -x <span class="m">15</span> -s <span class="m">10</span> -c -k 1M https://huggingface.co/prompthero/openjourney/resolve/main/mdjrny-v4.ckpt -d <span class="nv">$PROJ_DIR</span>/models/Stable-diffusion -o mdjrny-v4.ckpt
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="anythings-v5">Anythings V5</h2>
-<p><code>https://civitai.com/models/9409/or-anything-v5</code></p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://imagecache.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/aeda34a6-4db8-4f7e-23fd-c7bac4bcae00/width=450/342218.jpeg"
-        data-srcset="https://imagecache.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/aeda34a6-4db8-4f7e-23fd-c7bac4bcae00/width=450/342218.jpeg, https://imagecache.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/aeda34a6-4db8-4f7e-23fd-c7bac4bcae00/width=450/342218.jpeg 1.5x, https://imagecache.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/aeda34a6-4db8-4f7e-23fd-c7bac4bcae00/width=450/342218.jpeg 2x"
-        data-sizes="auto"
-        alt="https://imagecache.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/aeda34a6-4db8-4f7e-23fd-c7bac4bcae00/width=450/342218.jpeg"
-        title="Anythings V5" /></p>
+</div><h2 id="anythings-v5">Anythings V5
+</h2><p><code>https://civitai.com/models/9409/or-anything-v5</code></p>
+<p><img src="https://imagecache.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/aeda34a6-4db8-4f7e-23fd-c7bac4bcae00/width=450/342218.jpeg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Anythings V5"
+	
+	
+></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -591,16 +907,18 @@ Then install the <code>python</code> libraries.</p>
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">aria2c -x <span class="m">15</span> -s <span class="m">10</span> -c -k 1M https://civitai.com/api/download/models/30163 -d <span class="nv">$PROJ_DIR</span>/models/Stable-diffusion -o AnyThingsV5.ckpt
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="dreamshaper">DreamShaper</h2>
-<p><code>https://huggingface.co/Lykon/DreamShaper</code></p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://huggingface.co/Lykon/DreamShaper/resolve/main/1.png"
-        data-srcset="https://huggingface.co/Lykon/DreamShaper/resolve/main/1.png, https://huggingface.co/Lykon/DreamShaper/resolve/main/1.png 1.5x, https://huggingface.co/Lykon/DreamShaper/resolve/main/1.png 2x"
-        data-sizes="auto"
-        alt="https://huggingface.co/Lykon/DreamShaper/resolve/main/1.png"
-        title="DreamShaper" /></p>
+</div><h2 id="dreamshaper">DreamShaper
+</h2><p><code>https://huggingface.co/Lykon/DreamShaper</code></p>
+<p><img src="https://huggingface.co/Lykon/DreamShaper/resolve/main/1.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="DreamShaper"
+	
+	
+></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -611,8 +929,8 @@ Then install the <code>python</code> libraries.</p>
 </span></span><span class="line"><span class="cl">aria2c -x <span class="m">15</span> -s <span class="m">10</span> -c -k 1M https://huggingface.co/Lykon/DreamShaper/resolve/main/DreamShaper_5_beta2_BakedVae_fp16.ckpt -d <span class="nv">$PROJ_DIR</span>/models/Stable-diffusion -o  DreamShaper_5_beta2_BakedVae_fp16.ckpt
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="run-webui">Run <code>webui</code></h2>
-<div class="highlight"><div class="chroma">
+</div><h2 id="run-webui">Run <code>webui</code>
+</h2><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -625,47 +943,218 @@ Then install the <code>python</code> libraries.</p>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>If you need external network access, add the <code>--share</code> parameter.</p>
-</div><div class="post-footer" id="post-footer">
-    <div class="post-info">
-        <div class="post-info-line">
-            <div class="post-info-mod">
-                <span>Updated on 2023-04-23</span>
-            </div></div>
-        <div class="post-info-line">
-            <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/en/deploy-local-stable-diffusion-runtime-environment/index.md" target="_blank">Read Markdown</a>
-                        </span></div>
-            <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://gowinder.work/en/deploy-local-stable-diffusion-runtime-environment/" data-title="Deploy a Local Stable Diffusion Runtime Environment" data-hashtags="ai,stable diffusion,machine learning"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://gowinder.work/en/deploy-local-stable-diffusion-runtime-environment/" data-hashtag="ai"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://gowinder.work/en/deploy-local-stable-diffusion-runtime-environment/" data-title="Deploy a Local Stable Diffusion Runtime Environment"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://gowinder.work/en/deploy-local-stable-diffusion-runtime-environment/" data-title="Deploy a Local Stable Diffusion Runtime Environment"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://gowinder.work/en/deploy-local-stable-diffusion-runtime-environment/" data-title="Deploy a Local Stable Diffusion Runtime Environment"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/en/tags/ai/">Ai</a>
+        
+            <a href="/en/tags/stable-diffusion/">Stable Diffusion</a>
+        
+            <a href="/en/tags/machine-learning/">Machine Learning</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/en/play-with-comfyui/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Playing Around with ComfyUI</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="gowinder/hugo-comment"
+        issue-term="pathname"
+        
+        crossorigin="anonymous"
+        async
+        >
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+<script>
+    let utterancesLoaded = false;
+
+    function setUtterancesTheme(theme) {
+        let utterances = document.querySelector('.utterances iframe');
+        if (utterances) {
+            utterances.contentWindow.postMessage(
+                {
+                    type: 'set-theme',
+                    theme: `github-${theme}`
+                },
+                'https://utteranc.es'
+            );
+        }
+    }
+
+    addEventListener('message', event => {
+        if (event.origin !== 'https://utteranc.es') return;
+
+        
+        utterancesLoaded = true;
+        setUtterancesTheme(document.documentElement.dataset.scheme)
+    });
+
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (!utterancesLoaded) return;
+        setUtterancesTheme(e.detail)
+    })
+</script>
+
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2019 - 
+        
+        2026 gowinder&#39;s Blog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.31.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
         </div>
+
     </div>
 
-    <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/ai/">Ai</a>,&nbsp;<a href="/en/tags/stable-diffusion/">Stable Diffusion</a>,&nbsp;<a href="/en/tags/machine-learning/">Machine Learning</a></section>
-        <section>
-            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/en/">Home</a></span>
-        </section>
-    </div>
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
 
-    <div class="post-nav"><a href="/en/fixing-a-server-side-cors-issue-in-react-development-mode/" class="prev" rel="prev" title="Fixing a Server-Side CORS Issue in React Development Mode"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Fixing a Server-Side CORS Issue in React Development Mode</a>
-            <a href="/en/use-chatgpt-to-make-a-sub-generator-script/" class="next" rel="next" title="Using ChatGPT to Write a Script for Generating Chinese Subtitles for Video Files">Using ChatGPT to Write a Script for Generating Chinese Subtitles for Video Files<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
-</div>
-<div id="comments"><div id="valine" class="comment"></div><noscript>
-                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
-            </noscript><div id="utterances" class="comment"></div><noscript>
-                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
-            </noscript></div></article></div>
-            </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.143.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
-                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/en/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+            </main>
         </div>
-    </footer></div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
 
-        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
-                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
-            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
-                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
-            </a>
-        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.5.0/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"gowinder/hugo-comment"},"valine":{"appId":"QGzwQXOqs5JOhN4RGPOkR2mR-MdYXbMMI","appKey":"WBmoGyJtbqUswvfLh6L8iEBr","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"en","pageSize":10,"placeholder":"Your comment ...","recordIP":true,"serverURLs":"https://leancloud.hugoloveit.com","visitor":true}},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
 </html>

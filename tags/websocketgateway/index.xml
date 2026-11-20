@@ -1,17 +1,21 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Websocketgateway - 标签 - gowinder个人博客</title>
+        <title>Websocketgateway on gowinder个人博客</title>
         <link>https://gowinder.work/tags/websocketgateway/</link>
-        <description>Websocketgateway - 标签 - gowinder个人博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 23 Feb 2023 16:09:08 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/websocketgateway/" rel="self" type="application/rss+xml" /><item>
-    <title>nestjs整合websocketgateway和microservice</title>
-    <link>https://gowinder.work/use-microservce-in-websocketgateway-in-nestjs/</link>
-    <pubDate>Thu, 23 Feb 2023 16:09:08 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://gowinder.work/use-microservce-in-websocketgateway-in-nestjs/</guid>
-    <description><![CDATA[<h1 id="nestjs整合websocketgateway和microservice">nestjs整合websocketgateway和microservice</h1>
-<h2 id="启因">启因</h2>
-<p>使用<code>WebsocketGateway</code>做网关,接收客户端长连接后,将消息通过<code>RabbitMQ</code>消息队列转发到<code>microservice</code>,再做后续处理,<code>microservice</code>处理完成后,将结果也发送到<code>RabbitMQ</code>,<code>WebsocketGateway</code>接收到消息后,回传给客户端</p>]]></description>
-</item>
-</channel>
+        <description>Recent content in Websocketgateway on gowinder个人博客</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-CN</language>
+        <lastBuildDate>Thu, 23 Feb 2023 16:09:08 +0800</lastBuildDate><atom:link href="https://gowinder.work/tags/websocketgateway/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>nestjs整合websocketgateway和microservice</title>
+        <link>https://gowinder.work/use-microservce-in-websocketgateway-in-nestjs/</link>
+        <pubDate>Thu, 23 Feb 2023 16:09:08 +0800</pubDate>
+        
+        <guid>https://gowinder.work/use-microservce-in-websocketgateway-in-nestjs/</guid>
+        <description>&lt;h1 id=&#34;nestjs整合websocketgateway和microservice&#34;&gt;nestjs整合websocketgateway和microservice
+&lt;/h1&gt;&lt;h2 id=&#34;启因&#34;&gt;启因
+&lt;/h2&gt;&lt;p&gt;使用&lt;code&gt;WebsocketGateway&lt;/code&gt;做网关,接收客户端长连接后,将消息通过&lt;code&gt;RabbitMQ&lt;/code&gt;消息队列转发到&lt;code&gt;microservice&lt;/code&gt;,再做后续处理,&lt;code&gt;microservice&lt;/code&gt;处理完成后,将结果也发送到&lt;code&gt;RabbitMQ&lt;/code&gt;,&lt;code&gt;WebsocketGateway&lt;/code&gt;接收到消息后,回传给客户端&lt;/p&gt;</description>
+        </item>
+        
+    </channel>
 </rss>

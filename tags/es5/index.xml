@@ -1,17 +1,21 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Es5 - 标签 - gowinder个人博客</title>
+        <title>Es5 on gowinder个人博客</title>
         <link>https://gowinder.work/tags/es5/</link>
-        <description>Es5 - 标签 - gowinder个人博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 28 Feb 2023 11:08:03 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/es5/" rel="self" type="application/rss+xml" /><item>
-    <title>Class Constructor TypeOrmCrudService Cannot Be Invoked Without &#39;New&#39;</title>
-    <link>https://gowinder.work/class-constructor-typeormcrudservice-cannot-be-invoked-without-new/</link>
-    <pubDate>Tue, 28 Feb 2023 11:08:03 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://gowinder.work/class-constructor-typeormcrudservice-cannot-be-invoked-without-new/</guid>
-    <description><![CDATA[<h1 id="class-constructor-typeormcrudservice-cannot-be-invoked-without-new-错误">Class Constructor TypeOrmCrudService Cannot Be Invoked Without &lsquo;New&rsquo; 错误</h1>
-<h2 id="启因">启因</h2>
-<p>最近开发一个<code>chatgpt</code>网关项目,使用<code>nestjs</code>,其中用<code>nestjsx-crud</code>来提高<code>curd</code>开发效率,有以下代码:</p>]]></description>
-</item>
-</channel>
+        <description>Recent content in Es5 on gowinder个人博客</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-CN</language>
+        <lastBuildDate>Tue, 28 Feb 2023 11:08:03 +0800</lastBuildDate><atom:link href="https://gowinder.work/tags/es5/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Class Constructor TypeOrmCrudService Cannot Be Invoked Without &#39;New&#39;</title>
+        <link>https://gowinder.work/class-constructor-typeormcrudservice-cannot-be-invoked-without-new/</link>
+        <pubDate>Tue, 28 Feb 2023 11:08:03 +0800</pubDate>
+        
+        <guid>https://gowinder.work/class-constructor-typeormcrudservice-cannot-be-invoked-without-new/</guid>
+        <description>&lt;h1 id=&#34;class-constructor-typeormcrudservice-cannot-be-invoked-without-new-错误&#34;&gt;Class Constructor TypeOrmCrudService Cannot Be Invoked Without &amp;lsquo;New&amp;rsquo; 错误
+&lt;/h1&gt;&lt;h2 id=&#34;启因&#34;&gt;启因
+&lt;/h2&gt;&lt;p&gt;最近开发一个&lt;code&gt;chatgpt&lt;/code&gt;网关项目,使用&lt;code&gt;nestjs&lt;/code&gt;,其中用&lt;code&gt;nestjsx-crud&lt;/code&gt;来提高&lt;code&gt;curd&lt;/code&gt;开发效率,有以下代码:&lt;/p&gt;</description>
+        </item>
+        
+    </channel>
 </rss>

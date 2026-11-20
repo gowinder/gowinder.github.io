@@ -1,144 +1,149 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Nestjs - 标签 - gowinder个人博客</title>
+        <title>Nestjs on gowinder个人博客</title>
         <link>https://gowinder.work/tags/nestjs/</link>
-        <description>Nestjs - 标签 - gowinder个人博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 28 Feb 2023 11:08:03 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/tags/nestjs/" rel="self" type="application/rss+xml" /><item>
-    <title>Class Constructor TypeOrmCrudService Cannot Be Invoked Without &#39;New&#39;</title>
-    <link>https://gowinder.work/class-constructor-typeormcrudservice-cannot-be-invoked-without-new/</link>
-    <pubDate>Tue, 28 Feb 2023 11:08:03 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://gowinder.work/class-constructor-typeormcrudservice-cannot-be-invoked-without-new/</guid>
-    <description><![CDATA[<h1 id="class-constructor-typeormcrudservice-cannot-be-invoked-without-new-错误">Class Constructor TypeOrmCrudService Cannot Be Invoked Without &lsquo;New&rsquo; 错误</h1>
-<h2 id="启因">启因</h2>
-<p>最近开发一个<code>chatgpt</code>网关项目,使用<code>nestjs</code>,其中用<code>nestjsx-crud</code>来提高<code>curd</code>开发效率,有以下代码:</p>]]></description>
-</item>
-<item>
-    <title>nestjs整合websocketgateway和microservice</title>
-    <link>https://gowinder.work/use-microservce-in-websocketgateway-in-nestjs/</link>
-    <pubDate>Thu, 23 Feb 2023 16:09:08 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://gowinder.work/use-microservce-in-websocketgateway-in-nestjs/</guid>
-    <description><![CDATA[<h1 id="nestjs整合websocketgateway和microservice">nestjs整合websocketgateway和microservice</h1>
-<h2 id="启因">启因</h2>
-<p>使用<code>WebsocketGateway</code>做网关,接收客户端长连接后,将消息通过<code>RabbitMQ</code>消息队列转发到<code>microservice</code>,再做后续处理,<code>microservice</code>处理完成后,将结果也发送到<code>RabbitMQ</code>,<code>WebsocketGateway</code>接收到消息后,回传给客户端</p>]]></description>
-</item>
-<item>
-    <title>nestjs中,Service无法找到Repository依赖.md</title>
-    <link>https://gowinder.work/nestjs%E4%B8%ADservice%E6%97%A0%E6%B3%95%E6%89%BE%E5%88%B0repository%E4%BE%9D%E8%B5%96/</link>
-    <pubDate>Tue, 14 Feb 2023 10:56:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://gowinder.work/nestjs%E4%B8%ADservice%E6%97%A0%E6%B3%95%E6%89%BE%E5%88%B0repository%E4%BE%9D%E8%B5%96/</guid>
-    <description><![CDATA[<h1 id="nestjs中service无法找到repository依赖">nestjs中,Service无法找到Repository依赖</h1>
-<h2 id="启因">启因</h2>
-<p>如下代码:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kd">@Injectable</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">class</span> <span class="nx">SiteRbacService</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="kr">constructor</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">@InjectRepository</span><span class="p">(</span><span class="nx">RbacEntity</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="kr">public</span> <span class="kr">readonly</span> <span class="nx">repository</span>: <span class="kt">Repository</span><span class="p">&lt;</span><span class="nt">RbacEntity</span><span class="p">&gt;,</span>
-</span></span><span class="line"><span class="cl">  <span class="p">)</span> <span class="p">{}</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">create</span><span class="p">(</span><span class="nx">createRbacDto</span>: <span class="kt">CreateRbacDto</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s1">&#39;This action adds a new rbac&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="nx">findAll() {</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="sb">`This action returns all rbac`</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="nx">findOne</span><span class="p">(</span><span class="nx">id</span>: <span class="kt">number</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="sb">`This action returns a #</span><span class="si">${</span><span class="nx">id</span><span class="si">}</span><span class="sb"> rbac`</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="nx">update</span><span class="p">(</span><span class="nx">id</span>: <span class="kt">number</span><span class="p">,</span> <span class="nx">updateRbacDto</span>: <span class="kt">UpdateRbacDto</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="sb">`This action updates a #</span><span class="si">${</span><span class="nx">id</span><span class="si">}</span><span class="sb"> rbac`</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="nx">remove</span><span class="p">(</span><span class="nx">id</span>: <span class="kt">number</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="sb">`This action removes a #</span><span class="si">${</span><span class="nx">id</span><span class="si">}</span><span class="sb"> rbac`</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>运行时会报错: <code>Nest can't resolve dependencies of the SiteRbacService</code>,日志显示就是: <code>@InjectRepository(RbacEntity) public readonly repository: Repository&lt;RbacEntity&gt;</code> 这个没有引入</p>]]></description>
-</item>
-<item>
-    <title>nestjs中,JwtService报错,没有SECRET</title>
-    <link>https://gowinder.work/nestjs-jwtservice-seccret-or-public-key-must-be-provied/</link>
-    <pubDate>Tue, 07 Feb 2023 14:40:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://gowinder.work/nestjs-jwtservice-seccret-or-public-key-must-be-provied/</guid>
-    <description><![CDATA[<h1 id="nestjs中jwtservice报错-jsonwebtokenerror-secret-or-public-key-must-be-provided">nestjs中,JwtService报错: &ldquo;JsonWebTokenError: secret or public key must be provided&rdquo;</h1>
-<h2 id="原因">原因</h2>
-<p>最近老是出现这个错误: <code>JsonWebTokenError: secret or public key must be provided</code>,</p>
-<ul>
-<li>
-<p>我已经在环境变量中增加<code>imports: [JwtService]</code>,</p>
-</li>
-<li>
-<p>也在底层库<code>shared.module.ts</code>里面增加了:</p>]]></description>
-</item>
-<item>
-    <title>nestjs中,AuthGuard类,在CanActive函数中无法调用Inject.md</title>
-    <link>https://gowinder.work/nestjs%E4%B8%ADauthguard%E7%B1%BB%E5%9C%A8canactive%E5%87%BD%E6%95%B0%E4%B8%AD%E6%97%A0%E6%B3%95%E8%B0%83%E7%94%A8inject/</link>
-    <pubDate>Mon, 06 Feb 2023 17:24:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://gowinder.work/nestjs%E4%B8%ADauthguard%E7%B1%BB%E5%9C%A8canactive%E5%87%BD%E6%95%B0%E4%B8%AD%E6%97%A0%E6%B3%95%E8%B0%83%E7%94%A8inject/</guid>
-    <description><![CDATA[<h1 id="nestjs中authguard类在canactive函数中无法调用inject">nestjs中,AuthGuard类,在CanActive函数中无法调用Inject</h1>
-<h2 id="启因">启因</h2>
-<p>最近写<code>nestjs</code>项目,他的<code>UserGuard</code>很方便,相当于在<code>route</code>处理<code>request</code>时,可以经由<code>AuthGuard</code>来处理验证代码.</p>
-<p>但是,我在写的过程中,出了一个问题,花了很长时间来解决,比如如下 <code>StaffAuthGuard.ts</code>代码:</p>]]></description>
-</item>
-<item>
-    <title>nestjsx/crud xxxRepository not found问题解决</title>
-    <link>https://gowinder.work/nestjsx-crud-xxxrepository-not-found%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</link>
-    <pubDate>Mon, 06 Feb 2023 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://gowinder.work/nestjsx-crud-xxxrepository-not-found%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</guid>
-    <description><![CDATA[<h1 id="nestjsxcrud-xxxrepository-not-found问题解决">nestjsx/crud xxxRepository not found问题解决</h1>
-<p><code>nestjsx/crud</code>可以快速帮我生成   使用<code>@Entity </code>定义好<code>typeorm</code>对象的对应<code>service</code>,<code>controller</code>的 <code>增删改查</code>操作<code>API</code>  .</p>]]></description>
-</item>
-<item>
-    <title>Nestjs, typeorm中的entity中的互相引用问题</title>
-    <link>https://gowinder.work/nestjs-typeorm-entity-%E4%BA%92%E7%9B%B8%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/</link>
-    <pubDate>Tue, 31 Jan 2023 14:01:39 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://gowinder.work/nestjs-typeorm-entity-%E4%BA%92%E7%9B%B8%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/</guid>
-    <description><![CDATA[<h1 id="nestjs-typeorm中的entity中的互相引用问题">Nestjs, typeorm中的entity中的互相引用问题</h1>
-<p><code>20230131-152600</code></p>
-<p>使用<code>nestjs</code>时,用到<code>typeorm</code>,有互相引用关系的<code>entity</code>,老是报错,按照<a href="https://typeorm.io/relations-faq#avoid-circular-import-errors" target="_blank" rel="noopener noreffer ">官方文档</a>,最后总会报一个<code>entity metadata not found</code>的错误.</p>]]></description>
-</item>
-</channel>
+        <description>Recent content in Nestjs on gowinder个人博客</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-CN</language>
+        <lastBuildDate>Tue, 28 Feb 2023 11:08:03 +0800</lastBuildDate><atom:link href="https://gowinder.work/tags/nestjs/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Class Constructor TypeOrmCrudService Cannot Be Invoked Without &#39;New&#39;</title>
+        <link>https://gowinder.work/class-constructor-typeormcrudservice-cannot-be-invoked-without-new/</link>
+        <pubDate>Tue, 28 Feb 2023 11:08:03 +0800</pubDate>
+        
+        <guid>https://gowinder.work/class-constructor-typeormcrudservice-cannot-be-invoked-without-new/</guid>
+        <description>&lt;h1 id=&#34;class-constructor-typeormcrudservice-cannot-be-invoked-without-new-错误&#34;&gt;Class Constructor TypeOrmCrudService Cannot Be Invoked Without &amp;lsquo;New&amp;rsquo; 错误
+&lt;/h1&gt;&lt;h2 id=&#34;启因&#34;&gt;启因
+&lt;/h2&gt;&lt;p&gt;最近开发一个&lt;code&gt;chatgpt&lt;/code&gt;网关项目,使用&lt;code&gt;nestjs&lt;/code&gt;,其中用&lt;code&gt;nestjsx-crud&lt;/code&gt;来提高&lt;code&gt;curd&lt;/code&gt;开发效率,有以下代码:&lt;/p&gt;</description>
+        </item>
+        <item>
+        <title>nestjs整合websocketgateway和microservice</title>
+        <link>https://gowinder.work/use-microservce-in-websocketgateway-in-nestjs/</link>
+        <pubDate>Thu, 23 Feb 2023 16:09:08 +0800</pubDate>
+        
+        <guid>https://gowinder.work/use-microservce-in-websocketgateway-in-nestjs/</guid>
+        <description>&lt;h1 id=&#34;nestjs整合websocketgateway和microservice&#34;&gt;nestjs整合websocketgateway和microservice
+&lt;/h1&gt;&lt;h2 id=&#34;启因&#34;&gt;启因
+&lt;/h2&gt;&lt;p&gt;使用&lt;code&gt;WebsocketGateway&lt;/code&gt;做网关,接收客户端长连接后,将消息通过&lt;code&gt;RabbitMQ&lt;/code&gt;消息队列转发到&lt;code&gt;microservice&lt;/code&gt;,再做后续处理,&lt;code&gt;microservice&lt;/code&gt;处理完成后,将结果也发送到&lt;code&gt;RabbitMQ&lt;/code&gt;,&lt;code&gt;WebsocketGateway&lt;/code&gt;接收到消息后,回传给客户端&lt;/p&gt;</description>
+        </item>
+        <item>
+        <title>nestjs中,Service无法找到Repository依赖.md</title>
+        <link>https://gowinder.work/nestjs%E4%B8%ADservice%E6%97%A0%E6%B3%95%E6%89%BE%E5%88%B0repository%E4%BE%9D%E8%B5%96/</link>
+        <pubDate>Tue, 14 Feb 2023 10:56:00 +0000</pubDate>
+        
+        <guid>https://gowinder.work/nestjs%E4%B8%ADservice%E6%97%A0%E6%B3%95%E6%89%BE%E5%88%B0repository%E4%BE%9D%E8%B5%96/</guid>
+        <description>&lt;h1 id=&#34;nestjs中service无法找到repository依赖&#34;&gt;nestjs中,Service无法找到Repository依赖
+&lt;/h1&gt;&lt;h2 id=&#34;启因&#34;&gt;启因
+&lt;/h2&gt;&lt;p&gt;如下代码:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-typescript&#34; data-lang=&#34;typescript&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;@Injectable&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kr&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;kr&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;SiteRbacService&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;kr&#34;&gt;constructor&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kd&#34;&gt;@InjectRepository&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;RbacEntity&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kr&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kr&#34;&gt;readonly&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;repository&lt;/span&gt;: &lt;span class=&#34;kt&#34;&gt;Repository&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;RbacEntity&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;create&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;createRbacDto&lt;/span&gt;: &lt;span class=&#34;kt&#34;&gt;CreateRbacDto&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;This action adds a new rbac&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;findAll() {&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;sb&#34;&gt;`This action returns all rbac`&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;findOne&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;id&lt;/span&gt;: &lt;span class=&#34;kt&#34;&gt;number&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;sb&#34;&gt;`This action returns a #&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt; rbac`&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;update&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;id&lt;/span&gt;: &lt;span class=&#34;kt&#34;&gt;number&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;updateRbacDto&lt;/span&gt;: &lt;span class=&#34;kt&#34;&gt;UpdateRbacDto&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;sb&#34;&gt;`This action updates a #&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt; rbac`&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;remove&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;id&lt;/span&gt;: &lt;span class=&#34;kt&#34;&gt;number&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;sb&#34;&gt;`This action removes a #&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt; rbac`&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;运行时会报错: &lt;code&gt;Nest can&#39;t resolve dependencies of the SiteRbacService&lt;/code&gt;,日志显示就是: &lt;code&gt;@InjectRepository(RbacEntity) public readonly repository: Repository&amp;lt;RbacEntity&amp;gt;&lt;/code&gt; 这个没有引入&lt;/p&gt;</description>
+        </item>
+        <item>
+        <title>nestjs中,JwtService报错,没有SECRET</title>
+        <link>https://gowinder.work/nestjs-jwtservice-seccret-or-public-key-must-be-provied/</link>
+        <pubDate>Tue, 07 Feb 2023 14:40:00 +0000</pubDate>
+        
+        <guid>https://gowinder.work/nestjs-jwtservice-seccret-or-public-key-must-be-provied/</guid>
+        <description>&lt;h1 id=&#34;nestjs中jwtservice报错-jsonwebtokenerror-secret-or-public-key-must-be-provided&#34;&gt;nestjs中,JwtService报错: &amp;ldquo;JsonWebTokenError: secret or public key must be provided&amp;rdquo;
+&lt;/h1&gt;&lt;h2 id=&#34;原因&#34;&gt;原因
+&lt;/h2&gt;&lt;p&gt;最近老是出现这个错误: &lt;code&gt;JsonWebTokenError: secret or public key must be provided&lt;/code&gt;,&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;我已经在环境变量中增加&lt;code&gt;imports: [JwtService]&lt;/code&gt;,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;也在底层库&lt;code&gt;shared.module.ts&lt;/code&gt;里面增加了:&lt;/p&gt;</description>
+        </item>
+        <item>
+        <title>nestjs中,AuthGuard类,在CanActive函数中无法调用Inject.md</title>
+        <link>https://gowinder.work/nestjs%E4%B8%ADauthguard%E7%B1%BB%E5%9C%A8canactive%E5%87%BD%E6%95%B0%E4%B8%AD%E6%97%A0%E6%B3%95%E8%B0%83%E7%94%A8inject/</link>
+        <pubDate>Mon, 06 Feb 2023 17:24:00 +0000</pubDate>
+        
+        <guid>https://gowinder.work/nestjs%E4%B8%ADauthguard%E7%B1%BB%E5%9C%A8canactive%E5%87%BD%E6%95%B0%E4%B8%AD%E6%97%A0%E6%B3%95%E8%B0%83%E7%94%A8inject/</guid>
+        <description>&lt;h1 id=&#34;nestjs中authguard类在canactive函数中无法调用inject&#34;&gt;nestjs中,AuthGuard类,在CanActive函数中无法调用Inject
+&lt;/h1&gt;&lt;h2 id=&#34;启因&#34;&gt;启因
+&lt;/h2&gt;&lt;p&gt;最近写&lt;code&gt;nestjs&lt;/code&gt;项目,他的&lt;code&gt;UserGuard&lt;/code&gt;很方便,相当于在&lt;code&gt;route&lt;/code&gt;处理&lt;code&gt;request&lt;/code&gt;时,可以经由&lt;code&gt;AuthGuard&lt;/code&gt;来处理验证代码.&lt;/p&gt;
+&lt;p&gt;但是,我在写的过程中,出了一个问题,花了很长时间来解决,比如如下 &lt;code&gt;StaffAuthGuard.ts&lt;/code&gt;代码:&lt;/p&gt;</description>
+        </item>
+        <item>
+        <title>nestjsx/crud xxxRepository not found问题解决</title>
+        <link>https://gowinder.work/nestjsx-crud-xxxrepository-not-found%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</link>
+        <pubDate>Mon, 06 Feb 2023 00:00:00 +0000</pubDate>
+        
+        <guid>https://gowinder.work/nestjsx-crud-xxxrepository-not-found%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</guid>
+        <description>&lt;h1 id=&#34;nestjsxcrud-xxxrepository-not-found问题解决&#34;&gt;nestjsx/crud xxxRepository not found问题解决
+&lt;/h1&gt;&lt;p&gt;&lt;code&gt;nestjsx/crud&lt;/code&gt;可以快速帮我生成   使用&lt;code&gt;@Entity &lt;/code&gt;定义好&lt;code&gt;typeorm&lt;/code&gt;对象的对应&lt;code&gt;service&lt;/code&gt;,&lt;code&gt;controller&lt;/code&gt;的 &lt;code&gt;增删改查&lt;/code&gt;操作&lt;code&gt;API&lt;/code&gt;  .&lt;/p&gt;</description>
+        </item>
+        <item>
+        <title>Nestjs, typeorm中的entity中的互相引用问题</title>
+        <link>https://gowinder.work/nestjs-typeorm-entity-%E4%BA%92%E7%9B%B8%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/</link>
+        <pubDate>Tue, 31 Jan 2023 14:01:39 +0800</pubDate>
+        
+        <guid>https://gowinder.work/nestjs-typeorm-entity-%E4%BA%92%E7%9B%B8%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/</guid>
+        <description>&lt;h1 id=&#34;nestjs-typeorm中的entity中的互相引用问题&#34;&gt;Nestjs, typeorm中的entity中的互相引用问题
+&lt;/h1&gt;&lt;p&gt;&lt;code&gt;20230131-152600&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;使用&lt;code&gt;nestjs&lt;/code&gt;时,用到&lt;code&gt;typeorm&lt;/code&gt;,有互相引用关系的&lt;code&gt;entity&lt;/code&gt;,老是报错,按照&lt;a class=&#34;link&#34; href=&#34;https://typeorm.io/relations-faq#avoid-circular-import-errors&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;官方文档&lt;/a&gt;,最后总会报一个&lt;code&gt;entity metadata not found&lt;/code&gt;的错误.&lt;/p&gt;</description>
+        </item>
+        
+    </channel>
 </rss>

@@ -1,15 +1,19 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Pi - Tag - gowinder&#39;s Blog</title>
+        <title>Pi on gowinder&#39;s Blog</title>
         <link>https://gowinder.work/en/tags/pi/</link>
-        <description>Pi - Tag - gowinder&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 15 Nov 2026 20:00:00 &#43;0800</lastBuildDate><atom:link href="https://gowinder.work/en/tags/pi/" rel="self" type="application/rss+xml" /><item>
-    <title>Away From the Desk: I Gave My Mac Agents a Phone Entrance, and Why &#34;Yes, Merge It&#34; on a Phone Doesn&#39;t Count</title>
-    <link>https://gowinder.work/en/agent-bridge/</link>
-    <pubDate>Sun, 15 Nov 2026 20:00:00 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://gowinder.work/en/agent-bridge/</guid>
-    <description><![CDATA[<p>The last post was about the result file, how the coordinator and the executor hand work over. That setup works, but I skipped past a precondition at the time: the executor runs on my machine, so the human has to be at my machine too. Later I moved the heavy work back onto my own laptop, and that precondition turned into a daily problem — the work lives on the Mac, and I am often not in front of the Mac.</p>]]></description>
-</item>
-</channel>
+        <description>Recent content in Pi on gowinder&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <lastBuildDate>Sun, 15 Nov 2026 20:00:00 +0800</lastBuildDate><atom:link href="https://gowinder.work/en/tags/pi/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Away From the Desk: I Gave My Mac Agents a Phone Entrance, and Why &#34;Yes, Merge It&#34; on a Phone Doesn&#39;t Count</title>
+        <link>https://gowinder.work/en/agent-bridge/</link>
+        <pubDate>Sun, 15 Nov 2026 20:00:00 +0800</pubDate>
+        
+        <guid>https://gowinder.work/en/agent-bridge/</guid>
+        <description>&lt;p&gt;The last post was about the result file, how the coordinator and the executor hand work over. That setup works, but I skipped past a precondition at the time: the executor runs on my machine, so the human has to be at my machine too. Later I moved the heavy work back onto my own laptop, and that precondition turned into a daily problem — the work lives on the Mac, and I am often not in front of the Mac.&lt;/p&gt;</description>
+        </item>
+        
+    </channel>
 </rss>

@@ -3,7 +3,7 @@
 
 {{< image src="/images/muse-agent-bridge-workflow.svg" alt="Muse × Agent Bridge 工作流：我定规格，Muse 在云端写规格、派活、验收，经 MCP 和加密中继把活送到 Mac 上的托管会话里干，干完再回来交账" width="640" caption="我定规格、Muse 派活验收、活在 Mac 上干、结果回到我手里——中间靠 MCP 和一个常驻监听器把圈闭上。" >}}
 
-先说现在这篇是谁在写流程里的哪一段，省得跟前两篇混了。11 月 5 号那篇，指挥本机 agent 的是我。15 号那篇是 Agent Bridge 的发布稿，讲它自己。这篇讲后来加的 MCP：指挥的换成 Muse 了，我基本上只剩下定事情和看结果。
+先说现在这篇是谁在写流程里的哪一段，省得跟前两篇混了。11 月 5 号那篇，指挥本机 agent 的是我。15 号那篇是 [Agent Bridge](https://agent-bridge.craftstead.app) 的发布稿，讲它自己。这篇讲后来加的 MCP：指挥的换成 Muse 了，我基本上只剩下定事情和看结果。
 
 Muse 不在我电脑上。它是 Meta 那个个人 agent，有自己的一台云端机器，能跑程序，能常驻，这点很关键，后面会用到。我的东西全在 Mac 上，仓库、文件，还有些非得在本机那个登录好的环境里才能办的事。它够不着。
 

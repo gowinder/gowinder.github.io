@@ -65,7 +65,7 @@ The rest of the limits, all at once. The web UI can only create hosted sessions;
 
 ## Where it stands now
 
-0.11.0, MIT licensed, on GitHub at gowinder/agent-bridge, DMG available for download, web client at agent-bridge.craftstead.app. Signing and notarization require an Apple certificate I haven't configured, so the unsigned build needs a manual allow in System Settings the first time you open it. It's in the README. Nothing to gloss over.
+0.11.0, MIT licensed, on GitHub at [gowinder/agent-bridge](https://github.com/gowinder/agent-bridge), DMG available for download, web client at [agent-bridge.craftstead.app](https://agent-bridge.craftstead.app). Signing and notarization require an Apple certificate I haven't configured, so the unsigned build needs a manual allow in System Settings the first time you open it. It's in the README. Nothing to gloss over.
 
 My own usage has changed three times. At first I used Claude Desktop's sessions; mirroring looked convenient, but the moment I needed to commit code or open a PR I got stuck — no approval, so the last step always meant going back to the computer. Then I switched to Bridge-hosted Claude Code, which runs the whole flow. Now I mostly use hosted pi: it's more complete and more open, and models, subagents and thinking levels can all be set directly from the web page.
 

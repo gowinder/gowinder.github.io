@@ -65,7 +65,7 @@ todo 是 0.11 才加的，加之前我没觉得缺，加完离不开了。用着
 
 ## 现在的状态
 
-0.11.0，MIT 开源，GitHub 上 gowinder/agent-bridge，有 DMG 下载，网页端在 agent-bridge.craftstead.app。签名公证要配了苹果的证书才有，没配的版本第一次打开得去系统设置里手动放行，README 里写了，没什么好美化的。
+0.11.0，MIT 开源，GitHub 上 [gowinder/agent-bridge](https://github.com/gowinder/agent-bridge)，有 DMG 下载，网页端在 [agent-bridge.craftstead.app](https://agent-bridge.craftstead.app)。签名公证要配了苹果的证书才有，没配的版本第一次打开得去系统设置里手动放行，README 里写了，没什么好美化的。
 
 我自己的用法换过三茬。一开始用 Claude 桌面版的会话，镜像看着是方便，但真到要提交代码、开 PR 的时候就卡住，批准不了事，最后一步总得回电脑。后来换成 Bridge 托管的 Claude Code，能跑完整流程了。现在主要用托管的 pi，功能比较全，也比较开放，模型、子代理、思考等级这些都能在网页上直接设。
 

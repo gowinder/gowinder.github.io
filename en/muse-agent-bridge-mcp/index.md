@@ -3,7 +3,7 @@
 
 {{< image src="/images/muse-agent-bridge-workflow-en.svg" alt="The Muse × Agent Bridge workflow: I set the spec, Muse writes specs, dispatches and verifies from the cloud, the work travels over MCP and an encrypted relay into a hosted session on my Mac, and the result comes back to me" width="640" caption="I set the spec, Muse dispatches and verifies, the work happens on the Mac, and the result comes back to me — MCP and an always-on listener close the loop." >}}
 
-Quick note on where this post sits, so it doesn't blur into the previous two. In the November 5 post, I was the one driving the agents on my machine. The November 15 post was the Agent Bridge release post, about the tool itself. This one is about the MCP piece that came later: the driver is Muse now, and I'm mostly left with deciding things and looking at results.
+Quick note on where this post sits, so it doesn't blur into the previous two. In the November 5 post, I was the one driving the agents on my machine. The November 15 post was the [Agent Bridge](https://agent-bridge.craftstead.app) release post, about the tool itself. This one is about the MCP piece that came later: the driver is Muse now, and I'm mostly left with deciding things and looking at results.
 
 Muse doesn't live on my computer. It's Meta's personal agent, it has a cloud machine of its own, it can run programs and stay resident — that detail matters later. Everything of mine is on the Mac. The repos, the files, and a bunch of things that can only be done inside the environment that's already signed in on this machine. It can't reach any of that.
 

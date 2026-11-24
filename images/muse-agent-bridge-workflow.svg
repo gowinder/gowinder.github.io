@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="1313" viewBox="0 0 1280 1313" role="img" aria-label="Muse 云端经 MCP 与 Noise 中继驱动本机 Agent Bridge 的工作流">
+<defs>
+<marker id="ar-main" viewBox="0 0 10 10" refX="9.2" refY="5" markerWidth="6.2" markerHeight="6.2" orient="auto-start-reverse"><path d="M0.8,1.0 L9.4,5 L0.8,9.0 z" fill="#33475b"/></marker>
+<marker id="ar-loop" viewBox="0 0 10 10" refX="9.2" refY="5" markerWidth="6.2" markerHeight="6.2" orient="auto-start-reverse"><path d="M0.8,1.0 L9.4,5 L0.8,9.0 z" fill="#b06318"/></marker>
+</defs>
+<rect width="1280" height="1313" fill="#ffffff"/>
+<line x1="640.0" y1="158.0" x2="640.0" y2="212.0" stroke="#33475b" stroke-width="2" marker-end="url(#ar-main)"/>
+<line x1="640.0" y1="331.0" x2="640.0" y2="385.0" stroke="#33475b" stroke-width="2" marker-end="url(#ar-main)"/>
+<line x1="640.0" y1="570.0" x2="640.0" y2="624.0" stroke="#33475b" stroke-width="2" marker-end="url(#ar-main)"/>
+<line x1="640.0" y1="743.0" x2="640.0" y2="797.0" stroke="#33475b" stroke-width="2" marker-end="url(#ar-main)"/>
+<line x1="640.0" y1="916.0" x2="640.0" y2="970.0" stroke="#33475b" stroke-width="2" marker-end="url(#ar-main)"/>
+<line x1="640.0" y1="1089.0" x2="640.0" y2="1143.0" stroke="#33475b" stroke-width="2" marker-end="url(#ar-main)"/>
+<path d="M 925.0 1203.5 L 974.0 1203.5 Q 989.0 1203.5 989.0 1188.5 L 989.0 487.0 Q 989.0 478.5 980.5 478.5 L 961.0 478.5" fill="none" stroke="#b06318" stroke-width="1.9" stroke-dasharray="9 6"/>
+<path d="M 355.0 272.5 L 306.0 272.5 Q 291.0 272.5 291.0 257.5 L 291.0 114.5 Q 291.0 99.5 306.0 99.5 L 355.0 99.5" fill="none" stroke="#b06318" stroke-width="1.9" stroke-dasharray="9 6" marker-end="url(#ar-loop)"/>
+<rect x="357.0" y="46.0" width="566" height="107.0" rx="12" fill="#f7f8fa" stroke="#33475b" stroke-width="1.6"/>
+<text x="640.0" y="81.5" font-family="Noto Sans CJK SC, Source Han Sans SC, Noto Sans SC, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif" font-size="26" fill="#1b2733" font-weight="bold" text-anchor="middle">我</text>
+<text x="640.0" y="120.5" font-family="Noto Sans CJK SC, Source Han Sans SC, Noto Sans SC, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif" font-size="22.5" fill="#5d6d7c" text-anchor="middle">定规格 · 拍板 · 看结果</text>
+<rect x="357.0" y="219.0" width="566" height="107.0" rx="12" fill="#f7f8fa" stroke="#33475b" stroke-width="1.6"/>
+<text x="640.0" y="254.5" font-family="Noto Sans CJK SC, Source Han Sans SC, Noto Sans SC, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif" font-size="26" fill="#1b2733" font-weight="bold" text-anchor="middle">Muse（云端 VM）</text>
+<text x="640.0" y="293.5" font-family="Noto Sans CJK SC, Source Han Sans SC, Noto Sans SC, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif" font-size="22.5" fill="#5d6d7c" text-anchor="middle">写规格 · 派活 · 审代码 · 验收</text>
+<rect x="310.0" y="392.0" width="660" height="173.0" rx="14" fill="#fcfcfd" stroke="#d3dbe3" stroke-width="1.4"/>
+<text x="640.0" y="425.5" font-family="Noto Sans CJK SC, Source Han Sans SC, Noto Sans SC, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif" font-size="20.5" fill="#6d7c89" text-anchor="middle">MCP server（stdio）+ Listener</text>
+<rect x="330.0" y="444.0" width="303.0" height="107.0" rx="10" fill="#f7f8fa" stroke="#33475b" stroke-width="1.6"/>
+<text x="481.5" y="479.5" font-family="Noto Sans CJK SC, Source Han Sans SC, Noto Sans SC, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif" font-size="26" fill="#1b2733" font-weight="bold" text-anchor="middle">Muse (MCP)</text>
+<text x="481.5" y="518.5" font-family="Noto Sans CJK SC, Source Han Sans SC, Noto Sans SC, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif" font-size="22.5" fill="#5d6d7c" text-anchor="middle">派活的连接</text>
+<rect x="647.0" y="444.0" width="303.0" height="107.0" rx="10" fill="#f7f8fa" stroke="#33475b" stroke-width="1.6"/>
+<text x="798.5" y="479.5" font-family="Noto Sans CJK SC, Source Han Sans SC, Noto Sans SC, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif" font-size="26" fill="#1b2733" font-weight="bold" text-anchor="middle">Muse (MCP) Listener</text>
+<text x="798.5" y="518.5" font-family="Noto Sans CJK SC, Source Han Sans SC, Noto Sans SC, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif" font-size="22.5" fill="#5d6d7c" text-anchor="middle">常驻监听</text>
+<rect x="357.0" y="631.0" width="566" height="107.0" rx="12" fill="#f7f8fa" stroke="#33475b" stroke-width="1.6"/>
+<text x="640.0" y="666.5" font-family="Noto Sans CJK SC, Source Han Sans SC, Noto Sans SC, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif" font-size="26" fill="#1b2733" font-weight="bold" text-anchor="middle">Noise 加密中继</text>
+<text x="640.0" y="705.5" font-family="Noto Sans CJK SC, Source Han Sans SC, Noto Sans SC, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif" font-size="22.5" fill="#5d6d7c" text-anchor="middle">只转发密文</text>
+<rect x="357.0" y="804.0" width="566" height="107.0" rx="12" fill="#f7f8fa" stroke="#33475b" stroke-width="1.6"/>
+<text x="640.0" y="839.5" font-family="Noto Sans CJK SC, Source Han Sans SC, Noto Sans SC, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif" font-size="26" fill="#1b2733" font-weight="bold" text-anchor="middle">Agent Bridge（我的 Mac · 64G 内存）</text>
+<text x="640.0" y="878.5" font-family="Noto Sans CJK SC, Source Han Sans SC, Noto Sans SC, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif" font-size="22.5" fill="#5d6d7c" text-anchor="middle">只往外连，不开入站</text>
+<rect x="357.0" y="977.0" width="566" height="107.0" rx="12" fill="#f7f8fa" stroke="#33475b" stroke-width="1.6"/>
+<text x="640.0" y="1012.5" font-family="Noto Sans CJK SC, Source Han Sans SC, Noto Sans SC, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif" font-size="26" fill="#1b2733" font-weight="bold" text-anchor="middle">托管 Pi / Claude Code 会话</text>
+<text x="640.0" y="1051.5" font-family="Noto Sans CJK SC, Source Han Sans SC, Noto Sans SC, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif" font-size="22.5" fill="#5d6d7c" text-anchor="middle">按 引擎+目录+用途 复用（get-or-create）</text>
+<rect x="357.0" y="1150.0" width="566" height="107.0" rx="12" fill="#f7f8fa" stroke="#33475b" stroke-width="1.6"/>
+<text x="640.0" y="1185.5" font-family="Noto Sans CJK SC, Source Han Sans SC, Noto Sans SC, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif" font-size="26" fill="#1b2733" font-weight="bold" text-anchor="middle">在本机干活</text>
+<text x="640.0" y="1224.5" font-family="Noto Sans CJK SC, Source Han Sans SC, Noto Sans SC, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif" font-size="22.5" fill="#5d6d7c" text-anchor="middle">本地仓库与文件 · 已登录的浏览器 · 完整构建</text>
+<rect x="118.0" y="989.5" width="208" height="82" rx="10" fill="#ffffff" stroke="#b06318" stroke-width="1.5" stroke-dasharray="9 6"/>
+<line x1="357.0" y1="1030.5" x2="337.0" y2="1030.5" stroke="#b06318" stroke-width="1.9" stroke-dasharray="9 6"/>
+<text x="222.0" y="1016.5" font-family="Noto Sans CJK SC, Source Han Sans SC, Noto Sans SC, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif" font-size="21" fill="#b06318" text-anchor="middle">没下一轮了</text>
+<text x="222.0" y="1043.5" font-family="Noto Sans CJK SC, Source Han Sans SC, Noto Sans SC, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif" font-size="21" fill="#b06318" text-anchor="middle">→ 归档会话</text>
+<text x="1005.0" y="1169.5" font-family="Noto Sans CJK SC, Source Han Sans SC, Noto Sans SC, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif" font-size="21" fill="#b06318">干完 / 提问</text>
+<text x="1005.0" y="873.5" font-family="Noto Sans CJK SC, Source Han Sans SC, Noto Sans SC, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif" font-size="21" fill="#b06318">Listener 轮询发现</text>
+<text x="1005.0" y="540.5" font-family="Noto Sans CJK SC, Source Han Sans SC, Noto Sans SC, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif" font-size="21" fill="#b06318">叫醒 Muse</text>
+<text x="275.0" y="159.5" font-family="Noto Sans CJK SC, Source Han Sans SC, Noto Sans SC, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif" font-size="21" fill="#b06318" text-anchor="end">模式 B：问题原文</text>
+<text x="275.0" y="186.5" font-family="Noto Sans CJK SC, Source Han Sans SC, Noto Sans SC, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif" font-size="21" fill="#b06318" text-anchor="end">转给我，逐条批</text>
+<path d="M327.0,1030.5 L337.6,1025.6 L337.6,1035.4 z" fill="#b06318"/>
+<path d="M951.0,478.5 L961.6,473.6 L961.6,483.4 z" fill="#b06318"/>
+<text x="275.0" y="240.5" font-family="Noto Sans CJK SC, Source Han Sans SC, Noto Sans SC, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif" font-size="21" fill="#b06318" text-anchor="end">验收完回来交账</text>
+</svg>

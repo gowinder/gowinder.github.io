@@ -6,7 +6,20 @@
         <description>Recent content on gowinder&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
-        <lastBuildDate>Sun, 15 Nov 2026 20:00:00 +0800</lastBuildDate><atom:link href="https://gowinder.work/en/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 24 Nov 2026 09:00:00 +0800</lastBuildDate><atom:link href="https://gowinder.work/en/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Muse Is in the Cloud, My Code Is on My Mac</title>
+        <link>https://gowinder.work/en/muse-agent-bridge-mcp/</link>
+        <pubDate>Tue, 24 Nov 2026 09:00:00 +0800</pubDate>
+        
+        <guid>https://gowinder.work/en/muse-agent-bridge-mcp/</guid>
+        <description>&lt;figure class=&#34;loveit-image-shim&#34;&gt;
+  &lt;img src=&#34;https://gowinder.work/images/muse-agent-bridge-workflow-en.svg&#34; alt=&#34;The Muse × Agent Bridge workflow: I set the spec, Muse writes specs, dispatches and verifies from the cloud, the work travels over MCP and an encrypted relay into a hosted session on my Mac, and the result comes back to me&#34; width=&#34;640&#34; title=&#34;I set the spec, Muse dispatches and verifies, the work happens on the Mac, and the result comes back to me — MCP and an always-on listener close the loop.&#34;&gt;
+  &lt;figcaption&gt;I set the spec, Muse dispatches and verifies, the work happens on the Mac, and the result comes back to me — MCP and an always-on listener close the loop.&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Quick note on where this post sits, so it doesn&amp;rsquo;t blur into the previous two. In the November 5 post, I was the one driving the agents on my machine. The November 15 post was the Agent Bridge release post, about the tool itself. This one is about the MCP piece that came later: the driver is Muse now, and I&amp;rsquo;m mostly left with deciding things and looking at results.&lt;/p&gt;</description>
+        </item>
+        <item>
         <title>Away From the Desk: I Gave My Mac Agents a Phone Entrance, and Why &#34;Yes, Merge It&#34; on a Phone Doesn&#39;t Count</title>
         <link>https://gowinder.work/en/agent-bridge/</link>
         <pubDate>Sun, 15 Nov 2026 20:00:00 +0800</pubDate>
@@ -235,16 +248,6 @@ I debugged it for two days, asked &lt;code&gt;chatgpt&lt;/code&gt;, asked &lt;co
         <description>&lt;h1 id=&#34;migrating-a-remix-project-to-cloudflare&#34;&gt;Migrating a Remix Project to Cloudflare
 &lt;/h1&gt;&lt;p&gt;Recently I developed a project using &lt;code&gt;remix&lt;/code&gt;. I hadn&amp;rsquo;t done full-stack development before; I&amp;rsquo;d used &lt;code&gt;reactjs&lt;/code&gt; a bit but wasn&amp;rsquo;t very familiar with it, and I was using &lt;code&gt;Nextjs&lt;/code&gt;, which felt very hard to use — mainly because after version &lt;code&gt;13&lt;/code&gt; switched to the &lt;code&gt;app router&lt;/code&gt;, I was somewhat at a loss.&lt;/p&gt;
 &lt;p&gt;Later I discovered &lt;code&gt;remix&lt;/code&gt;, which uses filename-based routing directly and is much more convenient, and the &lt;code&gt;loader&lt;/code&gt; and &lt;code&gt;action&lt;/code&gt; approach is also very intuitive, so I chose &lt;code&gt;remix&lt;/code&gt;.&lt;/p&gt;</description>
-        </item>
-        <item>
-        <title>Playing Around with ComfyUI</title>
-        <link>https://gowinder.work/en/play-with-comfyui/</link>
-        <pubDate>Mon, 25 Mar 2024 14:12:16 +0800</pubDate>
-        
-        <guid>https://gowinder.work/en/play-with-comfyui/</guid>
-        <description>&lt;h1 id=&#34;playing-around-with-comfyui&#34;&gt;Playing Around with ComfyUI
-&lt;/h1&gt;&lt;p&gt;&lt;code&gt;AIGC&lt;/code&gt; was very popular a while back, so I deployed &lt;code&gt;Stable Diffusion&lt;/code&gt;&amp;rsquo;s &lt;code&gt;WebUI&lt;/code&gt; locally and played with it for a bit. See: &lt;a class=&#34;link&#34; href=&#34;https://gowinder.work/content/posts/create-local-stable-diffusion-env.md&#34; &gt;text&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;But the &lt;code&gt;WebUI&lt;/code&gt; interface is too complex and has too many elements. It looks very professional, but it&amp;rsquo;s also somewhat difficult to use. I happened to be busy with work around that time, so after playing with it for a while I set it aside and didn&amp;rsquo;t continue.&lt;/p&gt;</description>
         </item>
         
     </channel>

@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 我定规格、Muse 派活验收、活在 Mac 上干、结果回到我手里——中间靠 MCP 和一个常驻监听器把圈闭上。 先说现在这篇是谁在写流程里的哪一段，省得跟前两篇混了。11 月 5 号那篇，指挥本机 agent 的是我。15 号那篇是 Agent Bridge 的发布稿，讲它自己。这篇讲后来加的 MCP：指挥的换成 Muse 了，我基本上只剩下定事情和看结果。\n">
+<meta name="keywords" content="agent, mcp, agent bridge, Muse, pi, 工作流, 本地 agent, 省token, 打通本地和云"><title>Muse 在云端，我的代码在 Mac 上 - gowinder个人博客</title>
+
+<link rel='canonical' href='https://gowinder.work/muse-agent-bridge-mcp/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Muse 在云端，我的代码在 Mac 上 - gowinder个人博客">
+<meta property='og:description' content=" 我定规格、Muse 派活验收、活在 Mac 上干、结果回到我手里——中间靠 MCP 和一个常驻监听器把圈闭上。 先说现在这篇是谁在写流程里的哪一段，省得跟前两篇混了。11 月 5 号那篇，指挥本机 agent 的是我。15 号那篇是 Agent Bridge 的发布稿，讲它自己。这篇讲后来加的 MCP：指挥的换成 Muse 了，我基本上只剩下定事情和看结果。\n">
+<meta property='og:url' content='https://gowinder.work/muse-agent-bridge-mcp/'>
+<meta property='og:site_name' content='gowinder个人博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='agent' /><meta property='article:tag' content='mcp' /><meta property='article:tag' content='claude code' /><meta property='article:tag' content='pi' /><meta property='article:tag' content='工作流' /><meta property='article:published_time' content='2026-11-24T09:00:00&#43;08:00'/><meta property='article:modified_time' content='2026-11-24T09:00:00&#43;08:00'/><meta property='og:image' content='https://gowinder.work/images/avatar.png' />
+<meta name="twitter:title" content="Muse 在云端，我的代码在 Mac 上 - gowinder个人博客">
+<meta name="twitter:description" content=" 我定规格、Muse 派活验收、活在 Mac 上干、结果回到我手里——中间靠 MCP 和一个常驻监听器把圈闭上。 先说现在这篇是谁在写流程里的哪一段，省得跟前两篇混了。11 月 5 号那篇，指挥本机 agent 的是我。15 号那篇是 Agent Bridge 的发布稿，讲它自己。这篇讲后来加的 MCP：指挥的换成 Muse 了，我基本上只剩下定事情和看结果。\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://gowinder.work/images/avatar.png' /><link rel="alternate" type="text/plain" href="https://gowinder.work/muse-agent-bridge-mcp/index.md">
+    <link rel="shortcut icon" href="/favicon.ico" />
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Bin Zhu","url":"https://github.com/gowinder"},"dateModified":"2026-11-24T09:00:00+08:00","datePublished":"2026-11-24T09:00:00+08:00","description":" 我定规格、Muse 派活验收、活在 Mac 上干、结果回到我手里——中间靠 MCP 和一个常驻监听器把圈闭上。 先说现在这篇是谁在写流程里的哪一段，省得跟前两篇混了。11 月 5 号那篇，指挥本机 agent 的是我。15 号那篇是 Agent Bridge 的发布稿，讲它自己。这篇讲后来加的 MCP：指挥的换成 Muse 了，我基本上只剩下定事情和看结果。\n","genre":"posts","headline":"Muse 在云端，我的代码在 Mac 上","image":"https://gowinder.work/images/avatar.png","inLanguage":"zh-CN","keywords":"agent, mcp, claude code, pi, 工作流","mainEntityOfPage":{"@id":"https://gowinder.work/muse-agent-bridge-mcp/","@type":"WebPage"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://gowinder.work/images/avatar.png"},"name":"gowinder个人博客","url":"https://gowinder.work/"},"url":"https://gowinder.work/muse-agent-bridge-mcp/","wordCount":3796}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://gowinder.work/","name":"gowinder个人博客","position":1},{"@type":"ListItem","item":"https://gowinder.work/posts/","name":"所有文章","position":2},{"@type":"ListItem","item":"https://gowinder.work/muse-agent-bridge-mcp/","name":"Muse 在云端，我的代码在 Mac 上","position":3}]}</script>
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/images/avatar_hu_48ba0caa0b985179.png" width="300"
+                            height="318" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">gowinder个人博客</a></h1>
+            <h2 class="site-description">记录生活,编码,折腾,杂七杂八</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='mailto:gowinder@hotmail.com'
+                        target="_blank"
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-messages" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
+  <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/gowinder'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='/index.xml'
+                        target="_blank"
+                        title="RSS"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-rss" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="5" cy="19" r="1" />
+  <path d="M4 4a16 16 0 0 1 16 16" />
+  <path d="M4 11a9 9 0 0 1 9 9" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/posts/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>文章</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/tags/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+  <circle cx="9" cy="9" r="2" />
+</svg>
+
+
+
+                
+                <span>标签</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                
+                <span>分类</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/projects/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+</svg>
+
+
+
+                
+                <span>项目</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='https://github.com/gowinder' target="_blank">
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                
+                <span>GitHub</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://gowinder.work/en/" >English</option>
+                                
+                                    <option value="https://gowinder.work/" selected>简体中文</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#中间到底隔着什么">中间到底隔着什么</a></li>
+    <li><a href="#会话这事我提过一个要求">会话这事，我提过一个要求</a></li>
+    <li><a href="#一次活是怎么跑完的拿博客那次说">一次活是怎么跑完的，拿博客那次说</a></li>
+    <li><a href="#顺便说笔账">顺便说笔账</a></li>
+    <li><a href="#出过一次很蠢的事">出过一次很蠢的事</a></li>
+    <li><a href="#通知为什么是轮询的说来有点丢人">通知为什么是轮询的，说来有点丢人</a></li>
+    <li><a href="#005-那次测试全绿我把图毙了">005 那次，测试全绿，我把图毙了</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    
+
+
+
+<header class="article-header">
+
+    
+
+
+
+
+
+
+    
+
+
+<div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/muse-agent-bridge-mcp/">Muse 在云端，我的代码在 Mac 上</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2026-11-24</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 8 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+        <footer class="article-translations">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+            <div>
+                
+                    <a href="https://gowinder.work/en/muse-agent-bridge-mcp/" class="link">English</a>
+                
+            </div>
+        </footer>
+    
+</div>
+
+</header>
+
+
+    <section class="article-content">
+    
+    
+    <figure class="loveit-image-shim">
+  <img src="/images/muse-agent-bridge-workflow.svg" alt="Muse × Agent Bridge 工作流：我定规格，Muse 在云端写规格、派活、验收，经 MCP 和加密中继把活送到 Mac 上的托管会话里干，干完再回来交账" width="640" title="我定规格、Muse 派活验收、活在 Mac 上干、结果回到我手里——中间靠 MCP 和一个常驻监听器把圈闭上。">
+  <figcaption>我定规格、Muse 派活验收、活在 Mac 上干、结果回到我手里——中间靠 MCP 和一个常驻监听器把圈闭上。</figcaption>
+</figure>
+
+<p>先说现在这篇是谁在写流程里的哪一段，省得跟前两篇混了。11 月 5 号那篇，指挥本机 agent 的是我。15 号那篇是 Agent Bridge 的发布稿，讲它自己。这篇讲后来加的 MCP：指挥的换成 Muse 了，我基本上只剩下定事情和看结果。</p>
+<p>Muse 不在我电脑上。它是 Meta 那个个人 agent，有自己的一台云端机器，能跑程序，能常驻，这点很关键，后面会用到。我的东西全在 Mac 上，仓库、文件，还有些非得在本机那个登录好的环境里才能办的事。它够不着。</p>
+<p>够不着的时候怎么办，笨办法呗。复制粘贴。</p>
+<p>流程是这样的：我在这边跟它把事情聊明白，它写一段任务说明，我复制，切到本机 Pi 的会话，贴进去，跑。跑完复制结果，再切回来贴给它看。一件事还行。两件、三件呢？哪个会话在跑哪个项目，哪个在等我回话，哪份结果是谁的，全装在我脑子里。装不下。迟早贴错，贴错一次后面全乱，还不一定当场发现，等发现的时候已经不知道从哪儿开始错的了。</p>
+<p>所以 MCP 这东西对我来说没那么玄乎，它就是把我干的这份搬运工的活接走了。Muse 自己把任务送到我 Mac 上，自己把结果取回来，对应关系它记，我不记。就这。</p>
+<h2 id="中间到底隔着什么">中间到底隔着什么
+</h2><p>Muse 那边跑着一个 MCP server，stdio 的，还有个命令行的小客户端。它俩算一个设备，名字 <code>Muse (MCP)</code>，配对进 Bridge，走原来那条 Noise 加密的中继，Mac 这边还是只往外连，什么都没多开。</p>
+<p>stdio 这词翻译成人话就是：两个程序得在同一台机器上，用一根管道对着说话。所以必须有人在本地把 server 拉起来、把配对的身份文件放在本地。Muse 能干这事，是因为它身边有它那台 VM。这也决定了它现在的形态——不是在哪个网页里填个地址就能连的，那种没有。写出来有点扫兴，但事实如此，硬吹反而假。</p>
+<p>配置上还有些琐碎的，顺手记一下。建会话的时候参数是写全了显式带过去的：引擎默认托管 pi，主模型 <code>magpie/group/dsgroup</code>，思考等级 high，子代理也是 dsgroup 但思考等级 low。每条任务后面还会默认跟一句「使用 subagent 执行」，让本地 pi 走子代理干，前端里能看见，不是偷偷塞的。为什么要显式带全？因为 Bridge 那边有「记住上次建会话参数」的习惯，不带全，我手动建会话时用的设置就会串进来，到时候出了问题都不知道是谁的锅。这种细节不写在规格里，迟早吃一次亏。</p>
+<h2 id="会话这事我提过一个要求">会话这事，我提过一个要求
+</h2><p>不要老开新对话。</p>
+<p>道理很简单，一个项目干到第三轮，本地那个 agent 要是把前两轮全忘了，我就得从头喂一遍，喂过的东西再喂一遍，烦。现在的做法叫 get-or-create，按引擎、工作目录、用途三个东西凑一个键，有现成的会话就回去接着用，没有才新建。新建就几种情况：换目录了、我明说开新的、旧的归档了或者没了、再就是旧会话被一次性任务弄得太脏，实在没法用。新建的时候它会说一声原因，不会闷声给我攒会话。</p>
+<p>标题是 <code>MCP · P011 · Email Sending 开通</code> 这样，11 月 22 号定的，编号必须紧跟在 MCP 后面。早于这个规矩开的会话改不了名，桥里没这功能，就旧名跑完算了。</p>
+<p>对了，还有个单独的设备叫 <code>Muse (MCP) Listener</code>，也是配对进来的，跟派活那个分开。为啥要分开，等下讲通知的时候一起说。</p>
+<h2 id="一次活是怎么跑完的拿博客那次说">一次活是怎么跑完的，拿博客那次说
+</h2><p>干说流程没意思，拿真的事说。</p>
+<p>11 月 20 号，博客换 Stack 主题，发布构建这活派给了本地托管 Pi，会话名 <code>MCP · blog-stack-launch</code>。我记得很清楚是因为那次门禁多得离谱：拿老站 582 个 URL 做基线，新构建一个都不能少；标题要逐字节一样；还有实时 Markdown 输出、手写的 robots.txt、og 图这些，各有各的坑。</p>
+<p>它先在本地把构建做出来，没直接动发布仓。做完自己查，查出三个回归，修了，又查出第二轮问题，再修。什么问题呢，都是那种构建是成功的、页面打开也是好的、但某个地方悄悄不对了的问题。这类问题最讨厌，绿灯全亮，东西是坏的。</p>
+<p>最后门禁全过。commit 现在还在我 Mac 本地躺着，没 push。定的日子是 11 月 25 号，等博客的搜索数据全查完我再看一眼，点头了才发。所以到今天为止，线上跑的还是老主题。这篇要是发在新主题上，那说明我已经点过头了；发在老主题上……那就是还没轮到。反正验收过了不等于能发，这条线我跟它分得很开，主要也是怕它哪天一高兴替我发了。</p>
+<p>派活的过程拆开看其实不复杂：它写规格（规格比一般人写的 prompt 长得多，红线、边界、验收标准都在里面），送进会话，同时在监听器那边记一笔 watch——哪个会话、对应哪个对话、干什么的。然后本地干活。干完或者卡住了，监听器把它叫醒，它读结果，自己验收，回来跟我交账。确定没下一轮的会话，它顺手归档，汇报里提一句。</p>
+<p>拆开看就是开头那张图里的圈，这里就不重复放了。</p>
+<p>中间本地 Pi 要是提问呢，比如方案二选一这种。规矩叫模式 B，老早就拍的：问题原文转给我，一个字不许改写，我一条一条回，它原样送回去。不许它概括，概括必丢东西；更不许它先替我垫一个答案。那不叫帮忙，那叫替我做主。</p>
+<p>分工也是自然形成的，没开会定过。短活、它自己机器上能办的，云端 Pi 直接跑。长活、要碰本地仓库的，走这条 MCP。还有些活是云端死活办不了的，像 011 那个 Email Sending，接口 403，云端浏览器又被验证挡着，最后还是本机上开的会话，红线写了一串：不动现有的邮件路由，碰到收费绑卡停，没登录停，不许管我要密码。P013 那十个页面、雷达那些线，走的都是这一条，没什么特别的，日常而已。</p>
+<p>哦还有一条，我跟 Muse 的分工：它不写代码。它写规格、派活、审、验收、交付。代码是 Pi 和 Claude Code 的事。它要是自己写，它审谁去。</p>
+<h2 id="顺便说笔账">顺便说笔账
+</h2><p>当初做这个，真不是冲着省 token 来的。最早的设计里写得明白，目的就是有些活只能在本机干，省不省是次要的。但跑了这些天，账自己浮出来了，还是写一下吧。</p>
+<p>最烧 token 的是什么？是写代码那一轮一轮的来回：读文件、改、跑测试、报错、再改。一个大任务几十个回合，上下文越滚越长，每一轮都在烧。走这条链路以后，这些回合全发生在本地 Pi 身上，烧的是我 magpie 网关那边的模型。Muse 这边只剩下写规格、读结果、审和验收，来回就那么几轮，短得多。它的额度花在判断上，不花在敲代码上。这个区别挺大的，同样一个任务，它亲自下场和它站在边上看，消耗完全不是一个量级。</p>
+<p>第二笔账是机器本身。活在本机干，我这台 Mac 有 64G 内存，仓库本来就躺在这儿，大构建、多开几个会话并行、跑个 Docker，都不带喘的。Muse 那台云端机器就是个小 VM，内存比这小一个量级，让它在那边吭哧吭哧跑构建，先不说够不够得着文件，硬件先就输了。机器闲着也是闲着，让它干活不心疼。</p>
+<p>第三笔其实前面已经说过一遍了：有些事云端根本办不了。文件在本机、浏览器登录态在本机、应用装在本机，它再聪明也只能干瞪眼。这三笔账加起来，这条链路就不只是「方便」了，是有些活没有它根本转不动。</p>
+<h2 id="出过一次很蠢的事">出过一次很蠢的事
+</h2><p>010 那阵子，有个托管会话干着干着，从 MCP 的列表里没了。</p>
+<p>第一反应，死了呗。查一圈，好像是没了。再查，还是没了。结果人家根本没死。Bridge 更新之后碰了几个受保护的文件夹，macOS 弹了个权限框出来，那个 Pi 进程就堵在框后面，两个多小时，一动不动。我这边隔着一层，列表里看不见它，更看不见那个框。</p>
+<p>人在本机点一下就完的事，隔着远程能把人急死。</p>
+<p>后来规矩就这么来的：长任务没动静，先想想是不是卡在本地弹窗上了，别上来就编网关的毛病；列表里没有，不许直接判死刑，得在本机看一眼进程还在不在；半小时没进展就当它僵了，本机杀掉重派，按创建时间认人，别等。归档也是同理，只归档确认干完、产出也验收过的，跑着的、卡着的、只是列表里找不着的，都不许动。差点归档一个活进程这种事，有一次教训就够了。</p>
+<h2 id="通知为什么是轮询的说来有点丢人">通知为什么是轮询的，说来有点丢人
+</h2><p>Bridge 没有订阅接口。试过，<code>session.subscribe</code> 直接返回不支持。</p>
+<p>那就只剩轮询。监听器每 15 秒看一遍它盯着的那些会话，怎么判断干完了呢，两个条件一起：会话从忙变成不忙了，而且消息数比派活的时候涨了。光不忙不行，它可能一开始就没跑起来；光涨也不行。提问的判断是另一个标志，有个 needsDecision 的状态升起来了，就说明它在等人回话，赶紧把问题递过来。前面说的那个单独的 Listener 设备就是干这个的，它得自己常驻着盯，不能跟派活那个共用一个连接，派活的是一次性的，连上、说话、断开，它一断这边就成聋子了。</p>
+<p>15 秒，意味着通知慢十几秒是常事。无所谓，派出去的活哪个不是几十分钟起。</p>
+<h2 id="005-那次测试全绿我把图毙了">005 那次，测试全绿，我把图毙了
+</h2><p>最后讲个打脸的，包括打我自己的脸——我差点就信了数字。</p>
+<p>Pixel Plunder 的美术纠偏，第二轮回来，数据是真漂亮：173 个测试全过，类型检查 0 错，素材登记一个不缺。要是按「全绿即通过」，这轮就该收了。</p>
+<p>图打开一看，船是错的。错在根上：素材本身画的时候就是接近平视的，靠程序旋转，拗不出关键视觉图里那种斜着的、能看见甲板的透视。港口也不对，原型是个海湾，建筑沿着后岸一排，前面是沙滩和人，再前面才是海和码头；做出来的版本把海挤到一边，房子堆在空沙地上。</p>
+<p>数字没撒谎，它验的那些确实都对。它验不了的，它也没说它验了。最后拍板的还是我的眼睛，重建方向也是那次定的：船照锁定的图重画，港口照海湾重做。</p>
+<p>所以这套东西跑到今天，我的位置大概就是这样：前面定规格，后面看图、看结果、点头。中间搬运、盯梢、记对应关系，曾经最烦我的那部分，没了。瓶颈还在我身上，审不过来就是审不过来，十个会话一起回来交账的时候一样抓瞎。但那是另一个问题了。</p>
+<p>这篇先到这儿吧。再往后写，该写审不过来怎么办了，我还没想好。</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/agent/">Agent</a>
+        
+            <a href="/tags/mcp/">Mcp</a>
+        
+            <a href="/tags/claude-code/">Claude Code</a>
+        
+            <a href="/tags/pi/">Pi</a>
+        
+            <a href="/tags/%E5%B7%A5%E4%BD%9C%E6%B5%81/">工作流</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/agent-bridge/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">离开工位以后：我给 Mac 上的 agent 装了一个手机入口，以及为什么手机上说「可以，合并」不算数</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/agent-handoff-result-file/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">用 Grok Bot 指挥 Claude Code 与 DeepSeek Harness：一个结果文件省掉大半 token</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="gowinder/hugo-comment"
+        issue-term="pathname"
+        
+        crossorigin="anonymous"
+        async
+        >
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+<script>
+    let utterancesLoaded = false;
+
+    function setUtterancesTheme(theme) {
+        let utterances = document.querySelector('.utterances iframe');
+        if (utterances) {
+            utterances.contentWindow.postMessage(
+                {
+                    type: 'set-theme',
+                    theme: `github-${theme}`
+                },
+                'https://utteranc.es'
+            );
+        }
+    }
+
+    addEventListener('message', event => {
+        if (event.origin !== 'https://utteranc.es') return;
+
+        
+        utterancesLoaded = true;
+        setUtterancesTheme(document.documentElement.dataset.scheme)
+    });
+
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (!utterancesLoaded) return;
+        setUtterancesTheme(e.detail)
+    })
+</script>
+
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2019 - 
+        
+        2026 gowinder个人博客
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.31.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://gowinder.work/tags/agent/</loc>
-    <lastmod>2026-11-15T20:00:00+08:00</lastmod>
+    <lastmod>2026-11-24T09:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -18,7 +18,7 @@
                 />
   </url><url>
     <loc>https://gowinder.work/tags/claude-code/</loc>
-    <lastmod>2026-11-15T20:00:00+08:00</lastmod>
+    <lastmod>2026-11-24T09:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -33,7 +33,7 @@
                 />
   </url><url>
     <loc>https://gowinder.work/</loc>
-    <lastmod>2026-11-15T20:00:00+08:00</lastmod>
+    <lastmod>2026-11-24T09:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -47,8 +47,38 @@
                 href="https://gowinder.work/"
                 />
   </url><url>
+    <loc>https://gowinder.work/tags/mcp/</loc>
+    <lastmod>2026-11-24T09:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://gowinder.work/en/tags/mcp/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://gowinder.work/tags/mcp/"
+                />
+  </url><url>
+    <loc>https://gowinder.work/muse-agent-bridge-mcp/</loc>
+    <lastmod>2026-11-24T09:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://gowinder.work/en/muse-agent-bridge-mcp/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://gowinder.work/muse-agent-bridge-mcp/"
+                />
+  </url><url>
     <loc>https://gowinder.work/tags/pi/</loc>
-    <lastmod>2026-11-15T20:00:00+08:00</lastmod>
+    <lastmod>2026-11-24T09:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -63,27 +93,12 @@
                 />
   </url><url>
     <loc>https://gowinder.work/tags/%E5%B7%A5%E4%BD%9C%E6%B5%81/</loc>
-    <lastmod>2026-11-15T20:00:00+08:00</lastmod>
+    <lastmod>2026-11-24T09:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-  </url><url>
-    <loc>https://gowinder.work/agent-bridge/</loc>
-    <lastmod>2026-11-15T20:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/agent-bridge/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/agent-bridge/"
-                />
   </url><url>
     <loc>https://gowinder.work/tags/</loc>
-    <lastmod>2026-11-15T20:00:00+08:00</lastmod>
+    <lastmod>2026-11-24T09:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -98,7 +113,7 @@
                 />
   </url><url>
     <loc>https://gowinder.work/posts/</loc>
-    <lastmod>2026-11-15T20:00:00+08:00</lastmod>
+    <lastmod>2026-11-24T09:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -110,6 +125,21 @@
                 rel="alternate"
                 hreflang="zh-CN"
                 href="https://gowinder.work/posts/"
+                />
+  </url><url>
+    <loc>https://gowinder.work/agent-bridge/</loc>
+    <lastmod>2026-11-15T20:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://gowinder.work/en/agent-bridge/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://gowinder.work/agent-bridge/"
                 />
   </url><url>
     <loc>https://gowinder.work/tags/%E8%BF%9C%E7%A8%8B%E6%8E%A7%E5%88%B6/</loc>

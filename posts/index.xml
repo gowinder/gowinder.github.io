@@ -6,7 +6,20 @@
         <description>Recent content in 所有文章 on gowinder个人博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-CN</language>
-        <lastBuildDate>Sun, 15 Nov 2026 20:00:00 +0800</lastBuildDate><atom:link href="https://gowinder.work/posts/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 24 Nov 2026 09:00:00 +0800</lastBuildDate><atom:link href="https://gowinder.work/posts/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Muse 在云端，我的代码在 Mac 上</title>
+        <link>https://gowinder.work/muse-agent-bridge-mcp/</link>
+        <pubDate>Tue, 24 Nov 2026 09:00:00 +0800</pubDate>
+        
+        <guid>https://gowinder.work/muse-agent-bridge-mcp/</guid>
+        <description>&lt;figure class=&#34;loveit-image-shim&#34;&gt;
+  &lt;img src=&#34;https://gowinder.work/images/muse-agent-bridge-workflow.svg&#34; alt=&#34;Muse × Agent Bridge 工作流：我定规格，Muse 在云端写规格、派活、验收，经 MCP 和加密中继把活送到 Mac 上的托管会话里干，干完再回来交账&#34; width=&#34;640&#34; title=&#34;我定规格、Muse 派活验收、活在 Mac 上干、结果回到我手里——中间靠 MCP 和一个常驻监听器把圈闭上。&#34;&gt;
+  &lt;figcaption&gt;我定规格、Muse 派活验收、活在 Mac 上干、结果回到我手里——中间靠 MCP 和一个常驻监听器把圈闭上。&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;先说现在这篇是谁在写流程里的哪一段，省得跟前两篇混了。11 月 5 号那篇，指挥本机 agent 的是我。15 号那篇是 Agent Bridge 的发布稿，讲它自己。这篇讲后来加的 MCP：指挥的换成 Muse 了，我基本上只剩下定事情和看结果。&lt;/p&gt;</description>
+        </item>
+        <item>
         <title>离开工位以后：我给 Mac 上的 agent 装了一个手机入口，以及为什么手机上说「可以，合并」不算数</title>
         <link>https://gowinder.work/agent-bridge/</link>
         <pubDate>Sun, 15 Nov 2026 20:00:00 +0800</pubDate>
@@ -106,16 +119,6 @@
         <description>&lt;h1 id=&#34;部署comfyui玩&#34;&gt;部署ComfyUI玩
 &lt;/h1&gt;&lt;p&gt;之前&lt;code&gt;AIGC&lt;/code&gt;非常火, 我本地部署了&lt;code&gt;Stable Diffusion&lt;/code&gt; 的&lt;code&gt;WebUI&lt;/code&gt;玩了一下,见: &lt;a class=&#34;link&#34; href=&#34;https://gowinder.work/content/posts/create-local-stable-diffusion-env.md&#34; &gt;text&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;但是吧, &lt;code&gt;WebUI&lt;/code&gt; 界面, 太复杂了, 元素太多了, 看起来非常专业, 但是用起来也是有一定难度的. 正好那段时间工作比较忙, 玩了一段时间, 就放着没有继续玩了.&lt;/p&gt;</description>
-        </item>
-        <item>
-        <title>将家庭服务器从DELL R720迁移到蜗牛星际&#43;MacbookPro 后续</title>
-        <link>https://gowinder.work/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/</link>
-        <pubDate>Thu, 21 Mar 2024 13:54:13 +0800</pubDate>
-        
-        <guid>https://gowinder.work/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/</guid>
-        <description>&lt;h1 id=&#34;将家庭服务器从dell-r720迁移到蜗牛星际macbookpro-后续&#34;&gt;将家庭服务器从DELL R720迁移到蜗牛星际+MacbookPro 后续
-&lt;/h1&gt;&lt;h2 id=&#34;千兆网络断流问题&#34;&gt;千兆网络断流问题
-&lt;/h2&gt;&lt;p&gt;迁移已经完成了,试用了一段时间, &lt;code&gt;星际蜗牛&lt;/code&gt;功耗很低(相对&lt;code&gt;R720&lt;/code&gt; 100多瓦), 3块&lt;code&gt;HDD&lt;/code&gt;, 1块&lt;code&gt;SSD&lt;/code&gt; 功耗35瓦, 一天不到1度电,非常不错.&lt;/p&gt;</description>
         </item>
         
     </channel>

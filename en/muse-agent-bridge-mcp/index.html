@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="How Muse, a cloud agent with a VM of its own, drives hosted Pi and Claude Code sessions on my Mac through Agent Bridge's MCP server: get-or-create sessions, verbatim question forwarding, a polling listener, and the three accounts — tokens, hardware, and the things the cloud simply cannot do.">
+<meta name="keywords" content="agent, mcp, agent bridge, Muse, pi, workflow, local agent, save tokens, bridge local and cloud"><title>Muse Is in the Cloud, My Code Is on My Mac - gowinder&#39;s Blog</title>
+
+<link rel='canonical' href='https://gowinder.work/en/muse-agent-bridge-mcp/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Muse Is in the Cloud, My Code Is on My Mac - gowinder's Blog">
+<meta property='og:description' content="How Muse, a cloud agent with a VM of its own, drives hosted Pi and Claude Code sessions on my Mac through Agent Bridge's MCP server: get-or-create sessions, verbatim question forwarding, a polling listener, and the three accounts — tokens, hardware, and the things the cloud simply cannot do.">
+<meta property='og:url' content='https://gowinder.work/en/muse-agent-bridge-mcp/'>
+<meta property='og:site_name' content='gowinder&#39;s Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='agent' /><meta property='article:tag' content='mcp' /><meta property='article:tag' content='claude code' /><meta property='article:tag' content='pi' /><meta property='article:tag' content='workflow' /><meta property='article:published_time' content='2026-11-24T09:00:00&#43;08:00'/><meta property='article:modified_time' content='2026-11-24T09:00:00&#43;08:00'/><meta property='og:image' content='https://gowinder.work/images/avatar.png' />
+<meta name="twitter:title" content="Muse Is in the Cloud, My Code Is on My Mac - gowinder's Blog">
+<meta name="twitter:description" content="How Muse, a cloud agent with a VM of its own, drives hosted Pi and Claude Code sessions on my Mac through Agent Bridge's MCP server: get-or-create sessions, verbatim question forwarding, a polling listener, and the three accounts — tokens, hardware, and the things the cloud simply cannot do."><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://gowinder.work/images/avatar.png' /><link rel="alternate" type="text/plain" href="https://gowinder.work/en/muse-agent-bridge-mcp/index.md">
+    <link rel="shortcut icon" href="/favicon.ico" />
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Bin Zhu","url":"https://github.com/gowinder"},"dateModified":"2026-11-24T09:00:00+08:00","datePublished":"2026-11-24T09:00:00+08:00","description":"How Muse, a cloud agent with a VM of its own, drives hosted Pi and Claude Code sessions on my Mac through Agent Bridge's MCP server: get-or-create sessions, verbatim question forwarding, a polling listener, and the three accounts — tokens, hardware, and the things the cloud simply cannot do.","genre":"posts","headline":"Muse Is in the Cloud, My Code Is on My Mac","image":"https://gowinder.work/images/avatar.png","inLanguage":"en","keywords":"agent, mcp, claude code, pi, workflow","mainEntityOfPage":{"@id":"https://gowinder.work/en/muse-agent-bridge-mcp/","@type":"WebPage"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://gowinder.work/images/avatar.png"},"name":"gowinder's Blog","url":"https://gowinder.work/"},"url":"https://gowinder.work/en/muse-agent-bridge-mcp/","wordCount":2294}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://gowinder.work/","name":"gowinder's Blog","position":1},{"@type":"ListItem","item":"https://gowinder.work/en/posts/","name":"Posts","position":2},{"@type":"ListItem","item":"https://gowinder.work/en/muse-agent-bridge-mcp/","name":"Muse Is in the Cloud, My Code Is on My Mac","position":3}]}</script>
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/en/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/images/avatar_hu_48ba0caa0b985179.png" width="300"
+                            height="318" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/en">gowinder&#39;s Blog</a></h1>
+            <h2 class="site-description">Life, coding, tinkering, and everything else.</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='mailto:gowinder@hotmail.com'
+                        target="_blank"
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-messages" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
+  <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/gowinder'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='/en/index.xml'
+                        target="_blank"
+                        title="RSS"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-rss" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="5" cy="19" r="1" />
+  <path d="M4 4a16 16 0 0 1 16 16" />
+  <path d="M4 11a9 9 0 0 1 9 9" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/en/posts/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Posts</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/tags/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+  <circle cx="9" cy="9" r="2" />
+</svg>
+
+
+
+                
+                <span>Tags</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/categories/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                
+                <span>Categories</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/projects/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+</svg>
+
+
+
+                
+                <span>Projects</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='https://github.com/gowinder' target="_blank">
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                
+                <span>GitHub</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://gowinder.work/en/" selected>English</option>
+                                
+                                    <option value="https://gowinder.work/" >简体中文</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#whats-actually-in-between">What&rsquo;s actually in between</a></li>
+    <li><a href="#one-request-i-made-about-sessions">One request I made about sessions</a></li>
+    <li><a href="#how-one-job-actually-runs--take-the-blog-migration">How one job actually runs — take the blog migration</a></li>
+    <li><a href="#the-dumbest-incident-so-far">The dumbest incident so far</a></li>
+    <li><a href="#notifications-are-polling-slightly-embarrassingly">Notifications are polling, slightly embarrassingly</a></li>
+    <li><a href="#where-the-money-goes--three-small-accounts">Where the money goes — three small accounts</a></li>
+    <li><a href="#005-where-all-the-tests-passed-and-i-killed-the-result-anyway">005, where all the tests passed and I killed the result anyway</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    
+
+
+
+<header class="article-header">
+
+    
+
+
+
+
+
+
+    
+
+
+<div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/en/muse-agent-bridge-mcp/">Muse Is in the Cloud, My Code Is on My Mac</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            How Muse, a cloud agent with a VM of its own, drives hosted Pi and Claude Code sessions on my Mac through Agent Bridge&#39;s MCP server: get-or-create sessions, verbatim question forwarding, a polling listener, and the three accounts — tokens, hardware, and the things the cloud simply cannot do.
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2026-11-24</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    11 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+        <footer class="article-translations">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+            <div>
+                
+                    <a href="https://gowinder.work/muse-agent-bridge-mcp/" class="link">简体中文</a>
+                
+            </div>
+        </footer>
+    
+</div>
+
+</header>
+
+
+    <section class="article-content">
+    
+    
+    <figure class="loveit-image-shim">
+  <img src="/images/muse-agent-bridge-workflow-en.svg" alt="The Muse × Agent Bridge workflow: I set the spec, Muse writes specs, dispatches and verifies from the cloud, the work travels over MCP and an encrypted relay into a hosted session on my Mac, and the result comes back to me" width="640" title="I set the spec, Muse dispatches and verifies, the work happens on the Mac, and the result comes back to me — MCP and an always-on listener close the loop.">
+  <figcaption>I set the spec, Muse dispatches and verifies, the work happens on the Mac, and the result comes back to me — MCP and an always-on listener close the loop.</figcaption>
+</figure>
+
+<p>Quick note on where this post sits, so it doesn&rsquo;t blur into the previous two. In the November 5 post, I was the one driving the agents on my machine. The November 15 post was the Agent Bridge release post, about the tool itself. This one is about the MCP piece that came later: the driver is Muse now, and I&rsquo;m mostly left with deciding things and looking at results.</p>
+<p>Muse doesn&rsquo;t live on my computer. It&rsquo;s Meta&rsquo;s personal agent, it has a cloud machine of its own, it can run programs and stay resident — that detail matters later. Everything of mine is on the Mac. The repos, the files, and a bunch of things that can only be done inside the environment that&rsquo;s already signed in on this machine. It can&rsquo;t reach any of that.</p>
+<p>And when it can&rsquo;t reach, what do you do? The dumb way. Copy and paste.</p>
+<p>It went like this: I&rsquo;d talk a task through with Muse, it would write out the instructions, I&rsquo;d copy them, switch to a Pi session on my Mac, paste, wait. Then copy the result, switch back, paste it in for review. Fine for one task. Two, three? Which session is running which project, which one is waiting on me, whose output is whose — all of it lived in my head. My head is not big enough. Sooner or later you paste into the wrong session, and once that happens everything downstream is quietly wrong, and you don&rsquo;t find out until much later, when you no longer know where it started going wrong.</p>
+<p>So MCP, for me, is not some grand concept. It just took over the courier job I was doing by hand. Muse sends the task to my Mac itself, fetches the result itself, and keeps the mapping straight. I don&rsquo;t.</p>
+<h2 id="whats-actually-in-between">What&rsquo;s actually in between
+</h2><p>On Muse&rsquo;s side there is an MCP server — stdio — plus a small command-line client. Together they are one paired device, named <code>Muse (MCP)</code>, connected into Bridge over the existing Noise-encrypted relay. The Mac still only dials out. Nothing new is exposed.</p>
+<p>Stdio, in plain words, means two programs have to sit on the same machine and talk through a pipe. Somebody local has to start that server and keep the pairing identity on disk. Muse can do that because it has that VM of its own. Which also fixes the shape of the thing: this is not a &ldquo;paste a URL into some web page and you&rsquo;re connected&rdquo; kind of deal. That form doesn&rsquo;t exist. Slightly deflating to write, but it&rsquo;s the truth, and dressing it up would be worse.</p>
+<p>Some config trivia, since it cost me thought once: when a session is created, all parameters are passed explicitly. Hosted Pi by default, main model <code>magpie/group/dsgroup</code>, thinking level high, subagents also on dsgroup but thinking low. Every task message also gets a default suffix, &ldquo;use subagents to do it&rdquo;, so the local Pi fans the work out — it&rsquo;s right there in the frontend, not injected behind anyone&rsquo;s back. Why pass everything explicitly? Because Bridge remembers the parameters of the last manually created session, and if you don&rsquo;t, whatever I last clicked by hand leaks into the automated sessions, and when something goes wrong you can&rsquo;t tell whose settings did it. Details like this don&rsquo;t feel important until they&rsquo;ve bitten you once.</p>
+<h2 id="one-request-i-made-about-sessions">One request I made about sessions
+</h2><p>Don&rsquo;t keep opening new conversations.</p>
+<p>Simple reason: by the third round on a project, if the local agent has forgotten rounds one and two, I have to feed it everything again, and re-feeding is miserable. So the rule is get-or-create: key a session by engine, working directory and purpose, reuse the existing one if there is one, create only when there isn&rsquo;t. New sessions happen when the directory changes, when I explicitly ask, when the old one is archived or gone, or when a one-off task has polluted it beyond use. When it does create one, it says why. No silent pile-ups.</p>
+<p>Titles look like <code>MCP · P011 · Email Sending Setup</code> — a rule from November 22, project number right after &ldquo;MCP&rdquo;. Sessions created before the rule can&rsquo;t be renamed; the bridge has no rename. They just run out their lives under the old names. Fine.</p>
+<p>There&rsquo;s also a second paired device, <code>Muse (MCP) Listener</code>. Why separate — that comes with the notifications part below.</p>
+<h2 id="how-one-job-actually-runs--take-the-blog-migration">How one job actually runs — take the blog migration
+</h2><p>Process descriptions are boring. Take a real one.</p>
+<p>On November 20, the build for switching this blog to the Stack theme went out to a hosted Pi on my Mac, session <code>MCP · blog-stack-launch</code>. I remember it because the gates were absurd: a baseline of 582 URLs from the old site, and the new build was not allowed to lose a single one. Titles byte-for-byte identical. Plus a hand-written robots.txt, the live Markdown output format, the og images — each with its own trap.</p>
+<p>It built locally first, without touching the publishing repo. Then it checked its own work and found three regressions. Fixed them, checked again, found a second round. These were all the nasty kind: the build succeeds, the pages open, and something somewhere is silently wrong. Green lights everywhere, broken product. Those are the worst bugs there are.</p>
+<p>In the end every gate passed. The publishing commit is still sitting on my Mac, unpushed. The date we set was November 25: once the blog&rsquo;s search data has had its full check, I look at it, and only then does it go out. So as of writing, this site still runs the old theme. If you&rsquo;re reading this on the new one, I must have nodded. Approval and verification are two different things, and that line is drawn very deliberately in this setup — mostly because I don&rsquo;t want it getting enthusiastic one day and shipping something on my behalf.</p>
+<p>The mechanics, stripped down, are the loop in the diagram at the top. Muse writes the spec — specs are much longer than a normal prompt, red lines, boundaries, acceptance criteria, all in there — sends it into the session, and registers a watch with the listener: which session, which conversation it belongs to, what it&rsquo;s for. Then the local agent works. When it finishes, or gets stuck, the listener wakes Muse up. It reads the result, verifies it itself, and comes back to the original conversation to report. If a session has no next round coming, it archives it in Bridge and mentions it in one line.</p>
+<p>What if the local Pi asks a question mid-task — pick option A or B, that kind of thing? There&rsquo;s a rule for that, picked early on, called Mode B: the question gets forwarded to me verbatim, not a word rewritten, I answer item by item, and my answers go back as-is. No summarizing — summaries lose things. And definitely no pre-filling an answer for me. That&rsquo;s not help, that&rsquo;s deciding in my place.</p>
+<p>The division of labor settled itself, nobody designed it in a meeting. Short jobs that its own machine can handle, the cloud Pi just does. Long jobs, jobs that need the local repos, go over MCP. And some jobs the cloud simply cannot do: 011&rsquo;s Email Sending setup was one — the API said 403, the cloud browser got stopped by a verification wall, and in the end it was a session on this Mac that did it, with a spec full of red lines: don&rsquo;t touch the existing mail routing, stop if money or a card is involved, stop if not signed in, never ask me for a password. P013&rsquo;s ten pages, the radar lines — same road, nothing special. It&rsquo;s just the daily road now.</p>
+<p>One more split, between me and Muse: it doesn&rsquo;t write code. It writes specs, dispatches, reviews, verifies, delivers. The code is written by Pi and Claude Code. If it wrote the code itself, who would review it?</p>
+<h2 id="the-dumbest-incident-so-far">The dumbest incident so far
+</h2><p>Around the 010 days, a hosted session vanished from the MCP session list mid-task.</p>
+<p>First thought: it died. Looked into it — seemed gone. Looked again — still gone. It was not gone. After a Bridge update, the app had touched some protected folders, macOS had thrown up a permission dialog, and the Pi process was stuck behind that dialog. Two hours. Alive, unable to move, and from where I sat, through the MCP layer, there was no sign of any of it — not in the list, and certainly no dialog.</p>
+<p>One click, if you&rsquo;re sitting at the machine. Maddening, if you&rsquo;re not.</p>
+<p>The rules that came out of that: if a long task stops making progress, suspect a local system dialog first, don&rsquo;t start inventing gateway theories. Absence from the list is not a death certificate — somebody has to look at the process list on the Mac itself. Half an hour without progress, treat it as a zombie: kill it locally, re-dispatch, tell the sessions apart by creation time, don&rsquo;t wait it out. Archiving follows the same logic: only archive sessions confirmed finished, with the output already harvested and verified. Running ones, stuck ones, ones that merely can&rsquo;t be found in a list — hands off. Nearly archiving a live process is a lesson you only need once.</p>
+<h2 id="notifications-are-polling-slightly-embarrassingly">Notifications are polling, slightly embarrassingly
+</h2><p>Bridge has no subscribe API. We tried. <code>session.subscribe</code> comes back unsupported.</p>
+<p>So the listener polls, every 15 seconds, over the sessions it&rsquo;s watching. How does it decide something finished? Two conditions together: the session went from busy to idle, and its message count grew compared to when the task was dispatched. Idle alone proves nothing — maybe it never started. Growth alone proves nothing either. Questions are a separate signal: a needsDecision flag rises, and the question gets forwarded to me right away. That&rsquo;s also why the Listener is its own device with its own connection: the dispatch side connects, speaks and disconnects per call, and a listener that disconnects is just deaf. It has to sit there permanently.</p>
+<p>Fifteen seconds means notifications are routinely ten-odd seconds late. I don&rsquo;t care. Nothing I dispatch comes back in under a few minutes anyway.</p>
+<h2 id="where-the-money-goes--three-small-accounts">Where the money goes — three small accounts
+</h2><p>Honestly, this wasn&rsquo;t built to save tokens. The original design note says it plainly: the point was that some work can only happen on this machine. But after running it for a while, the accounts are visible, so here they are.</p>
+<p>What actually burns tokens is the coding loop itself: read files, edit, run tests, hit an error, edit again. Dozens of rounds on a big task, context growing the whole time, every round billed. On this setup, all of those rounds happen on the local Pi, burning models on my own magpie gateway. Muse&rsquo;s side is a handful of rounds — the spec, reading the result, the review. Its budget gets spent on judgment, not on typing code. Same task, wildly different bill, depending on whether it does the work itself or stands next to it and watches.</p>
+<p>Second account: the hardware. The work runs on this Mac, which has 64 GB of RAM, the repos already on its disk, and it will do big builds, several sessions in parallel, a Docker stack, without breaking a sweat. Muse&rsquo;s cloud machine is a small VM with an order of magnitude less memory — even if it could reach the files, it would lose on hardware first. The Mac is sitting here anyway. Might as well work.</p>
+<p>Third one I&rsquo;ve basically already said: some things the cloud cannot do at all. Files here, sign-in state here, apps here. Add the three up and this stops being a convenience. Some of the work simply doesn&rsquo;t move without it.</p>
+<h2 id="005-where-all-the-tests-passed-and-i-killed-the-result-anyway">005, where all the tests passed and I killed the result anyway
+</h2><p>Last story, and it makes me look bad too — I nearly believed the numbers.</p>
+<p>Pixel Plunder, the pirate game, second art-correction round. It came back with beautiful stats: 173 tests, all passing. Typecheck clean. Every asset registered, none missing. By any &ldquo;green means go&rdquo; standard, that round was done.</p>
+<p>Then I opened the images. The ships were wrong, wrong at the root: the sprites themselves had been drawn almost side-on, and no amount of programmatic rotation will fake the diagonal, deck-visible perspective of the locked key visual. The port was wrong too — the prototype is a cove, buildings in one row along the back shore, beach and people in the middle, sea and docks in front; the shipped version had shoved the sea off to one side and clustered the buildings on empty sand.</p>
+<p>The numbers hadn&rsquo;t lied. Everything they checked was true. What they couldn&rsquo;t check, they never claimed to check. The last gate was my eyes, and the rebuild direction came out of that rejection: redraw the fleet in the locked pose, rebuild the port as a cove.</p>
+<p>So this is where I&rsquo;ve ended up: at the front I set the specs, at the back I look at pictures and results and nod. The carrying, the watching, the remembering which conversation belongs to which session — the part that used to wear me down — is gone. The bottleneck is still me; ten sessions reporting back at once will swamp me just like before. But that&rsquo;s a different problem.</p>
+<p>That&rsquo;s where this post ends. The next one, whenever it happens, is probably about what to do when you can&rsquo;t review fast enough. I haven&rsquo;t figured that out yet.</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/en/tags/agent/">Agent</a>
+        
+            <a href="/en/tags/mcp/">Mcp</a>
+        
+            <a href="/en/tags/claude-code/">Claude Code</a>
+        
+            <a href="/en/tags/pi/">Pi</a>
+        
+            <a href="/en/tags/workflow/">Workflow</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/en/agent-bridge/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Away From the Desk: I Gave My Mac Agents a Phone Entrance, and Why &#34;Yes, Merge It&#34; on a Phone Doesn&#39;t Count</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/en/agent-handoff-result-file/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Grok Bot, Claude Code, and DeepSeek Harness: one result file that saves most of the tokens</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="gowinder/hugo-comment"
+        issue-term="pathname"
+        
+        crossorigin="anonymous"
+        async
+        >
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+<script>
+    let utterancesLoaded = false;
+
+    function setUtterancesTheme(theme) {
+        let utterances = document.querySelector('.utterances iframe');
+        if (utterances) {
+            utterances.contentWindow.postMessage(
+                {
+                    type: 'set-theme',
+                    theme: `github-${theme}`
+                },
+                'https://utteranc.es'
+            );
+        }
+    }
+
+    addEventListener('message', event => {
+        if (event.origin !== 'https://utteranc.es') return;
+
+        
+        utterancesLoaded = true;
+        setUtterancesTheme(document.documentElement.dataset.scheme)
+    });
+
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (!utterancesLoaded) return;
+        setUtterancesTheme(e.detail)
+    })
+</script>
+
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2019 - 
+        
+        2026 gowinder&#39;s Blog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.31.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Mcp on gowinder&#39;s Blog</title>
+        <link>https://gowinder.work/en/tags/mcp/</link>
+        <description>Recent content in Mcp on gowinder&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <lastBuildDate>Tue, 24 Nov 2026 09:00:00 +0800</lastBuildDate><atom:link href="https://gowinder.work/en/tags/mcp/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Muse Is in the Cloud, My Code Is on My Mac</title>
+        <link>https://gowinder.work/en/muse-agent-bridge-mcp/</link>
+        <pubDate>Tue, 24 Nov 2026 09:00:00 +0800</pubDate>
+        
+        <guid>https://gowinder.work/en/muse-agent-bridge-mcp/</guid>
+        <description>&lt;figure class=&#34;loveit-image-shim&#34;&gt;
+  &lt;img src=&#34;https://gowinder.work/images/muse-agent-bridge-workflow-en.svg&#34; alt=&#34;The Muse × Agent Bridge workflow: I set the spec, Muse writes specs, dispatches and verifies from the cloud, the work travels over MCP and an encrypted relay into a hosted session on my Mac, and the result comes back to me&#34; width=&#34;640&#34; title=&#34;I set the spec, Muse dispatches and verifies, the work happens on the Mac, and the result comes back to me — MCP and an always-on listener close the loop.&#34;&gt;
+  &lt;figcaption&gt;I set the spec, Muse dispatches and verifies, the work happens on the Mac, and the result comes back to me — MCP and an always-on listener close the loop.&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Quick note on where this post sits, so it doesn&amp;rsquo;t blur into the previous two. In the November 5 post, I was the one driving the agents on my machine. The November 15 post was the Agent Bridge release post, about the tool itself. This one is about the MCP piece that came later: the driver is Muse now, and I&amp;rsquo;m mostly left with deciding things and looking at results.&lt;/p&gt;</description>
+        </item>
+        
+    </channel>
+</rss>

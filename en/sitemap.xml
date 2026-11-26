@@ -2,36 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://gowinder.work/en/tags/agent/</loc>
-    <lastmod>2026-11-24T09:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/agent/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/agent/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/claude-code/</loc>
-    <lastmod>2026-11-24T09:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/claude-code/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/claude-code/"
-                />
-  </url><url>
     <loc>https://gowinder.work/en/</loc>
     <lastmod>2026-11-24T09:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -45,21 +15,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://gowinder.work/en/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/mcp/</loc>
-    <lastmod>2026-11-24T09:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/mcp/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/mcp/"
                 />
   </url><url>
     <loc>https://gowinder.work/en/muse-agent-bridge-mcp/</loc>
@@ -77,21 +32,6 @@
                 href="https://gowinder.work/en/muse-agent-bridge-mcp/"
                 />
   </url><url>
-    <loc>https://gowinder.work/en/tags/pi/</loc>
-    <lastmod>2026-11-24T09:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/pi/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/pi/"
-                />
-  </url><url>
     <loc>https://gowinder.work/en/posts/</loc>
     <lastmod>2026-11-24T09:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -107,26 +47,6 @@
                 href="https://gowinder.work/en/posts/"
                 />
   </url><url>
-    <loc>https://gowinder.work/en/tags/</loc>
-    <lastmod>2026-11-24T09:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/workflow/</loc>
-    <lastmod>2026-11-24T09:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://gowinder.work/en/agent-bridge/</loc>
     <lastmod>2026-11-15T20:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -140,26 +60,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://gowinder.work/en/agent-bridge/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/remote-control/</loc>
-    <lastmod>2026-11-15T20:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://gowinder.work/en/tags/automation/</loc>
-    <lastmod>2026-11-05T15:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/automation/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/automation/"
                 />
   </url><url>
     <loc>https://gowinder.work/en/agent-handoff-result-file/</loc>
@@ -177,21 +77,6 @@
                 href="https://gowinder.work/en/agent-handoff-result-file/"
                 />
   </url><url>
-    <loc>https://gowinder.work/en/tags/notion/</loc>
-    <lastmod>2026-11-05T15:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/notion/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/notion/"
-                />
-  </url><url>
     <loc>https://gowinder.work/en/batch-renaming-files-from-excel-csv/</loc>
     <lastmod>2026-10-31T10:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -205,141 +90,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://gowinder.work/en/batch-renaming-files-from-excel-csv/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/csv/</loc>
-    <lastmod>2026-10-31T10:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/csv/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/csv/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/excel/</loc>
-    <lastmod>2026-10-31T10:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/excel/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/excel/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/powershell/</loc>
-    <lastmod>2026-10-31T10:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/powershell/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/powershell/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/shell/</loc>
-    <lastmod>2026-10-31T10:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/shell/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/shell/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/astro/</loc>
-    <lastmod>2026-10-28T14:30:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/astro/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/astro/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/cloudflare/</loc>
-    <lastmod>2026-10-28T14:30:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/cloudflare/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/cloudflare/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/indie/</loc>
-    <lastmod>2026-10-28T14:30:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/indie/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/indie/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/pseo/</loc>
-    <lastmod>2026-10-28T14:30:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/pseo/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/pseo/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/side-project/</loc>
-    <lastmod>2026-10-28T14:30:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/side-project/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/side-project/"
                 />
   </url><url>
     <loc>https://gowinder.work/en/two-small-sites/</loc>
@@ -387,111 +137,6 @@
                 href="https://gowinder.work/en/nextjs-honojs-shadcnui-drizzle-cloudflare-pages/"
                 />
   </url><url>
-    <loc>https://gowinder.work/en/tags/cloudflare-pages/</loc>
-    <lastmod>2024-08-26T00:00:06+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/cloudflare-pages/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/cloudflare-pages/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/cloudflare-workers/</loc>
-    <lastmod>2024-08-26T00:00:06+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/cloudflare-workers/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/cloudflare-workers/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/drizzle-orm/</loc>
-    <lastmod>2024-08-26T00:00:06+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/drizzle-orm/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/drizzle-orm/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/honojs/</loc>
-    <lastmod>2024-08-26T00:00:06+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/honojs/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/honojs/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/nextjs/</loc>
-    <lastmod>2024-08-26T00:00:06+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/nextjs/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/nextjs/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/shadcn-ui/</loc>
-    <lastmod>2024-08-26T00:00:06+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/shadcn-ui/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/shadcn-ui/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/usequery/</loc>
-    <lastmod>2024-08-26T00:00:06+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/usequery/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/usequery/"
-                />
-  </url><url>
     <loc>https://gowinder.work/en/honojs-usequery-error/</loc>
     <lastmod>2024-06-06T10:00:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -522,36 +167,6 @@
                 href="https://gowinder.work/en/bulk-delete-key-in-cloudflare-kv/"
                 />
   </url><url>
-    <loc>https://gowinder.work/en/tags/cloudflare-kv/</loc>
-    <lastmod>2024-04-18T19:12:56+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/cloudflare-kv/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/cloudflare-kv/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/machine-learning/</loc>
-    <lastmod>2024-04-08T14:20:06+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/machine-learning/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/machine-learning/"
-                />
-  </url><url>
     <loc>https://gowinder.work/en/migrate-remix-to-cloudflare/</loc>
     <lastmod>2024-04-08T14:20:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -565,66 +180,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://gowinder.work/en/migrate-remix-to-cloudflare/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/remix/</loc>
-    <lastmod>2024-04-08T14:20:06+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/remix/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/remix/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/ai/</loc>
-    <lastmod>2024-03-25T14:12:16+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/ai/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/ai/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/comfyui/</loc>
-    <lastmod>2024-03-25T14:12:16+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/comfyui/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/comfyui/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/comfyui-manager/</loc>
-    <lastmod>2024-03-25T14:12:16+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/comfyui-manager/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/comfyui-manager/"
                 />
   </url><url>
     <loc>https://gowinder.work/en/play-with-comfyui/</loc>
@@ -642,66 +197,6 @@
                 href="https://gowinder.work/en/play-with-comfyui/"
                 />
   </url><url>
-    <loc>https://gowinder.work/en/tags/stable-diffusion/</loc>
-    <lastmod>2024-03-25T14:12:16+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/stable-diffusion/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/stable-diffusion/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/dell/</loc>
-    <lastmod>2024-03-21T13:54:13+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/dell/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/dell/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/homeserver/</loc>
-    <lastmod>2024-03-21T13:54:13+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/homeserver/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/homeserver/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/macbookpro/</loc>
-    <lastmod>2024-03-21T13:54:13+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/macbookpro/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/macbookpro/"
-                />
-  </url><url>
     <loc>https://gowinder.work/en/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/</loc>
     <lastmod>2024-03-21T13:54:13+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -717,46 +212,6 @@
                 href="https://gowinder.work/en/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro-2/"
                 />
   </url><url>
-    <loc>https://gowinder.work/en/tags/pve/</loc>
-    <lastmod>2024-03-21T13:54:13+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/pve/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/pve/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/r720/</loc>
-    <lastmod>2024-03-21T13:54:13+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/r720/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/r720/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/sleep/</loc>
-    <lastmod>2024-03-21T13:54:13+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://gowinder.work/en/tags/snail-interstellar/</loc>
-    <lastmod>2024-03-21T13:54:13+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://gowinder.work/en/sing-box-youtube-app-quic-issue/</loc>
     <lastmod>2024-03-16T10:16:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -770,86 +225,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://gowinder.work/en/sing-box-youtube-app-quic-issue/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/bypass-router/</loc>
-    <lastmod>2024-03-16T10:16:15+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://gowinder.work/en/tags/hysteria/</loc>
-    <lastmod>2024-03-16T10:16:15+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/hysteria/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/hysteria/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/quic/</loc>
-    <lastmod>2024-03-16T10:16:15+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/quic/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/quic/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/r2s/</loc>
-    <lastmod>2024-03-16T10:16:15+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/r2s/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/r2s/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/sing-box/</loc>
-    <lastmod>2024-03-16T10:16:15+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/sing-box/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/sing-box/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/youtube/</loc>
-    <lastmod>2024-03-16T10:16:15+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/youtube/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/youtube/"
                 />
   </url><url>
     <loc>https://gowinder.work/en/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro/</loc>
@@ -867,81 +242,6 @@
                 href="https://gowinder.work/en/migrate-homelab-from-dell-r720-to-j1900-and-macbookpro/"
                 />
   </url><url>
-    <loc>https://gowinder.work/en/tags/chatgpt/</loc>
-    <lastmod>2024-03-06T14:40:28+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/chatgpt/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/chatgpt/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/chatgpt-subtitle-translator/</loc>
-    <lastmod>2024-03-06T14:40:28+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/chatgpt-subtitle-translator/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/chatgpt-subtitle-translator/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/ffmpeg/</loc>
-    <lastmod>2024-03-06T14:40:28+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/ffmpeg/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/ffmpeg/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/openai/</loc>
-    <lastmod>2024-03-06T14:40:28+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/openai/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/openai/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/shell-script/</loc>
-    <lastmod>2024-03-06T14:40:28+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/shell-script/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/shell-script/"
-                />
-  </url><url>
     <loc>https://gowinder.work/en/use-chatgpt-to-make-a-sub-generator-script/</loc>
     <lastmod>2024-03-06T14:40:28+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -955,21 +255,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://gowinder.work/en/use-chatgpt-to-make-a-sub-generator-script/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/whisper/</loc>
-    <lastmod>2024-03-06T14:40:28+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/whisper/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/whisper/"
                 />
   </url><url>
     <loc>https://gowinder.work/en/deploy-local-stable-diffusion-runtime-environment/</loc>
@@ -987,21 +272,6 @@
                 href="https://gowinder.work/en/deploy-local-stable-diffusion-runtime-environment/"
                 />
   </url><url>
-    <loc>https://gowinder.work/en/tags/cors/</loc>
-    <lastmod>2023-03-28T11:01:11+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/cors/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/cors/"
-                />
-  </url><url>
     <loc>https://gowinder.work/en/fixing-a-server-side-cors-issue-in-react-development-mode/</loc>
     <lastmod>2023-03-28T11:01:11+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1015,36 +285,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://gowinder.work/en/fixing-a-server-side-cors-issue-in-react-development-mode/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/react/</loc>
-    <lastmod>2023-03-28T11:01:11+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/react/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/react/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/@nestjsx/crud-typeorm/</loc>
-    <lastmod>2023-02-28T11:08:03+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/@nestjsx/crud-typeorm/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/@nestjsx/crud-typeorm/"
                 />
   </url><url>
     <loc>https://gowinder.work/en/class-constructor-typeormcrudservice-cannot-be-invoked-without-new/</loc>
@@ -1062,131 +302,6 @@
                 href="https://gowinder.work/en/class-constructor-typeormcrudservice-cannot-be-invoked-without-new/"
                 />
   </url><url>
-    <loc>https://gowinder.work/en/tags/dev-notes/</loc>
-    <lastmod>2023-02-28T11:08:03+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://gowinder.work/en/tags/es2017/</loc>
-    <lastmod>2023-02-28T11:08:03+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/es2017/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/es2017/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/es5/</loc>
-    <lastmod>2023-02-28T11:08:03+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/es5/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/es5/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/nestjs/</loc>
-    <lastmod>2023-02-28T11:08:03+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/nestjs/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/nestjs/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/node/</loc>
-    <lastmod>2023-02-28T11:08:03+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/node/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/node/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/typeorm/</loc>
-    <lastmod>2023-02-28T11:08:03+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/typeorm/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/typeorm/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/typescript/</loc>
-    <lastmod>2023-02-28T11:08:03+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/typescript/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/typescript/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/lighttp/</loc>
-    <lastmod>2023-02-27T14:05:41+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/lighttp/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/lighttp/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/linux/</loc>
-    <lastmod>2023-02-27T14:05:41+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/linux/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/linux/"
-                />
-  </url><url>
     <loc>https://gowinder.work/en/pihole-web-ui-fails-to-start-on-orange-pi-zero/</loc>
     <lastmod>2023-02-27T14:05:41+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1200,21 +315,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://gowinder.work/en/pihole-web-ui-fails-to-start-on-orange-pi-zero/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/pihole/</loc>
-    <lastmod>2023-02-27T14:05:41+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/pihole/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/pihole/"
                 />
   </url><url>
     <loc>https://gowinder.work/en/integrating-websocketgateway-with-microservices-in-nestjs/</loc>
@@ -1232,51 +332,6 @@
                 href="https://gowinder.work/en/integrating-websocketgateway-with-microservices-in-nestjs/"
                 />
   </url><url>
-    <loc>https://gowinder.work/en/tags/microservice/</loc>
-    <lastmod>2023-02-23T16:09:08+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/microservice/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/microservice/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/websocketg/</loc>
-    <lastmod>2023-02-23T16:09:08+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/websocketg/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/websocketg/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/websocketgateway/</loc>
-    <lastmod>2023-02-23T16:09:08+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/websocketgateway/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/websocketgateway/"
-                />
-  </url><url>
     <loc>https://gowinder.work/en/adding-a-cron-job-for-automatic-trim-in-proxmox-ve/</loc>
     <lastmod>2023-02-17T15:12:05+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1291,81 +346,6 @@
                 hreflang="en"
                 href="https://gowinder.work/en/adding-a-cron-job-for-automatic-trim-in-proxmox-ve/"
                 />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/cron/</loc>
-    <lastmod>2023-02-17T15:12:05+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/cron/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/cron/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/deployment/</loc>
-    <lastmod>2023-02-17T15:12:05+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://gowinder.work/en/tags/distributed/</loc>
-    <lastmod>2023-02-17T15:12:05+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://gowinder.work/en/tags/proxmox-ve/</loc>
-    <lastmod>2023-02-17T15:12:05+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/proxmox-ve/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/proxmox-ve/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/ssd/</loc>
-    <lastmod>2023-02-17T15:12:05+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/ssd/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/ssd/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/trim/</loc>
-    <lastmod>2023-02-17T15:12:05+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/trim/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/trim/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/expansion/</loc>
-    <lastmod>2023-02-17T14:16:05+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
   </url><url>
     <loc>https://gowinder.work/en/extending-pvm-local-space-in-proxmox-ve/</loc>
     <lastmod>2023-02-17T14:16:05+08:00</lastmod>
@@ -1382,36 +362,6 @@
                 href="https://gowinder.work/en/extending-pvm-local-space-in-proxmox-ve/"
                 />
   </url><url>
-    <loc>https://gowinder.work/en/tags/lvm/</loc>
-    <lastmod>2023-02-17T14:16:05+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/lvm/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/lvm/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/apm/</loc>
-    <lastmod>2023-02-17T10:25:05+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/apm/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/apm/"
-                />
-  </url><url>
     <loc>https://gowinder.work/en/drastic-disk-performance-drop-caused-by-nvme-power-management-in-proxmox-ve/</loc>
     <lastmod>2023-02-17T10:25:05+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1426,31 +376,6 @@
                 hreflang="en"
                 href="https://gowinder.work/en/drastic-disk-performance-drop-caused-by-nvme-power-management-in-proxmox-ve/"
                 />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/nvme/</loc>
-    <lastmod>2023-02-17T10:25:05+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/nvme/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/nvme/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/performance/</loc>
-    <lastmod>2023-02-17T10:25:05+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://gowinder.work/en/tags/power-management/</loc>
-    <lastmod>2023-02-17T10:25:05+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
   </url><url>
     <loc>https://gowinder.work/en/rebuilding-a-glusterfs-volume/</loc>
     <lastmod>2023-02-16T10:53:05+08:00</lastmod>
@@ -1482,11 +407,6 @@
                 href="https://gowinder.work/en/nestjs-service-cannot-find-repository-dependency/"
                 />
   </url><url>
-    <loc>https://gowinder.work/en/tags/disk/</loc>
-    <lastmod>2023-02-14T09:39:05+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://gowinder.work/en/mounting-a-physical-disk-to-a-proxmox-ve-vm/</loc>
     <lastmod>2023-02-14T09:39:05+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1500,41 +420,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://gowinder.work/en/mounting-a-physical-disk-to-a-proxmox-ve-vm/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/virtual-machine/</loc>
-    <lastmod>2023-02-14T09:39:05+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://gowinder.work/en/tags/gluster/</loc>
-    <lastmod>2023-02-11T21:13:05+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/gluster/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/gluster/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/gstatus/</loc>
-    <lastmod>2023-02-11T21:13:05+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/gstatus/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/gstatus/"
                 />
   </url><url>
     <loc>https://gowinder.work/en/resolving-gluster-brick-offline-issues/</loc>
@@ -1672,81 +557,6 @@
                 href="https://gowinder.work/en/recttransform-coordinates/"
                 />
   </url><url>
-    <loc>https://gowinder.work/en/tags/game-development/</loc>
-    <lastmod>2016-07-26T03:07:22+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://gowinder.work/en/tags/unity3d/</loc>
-    <lastmod>2016-07-26T03:07:22+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/unity3d/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/unity3d/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/.net/</loc>
-    <lastmod>2010-11-07T12:26:13+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/.net/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/.net/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/c%23/</loc>
-    <lastmod>2010-11-07T12:26:13+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/c%23/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/c%23/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/custom-controls/</loc>
-    <lastmod>2010-11-07T12:26:13+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://gowinder.work/en/tags/data-binding/</loc>
-    <lastmod>2010-11-07T12:26:13+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://gowinder.work/en/tags/listbox/</loc>
-    <lastmod>2010-11-07T12:26:13+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/listbox/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/listbox/"
-                />
-  </url><url>
     <loc>https://gowinder.work/en/listbox-custom-style-and-binding-notes/</loc>
     <lastmod>2010-11-07T12:26:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1761,41 +571,6 @@
                 hreflang="en"
                 href="https://gowinder.work/en/listbox-custom-style-and-binding-notes/"
                 />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/silverlight/</loc>
-    <lastmod>2010-11-07T12:26:13+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/silverlight/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/silverlight/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/android/</loc>
-    <lastmod>2010-10-27T03:22:56+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/tags/android/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/tags/android/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/android-1.5-cifs-smb-windows-share/</loc>
-    <lastmod>2010-10-27T03:22:56+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
   </url><url>
     <loc>https://gowinder.work/en/mount-windows-share-with-cifs-ko/</loc>
     <lastmod>2010-10-27T03:22:56+00:00</lastmod>
@@ -1812,11 +587,6 @@
                 href="https://gowinder.work/en/mount-windows-share-with-cifs-ko/"
                 />
   </url><url>
-    <loc>https://gowinder.work/en/tags/apad-rk2808/</loc>
-    <lastmod>2010-10-26T09:41:37+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://gowinder.work/en/apad-rk2808-root-and-nfs-drive/</loc>
     <lastmod>2010-10-26T09:41:37+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1831,26 +601,6 @@
                 hreflang="en"
                 href="https://gowinder.work/en/apad-rk2808-root-and-nfs-drive/"
                 />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/nfs/</loc>
-    <lastmod>2010-10-26T09:41:37+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://gowinder.work/en/tags/root/</loc>
-    <lastmod>2010-10-26T09:41:37+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://gowinder.work/en/tags/tablet/</loc>
-    <lastmod>2010-10-26T09:41:37+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://gowinder.work/en/tags/reading/</loc>
-    <lastmod>2010-10-14T04:03:30+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
   </url><url>
     <loc>https://gowinder.work/en/first-sci-fi-book-haul-of-the-year/</loc>
     <lastmod>2010-10-14T04:03:30+00:00</lastmod>
@@ -1896,26 +646,6 @@
                 hreflang="en"
                 href="https://gowinder.work/en/book-review-marooned-in-realtime/"
                 />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/future-war/</loc>
-    <lastmod>2010-10-03T12:12:51+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://gowinder.work/en/tags/posthuman/</loc>
-    <lastmod>2010-10-03T12:12:51+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://gowinder.work/en/tags/sci-fi/</loc>
-    <lastmod>2010-10-03T12:12:51+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://gowinder.work/en/tags/vernor-vinge/</loc>
-    <lastmod>2010-10-03T12:12:51+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
   </url><url>
     <loc>https://gowinder.work/en/understanding-creational-patterns/</loc>
     <lastmod>2010-06-23T15:14:00+00:00</lastmod>
@@ -1976,16 +706,6 @@
                 hreflang="en"
                 href="https://gowinder.work/en/500-days-of-summer/"
                 />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/movie/</loc>
-    <lastmod>2010-05-16T12:42:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://gowinder.work/en/tags/random-thoughts/</loc>
-    <lastmod>2010-05-09T09:01:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
   </url><url>
     <loc>https://gowinder.work/en/google-wave-and-it-competition/</loc>
     <lastmod>2010-05-09T09:01:00+00:00</lastmod>
@@ -2137,11 +857,6 @@
                 href="https://gowinder.work/en/windows-socket-notes/"
                 />
   </url><url>
-    <loc>https://gowinder.work/en/tags/movies/</loc>
-    <lastmod>2008-10-25T10:52:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://gowinder.work/en/nicolas-cage-the-family-man/</loc>
     <lastmod>2008-10-25T10:52:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -2172,11 +887,6 @@
                 href="https://gowinder.work/en/cd-fat-mama-story/"
                 />
   </url><url>
-    <loc>https://gowinder.work/en/tags/music/</loc>
-    <lastmod>2008-10-18T14:31:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://gowinder.work/en/skeletal-animation-coordinate-interpolation/</loc>
     <lastmod>2008-10-09T10:43:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -2192,11 +902,6 @@
                 href="https://gowinder.work/en/skeletal-animation-coordinate-interpolation/"
                 />
   </url><url>
-    <loc>https://gowinder.work/en/tags/life-in-wuhan/</loc>
-    <lastmod>2008-09-03T10:30:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://gowinder.work/en/my-dopod-phone-was-stolen/</loc>
     <lastmod>2008-09-03T10:30:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -2211,11 +916,6 @@
                 hreflang="en"
                 href="https://gowinder.work/en/my-dopod-phone-was-stolen/"
                 />
-  </url><url>
-    <loc>https://gowinder.work/en/tags/living-in-wuhan/</loc>
-    <lastmod>2008-08-06T11:02:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
   </url><url>
     <loc>https://gowinder.work/en/wuhan-traffic-bottleneck/</loc>
     <lastmod>2008-08-06T11:02:00+00:00</lastmod>
@@ -2262,11 +962,6 @@
                 href="https://gowinder.work/en/the-very-first-post/"
                 />
   </url><url>
-    <loc>https://gowinder.work/en/tags/uncategorized/</loc>
-    <lastmod>2008-07-18T13:34:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://gowinder.work/en/d3d8-windowed-vsync-fighting-tearing/</loc>
     <lastmod>2008-07-18T11:16:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -2294,34 +989,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://gowinder.work/en/archives/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/categories/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/categories/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/en/categories/documentation/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/categories/documentation/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/categories/documentation/"
                 />
   </url>
 </urlset>

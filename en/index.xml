@@ -6,7 +6,17 @@
         <description>Recent content on gowinder&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
-        <lastBuildDate>Tue, 24 Nov 2026 09:00:00 +0800</lastBuildDate><atom:link href="https://gowinder.work/en/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 27 Nov 2026 09:00:00 +0800</lastBuildDate><atom:link href="https://gowinder.work/en/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>I Built a Cost Simulator for My Agent Runs, Then Killed the Paid Version</title>
+        <link>https://gowinder.work/en/gemini-cost-simulator-free/</link>
+        <pubDate>Fri, 27 Nov 2026 09:00:00 +0800</pubDate>
+        
+        <guid>https://gowinder.work/en/gemini-cost-simulator-free/</guid>
+        <description>&lt;h2 id=&#34;you-dont-feel-it-while-the-money-burns&#34;&gt;You don&amp;rsquo;t feel it while the money burns
+&lt;/h2&gt;&lt;p&gt;I run agents every day now. Read this code, change that file, run the tests, round after round. It flows so well that money never crosses my mind.&lt;/p&gt;
+&lt;p&gt;The problem is that an agent&amp;rsquo;s bill doesn&amp;rsquo;t work like &amp;ldquo;one question, one price.&amp;rdquo; Every extra round makes the context longer, and everything before it gets fed back in. Then there&amp;rsquo;s thinking, which is billed at the output rate — the deeper it thinks, the more it costs. At the end of the month I get one total. Which run burned the most, and why? No idea.&lt;/p&gt;</description>
+        </item>
+        <item>
         <title>Muse Is in the Cloud, My Code Is on My Mac</title>
         <link>https://gowinder.work/en/muse-agent-bridge-mcp/</link>
         <pubDate>Tue, 24 Nov 2026 09:00:00 +0800</pubDate>
@@ -239,16 +249,6 @@ I debugged it for two days, asked &lt;code&gt;chatgpt&lt;/code&gt;, asked &lt;co
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
-        </item>
-        <item>
-        <title>Migrating a Remix Project to Cloudflare</title>
-        <link>https://gowinder.work/en/migrate-remix-to-cloudflare/</link>
-        <pubDate>Mon, 08 Apr 2024 14:20:06 +0800</pubDate>
-        
-        <guid>https://gowinder.work/en/migrate-remix-to-cloudflare/</guid>
-        <description>&lt;h1 id=&#34;migrating-a-remix-project-to-cloudflare&#34;&gt;Migrating a Remix Project to Cloudflare
-&lt;/h1&gt;&lt;p&gt;Recently I developed a project using &lt;code&gt;remix&lt;/code&gt;. I hadn&amp;rsquo;t done full-stack development before; I&amp;rsquo;d used &lt;code&gt;reactjs&lt;/code&gt; a bit but wasn&amp;rsquo;t very familiar with it, and I was using &lt;code&gt;Nextjs&lt;/code&gt;, which felt very hard to use — mainly because after version &lt;code&gt;13&lt;/code&gt; switched to the &lt;code&gt;app router&lt;/code&gt;, I was somewhat at a loss.&lt;/p&gt;
-&lt;p&gt;Later I discovered &lt;code&gt;remix&lt;/code&gt;, which uses filename-based routing directly and is much more convenient, and the &lt;code&gt;loader&lt;/code&gt; and &lt;code&gt;action&lt;/code&gt; approach is also very intuitive, so I chose &lt;code&gt;remix&lt;/code&gt;.&lt;/p&gt;</description>
         </item>
         
     </channel>

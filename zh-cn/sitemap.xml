@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://gowinder.work/</loc>
-    <lastmod>2026-11-24T09:00:00+08:00</lastmod>
+    <lastmod>2026-11-27T09:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -15,6 +15,36 @@
                 rel="alternate"
                 hreflang="zh-CN"
                 href="https://gowinder.work/"
+                />
+  </url><url>
+    <loc>https://gowinder.work/posts/</loc>
+    <lastmod>2026-11-27T09:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://gowinder.work/en/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://gowinder.work/posts/"
+                />
+  </url><url>
+    <loc>https://gowinder.work/gemini-cost-simulator-free/</loc>
+    <lastmod>2026-11-27T09:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://gowinder.work/en/gemini-cost-simulator-free/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://gowinder.work/gemini-cost-simulator-free/"
                 />
   </url><url>
     <loc>https://gowinder.work/muse-agent-bridge-mcp/</loc>
@@ -30,21 +60,6 @@
                 rel="alternate"
                 hreflang="zh-CN"
                 href="https://gowinder.work/muse-agent-bridge-mcp/"
-                />
-  </url><url>
-    <loc>https://gowinder.work/posts/</loc>
-    <lastmod>2026-11-24T09:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gowinder.work/en/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://gowinder.work/posts/"
                 />
   </url><url>
     <loc>https://gowinder.work/agent-bridge/</loc>

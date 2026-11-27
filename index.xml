@@ -6,7 +6,17 @@
         <description>Recent content on gowinder个人博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-CN</language>
-        <lastBuildDate>Tue, 24 Nov 2026 09:00:00 +0800</lastBuildDate><atom:link href="https://gowinder.work/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 27 Nov 2026 09:00:00 +0800</lastBuildDate><atom:link href="https://gowinder.work/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>我给 agent 的账做了一个模拟器，然后把收费版砍了</title>
+        <link>https://gowinder.work/gemini-cost-simulator-free/</link>
+        <pubDate>Fri, 27 Nov 2026 09:00:00 +0800</pubDate>
+        
+        <guid>https://gowinder.work/gemini-cost-simulator-free/</guid>
+        <description>&lt;h2 id=&#34;烧钱的时候是没感觉的&#34;&gt;烧钱的时候是没感觉的
+&lt;/h2&gt;&lt;p&gt;我现在每天都在跑 agent。让它读代码、改文件、跑测试，一轮一轮地聊下去，很顺手，顺手到完全想不起来钱这回事。&lt;/p&gt;
+&lt;p&gt;问题是 agent 的账不是按「问一次多少钱」算的。对话每多一轮，上下文就长一截，前面所有内容都要重新喂一遍；再加上 thinking，那玩意儿是按输出价计费的，想得越深越贵。等月底看见账单，我只能认出来一个总数，至于哪次活烧得最狠、为什么烧的，一概不知道。&lt;/p&gt;</description>
+        </item>
+        <item>
         <title>Muse 在云端，我的代码在 Mac 上</title>
         <link>https://gowinder.work/muse-agent-bridge-mcp/</link>
         <pubDate>Tue, 24 Nov 2026 09:00:00 +0800</pubDate>
@@ -113,15 +123,6 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
-        </item>
-        <item>
-        <title>将remix项目迁移到cloudflare</title>
-        <link>https://gowinder.work/migrate-remix-to-cloudflare/</link>
-        <pubDate>Mon, 08 Apr 2024 14:20:06 +0800</pubDate>
-        
-        <guid>https://gowinder.work/migrate-remix-to-cloudflare/</guid>
-        <description>&lt;h1 id=&#34;将remix项目迁移到cloudflare&#34;&gt;将remix项目迁移到cloudflare
-&lt;/h1&gt;&lt;p&gt;最近使用&lt;code&gt;remix&lt;/code&gt;开发了一个项目,之前没有做过全栈开发,&lt;code&gt;reactjs&lt;/code&gt;用过一些,不是很熟,用的是&lt;code&gt;Nextjs&lt;/code&gt;, 感觉太难用, 主要是&lt;code&gt;13&lt;/code&gt;版本换了&lt;code&gt;app router&lt;/code&gt;后,有点摸不着头脑了.&lt;/p&gt;</description>
         </item>
         
     </channel>

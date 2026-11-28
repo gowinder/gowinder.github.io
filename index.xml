@@ -6,7 +6,17 @@
         <description>Recent content on gowinder个人博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-CN</language>
-        <lastBuildDate>Fri, 27 Nov 2026 09:00:00 +0800</lastBuildDate><atom:link href="https://gowinder.work/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 28 Nov 2026 09:00:00 +0800</lastBuildDate><atom:link href="https://gowinder.work/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>演练全过，真单一跑才见鬼：PopHonest 的支付链实录</title>
+        <link>https://gowinder.work/pophonest-payment-chain/</link>
+        <pubDate>Sat, 28 Nov 2026 09:00:00 +0800</pubDate>
+        
+        <guid>https://gowinder.work/pophonest-payment-chain/</guid>
+        <description>&lt;h2 id=&#34;先说这是个什么&#34;&gt;先说这是个什么
+&lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://pophonest.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PopHonest&lt;/a&gt; 是我做的一个 WordPress 弹窗插件。弹窗这东西名声不好，假倒计时、假库存、「只剩最后 2 件」——所以这个插件卖点就是名字里那个 Honest：该弹的弹，不玩暗黑套路。Core 版 149 美元一年，Pro 版 249 美元一年，收款走 Waffo，授权用 licence key 激活。&lt;/p&gt;</description>
+        </item>
+        <item>
         <title>我给 agent 的账做了一个模拟器，然后把收费版砍了</title>
         <link>https://gowinder.work/gemini-cost-simulator-free/</link>
         <pubDate>Fri, 27 Nov 2026 09:00:00 +0800</pubDate>
@@ -94,35 +104,6 @@
         <guid>https://gowinder.work/honojs-usequery-error/</guid>
         <description>&lt;h1 id=&#34;usequery直接使用honojs-client报错-typeerror-cannot-read-properties-of-undefined-reading-replace&#34;&gt;useQuery直接使用honojs client报错: TypeError: Cannot read properties of undefined (reading &amp;lsquo;replace&amp;rsquo;)
 &lt;/h1&gt;&lt;p&gt;最近开发了一个项目, 使用&lt;code&gt;nextjs&lt;/code&gt;, &lt;code&gt;honojs&lt;/code&gt;, &lt;code&gt;drizzle-orm&lt;/code&gt;, 部署在&lt;code&gt;cloudflare pages&lt;/code&gt;上, 因为&lt;code&gt;honojs&lt;/code&gt;对于边缘计算比较友好,所以采用.&lt;/p&gt;</description>
-        </item>
-        <item>
-        <title>批量删除`Cloudflare KV`中的`key`</title>
-        <link>https://gowinder.work/bulk-delete-key-in-cloudflare-kv/</link>
-        <pubDate>Thu, 18 Apr 2024 19:12:56 +0800</pubDate>
-        
-        <guid>https://gowinder.work/bulk-delete-key-in-cloudflare-kv/</guid>
-        <description>&lt;h1 id=&#34;批量删除cloudflare-kv中的key&#34;&gt;批量删除&lt;code&gt;Cloudflare KV&lt;/code&gt;中的&lt;code&gt;key&lt;/code&gt;
-&lt;/h1&gt;&lt;h2 id=&#34;取得key列表&#34;&gt;取得&lt;code&gt;key&lt;/code&gt;列表
-&lt;/h2&gt;&lt;p&gt;先执行&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pnpm wrangler kv:key list --namespace-id&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;namespaceID&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt; &amp;gt; PURGE.json&lt;span class=&#34;sb&#34;&gt;`&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;拿到完整&lt;code&gt;key&lt;/code&gt;列表, 如果要条件,就加上: &lt;code&gt;--prefix=&amp;quot;prefix&amp;quot;&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&#34;批量删除&#34;&gt;批量删除
-&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cat purge.json &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; jq -r &lt;span class=&#34;s1&#34;&gt;&amp;#39;.[].name&amp;#39;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; xargs -I &lt;span class=&#34;o&#34;&gt;{}&lt;/span&gt; pnpm wrangler kv:key delete --namespace-id&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;namespaceID&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description>
         </item>
         
     </channel>
